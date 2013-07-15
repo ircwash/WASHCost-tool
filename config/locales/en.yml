@@ -1,0 +1,139 @@
+
+
+en:
+
+  nav:
+    utility:
+      about: "About"
+      help: "help"
+      contact: "Contact"
+      sign_in: "Sign In"
+    main:
+      content:
+        title: "Content"
+        items:
+          country: "Country"
+          water: "Water"
+          population: "Population"
+      cost:
+        title: "Cost Data"
+        items:
+          capital: "Capital Expenditure"
+          recurrent: "Recurrent Expenditure"
+      service:
+        title: "Service"
+        items:
+          time: "Time"
+          quantity: "Quantity"
+          quality: "Quality"
+          reliability: "Reliability"
+
+  buttons:
+    next: "Next"
+    start: "OK! Start using the calculator"
+    save: "Save"
+
+  inputs:
+    choose_a_country: "Choose a country"
+
+  form:
+    skip: "skip this question"
+    shared:
+      country:
+        question: "In which country does your programme (intervention) take place?"
+      capital:
+        question: "What is the capital expenditure to set up the water service per person?"
+      recurrent:
+        question: "What is the recurrent expenditure to operate, maintain and support service delivery per person per year?"
+        value_label: "Per person<br/> per year"
+    water_basic:
+      water:
+        question: "What is the main water source use to provide water?"
+        answers:
+          a0: "Borehole & Handpump"
+          a1: "Mechanised "
+          a2: "Single-Town"
+          a3: "Multi-Town1"
+          a4: "Multi-Town2"
+      population:
+        question: "How many people live in the area of intervention?"
+        value_label: "People"
+        answers:
+          a0: "Less than 500"
+          a1: "Between 501 and 5,000"
+          a2: "Between 5,001 and 15,000"
+          a3: "More than 15,000"
+      time:
+        question: "How long does water collection take per day from the formal sources?"
+        value_label: "Minutes per day"
+        answers:
+          a0:  "Less than 10"
+          a1: "Between 10 and 30"
+          a2: "Between 30 and 60"
+          a3: "More than 60"
+      quantity:
+        question: "What is the actual use of water from formal sources? (Litres per person per day)"
+        value_label: "Per person<br/> per day"
+        answers:
+          a0: "Less than 5 liters"
+          a1: "Between 5 and 20 liters"
+          a2: "Between 21-60 liters"
+          a3: "More than 60 liters"
+      quality:
+        question: "Is water quality testing done?"
+        answers:
+          a0: "No testing"
+          a1: "One-off test after construction"
+          a2: "Occasional and meets standards"
+          a3: "Regular and meets standards"
+      reliability:
+        question: "How reliable is the service? How many days per year is the water system not working?"
+        answers:
+          a0: "Works all the time"
+          a1: "Works most of the days, but not &gt; 12 days"
+          a2: "Many break-downs slow repairs"
+          a3: "Not working"
+    sanitation_basic:
+      household:
+        question: "What is the typical household size?"
+      latrine:
+        question: "What is the main improved water source used to provide water?"
+        answers:
+          a0: "Traditional pit latrine"
+          a1: "Trad. improved pit latrine"
+          a2: "Slab latrine"
+          a3: "Vip latrine"
+          a4: "Pour Flush Latrine"
+          a5: "Latrine with septic tank"
+      providing:
+        question: "Does the delivery model provide latrines at the household level?"
+        answers:
+          a0: "Yes"
+          a1: "No"
+      impermeability:
+        question: "Does the latrine have an impermeable slab?"
+        answers:
+          a0: "Impermeable slab"
+          a1: "Not impermeable slab"
+      environment:
+        question: "What is the environmental impact of the delivery model?"
+        answers:
+          a0: "Non problematic +safe disposal +re-usability"
+          a1: "Non problematic +safe disposal"
+          a2: "Significant pollution"
+      usage:
+        question: "Which family members use the latrine?"
+        answers:
+          a0: "All"
+          a1: "Some"
+          a2: "None"
+      reliability:
+        question: "Is the latrine cleaned and emptied?"
+        answers:
+          a0: "Yes"
+          a1: "Unreliable"
+          a2: "Not"
+
+  footer:
+    final_report: "Final Reports"
+    complete: "Complete"

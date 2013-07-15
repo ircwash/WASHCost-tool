@@ -1,0 +1,139 @@
+
+
+fr:
+
+  nav:
+    utility:
+      about: "f-About"
+      help: "f-help"
+      contact: "f-Contact"
+      sign_in: "f-Sign In"
+    main:
+      content:
+        title: "f-Content"
+        items:
+          country: "f-Country"
+          water: "f-Water"
+          population: "f-Population"
+      cost:
+        title: "f-Cost Data"
+        items:
+          capital: "f-Capital Expenditure"
+          recurrent: "f-Recurrent Expenditure"
+      service:
+        title: "f-Service"
+        items:
+          time: "f-Time"
+          quantity: "f-Quantity"
+          quality: "f-Quality"
+          reliability: "f-Reliability"
+
+  buttons:
+    next: "f-Next"
+    start: "f-OK! Start using the calculator"
+    save: "f-Save"
+
+  inputs:
+    choose_a_country: "f-Choose a country"
+
+  form:
+    skip: "f-skip this question"
+    shared:
+      country:
+        question: "f-In which country does your programme (intervention) take place?"
+      capital:
+          question: "f-What is the capital expenditure to set up the water service per person?"
+      recurrent:
+          question: "f-What is the recurrent expenditure to operate, maintain and support service delivery per person per year?"
+          value_label: "f-Per person<br/> per year"
+    water_basic:
+      water:
+        question: "f-What is the main water source use to provide water?"
+        answers:
+          a0: "f-Borehole & Handpump"
+          a1: "f-Mechanised "
+          a2: "f-Single-Town"
+          a3: "f-Multi-Town1"
+          a4: "f-Multi-Town2"
+      population:
+        question: "f-How many people live in the area of intervention?"
+        value_label: "f-People"
+        answers:
+          a0: "f-Less than 500"
+          a1: "f-Between 501 and 5,000"
+          a2: "f-Between 5,001 and 15,000"
+          a3: "f-More than 15,000"
+      time:
+        question: "f-How long does water collection take per day from the formal sources?"
+        value_label: "f-Minutes per day"
+        answers:
+          a0:  "Less than 10"
+          a1: "f-Between 10 and 30"
+          a2: "f-Between 30 and 60"
+          a3: "f-More than 60"
+      quantity:
+        question: "f-What is the actual use of water from formal sources? (Litres per person per day)"
+        value_label: "f-Per person<br/> per day"
+        answers:
+          a0: "f-Less than 5 liters"
+          a1: "f-Between 5 and 20 liters"
+          a2: "f-Between 21-60 liters"
+          a3: "f-More than 60 liters"
+      quality:
+        question: "f-Is water quality testing done?"
+        answers:
+          a0: "f-No testing"
+          a1: "f-One-off test after construction"
+          a2: "f-Occasional and meets standards"
+          a3: "f-Regular and meets standards"
+      reliability:
+        question: "f-How reliable is the service? How many days per year is the water system not working?"
+        answers:
+          a0: "f-Works all the time"
+          a1: "f-Works most of the days, but not &gt; 12 days"
+          a2: "f-Many break-downs slow repairs"
+          a3: "f-Not working"
+    sanitation_basic:
+      household:
+        question: "f-What is the typical household size?"
+      latrine:
+        question: "f-What is the main improved water source used to provide water?"
+        answers:
+          a0: "f-Traditional pit latrine"
+          a1: "f-Trad. improved pit latrine"
+          a2: "f-Slab latrine"
+          a3: "f-Vip latrine"
+          a4: "f-Pour Flush Latrine"
+          a5: "f-Latrine with septic tank"
+      providing:
+        question: "f-Does the delivery model provide latrines at the household level?"
+        answers:
+          a0: "f-Yes"
+          a1: "f-No"
+      impermeability:
+        question: "f-Does the latrine have an impermeable slab?"
+        answers:
+          a0: "f-Impermeable slab"
+          a1: "f-Not impermeable slab"
+      environment:
+        question: "f-What is the environmental impact of the delivery model?"
+        answers:
+          a0: "f-Non problematic +safe disposal +re-usability"
+          a1: "f-Non problematic +safe disposal"
+          a2: "f-Significant pollution"
+      usage:
+        question: "f-Which family members use the latrine?"
+        answers:
+          a0: "f-All"
+          a1: "f-Some"
+          a2: "f-None"
+      reliability:
+        question: "f-Is the latrine cleaned and emptied?"
+        answers:
+          a0: "f-Yes"
+          a1: "f-Unreliable"
+          a2: "f-Not"
+
+  footer:
+    final_report: "f-Final Reports"
+    complete: "f-Complete"

@@ -1,0 +1,3 @@
+WashCost app
+
+To install dependencies run 'bundle' command in terminal.

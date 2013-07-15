@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-IE7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>WashCost Basic Calculator - <%= @title %></title>
+
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+
+  <%= javascript_include_tag "jquery-1.9.1", "jquery-ui-1.10.3.custom.min", "db", "application", "modernizr", "water_basic" %>
+  <%= stylesheet_link_tag "application", "smoothness/jquery-ui-1.10.3.custom", :media => "all" %>
+
+</head>
+<body>
+  <div id="outer_container" class="bgGradient">
+
+
+    <%= render "shared/header" %>
+
+    <%= render "shared/nav_water"%>
+
+    <div class="mainContent">
+
+        <%= yield %>
+
+    </div>
+  </div>
+  <footer>
+    <div class="footerWrapper">
+      <h2><%= t 'footer.final_report' %></h2>
+      <div class="progressBar">
+        <div class="outerBar">
+          <div class="innerBar" style="width:30%"></div>
+          <p>30% <%= t 'footer.complete' %></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script type="text/javascript">
+    window.I18n = <%= I18n.backend.send(:translations).to_json.html_safe %>
+</script>
+
+</body>
+</html>

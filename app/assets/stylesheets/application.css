@@ -1,0 +1,847 @@
+/* reset */
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    background-color: #aaa;
+}
+select{
+    width:350px;
+}
+footer {
+    margin: 0;
+    padding: 0;
+}
+form{
+    margin: 0px;
+    padding: 0px;
+}
+h1 {
+    margin: 0;
+    padding: 0;
+}
+h2 {
+    margin: 0;
+    padding: 0;
+}
+h3 {
+    margin: 0;
+    padding: 0;
+}
+a {
+    font-size: 12px;
+    text-decoration: none;
+    color: #333;
+}
+a:hover {
+    text-decoration: underline;
+}
+p {
+    margin: 0;
+    padding: 0;
+}
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+figure {
+    margin: 0;
+    padding: 0;
+}
+figcaption {
+    margin: 0;
+    padding: 0;
+}
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+.hidden{
+    display: none;
+}
+/* layout */
+#outer_container {
+    position: relative;
+    overflow: hidden;
+    height: 95%;
+    max-width: 1025px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+.bgGradient {
+    background: #017faf; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+
+    background-image: -webkit-radial-gradient(center 1000px, circle , #06B2B1 30%, #0279AE 100%); /* New WebKit syntax */
+    background-image: -moz-radial-gradient(center 1000px, circle,  #06B2B1 30%, #0279AE 100%);
+    background-image: -ms-radial-gradient(center 1000px, circle,  #06B2B1 30%, #0279AE 100%); /* IE10+ */
+    background-image: -o-radial-gradient(center 1000px, circle,  #06B2B1 30%, #0279AE 100%); /* Opera (13?) */
+
+
+}
+.header {
+    background-color: #333;
+    padding: 14px 35px;
+}
+
+.header ul {
+    font-weight: bold;
+    float: right;
+    margin-top: -10px;
+}
+.header li {
+    float: left;
+    margin-left: 13px;
+}
+.header li a {
+    color: #fff;
+}
+.header li a.sign {
+    color: #ff6633;
+}
+.header .languageSwitcher {
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+.languageSwitcher li {
+    clear: both;
+    margin: 0;
+}
+.languageSwitcher li a {
+    display: none;
+}
+.languageSwitcher li a.active {
+    display: block;
+    padding-right: 23px;
+    background: transparent url('/assets/spriteArrow8.png') no-repeat 100% -295px;
+}
+nav {
+    position: relative;
+}
+.navWrapper {
+    position: relative;
+    width: 935px;
+    height: 120px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.main {
+    position: absolute;
+    width: 1000000px;
+    margin: 30px 0 0 0;
+}
+.main li {
+    position: relative;
+    width: auto;
+    float: left;
+}
+.main li a {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #9acfdf;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+.main li a.active {
+    color: #fff;
+}
+.main li.content a {
+    display: block;
+    margin-left: 292px;
+}
+.main li.cost a {
+
+    margin-left: 35px;
+    display: block;
+}
+
+.main li.service a {
+    margin-left: -250px;
+    display: block;
+
+}
+.main li ul {
+    clear: both;
+    overflow: hidden;
+    background: #359ec0 url('/assets/spriteArrow8.png') no-repeat 102% -490px;
+}
+.main li li {
+    width: auto;
+    float: left;
+}
+.main li li a.done {
+    display: block;
+    color: #fff;
+    background: transparent url('/assets/spriteArrow8.png') no-repeat 100% -384px;
+}
+.navWrapper .main li li a {
+    display: block;
+    font-size: 12px;
+    margin: 0;
+    padding: 14px 30px;
+
+}
+.main li li a.active {
+    color: #359ec0;
+    background-color: #fff;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.pag a {
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 25px;
+    height: 30px;
+    margin-top: 25px;
+    background: transparent url('/assets/spriteArrow8.png') no-repeat 0 -101px;
+    text-indent: -10000px;
+}
+.pag .pagPrev {
+    left: 18px;
+}
+.pag .pagNext {
+    right: 0;
+    background-position: 0 0;
+}
+footer {
+    clear: both;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    background-color: #aaa;
+}
+footer .footerWrapper {
+    position: relative;
+    width: 945px;
+    margin: 0 auto;
+    padding: 20px 40px 40px;
+    background-color: #333;
+}
+footer h2 {
+    float: left;
+    font-size: 11px;
+    color: #bfbfbf;
+    margin-right: 20px;
+    margin-top: 2px;
+    text-transform: uppercase;
+    background: transparent url('/assets/arrowUp8.png') no-repeat 0 2px;
+}
+.progressBar {
+    position: relative;
+    float: left;
+    padding-top: 2px;
+}
+.outerBar {
+    width: 500px;
+}
+.innerBar {
+    float: left;
+    height: 2px;
+    margin-top: 5px;
+    background-color: #ff6633;
+}
+.outerBar p {
+    float: left;
+    color: #BFBFBF;
+    margin: -1px 0 0 20px;
+}
+.mainContent {
+    position: relative;
+    display: table;
+    text-align: center;
+    height: 100%;
+    margin: 0 auto;
+    padding-bottom: 100px;
+    border-collapse: collapse;
+}
+.main_content {
+    position: relative;
+    display: table-cell;
+    min-height: 100%;
+    width: 100%;
+    vertical-align: middle;
+}
+.next_button {
+    clear: both;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    height: 54px;
+    border: 0px;
+    color: #d6d6d6;
+    padding: 20px 94px;
+    margin: 20px auto 10px;
+    background-color: #363636;
+    text-transform: uppercase;
+    text-align: center;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.skip {
+    display: block;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+}
+.mainContent h1 {
+    z-index: 100;
+    display: inline-block;
+    position: absolute;
+    width: 800px;
+    top: 8%;
+    left: 10%;
+    font-size: 40px;
+    font-weight: normal;
+    line-height: 1.25;
+    margin: 0 auto;
+    color: #fff;
+}
+.sbSelector {
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+    color: #217F8B;
+    text-decoration: none;
+    padding: 8px 15px;
+    background: transparent url('/assets/bgWhiteTransparency.png') repeat 0 0;
+
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+}
+a.sbSelector:hover {
+    text-decoration: none;
+}
+.sbHolder {
+    margin: 10px 0 20px 0;
+}
+.sbOptions {
+    overflow-y: scroll;
+    background-color: #333333;
+    padding: 20px 5px;
+
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+}
+.sbOptions li {
+    clear: both;
+    float: left;
+    width: 100%;
+}
+.sbOptions li:hover {
+    background-color: #5C5C5C;
+}
+.sbOptions a {
+    display: block;
+    color: #fff;
+    text-align: left;
+    padding: 15px 20px;
+}
+
+/* q1Country */
+
+.choices {
+    width: 520px;
+    margin: 0 auto;
+    font-size: 11px;
+    font-weight: bold;
+}
+.choices img {
+    float: left;
+    margin-right: 25px;
+}
+.choices .sbHolder,
+.choices #country {
+    width: 365px;
+    float: left;
+}
+
+
+/* Social Navigation */
+.socialNav {
+    width: 90%;
+    float: right;
+    padding: 20px 0;
+}
+.socialNav h1 {
+    text-align: center;
+    padding-right: 100px;
+}
+.socialNav ul {
+    float: right;
+    margin: -25px 60px 0 0;
+}
+.socialNav li {
+    float: left;
+    background: transparent url('/assests/spriteShareMenu8.png') no-repeat 0 0;
+}
+.socialNav li:first-child {
+    margin-right: 15px;
+    background-position: 0 -38px;
+}
+.socialNav li a {
+    display: block;
+    padding-left: 20px;
+}
+
+
+
+/* CONTENT */
+
+.waterInput li label {
+    background: transparent url('/assets/spriteInputWater8.png') no-repeat 0 0;
+}
+.waterInput li:nth-child(2) label {
+    background-position: -62px 0;
+}
+.waterInput li:nth-child(3) label {
+    background-position: -127px 0;
+}
+.waterInput li:nth-child(4) label {
+    background-position: -193px 0;
+}
+.waterInput li:nth-child(5) label {
+    background-position: -255px 0;
+}
+.main_content .qualityInput {
+    width: 292px;
+}
+.qualityInput li {
+    width: 70px;
+    height: 71px;
+}
+.main_content .reliabilityInput {
+    width: 252px;
+}
+.qualityInput li label {
+    background: transparent url('/assets/inputQualityWater8.png') no-repeat 0 0;
+}
+.reliabilityInput li label {
+    background: transparent url('/assets/spriteRatioReliability8.png')no-repeat 0 0;
+}
+.reliabilityInput li:nth-child(2) label {
+    background-position: -62px 0;
+}
+.reliabilityInput li:nth-child(3) label {
+    background-position: -127px 0;
+}
+.reliabilityInput li:nth-child(4) label {
+    background-position: -193px 0;
+}
+.main_content .latrineInput {
+    width: 612px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+.main_content .latrineInput li {
+    width: 99px;
+}
+.latrineInput li label {
+    background: transparent url('/assests/inputTraditionalLatrine8.png') no-repeat 0 0;
+}
+.latrineInput li label span {
+    top: 47px;
+}
+.main_content .houseInput {
+    width: 206px;
+}
+.main_content .houseInput li {
+    width: 100px;
+}
+.houseInput li label {
+    background: transparent url('/assests/spriteInputLatrines8.png') no-repeat 0 0;
+}
+.houseInput li:last-child label {
+    background-position: 0 -80px;
+}
+.main_content .houseInput label span {
+    top: 50px;
+    width: 100%;
+}
+.main_content .impermeability {
+    width: 126px;
+    overflow: hidden;
+    padding-bottom: 50px;
+}
+.impermeability li label {
+    background: transparent url('/assests/spriteInputSlab8.png') no-repeat 0 0;
+}
+.impermeability li label span {
+    top: 80px;
+}
+.impermeability li:last-child label {
+    background-position: 0 -74px;
+}
+.main_content .disposalInput {
+    width: 370px;
+}
+.main_content .disposalInput li {
+    width: 120px;
+}
+.main_content .disposalInput label {
+    min-height: 135px;
+}
+.main_content .disposalInput label span {
+    top: 80px;
+}
+.disposalInput li label {
+    background: transparent url('/assests/spriteInputDisposal8.png') no-repeat 0 0;
+}
+.disposalInput li:nth-child(2) label {
+    background-position: -132px 0;
+}
+.disposalInput li:nth-child(3) label {
+    background-position: -283px 0;
+}
+.main_content .familyInput {
+    width: 381px;
+}
+.main_content .familyInput li {
+    width: 124px;
+}
+.familyInput li label {
+    background: transparent url('/assests/spriteInputFamilyMembers8.png') no-repeat 0 0;
+}
+.familyInput li:nth-child(2) label {
+    background-position: -142px 0;
+}
+.familyInput li:nth-child(3) label {
+    background-position: -290px 0;
+}
+.main_content .familyInput label span {
+    top: 75px;
+}
+.main_content .reliableInput {
+    width: 441px;
+}
+.reliableInput li {
+    width: 144px;
+}
+.reliableInput li label {
+    background: transparent url('/assests/inputLactrine8.png') no-repeat 0 0;
+}
+.reliableInput li label span {
+    top: 75px;
+}
+.ticked {
+    -moz-opacity: 0.70;
+    opacity: 0.70;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+}
+
+
+
+.main_content .valueOutput{
+    width: auto;
+    margin: 0 auto;
+    height: 30px;
+    color: #fff;
+    font-size: 24px;
+
+}
+.main_content .valueLabel{
+    height: 80px;
+    color: #5DBFC3;
+    font-size: 11px;
+}
+.ui-slider {
+    width: 525px;
+}
+
+
+
+
+.social {
+    width: auto;
+    float: right;
+}
+.social li {
+    float: left;
+    width: auto;
+    padding-left: 23px;
+    border: 1px solid #BFBFBF;
+    background: transparent url('/assests/icon-social8.png') no-repeat 0 0;
+}
+.social li:first-child {
+    margin-right: 15px;
+    background-position: 7px 7px;
+}
+.social li:last-child {
+    background-position: 7px -56px;
+}
+.social li a {
+    display: block;
+    color: #BFBFBF;
+    padding: 8px 10px;
+}
+
+/* info tab */
+.infoTab {
+    clear: both;
+    position: absolute;
+    width: auto;
+    top: 235px;
+    right: -214px;
+}
+.tab {
+    display: block;
+    float: left;
+    width: 32px;
+    height: 47px;
+    text-indent: -1000000px;
+    background: transparent url('/assets/iconInfoTab8.png') no-repeat 0 0;
+}
+.tabContent {
+    float: left;
+    text-align: left;
+    width: 190px;
+    padding: 5px 10px 10px;
+    border-left: 2px solid #ff6633;
+    background: transparent url('/assets/bgInfoTab8.png') repeat 0 0;
+
+    -webkit-border-radius: 0 0 0 5px;
+    -moz-border-radius: 0 0 0 5px;
+    border-radius: 0 0 0 5px;
+}
+.tabContent h3 {
+    color: #d5d7cf;
+}
+.tabContent p {
+    color: #d5d7cf;
+}
+
+
+/* Social Navigation */
+.socialNav {
+    width: 90%;
+    float: right;
+    padding: 20px 0;
+}
+.socialNav h1 {
+    text-align: center;
+    padding-right: 100px;
+}
+.socialNav ul {
+    float: right;
+    margin: -25px 60px 0 0;
+}
+.socialNav li {
+    float: left;
+    background: transparent url('/assets/spriteShareMenu8.png') no-repeat 0 0;
+}
+.socialNav li:first-child {
+    margin-right: 15px;
+    background-position: 0 -38px;
+}
+.socialNav li a {
+    display: block;
+    padding-left: 20px;
+}
+
+
+/* sign in */
+
+.wrapperLogIn {
+    position: relative;
+    width: 649px;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 10px 110px 20px;
+    background-color: #fff;
+}
+.wrapperLogIn section {
+    padding: 20px;
+    margin-bottom: 25px;
+    background-color: #e8e7e7;
+}
+.wrapperLogIn h1 {
+    font-size: 30px;
+    text-align: center;
+}
+.wrapperLogIn p {
+    text-align: center;
+}
+.wrapperLogIn p span {
+    font-weight: bold;
+}
+.wrapperLogIn h1,
+.wrapperLogIn p {
+    color: #808283;
+}
+.wrapperLogIn p {
+    margin-bottom: 20px;
+}
+.signAth {
+    width: 45%;
+    float: left;
+    border-right: 1px solid #c2c2c2;
+}
+.signAth li a {
+    display: block;
+    clear: both;
+    width: 220px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #bacfd4;
+    background-color: #edeced;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.mainForm {
+    padding-top: 20px;
+    overflow: hidden;
+}
+.mainForm li {
+    margin-bottom: 20px;
+}
+.mainForm li:last-child {
+    margin-bottom: 0;
+}
+#form {
+    width: 50%;
+    float: right;
+}
+.signVia {
+    clear: both;
+    display: block;
+    width: 220px;
+    text-align: center;
+    background-color: #edeced;
+    margin: 0 auto;
+    padding: 10px 20px;
+    border: 1px solid #bacfd4;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+#form legend {
+    display: none;
+}
+#form label {
+    clear: both;
+    margin-top: 5px;
+}
+#form label,
+#form input {
+    display: block;
+    float: left;
+}
+#form input {
+    border: none;
+    padding: 5px;
+    width: 210px;
+    float: right;
+    margin-bottom: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+#form button {
+    margin-top: 20px;
+    border: none;
+    float: right;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid #bacfd4;
+    padding: 10px 20px;
+    background-color: #edeced;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+/* Create an account */
+.createAccount {
+    margin-top: 40px;
+}
+.createAccount #logIn {
+    width: 100%;
+}
+.wrapperLogIn .createAccount {
+    background-color: #fff;
+}
+.wrapperLogIn .createAccount {
+    padding: 0;
+}
+.createAccount .formWrapper {
+    overflow: hidden;
+    padding: 20px 42px 20px 45px;
+    background-color: #E8E7E7;
+}
+.createAccount #form {
+    float: none;
+    width: 484px;
+    margin: 0 auto;
+}
+.createAccount #form label {
+    float: left;
+}
+.createAccount #form input {
+    width: 260px;
+    float: right;
+}
+.createAccount #form .checkBox {
+    clear: both;
+    float: left;
+    width: auto;
+}
+.createAccount #form .terms {
+    font-size: 13px;
+    margin-top: 30px;
+}
+.createAccount #form .terms a {
+    text-decoration: underline;
+}
+.createAccount #form button {
+    float: right;
+    background-color: #EEf0f0;
+}
+/* error */
+p.errorMsg {
+    clear: both;
+    float: left;
+    color: #ff0000;
+    margin-bottom: 0;
+}
+.error {
+    border-color: #ff0000;
+}
+
+/*
+*
+*   IE - Fixes
+*
+*/
+.ie8 .mainContent h1,
+.ie7 .mainContent h1 {
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-bottom: 20px;
+}
+.ie8 .mainContent .main_content,
+.ie7 .mainContent .main_content {
+    display: block;
+}

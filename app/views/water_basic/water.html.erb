@@ -1,0 +1,50 @@
+<% @title = "2 of 9 (Water Source)" %>
+
+<h1>
+  <%= t 'form.water_basic.water.question' %>
+</h1>
+<%= form_tag({controller: "water_basic", action: "population"}, class: "main_content", id: "waterBasicForm") do %>
+
+  <ul class="waterInput">
+    <li>
+      <%= label_tag("boreHold", nil, class: "tickCheckBox") do %>
+        <%= radio_button_tag("r_water", 0, false, id: "boreHold") %>
+        <span><%= t 'form.water_basic.water.answers.a0' %></span>
+      <% end %>
+    </li>
+    <li>
+      <%= label_tag("mechanised", nil, class: "tickCheckBox") do %>
+        <%= radio_button_tag("r_water", 1, id: "mechanised") %>
+        <span><%= t 'form.water_basic.water.answers.a1' %></span>
+      <% end %>
+    </li>
+    <li>
+      <%= label_tag("singleTown", nil, class: "tickCheckBox") do %>
+        <%= radio_button_tag("r_water", 2, id: "singleTown") %>
+        <span><%= t 'form.water_basic.water.answers.a2' %></span>
+      <% end %>
+    </li>
+    <li>
+      <%= label_tag("multiTown", nil, class: "tickCheckBox") do %>
+        <%= radio_button_tag("r_water", 3, id: "multiTown") %>
+        <span><%= t 'form.water_basic.water.answers.a3' %></span>
+      <% end %>
+    </li>
+    <li>
+      <%= label_tag("mixedPipe", nil, class: "tickCheckBox") do %>
+        <%= radio_button_tag("r_water", 4, id: "mixedPipe") %>
+        <span><%= t 'form.water_basic.water.answers.a4' %></span>
+      <% end %>
+    </li>
+  </ul>
+
+  <%= submit_tag((t 'buttons.next'), class: "next_button") %>
+<% end %>
+
+<div class="infoTab">
+  <a href="#" class="tab">infoTab</a>
+  <div class="tabContent">
+      <h3>Lorem ipsum dolor sit amet</h3>
+      <p>Maecenas elementum tristique nunc sed vehicula. Mauris dignissim erat ut lectus rutrum elementum. Etiam pharetra ac massa sit amet mattis. Nam blandit, nibh sed mattis accumsan, nisi risus vulputate eros, in aliquam leo tellus et est. Vivamus pretium ultrices dui, vitae lobortis tellus malesuada id. Ut quis convallis odio. Duis egestas dolor quis mi tempor laoreet.</p>
+  </div>
+</div>
