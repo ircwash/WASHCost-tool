@@ -1,0 +1,38 @@
+<% @title = "10 of 10 (Reliability)" %>
+
+<h1><%= t 'form.sanitation_basic.reliability.question' %></h1>
+
+<%= form_tag({controller: "sanitation_basic", action: "report"}, class: "main_content", id: "waterBasicForm") do %>
+
+  <ul class="familyInput choices">
+    <li>
+      <%= label_tag("reliYes", nil, class: "tickCheckBox") do %>
+        <%= radio_button_tag("r_eliability", 0, false, id: "reliYes") %>
+        <span><%= t 'form.sanitation_basic.reliability.answers.a0' %></span>
+      <% end %>
+    </li>
+    <li>
+      <%= label_tag("unreliable", nil, class: "tickCheckBox") do %>
+        <%= radio_button_tag("r_eliability", 1, id: "unreliable") %>
+        <span><%= t 'form.sanitation_basic.reliability.answers.a1' %></span>
+      <% end %>
+    </li>
+    <li>
+      <%= label_tag("relyNot", nil, class: "tickCheckBox") do %>
+        <%= radio_button_tag("r_eliability", 2, id: "relyNot") %>
+        <span><%= t 'form.sanitation_basic.reliability.answers.a2' %></span>
+      <% end %>
+    </li>
+  </ul>
+
+  <%= submit_tag("Save", class: "next_button") %>
+    <a class="skip" href="#"><%= t 'form.skip' %></a>
+<% end %>
+
+<div class="infoTab">
+  <a href="#" class="tab">infoTab</a>
+  <div class="tabContent">
+      <h3>Lorem ipsum dolor sit amet</h3>
+      <p>Maecenas elementum tristique nunc sed vehicula. Mauris dignissim erat ut lectus rutrum elementum. Etiam pharetra ac massa sit amet mattis. Nam blandit, nibh sed mattis accumsan, nisi risus vulputate eros, in aliquam leo tellus et est. Vivamus pretium ultrices dui, vitae lobortis tellus malesuada id. Ut quis convallis odio. Duis egestas dolor quis mi tempor laoreet.</p>
+  </div>
+</div>

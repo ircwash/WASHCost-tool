@@ -1,0 +1,38 @@
+<% @title = "8 of 10 (Environment)" %>
+<h1><%= t 'form.sanitation_basic.environment.question' %></h1>
+<%= form_tag({controller: "sanitation_basic", action: "usage"}, class: "main_content", id: "waterBasicForm") do %>
+
+
+  <ul class="disposalInput choices">
+    <li>
+      <%= label_tag("safe", nil, class: "tickCheckBox") do %>
+        <%= radio_button_tag("r_environment", 0, false, id: "safe") %>
+        <span><%= t 'form.sanitation_basic.environment.answers.a0' %></span>
+      <% end %>
+    </li>
+    <li>
+      <%= label_tag("reusable", nil, class: "tickCheckBox") do %>
+        <%= radio_button_tag("r_environment", 1, id: "reusable") %>
+        <span><%= t 'form.sanitation_basic.environment.answers.a1' %></span>
+      <% end %>
+    </li>
+    <li>
+      <%= label_tag("pollution", nil, class: "tickCheckBox") do %>
+        <%= radio_button_tag("r_environment", 2, id: "pollution") %>
+        <span><%= t 'form.sanitation_basic.environment.answers.a2' %></span>
+      <% end %>
+    </li>
+  </ul>
+
+
+    <%= submit_tag("Next", class: "next_button") %>
+    <a class="skip" href="#"><%= t 'form.skip' %></a>
+<% end %>
+
+<div class="infoTab">
+  <a href="#" class="tab">infoTab</a>
+  <div class="tabContent">
+      <h3>Lorem ipsum dolor sit amet</h3>
+      <p>Maecenas elementum tristique nunc sed vehicula. Mauris dignissim erat ut lectus rutrum elementum. Etiam pharetra ac massa sit amet mattis. Nam blandit, nibh sed mattis accumsan, nisi risus vulputate eros, in aliquam leo tellus et est. Vivamus pretium ultrices dui, vitae lobortis tellus malesuada id. Ut quis convallis odio. Duis egestas dolor quis mi tempor laoreet.</p>
+  </div>
+</div>

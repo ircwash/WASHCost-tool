@@ -16,40 +16,40 @@
 
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
 
-  <%= javascript_include_tag "jquery-1.9.1", "jquery-ui-1.10.3.custom.min", "chosen.jquery", "db_water", "application", "modernizr", "water_basic" %>
+  <%= javascript_include_tag "jquery-1.9.1", "jquery-ui-1.10.3.custom.min", "db_sanitation", "application", "modernizr", "sanitation_basic" %>
   <%= stylesheet_link_tag "application", "smoothness/jquery-ui-1.10.3.custom", :media => "all" %>
 
 </head>
 <body>
-  <div id="outer_container" class="bgGradient">
+<div id="outer_container" class="bgGradient">
 
 
-    <%= render "shared/header" %>
+  <%= render "shared/header" %>
 
-    <%= render "shared/nav_water"%>
+  <%= render "shared/nav_sanitation"%>
 
-    <div class="mainContent">
+  <div class="mainContent">
 
-        <%= yield %>
+    <%= yield %>
 
-    </div>
   </div>
-  <footer>
-    <div class="footerWrapper">
-      <h2><%= t 'footer.final_report' %></h2>
-      <div class="progressBar">
-        <div class="outerBar">
-          <div class="innerBar" style="width:30%"></div>
-          <p>30% <%= t 'footer.complete' %></p>
-        </div>
+</div>
+<footer>
+  <div class="footerWrapper">
+    <h2><%= t 'footer.final_report' %></h2>
+    <div class="progressBar">
+      <div class="outerBar">
+        <div class="innerBar" style="width:30%"></div>
+        <p>30% <%= t 'footer.complete' %></p>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
 
 <script type="text/javascript">
     window.I18n = <%= I18n.backend.send(:translations).to_json.html_safe %>
 </script>
-  <%= render :partial => "shared/select_config" %>
+<%= render :partial => "shared/select_config" %>
 
 </body>
 </html>

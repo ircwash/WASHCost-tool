@@ -1,12 +1,14 @@
-    <% @title = "Start" %>
+<% @title = "Start" %>
 
-    <h1><%= t 'form.shared.country.question' %></h1>
 
-    <%= form_tag({controller: "water_basic", action: "water"}, class: "main_content", id: "waterBasicForm") do %>
+<h1><%= t 'form.shared.country.question' %></h1>
+
+<%= form_tag({controller: "sanitation_basic", action: "household"}, class: "main_content", id: "waterBasicForm") do %>
 
     <div class="choices">
       <span style="text-align: left">
-      <select data-placeholder="Choose a Country..." class="chzn-select" style="width:350px; " tabindex="2" name="country">
+      <select data-placeholder="Choose a Country..." class="chzn-select" style="width:350px; " tabindex="2">
+        <option value="">Select a country</option>
         <option value="AFG">Afghanistan</option>
         <option value="ALB">Albania</option>
         <option value="DZA">Algeria</option>
@@ -202,12 +204,12 @@
     <%= submit_tag((t 'buttons.start'), class: "next_button") %>
     <a class="skip" href="#">skip this question</a>
 
-    <% end %>
+<% end %>
 
-    <div class="infoTab">
-      <a href="#" class="tab">infoTab</a>
-      <div class="tabContent">
-        <h3>Lorem ipsum dolor sit amet</h3>
-        <p>Maecenas elementum tristique nunc sed vehicula. Mauris dignissim erat ut lectus rutrum elementum. Etiam pharetra ac massa sit amet mattis. Nam blandit, nibh sed mattis accumsan, nisi risus vulputate eros, in aliquam leo tellus et est. Vivamus pretium ultrices dui, vitae lobortis tellus malesuada id. Ut quis convallis odio. Duis egestas dolor quis mi tempor laoreet.</p>
-      </div>
-    </div>
+<div class="infoTab">
+  <a href="#" class="tab">infoTab</a>
+  <div class="tabContent">
+    <h3>Lorem ipsum dolor sit amet</h3>
+    <p>Maecenas elementum tristique nunc sed vehicula. Mauris dignissim erat ut lectus rutrum elementum. Etiam pharetra ac massa sit amet mattis. Nam blandit, nibh sed mattis accumsan, nisi risus vulputate eros, in aliquam leo tellus et est. Vivamus pretium ultrices dui, vitae lobortis tellus malesuada id. Ut quis convallis odio. Duis egestas dolor quis mi tempor laoreet.</p>
+  </div>
+</div>

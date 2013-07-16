@@ -1,0 +1,23 @@
+<% @title = "5 of 9 (Recurrent Expenditure)" %>
+
+<h1><%= t 'form.shared.recurrent.question' %></h1>
+
+<%= form_tag({controller: "sanitation_basic", action: "providing"}, class: "main_content", id: "waterBasicForm") do %>
+
+  <div class="choices">
+      <div id="recurrentValue" class="valueOutput">3</div>
+      <div id="recurrentSlider"></div>
+  </div>
+
+  <%= submit_tag("Next", class: "next_button") %>
+    <a class="skip" href="#"><%= t 'form.skip' %></a>
+
+<% end %>
+
+<div class="infoTab">
+  <a href="#" class="tab">infoTab</a>
+  <div class="tabContent">
+      <h3>Lorem ipsum dolor sit amet</h3>
+      <p>Maecenas elementum tristique nunc sed vehicula. Mauris dignissim erat ut lectus rutrum elementum. Etiam pharetra ac massa sit amet mattis. Nam blandit, nibh sed mattis accumsan, nisi risus vulputate eros, in aliquam leo tellus et est. Vivamus pretium ultrices dui, vitae lobortis tellus malesuada id. Ut quis convallis odio. Duis egestas dolor quis mi tempor laoreet.</p>
+  </div>
+</div>

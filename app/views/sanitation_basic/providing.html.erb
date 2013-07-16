@@ -1,0 +1,35 @@
+<% @title = "6 of 10 (Providing)" %>
+
+<h1><%= t 'form.sanitation_basic.providing.question' %></h1>
+<%= form_tag({controller: "sanitation_basic", action: "impermeability"}, class: "main_content", id: "waterBasicForm") do %>
+
+
+ <div class="choices">
+  <ul class="houseInput">
+    <li>
+      <%= label_tag("houseYes", nil, class: "tickCheckBox") do %>
+        <%= radio_button_tag("r_providing", 0, false, id: "houseYes") %>
+        <span><%= t 'form.sanitation_basic.providing.answers.a0' %> </span>
+      <% end %>
+    </li>
+    <li>
+      <%= label_tag("houseNot", nil, class: "tickCheckBox") do %>
+        <%= radio_button_tag("r_providing", 1, id: "houseNot") %>
+        <span><%= t 'form.sanitation_basic.providing.answers.a1' %></span>
+      <% end %>
+    </li>
+  </ul>
+ </div>
+
+    <%= submit_tag((t 'buttons.next'), class: "next_button") %>
+    <a class="skip" href="#">skip this question</a>
+
+<% end %>
+
+<div class="infoTab">
+  <a href="#" class="tab">infoTab</a>
+  <div class="tabContent">
+      <h3>Lorem ipsum dolor sit amet</h3>
+      <p>Maecenas elementum tristique nunc sed vehicula. Mauris dignissim erat ut lectus rutrum elementum. Etiam pharetra ac massa sit amet mattis. Nam blandit, nibh sed mattis accumsan, nisi risus vulputate eros, in aliquam leo tellus et est. Vivamus pretium ultrices dui, vitae lobortis tellus malesuada id. Ut quis convallis odio. Duis egestas dolor quis mi tempor laoreet.</p>
+  </div>
+</div>

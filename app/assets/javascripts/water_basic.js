@@ -83,6 +83,4 @@ $(document).ready(function(){
         });
     }
 
-
-    infoPanel();
 });

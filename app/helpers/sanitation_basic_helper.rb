@@ -1,0 +1,2 @@
+module SanitationBasicHelper
+end
