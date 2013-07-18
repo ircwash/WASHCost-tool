@@ -139,7 +139,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-sass-rails
   rails (= 3.2.13)
-  rspec-rails (~> 2.0)
+  rspec-rails (~> 2.4)
   ruby-prof
   sass-rails (~> 3.2.3)
   sqlite3
