@@ -403,12 +403,49 @@ a.sbSelector:hover {
     padding-left: 20px;
 }
 
+/* Radios */
+.main_content ul {
+    overflow: hidden;
+    width: 335px;
+    margin: 0 auto;
+}
+.main_content li {
+    float: left;
+    position: relative;
+    width: 60px;
+    /*height: 62px;*/
+    margin-right: 3px;
+    padding-bottom: 20px;
+}
+.main_content li label {
+    display: block;
+    width: 100%;
+    min-height: 70px;
+}
+.main_content li label input {
+    display: block;
+    position: absolute;
+    top: -100000px;
+    left: -100000px;
+}
+.main_content li label span {
+    display: block;
+    position: absolute;
+    width: 95%;
+    top: 65px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
 
 
 /* CONTENT */
 
 .waterInput li label {
-    background: transparent url('/assets/spriteInputWater8.png') no-repeat 0 0;
+    background: transparent url('/assets/spriteQ2basicWater24.png') no-repeat 0 0;
 }
 .waterInput li:nth-child(2) label {
     background-position: -62px 0;

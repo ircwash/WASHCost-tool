@@ -1,5 +1,7 @@
 module WaterBasicHelper
 
+
+
   def set_categories_for_navigation
     categories = {}
     current_action = params[:action]

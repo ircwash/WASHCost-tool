@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class SanitationBasicControllerTest < ActionController::TestCase
+
   test "should get country" do
     get :country
     assert_response :success

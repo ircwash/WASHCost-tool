@@ -5,8 +5,12 @@ gem 'rails', '3.2.13'
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'rspec-rails', '~> 2.0'
+  gem 'rspec-rails', '~> 2.4'
   gem 'ruby-prof'
+end
+
+group :test do
+  gem "capybara", "~> 2.1.0"
 end
 
 # Gems used only for assets and not required
@@ -21,9 +25,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :test do
-  gem "capybara", "~> 2.1.0"
-end
 
 gem 'jquery-rails'
 gem 'jquery-ui-sass-rails'
