@@ -3,13 +3,6 @@ require 'spec_helper'
 
 describe WaterBasicController do
 
-  before(:each) do
-    @valid_attributes = {
-        :country => "ABC",
-        :water => "0"
-    }
-  end
-
   describe "Country Page" do
     def do_country(country_code)
       post :country, :country => country_code
