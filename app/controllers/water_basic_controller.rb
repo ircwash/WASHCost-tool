@@ -7,7 +7,6 @@ class WaterBasicController < ApplicationController
   end
 
   def country
-    view= "country"
 
     if request.post?
       country_code= params[:country]
@@ -16,15 +15,13 @@ class WaterBasicController < ApplicationController
         add_to_session_form("country", country_code)
         increase_pages_complete
 
-        view = "water"
+        redirect_to :action => "water"
       end
     end
 
-    render view
   end
 
   def water
-    view= "water"
 
     if request.post?
       water_index= params[:water]
@@ -34,16 +31,13 @@ class WaterBasicController < ApplicationController
         add_to_session_form("water", water_index.to_i)
         increase_pages_complete
 
-        view = "population"
+        redirect_to :action => "population"
       end
-
-      render view
     end
 
   end
 
   def population
-    view="population"
 
     if request.post?
       population_index= params[:population]
@@ -53,15 +47,13 @@ class WaterBasicController < ApplicationController
         add_to_session_form("population", population_index.to_i)
         increase_pages_complete
 
-        view = "capital"
+        redirect_to :action => "capital"
       end
     end
 
-    render view
   end
 
   def capital
-    view = "capital"
 
     if request.post?
       capital_amount = params[:capital]
@@ -72,16 +64,13 @@ class WaterBasicController < ApplicationController
         add_to_session_form("capital", capital_amount.to_i)
         increase_pages_complete
 
-        view = "recurrent"
+        redirect_to :action => "recurrent"
       end
     end
 
-    render view
   end
 
   def recurrent
-
-    view = "recurrent"
 
     if request.post?
       recurrent_amount = params[:recurrent]
@@ -92,11 +81,9 @@ class WaterBasicController < ApplicationController
         add_to_session_form("recurrent", recurrent_amount.to_i)
         increase_pages_complete
 
-        view = "time"
+        redirect_to :action => "time"
       end
     end
-
-    render view
 
   end
 
@@ -111,11 +98,10 @@ class WaterBasicController < ApplicationController
         add_to_session_form("time", time_index.to_i)
         increase_pages_complete
 
-        view = "quantity"
+        redirect_to :action => "quantity"
       end
-    end
 
-    render view
+    end
   end
 
   def quantity
@@ -129,16 +115,13 @@ class WaterBasicController < ApplicationController
         add_to_session_form("quantity", quantity_index.to_i)
         increase_pages_complete
 
-        view = "quality"
+        redirect_to :action => "quality"
       end
     end
 
-    render view
   end
 
   def quality
-    view = "quality"
-
     if request.post?
       quality_index= params[:quality]
 
@@ -147,15 +130,12 @@ class WaterBasicController < ApplicationController
         add_to_session_form("quality", quality_index.to_i)
         increase_pages_complete
 
-        view = "reliability"
+        redirect_to :action => "reliability"
       end
     end
-
-    render view
   end
 
   def reliability
-    view = "reliability"
 
     if request.post?
       reliability_index= params[:reliability]
@@ -165,11 +145,10 @@ class WaterBasicController < ApplicationController
         add_to_session_form("reliability", reliability_index.to_i)
         increase_pages_complete
 
-        view = "reliability"
+        redirect_to :action =>"reliability"
       end
     end
 
-    render view
   end
 
   def report

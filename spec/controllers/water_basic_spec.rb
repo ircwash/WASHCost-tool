@@ -19,7 +19,7 @@ describe WaterBasicController do
 
     it "should return the country view" do
       get :country
-      expect(response).to render_template('country')
+      response.should render_template('country')
     end
 
     it "should return the country view when an invalid country posted" do
@@ -29,7 +29,7 @@ describe WaterBasicController do
 
     it "should go to water view when a valid country posted" do
       do_country("AAA")
-      response.should render_template('water')
+      response.should redirect_to  :action => 'water'
     end
 
     it "should create session when a valid country posted" do
@@ -60,10 +60,10 @@ describe WaterBasicController do
       response.should render_template('water')
     end
 
-    it "should go to water view when a valid index posted" do
+    it "should go to population view when a valid index posted" do
       (0..3).to_a.each do |v|
         do_water(v)
-        expect(response).to render_template('population')
+        expect(response).to redirect_to  :action =>'population'
       end
     end
 
@@ -93,7 +93,7 @@ describe WaterBasicController do
     it "should go to capital view when a valid index posted" do
       (0..4).to_a.each do |v|
         do_post(v)
-        expect(response).to render_template('capital')
+        expect(response).to redirect_to  :action =>'capital'
       end
     end
 
@@ -128,7 +128,7 @@ describe WaterBasicController do
 
     it "should go to recurrent view when a valid amount is posted" do
       do_post("200")
-      response.should render_template('recurrent')
+      expect(response).to redirect_to  :action =>'recurrent'
     end
   end
 
@@ -157,7 +157,7 @@ describe WaterBasicController do
     it "should go to quantity view when a valid index posted" do
       (0..3).to_a.each do |v|
         do_post(v)
-        expect(response).to render_template('quantity')
+        expect(response).to redirect_to  :action =>'quantity'
       end
     end
   end
@@ -187,9 +187,16 @@ describe WaterBasicController do
     it "should go to quality view when a valid index posted" do
       (0..3).to_a.each do |v|
         do_post(v)
-        expect(response).to render_template('quality')
+        expect(response).to redirect_to  :action =>'quality'
       end
     end
+  end
+
+  describe "Report" do
+
+
+
+
   end
 
 end
