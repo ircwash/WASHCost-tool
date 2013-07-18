@@ -3,6 +3,15 @@ require 'spec_helper'
 
 describe WaterBasicController do
 
+  before(:each) do
+    @valid_form= {
+        :country => "USA",
+        :water => 1,
+        :population => 1,
+
+    }
+  end
+
   describe "Country Page" do
     def do_country(country_code)
       post :country, :country => country_code

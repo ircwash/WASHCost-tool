@@ -140,7 +140,7 @@ class WaterBasicController < ApplicationController
     view = "quality"
 
     if request.post?
-      quantity_index= params[:quality]
+      quality_index= params[:quality]
 
       if(quality_index && is_number(quality_index) && quality_index.to_i > -1 && quality_index.to_i < 4)
 

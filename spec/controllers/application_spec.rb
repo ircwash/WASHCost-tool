@@ -66,8 +66,27 @@ describe ApplicationController do
     it "should return true for nex" do
       subject.is_number(-1).should eq(true)
     end
-
-
   end
 
+  describe '#is_valid_country_code' do
+
+    it "should return true when a valid ISO country" do
+
+      expect subject.is_valid_country_code("AAA").should be_true
+
+    end
+
+    it "should return false when a valid ISO country" do
+
+      expect subject.is_valid_country_code("AA").should be_false
+
+    end
+
+    it "should return false when a valid ISO country" do
+
+      expect subject.is_valid_country_code(nil).should be_false
+
+    end
+
+  end
 end
