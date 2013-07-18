@@ -28,7 +28,7 @@ describe ApplicationController do
 
     before(:each) do
       ApplicationController.class_variable_set :@@pages, 10
-      subject.increase_pages_complete("country")
+      subject.increase_pages_complete
     end
 
     it "should have a total number of pages" do
