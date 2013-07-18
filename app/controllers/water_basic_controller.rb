@@ -84,12 +84,12 @@ class WaterBasicController < ApplicationController
     view = "recurrent"
 
     if request.post?
-      recurrent_amount = params[:capital]
+      recurrent_amount = params[:recurrent]
 
 
       if(recurrent_amount && is_number(recurrent_amount) && recurrent_amount.to_i > -1)
 
-        add_to_session_form("recurrent", capital_amount.to_i)
+        add_to_session_form("recurrent", recurrent_amount.to_i)
         increase_pages_complete
 
         view = "time"

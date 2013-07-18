@@ -42,6 +42,8 @@ class ApplicationController < ActionController::Base
 
   def increase_pages_complete
 
+
+
     pages_complete= session[:pages_complete].present? ? session[:pages_complete] : 0
     pages_complete+= 1;
     session[:pages_complete] =  pages_complete

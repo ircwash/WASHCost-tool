@@ -40,7 +40,7 @@
       <div class="progressBar">
         <div class="outerBar">
           <div class="innerBar" style="width:30%"></div>
-          <p>30% <%= t 'footer.complete' %></p>
+          <p><%= session[:pages_complete] %>% <%= t 'footer.complete' %></p>
         </div>
       </div>
     </div>
@@ -50,6 +50,5 @@
     window.I18n = <%= I18n.backend.send(:translations).to_json.html_safe %>
 </script>
   <%= render :partial => "shared/select_config" %>
-
 </body>
 </html>
