@@ -47,6 +47,11 @@ en:
       recurrent:
         question: "What is the recurrent expenditure to operate, maintain and support service delivery per person per year?"
         value_label: "Per person<br/> per year"
+      values:
+        v0: "No service"
+        v1: "Sub-standard service"
+        v2: "Basic service"
+        v3: "High service"
     water_basic:
       water:
         question: "What is the main water source use to provide water?"

@@ -56,17 +56,9 @@ module ReportHelper
 
   def get_water(index)
 
-    water_values = [
-        { :label => (t 'form.water_basic.water.answers.a0'), :value => 1,  :recExBench => { :min => 3 , :max => 6 }, :capExBench => { :min => 20, :max => 61 } },
-        { :label => (t 'form.water_basic.water.answers.a1'), :value => 1, :recExBench => { :min => 3, :max => 15  }, :capExBench => { :min => 30, :max => 131 } },
-        { :label => (t 'form.water_basic.water.answers.a2'), :value => 1, :recExBench => { :min => 3, :max => 15 }, :capExBench => { :min => 30, :max => 131 } },
-        { :label => (t 'form.water_basic.water.answers.a3'), :value => 1, :recExBench => { :min => 3, :max => 15 }, :capExBench => { :min => 30, :max => 131 } },
-        { :label => (t 'form.water_basic.water.answers.a4'), :value =>1, :recExBench => { :min => 3, :max => 15  }, :capExBench => { :min => 20, :max => 152 } }
-    ]
-
     water= t 'form.value_not_set'
-    if index && water_values[index].present?
-      water= water_values[index][:label]
+    if index && @@water_values[index].present?
+      water= @@water_values[index][:label]
     end
 
     return water
@@ -86,68 +78,43 @@ module ReportHelper
   end
 
   def get_population(index)
-    population_values= [
-        { :label => "Less than 500", :value => 1 },
-        { :label => "Between 501 and 5,000", :value => 2 },
-        { :label => "Between 5,001 and 15,000", :value => 3 },
-        { :label => "More than 15,000", :value => 4 }
-    ]
-
 
     population= t 'form.value_not_set'
-    if index && population_values[index].present?
-      population= population_values[index][:label]
+    if index && @@population_values[index].present?
+      population= @@population_values[index][:label]
     end
 
     return population
   end
   
   def get_time(index)
-    time_values = [
-        { :label => (t 'form.water_basic.time.answers.a0'), :value => 4 },
-        { :label => (t 'form.water_basic.time.answers.a1'), :value => 3 },
-        { :label => (t 'form.water_basic.time.answers.a2'), :value => 2 },
-        { :label => (t 'form.water_basic.time.answers.a3'), :value => 1 }
-    ]
 
     time= t 'form.value_not_set'
-    if index && time_values[index].present?
-      time= time_values[index][:label]
+    if index && @@time_values[index].present?
+      time= @@time_values[index][:label]
     end
 
     return time
   end
 
-
   def get_quantity(index)
 
-    quantity_values = [
-        { :label =>  "Less than 5 liters", :value => "No service" },
-        { :label =>  "Between 5 and 20 liters", :value => "Sub-standard service" },
-        { :label =>  "Between 21-60 liters", :value => "Basic service" },
-        { :label =>  "More than 60 liters", :value => "High service" }
-    ]
 
     quantity= t 'form.value_not_set'
-    if index && quantity_values[index].present?
-      quantity= quantity_values[index][:value]
+    if index && @@quantity_values[index].present?
+      quantity= @@quantity_values[index][:value]
     end
 
     return quantity
   end
 
+
   def get_quality(index)
 
-    quality_values = [
-        { :label => "No testing", :value => "No service" },
-        { :label => "One-off test after construction", :value => "Sub-standard service" },
-        { :label => "Occasional and meets standards", :value => "Basic service" },
-        { :label => "Regular and meets standards", :value => "High service" }
-    ]
 
     quality= t 'form.value_not_set'
-    if index && quality_values[index].present?
-      quality= quality_values[index][:value]
+    if index && @@quality_values[index].present?
+      quality= @@quality_values[index][:value]
     end
 
     return quality
@@ -155,19 +122,95 @@ module ReportHelper
 
 
   def get_reliability(index)
-    reliability_values = [
-        { :label =>  (t 'form.water_basic.reliability.answers.a0'), :value => 1.5 },
-        { :label =>  (t 'form.water_basic.reliability.answers.a1'), :value => 1.0 },
-        { :label =>  (t 'form.water_basic.reliability.answers.a2'), :value => 0.25 },
-        { :label =>  (t 'form.water_basic.reliability.answers.a3'), :value => 0.0 }
-    ]
+
 
     reliability= t 'form.value_not_set'
-    if index && reliability_values[index].present?
-      reliability= reliability_values[index][:label]
+    if index && @@reliability_values[index].present?
+      reliability= @@reliability_values[index][:label]
     end
 
     return reliability
   end
+
+  def get_general_sustainability(water, capital, recurring, reliability)
+
+
+    #  capExScore= getCapitalExBenchmarkRating(water, capital);
+    #  recExScore= getRecurringExBenchmarkRating(water, recurring);
+    #
+    #  serviceLevel= (4 * db.reliability[params.reliability].value);
+    #
+    #var score= (capExScore +recExScore +serviceLevel);
+    #
+    #var rating= 'Undefined';
+    #var backgroundPosition= 0;
+    #
+    #if(score>=7.5){
+    #    rating = 'Low risk';
+    #backgroundPosition= 0;
+    #}
+    #else if(score>=5 && score <7.5){
+    #    rating = 'Medium risk';
+    #backgroundPosition= -340;
+    #}
+    #
+    #     else if(score>=2 && score < 5){
+    #         rating = 'Low risk';
+    #     backgroundPosition= 0;
+    #     }
+    #          else{
+    #              rating = 'Not sustainable';
+    #          backgroundPosition= -170;
+    #          }
+    #
+    #          return { "rating" : rating, "position" : backgroundPosition };
+    #          }
+
+
+  end
+
+
+  @@water_values = [
+      { :label => (I18n.t 'form.water_basic.water.answers.a0'), :value => 1,  :recExBench => { :min => 3 , :max => 6 }, :capExBench => { :min => 20, :max => 61 } },
+      { :label => (I18n.t 'form.water_basic.water.answers.a1'), :value => 1, :recExBench => { :min => 3, :max => 15  }, :capExBench => { :min => 30, :max => 131 } },
+      { :label => (I18n.t 'form.water_basic.water.answers.a2'), :value => 1, :recExBench => { :min => 3, :max => 15 }, :capExBench => { :min => 30, :max => 131 } },
+      { :label => (I18n.t 'form.water_basic.water.answers.a3'), :value => 1, :recExBench => { :min => 3, :max => 15 }, :capExBench => { :min => 30, :max => 131 } },
+      { :label => (I18n.t 'form.water_basic.water.answers.a4'), :value =>1, :recExBench => { :min => 3, :max => 15  }, :capExBench => { :min => 20, :max => 152 } }
+  ]
+
+  @@population_values= [
+      { :label => "Less than 500", :value => 1 },
+      { :label => "Between 501 and 5,000", :value => 2 },
+      { :label => "Between 5,001 and 15,000", :value => 3 },
+      { :label => "More than 15,000", :value => 4 }
+  ]
+
+  @@time_values = [
+      { :label => (I18n.t 'form.water_basic.time.answers.a0'), :value => 4 },
+      { :label => (I18n.t 'form.water_basic.time.answers.a1'), :value => 3 },
+      { :label => (I18n.t 'form.water_basic.time.answers.a2'), :value => 2 },
+      { :label => (I18n.t 'form.water_basic.time.answers.a3'), :value => 1 }
+  ]
+
+  @@quantity_values = [
+      { :label =>  (I18n.t 'form.water_basic.quantity.answers.a0'), :value => (I18n.t 'form.shared.values.v0') },
+      { :label =>  (I18n.t 'form.water_basic.quantity.answers.a1'), :value => (I18n.t 'form.shared.values.v1') },
+      { :label =>  (I18n.t 'form.water_basic.quantity.answers.a2'), :value => (I18n.t 'form.shared.values.v2') },
+      { :label =>  (I18n.t 'form.water_basic.quantity.answers.a3'), :value => (I18n.t 'form.shared.values.v3') }
+  ]
+
+  @@quality_values = [
+      { :label => (I18n.t 'form.water_basic.quality.answers.a0'), :value => (I18n.t 'form.shared.values.v0') },
+      { :label => (I18n.t 'form.water_basic.quality.answers.a1'), :value => (I18n.t 'form.shared.values.v1') },
+      { :label => (I18n.t 'form.water_basic.quality.answers.a2'), :value => (I18n.t 'form.shared.values.v2') },
+      { :label => (I18n.t 'form.water_basic.quality.answers.a3'), :value => (I18n.t 'form.shared.values.v3') }
+  ]
+
+  @@reliability_values = [
+      { :label =>  ( I18n.t 'form.water_basic.reliability.answers.a0'), :value => 1.5 },
+      { :label =>  ( I18n.t 'form.water_basic.reliability.answers.a1'), :value => 1.0 },
+      { :label =>  ( I18n.t 'form.water_basic.reliability.answers.a2'), :value => 0.25 },
+      { :label =>  ( I18n.t 'form.water_basic.reliability.answers.a3'), :value => 0.0 }
+  ]
 
 end
