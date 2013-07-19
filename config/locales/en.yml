@@ -37,6 +37,7 @@ en:
     choose_a_country: "Choose a country"
 
   form:
+    value_not_set: "Value Not Set"
     skip: "skip this question"
     shared:
       country:

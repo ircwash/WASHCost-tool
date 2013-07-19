@@ -194,8 +194,27 @@ describe WaterBasicController do
 
   describe "Report" do
 
+    it "should have a result table in session" do
+      get :report
+      expect(session[:results]).to_not be_nil
+    end
 
+    it "should have valid results" do
+      get :report
 
+      valid_report= {
+          :foo => "bar"
+      }
+
+      @helper= Object.new.extend WaterBasicHelper
+      @helper.stub!(:get_report_results).and_return(valid_report)
+
+      puts "results:"
+      puts session[:results]
+
+      expect(session[:results]["foo"]).to eq("bar")
+
+    end
 
   end
 

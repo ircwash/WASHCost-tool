@@ -1,4 +1,7 @@
 class WaterBasicController < ApplicationController
+
+  include WaterBasicHelper
+
   layout "water_basic_layout"
 
   def init_vars
@@ -145,7 +148,7 @@ class WaterBasicController < ApplicationController
         add_to_session_form("reliability", reliability_index.to_i)
         increase_pages_complete
 
-        redirect_to :action =>"reliability"
+        redirect_to :action =>"report"
       end
     end
 
@@ -153,8 +156,14 @@ class WaterBasicController < ApplicationController
 
   def report
 
+    results= get_water_basic_report
+
+    puts "RESULTS"
+    puts results
+
+    flash[:results] = results
+
     render layout: "report"
   end
-
 
 end
