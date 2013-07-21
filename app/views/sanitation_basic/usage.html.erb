@@ -1,7 +1,7 @@
 <% @title = "9 of 10 (Usage)" %>
 
 <h1><%= t 'form.sanitation_basic.usage.question' %></h1>
-<%= form_tag({controller: "sanitation_basic", action: "reliability"}, class: "main_content", id: "waterBasicForm") do %>
+<%= form_tag({controller: "sanitation_basic", action: "usage"}, class: "main_content", id: "waterBasicForm") do %>
 
   <ul class="familyInput choices">
     <li>
@@ -24,6 +24,7 @@
     </li>
   </ul>
 
+  <input type="hidden" name="usage" value="usage"/>
   <%= submit_tag("Next", class: "next_button") %>
   <a class="skip" href="#"><%= t 'form.skip' %></a>
 <% end %>

@@ -163,7 +163,7 @@ class WaterBasicController < ApplicationController
 
     flash[:results] = results
 
-    render layout: "report"
+    render layout: "report_water_basic"
   end
 
 end

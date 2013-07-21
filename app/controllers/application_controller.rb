@@ -33,11 +33,14 @@ class ApplicationController < ActionController::Base
     return valid
   end
 
-  def add_to_session_form(key, value)
-    form= session[:water_basic_form].present? ? session[:water_basic_form] : Hash.new(0)
+  def add_to_session_form(form_name, key, value)
+    form= session[form_name].present? ? session[form_name] : Hash.new(0)
     form[key]= value
 
-    session[:water_basic_form]= form
+    puts "SESSION FORM:"
+
+    session[form_name]= form
+    puts session[form_name]
   end
 
   def increase_pages_complete

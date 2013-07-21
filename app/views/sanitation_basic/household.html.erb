@@ -3,13 +3,14 @@
 
 <h1><%= t 'form.sanitation_basic.household.question' %></h1>
 
-<%= form_tag({controller: "sanitation_basic", action: "latrine"}, class: "main_content", id: "waterBasicForm") do %>
+<%= form_tag({controller: "sanitation_basic", action: "household"}, class: "main_content", id: "waterBasicForm") do %>
 
   <div class="choices">
     <div id="householdValue" class="valueOutput">1</div>
     <div id="householdSlider"></div>
   </div>
 
+  <input type="hidden" name="household">
   <%= submit_tag("Next", class: "next_button") %>
   <a class="skip" href="#"><%= t 'form.skip' %></a>
 <% end %>

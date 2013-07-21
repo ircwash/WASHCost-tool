@@ -1,13 +1,14 @@
 <% @title = "4 of 9 (Capital Expenditure)" %>
 
 <h1><%= t 'form.shared.capital.question' %></h1>
-<%= form_tag({controller: "sanitation_basic", action: "recurrent"}, class: "main_content", id: "waterBasicForm") do %>
+<%= form_tag({controller: "sanitation_basic", action: "capital"}, class: "main_content", id: "waterBasicForm") do %>
 
   <div class="choices">
       <div id="capitalValue" class="valueOutput">30</div>
       <div id="capitalSlider"></div>
   </div>
 
+  <input type="hidden" name="capital"/>
   <%= submit_tag("Next", class: "next_button") %>
   <a class="skip" href="#"><%= t 'form.skip' %></a>
 <% end %>
