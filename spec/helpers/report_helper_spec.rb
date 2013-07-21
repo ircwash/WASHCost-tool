@@ -54,7 +54,20 @@ describe ReportHelper, :type => :helper do
       expect(get_water(22)).to eq(t 'form.value_not_set')
     end
 
+  end
 
+
+  describe "General Sustainability Calculations" do
+
+    it "should" do
+      get_capEx_benchmark_rating
+    end
+
+
+    #bench= @@water_values[waterSourceIndex].capExBench
+    #rating= (ex >= bench.min && exp <= bench.max) ? 2 : ( (ex < bench.min) ? .5 : 1  )
+    #
+    #return rating
 
   end
 

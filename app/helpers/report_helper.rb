@@ -14,6 +14,7 @@ module ReportHelper
         :time => session[:water_basic_form]["time"],
         :quality => session[:water_basic_form]["quality"],
         :quantity => session[:water_basic_form]["quantity"],
+        :water => session[:water_basic_form]["water"],
         :reliability => session[:water_basic_form]["reliability"]
     }
 
@@ -24,8 +25,8 @@ module ReportHelper
 
     form= get_session_form
 
-    puts "cleaned up"
-    puts form
+    sustainability= get_general_sustainability(form[:water],form[:capital],form[:recurrent], form[:reliability])
+    service_level= get_level_of_service(form[:water],form[:capital], form[:quantity], form[:time])
 
     results = {
       :country => get_country(form[:country]),
@@ -37,7 +38,8 @@ module ReportHelper
       :time => get_time(form[:time]),
       :quantity => get_quantity(form[:quantity]),
       :quality => get_quantity(form[:quality]),
-      :reliability => get_quantity(form[:reliability])
+      :reliability => get_quantity(form[:reliability]),
+      :service_level => service_level
     }
 
     return results
@@ -132,43 +134,69 @@ module ReportHelper
     return reliability
   end
 
-  def get_general_sustainability(water, capital, recurring, reliability)
+  def  get_capEx_benchmark_rating(waterSourceIndex, ex)
+      bench= @@water_values[waterSourceIndex][:capExBench]
+      rating= (ex >= bench[:min] && ex <= bench[:max]) ? 2 : ( (ex < bench[:min]) ? 0.5 : 1  )
 
-
-    #  capExScore= getCapitalExBenchmarkRating(water, capital);
-    #  recExScore= getRecurringExBenchmarkRating(water, recurring);
-    #
-    #  serviceLevel= (4 * db.reliability[params.reliability].value);
-    #
-    #var score= (capExScore +recExScore +serviceLevel);
-    #
-    #var rating= 'Undefined';
-    #var backgroundPosition= 0;
-    #
-    #if(score>=7.5){
-    #    rating = 'Low risk';
-    #backgroundPosition= 0;
-    #}
-    #else if(score>=5 && score <7.5){
-    #    rating = 'Medium risk';
-    #backgroundPosition= -340;
-    #}
-    #
-    #     else if(score>=2 && score < 5){
-    #         rating = 'Low risk';
-    #     backgroundPosition= 0;
-    #     }
-    #          else{
-    #              rating = 'Not sustainable';
-    #          backgroundPosition= -170;
-    #          }
-    #
-    #          return { "rating" : rating, "position" : backgroundPosition };
-    #          }
-
-
+      return rating
   end
 
+  def get_recEx_benchmark_rating(waterSourceIndex, ex)
+      bench= @@water_values[waterSourceIndex][:recExBench]
+      rating= (ex >= bench[:min] && ex <= bench[:max]) ? 2 : ( (ex < bench[:min]) ? 0.5 : 1  )
+
+      return rating
+  end
+
+  def get_general_sustainability(water, capital, recurring, reliability)
+
+    capExScore= get_capEx_benchmark_rating(water, capital)
+    recExScore= get_recEx_benchmark_rating(water, recurring)
+
+    serviceLevel= (4 * @@reliability_values[reliability][:value])
+
+    score= (capExScore + recExScore + serviceLevel);
+
+    rating= 'Undefined'
+    backgroundPosition= 0
+
+    if score>=7.5
+        rating = 'Low risk'
+        backgroundPosition= 0
+    elsif score>=5 && score <7.5
+      rating = 'Medium risk'
+      backgroundPosition= -340
+    elsif score>=2 && score < 5
+      rating = 'Low risk'
+      backgroundPosition= 0
+    else
+      rating = 'Not sustainable'
+      backgroundPosition= -170
+    end
+
+    rating = { :rating => rating, :position => backgroundPosition }
+    return rating
+  end
+
+  def get_level_of_service(water, capital, quantity, time)
+
+    capEx_score= get_capEx_benchmark_rating(water, capital)
+
+    capEx_code= @@capEx_rating_code[capEx_score]
+    quantity_code= quantity+1
+    access_code= time+1
+
+    concatenation= capEx_code.to_s + quantity_code.to_s+ access_code.to_s
+    level_of_service= t ('report.water_basic.a'+concatenation)
+
+    return level_of_service
+  end
+
+  @@capEx_rating_code = {
+    0.5 => "1",
+    2 =>   "2",
+    1 =>   "3"
+  }
 
   @@water_values = [
       { :label => (I18n.t 'form.water_basic.water.answers.a0'), :value => 1,  :recExBench => { :min => 3 , :max => 6 }, :capExBench => { :min => 20, :max => 61 } },
