@@ -412,7 +412,40 @@ a.sbSelector:hover {
 .chzn-container .chzn-results li.active-result {
     padding: 15px 20px;   
 }
+/* info tab */
+.infoTab {
+    clear: both;
+    position: absolute;
+    width: auto;
+    top: 235px;
+    right: -214px;
+}
+.tab {
+    display: block;
+    float: left;
+    width: 32px;
+    height: 47px;
+    text-indent: -1000000px;
+    background: transparent url('/assets/iconInfoTab8.png') no-repeat 0 0;
+}
+.tabContent {
+    float: left;
+    text-align: left;
+    width: 190px;
+    padding: 5px 10px 10px;
+    border-left: 2px solid #ff6633;
+    background: transparent url('/assets/bgInfoTab8.png') repeat 0 0;
 
+    -webkit-border-radius: 0 0 0 5px;
+    -moz-border-radius: 0 0 0 5px;
+    border-radius: 0 0 0 5px;
+}
+.tabContent h3 {
+    color: #d5d7cf;
+}
+.tabContent p {
+    color: #d5d7cf;
+}
 /* q1Country */
 
 .choices {
@@ -443,7 +476,7 @@ a.sbSelector:hover {
     width: 32px;
     height: 47px;
     text-indent: -1000000px;
-    background: transparent url('/assets/images/iconInfoTab8.png') no-repeat 0 0;
+    background: transparent url('/assets/iconInfoTab8.png') no-repeat 0 0;
 }
 .tabContent {
     float: left;
@@ -451,7 +484,7 @@ a.sbSelector:hover {
     width: 190px;
     padding: 5px 10px 10px;
     border-left: 2px solid #ff6633;
-    background: transparent url('/assets/images/bgInfoTab8.png') repeat 0 0;
+    background: transparent url('/assets/bgInfoTab8.png') repeat 0 0;
 
     -webkit-border-radius: 0 0 0 5px;
     -moz-border-radius: 0 0 0 5px;
@@ -465,11 +498,24 @@ a.sbSelector:hover {
 }
 
 /* CONTENT */
-
-    .waterInput li label {
-        background: transparent url('/assets/spriteQ2basicWater24.png') no-repeat 0 0;
+    .waterInput {
+        overflow: hidden;
+        width: 800px;
+        margin: 0 auto;
     }
-    .waterInput li:nth-child(2) label {
+    .waterInput li {
+        float: left;
+        width: 160px;
+    }
+    .waterInput li label {
+        display: block;
+        height: 130px;
+        background: transparent url('/assets/spriteQ2basicWater24.png') no-repeat 0 -135px;
+    }
+    .waterInput li label.ticked {
+        background-position: 0 0;
+    }
+/*    .waterInput li:nth-child(2) label {
         background-position: -62px 0;
     }
     .waterInput li:nth-child(3) label {
@@ -480,6 +526,11 @@ a.sbSelector:hover {
     }
     .waterInput li:nth-child(5) label {
         background-position: -255px 0;
+    }*/
+    .waterInput input {
+        position: absolute;
+        top: -100000px;
+        left: -100000px;
     }
     .main_content .qualityInput {
         width: 292px;
