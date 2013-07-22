@@ -41,8 +41,7 @@ washCost.page = (function(){
         $widthTarget = $('select').next();
         $widthTarget.each(function() {
             $widthTarget.css({'width':'88%'});
-        })
-
+        });
     }
     return {
         init: function() {

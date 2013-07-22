@@ -208,9 +208,9 @@ footer {
 }
 footer .footerWrapper {
     position: relative;
-    width: 945px;
+    width: 988px;
     margin: 0 auto;
-    padding: 20px 40px 40px;
+    padding: 20px 0 40px 40px;
     background-color: #333;
 }
 footer h2 {
@@ -220,7 +220,9 @@ footer h2 {
     margin-right: 20px;
     margin-top: 2px;
     text-transform: uppercase;
-    /*background: transparent url('../assets/arrowUp8.png') no-repeat 0 2px;*/
+}
+footer h2 span {
+    font-weight: normal;
 }
 .progressBar {
     position: relative;
@@ -360,6 +362,7 @@ a.sbSelector:hover {
 }
 .chzn-container .chzn-results {
     z-index: 100;
+    padding-bottom: 10px;
 }
 .chzn-results,
 .sbOptions {
@@ -410,17 +413,54 @@ a.sbSelector:hover {
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
+.chzn-container .chzn-results li.active-result {
+    padding: 15px 20px;
+    width: 90%;
+}
+.chzn-container .chzn-results li.active-result {
+    padding: 15px 20px;
+}
 .notes {
     position: relative;
     overflow: hidden;
-    width: 95%;
+    width: 100%;
     float: left;
-    margin: 10px 0 20px 40px;
+    margin: 10px 0 20px 0;
 }
 .notes p {
     color: #fff;
     font-size: 13px;
     margin-bottom: 5px;
+}
+a.editIcon {
+    display: block;
+    width: 35px;
+    height: 35px;
+    text-indent: -10000px;
+    background: transparent url('/assets/spriteEditIcon24.png') no-repeat 0 0;
+}
+a.editIcon:hover {
+    background-position: 0 -66px;
+}
+a.viewReport,
+a.installButton {
+    display: block;
+    color: #fff;
+    font-size: 11px;
+    font-weight: normal;
+    padding: 3px 5px;
+    background: transparent url('/assets/bgWhiteTransparency.png') repeat 0 0;
+
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+a.viewReport {
+    padding: 10px 22px;
+}
+a.viewReport:hover,
+a.installButton:hover {
+    color: #205F66;
 }
 /* LaunchPage */
 .main .mainWrapper {
@@ -484,12 +524,7 @@ a.sbSelector:hover {
     margin: 0 auto;
     padding: 42px 0 30px 0;
 }
-.calculatorSwitch .pag {
-    clear: both;
-    float: left;
-    overflow: hidden;
-}
-.calculatorSwitch .pag li {
+.qSwitcher li {
     width: 100%;
     margin-bottom: 20px;
     background-color: #fff;
@@ -498,14 +533,17 @@ a.sbSelector:hover {
     -moz-border-radius: 3px;
     border-radius: 3px;
 }
-.calculatorSwitch .pag a {
+.qSwitcher a,
+.main .qSwitcher a {
     display: block;
     padding: 20px 19px;
     color: #333;
+    font-weight: bold;
     text-align: center;
     text-transform: uppercase;
 }
-.calculatorSwitch .pag a:hover {
+.qSwitcher a:hover,
+.main .qSwitcher a:hover {
     color: #ff6633;
     text-decoration: none;
 }
@@ -519,7 +557,6 @@ a.sbSelector:hover {
     position: relative;
     width: 45%;
     float: left;
-    margin-left: 40px;
     min-height: 125px;
 }
 .context .grid {
@@ -537,9 +574,13 @@ a.sbSelector:hover {
 .costSanitation .notes {
     margin-top: -20px;
 }
+.managing .grid {
+    min-height: 145px;
+}
 .main .grid.odd {
     width: 45%;
     padding-left: 8px;
+    float: right;
 }
 .grid li label.hiddenLabel {
     display: block;
@@ -559,27 +600,42 @@ a.sbSelector:hover {
 }
 .grid a.comentAnchor {
     clear: both;
-    width: 100%;
+    width: auto;
     display: block;
     font-size: 14px;
     font-weight: bold;
     color: #73C6D5;
     float: right;
     margin: 10px 48px 13px 0;
+    text-indent: 15px;
     text-align: right;
+    background: transparent url('/assets/spriteIconEditComent8.png') no-repeat 0 2px;
 }
-.main form fieldset {
+.grid a.comentAnchor:hover {
+    color: #fff;
+    background-position: 0 -25px;
+}
+form .main h1 {
+    text-indent: -10000px;
+    font-size: 30px;
+    color: #fff;
+}
+form .main {
+    width: 900px;
+    overflow: hidden;
+    height: auto;
+    margin: 0 auto;
+    padding-bottom: 100px;
+}
+form .main fieldset {
     padding-bottom: 85px;
 }
-.main form legend {
-    margin-bottom: 45px;
-}
-.main form section {
+.main section {
     clear: both;
     width: 100%;
 }
 form .grid h2,
-.main form label {
+.main label {
     display: block;
     width: 85%;
     color: #fff;
@@ -589,11 +645,11 @@ form .grid h2,
 form .grid h2 {
     font-weight: normal;
 }
-.main form input {
+.main input {
     clear: both;
     width: 310px;
 }
-.main form input {
+.main input {
     font-size: 20px;
     color: #217F8B;
     padding: 13px 25px;
@@ -640,9 +696,10 @@ form .grid h2 {
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
-
+#saveButton {
+    margin-top: -6px;
+}
 /* Create an account */
-
 .newAccount form {
     width: 350px;
 }
@@ -720,7 +777,7 @@ form .grid h2 {
 .comment {
     padding-top: 75px;
 }
-.comment button {
+.comment .formButton {
     float: none;
     width: 65%;
     display: block;
@@ -728,6 +785,185 @@ form .grid h2 {
     padding: 20px 25px;
     font-size: 16px;
     font-weight: bold;
+}
+/* advance account settings */
+.editSetting div {
+    width: 50%;
+    float: left;
+}
+.editSetting .odd {
+    width: 49%;
+    float: left;
+}
+.editSetting .changePassword {
+    clear: both;
+    width: 100%;
+}
+.editSetting .changePassword div {
+    width: 33%;
+    float: left;
+}
+.editSetting .changePassword input {
+    width: 80%;
+}
+.editSetting .formButton {
+    float: right;
+    width: 31%;
+    padding: 20px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 25px;
+}
+.changePassword h2,
+.editSetting h1 {
+    display: block;
+    font-size: 20px;
+    font-weight: normal;
+    color: #fff;
+    line-height: 1.5;
+    text-indent: 0;
+    margin-bottom: 20px;
+}
+.main.editSetting legend {
+    margin-bottom: 0;
+}
+.editSetting form input {
+    width: 87%;
+}
+.main.editSetting label {
+    font-size: 11px;
+}
+.editSetting .chzn-container-single .chzn-search {
+    width: 98%;
+}
+/* advance account setting profile */
+.advanceSetting {
+    overflow: hidden;
+    color: #fff;
+    margin-top:80px;
+    padding: 30px 30px 80px 30px;
+    background: #333 url('/assets/bgGradientSetting8.png') repeat-x 0 0;
+}
+.advanceSetting h1,
+.accountReport h2 {
+    font-size: 40px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+.accountReport h2 {
+    color: #fff;
+    margin-bottom: 38px;
+}
+.profile {
+    width: 360px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.profile li {
+    float: left;
+    width: 180px;
+    margin-bottom: 5px;
+}
+.profile li span {
+    display: block;
+    float: left;
+    color: #999;
+    font-size: 11px;
+    font-weight: bold;
+}
+.profile li span.setting {
+    color: #fff;
+    margin-left: 5px;
+}
+.advScheme .qSwitcher li {
+    margin-bottom: 10px;
+}
+.advProfile .formButton {
+    font-weight: bold;
+}
+.advProfile,
+.advScheme {
+    width: 50%;
+    float: left;
+}
+.advScheme {
+    width: 40%;
+    position: relative;
+    overflow: hidden;
+    float: right;
+    border-left: 1px solid #292929;
+}
+.advScheme .qSwitcher {
+    width: 325px;
+    float: right;
+}
+.advProfile .formButton {
+    clear: both;
+    float: left;
+    margin: 0;
+}
+.advScheme .qSwitcher li:last-child {
+    margin-bottom: 0;
+}
+.accountReport {
+    width: auto;
+    padding: 50px 90px;
+}
+.accountReport table {
+    width: 100%;
+    color: #333;
+    border-collapse:collapse;
+}
+.accountReport table thead tr th {
+    text-align: left;
+    color: #205F66;
+}
+.accountReport tr {
+    border-bottom: 1px solid #0C9DA6;
+}
+.accountReport tr th {
+    padding-bottom: 10px;
+}
+.accountReport tr td {
+    overflow: hidden;
+    padding: 15px 0;
+    color: #fff;
+}
+.accountReport tr th:nth-child(3),
+.accountReport tr th:first-child {
+    width: 23%;
+}
+.accountReport tr th:nth-child(2) {
+    width: 40%;
+}
+.accountReport tr th:last-child {
+    width: 15%;
+}
+.accountReport tr td a,
+.accountReport tr td span {
+    display: block;
+    clear: both;
+    float: left;
+}
+.accountReport tr td div {
+    width: 50%;
+    float: left;
+}
+.accountReport tr td ul {
+    width: auto;
+    float: right;
+    margin-right: 20px;
+}
+.accountReport tr td ul li {
+    width: auto;
+    float: left;
+    margin-top: 14px;
+}
+.accountReport tr td .dataTitle {
+    color: #205F66;
+}
+.accountReport li:last-child {
+    margin: 0 0 0 15px;
 }
 
 /*
@@ -834,4 +1070,12 @@ form .grid h2 {
 }
 .ie7 .costSanitation .grid {
     min-height: 245px;
+}
+.ie7 .wrapper {
+    height: 100%;
+    overflow: hidden;
+}
+.ie7 .advanceSetting {
+    margin-top: 0;
+    padding-top: 0;
 }
