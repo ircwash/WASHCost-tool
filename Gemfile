@@ -29,5 +29,7 @@ end
 gem 'jquery-rails'
 gem 'jquery-ui-sass-rails'
 
+gem 'countries'
+
 
 

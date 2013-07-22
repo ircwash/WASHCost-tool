@@ -4,7 +4,7 @@
       <%= t 'form.water_basic.reliability.question' %>
     </h1>
 
-    <%= form_tag({controller: "water_basic", action: "report"}, class: "main_content", id: "waterBasicForm") do %>
+    <%= form_tag({controller: "water_basic", action: "reliability"}, class: "main_content", id: "waterBasicForm") do %>
       <ul class="waterInput">
         <li>
           <%= label_tag("worksAll", nil, class: "tickCheckBox") do %>
@@ -33,6 +33,7 @@
       </ul>
 
 
+        <input type="hidden" name="reliability"/>
         <%= submit_tag((t 'buttons.save'), class: "next_button") %>
     <% end %>
 

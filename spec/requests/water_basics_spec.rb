@@ -10,7 +10,7 @@ describe "WaterBasicFormPages" do
 
     it "should submit to step 2 (water)" do
       visit "/water_basic/country"
-      page.should have_selector("form[action='/water_basic/water']")
+      page.should have_selector("form[action='/water_basic']")
     end
 
     it "should submit as POST only" do

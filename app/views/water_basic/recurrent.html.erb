@@ -4,13 +4,14 @@
       <%= t 'form.shared.recurrent.question' %>
     </h1>
 
-    <%= form_tag({controller: "water_basic", action: "time"}, class: "main_content", id: "waterBasicForm") do %>
+    <%= form_tag({controller: "water_basic", action: "recurrent"}, class: "main_content", id: "waterBasicForm") do %>
       <div class="choices">
         <div class="valueOutput"><span id="recurrentValue">3</span> $</div>
         <div class="valueLabel"><%= t 'form.water_basic.recurrent.value_label' %> (USD)</div>
         <div id="recurrentSlider"></div>
       </div>
 
+      <input type="hidden" name="recurrent"/>
       <%= submit_tag((t 'buttons.next'), class: "next_button") %>
     <% end %>
 

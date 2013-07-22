@@ -1,6 +1,6 @@
 module WaterBasicHelper
 
-
+  include ReportHelper
 
   def set_categories_for_navigation
     categories = {}
@@ -40,6 +40,5 @@ module WaterBasicHelper
   def is_active_category?( name )
     params[:categories].has_key?(name) ? "active" : ""
   end
-
 
 end

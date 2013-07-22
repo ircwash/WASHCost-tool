@@ -4,7 +4,7 @@
       <%= t 'form.water_basic.quantity.question' %>
     </h1>
 
-    <%= form_tag({controller: "water_basic", action: "quality"}, class: "main_content", id: "waterBasicForm") do %>
+    <%= form_tag({controller: "water_basic", action: "quantity"}, class: "main_content", id: "waterBasicForm") do %>
 
       <div class="choices">
         <div id="quantityValue" class="valueOutput">L<%= t 'form.water_basic.quantity.answers.a0' %></div>
@@ -13,6 +13,7 @@
       </div>
 
 
+        <input type="hidden" name="quantity"/>
       <%= submit_tag((t 'buttons.next'), class: "next_button") %>
     <% end %>
 

@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
   def is_valid_country_code(country_code)
     valid= false
 
-    if country_code && country_code.length == 3
+    if country_code && country_code.length == 2
       valid= true
     end
 
@@ -47,8 +47,6 @@ class ApplicationController < ActionController::Base
     session[:pages_complete] =  pages_complete
 
   end
-
-
 
   def is_number(string)
     true if Integer(string) rescue false
