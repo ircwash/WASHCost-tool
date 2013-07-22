@@ -2,15 +2,16 @@
 
 <h1><%= t 'form.shared.recurrent.question' %></h1>
 
-<%= form_tag({controller: "sanitation_basic", action: "providing"}, class: "main_content", id: "waterBasicForm") do %>
+<%= form_tag({controller: "sanitation_basic", action: "recurrent"}, class: "main_content", id: "waterBasicForm") do %>
 
   <div class="choices">
       <div id="recurrentValue" class="valueOutput">3</div>
       <div id="recurrentSlider"></div>
   </div>
 
+  <input type="hidden" name="recurrent"/>
   <%= submit_tag("Next", class: "next_button") %>
-    <a class="skip" href="#"><%= t 'form.skip' %></a>
+  <a class="skip" href="#"><%= t 'form.skip' %></a>
 
 <% end %>
 

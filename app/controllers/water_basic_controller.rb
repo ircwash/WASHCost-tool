@@ -15,7 +15,7 @@ class WaterBasicController < ApplicationController
       country_code= params[:country]
 
       if(is_valid_country_code(country_code))
-        add_to_session_form("country", country_code)
+        add_to_session_form(:water_basic_form, "country", country_code)
         increase_pages_complete
 
         redirect_to :action => "water"
@@ -31,7 +31,7 @@ class WaterBasicController < ApplicationController
 
       if(water_index && water_index.to_i > -1 && water_index.to_i < 4)
 
-        add_to_session_form("water", water_index.to_i)
+        add_to_session_form(:water_basic_form, "water", water_index.to_i)
         increase_pages_complete
 
         redirect_to :action => "population"
@@ -47,7 +47,7 @@ class WaterBasicController < ApplicationController
 
       if(population_index && is_number(population_index) && population_index.to_i > -1 && population_index.to_i < 5)
 
-        add_to_session_form("population", population_index.to_i)
+        add_to_session_form(:water_basic_form, "population", population_index.to_i)
         increase_pages_complete
 
         redirect_to :action => "capital"
@@ -64,7 +64,7 @@ class WaterBasicController < ApplicationController
 
       if(capital_amount && is_number(capital_amount) && capital_amount.to_i > -1)
 
-        add_to_session_form("capital", capital_amount.to_i)
+        add_to_session_form(:water_basic_form, "capital", capital_amount.to_i)
         increase_pages_complete
 
         redirect_to :action => "recurrent"
@@ -81,7 +81,7 @@ class WaterBasicController < ApplicationController
 
       if(recurrent_amount && is_number(recurrent_amount) && recurrent_amount.to_i > -1)
 
-        add_to_session_form("recurrent", recurrent_amount.to_i)
+        add_to_session_form(:water_basic_form, "recurrent", recurrent_amount.to_i)
         increase_pages_complete
 
         redirect_to :action => "time"
@@ -98,7 +98,7 @@ class WaterBasicController < ApplicationController
 
       if(time_index && is_number(time_index) && time_index.to_i > -1 && time_index.to_i < 4)
 
-        add_to_session_form("time", time_index.to_i)
+        add_to_session_form(:water_basic_form, "time", time_index.to_i)
         increase_pages_complete
 
         redirect_to :action => "quantity"
@@ -115,7 +115,7 @@ class WaterBasicController < ApplicationController
 
       if(quantity_index && is_number(quantity_index) && quantity_index.to_i > -1 && quantity_index.to_i < 4)
 
-        add_to_session_form("quantity", quantity_index.to_i)
+        add_to_session_form(:water_basic_form, "quantity", quantity_index.to_i)
         increase_pages_complete
 
         redirect_to :action => "quality"
@@ -130,7 +130,7 @@ class WaterBasicController < ApplicationController
 
       if(quality_index && is_number(quality_index) && quality_index.to_i > -1 && quality_index.to_i < 4)
 
-        add_to_session_form("quality", quality_index.to_i)
+        add_to_session_form(:water_basic_form, "quality", quality_index.to_i)
         increase_pages_complete
 
         redirect_to :action => "reliability"
@@ -145,7 +145,7 @@ class WaterBasicController < ApplicationController
 
       if(reliability_index && is_number(reliability_index) && reliability_index.to_i > -1 && reliability_index.to_i < 4)
 
-        add_to_session_form("reliability", reliability_index.to_i)
+        add_to_session_form(:water_basic_form, "reliability", reliability_index.to_i)
         increase_pages_complete
 
         redirect_to :action =>"report"
@@ -163,7 +163,7 @@ class WaterBasicController < ApplicationController
 
     flash[:results] = results
 
-    render layout: "report"
+    render layout: "report_water_basic"
   end
 
 end
