@@ -5,28 +5,28 @@
     </h1>
 
     <%= form_tag({controller: "water_basic", action: "reliability"}, class: "main_content", id: "waterBasicForm") do %>
-      <ul class="waterInput">
+      <ul class="reliabilityInput">
         <li>
           <%= label_tag("worksAll", nil, class: "tickCheckBox") do %>
-              <%= t 'form.water_basic.reliability.answers.a0' %>
+            <span><%= t 'form.water_basic.reliability.answers.a0' %></span>
             <%= radio_button_tag("r_reliability", 0, false, id: "worksAll") %>
           <% end %>
         </li>
         <li>
-          <%= label_tag("worksMostly", nil, class: "tickCheckBox") do %>
-              <%= t 'form.water_basic.reliability.answers.a1' %>
+          <%= label_tag("worksMostly", nil, class: "tickCheckBox relia_01") do %>
+            <span><%= t 'form.water_basic.reliability.answers.a1' %></span>
             <%= radio_button_tag("r_reliability", 1, id: "worksMostly") %>
           <% end %>
         </li>
         <li>
-          <%= label_tag("breakDown", nil, class: "tickCheckBox") do %>
-              <%= t 'form.water_basic.reliability.answers.a2' %>
+          <%= label_tag("breakDown", nil, class: "tickCheckBox relia_02") do %>
+            <span><%= t 'form.water_basic.reliability.answers.a2' %></span>
             <%= radio_button_tag("r_reliability", 2, id: "breakDown") %>
           <% end %>
         </li>
         <li>
-          <%= label_tag("notWorking", nil, class: "tickCheckBox") do %>
-              <%= t 'form.water_basic.reliability.answers.a3' %>
+          <%= label_tag("notWorking", nil, class: "tickCheckBox relia_03") do %>
+            <span><%= t 'form.water_basic.reliability.answers.a3' %></span>
             <%= radio_button_tag("r_reliability", 3, id: "notWorking") %>
           <% end %>
         </li>
