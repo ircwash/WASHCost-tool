@@ -15,7 +15,7 @@
   <meta name="viewport" content="width=device-width">
 
   <link href="/assets/global_advanced_select_page.css" media="all" rel="stylesheet" type="text/css">
-  <script src="/assets/modernizr.custom.05838.js" type="text/javascript"></script>
+  <script src="/assets/modernizr.js" type="text/javascript"></script>
 
 </head>
 <body class="launchPage">
@@ -36,15 +36,7 @@
       <li><a class="sign" href="#">Sign in</a></li>
     </ul>
   </div>
-  <!--     <nav>
-          <ul>
-              <li><a href="#">Context</a></li>
-              <li><a href="#">Managing</a></li>
-              <li><a href="#">Technology</a></li>
-              <li><a href="#">Cost</a></li>
-              <li><a href="#">Service</a></li>
-          </ul>
-      </nav> -->
+
   <section class="main">
     <div class="mainWrapper">
       <head>
@@ -55,7 +47,7 @@
           <li class="firstChild">
             <a class="active" href="#">
               <figure>
-                <img src="/assets/iconWaterAdvance8.png" alt="Advance water icon" />
+                <img src="/assets/iconWaterAdvance8.png" alt="Advance water icon" onclick="submitForm('water')"/>
               </figure>
               <figcaption>Water</figcaption>
             </a>
@@ -63,7 +55,7 @@
           <li class="lastChild">
             <a href="#">
               <figure>
-                <img src="/assets/iconSanitationAdvance8.png" alt="Advance water icon" />
+                <img src="/assets/iconSanitationAdvance8.png" alt="Advance water icon"onclick="submitForm('sanitation')" />
               </figure>
               <figcaption>Sanitation</figcaption>
             </a>
@@ -87,9 +79,22 @@
       </div>
     </div>
   </footer>
+  <form action="/select_advanced/" method="post" id="advancedSelectorForm">
+    <input type="hidden" name="targetForm" id="targetFormType"/>
+  </form>
   <script src="/assets/jquery-1.9.1.js" type="text/javascript"></script>
   <script src="/assets/chosen.jquery.js" type="text/javascript"></script>
   <script src="/assets/application.js" type="text/javascript"></script>
+  <script>
+
+    function submitForm(targetFormType)
+    {
+        $('#targetFormType').val(targetFormType);
+        $('#advancedSelectorForm').submit();
+    }
+
+
+  </script>
 </div>
 </body>
 </html>

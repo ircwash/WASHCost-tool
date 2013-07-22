@@ -162,7 +162,7 @@ img {
 .languageSwitcher li a.active {
     display: block;
     padding-right: 23px;
-    background: transparent url('/assets/spriteArrow8.png') no-repeat 100% -295px;
+    background: transparent url('../img/spriteArrow8.png') no-repeat 100% -295px;
 }
 nav {
     padding: 25px 15px;
@@ -303,7 +303,7 @@ footer h2 {
     padding: 13px 25px;
     color: #217F8B;
     text-decoration: none;
-    background: transparent url('/assets/bgWhiteTransparency.png') repeat 0 0;
+    background: transparent url('../img/bgWhiteTransparency.png') repeat 0 0;
 
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -316,7 +316,7 @@ footer h2 {
 }
 .chzn-container-single .chzn-single div b {
     margin: 10px 0 20px 0;
-    background: transparent url('/assets/spriteArrow8.png') no-repeat 85% -187px;
+    background: transparent url('../img/spriteArrow8.png') no-repeat 85% -187px;
 }
 .chzn-container-active.chzn-with-drop .chzn-single div b {
     background-position: 0 -237px;
@@ -353,7 +353,7 @@ a.sbSelector:hover {
 }
 .chzn-container-single .chzn-single {
     padding: 13px 25px;
-    background: transparent url('/assets/bgWhiteTransparency.png') repeat 0 0;
+    background: transparent url('../img/bgWhiteTransparency.png') repeat 0 0;
 }
 a.sbSelector:hover {
     text-decoration: none;
@@ -404,7 +404,7 @@ a.sbSelector:hover {
     padding: 13px 25px;
     color: #217F8B;
     text-decoration: none;
-    background: transparent url('/assets/bgWhiteTransparency.png') repeat 0 0;
+    background: transparent url('../img/bgWhiteTransparency.png') repeat 0 0;
 
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -461,10 +461,10 @@ a.sbSelector:hover {
 }
 .calculatorSwitch li a:hover {
     text-decoration: none;
-    background: transparent url('/assets/iconHover24.png') no-repeat 0 0;
+    background: transparent url('../img/iconHover24.png') no-repeat 0 0;
 }
 .calculatorSwitch li a.active {
-    background: transparent url('/assets/iconSelect24.png') no-repeat 0 0;
+    background: transparent url('../img/iconSelect24.png') no-repeat 0 0;
 }
 .calculatorSwitch li figcaption {
     text-align: center;
@@ -555,7 +555,7 @@ a.sbSelector:hover {
     width: 30px;
     height: 30px;
     text-indent: -10000px;
-    background: transparent url('/assets/iconInfo8.png') no-repeat 95% top;
+    background: transparent url('../img/iconInfo8.png') no-repeat 95% top;
 }
 .grid a.comentAnchor {
     clear: both;
@@ -600,7 +600,7 @@ form .grid h2 {
     margin: 0 0 20px 0;
     background-color: transparent;
     border: none;
-    background: transparent url('/assets/bgWhiteTransparency.png') repeat 0 0;
+    background: transparent url('../img/bgWhiteTransparency.png') repeat 0 0;
 
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -653,7 +653,7 @@ form .grid h2 {
     font-size: 11px;
     text-indent: 50px;
     padding-top: 10px;
-    background: transparent url('/assets/bgLabelTick24.png') no-repeat 0 0;
+    background: transparent url('../img/bgLabelTick24.png') no-repeat 0 0;
 }
 .newAccount .checkPolicy a {
     font-size: 11px;
@@ -712,7 +712,7 @@ form .grid h2 {
     margin: 0 0 35px 0;
     background-color: transparent;
     border: none;
-    background: transparent url('/assets/bgWhiteTransparency.png') repeat 0 0;
+    background: transparent url('../img/bgWhiteTransparency.png') repeat 0 0;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;

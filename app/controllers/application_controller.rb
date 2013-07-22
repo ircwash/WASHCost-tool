@@ -7,7 +7,17 @@ class ApplicationController < ActionController::Base
 
 
   def select_advanced
+    if request.post?
 
+      if(params[:targetForm].present?)
+        targetForm= params[:targetForm]
+        if targetForm== 'water' || targetForm=='sanitation'
+
+            redirect_to :controller => targetForm+"_advanced", :action => "index"
+
+        end
+      end
+    end
 
   end
 
