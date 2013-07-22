@@ -5,6 +5,12 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
   before_filter :init_vars
 
+
+  def select_advanced
+
+
+  end
+
   @@pages= nil
 
   def pages
