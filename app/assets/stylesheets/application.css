@@ -1,3 +1,10 @@
+/*-------------------------------------------
+PROJECT: WashCost - Application.css
+URL: 
+Created: July 22nd, 2013
+Author: Brilliant Basics
+--------------------------------------------*/
+
 /* reset */
 html {
     height: 100%;
@@ -7,13 +14,10 @@ html {
 body{
     margin: 0;
     padding: 0;
-    font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font: 12px Arial, Helvetica, sans-serif;
     height: 100%;
+    background-color: #333333;
     -webkit-font-smoothing: antialiased;
-    background-color: #aaa;
-}
-select{
-    width:350px;
 }
 footer {
     margin: 0;
@@ -75,28 +79,35 @@ fieldset {
     height: 95%;
     max-width: 1025px;
     margin: 0 auto;
+    background-color: #fff; 
+}
+
+#outer_container_report {
+    position: relative;
+    max-width: 1025px;
+    margin: 0 auto;
     background-color: #fff;
 }
+
 .bgGradient {
     background: #017faf; /* Old browsers */
     /* IE9 SVG, needs conditional override of 'filter' to 'none' */
-
-    background-image: -webkit-radial-gradient(center 1000px, circle , #06B2B1 30%, #0279AE 100%); /* New WebKit syntax */
-    background-image: -moz-radial-gradient(center 1000px, circle,  #06B2B1 30%, #0279AE 100%);
-    background-image: -ms-radial-gradient(center 1000px, circle,  #06B2B1 30%, #0279AE 100%); /* IE10+ */
-    background-image: -o-radial-gradient(center 1000px, circle,  #06B2B1 30%, #0279AE 100%); /* Opera (13?) */
-
-
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAxN2ZhZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjMwJSIgc3RvcC1jb2xvcj0iIzAyOTJiMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjYzJSIgc3RvcC1jb2xvcj0iIzAzYWNiMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwNGFlYjMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  #017faf 0%, #0292b2 30%, #03acb2 63%, #04aeb3 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#017faf), color-stop(30%,#0292b2), color-stop(63%,#03acb2), color-stop(100%,#04aeb3)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #017faf 0%,#0292b2 30%,#03acb2 63%,#04aeb3 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #017faf 0%,#0292b2 30%,#03acb2 63%,#04aeb3 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #017faf 0%,#0292b2 30%,#03acb2 63%,#04aeb3 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #017faf 0%,#0292b2 30%,#03acb2 63%,#04aeb3 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#017faf', endColorstr='#04aeb3',GradientType=0 ); /* IE6-8 */
 }
 .header {
     background-color: #333;
     padding: 14px 35px;
 }
-
 .header ul {
-    font-weight: bold;
     float: right;
-    margin-top: -10px;
+    margin-top: 10px;
 }
 .header li {
     float: left;
@@ -109,7 +120,6 @@ fieldset {
     color: #ff6633;
 }
 .header .languageSwitcher {
-    font-weight: normal;
     margin: 0;
     padding: 0;
 }
@@ -123,7 +133,7 @@ fieldset {
 .languageSwitcher li a.active {
     display: block;
     padding-right: 23px;
-    background: transparent url('/assets/spriteArrow8.png') no-repeat 100% -295px;
+    background: transparent url('../img/spriteArrow8.png') no-repeat 100% -295px;
 }
 nav {
     position: relative;
@@ -158,23 +168,20 @@ nav {
 }
 .main li.content a {
     display: block;
-    margin-left: 292px;
+    float: right;
 }
 .main li.cost a {
-
-    margin-left: 35px;
     display: block;
+    margin-left: 55px;
 }
-
 .main li.service a {
-    margin-left: -250px;
     display: block;
-
+    margin-left: -195px;
 }
 .main li ul {
     clear: both;
     overflow: hidden;
-    background: #359ec0 url('/assets/spriteArrow8.png') no-repeat 102% -490px;
+    background: #359ec0 url('../img/spriteArrow8.png') no-repeat 102% -490px;
 }
 .main li li {
     width: auto;
@@ -183,7 +190,7 @@ nav {
 .main li li a.done {
     display: block;
     color: #fff;
-    background: transparent url('/assets/spriteArrow8.png') no-repeat 100% -384px;
+    background: transparent url('../img/spriteArrow8.png') no-repeat 100% -384px;
 }
 .navWrapper .main li li a {
     display: block;
@@ -207,7 +214,7 @@ nav {
     width: 25px;
     height: 30px;
     margin-top: 25px;
-    background: transparent url('/assets/spriteArrow8.png') no-repeat 0 -101px;
+    background: transparent url('../img/spriteArrow8.png') no-repeat 0 -101px;
     text-indent: -10000px;
 }
 .pag .pagPrev {
@@ -224,7 +231,7 @@ footer {
     left: 0;
     bottom: 0;
     overflow: hidden;
-    background-color: #aaa;
+    background-color: #333;
 }
 footer .footerWrapper {
     position: relative;
@@ -240,7 +247,7 @@ footer h2 {
     margin-right: 20px;
     margin-top: 2px;
     text-transform: uppercase;
-    background: transparent url('/assets/arrowUp8.png') no-repeat 0 2px;
+    background: transparent url('../img/arrowUp8.png') no-repeat 0 2px;
 }
 .progressBar {
     position: relative;
@@ -305,34 +312,55 @@ footer h2 {
     z-index: 100;
     display: inline-block;
     position: absolute;
-    width: 800px;
+    width: 713px;
     top: 8%;
-    left: 10%;
+    left: 15%;
     font-size: 40px;
     font-weight: normal;
     line-height: 1.25;
     margin: 0 auto;
     color: #fff;
 }
+.chzn-container-single .chzn-single span,
+.chzn-container-single .chzn-default,
 .sbSelector {
     display: block;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
     color: #217F8B;
     text-decoration: none;
-    padding: 8px 15px;
-    background: transparent url('/assets/bgWhiteTransparency.png') repeat 0 0;
+    background: transparent url('../img/bgWhiteTransparency.png') repeat 0 0;
 
-    -webkit-border-radius: 5px 5px 0 0;
-    -moz-border-radius: 5px 5px 0 0;
-    border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.chzn-container-single .chzn-search {
+    background-color: #000;
+    border-left: 0;
+    border-right: 0;
+}
+.chzn-search input {
+    border-sizing: none;
+}
+.chzn-results {
+    border: none;
+    width: 99%;
+}
+.chzn-container.chzn-with-drop .chzn-drop {
+    width: 100%;
+}
+.chzn-container-single .chzn-single span {
+    background: none;
 }
 a.sbSelector:hover {
     text-decoration: none;
 }
-.sbHolder {
+.chzn-container-single .chzn-single div b {
     margin: 10px 0 20px 0;
+    background: transparent url('../img/spriteArrow8.png') no-repeat 85% -184px;
 }
+.chzn-results,
 .sbOptions {
     overflow-y: scroll;
     background-color: #333333;
@@ -342,19 +370,43 @@ a.sbSelector:hover {
     -moz-border-radius: 0 0 5px 5px;
     border-radius: 0 0 5px 5px;
 }
+.chzn-results li,
 .sbOptions li {
     clear: both;
     float: left;
     width: 100%;
 }
+.chzn-container .chzn-results .highlighted,
 .sbOptions li:hover {
+    width: 95%;
     background-color: #5C5C5C;
 }
+.chzn-results li,
 .sbOptions a {
     display: block;
     color: #fff;
     text-align: left;
     padding: 15px 20px;
+}
+.chzn-container-active .chzn-single {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 13px 25px;
+    color: #217F8B;
+    text-decoration: none;
+    background: transparent url('../img/bgWhiteTransparency.png') repeat 0 0;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.chzn-container .chzn-results li.active-result {
+    padding: 15px 20px;
+    width: 90%;
+}
+.chzn-container .chzn-results li.active-result {
+    padding: 15px 20px;   
 }
 
 /* q1Country */
@@ -362,8 +414,6 @@ a.sbSelector:hover {
 .choices {
     width: 520px;
     margin: 0 auto;
-    font-size: 11px;
-    font-weight: bold;
 }
 .choices img {
     float: left;
@@ -373,262 +423,6 @@ a.sbSelector:hover {
 .choices #country {
     width: 365px;
     float: left;
-}
-
-
-/* Social Navigation */
-.socialNav {
-    width: 90%;
-    float: right;
-    padding: 20px 0;
-}
-.socialNav h1 {
-    text-align: center;
-    padding-right: 100px;
-}
-.socialNav ul {
-    float: right;
-    margin: -25px 60px 0 0;
-}
-.socialNav li {
-    float: left;
-    background: transparent url('/assests/spriteShareMenu8.png') no-repeat 0 0;
-}
-.socialNav li:first-child {
-    margin-right: 15px;
-    background-position: 0 -38px;
-}
-.socialNav li a {
-    display: block;
-    padding-left: 20px;
-}
-
-/* Radios */
-.main_content ul {
-    overflow: hidden;
-    width: 335px;
-    margin: 0 auto;
-}
-.main_content li {
-    float: left;
-    position: relative;
-    width: 60px;
-    /*height: 62px;*/
-    margin-right: 3px;
-    padding-bottom: 20px;
-}
-.main_content li label {
-    display: block;
-    width: 100%;
-    min-height: 70px;
-}
-.main_content li label input {
-    display: block;
-    position: absolute;
-    top: -100000px;
-    left: -100000px;
-}
-.main_content li label span {
-    display: block;
-    position: absolute;
-    width: 95%;
-    top: 65px;
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 12px;
-    text-align: center;
-    word-wrap: break-word;
-}
-
-
-
-/* CONTENT */
-
-.waterInput li label {
-    background: transparent url('/assets/spriteQ2basicWater24.png') no-repeat 0 0;
-}
-.waterInput li:nth-child(2) label {
-    background-position: -62px 0;
-}
-.waterInput li:nth-child(3) label {
-    background-position: -127px 0;
-}
-.waterInput li:nth-child(4) label {
-    background-position: -193px 0;
-}
-.waterInput li:nth-child(5) label {
-    background-position: -255px 0;
-}
-.main_content .qualityInput {
-    width: 292px;
-}
-.qualityInput li {
-    width: 70px;
-    height: 71px;
-}
-.main_content .reliabilityInput {
-    width: 252px;
-}
-.qualityInput li label {
-    background: transparent url('/assets/inputQualityWater8.png') no-repeat 0 0;
-}
-.reliabilityInput li label {
-    background: transparent url('/assets/spriteRatioReliability8.png')no-repeat 0 0;
-}
-.reliabilityInput li:nth-child(2) label {
-    background-position: -62px 0;
-}
-.reliabilityInput li:nth-child(3) label {
-    background-position: -127px 0;
-}
-.reliabilityInput li:nth-child(4) label {
-    background-position: -193px 0;
-}
-.main_content .latrineInput {
-    width: 612px;
-    overflow: hidden;
-    margin-bottom: 50px;
-}
-.main_content .latrineInput li {
-    width: 99px;
-}
-.latrineInput li label {
-    background: transparent url('/assests/inputTraditionalLatrine8.png') no-repeat 0 0;
-}
-.latrineInput li label span {
-    top: 47px;
-}
-.main_content .houseInput {
-    width: 206px;
-}
-.main_content .houseInput li {
-    width: 100px;
-}
-.houseInput li label {
-    background: transparent url('/assests/spriteInputLatrines8.png') no-repeat 0 0;
-}
-.houseInput li:last-child label {
-    background-position: 0 -80px;
-}
-.main_content .houseInput label span {
-    top: 50px;
-    width: 100%;
-}
-.main_content .impermeability {
-    width: 126px;
-    overflow: hidden;
-    padding-bottom: 50px;
-}
-.impermeability li label {
-    background: transparent url('/assests/spriteInputSlab8.png') no-repeat 0 0;
-}
-.impermeability li label span {
-    top: 80px;
-}
-.impermeability li:last-child label {
-    background-position: 0 -74px;
-}
-.main_content .disposalInput {
-    width: 370px;
-}
-.main_content .disposalInput li {
-    width: 120px;
-}
-.main_content .disposalInput label {
-    min-height: 135px;
-}
-.main_content .disposalInput label span {
-    top: 80px;
-}
-.disposalInput li label {
-    background: transparent url('/assests/spriteInputDisposal8.png') no-repeat 0 0;
-}
-.disposalInput li:nth-child(2) label {
-    background-position: -132px 0;
-}
-.disposalInput li:nth-child(3) label {
-    background-position: -283px 0;
-}
-.main_content .familyInput {
-    width: 381px;
-}
-.main_content .familyInput li {
-    width: 124px;
-}
-.familyInput li label {
-    background: transparent url('/assests/spriteInputFamilyMembers8.png') no-repeat 0 0;
-}
-.familyInput li:nth-child(2) label {
-    background-position: -142px 0;
-}
-.familyInput li:nth-child(3) label {
-    background-position: -290px 0;
-}
-.main_content .familyInput label span {
-    top: 75px;
-}
-.main_content .reliableInput {
-    width: 441px;
-}
-.reliableInput li {
-    width: 144px;
-}
-.reliableInput li label {
-    background: transparent url('/assests/inputLactrine8.png') no-repeat 0 0;
-}
-.reliableInput li label span {
-    top: 75px;
-}
-.ticked {
-    -moz-opacity: 0.70;
-    opacity: 0.70;
-    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
-}
-
-
-
-.main_content .valueOutput{
-    width: auto;
-    margin: 0 auto;
-    height: 30px;
-    color: #fff;
-    font-size: 24px;
-
-}
-.main_content .valueLabel{
-    height: 80px;
-    color: #5DBFC3;
-    font-size: 11px;
-}
-.ui-slider {
-    width: 525px;
-}
-
-
-
-
-.social {
-    width: auto;
-    float: right;
-}
-.social li {
-    float: left;
-    width: auto;
-    padding-left: 23px;
-    border: 1px solid #BFBFBF;
-    background: transparent url('/assests/icon-social8.png') no-repeat 0 0;
-}
-.social li:first-child {
-    margin-right: 15px;
-    background-position: 7px 7px;
-}
-.social li:last-child {
-    background-position: 7px -56px;
-}
-.social li a {
-    display: block;
-    color: #BFBFBF;
-    padding: 8px 10px;
 }
 
 /* info tab */
@@ -645,7 +439,7 @@ a.sbSelector:hover {
     width: 32px;
     height: 47px;
     text-indent: -1000000px;
-    background: transparent url('/assets/iconInfoTab8.png') no-repeat 0 0;
+    background: transparent url('../img/iconInfoTab8.png') no-repeat 0 0;
 }
 .tabContent {
     float: left;
@@ -653,7 +447,7 @@ a.sbSelector:hover {
     width: 190px;
     padding: 5px 10px 10px;
     border-left: 2px solid #ff6633;
-    background: transparent url('/assets/bgInfoTab8.png') repeat 0 0;
+    background: transparent url('../img/bgInfoTab8.png') repeat 0 0;
 
     -webkit-border-radius: 0 0 0 5px;
     -moz-border-radius: 0 0 0 5px;
@@ -667,218 +461,406 @@ a.sbSelector:hover {
 }
 
 
-/* Social Navigation */
-.socialNav {
-    width: 90%;
-    float: right;
-    padding: 20px 0;
-}
-.socialNav h1 {
-    text-align: center;
-    padding-right: 100px;
-}
-.socialNav ul {
-    float: right;
-    margin: -25px 60px 0 0;
-}
-.socialNav li {
-    float: left;
-    background: transparent url('/assets/spriteShareMenu8.png') no-repeat 0 0;
-}
-.socialNav li:first-child {
-    margin-right: 15px;
-    background-position: 0 -38px;
-}
-.socialNav li a {
-    display: block;
-    padding-left: 20px;
-}
+    /* Social Navigation */
+    .socialNav {
+        width: 90%;
+        float: right;
+        padding: 20px 0;
+    }
+    .socialNav h1 {
+        text-align: center;
+        padding-right: 100px;
+    }
+    .socialNav ul {
+        float: right;
+        margin: -25px 60px 0 0;
+    }
+    .socialNav li {
+        float: left;
+        background: transparent url('../img/spriteShareMenu8.png') no-repeat 0 0;
+    }
+    .socialNav li:first-child {
+        margin-right: 15px;
+        background-position: 0 -38px;
+    }
+    .socialNav li a {
+        display: block;
+        padding-left: 20px;
+    }
 
 
-/* sign in */
 
-.wrapperLogIn {
-    position: relative;
-    width: 649px;
-    overflow: hidden;
-    margin: 0 auto;
-    padding: 10px 110px 20px;
-    background-color: #fff;
-}
-.wrapperLogIn section {
-    padding: 20px;
-    margin-bottom: 25px;
-    background-color: #e8e7e7;
-}
-.wrapperLogIn h1 {
-    font-size: 30px;
-    text-align: center;
-}
-.wrapperLogIn p {
-    text-align: center;
-}
-.wrapperLogIn p span {
-    font-weight: bold;
-}
-.wrapperLogIn h1,
-.wrapperLogIn p {
-    color: #808283;
-}
-.wrapperLogIn p {
-    margin-bottom: 20px;
-}
-.signAth {
-    width: 45%;
-    float: left;
-    border-right: 1px solid #c2c2c2;
-}
-.signAth li a {
-    display: block;
-    clear: both;
-    width: 220px;
-    text-align: center;
-    padding: 10px;
-    border: 1px solid #bacfd4;
-    background-color: #edeced;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-}
-.mainForm {
-    padding-top: 20px;
-    overflow: hidden;
-}
-.mainForm li {
-    margin-bottom: 20px;
-}
-.mainForm li:last-child {
-    margin-bottom: 0;
-}
-#form {
-    width: 50%;
-    float: right;
-}
-.signVia {
-    clear: both;
-    display: block;
-    width: 220px;
-    text-align: center;
-    background-color: #edeced;
-    margin: 0 auto;
-    padding: 10px 20px;
-    border: 1px solid #bacfd4;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-}
-#form legend {
-    display: none;
-}
-#form label {
-    clear: both;
-    margin-top: 5px;
-}
-#form label,
-#form input {
-    display: block;
-    float: left;
-}
-#form input {
-    border: none;
-    padding: 5px;
-    width: 210px;
-    float: right;
-    margin-bottom: 10px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    background-color: #fff;
-}
-#form button {
-    margin-top: 20px;
-    border: none;
-    float: right;
-    font-size: 14px;
-    text-align: center;
-    border: 1px solid #bacfd4;
-    padding: 10px 20px;
-    background-color: #edeced;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    background-color: #fff;
-}
-/* Create an account */
-.createAccount {
-    margin-top: 40px;
-}
-.createAccount #logIn {
-    width: 100%;
-}
-.wrapperLogIn .createAccount {
-    background-color: #fff;
-}
-.wrapperLogIn .createAccount {
-    padding: 0;
-}
-.createAccount .formWrapper {
-    overflow: hidden;
-    padding: 20px 42px 20px 45px;
-    background-color: #E8E7E7;
-}
-.createAccount #form {
-    float: none;
-    width: 484px;
-    margin: 0 auto;
-}
-.createAccount #form label {
-    float: left;
-}
-.createAccount #form input {
-    width: 260px;
-    float: right;
-}
-.createAccount #form .checkBox {
-    clear: both;
-    float: left;
-    width: auto;
-}
-.createAccount #form .terms {
-    font-size: 13px;
-    margin-top: 30px;
-}
-.createAccount #form .terms a {
-    text-decoration: underline;
-}
-.createAccount #form button {
-    float: right;
-    background-color: #EEf0f0;
-}
-/* error */
-p.errorMsg {
-    clear: both;
-    float: left;
-    color: #ff0000;
-    margin-bottom: 0;
-}
-.error {
-    border-color: #ff0000;
-}
+/* CONTENT */
 
-/*
-*
-*   IE - Fixes
-*
-*/
-.ie8 .mainContent h1,
-.ie7 .mainContent h1 {
-    display: block;
-    position: relative;
-    top: 0;
-    left: 0;
-    margin-bottom: 20px;
-}
-.ie8 .mainContent .main_content,
-.ie7 .mainContent .main_content {
-    display: block;
-}
+    .waterInput li label {
+        background: transparent url('../img/spriteInputWater8.png') no-repeat 0 0;
+    }
+    .waterInput li:nth-child(2) label {
+        background-position: -62px 0;
+    }
+    .waterInput li:nth-child(3) label {
+        background-position: -127px 0;
+    }
+    .waterInput li:nth-child(4) label {
+        background-position: -193px 0;
+    }
+    .waterInput li:nth-child(5) label {
+        background-position: -255px 0;
+    }
+    .main_content .qualityInput {
+        width: 292px;
+    }
+    .qualityInput li {
+        width: 70px;
+        height: 71px;
+    }
+    .main_content .reliabilityInput {
+        width: 252px;
+    }
+    .qualityInput li label {
+        background: transparent url('../img/inputQualityWater8.png') no-repeat 0 0;
+    }
+    .reliabilityInput li label {
+        background: transparent url('../img/spriteRatioReliability8.png')no-repeat 0 0;
+    }
+    .reliabilityInput li:nth-child(2) label {
+        background-position: -62px 0;
+    }
+    .reliabilityInput li:nth-child(3) label {
+        background-position: -127px 0;
+    }
+    .reliabilityInput li:nth-child(4) label {
+        background-position: -193px 0;
+    }
+    .main_content .latrineInput {
+        width: 612px;
+        overflow: hidden;
+        margin-bottom: 50px;
+    }
+    .main_content .latrineInput li {
+        width: 99px;
+    }
+    .latrineInput li label {
+        background: transparent url('../img/inputTraditionalLatrine8.png') no-repeat 0 0;
+    }
+    .latrineInput li label span {
+        top: 47px;
+    }
+    .main_content .houseInput {
+        width: 206px;
+    }
+    .main_content .houseInput li {
+        width: 100px;
+    }
+    .houseInput li label {
+        background: transparent url('../img/spriteInputLatrines8.png') no-repeat 0 0;
+    }
+    .houseInput li:last-child label {
+        background-position: 0 -80px;
+    }
+    .main_content .houseInput label span {
+        top: 50px;
+        width: 100%;
+    }
+    .main_content .impermeability {
+        width: 126px;
+        overflow: hidden;
+        padding-bottom: 50px;
+    }
+    .impermeability li label {
+        background: transparent url('../img/spriteInputSlab8.png') no-repeat 0 0;
+    }
+    .impermeability li label span {
+        top: 80px;
+    }
+    .impermeability li:last-child label {
+        background-position: 0 -74px;
+    }
+    .main_content .disposalInput {
+        width: 370px;
+    }
+    .main_content .disposalInput li {
+        width: 120px;
+    }
+    .main_content .disposalInput label {
+        min-height: 135px;
+    }
+    .main_content .disposalInput label span {
+        top: 80px;
+    }
+    .disposalInput li label {
+        background: transparent url('../img/spriteInputDisposal8.png') no-repeat 0 0;
+    }
+    .disposalInput li:nth-child(2) label {
+        background-position: -132px 0;
+    }
+    .disposalInput li:nth-child(3) label {
+        background-position: -283px 0;
+    }
+    .main_content .familyInput {
+        width: 381px;
+    }
+    .main_content .familyInput li {
+       width: 124px;
+    }
+    .familyInput li label {
+        background: transparent url('../img/spriteInputFamilyMembers8.png') no-repeat 0 0;
+    }
+    .familyInput li:nth-child(2) label {
+        background-position: -142px 0;
+    }
+    .familyInput li:nth-child(3) label {
+        background-position: -290px 0;
+    }
+    .main_content .familyInput label span {
+        top: 75px;
+    }
+    .main_content .reliableInput {
+        width: 441px;
+    }
+    .reliableInput li {
+        width: 144px;
+    }
+    .reliableInput li label {
+        background: transparent url('../img/inputLactrine8.png') no-repeat 0 0;
+    }
+    .reliableInput li label span {
+        top: 75px;
+    }
+    .ticked {
+        -moz-opacity: 0.70;
+        opacity: 0.70;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+    }
+/*    .main_content .next_button {
+        clear: both;
+        display: block;
+        margin: 25px auto;
+    }*/
+    .main_content .valueOutput{
+        width: auto;
+        margin: 0 auto;
+        height: 20px;
+    }
+    .main_content .valueLabel{
+        height: 80px;
+        color: #333;
+    }
+    .ui-slider {
+        width: 525px;
+    }
+
+
+
+
+    .social {
+        width: auto;
+        float: right;
+    }
+    .social li {
+        float: left;
+        width: auto;
+        padding-left: 23px;
+        border: 1px solid #BFBFBF;
+        background: transparent url('../img/icon-social8.png') no-repeat 0 0;
+    }
+    .social li:first-child {
+        margin-right: 15px;
+        background-position: 7px 7px;
+    }
+    .social li:last-child {
+        background-position: 7px -56px;
+    }
+    .social li a {
+        display: block;
+        color: #BFBFBF;
+        padding: 8px 10px;
+    }
+
+    /* sign in */
+
+    .wrapperLogIn {
+        position: relative;
+        width: 649px;
+        overflow: hidden;
+        margin: 0 auto;
+        padding: 10px 110px 20px;
+        background-color: #fff;
+    }
+    .wrapperLogIn section {
+        padding: 20px;
+        margin-bottom: 25px;
+        background-color: #e8e7e7;
+    }
+    .wrapperLogIn h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+    .wrapperLogIn p {
+        text-align: center;
+    }
+    .wrapperLogIn p span {
+        font-weight: bold; 
+    }
+    .wrapperLogIn h1,
+    .wrapperLogIn p {
+        color: #808283;
+    }
+    .wrapperLogIn p {
+        margin-bottom: 20px;
+    }
+    .signAth {
+        width: 45%;
+        float: left;
+        border-right: 1px solid #c2c2c2;
+    }
+    .signAth li a {
+        display: block;
+        clear: both;
+        width: 220px;
+        text-align: center;
+        padding: 10px;
+        border: 1px solid #bacfd4;
+        background-color: #edeced;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+    .mainForm {
+        padding-top: 20px;
+        overflow: hidden;
+    }
+    .mainForm li {
+        margin-bottom: 20px;
+    }
+    .mainForm li:last-child {
+        margin-bottom: 0;
+    }
+    #form {
+        width: 50%;
+        float: right;
+    }
+    .signVia {
+        clear: both;
+        display: block;
+        width: 220px;
+        text-align: center;
+        background-color: #edeced;
+        margin: 0 auto;
+        padding: 10px 20px;
+        border: 1px solid #bacfd4;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+    #form legend {
+        display: none;
+    }
+    #form label {
+        clear: both;
+        margin-top: 5px;
+    }
+    #form label,
+    #form input {
+        display: block;
+        float: left;
+    }
+    #form input {
+        border: none;
+        padding: 5px;
+        width: 210px;
+        float: right;
+        margin-bottom: 10px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+    #form button {
+        margin-top: 20px;
+        border: none;
+        float: right;
+        font-size: 14px;
+        text-align: center;
+        border: 1px solid #bacfd4;
+        padding: 10px 20px;
+        background-color: #edeced;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+    /* Create an account */
+    .createAccount {
+        margin-top: 40px;
+    }
+    .createAccount #logIn {
+        width: 100%;
+    }
+    .wrapperLogIn .createAccount {
+        background-color: #fff;
+    }
+    .wrapperLogIn .createAccount {
+        padding: 0;
+    } 
+    .createAccount .formWrapper {
+        overflow: hidden;
+        padding: 20px 42px 20px 45px;
+        background-color: #E8E7E7;
+    }
+    .createAccount #form {
+        float: none;
+        width: 484px;
+        margin: 0 auto;
+    }
+    .createAccount #form label {
+        float: left;
+    }
+    .createAccount #form input {
+        width: 260px;
+        float: right;
+    }
+    .createAccount #form .checkBox {
+        clear: both;
+        float: left;
+        width: auto;
+    }
+    .createAccount #form .terms {
+        font-size: 13px;
+        margin-top: 30px;
+    }
+    .createAccount #form .terms a {
+        text-decoration: underline;
+    }
+    .createAccount #form button {
+        float: right;
+        background-color: #EEf0f0;
+    }
+    /* error */
+    p.errorMsg {
+        clear: both;
+        float: left;
+        color: #ff0000;
+        margin-bottom: 0;
+    }
+    .error {
+        border-color: #ff0000;
+    }
+
+    /*
+    *
+    *   IE - Fixes
+    *
+    */
+    .ie8 .mainContent h1,
+    .ie7 .mainContent h1 {
+        display: block;
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-bottom: 20px;
+    }
+    .ie8 .mainContent .main_content, 
+    .ie7 .mainContent .main_content {
+        display: block;
+    }
