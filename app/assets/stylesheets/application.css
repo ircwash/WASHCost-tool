@@ -102,6 +102,7 @@ fieldset {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#017faf', endColorstr='#04aeb3',GradientType=0 ); /* IE6-8 */
 }
 .header {
+    overflow: hidden;
     background-color: #333;
     padding: 14px 35px;
 }
@@ -123,6 +124,9 @@ fieldset {
     margin: 0;
     padding: 0;
 }
+.header .logo {
+    float: left;
+}
 .languageSwitcher li {
     clear: both;
     margin: 0;
@@ -133,7 +137,7 @@ fieldset {
 .languageSwitcher li a.active {
     display: block;
     padding-right: 23px;
-    background: transparent url('../img/spriteArrow8.png') no-repeat 100% -295px;
+    background: transparent url('../images/spriteArrow8.png') no-repeat 100% -295px;
 }
 nav {
     position: relative;
@@ -181,7 +185,7 @@ nav {
 .main li ul {
     clear: both;
     overflow: hidden;
-    background: #359ec0 url('../img/spriteArrow8.png') no-repeat 102% -490px;
+    background: #359ec0 url('../images/spriteArrow8.png') no-repeat 102% -490px;
 }
 .main li li {
     width: auto;
@@ -190,7 +194,7 @@ nav {
 .main li li a.done {
     display: block;
     color: #fff;
-    background: transparent url('../img/spriteArrow8.png') no-repeat 100% -384px;
+    background: transparent url('../images/spriteArrow8.png') no-repeat 100% -384px;
 }
 .navWrapper .main li li a {
     display: block;
@@ -214,7 +218,7 @@ nav {
     width: 25px;
     height: 30px;
     margin-top: 25px;
-    background: transparent url('../img/spriteArrow8.png') no-repeat 0 -101px;
+    background: transparent url('../images/spriteArrow8.png') no-repeat 0 -101px;
     text-indent: -10000px;
 }
 .pag .pagPrev {
@@ -247,7 +251,7 @@ footer h2 {
     margin-right: 20px;
     margin-top: 2px;
     text-transform: uppercase;
-    background: transparent url('../img/arrowUp8.png') no-repeat 0 2px;
+    background: transparent url('../images/arrowUp8.png') no-repeat 0 2px;
 }
 .progressBar {
     position: relative;
@@ -329,7 +333,7 @@ footer h2 {
     font-weight: bold;
     color: #217F8B;
     text-decoration: none;
-    background: transparent url('../img/bgWhiteTransparency.png') repeat 0 0;
+    background: transparent url('../images/bgWhiteTransparency.png') repeat 0 0;
 
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -358,7 +362,7 @@ a.sbSelector:hover {
 }
 .chzn-container-single .chzn-single div b {
     margin: 10px 0 20px 0;
-    background: transparent url('../img/spriteArrow8.png') no-repeat 85% -184px;
+    background: transparent url('../images/spriteArrow8.png') no-repeat 85% -184px;
 }
 .chzn-results,
 .sbOptions {
@@ -395,7 +399,7 @@ a.sbSelector:hover {
     padding: 13px 25px;
     color: #217F8B;
     text-decoration: none;
-    background: transparent url('../img/bgWhiteTransparency.png') repeat 0 0;
+    background: transparent url('../images/bgWhiteTransparency.png') repeat 0 0;
 
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -439,7 +443,7 @@ a.sbSelector:hover {
     width: 32px;
     height: 47px;
     text-indent: -1000000px;
-    background: transparent url('../img/iconInfoTab8.png') no-repeat 0 0;
+    background: transparent url('../images/iconInfoTab8.png') no-repeat 0 0;
 }
 .tabContent {
     float: left;
@@ -447,7 +451,7 @@ a.sbSelector:hover {
     width: 190px;
     padding: 5px 10px 10px;
     border-left: 2px solid #ff6633;
-    background: transparent url('../img/bgInfoTab8.png') repeat 0 0;
+    background: transparent url('../images/bgInfoTab8.png') repeat 0 0;
 
     -webkit-border-radius: 0 0 0 5px;
     -moz-border-radius: 0 0 0 5px;
@@ -468,7 +472,7 @@ a.sbSelector:hover {
 /* CONTENT */
 
     .waterInput li label {
-        background: transparent url('../img/spriteInputWater8.png') no-repeat 0 0;
+        background: transparent url('../images/spriteInputWater8.png') no-repeat 0 0;
     }
     .waterInput li:nth-child(2) label {
         background-position: -62px 0;
@@ -493,10 +497,10 @@ a.sbSelector:hover {
         width: 252px;
     }
     .qualityInput li label {
-        background: transparent url('../img/inputQualityWater8.png') no-repeat 0 0;
+        background: transparent url('../images/inputQualityWater8.png') no-repeat 0 0;
     }
     .reliabilityInput li label {
-        background: transparent url('../img/spriteRatioReliability8.png')no-repeat 0 0;
+        background: transparent url('../images/spriteRatioReliability8.png')no-repeat 0 0;
     }
     .reliabilityInput li:nth-child(2) label {
         background-position: -62px 0;
@@ -516,7 +520,7 @@ a.sbSelector:hover {
         width: 99px;
     }
     .latrineInput li label {
-        background: transparent url('../img/inputTraditionalLatrine8.png') no-repeat 0 0;
+        background: transparent url('../images/inputTraditionalLatrine8.png') no-repeat 0 0;
     }
     .latrineInput li label span {
         top: 47px;
@@ -528,7 +532,7 @@ a.sbSelector:hover {
         width: 100px;
     }
     .houseInput li label {
-        background: transparent url('../img/spriteInputLatrines8.png') no-repeat 0 0;
+        background: transparent url('../images/spriteInputLatrines8.png') no-repeat 0 0;
     }
     .houseInput li:last-child label {
         background-position: 0 -80px;
@@ -543,7 +547,7 @@ a.sbSelector:hover {
         padding-bottom: 50px;
     }
     .impermeability li label {
-        background: transparent url('../img/spriteInputSlab8.png') no-repeat 0 0;
+        background: transparent url('../images/spriteInputSlab8.png') no-repeat 0 0;
     }
     .impermeability li label span {
         top: 80px;
@@ -564,7 +568,7 @@ a.sbSelector:hover {
         top: 80px;
     }
     .disposalInput li label {
-        background: transparent url('../img/spriteInputDisposal8.png') no-repeat 0 0;
+        background: transparent url('../images/spriteInputDisposal8.png') no-repeat 0 0;
     }
     .disposalInput li:nth-child(2) label {
         background-position: -132px 0;
@@ -579,7 +583,7 @@ a.sbSelector:hover {
        width: 124px;
     }
     .familyInput li label {
-        background: transparent url('../img/spriteInputFamilyMembers8.png') no-repeat 0 0;
+        background: transparent url('../images/spriteInputFamilyMembers8.png') no-repeat 0 0;
     }
     .familyInput li:nth-child(2) label {
         background-position: -142px 0;
@@ -597,7 +601,7 @@ a.sbSelector:hover {
         width: 144px;
     }
     .reliableInput li label {
-        background: transparent url('../img/inputLactrine8.png') no-repeat 0 0;
+        background: transparent url('../images/inputLactrine8.png') no-repeat 0 0;
     }
     .reliableInput li label span {
         top: 75px;
