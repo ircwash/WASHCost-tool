@@ -8,7 +8,7 @@ $(document).ready(function(){
 
         $( "#populationSlider" ).slider({
             min: 0,
-            max: db.population.length-1,
+            max: 3,
             step: 1,
             change: function( event, ui ) {
                 $('input[name="population"]').val(ui.value);
@@ -57,7 +57,7 @@ $(document).ready(function(){
 
         $( "#timeSlider" ).slider({
             min: 0,
-            max: db.time.length-1,
+            max: 3,
             step: 1,
             change: function( event, ui ) {
                 $('input[name="time"]').val(ui.value);
@@ -74,7 +74,7 @@ $(document).ready(function(){
 
         $( "#quantitySlider" ).slider({
             min: 0,
-            max: db.quantity.length-1,
+            max: 3,
             step: 1,
             change: function( event, ui ) {
                 $('input[name="quantity"]').val(ui.value);

@@ -362,7 +362,7 @@ a.sbSelector:hover {
 }
 .chzn-container-single .chzn-single div b {
     margin: 10px 0 20px 0;
-    background: transparent url('/assets/images/spriteArrow8.png') no-repeat 85% -184px;
+    background: transparent url('/assets/spriteArrow8.png') no-repeat 85% -184px;
 }
 .chzn-results,
 .sbOptions {
@@ -443,7 +443,7 @@ a.sbSelector:hover {
     width: 32px;
     height: 47px;
     text-indent: -1000000px;
-    background: transparent url('/assets/images/iconInfoTab8.png') no-repeat 0 0;
+    background: transparent url('/assets/iconInfoTab8.png') no-repeat 0 0;
 }
 .tabContent {
     float: left;
@@ -451,7 +451,7 @@ a.sbSelector:hover {
     width: 190px;
     padding: 5px 10px 10px;
     border-left: 2px solid #ff6633;
-    background: transparent url('/assets/images/bgInfoTab8.png') repeat 0 0;
+    background: transparent url('/assets/bgInfoTab8.png') repeat 0 0;
 
     -webkit-border-radius: 0 0 0 5px;
     -moz-border-radius: 0 0 0 5px;

@@ -2,6 +2,7 @@ WashCostApp::Application.routes.draw do
 
 
   match '/', :controller => 'application', :action => 'index'
+  match '/select_advanced' => 'application#select_advanced'
 
   match '/water_basic' => 'water_basic#country'
   match 'water_basic/(:action)' => 'water_basic#(:action)', :via => [:get, :post]
