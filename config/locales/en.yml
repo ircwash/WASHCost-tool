@@ -52,6 +52,7 @@ en:
         v1: "Sub-standard service"
         v2: "Basic service"
         v3: "High service"
+      select_an_option: "Select an Option"
     water_basic:
       water:
         question: "What is the main water source use to provide water?"
@@ -139,6 +140,51 @@ en:
           a0: "Yes"
           a1: "Unreliable"
           a2: "Not"
+    water_advanced:
+      country:
+        question: "Country?"
+      area_type:
+        question: "Area Type"
+        answers:
+          a0: "rural"
+          a1: "small town"
+          a2: "peri-urban"
+          a3: "urban"
+      existing:
+        question: "Does this service exist already or is it planned?"
+        answer:
+          a0: "Existing"
+          a1: "Planned"
+      service_area:
+        question: "What is the population density of the service area?"
+        answers:
+          a0: "400+ pp/km2 (urban)"
+          a1: "150-399 pp/km2 (intermediate)"
+          a2: "&lt;150 pp/km2 (rural)"
+          a1: "Don&#39;t know"
+      how_managed:
+        question: "Which of these options best describe how the water service is managed?"
+        answers:
+          a0: "community-based management"
+          a1: "public sector (local)"
+          a2: "public sector (national)"
+          a3: "private sector"
+          a4: "utility management"
+          a5: "household management"
+          a6: "other (define)"
+      who_finances:
+        question: "Who finances the construction of the water system?"
+        answers:
+          a0: "External donor"
+          a1: "community-based organisation"
+          a2: "public sector (local)"
+          a3: "public sector (national)"
+          a4: "private sector"
+          a5: "utility"
+          a6: "household"
+          a7: "Don&#39;t know"
+
+
 
   report:
     water_basic:

@@ -56,9 +56,7 @@
   <div class="grid">
     <label for="choiceCountry">Country?</label>
     <select id="choiceCountry" data-placeholder="Select a country" class="chzn-select" tabindex="2">
-      <option value="1">Standard country list</option>
-      <option value="2">Grid ref</option>
-      <option value="3">Region</option>
+      <%= render "shared/country_select_options"%>
     </select>
   </div>
   <div class="grid odd">
@@ -91,33 +89,36 @@
 </section>
 <section class="managing">
   <div class="grid">
-    <label for="choiceManaging">Which of these options best describe how the water service is managed?</label>
-    <select id="choiceManaging" data-placeholder="Select an option" class="chzn-select" tabindex="2">
-      <option value="1">community-based management</option>
-      <option value="2">public sector (local)</option>
-      <option value="3">public sector (national)</option>
-      <option value="4">private sector</option>
-      <option value="5">utility management</option>
-      <option value="6">household management</option>
-      <option value="7">other (define)</option>
+    <label for="choiceManaging"><%= t 'form.water_advanced.how_managed.question' %></label>
+    <select id="choiceManaging" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
+      <option></option>
+      <option value="0"><%= t 'form.water_advanced.how_managed.answers.a0' %></option>
+      <option value="1"><%= t 'form.water_advanced.how_managed.answers.a1' %></option>
+      <option value="2"><%= t 'form.water_advanced.how_managed.answers.a2' %></option>
+      <option value="3"><%= t 'form.water_advanced.how_managed.answers.a3' %></option>
+      <option value="4"><%= t 'form.water_advanced.how_managed.answers.a4' %></option>
+      <option value="5"><%= t 'form.water_advanced.how_managed.answers.a5' %></option>
+      <option value="6"><%= t 'form.water_advanced.how_managed.answers.a6' %></option>
     </select>
   </div>
   <div class="grid odd">
-    <label for="choiceSystem">Who finances the construction of the water system?</label>
-    <select id="choiceSystem" data-placeholder="Select an option" class="chzn-select" tabindex="2">
-      <option value="1">External donor</option>
-      <option value="2">community-based organisation</option>
-      <option value="3">public sector (local)</option>
-      <option value="4">public sector (national)</option>
-      <option value="5">private sector</option>
-      <option value="6">utility</option>
-      <option value="7">household</option>
-      <option value="8">Don&#39;t know</option>
+    <label for="choiceSystem"><%= t 'form.water_advanced.who_finances.question' %></label>
+    <select id="choiceSystem" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
+      <option></option>
+      <option value="0"><%= t 'form.water_advanced.who_finances.answers.a0' %></option>
+      <option value="1"><%= t 'form.water_advanced.who_finances.answers.a1' %></option>
+      <option value="2"><%= t 'form.water_advanced.who_finances.answers.a2' %></option>
+      <option value="3"><%= t 'form.water_advanced.who_finances.answers.a3' %></option>
+      <option value="4"><%= t 'form.water_advanced.who_finances.answers.a4' %></option>
+      <option value="5"><%= t 'form.water_advanced.who_finances.answers.a5' %></option>
+      <option value="6"><%= t 'form.water_advanced.who_finances.answers.a6' %></option>
+      <option value="7"><%= t 'form.water_advanced.who_finances.answers.a7' %></option>
     </select>
   </div>
   <div class="grid">
     <label for="choiceInfra">Who owns (legally?) the water infrastructure?</label>
-    <select id="choiceInfra" data-placeholder="Select an option" class="chzn-select" tabindex="2">
+    <select id="choiceInfra" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
+      <option></option>
       <option value="1">External donor</option>
       <option value="2">community-based</option>
       <option value="3">organisation</option>
@@ -130,7 +131,7 @@
   </div>
   <div class="grid odd">
     <label for="choiceMain">Who safeguards the operation and maintenance of the infrastructure?</label>
-    <select id="choiceMain" data-placeholder="Select an option" class="chzn-select" tabindex="2">
+    <select id="choiceMain" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
       <option value="1">External donor</option>
       <option value="2">community-based</option>
       <option value="3">organisation</option>
@@ -143,7 +144,7 @@
   </div>
   <div class="grid">
     <label for="choiceStandard">Who has/will have responsibility for checking and enforcing the standard of [water/sanitation] services?</label>
-    <select id="choiceStandard" data-placeholder="Select an option" class="chzn-select" tabindex="2">
+    <select id="choiceStandard" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
       <option value="1">External donor</option>
       <option value="2">community-based</option>
       <option value="3">organisation</option>
@@ -156,7 +157,7 @@
   </div>
   <div class="grid odd">
     <label for="choiceCost">Who covers the cost of rehabilitation when larger repairs are needed?</label>
-    <select id="choiceCost" data-placeholder="Select an option" class="chzn-select" tabindex="2">
+    <select id="choiceCost" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
       <option value="1">External donor</option>
       <option value="2">community-based</option>
       <option value="3">organisation</option>
@@ -431,7 +432,7 @@
 </form>
 </div>
 <script src="/assets/jquery-1.9.1.js" type="text/javascript"></script>
-<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="/assets/jquery-ui-1.10.3.custom.min.js"></script>
 <script src="/assets/chosen.jquery.js" type="text/javascript"></script>
 <script src="/assets/water_advanced.js" type="text/javascript"></script>
 </body>
