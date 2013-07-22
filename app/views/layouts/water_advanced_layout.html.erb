@@ -105,140 +105,147 @@
     <label for="choiceSystem"><%= t 'form.water_advanced.who_finances.question' %></label>
     <select id="choiceSystem" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
       <option></option>
-      <option value="0"><%= t 'form.water_advanced.who_finances.answers.a0' %></option>
-      <option value="1"><%= t 'form.water_advanced.who_finances.answers.a1' %></option>
-      <option value="2"><%= t 'form.water_advanced.who_finances.answers.a2' %></option>
-      <option value="3"><%= t 'form.water_advanced.who_finances.answers.a3' %></option>
-      <option value="4"><%= t 'form.water_advanced.who_finances.answers.a4' %></option>
-      <option value="5"><%= t 'form.water_advanced.who_finances.answers.a5' %></option>
-      <option value="6"><%= t 'form.water_advanced.who_finances.answers.a6' %></option>
-      <option value="7"><%= t 'form.water_advanced.who_finances.answers.a7' %></option>
+      <option value="0"><%= t 'form.shared.responsibility.answers.a0' %></option>
+      <option value="1"><%= t 'form.shared.responsibility.answers.a1' %></option>
+      <option value="2"><%= t 'form.shared.responsibility.answers.a2' %></option>
+      <option value="3"><%= t 'form.shared.responsibility.answers.a3' %></option>
+      <option value="4"><%= t 'form.shared.responsibility.answers.a4' %></option>
+      <option value="5"><%= t 'form.shared.responsibility.answers.a5' %></option>
+      <option value="6"><%= t 'form.shared.responsibility.answers.a6' %></option>
+      <option value="7"><%= t 'form.shared.responsibility.answers.a7' %></option>
     </select>
   </div>
   <div class="grid">
-    <label for="choiceInfra">Who owns (legally?) the water infrastructure?</label>
+    <label for="choiceInfra"><%= t 'form.water_advanced.who_owns.question' %></label>
     <select id="choiceInfra" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
       <option></option>
-      <option value="1">External donor</option>
-      <option value="2">community-based</option>
-      <option value="3">organisation</option>
-      <option value="4">public sector (local)</option>
-      <option value="5">public sector (national)</option>
-      <option value="6">utility</option>
-      <option value="7">household</option>
-      <option value="8">Don&#39;t know</option>
+      <option value="0"><%= t 'form.shared.responsibility.answers.a0' %></option>
+      <option value="1"><%= t 'form.shared.responsibility.answers.a1' %></option>
+      <option value="2"><%= t 'form.shared.responsibility.answers.a2' %></option>
+      <option value="3"><%= t 'form.shared.responsibility.answers.a3' %></option>
+      <option value="4"><%= t 'form.shared.responsibility.answers.a4' %></option>
+      <option value="5"><%= t 'form.shared.responsibility.answers.a5' %></option>
+      <option value="6"><%= t 'form.shared.responsibility.answers.a6' %></option>
+      <option value="7"><%= t 'form.shared.responsibility.answers.a7' %></option>
     </select>
   </div>
   <div class="grid odd">
-    <label for="choiceMain">Who safeguards the operation and maintenance of the infrastructure?</label>
+    <label for="choiceMain"><%= t 'form.water_advanced.who_safeguards.question' %></label>
     <select id="choiceMain" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
-      <option value="1">External donor</option>
-      <option value="2">community-based</option>
-      <option value="3">organisation</option>
-      <option value="4">public sector (local)</option>
-      <option value="5">public sector (national)</option>
-      <option value="6">utility</option>
-      <option value="7">household</option>
-      <option value="8">Don&#39;t know</option>
+      <option></option>
+      <option value="0"><%= t 'form.shared.responsibility.answers.a0' %></option>
+      <option value="1"><%= t 'form.shared.responsibility.answers.a1' %></option>
+      <option value="2"><%= t 'form.shared.responsibility.answers.a2' %></option>
+      <option value="3"><%= t 'form.shared.responsibility.answers.a3' %></option>
+      <option value="4"><%= t 'form.shared.responsibility.answers.a4' %></option>
+      <option value="5"><%= t 'form.shared.responsibility.answers.a5' %></option>
+      <option value="6"><%= t 'form.shared.responsibility.answers.a6' %></option>
+      <option value="7"><%= t 'form.shared.responsibility.answers.a7' %></option>
     </select>
   </div>
   <div class="grid">
-    <label for="choiceStandard">Who has/will have responsibility for checking and enforcing the standard of [water/sanitation] services?</label>
+    <label for="choiceStandard"><%= t 'form.water_advanced.who_enforces.question' %></label>
     <select id="choiceStandard" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
-      <option value="1">External donor</option>
-      <option value="2">community-based</option>
-      <option value="3">organisation</option>
-      <option value="4">public sector (local)</option>
-      <option value="5">public sector (national)</option>
-      <option value="6">utility</option>
-      <option value="7">household</option>
-      <option value="8">Don&#39;t know</option>
+      <option></option>
+      <option value="0"><%= t 'form.shared.responsibility.answers.a0' %></option>
+      <option value="1"><%= t 'form.shared.responsibility.answers.a1' %></option>
+      <option value="2"><%= t 'form.shared.responsibility.answers.a2' %></option>
+      <option value="3"><%= t 'form.shared.responsibility.answers.a3' %></option>
+      <option value="4"><%= t 'form.shared.responsibility.answers.a4' %></option>
+      <option value="5"><%= t 'form.shared.responsibility.answers.a5' %></option>
+      <option value="6"><%= t 'form.shared.responsibility.answers.a6' %></option>
+      <option value="7"><%= t 'form.shared.responsibility.answers.a7' %></option>
     </select>
   </div>
   <div class="grid odd">
-    <label for="choiceCost">Who covers the cost of rehabilitation when larger repairs are needed?</label>
+    <label for="choiceCost"><%= t 'form.water_advanced.who_repairs.question' %></label>
     <select id="choiceCost" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
-      <option value="1">External donor</option>
-      <option value="2">community-based</option>
-      <option value="3">organisation</option>
-      <option value="4">public sector (local)</option>
-      <option value="5">public sector (national)</option>
-      <option value="6">utility</option>
-      <option value="7">household</option>
-      <option value="8">Don&#39;t know</option>
+      <option></option>
+      <option value="0"><%= t 'form.shared.responsibility.answers.a0' %></option>
+      <option value="1"><%= t 'form.shared.responsibility.answers.a1' %></option>
+      <option value="2"><%= t 'form.shared.responsibility.answers.a2' %></option>
+      <option value="3"><%= t 'form.shared.responsibility.answers.a3' %></option>
+      <option value="4"><%= t 'form.shared.responsibility.answers.a4' %></option>
+      <option value="5"><%= t 'form.shared.responsibility.answers.a5' %></option>
+      <option value="6"><%= t 'form.shared.responsibility.answers.a6' %></option>
+      <option value="7"><%= t 'form.shared.responsibility.answers.a7' %></option>
     </select>
   </div>
   <div class="grid">
-    <label for="annualHousehold">What is the average annual household income in the service area?</label>
+    <label for="annualHousehold"><%= t 'form.water_advanced.annual_income.question' %></label>
     <input id="annualHousehold" type="number" placeholder="Numeric US$" min="0" max="10000" step="1">
   </div>
 </section>
 <section class="system">
   <div class="grid">
-    <label for="choiceSupply">What supply system(s) are used to deliver water services?*</label>
-    <select id="choiceSupply"  data-placeholder="Select an option" class="chzn-select" tabindex="2">
-      <option value="1">borehole and handpump</option>
-      <option value="2">mechanised borehole</option>
-      <option value="3">single town system</option>
-      <option value="4">multi-town system</option>
-      <option value="5">small scale</option>
-      <option value="6">rain fed</option>
-      <option value="7">systems protected well</option>
+    <label for="choiceSupply"><%= t 'form.water_advanced.supply_system.question' %></label>
+    <select id="choiceSupply"  data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
+      <option></option>
+      <option value="0"><%= t 'form.water_advanced.supply_system.answers.a0' %></option>
+      <option value="1"><%= t 'form.water_advanced.supply_system.answers.a1' %></option>
+      <option value="2"><%= t 'form.water_advanced.supply_system.answers.a2' %></option>
+      <option value="3"><%= t 'form.water_advanced.supply_system.answers.a3' %></option>
+      <option value="4"><%= t 'form.water_advanced.supply_system.answers.a4' %></option>
+      <option value="5"><%= t 'form.water_advanced.supply_system.answers.a5' %></option>
+      <option value="6"><%= t 'form.water_advanced.supply_system.answers.a6' %></option>
     </select>
   </div>
   <div class="grid odd">
-    <label for="techApply">
-      In what year was the supply system inaugurated?**
-    </label>
+    <label for="techApply"><%= t 'form.water_advanced.inauguration.question' %></label>
     <input type="number" id="techApply" placeholder="Year">
   </div>
   <div class="grid">
-    <label for="choicesSource">Water sources?</label>
-    <select id="choicesSource" data-placeholder="Select an option" class="chzn-select" tabindex="2">
-      <option value="1">ground water</option>
-      <option value="2">surface water</option>
-      <option value="3">rainwater</option>
+    <label for="choicesSource"><%= t 'form.water_advanced.water_sources.question' %></label>
+    <select id="choicesSource" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
+      <option></option>
+      <option value="0"><%= t 'form.water_advanced.water_sources.answers.a0' %></option>
+      <option value="1"><%= t 'form.water_advanced.water_sources.answers.a1' %></option>
+      <option value="2"><%= t 'form.water_advanced.water_sources.answers.a2' %></option>
     </select>
   </div>
   <div class="grid odd">
-    <label for="waterDefine">If surface water. Define:</label>
-    <select id="waterDefine" data-placeholder="Select an option" class="chzn-select" tabindex="2">
-      <option value="1">rainwater harvesting</option>
-      <option value="2">catchment storage dam</option>
-      <option value="3">sub-surface harvesting (sump)</option>
-      <option value="4">river</option>
+    <label for="waterDefine"><%= t 'form.water_advanced.surface_water.question' %></label>
+    <select id="waterDefine" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
+      <option></option>
+      <option value="0"><%= t 'form.water_advanced.surface_water.answers.a0' %></option>
+      <option value="1"><%= t 'form.water_advanced.surface_water.answers.a1' %></option>
+      <option value="2"><%= t 'form.water_advanced.surface_water.answers.a2' %></option>
+      <option value="3"><%= t 'form.water_advanced.surface_water.answers.a3' %></option>
     </select>
   </div>
   <div class="grid">
-    <label for="groundWater">if ground water. Define:</label>
-    <select id="groundWater" data-placeholder="Select an option" class="chzn-select" tabindex="2">
-      <option value="1">unprotected dug well</option>
-      <option value="2">protected dug well</option>
-      <option value="3">drilled well with mechanised pump</option>
-      <option value="4">drilled well with non mechanised pump</option>
+    <label for="groundWater"><%= t 'form.water_advanced.ground_water.question' %></label>
+    <select id="groundWater" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
+      <option></option>
+      <option value="0"><%= t 'form.water_advanced.ground_water.answers.a0' %></option>
+      <option value="1"><%= t 'form.water_advanced.ground_water.answers.a1' %></option>
+      <option value="2"><%= t 'form.water_advanced.ground_water.answers.a2' %></option>
+      <option value="3"><%= t 'form.water_advanced.ground_water.answers.a3' %></option>
     </select>
   </div>
   <div class="grid odd">
-    <label for="waterPump">if drilled well with non-mechanised pump. Define pump:</label>
-    <select id="waterPump" data-placeholder="Select an option" class="chzn-select" tabindex="2">
-      <option value="1">rope pump</option>
-      <option value="2">hand pump (I could put more detail on the hand pump)</option>
+    <label for="waterPump"><%= t 'form.water_advanced.drilled_well.question' %></label>
+    <select id="waterPump" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
+      <option></option>
+      <option value="0"><%= t 'form.water_advanced.drilled_well.answers.a0' %></option>
+      <option value="1"><%= t 'form.water_advanced.drilled_well.answers.a1' %></option>
     </select>
   </div>
   <div class="grid">
-    <label for="waterStored">How is the water stored?</label>
-    <select id="waterStored" data-placeholder="Select an option" class="chzn-select" tabindex="2">
-      <option value="1">no storage</option>
-      <option value="2">reinforced concrete reservoir</option>
-      <option value="3">elevated steel reservoir</option>
-      <option value="4">cistern</option>
-      <option value="5">household storage</option>
-      <option value="6">ferrocement tank</option>
+    <label for="waterStored"><%= t 'form.water_advanced.water_storage.question' %></label>
+    <select id="waterStored" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
+      <option></option>
+      <option value="0"><%= t 'form.water_advanced.water_storage.answers.a0' %></option>
+      <option value="1"><%= t 'form.water_advanced.water_storage.answers.a1' %></option>
+      <option value="2"><%= t 'form.water_advanced.water_storage.answers.a2' %></option>
+      <option value="3"><%= t 'form.water_advanced.water_storage.answers.a3' %></option>
+      <option value="4"><%= t 'form.water_advanced.water_storage.answers.a4' %></option>
+      <option value="5"><%= t 'form.water_advanced.water_storage.answers.a5' %></option>
     </select>
   </div>
   <div class="grid odd">
     <label for="waterTreated">How is water treated?</label>
-    <select id="waterTreated" data-placeholder="Select an option" class="chzn-select" tabindex="2">
+    <select id="waterTreated" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
       <option value="1">no treatment</option>
       <option value="2">boiling</option>
       <option value="3">household filter</option>
@@ -249,7 +256,7 @@
   </div>
   <div class="grid">
     <label for="powerSupply">Main power supply?</label>
-    <select id="powerSupply" data-placeholder="Select an option" class="chzn-select" tabindex="2">
+    <select id="powerSupply" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
       <option value="1">no power</option>
       <option value="2">mains electricity</option>
       <option value="3">windmills</option>
