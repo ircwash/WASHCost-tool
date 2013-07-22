@@ -172,11 +172,11 @@ nav {
 }
 .main li.cost a {
     display: block;
-    /*margin-left: -410px;*/
+    margin-left: 55px;
 }
 .main li.service a {
     display: block;
-    /*margin-left: -527px;*/
+    margin-left: -195px;
 }
 .main li ul {
     clear: both;
