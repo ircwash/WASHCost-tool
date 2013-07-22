@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-IE7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <title>WashCostApp - Advances</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+
+  <link href="/assets/chosen.css" media="all" rel="stylesheet" type="text/css">
+  <link href="/assets/water_advanced.css" media="all" rel="stylesheet" type="text/css">
+  <script src="/assets/modernizr.js" type="text/javascript"></script>
+
+</head>
+<body>
+<div class="wrapper">
+<div class="header">
+  <a href="#" class="logo">
+    <img src="/assets/logoWashCost8.png" alt="WASHCost" />
+  </a>
+  <ul>
+    <li><a href="#">about</a></li>
+    <li><a href="#">contact</a></li>
+    <li>
+      <ul class="languageSwitcher">
+        <li><a class="active" href="#">English</a></li>
+        <li><a href="#">French</a></li>
+      </ul>
+    </li>
+    <li><a class="sign" href="#">Sign in</a></li>
+  </ul>
+  <nav>
+    <div class="navWrapper">
+      <ul>
+        <li><a class="active" href="#">Context</a></li>
+        <li><a href="#">Managing</a></li>
+        <li><a href="#">Technology</a></li>
+        <li><a href="#">Cost</a></li>
+        <li><a href="#">Service</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<div class="main bgGradient">
+<form>
+<fieldset>
+<legend>Water Advance Questionnaire</legend>
+<section class="context">
+  <div class="grid">
+    <label for="choiceCountry">Country?</label>
+    <select id="choiceCountry" data-placeholder="Select a country" class="chzn-select" tabindex="2">
+      <option value="1">Standard country list</option>
+      <option value="2">Grid ref</option>
+      <option value="3">Region</option>
+    </select>
+  </div>
+  <div class="grid odd">
+    <label for="areaType">Area type</label>
+    <select id="areaType" data-placeholder="Select an area type" class="chzn-select" tabindex="2">
+      <option value="1">Rural</option>
+      <option value="2">Small-town</option>
+      <option value="3">Peri-urban</option>
+      <option value="4">Urban</option>
+    </select>
+  </div>
+  <div class="grid">
+    <label for="choiceService">Does this service existal already or is it planned?</label>
+    <a class="iconTip" href="#">iconTip</a>
+    <select id="choiceService" data-placeholder="Select an service" class="chzn-select" tabindex="2">
+      <option value="1">Budgeted/Estimated</option>
+      <option value="2">Real cost based on expenditure data</option>
+    </select>
+  </div>
+  <div class="grid odd">
+    <label for="desityArea">What is the population density of the service area?</label>
+    <select id="desityArea" data-placeholder="Select an area type" class="chzn-select" tabindex="2">
+      <option value="1">400+ pp/km2 (urban)</option>
+      <option value="2">150-399 pp/km2 (intermediate)</option>
+      <option value="3">&lt;150 pp/km2 (rural)</option>
+      <option value="4">Don&#39;t know</option>
+    </select>
+    <a class="comentAnchor" href="#">Add a comment</a>
+  </div>
+</section>
+<section class="managing">
+  <div class="grid">
+    <label for="choiceManaging">Which of these options best describe how the water service is managed?</label>
+    <select id="choiceManaging" data-placeholder="Select an option" class="chzn-select" tabindex="2">
+      <option value="1">community-based management</option>
+      <option value="2">public sector (local)</option>
+      <option value="3">public sector (national)</option>
+      <option value="4">private sector</option>
+      <option value="5">utility management</option>
+      <option value="6">household management</option>
+      <option value="7">other (define)</option>
+    </select>
+  </div>
+  <div class="grid odd">
+    <label for="choiceSystem">Who finances the construction of the water system?</label>
+    <select id="choiceSystem" data-placeholder="Select an option" class="chzn-select" tabindex="2">
+      <option value="1">External donor</option>
+      <option value="2">community-based organisation</option>
+      <option value="3">public sector (local)</option>
+      <option value="4">public sector (national)</option>
+      <option value="5">private sector</option>
+      <option value="6">utility</option>
+      <option value="7">household</option>
+      <option value="8">Don&#39;t know</option>
+    </select>
+  </div>
+  <div class="grid">
+    <label for="choiceInfra">Who owns (legally?) the water infrastructure?</label>
+    <select id="choiceInfra" data-placeholder="Select an option" class="chzn-select" tabindex="2">
+      <option value="1">External donor</option>
+      <option value="2">community-based</option>
+      <option value="3">organisation</option>
+      <option value="4">public sector (local)</option>
+      <option value="5">public sector (national)</option>
+      <option value="6">utility</option>
+      <option value="7">household</option>
+      <option value="8">Don&#39;t know</option>
+    </select>
+  </div>
+  <div class="grid odd">
+    <label for="choiceMain">Who safeguards the operation and maintenance of the infrastructure?</label>
+    <select id="choiceMain" data-placeholder="Select an option" class="chzn-select" tabindex="2">
+      <option value="1">External donor</option>
+      <option value="2">community-based</option>
+      <option value="3">organisation</option>
+      <option value="4">public sector (local)</option>
+      <option value="5">public sector (national)</option>
+      <option value="6">utility</option>
+      <option value="7">household</option>
+      <option value="8">Don&#39;t know</option>
+    </select>
+  </div>
+  <div class="grid">
+    <label for="choiceStandard">Who has/will have responsibility for checking and enforcing the standard of [water/sanitation] services?</label>
+    <select id="choiceStandard" data-placeholder="Select an option" class="chzn-select" tabindex="2">
+      <option value="1">External donor</option>
+      <option value="2">community-based</option>
+      <option value="3">organisation</option>
+      <option value="4">public sector (local)</option>
+      <option value="5">public sector (national)</option>
+      <option value="6">utility</option>
+      <option value="7">household</option>
+      <option value="8">Don&#39;t know</option>
+    </select>
+  </div>
+  <div class="grid odd">
+    <label for="choiceCost">Who covers the cost of rehabilitation when larger repairs are needed?</label>
+    <select id="choiceCost" data-placeholder="Select an option" class="chzn-select" tabindex="2">
+      <option value="1">External donor</option>
+      <option value="2">community-based</option>
+      <option value="3">organisation</option>
+      <option value="4">public sector (local)</option>
+      <option value="5">public sector (national)</option>
+      <option value="6">utility</option>
+      <option value="7">household</option>
+      <option value="8">Don&#39;t know</option>
+    </select>
+  </div>
+  <div class="grid">
+    <label for="annualHousehold">What is the average annual household income in the service area?</label>
+    <input id="annualHousehold" type="number" placeholder="Numeric US$" min="0" max="10000" step="1">
+  </div>
+</section>
+<section class="system">
+  <div class="grid">
+    <label for="choiceSupply">What supply system(s) are used to deliver water services?*</label>
+    <select id="choiceSupply"  data-placeholder="Select an option" class="chzn-select" tabindex="2">
+      <option value="1">borehole and handpump</option>
+      <option value="2">mechanised borehole</option>
+      <option value="3">single town system</option>
+      <option value="4">multi-town system</option>
+      <option value="5">small scale</option>
+      <option value="6">rain fed</option>
+      <option value="7">systems protected well</option>
+    </select>
+  </div>
+  <div class="grid odd">
+    <label for="techApply">
+      In what year was the supply system inaugurated?**
+    </label>
+    <input type="number" id="techApply" placeholder="Year">
+  </div>
+  <div class="grid">
+    <label for="choicesSource">Water sources?</label>
+    <select id="choicesSource" data-placeholder="Select an option" class="chzn-select" tabindex="2">
+      <option value="1">ground water</option>
+      <option value="2">surface water</option>
+      <option value="3">rainwater</option>
+    </select>
+  </div>
+  <div class="grid odd">
+    <label for="waterDefine">If surface water. Define:</label>
+    <select id="waterDefine" data-placeholder="Select an option" class="chzn-select" tabindex="2">
+      <option value="1">rainwater harvesting</option>
+      <option value="2">catchment storage dam</option>
+      <option value="3">sub-surface harvesting (sump)</option>
+      <option value="4">river</option>
+    </select>
+  </div>
+  <div class="grid">
+    <label for="groundWater">if ground water. Define:</label>
+    <select id="groundWater" data-placeholder="Select an option" class="chzn-select" tabindex="2">
+      <option value="1">unprotected dug well</option>
+      <option value="2">protected dug well</option>
+      <option value="3">drilled well with mechanised pump</option>
+      <option value="4">drilled well with non mechanised pump</option>
+    </select>
+  </div>
+  <div class="grid odd">
+    <label for="waterPump">if drilled well with non-mechanised pump. Define pump:</label>
+    <select id="waterPump" data-placeholder="Select an option" class="chzn-select" tabindex="2">
+      <option value="1">rope pump</option>
+      <option value="2">hand pump (I could put more detail on the hand pump)</option>
+    </select>
+  </div>
+  <div class="grid">
+    <label for="waterStored">How is the water stored?</label>
+    <select id="waterStored" data-placeholder="Select an option" class="chzn-select" tabindex="2">
+      <option value="1">no storage</option>
+      <option value="2">reinforced concrete reservoir</option>
+      <option value="3">elevated steel reservoir</option>
+      <option value="4">cistern</option>
+      <option value="5">household storage</option>
+      <option value="6">ferrocement tank</option>
+    </select>
+  </div>
+  <div class="grid odd">
+    <label for="waterTreated">How is water treated?</label>
+    <select id="waterTreated" data-placeholder="Select an option" class="chzn-select" tabindex="2">
+      <option value="1">no treatment</option>
+      <option value="2">boiling</option>
+      <option value="3">household filter</option>
+      <option value="4">household chlorination</option>
+      <option value="5">chlorination in piped system</option>
+      <option value="6">water treatment works</option>
+    </select>
+  </div>
+  <div class="grid">
+    <label for="powerSupply">Main power supply?</label>
+    <select id="powerSupply" data-placeholder="Select an option" class="chzn-select" tabindex="2">
+      <option value="1">no power</option>
+      <option value="2">mains electricity</option>
+      <option value="3">windmills</option>
+      <option value="4">solar power systems</option>
+      <option value="5">generator</option>
+    </select>
+  </div>
+  <div class="grid odd">
+    <label for="lengthKm">Length of transmission line (Km)?</label>
+    <input id="lengthKm" type="number" placeholder="Km" min="0" max="10000" step="1">
+  </div>
+  <div class="grid">
+    <label for="pipeSupplies">For piped supplies: Percentage population served by household connections and/or stand post?</label>
+    <input id="pipeSupplies" type="number" placeholder="% Population" min="0" max="100" step="1">
+  </div>
+  <div class="notes">
+    <p>* (Select all that are applicable to your service area. Once a box is selected they are given a counter to input the number of systems, and the number of people served by that system).</p>
+    <p>** This will need to be completed for each technology group as defined in Q1</p>
+  </div>
+</section>
+<section class="cost">
+  <div class="grid">
+    <h2>What has been/will be the total expenditure on capital expenditure (hardware)?</h2>
+    <ul>
+      <li>
+        <label for="costHardware" class="hiddenLabel">capital expenditure US$ per person</label>
+        <input type="number" id="costHardware" placeholder="Numeric (US$ per person)" min="100" max="100000" step="1">
+      </li>
+      <li>
+        <label class="checkBox" for="costDontKnow">
+          <input type="checkbox" id="costDontKnow">
+          Don&#39;t know
+        </label>
+      </li>
+      <li>
+        <label class="checkBox" for="costNoApply">
+          <input type="checkbox" id="costNoApply">
+          Not aplicable
+        </label>
+      </li>
+    </ul>
+  </div>
+  <div class="grid odd">
+    <h2>What has been/will be the minor operation and maintenance expenditure?</h2>
+    <ul>
+      <li>
+        <label for="costMaintenance" class="hiddenLabel">minor operation and maintainance expenditure US$ per person</label>
+        <input type="number" id="costMaintenance" placeholder="Numeric (US$ per person)" min="100" max="100000" step="1">
+      </li>
+      <li>
+        <label class="checkBox" for="mainDontKnow">
+          <input type="checkbox" id="mainDontKnow">
+          Don&#39;t know
+        </label>
+      </li>
+      <li>
+        <label class="checkBox" for="mainNoApply">
+          <input type="checkbox" id="mainNoApply">
+          Not aplicable
+        </label>
+      </li>
+    </ul>
+  </div>
+  <div class="grid">
+    <h2>What has been spent/will be spent on capital maintenance expenditure?</h2>
+    <ul>
+      <li>
+        <label for="capitalMaintenance" class="hiddenLabel">spent/will on capital maintainance expenditure US$ per person</label>
+        <input type="number" id="capitalMaintenance" placeholder="Numeric (US$ per person)" min="100" max="100000" step="1">
+      </li>
+      <li>
+        <label class="checkBox" for="capitalDontKnow">
+          <input type="checkbox" id="capitalDontKnow">
+          Don&#39;t know
+        </label>
+      </li>
+      <li>
+        <label class="checkBox" for="capitalNoApply">
+          <input type="checkbox" id="capitalNoApply">
+          Not aplicable
+        </label>
+      </li>
+    </ul>
+  </div>
+  <div class="grid odd">
+    <h2>What has been spent/will be spent on expenditure on direct support?</h2>
+    <ul>
+      <li>
+        <label for="capitalMaintenance" class="hiddenLabel">expenditure on direct support numeric US$ per person</label>
+        <input type="number" id="capitalMaintenance" placeholder="Numeric (US$ per person)" min="100" max="100000" step="1">
+      </li>
+      <li>
+        <label class="checkBox" for="supportDontKnow">
+          <input type="checkbox" id="supportDontKnow">
+          Don&#39;t know
+        </label>
+      </li>
+      <li>
+        <label class="checkBox" for="supportNoApply">
+          <input type="checkbox" id="supportNoApply">
+          Not aplicable
+        </label>
+      </li>
+    </ul>
+  </div>
+  <div class="grid">
+    <h2>What has been/will be the expenditure on indirect support?</h2>
+    <ul>
+      <li>
+        <label for="indirectSupport" class="hiddenLabel">expenditure on indirect support numeric US$ per person</label>
+        <input type="number" id="indirectSupport" placeholder="Numeric (US$ per person)" min="100" max="100000" step="1">
+      </li>
+      <li>
+        <label class="checkBox" for="indirectDontKnow">
+          <input type="checkbox" id="indiDontKnow">
+          Don&#39;t know
+        </label>
+      </li>
+      <li>
+        <label class="checkBox" for="indirectNoApply">
+          <input type="checkbox" id="indiNoApply">
+          Not aplicable
+        </label>
+      </li>
+    </ul>
+  </div>
+  <div class="grid odd">
+    <h2>>What is the cost servicing any loans taken to fund the service?</h2>
+    <ul>
+      <li>
+        <label for="fundService" class="hiddenLabel">loans taken to fund the service numeric US$ per person</label>
+        <input type="number" id="fundService" placeholder="Numeric (US$ per person)" min="100" max="100000" step="1">
+      </li>
+      <li>
+        <label class="checkBox" for="fundDontKnow">
+          <input type="checkbox" id="fundDontKnow">
+          Don&#39;t know
+        </label>
+      </li>
+      <li>
+        <label class="checkBox" for="fundNoApply">
+          <input type="checkbox" id="fundNoApply">
+          Not aplicable
+        </label>
+      </li>
+    </ul>
+  </div>
+  <div class="grid">
+    <label for="costLoan">What is the payback period on this loan?</label>
+    <input id="costLoan" type="number" placeholder="Years" min="1940" max="2013" step="1">
+  </div>
+  <div class="notes">
+    <p>*If the service is young (i.e. under 3 years) – we would not expect CapManEx to be very high. Below benchmark values for these schemes may not therefore be a problem.  I recommend that a) the CapManEx for &ldquo;young&rdquo; schemes are discounted from the benchmark calculations and b) a new set of responses are created for young schemes e.g.: &ldquo;Current expenditure on capital maintenance is below the benchmark ranges. This may be because the system has been recently constructed. In the coming years it is important to make sure more is budgeted for the major repair and replacement of system components.&rdquo;</p>
+  </div>
+</section>
+<section class="service">
+  <div class="grid">
+    <label for="serviceLevel">What has been spent/will be spent on expenditure on direct support?</label>
+    <input id="serviceLevel" type="number" placeholder="50%" min="0" max="100" step="1">
+  </div>
+  <div class="notes">
+    <p>*At the moment, the working assumption is that services can only “qualify” to update the global benchmarks if at least 75% of users receive a basic level of service for each of the four water/sanitation service indicators.</p>
+  </div>
+</section>
+
+<button class="formButton" id="sendButton">Send</button>
+<button class="formButton" id="saveButton">Save</button>
+
+</fieldset>
+</form>
+</div>
+<footer>
+  <div class="footerWrapper">
+    <h2>Final Report</h2>
+    <div class="progressBar">
+      <div class="outerBar">
+        <div class="innerBar" style="width:30%"></div>
+        <p>30% Complete</p>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+
+<script src="/assets/jquery-1.9.1.js" type="text/javascript"></script>
+<script src="/assets/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="/assets/chosen.jquery.js" type="text/javascript"></script>
+<script src="/assets/water_advanced.js" type="text/javascript"></script>
+</body>
+</html>
