@@ -31,6 +31,7 @@ en:
     next: "Next"
     start: "OK! Start using the calculator"
     save: "Save"
+
   inputs:
     choose_a_country: "Choose a country"
   form:
@@ -148,15 +149,28 @@ en:
           a1: "Unreliable"
           a2: "Not"
     water_advanced:
-      country:
-        question: "Country?"
+      location:
+        question: "Location"
+      region:
+        placeholder: "Region"
+      city:
+        placeholder: "City, town, community or district"
       area_type:
         question: "Area Type"
+        placeholder: "Select an area type"
         answers:
           a0: "rural"
           a1: "small town"
           a2: "peri-urban"
           a3: "urban"
+      density:
+        question: "What is the population density of the service area?"
+        placeholder: "Select a density"
+        answers:
+          a0: "400+ pp/km2 (urban)"
+          a1: "150-399 pp/km2 (intermediate)"
+          a2: "&lt;150 pp/km2 (rural)"
+          a1: "Don&#39;t know"
       existing:
         question: "Does this service exist already or is it planned?"
         answer:
@@ -191,6 +205,7 @@ en:
         question: "Who covers the cost of rehabilitation when larger repairs are needed?"
       annual_income:
         question: "What is the average annual household income in the service area?"
+        placeholder: "Numeric US$"
       supply_system:
         question: "What supply system(s) are used to deliver water services?*"
         answers:
@@ -261,18 +276,28 @@ en:
       notes:
         stars_1: "* (Select all that are applicable to your service area. Once a box is selected they are given a counter to input the number of systems, and the number of people served by that system)."
         stars_2: "** This will need to be completed for each technology group as defined in Q1"
-      expediture_total:
-        header: "What has been will be the total expenditure on capital expenditure (hardware)?"
-        question: "capital expenditure US per person"
-        answer:
-          a0: "Don't know"
-          a1: "Not applicable"
-      expenditure_maintenance:
-        header: "What has been will be the minor operation and maintenance expenditure?"
-        question: "minor operation and maintenance expenditure US$ per person"
-        answer:
-          a0: "Don't know"
-          a1: "Not applicable"
+      cost:
+        shared:
+          answers:
+            a0: "Don't know"
+            a1: "Not applicable"
+          placeholder: "Numeric (US$ per person)"
+        hardware:
+          question: "What is the total capital expenditure for hardware?"
+        software:
+          question: "What is the total  capital expenditure (software)?"
+        maintenance:
+          question: "What is the minor operation and maintenance expenditure?"
+        direct:
+          question: "What is spent on expenditure on direct support?"
+        indirect:
+          question: "What is the expenditure on indirect support?"
+        servicing:
+         question: "What is the cost servicing any loans taken to fund the service?"
+        payback:
+          question: "What is the payback period on this loan?"
+          placeholder: "Years"
+
   report:
     water_basic:
       a111:	"This service is not delivering a desired minimum quantity perhaps due to low capital expenditure and the sources are not within 60 minutes roundtrip from the household. Or factors other than costs are influencing service delivery"
