@@ -72,6 +72,9 @@ fieldset {
 .hidden{
     display: none;
 }
+input.next_button {
+    cursor: pointer;
+}
 /* layout */
 #outer_container {
     position: relative;
@@ -490,31 +493,31 @@ form li label span {
         margin: 0 auto;
     }
     .waterInput li label {
-        background: transparent url('/assets/spriteQ2basicWater24.png') no-repeat 0 -126px;
+        background: transparent url('/assets/spriteQ2basicWater24.png') no-repeat 0 -146px;
     }
     .waterInput li label.ticked {
         background-position: 0 0;
     }
     .waterInput .boreHold_01 {
-        background-position: -160px -126px;
+        background-position: -160px -146px;
     }
     .waterInput .boreHold_01.ticked {
         background-position: -160px 0;
     }
     .waterInput .boreHold_02 {
-        background-position: -320px -126px;
+        background-position: -320px -146px;
     }
     .waterInput .boreHold_02.ticked {
         background-position: -320px 0;
     }
     .waterInput .boreHold_03 {
-        background-position: -480px -126px;
+        background-position: -480px -146px;
     }
     .waterInput .boreHold_03.ticked {
         background-position: -480px 0;
     }
     .waterInput .boreHold_04 {
-        background-position: -640px -126px;
+        background-position: -640px -146px;
     }
     .waterInput .boreHold_04.ticked {
         background-position: -640px 0;
@@ -563,16 +566,28 @@ form li label span {
         left: 7%;
     }
     .reliabilityInput li label {
-        background: transparent url('/assets/spriteQ9basicWater24.png')no-repeat 0 -123px;
+        background: transparent url('/assets/spriteQ9basicWater24.png')no-repeat 0 -196px;
     }
     .reliabilityInput li .relia_01 {
-        background-position: -159px -123px;
+        background-position: -159px -196px;
     }
     .reliabilityInput li .relia_02 {
-        background-position: -319px -123px;
+        background-position: -319px -196px;
     }
     .reliabilityInput li .relia_03 {
-        background-position: -479px -123px;
+        background-position: -479px -196px;
+    }
+    .reliabilityInput li label.ticked {
+        background-position: 0 0;
+    }
+    .reliabilityInput li .relia_01.ticked {
+        background-position: -159px 0;
+    }
+    .reliabilityInput li .relia_02.ticked {
+        background-position: -319px 0;
+    }
+    .reliabilityInput li .relia_03.ticked {
+        background-position: -479px 0;
     }
     .main_content .latrineInput {
         width: 612px;
