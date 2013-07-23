@@ -444,6 +444,32 @@ form li label span {
     width: 50%;
     left: 25%;   
 }
+.value {
+    position: relative;
+    width: 173px;
+    margin: 0 auto 55px;
+}
+.valueOutput {
+    clear: both;
+    display: table-cell;
+    vertical-align: middle;
+    width: 173px;
+    height: 55px;
+    font-size: 30px;
+    color: #fff;
+    padding-top: 5px;
+    background: #36b9c2 url('/assets/bgTopShadow24.png') no-repeat 0 0;
+
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.valueLabel {
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    margin-top: 5px;
+}
 /* q1Country */
     .choices {
         width: 520px;
@@ -663,6 +689,11 @@ form li label span {
         left: 0;
     }
 
+    /*
+    *
+    * BASIC LATRINE
+    *
+    */
 
     .main_content .latrineInput {
         width: 612px;
@@ -758,15 +789,6 @@ form li label span {
     }
     .reliableInput li label span {
         top: 75px;
-    }
-    .main_content .valueOutput {
-        width: auto;
-        margin: 0 auto;
-        height: 20px;
-    }
-    .main_content .valueLabel {
-        height: 80px;
-        color: #333;
     }
     .ui-slider {
         width: 525px;

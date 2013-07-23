@@ -30718,3 +30718,3196 @@ Served asset /spriteArrow8.png - 304 Not Modified (0ms)
 [2013-07-23 15:59:03] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
 [2013-07-23 15:59:03] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
 [2013-07-23 15:59:03] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:15] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:15] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:15] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:15] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:15] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:15] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:15] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:15] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:15] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:15] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:15] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:19] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:19] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:19] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:19] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:19] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:19] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:19] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/spriteQ9basicWater24.png" for 37.157.36.26 at 2013-07-23 15:56:50 +0000
+Served asset /spriteQ9basicWater24.png - 200 OK (1ms)
+
+
+Started GET "/assets/iconInfoTab8.png" for 37.157.36.26 at 2013-07-23 15:56:50 +0000
+Served asset /iconInfoTab8.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bgInfoTab8.png" for 37.157.36.26 at 2013-07-23 15:56:50 +0000
+Served asset /bgInfoTab8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/arrowUp8.png" for 37.157.36.26 at 2013-07-23 15:56:50 +0000
+Served asset /arrowUp8.png - 304 Not Modified (0ms)
+
+
+Started GET "/water_basic/reliability" for 37.157.36.26 at 2013-07-23 15:59:01 +0000
+Processing by WaterBasicController#reliability as HTML
+  Rendered water_basic/reliability.html.erb within layouts/water_basic_layout (1.9ms)
+Compiled application.css  (0ms)  (pid 13635)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.2ms)
+Completed 200 OK in 46ms (Views: 45.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 15:59:01 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 15:59:01 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 15:59:01 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 15:59:01 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 15:59:01 +0000
+Served asset /application.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 15:59:01 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 15:59:01 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 15:59:02 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 15:59:02 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 15:59:03 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spriteArrow8.png" for 37.157.36.26 at 2013-07-23 15:59:03 +0000
+Served asset /spriteArrow8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spriteQ9basicWater24.png" for 37.157.36.26 at 2013-07-23 15:59:03 +0000
+Served asset /spriteQ9basicWater24.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/iconInfoTab8.png" for 37.157.36.26 at 2013-07-23 15:59:03 +0000
+Served asset /iconInfoTab8.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/arrowUp8.png" for 37.157.36.26 at 2013-07-23 15:59:03 +0000
+Served asset /arrowUp8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgInfoTab8.png" for 37.157.36.26 at 2013-07-23 15:59:03 +0000
+Served asset /bgInfoTab8.png - 304 Not Modified (1ms)
+
+
+Started GET "/" for 37.157.36.26 at 2013-07-23 16:05:10 +0000
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 37.157.36.26 at 2013-07-23 16:05:11 +0000
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb (0.0ms)
+Completed 200 OK in 1ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/water_basic" for 37.157.36.26 at 2013-07-23 16:05:13 +0000
+Processing by WaterBasicController#country as HTML
+  Rendered shared/_country_select_options.html.erb (0.0ms)
+  Rendered water_basic/country.html.erb within layouts/water_basic_layout (1.8ms)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.1ms)
+Completed 200 OK in 40ms (Views: 39.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:05:15 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:05:15 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:05:15 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:05:15 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:05:15 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:05:15 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:05:15 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:05:15 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:05:15 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spriteArrow8.png" for 37.157.36.26 at 2013-07-23 16:05:15 +0000
+Served asset /spriteArrow8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen-sprite.png" for 37.157.36.26 at 2013-07-23 16:05:15 +0000
+Served asset /chosen-sprite.png - 200 OK (0ms)
+
+
+Started GET "/assets/world8.png" for 37.157.36.26 at 2013-07-23 16:05:15 +0000
+Served asset /world8.png - 200 OK (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:05:15 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgWhiteTransparency.png" for 37.157.36.26 at 2013-07-23 16:05:17 +0000
+Served asset /bgWhiteTransparency.png - 200 OK (0ms)
+SESSION FORM:
+{"country"=>"AX", "water"=>2, "population"=>2, "capital"=>74, "recurrent"=>9, "time"=>1, "quantity"=>1, "quality"=>2, "reliability"=>1}
+
+
+Started POST "/water_basic" for 37.157.36.26 at 2013-07-23 16:05:18 +0000
+Processing by WaterBasicController#country as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "country"=>"AX", "commit"=>"OK! Start using the calculator"}
+Redirected to http://198.101.243.21:8080/water_basic/water
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/water_basic/water" for 37.157.36.26 at 2013-07-23 16:05:19 +0000
+Processing by WaterBasicController#water as HTML
+  Rendered water_basic/water.html.erb within layouts/water_basic_layout (1.9ms)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.1ms)
+Completed 200 OK in 39ms (Views: 38.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:05:19 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:05:19 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:05:19 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:05:19 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:05:19 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:05:19 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:05:19 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:05:19 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+[2013-07-23 16:05:19] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:19] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:20] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:22] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:23] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:23] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:23] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:23] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:23] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:23] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:23] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:23] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:23] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:23] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:26] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:26] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:26] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:26] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:26] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:26] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:26] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:26] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:26] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:05:27] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:13:22] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:13:22] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:13:22] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:13:22] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:13:22] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:13:22] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:13:22] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:13:22] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:13:22] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:13:23] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:05:19 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:05:20 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+SESSION FORM:
+{"country"=>"AX", "water"=>2, "population"=>2, "capital"=>74, "recurrent"=>9, "time"=>1, "quantity"=>1, "quality"=>2, "reliability"=>1}
+
+
+Started POST "/water_basic/water" for 37.157.36.26 at 2013-07-23 16:05:22 +0000
+Processing by WaterBasicController#water as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "r_water"=>"4", "water"=>"2", "commit"=>"Next"}
+Redirected to http://198.101.243.21:8080/water_basic/population
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/water_basic/population" for 37.157.36.26 at 2013-07-23 16:05:22 +0000
+Processing by WaterBasicController#population as HTML
+  Rendered water_basic/population.html.erb within layouts/water_basic_layout (1.7ms)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.1ms)
+Completed 200 OK in 39ms (Views: 38.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:05:22 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:05:23 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:05:23 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:05:23 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:05:23 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:05:23 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:05:23 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:05:23 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:05:23 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:05:23 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spriteQ3basicWater24.png" for 37.157.36.26 at 2013-07-23 16:05:23 +0000
+Served asset /spriteQ3basicWater24.png - 304 Not Modified (0ms)
+
+
+Started POST "/water_basic/capital" for 37.157.36.26 at 2013-07-23 16:05:25 +0000
+Processing by WaterBasicController#capital as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "r_water"=>"3", "water"=>"2", "commit"=>"Next"}
+  Rendered water_basic/capital.html.erb within layouts/water_basic_layout (0.8ms)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.1ms)
+Completed 200 OK in 38ms (Views: 38.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:05:26 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:05:26 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:05:26 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:05:26 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:05:26 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:05:26 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:05:26 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:05:26 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:05:26 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:05:27 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started POST "/water_basic/capital" for 37.157.36.26 at 2013-07-23 16:13:21 +0000
+Processing by WaterBasicController#capital as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "r_water"=>"3", "water"=>"2", "commit"=>"Next"}
+  Rendered water_basic/capital.html.erb within layouts/water_basic_layout (0.8ms)
+Compiled application.css  (45ms)  (pid 13635)
+  Rendered shared/_header.html.erb (0.3ms)
+  Rendered shared/_nav_water.html.erb (1.1ms)
+Completed 200 OK in 91ms (Views: 90.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:13:22 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:13:22 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:13:22 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:13:22 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:13:22 +0000
+Served asset /application.css - 200 OK (4ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:13:22 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:13:22 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:13:22 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:13:22 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:13:22 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spriteArrow8.png" for 37.157.36.26 at 2013-07-23 16:13:23 +0000
+Served asset /spriteArrow8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:13:23 +0000
+Served asset /bgTopShadow24.png - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/bgTopShadow24.png"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+[2013-07-23 16:13:23] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:13:23] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:13:23] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:13:55] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:13:55] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:13:55] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:13:55] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:13:55] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:13:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:13:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:13:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:13:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:13:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:14:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:14:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:14:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:14:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:14:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:14:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:14:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:14:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:14:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:14:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:15:08] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:15:09] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:15:09] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:16:11] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:16:11] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:16:11] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:16:11] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:16:11] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:16:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:16:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:16:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:16:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:16:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:16:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:16:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:16:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/iconInfoTab8.png" for 37.157.36.26 at 2013-07-23 16:13:23 +0000
+Served asset /iconInfoTab8.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bgInfoTab8.png" for 37.157.36.26 at 2013-07-23 16:13:23 +0000
+Served asset /bgInfoTab8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/arrowUp8.png" for 37.157.36.26 at 2013-07-23 16:13:23 +0000
+Served asset /arrowUp8.png - 304 Not Modified (0ms)
+
+
+Started POST "/water_basic/capital" for 37.157.36.26 at 2013-07-23 16:13:55 +0000
+Processing by WaterBasicController#capital as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "r_water"=>"3", "water"=>"2", "commit"=>"Next"}
+  Rendered water_basic/capital.html.erb within layouts/water_basic_layout (1.0ms)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.4ms)
+Completed 200 OK in 39ms (Views: 39.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:13:55 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:13:55 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:13:55 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:13:55 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:13:55 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:13:56 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:13:56 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:13:56 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:13:56 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:13:56 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:14:05 +0000
+Served asset /bgTopShadow24.png - 200 OK (49ms)
+
+
+Started POST "/water_basic/capital" for 37.157.36.26 at 2013-07-23 16:14:12 +0000
+Processing by WaterBasicController#capital as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "r_water"=>"3", "water"=>"2", "commit"=>"Next"}
+  Rendered water_basic/capital.html.erb within layouts/water_basic_layout (1.5ms)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.1ms)
+Completed 200 OK in 41ms (Views: 40.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:14:12 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:14:12 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:14:12 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:14:12 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:14:12 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:14:12 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:14:12 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:14:12 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:14:12 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:14:12 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:15:08 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:15:09 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:15:09 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started POST "/water_basic/capital" for 37.157.36.26 at 2013-07-23 16:16:11 +0000
+Processing by WaterBasicController#capital as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "r_water"=>"3", "water"=>"2", "commit"=>"Next"}
+  Rendered water_basic/capital.html.erb within layouts/water_basic_layout (0.8ms)
+Compiled application.css  (0ms)  (pid 13635)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.4ms)
+Completed 200 OK in 47ms (Views: 47.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:16:11 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:16:11 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:16:11 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:16:11 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:16:11 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:16:12 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:16:12 +0000
+Served asset /application.css - 200 OK (4ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:16:12 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:16:12 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:16:12 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spriteArrow8.png" for 37.157.36.26 at 2013-07-23 16:16:12 +0000
+Served asset /spriteArrow8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/iconInfoTab8.png" for 37.157.36.26 at 2013-07-23 16:16:12 +0000
+Served asset /iconInfoTab8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgInfoTab8.png" for 37.157.36.26 at 2013-07-23 16:16:12 +0000
+Served asset /bgInfoTab8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/arrowUp8.png" for 37.157.36.26 at 2013-07-23 16:16:12 +0000
+Served asset /arrowUp8.png - 304 Not Modified (0ms)
+
+
+Started POST "/water_basic/capital" for 37.157.36.26 at 2013-07-23 16:17:31 +0000
+Processing by WaterBasicController#capital as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "r_water"=>"3", "water"=>"2", "commit"=>"Next"}
+  Rendered water_basic/capital.html.erb within layouts/water_basic_layout (0.8ms)
+Compiled application.css  (0ms)  (pid 13635)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.1ms)
+Completed 200 OK in 46ms (Views: 46.1ms | ActiveRecord: 0.0ms)
+[2013-07-23 16:17:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:17:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:17:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:17:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:17:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:17:32] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:17:32] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:17:32] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:17:32] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:17:32] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:17:32] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:17:32] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:17:32] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:17:32] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:17:42] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:17:44] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:17:44] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:17:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:17:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:17:51] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:19:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:19:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:19:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:19:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:19:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:19:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:19:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:19:57] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:19:57] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:19:57] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:19:57] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:19:57] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:19:57] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:19:57] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:21:11] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:21:11] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:21:11] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:21:11] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:21:11] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:21:11] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:21:11] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:21:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:21:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:21:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:17:31 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:17:31 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:17:31 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:17:31 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:17:31 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:17:32 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:17:32 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:17:32 +0000
+Served asset /application.css - 200 OK (4ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:17:32 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:17:32 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spriteArrow8.png" for 37.157.36.26 at 2013-07-23 16:17:32 +0000
+Served asset /spriteArrow8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:17:32 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/iconInfoTab8.png" for 37.157.36.26 at 2013-07-23 16:17:32 +0000
+Served asset /iconInfoTab8.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bgInfoTab8.png" for 37.157.36.26 at 2013-07-23 16:17:32 +0000
+Served asset /bgInfoTab8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/arrowUp8.png" for 37.157.36.26 at 2013-07-23 16:17:32 +0000
+Served asset /arrowUp8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:17:42 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:17:44 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:17:44 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:17:49 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:17:49 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:17:51 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started POST "/water_basic/capital" for 37.157.36.26 at 2013-07-23 16:19:55 +0000
+Processing by WaterBasicController#capital as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "r_water"=>"3", "water"=>"2", "commit"=>"Next"}
+  Rendered water_basic/capital.html.erb within layouts/water_basic_layout (0.8ms)
+Compiled application.css  (0ms)  (pid 13635)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.4ms)
+Completed 200 OK in 92ms (Views: 91.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:19:56 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:19:56 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:19:56 +0000
+Served asset /application.css - 200 OK (3ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:19:56 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:19:56 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:19:56 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:19:56 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:19:56 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:19:56 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:19:57 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/arrowUp8.png" for 37.157.36.26 at 2013-07-23 16:19:57 +0000
+Served asset /arrowUp8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgInfoTab8.png" for 37.157.36.26 at 2013-07-23 16:19:57 +0000
+Served asset /bgInfoTab8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/iconInfoTab8.png" for 37.157.36.26 at 2013-07-23 16:19:57 +0000
+Served asset /iconInfoTab8.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/spriteArrow8.png" for 37.157.36.26 at 2013-07-23 16:19:57 +0000
+Served asset /spriteArrow8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:19:57 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started POST "/water_basic/capital" for 37.157.36.26 at 2013-07-23 16:21:11 +0000
+Processing by WaterBasicController#capital as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "r_water"=>"3", "water"=>"2", "commit"=>"Next"}
+  Rendered water_basic/capital.html.erb within layouts/water_basic_layout (1.3ms)
+Compiled application.css  (0ms)  (pid 13635)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.1ms)
+Completed 200 OK in 48ms (Views: 47.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:21:11 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:21:11 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:21:11 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:21:11 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:21:11 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:21:11 +0000
+Served asset /application.css - 200 OK (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:21:11 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:21:11 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:21:12 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:21:12 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spriteArrow8.png" for 37.157.36.26 at 2013-07-23 16:21:12 +0000
+Served asset /spriteArrow8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/iconInfoTab8.png" for 37.157.36.26 at 2013-07-23 16:21:12 +0000
+Served asset /iconInfoTab8.png - 304 Not Modified (3ms)
+[2013-07-23 16:21:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:21:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:21:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:21:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:21:27] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:21:28] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:21:30] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:21:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:25:13] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:25:13] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:25:13] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:25:13] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:25:13] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:25:14] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:25:14] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:25:15] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:25:15] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:25:15] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:25:15] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:25:15] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:25:15] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:25:15] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:25:28] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:25:29] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:25:45] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:25:48] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:25:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:25:50] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:26:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:26:11] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:26:13] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:26:14] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:26:14] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:26:15] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:26:17] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:26:18] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:26:19] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:26:20] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:26:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:26:32] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:26:33] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:26:37] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:27:37] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:27:39] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:28:20] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:28:21] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:17] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/bgInfoTab8.png" for 37.157.36.26 at 2013-07-23 16:21:12 +0000
+Served asset /bgInfoTab8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:21:12 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/arrowUp8.png" for 37.157.36.26 at 2013-07-23 16:21:12 +0000
+Served asset /arrowUp8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:21:27 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:21:28 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:21:30 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:21:31 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started POST "/water_basic/capital" for 37.157.36.26 at 2013-07-23 16:25:12 +0000
+Processing by WaterBasicController#capital as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "r_water"=>"3", "water"=>"2", "commit"=>"Next"}
+  Rendered water_basic/capital.html.erb within layouts/water_basic_layout (1.8ms)
+Compiled application.css  (0ms)  (pid 13635)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.2ms)
+Completed 200 OK in 49ms (Views: 48.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:25:13 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:25:13 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:25:13 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:25:13 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:25:13 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:25:13 +0000
+Served asset /application.css - 200 OK (2ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:25:14 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:25:14 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:25:15 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:25:15 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/iconInfoTab8.png" for 37.157.36.26 at 2013-07-23 16:25:15 +0000
+Served asset /iconInfoTab8.png - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bgInfoTab8.png" for 37.157.36.26 at 2013-07-23 16:25:15 +0000
+Served asset /bgInfoTab8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/arrowUp8.png" for 37.157.36.26 at 2013-07-23 16:25:15 +0000
+Served asset /arrowUp8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:25:15 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spriteArrow8.png" for 37.157.36.26 at 2013-07-23 16:25:15 +0000
+Served asset /spriteArrow8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:25:28 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:25:29 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:25:45 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:25:48 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:25:49 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:25:50 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:26:10 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:26:11 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:26:13 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:26:14 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:26:14 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:26:15 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:26:17 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:26:18 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:26:19 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:26:20 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:26:31 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:26:32 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:26:33 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:26:37 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:27:37 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:27:39 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:28:20 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:28:21 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started POST "/water_basic/capital" for 37.157.36.26 at 2013-07-23 16:29:17 +0000
+Processing by WaterBasicController#capital as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "r_water"=>"3", "water"=>"2", "commit"=>"Next"}
+  Rendered water_basic/capital.html.erb within layouts/water_basic_layout (0.9ms)
+Compiled application.css  (0ms)  (pid 13635)
+  Rendered shared/_header.html.erb (0.3ms)
+  Rendered shared/_nav_water.html.erb (1.2ms)
+Completed 200 OK in 95ms (Views: 94.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:29:17 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:29:18 +0000
+Served asset /application.css - 200 OK (6ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:29:18 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+[2013-07-23 16:29:18] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:18] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:18] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:18] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:18] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:18] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:18] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:18] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:18] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:18] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:18] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:18] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:18] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:42] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:42] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:42] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:42] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:42] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:42] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:42] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:42] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:42] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:42] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:42] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:42] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:42] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:42] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:55] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:55] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:55] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:55] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:29:56] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:31:23] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:29:18 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:29:18 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:29:18 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:29:18 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:29:18 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:29:18 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:29:18 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spriteArrow8.png" for 37.157.36.26 at 2013-07-23 16:29:18 +0000
+Served asset /spriteArrow8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:29:18 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/arrowUp8.png" for 37.157.36.26 at 2013-07-23 16:29:18 +0000
+Served asset /arrowUp8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/iconInfoTab8.png" for 37.157.36.26 at 2013-07-23 16:29:18 +0000
+Served asset /iconInfoTab8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgInfoTab8.png" for 37.157.36.26 at 2013-07-23 16:29:18 +0000
+Served asset /bgInfoTab8.png - 304 Not Modified (0ms)
+
+
+Started POST "/water_basic/capital" for 37.157.36.26 at 2013-07-23 16:29:41 +0000
+Processing by WaterBasicController#capital as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "r_water"=>"3", "water"=>"2", "commit"=>"Next"}
+  Rendered water_basic/capital.html.erb within layouts/water_basic_layout (1.3ms)
+Compiled application.css  (0ms)  (pid 13635)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.3ms)
+Completed 200 OK in 48ms (Views: 47.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:29:42 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:29:42 +0000
+Served asset /application.css - 200 OK (5ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:29:42 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:29:42 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:29:42 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:29:42 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:29:42 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:29:42 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:29:42 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:29:42 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spriteArrow8.png" for 37.157.36.26 at 2013-07-23 16:29:42 +0000
+Served asset /spriteArrow8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:29:42 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/iconInfoTab8.png" for 37.157.36.26 at 2013-07-23 16:29:42 +0000
+Served asset /iconInfoTab8.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bgInfoTab8.png" for 37.157.36.26 at 2013-07-23 16:29:42 +0000
+Served asset /bgInfoTab8.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/arrowUp8.png" for 37.157.36.26 at 2013-07-23 16:29:42 +0000
+Served asset /arrowUp8.png - 304 Not Modified (0ms)
+
+
+Started POST "/water_basic/capital" for 37.157.36.26 at 2013-07-23 16:29:55 +0000
+Processing by WaterBasicController#capital as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "r_water"=>"3", "water"=>"2", "commit"=>"Next"}
+  Rendered water_basic/capital.html.erb within layouts/water_basic_layout (0.8ms)
+Compiled application.css  (0ms)  (pid 13635)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.1ms)
+Completed 200 OK in 45ms (Views: 44.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:29:55 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:29:55 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:29:55 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:29:55 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:29:55 +0000
+Served asset /application.css - 200 OK (2ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:29:56 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:29:56 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:29:56 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:29:56 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spriteArrow8.png" for 37.157.36.26 at 2013-07-23 16:29:56 +0000
+Served asset /spriteArrow8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:29:56 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:29:56 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgInfoTab8.png" for 37.157.36.26 at 2013-07-23 16:29:56 +0000
+Served asset /bgInfoTab8.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/arrowUp8.png" for 37.157.36.26 at 2013-07-23 16:29:56 +0000
+Served asset /arrowUp8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/iconInfoTab8.png" for 37.157.36.26 at 2013-07-23 16:29:56 +0000
+Served asset /iconInfoTab8.png - 304 Not Modified (0ms)
+
+
+Started POST "/water_basic/capital" for 37.157.36.26 at 2013-07-23 16:31:23 +0000
+Processing by WaterBasicController#capital as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "r_water"=>"3", "water"=>"2", "commit"=>"Next"}
+  Rendered water_basic/capital.html.erb within layouts/water_basic_layout (0.8ms)
+Compiled application.css  (0ms)  (pid 13635)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.1ms)
+Completed 200 OK in 88ms (Views: 87.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:31:23 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:31:24 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+[2013-07-23 16:31:24] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:31:24] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:31:24] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:31:24] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:31:24] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:31:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:31:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:31:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:31:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:31:26] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:31:26] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:31:26] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:31:26] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:31:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:31:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:31:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:31:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:31:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:31:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:31:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:31:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:31:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:31:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:31:44] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:31:44] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:31:44] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:31:44] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:32:03] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:32:03] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:32:03] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:32:03] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:32:03] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:32:03] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:32:03] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:32:03] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:32:04] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:32:04] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:32:04] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:32:04] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:32:04] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:32:04] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:31:24 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:31:24 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:31:24 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:31:24 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:31:25 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:31:25 +0000
+Served asset /application.css - 200 OK (2ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:31:25 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:31:25 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spriteArrow8.png" for 37.157.36.26 at 2013-07-23 16:31:25 +0000
+Served asset /spriteArrow8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:31:26 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/iconInfoTab8.png" for 37.157.36.26 at 2013-07-23 16:31:26 +0000
+Served asset /iconInfoTab8.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bgInfoTab8.png" for 37.157.36.26 at 2013-07-23 16:31:26 +0000
+Served asset /bgInfoTab8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/arrowUp8.png" for 37.157.36.26 at 2013-07-23 16:31:26 +0000
+Served asset /arrowUp8.png - 304 Not Modified (0ms)
+
+
+Started POST "/water_basic/capital" for 37.157.36.26 at 2013-07-23 16:31:43 +0000
+Processing by WaterBasicController#capital as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "r_water"=>"3", "water"=>"2", "commit"=>"Next"}
+  Rendered water_basic/capital.html.erb within layouts/water_basic_layout (0.8ms)
+Compiled application.css  (0ms)  (pid 13635)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.1ms)
+Completed 200 OK in 46ms (Views: 45.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:31:43 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:31:43 +0000
+Served asset /application.css - 200 OK (4ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:31:43 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:31:43 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:31:43 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:31:43 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:31:43 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:31:43 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:31:43 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:31:43 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spriteArrow8.png" for 37.157.36.26 at 2013-07-23 16:31:43 +0000
+Served asset /spriteArrow8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:31:44 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgInfoTab8.png" for 37.157.36.26 at 2013-07-23 16:31:44 +0000
+Served asset /bgInfoTab8.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/arrowUp8.png" for 37.157.36.26 at 2013-07-23 16:31:44 +0000
+Served asset /arrowUp8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/iconInfoTab8.png" for 37.157.36.26 at 2013-07-23 16:31:44 +0000
+Served asset /iconInfoTab8.png - 304 Not Modified (0ms)
+
+
+Started POST "/water_basic/capital" for 37.157.36.26 at 2013-07-23 16:32:03 +0000
+Processing by WaterBasicController#capital as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "r_water"=>"3", "water"=>"2", "commit"=>"Next"}
+  Rendered water_basic/capital.html.erb within layouts/water_basic_layout (0.8ms)
+Compiled application.css  (0ms)  (pid 13635)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.2ms)
+Completed 200 OK in 94ms (Views: 93.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:32:03 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:32:03 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:32:03 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:32:03 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:32:03 +0000
+Served asset /application.css - 200 OK (2ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:32:03 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:32:03 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:32:03 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:32:03 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:32:03 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spriteArrow8.png" for 37.157.36.26 at 2013-07-23 16:32:04 +0000
+Served asset /spriteArrow8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:32:04 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgInfoTab8.png" for 37.157.36.26 at 2013-07-23 16:32:04 +0000
+Served asset /bgInfoTab8.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/arrowUp8.png" for 37.157.36.26 at 2013-07-23 16:32:04 +0000
+Served asset /arrowUp8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/iconInfoTab8.png" for 37.157.36.26 at 2013-07-23 16:32:04 +0000
+Served asset /iconInfoTab8.png - 304 Not Modified (0ms)
+
+
+Started POST "/water_basic/capital" for 37.157.36.26 at 2013-07-23 16:34:13 +0000
+Processing by WaterBasicController#capital as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "r_water"=>"3", "water"=>"2", "commit"=>"Next"}
+  Rendered water_basic/capital.html.erb within layouts/water_basic_layout (1.0ms)
+Compiled application.css  (0ms)  (pid 13635)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.1ms)
+Completed 200 OK in 45ms (Views: 45.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:34:13 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+[2013-07-23 16:34:13] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:34:13] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:34:13] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:34:13] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:34:13] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:34:13] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:34:13] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:34:14] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:34:14] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:34:14] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:34:14] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:34:14] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:34:14] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:34:14] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:34:24] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:34:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:34:26] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:34:28] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:34:29] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:34:30] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:34:33] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:34:34] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:35:39] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:35:39] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:35:40] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:35:40] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:35:40] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:35:41] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:35:42] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:39:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:39:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:39:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:39:26] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:39:26] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:39:26] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:39:26] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:39:27] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:39:27] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:39:27] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:39:28] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:39:28] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:39:28] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:39:28] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:39:44] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:39:45] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:39:46] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:39:47] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:39:51] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:39:52] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:39:53] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:39:55] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:34:13 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:34:13 +0000
+Served asset /application.css - 200 OK (4ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:34:13 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:34:13 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:34:13 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:34:13 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:34:13 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:34:14 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:34:14 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:34:14 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgInfoTab8.png" for 37.157.36.26 at 2013-07-23 16:34:14 +0000
+Served asset /bgInfoTab8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spriteArrow8.png" for 37.157.36.26 at 2013-07-23 16:34:14 +0000
+Served asset /spriteArrow8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/iconInfoTab8.png" for 37.157.36.26 at 2013-07-23 16:34:14 +0000
+Served asset /iconInfoTab8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/arrowUp8.png" for 37.157.36.26 at 2013-07-23 16:34:14 +0000
+Served asset /arrowUp8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:34:24 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:34:25 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:34:26 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:34:28 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:34:29 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:34:30 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:34:33 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:34:34 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:35:39 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:35:39 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:35:40 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:35:40 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:35:40 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:35:41 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:35:42 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started POST "/water_basic/capital" for 37.157.36.26 at 2013-07-23 16:39:24 +0000
+Processing by WaterBasicController#capital as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "r_water"=>"3", "water"=>"2", "commit"=>"Next"}
+  Rendered water_basic/capital.html.erb within layouts/water_basic_layout (0.8ms)
+Compiled application.css  (0ms)  (pid 13635)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.4ms)
+Completed 200 OK in 45ms (Views: 44.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:39:25 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:39:25 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:39:25 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:39:26 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:39:26 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:39:26 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:39:26 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:39:27 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:39:27 +0000
+Served asset /application.css - 200 OK (2ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:39:27 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spriteArrow8.png" for 37.157.36.26 at 2013-07-23 16:39:27 +0000
+Served asset /spriteArrow8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:39:28 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/iconInfoTab8.png" for 37.157.36.26 at 2013-07-23 16:39:28 +0000
+Served asset /iconInfoTab8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgInfoTab8.png" for 37.157.36.26 at 2013-07-23 16:39:28 +0000
+Served asset /bgInfoTab8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/arrowUp8.png" for 37.157.36.26 at 2013-07-23 16:39:28 +0000
+Served asset /arrowUp8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:39:44 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:39:45 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:39:46 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:39:47 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:39:51 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:39:52 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:39:53 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:39:55 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started POST "/water_basic/capital" for 37.157.36.26 at 2013-07-23 16:40:47 +0000
+Processing by WaterBasicController#capital as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "r_water"=>"3", "water"=>"2", "commit"=>"Next"}
+  Rendered water_basic/capital.html.erb within layouts/water_basic_layout (0.8ms)
+Compiled application.css  (0ms)  (pid 13635)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.1ms)
+Completed 200 OK in 95ms (Views: 94.2ms | ActiveRecord: 0.0ms)
+[2013-07-23 16:40:48] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:40:48] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:40:48] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:40:48] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:40:48] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:40:48] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:40:48] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:40:48] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:40:48] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:40:48] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:40:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:40:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:40:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:40:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:40:53] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:40:53] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:40:53] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:40:53] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:40:53] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:40:53] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:40:53] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:40:53] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:40:53] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:40:53] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:42:54] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:42:54] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:42:54] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:42:54] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:40:48 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:40:48 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:40:48 +0000
+Served asset /application.css - 200 OK (2ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:40:48 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:40:48 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:40:48 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:40:48 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:40:48 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:40:48 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:40:48 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spriteArrow8.png" for 37.157.36.26 at 2013-07-23 16:40:48 +0000
+Served asset /spriteArrow8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/arrowUp8.png" for 37.157.36.26 at 2013-07-23 16:40:49 +0000
+Served asset /arrowUp8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:40:49 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgInfoTab8.png" for 37.157.36.26 at 2013-07-23 16:40:49 +0000
+Served asset /bgInfoTab8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/iconInfoTab8.png" for 37.157.36.26 at 2013-07-23 16:40:49 +0000
+Served asset /iconInfoTab8.png - 304 Not Modified (0ms)
+SESSION FORM:
+{"country"=>"AX", "water"=>2, "population"=>2, "capital"=>81, "recurrent"=>9, "time"=>1, "quantity"=>1, "quality"=>2, "reliability"=>1}
+
+
+Started POST "/water_basic/capital" for 37.157.36.26 at 2013-07-23 16:40:52 +0000
+Processing by WaterBasicController#capital as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "capital"=>"81", "commit"=>"Next"}
+Redirected to http://198.101.243.21:8080/water_basic/recurrent
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/water_basic/recurrent" for 37.157.36.26 at 2013-07-23 16:40:52 +0000
+Processing by WaterBasicController#recurrent as HTML
+  Rendered water_basic/recurrent.html.erb within layouts/water_basic_layout (1.1ms)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.1ms)
+Completed 200 OK in 41ms (Views: 40.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:40:53 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:40:53 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:40:53 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:40:53 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:40:53 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:40:53 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:40:53 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:40:53 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:40:53 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:40:53 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/water_basic/recurrent" for 37.157.36.26 at 2013-07-23 16:42:49 +0000
+Processing by WaterBasicController#recurrent as HTML
+  Rendered water_basic/recurrent.html.erb within layouts/water_basic_layout (2.1ms)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.2ms)
+Completed 200 OK in 40ms (Views: 40.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:42:49 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:42:49 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:42:49 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:42:49 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:42:49 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:42:49 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:42:49 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:42:49 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:42:49 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:42:49 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+SESSION FORM:
+{"country"=>"AX", "water"=>2, "population"=>2, "capital"=>81, "recurrent"=>6, "time"=>1, "quantity"=>1, "quality"=>2, "reliability"=>1}
+
+
+Started POST "/water_basic/recurrent" for 37.157.36.26 at 2013-07-23 16:42:53 +0000
+Processing by WaterBasicController#recurrent as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "recurrent"=>"6", "commit"=>"Next"}
+Redirected to http://198.101.243.21:8080/water_basic/time
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/water_basic/time" for 37.157.36.26 at 2013-07-23 16:42:53 +0000
+Processing by WaterBasicController#time as HTML
+  Rendered water_basic/time.html.erb within layouts/water_basic_layout (0.9ms)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.1ms)
+Completed 200 OK in 38ms (Views: 38.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:42:54 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:42:54 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:42:54 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:42:54 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:42:54 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+[2013-07-23 16:42:54] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:42:54] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:42:54] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:42:54] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:42:54] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:42:54] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:43:50] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:43:50] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:43:50] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:43:50] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:43:50] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:43:50] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:43:50] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:43:50] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:43:50] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:43:50] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:44:11] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:44:13] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:44:14] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:44:14] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:44:21] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:44:22] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:44:23] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:44:24] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:44:24] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:44:24] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:44:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:44:26] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:44:28] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:44:32] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:44:36] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:44:37] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:44:37] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:44:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:44:39] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:16] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:16] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:16] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:16] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:16] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:16] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:16] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:17] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:17] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:17] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:17] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:42:54 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:42:54 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:42:54 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:42:54 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:42:54 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/water_basic/time" for 37.157.36.26 at 2013-07-23 16:43:50 +0000
+Processing by WaterBasicController#time as HTML
+  Rendered water_basic/time.html.erb within layouts/water_basic_layout (1.9ms)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.2ms)
+Completed 200 OK in 88ms (Views: 87.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:43:50 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:43:50 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:43:50 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:43:50 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:43:50 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:43:50 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:43:50 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:43:50 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:43:50 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:43:50 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:44:11 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:44:13 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:44:14 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:44:14 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:44:21 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:44:22 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:44:23 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:44:23 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:44:24 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:44:24 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:44:25 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:44:26 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:44:28 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:44:32 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:44:36 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:44:37 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:44:37 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:44:38 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgTopShadow24.png" for 37.157.36.26 at 2013-07-23 16:44:39 +0000
+Served asset /bgTopShadow24.png - 304 Not Modified (0ms)
+SESSION FORM:
+{"country"=>"AX", "water"=>2, "population"=>2, "capital"=>81, "recurrent"=>6, "time"=>1, "quantity"=>1, "quality"=>2, "reliability"=>1}
+
+
+Started POST "/water_basic/time" for 37.157.36.26 at 2013-07-23 16:47:16 +0000
+Processing by WaterBasicController#time as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "time"=>"1", "commit"=>"Next"}
+Redirected to http://198.101.243.21:8080/water_basic/quantity
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/water_basic/quantity" for 37.157.36.26 at 2013-07-23 16:47:16 +0000
+Processing by WaterBasicController#quantity as HTML
+  Rendered water_basic/quantity.html.erb within layouts/water_basic_layout (1.9ms)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.1ms)
+Completed 200 OK in 43ms (Views: 42.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:16 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:16 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:16 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:16 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:16 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:16 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:16 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:17 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:17 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:47:17 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spriteQ7basicWater24.png" for 37.157.36.26 at 2013-07-23 16:47:17 +0000
+Served asset /spriteQ7basicWater24.png - 304 Not Modified (0ms)
+
+
+Started POST "/water_basic/quality" for 37.157.36.26 at 2013-07-23 16:47:20 +0000
+Processing by WaterBasicController#quality as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "r_water"=>"3", "water"=>"2", "commit"=>"Next"}
+  Rendered water_basic/quality.html.erb within layouts/water_basic_layout (48.7ms)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.1ms)
+Completed 200 OK in 87ms (Views: 86.6ms | ActiveRecord: 0.0ms)
+[2013-07-23 16:47:20] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:20] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:20] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:20] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:20] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:21] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:21] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:21] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:21] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:21] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:21] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:24] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:24] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:24] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:24] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:24] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:24] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:24] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:27] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:27] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:27] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:27] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:27] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:27] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:28] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:20 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:20 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:20 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:20 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:20 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:21 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:21 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:21 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:21 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:47:21 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spriteQ8basicWater24.png" for 37.157.36.26 at 2013-07-23 16:47:21 +0000
+Served asset /spriteQ8basicWater24.png - 304 Not Modified (0ms)
+SESSION FORM:
+{"country"=>"AX", "water"=>2, "population"=>2, "capital"=>81, "recurrent"=>6, "time"=>1, "quantity"=>1, "quality"=>2, "reliability"=>1}
+
+
+Started POST "/water_basic/quality" for 37.157.36.26 at 2013-07-23 16:47:24 +0000
+Processing by WaterBasicController#quality as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "r_quality"=>"3", "quality"=>"2", "commit"=>"Next"}
+Redirected to http://198.101.243.21:8080/water_basic/reliability
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/water_basic/reliability" for 37.157.36.26 at 2013-07-23 16:47:24 +0000
+Processing by WaterBasicController#reliability as HTML
+  Rendered water_basic/reliability.html.erb within layouts/water_basic_layout (1.6ms)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.1ms)
+Completed 200 OK in 40ms (Views: 39.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:24 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:24 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:24 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:24 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:24 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:24 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:24 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:25 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:25 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spriteQ9basicWater24.png" for 37.157.36.26 at 2013-07-23 16:47:25 +0000
+Served asset /spriteQ9basicWater24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:47:25 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+SESSION FORM:
+{"country"=>"AX", "water"=>2, "population"=>2, "capital"=>81, "recurrent"=>6, "time"=>1, "quantity"=>1, "quality"=>2, "reliability"=>2}
+
+
+Started POST "/water_basic/reliability" for 37.157.36.26 at 2013-07-23 16:47:27 +0000
+Processing by WaterBasicController#reliability as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "r_reliability"=>"3", "reliability"=>"2", "commit"=>"Save"}
+Redirected to http://198.101.243.21:8080/water_basic/report
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+form from session
+{"country"=>"AX", "water"=>2, "population"=>2, "capital"=>81, "recurrent"=>6, "time"=>1, "quantity"=>1, "quality"=>2, "reliability"=>2}
+RESULTS
+{:country=>#<Country:0x007f6cf88c2ff0 @data={"continent"=>"Europe", "alpha2"=>"AX", "alpha3"=>"ALA", "country_code"=>"358", "currency"=>nil, "international_prefix"=>"", "ioc"=>nil, "latitude"=>"", "longitude"=>"", "name"=>"Åland Islands", "names"=>["Åland Islands"], "national_destination_code_lengths"=>[], "national_number_lengths"=>[], "national_prefix"=>"", "number"=>"248", "region"=>"Europe", "subregion"=>"Northern Europe", "un_locode"=>nil, "languages"=>["sv"], "nationality"=>"Swedish"}>, :water=>"Single-Town", :population=>"Between 5,001 and 15,000", :capital=>81, :recurrent=>6, :total=>486, :time=>"Between 10 and 30", :quantity=>"Sub-standard service", :quality=>"Basic service", :reliability=>"Basic service", :service_level=>"This service is not delivering a desired minimum quantity and the sources are between 30 and 60 minutes roundtrip from the household. Capital expenditure values are within found WASHCost ranges so factors other than costs are influencing service delivery or the context requires more expensive infrastructure."}
+
+
+Started GET "/water_basic/report" for 37.157.36.26 at 2013-07-23 16:47:27 +0000
+Processing by WaterBasicController#report as HTML
+  Rendered water_basic/report.html.erb within layouts/report_water_basic (0.1ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/db_water.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:27 +0000
+Served asset /db_water.js - 200 OK (0ms)
+
+
+Started GET "/assets/report.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:27 +0000
+Served asset /report.css - 200 OK (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:27 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:27 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:27 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:27 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:27 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:27 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:28 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/report/stars_1.png" for 37.157.36.26 at 2013-07-23 16:47:28 +0000
+Served asset /report/stars_1.png - 200 OK (0ms)
+
+
+Started GET "/assets/report/stars_3.png" for 37.157.36.26 at 2013-07-23 16:47:28 +0000
+Served asset /report/stars_3.png - 200 OK (0ms)
+
+
+Started GET "/assets/report/report_icon.png" for 37.157.36.26 at 2013-07-23 16:47:28 +0000
+Served asset /report/report_icon.png - 200 OK (0ms)
+
+
+Started GET "/assets/report/bg_distance.png" for 37.157.36.26 at 2013-07-23 16:47:28 +0000
+Served asset /report/bg_distance.png - 200 OK (0ms)
+[2013-07-23 16:47:28] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:32] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:32] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:32] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:32] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:32] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:32] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:32] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:32] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:32] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:32] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:36] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:36] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:37] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:37] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:37] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:37] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:37] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:37] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:37] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:37] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:37] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:41] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:43] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:44] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:44] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:47] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:47] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:47] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:47] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:47:28 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/report/icon_service.png" for 37.157.36.26 at 2013-07-23 16:47:28 +0000
+Served asset /report/icon_service.png - 200 OK (0ms)
+
+
+Started GET "/assets/report/icon_edit.png" for 37.157.36.26 at 2013-07-23 16:47:28 +0000
+Served asset /report/icon_edit.png - 200 OK (0ms)
+
+
+Started GET "/water_basic/time" for 37.157.36.26 at 2013-07-23 16:47:31 +0000
+Processing by WaterBasicController#time as HTML
+  Rendered water_basic/time.html.erb within layouts/water_basic_layout (1.8ms)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.1ms)
+Completed 200 OK in 40ms (Views: 39.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:32 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:32 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:32 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:32 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:32 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:32 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:32 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:32 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:32 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:47:32 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/water_basic/time" for 37.157.36.26 at 2013-07-23 16:47:36 +0000
+Processing by WaterBasicController#time as HTML
+  Rendered water_basic/time.html.erb within layouts/water_basic_layout (1.0ms)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.1ms)
+Completed 200 OK in 43ms (Views: 42.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:36 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:36 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:37 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:37 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:37 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:37 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:37 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:37 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:37 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:47:37 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 37.157.36.26 at 2013-07-23 16:47:41 +0000
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/water_basic" for 37.157.36.26 at 2013-07-23 16:47:43 +0000
+Processing by WaterBasicController#country as HTML
+  Rendered shared/_country_select_options.html.erb (0.0ms)
+  Rendered water_basic/country.html.erb within layouts/water_basic_layout (1.8ms)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.1ms)
+Completed 200 OK in 40ms (Views: 39.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:43 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:43 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:43 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:43 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:43 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:43 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:43 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:43 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:43 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:47:44 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spriteArrow8.png" for 37.157.36.26 at 2013-07-23 16:47:44 +0000
+Served asset /spriteArrow8.png - 304 Not Modified (0ms)
+SESSION FORM:
+{"country"=>"AX", "water"=>2, "population"=>2, "capital"=>81, "recurrent"=>6, "time"=>1, "quantity"=>1, "quality"=>2, "reliability"=>2}
+
+
+Started POST "/water_basic" for 37.157.36.26 at 2013-07-23 16:47:46 +0000
+Processing by WaterBasicController#country as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "country"=>"AX", "commit"=>"OK! Start using the calculator"}
+Redirected to http://198.101.243.21:8080/water_basic/water
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/water_basic/water" for 37.157.36.26 at 2013-07-23 16:47:47 +0000
+Processing by WaterBasicController#water as HTML
+  Rendered water_basic/water.html.erb within layouts/water_basic_layout (2.2ms)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.1ms)
+Completed 200 OK in 43ms (Views: 43.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:47 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:47 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:47 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:47 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:47 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+[2013-07-23 16:47:47] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:47] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:47] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:47] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:47] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:48] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:48] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:50] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:50] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:50] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:50] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:50] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:50] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:51] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:51] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:51] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:51] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:51] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:53] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:53] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:53] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:53] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:53] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:54] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:54] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:54] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:54] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:54] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:57] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:57] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:57] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:57] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:57] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:57] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:58] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:58] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:58] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:47:58] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:47 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:47 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:47 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:47 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spriteQ2basicWater24.png" for 37.157.36.26 at 2013-07-23 16:47:48 +0000
+Served asset /spriteQ2basicWater24.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:47:48 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+SESSION FORM:
+{"country"=>"AX", "water"=>2, "population"=>2, "capital"=>81, "recurrent"=>6, "time"=>1, "quantity"=>1, "quality"=>2, "reliability"=>2}
+
+
+Started POST "/water_basic/water" for 37.157.36.26 at 2013-07-23 16:47:50 +0000
+Processing by WaterBasicController#water as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "r_water"=>"4", "water"=>"2", "commit"=>"Next"}
+Redirected to http://198.101.243.21:8080/water_basic/population
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/water_basic/population" for 37.157.36.26 at 2013-07-23 16:47:50 +0000
+Processing by WaterBasicController#population as HTML
+  Rendered water_basic/population.html.erb within layouts/water_basic_layout (1.8ms)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.1ms)
+Completed 200 OK in 39ms (Views: 39.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:50 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:50 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:50 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:50 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:50 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:50 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:51 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:51 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:51 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:47:51 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spriteQ3basicWater24.png" for 37.157.36.26 at 2013-07-23 16:47:51 +0000
+Served asset /spriteQ3basicWater24.png - 304 Not Modified (0ms)
+
+
+Started POST "/water_basic/capital" for 37.157.36.26 at 2013-07-23 16:47:53 +0000
+Processing by WaterBasicController#capital as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "r_water"=>"3", "water"=>"1", "commit"=>"Next"}
+  Rendered water_basic/capital.html.erb within layouts/water_basic_layout (0.8ms)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.1ms)
+Completed 200 OK in 39ms (Views: 38.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:53 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:53 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:53 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:53 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:53 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:54 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:54 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:54 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:54 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:47:54 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+SESSION FORM:
+{"country"=>"AX", "water"=>2, "population"=>2, "capital"=>62, "recurrent"=>6, "time"=>1, "quantity"=>1, "quality"=>2, "reliability"=>2}
+
+
+Started POST "/water_basic/capital" for 37.157.36.26 at 2013-07-23 16:47:57 +0000
+Processing by WaterBasicController#capital as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "capital"=>"62", "commit"=>"Next"}
+Redirected to http://198.101.243.21:8080/water_basic/recurrent
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/water_basic/recurrent" for 37.157.36.26 at 2013-07-23 16:47:57 +0000
+Processing by WaterBasicController#recurrent as HTML
+  Rendered water_basic/recurrent.html.erb within layouts/water_basic_layout (1.0ms)
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered shared/_nav_water.html.erb (1.1ms)
+Completed 200 OK in 87ms (Views: 86.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:57 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/smoothness/jquery-ui-1.10.3.custom.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:57 +0000
+Served asset /smoothness/jquery-ui-1.10.3.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:57 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.css?body=1" for 37.157.36.26 at 2013-07-23 16:47:57 +0000
+Served asset /chosen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:57 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:57 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:58 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:58 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_basic.js?body=1" for 37.157.36.26 at 2013-07-23 16:47:58 +0000
+Served asset /water_basic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-23 16:47:58 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+SESSION FORM:
+{"country"=>"AX", "water"=>2, "population"=>2, "capital"=>62, "recurrent"=>10, "time"=>1, "quantity"=>1, "quality"=>2, "reliability"=>2}
+
+
+Started POST "/water_basic/recurrent" for 37.157.36.26 at 2013-07-23 16:48:12 +0000
+Processing by WaterBasicController#recurrent as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHciUqLSWPArQaDgcTvxqTJYDsXYJUtKDDJVivBv8DA=", "recurrent"=>"10", "commit"=>"Next"}
+Redirected to http://198.101.243.21:8080/water_basic/time
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+[2013-07-23 16:48:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:48:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:48:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:48:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:48:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:48:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:48:13] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:48:13] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:48:13] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-23 16:48:13] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
