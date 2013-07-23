@@ -74,8 +74,8 @@ en:
         value_label: "People"
         answers:
           a0: "Less than 500"
-          a1: "Between 501 and 5,000"
-          a2: "Between 5,001 and 15,000"
+          a1: "501 - 5,000"
+          a2: "5,001 - 15,000"
           a3: "More than 15,000"
       time:
         question: "How long does water collection take per day from the formal sources?"
@@ -86,13 +86,13 @@ en:
           a2: "Between 30 and 60"
           a3: "More than 60"
       quantity:
-        question: "What is the actual use of water from formal sources? (Litres per person per day)"
-        value_label: "Per person<br/> per day"
+        question: "What is the actual use of water from formal sources?"
+        value_label: "(Litres per person per day)"
         answers:
-          a0: "Less than 5 liters"
-          a1: "Between 5 and 20 liters"
-          a2: "Between 21-60 liters"
-          a3: "More than 60 liters"
+          a0: "Less than 5L"
+          a1: "5 - 19L"
+          a2: "20-60L"
+          a3: "More than 60L"
       quality:
         question: "Is water quality testing done?"
         answers:

@@ -324,9 +324,15 @@ footer h2 {
     left: 15%;
     font-size: 40px;
     font-weight: normal;
-    line-height: 1.25;
+    line-height: 1;
     margin: 0 auto;
     color: #fff;
+}
+.mainContent h1 span {
+    display: block;
+    font-size: 11px;
+    color: #217f8b;
+    margin-top: 5px;
 }
 .chzn-container-single .chzn-single span,
 .chzn-container-single .chzn-default,
@@ -365,7 +371,7 @@ a.sbSelector:hover {
 }
 .chzn-container-single .chzn-single div b {
     margin: 10px 0 20px 0;
-    background: transparent url('/assets/images/spriteArrow8.png') no-repeat 85% -184px;
+    background: transparent url('/assets/spriteArrow8.png') no-repeat 85% -184px;
 }
 .chzn-results,
 .sbOptions {
@@ -441,7 +447,7 @@ form li label span {
 /* q1Country */
     .choices {
         width: 520px;
-        margin: 0 auto;
+        margin: -110px auto 75px;
     }
     .choices img {
         float: left;
@@ -451,6 +457,9 @@ form li label span {
     .choices #country {
         width: 365px;
         float: left;
+    }
+    .chzn-container {
+        margin-top: 15px;
     }
 /* info tab */
     .infoTab {
@@ -490,7 +499,7 @@ form li label span {
     .waterInput {
         overflow: hidden;
         width: 825px;
-        margin: 0 auto;
+        margin: -150px auto 50px;
     }
     .waterInput li label {
         background: transparent url('/assets/spriteQ2basicWater24.png') no-repeat 0 -146px;
@@ -524,15 +533,14 @@ form li label span {
     }
     .waterQuality {
         width: 665px;
-        margin: 0 auto;
         overflow: hidden;
-        margin-bottom: 20px;
+        margin: -130px auto 50px;
     }
     .waterQuality li label {
         background: transparent url('/assets/spriteQ8basicWater24.png') no-repeat 0 -148px;
     }
     .waterQuality li label span {
-        width: 100%;
+        width: 80%;
         left: 6%;
         text-align: center;
     }
@@ -559,7 +567,8 @@ form li label span {
     }
     .reliabilityInput {
         width: 660px;
-        margin: 0 auto;
+        overflow: hidden;
+        margin: -100px auto 50px;
     }
     .reliabilityInput label span {
         width: 90%;
@@ -589,6 +598,72 @@ form li label span {
     .reliabilityInput li .relia_03.ticked {
         background-position: -479px 0;
     }
+    .waterSource {
+        width: 660px;
+        overflow: hidden;
+        margin: -160px auto 50px;
+    }
+    .waterSource li label {
+        height: 145px;
+        background: transparent url('/assets/spriteQ7basicWater24.png') no-repeat 0 -142px;
+    }
+    .waterSource .waterSource_01 {
+        background-position: -159px -142px;
+    }
+    .waterSource .waterSource_02 {
+        background-position: -319px -142px;
+    }
+    .waterSource .waterSource_03 {
+        background-position: -479px -142px;
+    }
+    .waterSource li .ticked {
+        background-position: 0 0;
+    }
+    .waterSource li .waterSource_01.ticked {
+        background-position: -159px 0;
+    }
+    .waterSource li .waterSource_02.ticked {
+        background-position: -319px 0;
+    }
+    .waterSource li .waterSource_03.ticked {
+        background-position: -479px 0;
+    }
+    .populationArea {
+        width: 660px;
+        overflow: hidden;
+        margin: -160px auto 50px;
+    }
+    .populationArea li label {
+        height: 145px;
+        background: transparent url('/assets/spriteQ3basicWater24.png') no-repeat 0 -143px;
+    }
+    .populationArea .populationArea_01 {
+        background-position: -159px -143px;
+    }
+    .populationArea .populationArea_02 {
+        background-position: -319px -143px;
+    }
+    .populationArea .populationArea_03 {
+        background-position: -479px -143px;
+    }
+    .populationArea .ticked {
+        background-position: 0 0;
+    }
+    .populationArea .populationArea_01.ticked {
+        background-position: -159px 0;
+    }
+    .populationArea .populationArea_02.ticked {
+        background-position: -319px 0;
+    }
+    .populationArea .populationArea_03.ticked {
+        background-position: -479px 0;
+    }
+    .populationArea li label span {
+        width: 100%;
+        left: 0;
+    }
+
+
     .main_content .latrineInput {
         width: 612px;
         overflow: hidden;
@@ -684,11 +759,6 @@ form li label span {
     .reliableInput li label span {
         top: 75px;
     }
-/*    .ticked {
-        -moz-opacity: 0.70;
-        opacity: 0.70;
-        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
-    }*/
     .main_content .valueOutput {
         width: auto;
         margin: 0 auto;

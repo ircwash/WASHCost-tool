@@ -362,9 +362,6 @@
 }
 .chzn-container-active.chzn-with-drop .chzn-single {
     border: none;
-
-
-
     -webkit-border-bottom-left-radius : 0;
     -webkit-border-bottom-right-radius: 0;
     -moz-border-radius-bottomleft : 0;

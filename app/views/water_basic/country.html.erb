@@ -5,11 +5,10 @@
     <%= form_tag({controller: "water_basic", action: "country"}, class: "main_content", id: "waterBasicForm") do %>
 
     <div class="choices">
-      <span style="text-align: left">
-      <select data-placeholder="Choose a Country..." class="chzn-select" style="width:350px; " tabindex="2" name="country">
+      <img src="/assets/world8.png" alt="Which country are we">
+      <select data-placeholder="Choose a Country..." class="chzn-select" tabindex="2" name="country">
         <%= render "shared/country_select_options"%>
       </select>
-      </span>
     </div>
 
     <%= submit_tag((t 'buttons.start'), class: "next_button") %>
