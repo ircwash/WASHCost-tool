@@ -47,7 +47,7 @@
     </div>
   </nav>
 </div>
-<form class="bgGradient">
+<form class="bgGradient" action="report" method="post">
 <fieldset>
 <div class="main">
 <h1>Water Advance Questionnaire</h1>
@@ -244,78 +244,80 @@
     </select>
   </div>
   <div class="grid odd">
-    <label for="waterTreated">How is water treated?</label>
+    <label for="waterTreated"><%= t 'form.water_advanced.treatment.question' %></label>
     <select id="waterTreated" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
-      <option value="1">no treatment</option>
-      <option value="2">boiling</option>
-      <option value="3">household filter</option>
-      <option value="4">household chlorination</option>
-      <option value="5">chlorination in piped system</option>
-      <option value="6">water treatment works</option>
+      <option></option>
+      <option value="0"><%= t 'form.water_advanced.treatment.answers.a0' %></option>
+      <option value="1"><%= t 'form.water_advanced.treatment.answers.a1' %></option>
+      <option value="2"><%= t 'form.water_advanced.treatment.answers.a2' %></option>
+      <option value="3"><%= t 'form.water_advanced.treatment.answers.a3' %></option>
+      <option value="4"><%= t 'form.water_advanced.treatment.answers.a4' %></option>
+      <option value="5"><%= t 'form.water_advanced.treatment.answers.a5' %></option>
     </select>
   </div>
   <div class="grid">
-    <label for="powerSupply">Main power supply?</label>
+    <label for="powerSupply"><%= t 'form.water_advanced.power_supply.question' %></label>
     <select id="powerSupply" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
-      <option value="1">no power</option>
-      <option value="2">mains electricity</option>
-      <option value="3">windmills</option>
-      <option value="4">solar power systems</option>
-      <option value="5">generator</option>
+      <option></option>
+      <option value="0"><%= t 'form.water_advanced.power_supply.answers.a0' %></option>
+      <option value="1"><%= t 'form.water_advanced.power_supply.answers.a1' %></option>
+      <option value="2"><%= t 'form.water_advanced.power_supply.answers.a2' %></option>
+      <option value="3"><%= t 'form.water_advanced.power_supply.answers.a3' %></option>
+      <option value="4"><%= t 'form.water_advanced.power_supply.answers.a4' %></option>
     </select>
   </div>
   <div class="grid odd">
-    <label for="lengthKm">Length of transmission line (Km)?</label>
+    <label for="lengthKm"><%= t 'form.water_advanced.transmission.question' %></label>
     <input id="lengthKm" type="number" placeholder="Km" min="0" max="10000" step="1">
   </div>
   <div class="grid">
-    <label for="pipeSupplies">For piped supplies: Percentage population served by household connections and/or stand post?</label>
+    <label for="pipeSupplies"><%= t 'form.water_advanced.piped.question' %></label>
     <input id="pipeSupplies" type="number" placeholder="% Population" min="0" max="100" step="1">
   </div>
   <div class="notes">
-    <p>* (Select all that are applicable to your service area. Once a box is selected they are given a counter to input the number of systems, and the number of people served by that system).</p>
-    <p>** This will need to be completed for each technology group as defined in Q1</p>
+    <p><%= t 'form.water_advanced.notes.stars_1' %></p>
+    <p><%= t 'form.water_advanced.notes.stars_2' %></p>
   </div>
 </section>
 <section class="cost">
   <div class="grid">
-    <h2>What has been/will be the total expenditure on capital expenditure (hardware)?</h2>
+    <h2><%= t 'form.water_advanced.expenditure.header' %></h2>
     <ul>
       <li>
-        <label for="costHardware" class="hiddenLabel">capital expenditure US$ per person</label>
+        <label for="costHardware" class="hiddenLabel"><%= t 'form.water_advanced.expenditure_total.question' %></label>
         <input type="number" id="costHardware" placeholder="Numeric (US$ per person)" min="100" max="100000" step="1">
       </li>
       <li>
         <label class="checkBox" for="costDontKnow">
           <input type="checkbox" id="costDontKnow">
-          Don&#39;t know
+          <%= t 'form.water_advanced.expenditure_total.answer.a0' %>
         </label>
       </li>
       <li>
         <label class="checkBox" for="costNoApply">
           <input type="checkbox" id="costNoApply">
-          Not aplicable
+          <%= t 'form.water_advanced.expenditure_total.answer.a1' %>
         </label>
       </li>
     </ul>
   </div>
   <div class="grid odd">
-    <h2>What has been/will be the minor operation and maintenance expenditure?</h2>
+    <h2><%= t 'form.water_advanced.expenditure_maintenance.header' %></h2>
     <ul>
       <li>
-        <label for="costMaintenance" class="hiddenLabel">minor operation and maintainance expenditure US$ per person</label>
+        <label for="costMaintenance" class="hiddenLabel"><%= t 'form.water_advanced.expenditure_maintenance.question' %></label>
         <input type="number" id="costMaintenance" placeholder="Numeric (US$ per person)" min="100" max="100000" step="1">
       </li>
       <li>
         <label class="checkBox" for="mainDontKnow">
           <input type="checkbox" id="mainDontKnow">
-          Don&#39;t know
+          <%= t 'form.water_advanced.expenditure_maintenance.answer.a0' %>
         </label>
       </li>
       <li>
         <label class="checkBox" for="mainNoApply">
           <input type="checkbox" id="mainNoApply">
-          Not aplicable
+          <%= t 'form.water_advanced.expenditure_maintenance.answer.a1' %>
         </label>
       </li>
     </ul>

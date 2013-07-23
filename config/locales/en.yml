@@ -27,15 +27,12 @@ en:
           quantity: "Quantity"
           quality: "Quality"
           reliability: "Reliability"
-
   buttons:
     next: "Next"
     start: "OK! Start using the calculator"
     save: "Save"
-
   inputs:
     choose_a_country: "Choose a country"
-
   form:
     value_not_set: "Value Not Set"
     skip: "skip this question"
@@ -240,8 +237,42 @@ en:
           a3: "cistern"
           a4: "household storage"
           a5: "ferrocement tank"
-
-
+      treatment:
+        question: "How is water treated?"
+        answer:
+          a0: "no treatment"
+          a1: "boiling"
+          a2: "household filter"
+          a3: "household chlorination"
+          a4: "chlorination in piped system"
+          a5: "water treatment works"
+      power_supply:
+        question: "Main power supply?"
+        answer:
+          a0: "no power"
+          a1: "mains electricity"
+          a2: "windmills"
+          a3: "solar power systems"
+          a4: "generator"
+      transmission:
+        question: "Length of transmission line (Km)?"
+      piped:
+        question: "For piped supplies: Percentage population served by household connections and/or stand post?"
+      notes:
+        stars_1: "* (Select all that are applicable to your service area. Once a box is selected they are given a counter to input the number of systems, and the number of people served by that system)."
+        stars_2: "** This will need to be completed for each technology group as defined in Q1"
+      expediture_total:
+        header: "What has been will be the total expenditure on capital expenditure (hardware)?"
+        question: "capital expenditure US per person"
+        answer:
+          a0: "Don't know"
+          a1: "Not applicable"
+      expenditure_maintenance:
+        header: "What has been will be the minor operation and maintenance expenditure?"
+        question: "minor operation and maintenance expenditure US$ per person"
+        answer:
+          a0: "Don't know"
+          a1: "Not applicable"
   report:
     water_basic:
       a111:	"This service is not delivering a desired minimum quantity perhaps due to low capital expenditure and the sources are not within 60 minutes roundtrip from the household. Or factors other than costs are influencing service delivery"
