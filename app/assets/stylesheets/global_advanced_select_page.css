@@ -105,10 +105,6 @@ img {
     color: #217F8B;
 }
 /* layout */
-.launchPage {
-    min-height: 100%;
-    height: auto;
-}
 .wrapper {
     position: relative;
     height: 100%;
@@ -163,9 +159,13 @@ img {
 .languageSwitcher li {
     clear: both;
     margin: 0;
+    padding-bottom: 5px;
 }
 .languageSwitcher li a {
     display: none;
+}
+.languageSwitcher li a:hover {
+    display: block;
 }
 .languageSwitcher li a.active {
     display: block;
@@ -473,7 +473,8 @@ a.installButton:hover {
 /* LaunchPage */
 .main .mainWrapper {
     width: 870px;
-    margin: 0 auto 200px;
+    height: 100%;
+    margin: 0 auto 100px;
     padding: 67px 0 60px;
     border: 1px solid #217F8B;
 
@@ -487,74 +488,63 @@ a.installButton:hover {
     padding-bottom: 65px;
     color: #fff;
     text-align: center;
+    padding: 0;
 }
-/*.calculatorSwitch {
-    width: 410px;
+.main section.calculatorSwitch {
+    width: 49%;
     margin: 0 auto;
     overflow: hidden;
 }
+.calculatorSwitch ul {
+    overflow: hidden;
+    margin-bottom: 45px;
+}
 .calculatorSwitch li {
+    position: relative;
     width: 203px;
     float: left;
+    margin-right: 10px;
 }
-.calculatorSwitch li a {
+.main .calculatorSwitch label {
+    width: 100%;
+    height: 205px;
+    background: transparent url('/assets/SpriteCalculatorScheme24.png') no-repeat 0 -194px;
+}
+.main .calculatorSwitch label.advanceSanitation {
+    background-position: -205px -194px;
+}
+.main .calculatorSwitch label.advanceWater.ticked {
+    background-position: 0 0;
+}
+.main .calculatorSwitch label.advanceSanitation.ticked {
+    background-position: -205px 0;
+}
+.calculatorSwitch label input {
+    position: absolute;
+    top: -100000px;
+    left: -100000px;
+}
+.calculatorSwitch label span {
     display: block;
     font-size: 16px;
-    font-weight: bold;
-    color: #9ADDE0;
-    padding-bottom: 60px;
-}
-.calculatorSwitch li.lastChild {
-    float: right;
-}
-.calculatorSwitch li a:hover {
-    text-decoration: none;
-    background: transparent url('/assets/iconHover24.png') no-repeat 0 0;
-}
-.calculatorSwitch li a.active {
-    background: transparent url('/assets/iconSelect24.png') no-repeat 0 0;
-}
-.calculatorSwitch li figcaption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     text-align: center;
 }
-.calculatorSwitch li a:hover figcaption,
-.calculatorSwitch li a.active figcaption {
-    color: #fff;
-    text-decoration: none;
+.calculatorSwitch label.ticked span {
+    color: #9bdde1;
 }
-.calculatorSwitch figure {
+.calculatorSwitch .schemeSwitcher {
     width: 100%;
-    height: 100%;
-    margin-bottom: 30px;
-}
-.calculatorSwitch img {
-    display: block;
-    margin: 0 auto;
-    padding: 42px 0 30px 0;
-}
-.qSwitcher li {
-    width: 100%;
-    margin-bottom: 20px;
+    font-size: 16px;
+    background: no-repeat;
     background-color: #fff;
-
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
+    cursor: pointer;
 }
-.qSwitcher a,
-.main .qSwitcher a {
-    display: block;
-    padding: 20px 19px;
-    color: #333;
-    font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
-}
-.qSwitcher a:hover,
-.main .qSwitcher a:hover {
+.calculatorSwitch .schemeSwitcher:hover {
     color: #ff6633;
-    text-decoration: none;
-}*/
+}
 /* Questionaire */
 .main form {
     position: relative;
@@ -632,7 +622,7 @@ form .main h1 {
 form .main {
     width: 900px;
     overflow: hidden;
-    height: auto;
+    height: 100%;
     margin: 0 auto;
     padding-bottom: 100px;
 }

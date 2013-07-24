@@ -36,38 +36,33 @@
       <li><a class="sign" href="#">Sign in</a></li>
     </ul>
   </div>
+  <form action="/select_advanced/" method="post" id="advancedSelectorForm">
+    <section class="main">
+      <div class="mainWrapper">
+        <head>
+          <h1>Select which calculator you wish to use</h1>
+        </head>
+        <section class="calculatorSwitch">
+          <ul>
+            <li>
+              <%= label_tag("advWater", nil, class: "tickCheckBox advanceWater") do %>
+                <span>Water</span>
+                <%= radio_button_tag("r_advance", 0, id: "advWater") %>
+              <% end %>
+            </li>
+            <li>
+              <%= label_tag("advSanita", nil, class: "tickCheckBox advanceSanitation") do %>
+                <span>Sanitation</span>
+                <%= radio_button_tag("r_advance", 1, id: "advSanita") %>
+              <% end %>
+            </li>
+          </ul>
+          <input class="schemeSwitcher" value="&#43; Calculate Existing Scheme" type="submit" />
+          <input class="schemeSwitcher" value="&#43; Calculate Planned Scheme" type="submit" />
 
-  <section class="main">
-    <div class="mainWrapper">
-      <head>
-        <h1>Select which calculator you wish to use</h1>
-      </head>
-      <section class="calculatorSwitch">
-        <ul>
-          <li class="firstChild">
-            <a class="active" href="#">
-              <figure>
-                <img src="/assets/iconWaterAdvance8.png" alt="Advance water icon" onclick="submitForm('water')"/>
-              </figure>
-              <figcaption>Water</figcaption>
-            </a>
-          </li>
-          <li class="lastChild">
-            <a href="#">
-              <figure>
-                <img src="/assets/iconSanitationAdvance8.png" alt="Advance water icon"onclick="submitForm('sanitation')" />
-              </figure>
-              <figcaption>Sanitation</figcaption>
-            </a>
-          </li>
-        </ul>
-        <ul class="pag">
-          <li><a href="#"><span>&#43;</span> Calculate existing scheme</a></li>
-          <li><a href="#"><span>&#43;</span> Calculate planned scheme</a></li>
-        </ul>
-      </section>
-    </div>
-  </section>
+        </section>
+      </div>
+    </section>
   <footer>
     <div class="footerWrapper">
       <h2>Final Report</h2>
@@ -79,7 +74,6 @@
       </div>
     </div>
   </footer>
-  <form action="/select_advanced/" method="post" id="advancedSelectorForm">
     <input type="hidden" name="targetForm" id="targetFormType"/>
   </form>
   <script src="/assets/jquery-1.9.1.js" type="text/javascript"></script>
