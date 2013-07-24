@@ -445,20 +445,21 @@ form li label span {
     left: 25%;   
 }
 .value {
-    position: relative;
-    width: 173px;
+    display: inline-block;
+    min-width: 100px;
     margin: 0 auto 55px;
 }
 .valueOutput {
-    clear: both;
-    display: table-cell;
-    vertical-align: middle;
-    width: 173px;
-    height: 55px;
+    display: inline-block;
+    min-width: 50px;
     font-size: 30px;
     color: #fff;
-    padding-top: 5px;
-    background: #36b9c2 url('/assets/bgTopShadow24.png') no-repeat 0 0;
+    padding: 10px 25px 10px;
+    margin: 0 25px auto;
+    background: #36b9c2;
+
+    -webkit-box-shadow:  0px -4px 0px 1px rgba(15, 146, 155, 0.8);
+    box-shadow:  0px -4px 0px 1px rgba(15, 146, 155, 0.8);
 
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -473,11 +474,17 @@ form li label span {
 /* q1Country */
     .choices {
         width: 520px;
-        margin: -110px auto 75px;
+        margin: -25px auto 75px;
     }
     .choices img {
         float: left;
         margin-right: 25px;
+    }
+    .choices.time img {
+        margin: 0;
+    }
+    .choices.time img.imgTime {
+        float: right;
     }
     .choices .sbHolder,
     .choices #country {
