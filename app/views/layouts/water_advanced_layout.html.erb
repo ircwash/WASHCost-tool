@@ -202,7 +202,7 @@
   </div>
   <div class="grid">
     <label for="annual_income">7. <%= t 'form.water_advanced.annual_income.question' %></label>
-    <input name="annual_income" id="annual_income" type="number" placeholder="<%= t 'form.water_advanced.annual_income.placeholder' %>" min="0" max="10000" step="1">
+    <input tabindex="10" name="annual_income" id="annual_income" type="number" placeholder="<%= t 'form.water_advanced.annual_income.placeholder' %>" value="<%=flash[:annual_income]%>" min="0" max="10000" step="1">
   </div>
 </section>
 
@@ -210,105 +210,125 @@
 <section class="system" id="technology_section">
   <div class="grid">
     <label for="supply_system">1. <%= t 'form.water_advanced.supply_system.question' %></label>
-    <select id="supply_system" name="supply_system" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
-      <option></option>
-      <option value="0"><%= t 'form.water_advanced.supply_system.answers.a0' %></option>
-      <option value="1"><%= t 'form.water_advanced.supply_system.answers.a1' %></option>
-      <option value="2"><%= t 'form.water_advanced.supply_system.answers.a2' %></option>
-      <option value="3"><%= t 'form.water_advanced.supply_system.answers.a3' %></option>
-      <option value="4"><%= t 'form.water_advanced.supply_system.answers.a4' %></option>
-      <option value="5"><%= t 'form.water_advanced.supply_system.answers.a5' %></option>
-      <option value="6"><%= t 'form.water_advanced.supply_system.answers.a6' %></option>
-    </select>
+    <%=
+        select_tag "supply_system",
+        options_for_select([[(t 'form.water_advanced.supply_system.answers.a0'),0],
+                           [(t 'form.water_advanced.supply_system.answers.a1'),1],
+                           [(t 'form.water_advanced.supply_system.answers.a2'),2],
+                           [(t 'form.water_advanced.supply_system.answers.a3'),3],
+                           [(t 'form.water_advanced.supply_system.answers.a4'),4],
+                           [(t 'form.water_advanced.supply_system.answers.a5'),5],
+                           [(t 'form.water_advanced.supply_system.answers.a6'),6]
+                          ], flash[:supply_system]),
+        :include_blank=>(t 'form.shared.select_an_option'),
+        :class=>"chzn-select", :tabindex=>11
+    %>
   </div>
   <div class="grid odd">
     <label for="techApply">2. <%= t 'form.water_advanced.inauguration.question' %></label>
-    <input type="number" name="inauguration"  id="techApply" placeholder="Year">
+    <input tabindex="12" type="number" name="inauguration"  id="techApply" placeholder="Year" value="<%=flash[:inauguration]%>">
   </div>
   <div class="grid">
     <label for="water_sources">3. <%= t 'form.water_advanced.water_sources.question' %></label>
-    <select id="water_sources" name="water_sources" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
-      <option></option>
-      <option value="0"><%= t 'form.water_advanced.water_sources.answers.a0' %></option>
-      <option value="1"><%= t 'form.water_advanced.water_sources.answers.a1' %></option>
-      <option value="2"><%= t 'form.water_advanced.water_sources.answers.a2' %></option>
-    </select>
+    <%=
+        select_tag "water_sources",
+        options_for_select([[(t 'form.water_advanced.water_sources.answers.a0'),0],
+                           [(t 'form.water_advanced.water_sources.answers.a1'),1],
+                           [(t 'form.water_advanced.water_sources.answers.a2'),2]
+                          ], flash[:water_sources]),
+        :include_blank=>(t 'form.shared.select_an_option'),
+        :class=>"chzn-select", :tabindex=>13
+    %>
       <div class="supplemental">
         <label for="surface_water">3a. <%= t 'form.water_advanced.surface_water.question' %></label>
-        <select id="surface_water" name="surface_water" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
-          <option></option>
-          <option value="0"><%= t 'form.water_advanced.surface_water.answers.a0' %></option>
-          <option value="1"><%= t 'form.water_advanced.surface_water.answers.a1' %></option>
-          <option value="2"><%= t 'form.water_advanced.surface_water.answers.a2' %></option>
-          <option value="3"><%= t 'form.water_advanced.surface_water.answers.a3' %></option>
-        </select>
+        <%=
+            select_tag "surface_water",
+            options_for_select([[(t 'form.water_advanced.surface_water.answers.a0'),0],
+                               [(t 'form.water_advanced.surface_water.answers.a1'),1],
+                               [(t 'form.water_advanced.surface_water.answers.a2'),2],
+                               [(t 'form.water_advanced.surface_water.answers.a3'),3]
+                              ], flash[:surface_water]),
+            :include_blank=>(t 'form.shared.select_an_option'),
+            :class=>"chzn-select", :tabindex=>14
+        %>
       </div>
       <div class="supplemental">
         <label for="ground_water">3b. <%= t 'form.water_advanced.ground_water.question' %></label>
-        <select id="ground_water" name="ground_water" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
-          <option></option>
-          <option value="0"><%= t 'form.water_advanced.ground_water.answers.a0' %></option>
-          <option value="1"><%= t 'form.water_advanced.ground_water.answers.a1' %></option>
-          <option value="2"><%= t 'form.water_advanced.ground_water.answers.a2' %></option>
-          <option value="3"><%= t 'form.water_advanced.ground_water.answers.a3' %></option>
-        </select>
+        <%=
+            select_tag "ground_water",
+            options_for_select([[(t 'form.water_advanced.ground_water.answers.a0'),0],
+                               [(t 'form.water_advanced.ground_water.answers.a1'),1],
+                               [(t 'form.water_advanced.ground_water.answers.a2'),2],
+                               [(t 'form.water_advanced.ground_water.answers.a3'),3]
+                              ], flash[:ground_water]),
+            :include_blank=>(t 'form.shared.select_an_option'),
+            :class=>"chzn-select", :tabindex=>15
+        %>
       </div>
       <div class="supplemental">
         <label for="drilled_well">3c. <%= t 'form.water_advanced.drilled_well.question' %></label>
-        <select id="drilled_well" name="drilled_well" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
-          <option></option>
-          <option value="0"><%= t 'form.water_advanced.drilled_well.answers.a0' %></option>
-          <option value="1"><%= t 'form.water_advanced.drilled_well.answers.a1' %></option>
-        </select>
+        <%=
+            select_tag "drilled_well",
+            options_for_select([[(t 'form.water_advanced.drilled_well.answers.a0'),0],
+                                [(t 'form.water_advanced.drilled_well.answers.a1'),1]
+                              ], flash[:drilled_well]),
+            :include_blank=>(t 'form.shared.select_an_option'),
+            :class=>"chzn-select", :tabindex=>16
+        %>
       </div>
   </div>
   <div class="grid odd">
     <label for="water_storage">4. <%= t 'form.water_advanced.water_storage.question' %></label>
-    <select id="water_storage" name="water_storage" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
-      <option></option>
-      <option value="0"><%= t 'form.water_advanced.water_storage.answers.a0' %></option>
-      <option value="1"><%= t 'form.water_advanced.water_storage.answers.a1' %></option>
-      <option value="2"><%= t 'form.water_advanced.water_storage.answers.a2' %></option>
-      <option value="3"><%= t 'form.water_advanced.water_storage.answers.a3' %></option>
-      <option value="4"><%= t 'form.water_advanced.water_storage.answers.a4' %></option>
-      <option value="5"><%= t 'form.water_advanced.water_storage.answers.a5' %></option>
-    </select>
+    <%=
+        select_tag "water_storage",
+        options_for_select([[(t 'form.water_advanced.water_storage.answers.a0'),0],
+                           [(t 'form.water_advanced.water_storage.answers.a1'),1],
+                           [(t 'form.water_advanced.water_storage.answers.a2'),2],
+                           [(t 'form.water_advanced.water_storage.answers.a3'),3],
+                           [(t 'form.water_advanced.water_storage.answers.a4'),4],
+                           [(t 'form.water_advanced.water_storage.answers.a5'),5]
+                          ], flash[:water_storage]),
+        :include_blank=>(t 'form.shared.select_an_option'),
+        :class=>"chzn-select", :tabindex=>17
+    %>
     <div class="input_shim_triple_labels"></div>
   </div>
   <div class="grid">
     <label for="treatment">5. <%= t 'form.water_advanced.treatment.question' %></label>
-    <select id="treatment" name="treatment" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
-      <option></option>
-      <option value="0"><%= t 'form.water_advanced.treatment.answers.a0' %></option>
-      <option value="1"><%= t 'form.water_advanced.treatment.answers.a1' %></option>
-      <option value="2"><%= t 'form.water_advanced.treatment.answers.a2' %></option>
-      <option value="3"><%= t 'form.water_advanced.treatment.answers.a3' %></option>
-      <option value="4"><%= t 'form.water_advanced.treatment.answers.a4' %></option>
-      <option value="5"><%= t 'form.water_advanced.treatment.answers.a5' %></option>
-    </select>
+    <%=
+        select_tag "treatment",
+        options_for_select([[(t 'form.water_advanced.treatment.answers.a0'),0],
+                           [(t 'form.water_advanced.treatment.answers.a1'),1],
+                           [(t 'form.water_advanced.treatment.answers.a2'),2],
+                           [(t 'form.water_advanced.treatment.answers.a3'),3],
+                           [(t 'form.water_advanced.treatment.answers.a4'),4],
+                           [(t 'form.water_advanced.treatment.answers.a5'),5]
+                          ], flash[:treatment]),
+        :include_blank=>(t 'form.shared.select_an_option'),
+        :class=>"chzn-select", :tabindex=>18
+    %>
   </div>
   <div class="grid odd">
     <label for="power_supply">6. <%= t 'form.water_advanced.power_supply.question' %></label>
-    <select id="power_supply" name="power_supply" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
-      <option></option>
-      <option value="0"><%= t 'form.water_advanced.power_supply.answers.a0' %></option>
-      <option value="1"><%= t 'form.water_advanced.power_supply.answers.a1' %></option>
-      <option value="2"><%= t 'form.water_advanced.power_supply.answers.a2' %></option>
-      <option value="3"><%= t 'form.water_advanced.power_supply.answers.a3' %></option>
-      <option value="4"><%= t 'form.water_advanced.power_supply.answers.a4' %></option>
-    </select>
+    <%=
+        select_tag "power_supply",
+        options_for_select([[(t 'form.water_advanced.power_supply.answers.a0'),0],
+                           [(t 'form.water_advanced.power_supply.answers.a1'),1],
+                           [(t 'form.water_advanced.power_supply.answers.a2'),2],
+                           [(t 'form.water_advanced.power_supply.answers.a3'),3],
+                           [(t 'form.water_advanced.power_supply.answers.a4'),4]
+                          ], flash[:power_supply]),
+        :include_blank=>(t 'form.shared.select_an_option'),
+        :class=>"chzn-select", :tabindex=>19
+    %>
   </div>
   <div class="grid">
-    <label for="lengthKm">7. <%= t 'form.water_advanced.transmission.question' %></label>
-    <input id="lengthKm" name="transmission" type="number" placeholder="Km" min="0" max="10000" step="1">
+    <label for="transmission">7. <%= t 'form.water_advanced.transmission.question' %></label>
+    <input id="transmission" name="transmission" value="<%= flash[:transmission] %>" type="number" placeholder="Km" min="0" max="10000" step="1">
   </div>
   <div class="grid odd">
-    <label for="pipeSupplies">8. <%= t 'form.water_advanced.piped.question' %></label>
-    <input id="pipeSupplies" name="piped" type="number" placeholder="% Population" min="0" max="100" step="1">
-  </div>
-  <div class="notes">
-    <p><%= t 'form.water_advanced.notes.stars_1' %></p>
-    <p><%= t 'form.water_advanced.notes.stars_2' %></p>
+    <label for="piped">8. <%= t 'form.water_advanced.piped.question' %></label>
+    <input id="piped" name="piped" value="<%= flash[:piped] %>" type="number" placeholder="% Population" min="0" max="100" step="1">
   </div>
 </section>
 
@@ -318,18 +338,19 @@
     <h2>1. <%= t 'form.water_advanced.cost.hardware.question' %></h2>
     <ul>
       <li>
-        <label for="cost_hardware" class="hiddenLabel"><%= t 'form.water_advanced.cost.hardware.question' %></label>
-        <input type="number" name="cost_hardware" id="cost_hardware" placeholder="<%= t 'form.water_advanced.cost.shared.placeholder' %>" min="100" max="100000" step="1">
+        <label for="hardware" class="hiddenLabel"><%= t 'form.water_advanced.cost.hardware.question' %></label>
+        <input type="number" name="hardware" value="<%= flash[:hardware] %>" id="cost_hardware" placeholder="<%= t 'form.water_advanced.cost.shared.placeholder' %>" min="100" max="100000" step="1">
       </li>
       <li>
         <label class="checkBox" for="cost_hardware_alt_0">
-          <input type="checkbox" name="cost_hardware_alt_0" id="cost_hardware_alt_0" name="cost_hardware_alt_0" value="0">
+
+          <%= check_box_tag("cost_hardware_alt_1", value = "1", checked = flash[:cost_hardware_alt_0]) %>
           <%= t 'form.water_advanced.cost.shared.answers.a0' %>
         </label>
       </li>
       <li>
         <label class="checkBox" for="costNoApply">
-          <input type="checkbox" name="cost_hardware_alt_1" id="cost_hardware_alt_1" name="cost_hardware_alt_1" value="1">
+          <%= check_box_tag("cost_hardware_alt_1", value = "1", checked = flash[:cost_hardware_alt_1]) %>
           <%= t 'form.water_advanced.cost.shared.answers.a1' %>
         </label>
       </li>
@@ -339,12 +360,12 @@
     <h2>2. <%= t 'form.water_advanced.cost.software.question' %></h2>
     <ul>
       <li>
-        <label for="cost_software" class="hiddenLabel"><%= t 'form.water_advanced.cost.software.question' %></label>
-        <input type="number" name="cost_software" id="cost_software" placeholder="<%= t 'form.water_advanced.cost.shared.placeholder' %>" min="100" max="100000" step="1">
+        <label for="software" class="hiddenLabel"><%= t 'form.water_advanced.cost.software.question' %></label>
+        <input type="number" name="software" value="<%= flash[:cost_software] %>" id="cost_software" placeholder="<%= t 'form.water_advanced.cost.shared.placeholder' %>" min="100" max="100000" step="1">
       </li>
       <li>
         <label class="checkBox" for="cost_software_alt_0">
-          <input type="checkbox" name="cost_software_alt_0" id="cost_software_alt_0" name="cost_software_alt_0" value="0">
+          <%= check_box_tag("cost_software_alt_0", value = "1", checked = flash[:cost_software_alt_0]) %>
           <%= t 'form.water_advanced.cost.shared.answers.a0' %>
         </label>
       </li>

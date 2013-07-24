@@ -9,9 +9,6 @@ class WaterAdvancedController < ApplicationController
     else
       init_session_form
     end
-
-    puts "WATER ADVANCED"
-    puts flash
   end
 
 
@@ -21,8 +18,8 @@ class WaterAdvancedController < ApplicationController
       :calculator_type => get_calculator_type,
 
       :country => get_country(params[:country]),
-      :region => unchecked(:region, params[:region]),
-      :city=> unchecked(:city, params[:city]),
+      :region => unchecked(:region),
+      :city=> unchecked(:city),
       :density => get_indexed_value('form.water_advanced.density.answers.a', :density),
       :area_type => get_indexed_value('form.water_advanced.area_type.answers.a', :area_type),
 
@@ -31,27 +28,37 @@ class WaterAdvancedController < ApplicationController
       :who_safeguards =>get_indexed_value('form.water_advanced.management.shared.answers.a', :who_safeguards),
       :who_enforces =>  get_indexed_value('form.water_advanced.management.shared.answers.a', :who_enforces),
       :who_repairs =>   get_indexed_value('form.water_advanced.management.shared.answers.a', :who_repairs),
-      :annual_income => unchecked(:annual_income, nil),
+      :annual_income => unchecked(:annual_income),
 
       :supply_system => get_indexed_value('form.water_advanced.supply_system.answers.a', :supply_system),
-      :inauguration =>  unchecked(:inauguration, nil),
+      :inauguration =>  unchecked(:inauguration),
       :water_sources => get_indexed_value('form.water_advanced.water_sources.answers.a', :water_sources),
       :water_storage => get_indexed_value('form.water_advanced.water_storage.answers.a', :water_storage),
       :treatment =>     get_indexed_value('form.water_advanced.treatment.answers.a', :treatment),
       :power_supply =>  get_indexed_value('form.water_advanced.power_supply.answers.a',:power_supply),
-      :transmission =>  unchecked(:transmission, nil),
-      :piped =>         unchecked(:piped, nil),
+      :transmission =>  unchecked(:transmission),
+      :piped =>         unchecked(:piped),
 
       :total_cost =>    get_total_cost(params[:hardware],params[:software]),
 
-      :hardware =>      unchecked(:hardware, nil),
-      :software =>      unchecked(:software, nil),
-      :maintenance =>   unchecked(:maintenance, nil),
-      :direct =>        unchecked(:direct, nil),
-      :indirect =>      unchecked(:indirect, nil),
+      :hardware =>      unchecked(:hardware),
+        :cost_hardware_alt_0 => checkbox_value(:cost_hardware_alt_0),
+        :cost_hardware_alt_1 => checkbox_value(:cost_hardware_alt_1),
+      :software =>      unchecked(:software),
+        :cost_software_alt_0 => checkbox_value(:cost_software_alt_0),
+        :cost_software_alt_1 => checkbox_value(:cost_software_alt_1),
+      :maintenance =>   unchecked(:maintenance),
+        :cost_maintenance_alt_0 => checkbox_value(:cost_maintenance_alt_0),
+        :cost_maintenance_alt_1 => checkbox_value(:cost_maintenance_alt_1),
+      :direct =>        unchecked(:direct),
+        :cost_direct_alt_0 => checkbox_value(:cost_direct_alt_0),
+        :cost_direct_alt_1 => checkbox_value(:cost_direct_alt_1),
+      :indirect =>      unchecked(:indirect),
+        :cost_indirect_alt_0 => checkbox_value(:cost_indirect_alt_0),
+        :cost_indirect_alt_1 => checkbox_value(:cost_indirect_alt_1),
 
-      :loan =>          unchecked(:loan, nil),
-      :payback =>       unchecked(:payback, nil)
+      :loan =>          unchecked(:loan),
+      :payback =>       unchecked(:payback)
     }
 
     flash[:results]= results
@@ -70,21 +77,44 @@ class WaterAdvancedController < ApplicationController
         :country, :region, :city, :area_type, :density,
         :how_managed, :who_finances, :who_owns, :who_safeguards, :who_enforces, :who_repairs, :annual_income,
         :supply_system, :inauguration, :water_sources, :water_sources, :water_storage, :treatment, :power_supply, :transmission, :piped,
-        :total_cost, :hardware, :software, :maintenance, :direct, :indirect,
+        :total_cost, :hardware,
+                      :cost_hardware_alt_0, :cost_hardware_alt_1,
+                    :software,
+                      :cost_software_alt_0, :cost_software_alt_1,
+                    :maintenance,
+                      :cost_maintenance_alt_0, :cost_maintenance_alt_1,
+                    :direct,
+                      :cost_direct_alt_0, :cost_direct_alt_1,
+                    :indirect,
+                      :cost_indirect_alt_0, :cost_indirect_alt_1,
         :loan, :payback
     ]
 
     form_params.each do |param|
       flash[param]= session[:water_advanced][param]
     end
-
-    puts flash
   end
 
 
   def get_calculator_type
 
     return 'Planned Scheme'
+  end
+
+  def checkbox_value(key)
+
+    value= params[key]
+
+    checked= false
+    if value.present? && value.to_i> 0
+
+      checked= true
+    end
+
+
+    add_to_session_advanced(key, checked)
+
+    return checked
   end
 
   def get_country(country_code)
@@ -100,10 +130,10 @@ class WaterAdvancedController < ApplicationController
     return country
   end
 
-  def unchecked(key, value)
+  def unchecked(key)
 
-    add_to_session_advanced(key, value)
-    return value
+    add_to_session_advanced(key, params[key])
+    return params[key]
 
   end
 
@@ -143,7 +173,6 @@ class WaterAdvancedController < ApplicationController
     form[key]= value
 
     session[:water_advanced]= form
-    puts session[:water_advanced]
   end
 
 end
