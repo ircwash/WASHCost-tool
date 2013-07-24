@@ -48715,3 +48715,232 @@ Processing by WaterBasicController#reliability as HTML
   Rendered shared/_header.html.erb (0.2ms)
   Rendered shared/_nav_water.html.erb (1.1ms)
 Completed 200 OK in 41ms (Views: 41.2ms | ActiveRecord: 0.0ms)
+[2013-07-24 12:48:52] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-24 12:50:17] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-24 12:51:15] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-24 12:51:16] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-24 12:51:16] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-24 12:51:16] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-24 12:51:16] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-24 12:51:16] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-24 12:51:16] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-24 12:51:16] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-24 12:51:16] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-24 12:51:16] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-24 12:51:16] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-24 12:51:16] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-24 12:51:24] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/spriteQ9basicWater24.png" for 37.157.36.26 at 2013-07-24 11:10:25 +0000
+Served asset /spriteQ9basicWater24.png - 200 OK (0ms)
+SESSION FORM:
+{"country"=>"AF", "water"=>0, "capital"=>30, "recurrent"=>3, "time"=>0, "quality"=>1, "reliability"=>2}
+
+
+Started POST "/water_basic/reliability" for 37.157.36.26 at 2013-07-24 11:10:27 +0000
+Processing by WaterBasicController#reliability as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tzmFrqB/gYAE8E8fq+beni4cjVJvK9qwP9RUzlvp5zc=", "r_reliability"=>"3", "reliability"=>"2", "commit"=>"Save"}
+Redirected to http://198.101.243.21:8080/water_basic/report
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+form from session
+{"country"=>"AF", "water"=>0, "capital"=>30, "recurrent"=>3, "time"=>0, "quality"=>1, "reliability"=>2}
+RESULTS
+{:country=>#<Country:0x007f6cf43d2210 @data={"continent"=>"Asia", "alpha2"=>"AF", "alpha3"=>"AFG", "country_code"=>"93", "currency"=>"AFN", "international_prefix"=>"00", "ioc"=>"AFG", "latitude"=>"33 00 N", "longitude"=>"65 00 E", "name"=>"Afghanistan", "names"=>["Afghanistan", "Afganistán"], "national_destination_code_lengths"=>[2], "national_number_lengths"=>[8, 9], "national_prefix"=>"0", "number"=>"004", "region"=>"Asia", "subregion"=>"Southern Asia", "un_locode"=>"AF", "languages"=>["ps", "uz", "tk"], "nationality"=>"Afghan"}>, :water=>"Borehole & Handpump", :population=>"Less than 500", :capital=>30, :recurrent=>3, :total=>90, :time=>"Less than 10", :quantity=>"No service", :quality=>"Sub-standard service", :reliability=>"Basic service", :service_level=>"This service is not delivering a desired minimum quantity and the sources are not within 60 minutes roundtrip from the household. Capital expenditure values are within found WASHCost ranges so factors other than costs are influencing service delivery or the context requires more expensive infrastructure."}
+
+
+Started GET "/water_basic/report" for 37.157.36.26 at 2013-07-24 11:10:27 +0000
+Processing by WaterBasicController#report as HTML
+  Rendered water_basic/report.html.erb within layouts/report_water_basic (0.1ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/db_water.js?body=1" for 37.157.36.26 at 2013-07-24 11:10:28 +0000
+Served asset /db_water.js - 200 OK (0ms)
+
+
+Started GET "/assets/report.css?body=1" for 37.157.36.26 at 2013-07-24 11:10:28 +0000
+Served asset /report.css - 200 OK (0ms)
+
+
+Started GET "/assets/report/icon_edit.png" for 37.157.36.26 at 2013-07-24 11:10:28 +0000
+Served asset /report/icon_edit.png - 200 OK (0ms)
+
+
+Started GET "/assets/report/icon_service.png" for 37.157.36.26 at 2013-07-24 11:10:28 +0000
+Served asset /report/icon_service.png - 200 OK (0ms)
+
+
+Started GET "/assets/report/bg_distance.png" for 37.157.36.26 at 2013-07-24 11:10:28 +0000
+Served asset /report/bg_distance.png - 200 OK (0ms)
+
+
+Started GET "/assets/report/report_icon.png" for 37.157.36.26 at 2013-07-24 11:10:28 +0000
+Served asset /report/report_icon.png - 200 OK (0ms)
+
+
+Started GET "/assets/report/stars_1.png" for 37.157.36.26 at 2013-07-24 11:10:28 +0000
+Served asset /report/stars_1.png - 200 OK (0ms)
+
+
+Started GET "/assets/report/stars_3.png" for 37.157.36.26 at 2013-07-24 11:10:28 +0000
+Served asset /report/stars_3.png - 200 OK (0ms)
+
+
+Started GET "/water_advanced" for 37.157.36.26 at 2013-07-24 12:48:45 +0000
+Processing by WaterAdvancedController#index as HTML
+  Rendered application/index.html.erb within layouts/water_advanced_layout (0.1ms)
+  Rendered shared/_country_select_options.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/chosen_water_advanced.css" for 37.157.36.26 at 2013-07-24 12:48:45 +0000
+Served asset /chosen_water_advanced.css - 200 OK (0ms)
+
+
+Started GET "/assets/modernizr.js" for 37.157.36.26 at 2013-07-24 12:48:45 +0000
+Served asset /modernizr.js - 200 OK (0ms)
+
+
+Started GET "/assets/water_advanced.css" for 37.157.36.26 at 2013-07-24 12:48:45 +0000
+Compiled water_advanced.css  (0ms)  (pid 13635)
+Served asset /water_advanced.css - 200 OK (6ms)
+
+
+Started GET "/assets/spriteArrow8.png" for 37.157.36.26 at 2013-07-24 12:48:46 +0000
+Served asset /spriteArrow8.png - 200 OK (0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js" for 37.157.36.26 at 2013-07-24 12:48:46 +0000
+Served asset /jquery-1.9.1.js - 200 OK (0ms)
+
+
+Started GET "/assets/chosen.jquery.js" for 37.157.36.26 at 2013-07-24 12:48:46 +0000
+Served asset /chosen.jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-24 12:48:47 +0000
+Served asset /logoWashCost8.png - 200 OK (0ms)
+
+
+Started GET "/assets/bgWhiteTransparency.png" for 37.157.36.26 at 2013-07-24 12:48:47 +0000
+Served asset /bgWhiteTransparency.png - 200 OK (0ms)
+
+
+Started GET "/assets/water_advanced.js" for 37.157.36.26 at 2013-07-24 12:48:47 +0000
+Served asset /water_advanced.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js" for 37.157.36.26 at 2013-07-24 12:48:47 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 200 OK (0ms)
+
+
+Started GET "/assets/chosen-sprite.png" for 37.157.36.26 at 2013-07-24 12:48:48 +0000
+Served asset /chosen-sprite.png - 200 OK (0ms)
+
+
+Started GET "/water_advanced" for 37.157.36.26 at 2013-07-24 12:48:52 +0000
+Processing by WaterAdvancedController#index as HTML
+  Rendered application/index.html.erb within layouts/water_advanced_layout (0.0ms)
+  Rendered shared/_country_select_options.html.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 37.157.36.26 at 2013-07-24 12:49:02 +0000
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 37.157.36.26 at 2013-07-24 12:50:17 +0000
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb (42.9ms)
+Completed 200 OK in 45ms (Views: 44.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/water_advanced" for 37.157.36.26 at 2013-07-24 12:51:15 +0000
+Processing by WaterAdvancedController#index as HTML
+  Rendered application/index.html.erb within layouts/water_advanced_layout (0.1ms)
+  Rendered shared/_country_select_options.html.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/water_advanced.css" for 37.157.36.26 at 2013-07-24 12:51:16 +0000
+Served asset /water_advanced.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen_water_advanced.css" for 37.157.36.26 at 2013-07-24 12:51:16 +0000
+Served asset /chosen_water_advanced.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js" for 37.157.36.26 at 2013-07-24 12:51:16 +0000
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-1.9.1.js" for 37.157.36.26 at 2013-07-24 12:51:16 +0000
+Served asset /jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js" for 37.157.36.26 at 2013-07-24 12:51:16 +0000
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen.jquery.js" for 37.157.36.26 at 2013-07-24 12:51:16 +0000
+Served asset /chosen.jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/water_advanced.js" for 37.157.36.26 at 2013-07-24 12:51:16 +0000
+Served asset /water_advanced.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logoWashCost8.png" for 37.157.36.26 at 2013-07-24 12:51:16 +0000
+Served asset /logoWashCost8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spriteArrow8.png" for 37.157.36.26 at 2013-07-24 12:51:16 +0000
+Served asset /spriteArrow8.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgWhiteTransparency.png" for 37.157.36.26 at 2013-07-24 12:51:16 +0000
+Served asset /bgWhiteTransparency.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/chosen-sprite.png" for 37.157.36.26 at 2013-07-24 12:51:16 +0000
+Served asset /chosen-sprite.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bgWhiteTransparency.png" for 37.157.36.26 at 2013-07-24 12:51:24 +0000
+Served asset /bgWhiteTransparency.png - 304 Not Modified (0ms)
+
+
+Started GET "/index" for 37.157.36.26 at 2013-07-24 12:52:20 +0000
+
+ActionController::RoutingError (No route matches [GET] "/index"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+[2013-07-24 13:00:20] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-24 13:00:20] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-24 13:00:20] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-24 13:00:21] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-24 13:00:22] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
