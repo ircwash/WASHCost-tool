@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>WASHCostApp - Advancef</title>
+  <title>WASHCostApp - Advanced</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -25,34 +25,34 @@
     <img src="/assets/logoWashCost8.png" alt="WASHCost" />
   </a>
   <ul>
-    <li><a href="#">about</a></li>
-    <li><a href="#">contact</a></li>
+    <li><a href="#"><%= t 'nav.utility.about' %></a></li>
+    <li><a href="#"><%= t 'nav.utility.contact' %></a></li>
     <li>
       <ul class="languageSwitcher">
         <li><a class="active" href="#">English</a></li>
-        <li><a href="#">French</a></li>
+        <li><a href="#">Français</a></li>
       </ul>
     </li>
-    <li><a class="sign" href="#">Sign in</a></li>
+    <li><a class="sign" href="#"><%= t 'nav.utility.sign_in' %></a></li>
   </ul>
   <nav>
     <div class="navWrapper">
       <ul>
-        <li><a class="active" href="#">Context</a></li>
-        <li><a href="#">Managing</a></li>
-        <li><a href="#">Technology</a></li>
-        <li><a href="#">Cost</a></li>
-        <li><a href="#">Service</a></li>
+        <li><a class="active" href="#"></a></li>
+        <li><a href="#managing_section"><%= t 'nav.advanced.managing' %></a></li>
+        <li><a href="#technology_section"><%= t 'nav.advanced.technology' %></a></li>
+        <li><a href="#cost_section"><%= t 'nav.advanced.cost' %></a></li>
+        <li><a href="#service_section"><%= t 'nav.advanced.service' %></a></li>
       </ul>
     </div>
   </nav>
 </div>
-<form class="bgGradient" action="report" method="post">
+<form class="bgGradient" action="/water_advanced/report" method="post">
 <fieldset>
 <div class="main">
 <h1>Water Advance Questionnaire</h1>
 <legend>Advance Questionnaire</legend>
-<section class="context">
+<section class="context" id="context_section">
 
   <!-- ROW 1 -->
   <div class="grid">
@@ -67,8 +67,8 @@
   </div>
 
   <div class="grid odd">
-    <label for="areaType">2. <%= t 'form.water_advanced.area_type.question' %></label>
-    <select name="areaType" id="areaType" data-placeholder="<%= t 'form.water_advanced.area_type.placeholder' %>" class="chzn-select" tabindex="2">
+    <label for="area_type">2. <%= t 'form.water_advanced.area_type.question' %></label>
+    <select name="area_type" id="areaType" data-placeholder="<%= t 'form.water_advanced.area_type.placeholder' %>" class="chzn-select" tabindex="2">
       <option></option>
       <option value="0"><%= t 'form.water_advanced.area_type.answers.a0' %></option>
       <option value="1"><%= t 'form.water_advanced.area_type.answers.a1' %></option>
@@ -92,88 +92,89 @@
 <section class="managing">
   <!-- ROW 2 -->
   <div class="grid">
-    <label for="how_managed">1. <%= t 'form.water_advanced.how_managed.question' %></label>
+    <label for="how_managed">1. <%= t 'form.water_advanced.management.how_managed.question' %></label>
     <select name="how_managed" id="how_managed" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
       <option></option>
-      <option value="0"><%= t 'form.water_advanced.how_managed.answers.a0' %></option>
-      <option value="1"><%= t 'form.water_advanced.how_managed.answers.a1' %></option>
-      <option value="2"><%= t 'form.water_advanced.how_managed.answers.a2' %></option>
-      <option value="3"><%= t 'form.water_advanced.how_managed.answers.a3' %></option>
-      <option value="4"><%= t 'form.water_advanced.how_managed.answers.a4' %></option>
-      <option value="5"><%= t 'form.water_advanced.how_managed.answers.a5' %></option>
-      <option value="6"><%= t 'form.water_advanced.how_managed.answers.a6' %></option>
+      <option value="0"><%= t 'form.water_advanced.management.shared.answers.a0' %></option>
+      <option value="1"><%= t 'form.water_advanced.management.shared.answers.a1' %></option>
+      <option value="2"><%= t 'form.water_advanced.management.shared.answers.a2' %></option>
+      <option value="3"><%= t 'form.water_advanced.management.shared.answers.a3' %></option>
+      <option value="4"><%= t 'form.water_advanced.management.shared.answers.a4' %></option>
+      <option value="5"><%= t 'form.water_advanced.management.shared.answers.a5' %></option>
+      <option value="6"><%= t 'form.water_advanced.management.shared.answers.a6' %></option>
+      <option value="7"><%= t 'form.water_advanced.management.shared.answers.a7' %></option>
     </select>
   </div>
   <div class="grid odd">
-    <label for="who_finances">2. <%= t 'form.water_advanced.who_finances.question' %></label>
+    <label for="who_finances">2. <%= t 'form.water_advanced.management.who_finances.question' %></label>
     <select name="who_finances" id="who_finances" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
       <option></option>
-      <option value="0"><%= t 'form.shared.responsibility.answers.a0' %></option>
-      <option value="1"><%= t 'form.shared.responsibility.answers.a1' %></option>
-      <option value="2"><%= t 'form.shared.responsibility.answers.a2' %></option>
-      <option value="3"><%= t 'form.shared.responsibility.answers.a3' %></option>
-      <option value="4"><%= t 'form.shared.responsibility.answers.a4' %></option>
-      <option value="5"><%= t 'form.shared.responsibility.answers.a5' %></option>
-      <option value="6"><%= t 'form.shared.responsibility.answers.a6' %></option>
-      <option value="7"><%= t 'form.shared.responsibility.answers.a7' %></option>
+      <option value="0"><%= t 'form.water_advanced.management.shared.answers.a0' %></option>
+      <option value="1"><%= t 'form.water_advanced.management.shared.answers.a1' %></option>
+      <option value="2"><%= t 'form.water_advanced.management.shared.answers.a2' %></option>
+      <option value="3"><%= t 'form.water_advanced.management.shared.answers.a3' %></option>
+      <option value="4"><%= t 'form.water_advanced.management.shared.answers.a4' %></option>
+      <option value="5"><%= t 'form.water_advanced.management.shared.answers.a5' %></option>
+      <option value="6"><%= t 'form.water_advanced.management.shared.answers.a6' %></option>
+      <option value="7"><%= t 'form.water_advanced.management.shared.answers.a7' %></option>
     </select>
   </div>
 
   <!-- ROW 3 -->
   <div class="grid">
-    <label for="who_owns">3. <%= t 'form.water_advanced.who_owns.question' %></label>
+    <label for="who_owns">3. <%= t 'form.water_advanced.management.who_owns.question' %></label>
     <select name="who_owns" id="who_owns" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
       <option></option>
-      <option value="0"><%= t 'form.shared.responsibility.answers.a0' %></option>
-      <option value="1"><%= t 'form.shared.responsibility.answers.a1' %></option>
-      <option value="2"><%= t 'form.shared.responsibility.answers.a2' %></option>
-      <option value="3"><%= t 'form.shared.responsibility.answers.a3' %></option>
-      <option value="4"><%= t 'form.shared.responsibility.answers.a4' %></option>
-      <option value="5"><%= t 'form.shared.responsibility.answers.a5' %></option>
-      <option value="6"><%= t 'form.shared.responsibility.answers.a6' %></option>
-      <option value="7"><%= t 'form.shared.responsibility.answers.a7' %></option>
+      <option value="0"><%= t 'form.water_advanced.management.shared.answers.a0' %></option>
+      <option value="1"><%= t 'form.water_advanced.management.shared.answers.a1' %></option>
+      <option value="2"><%= t 'form.water_advanced.management.shared.answers.a2' %></option>
+      <option value="3"><%= t 'form.water_advanced.management.shared.answers.a3' %></option>
+      <option value="4"><%= t 'form.water_advanced.management.shared.answers.a4' %></option>
+      <option value="5"><%= t 'form.water_advanced.management.shared.answers.a5' %></option>
+      <option value="6"><%= t 'form.water_advanced.management.shared.answers.a6' %></option>
+      <option value="7"><%= t 'form.water_advanced.management.shared.answers.a7' %></option>
     </select>
   </div>
   <div class="grid odd">
-    <label for="who_safeguards">4. <%= t 'form.water_advanced.who_safeguards.question' %></label>
+    <label for="who_safeguards">4. <%= t 'form.water_advanced.management.who_safeguards.question' %></label>
     <select name="who_safeguards" id="who_safeguards" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
       <option></option>
-      <option value="0"><%= t 'form.shared.responsibility.answers.a0' %></option>
-      <option value="1"><%= t 'form.shared.responsibility.answers.a1' %></option>
-      <option value="2"><%= t 'form.shared.responsibility.answers.a2' %></option>
-      <option value="3"><%= t 'form.shared.responsibility.answers.a3' %></option>
-      <option value="4"><%= t 'form.shared.responsibility.answers.a4' %></option>
-      <option value="5"><%= t 'form.shared.responsibility.answers.a5' %></option>
-      <option value="6"><%= t 'form.shared.responsibility.answers.a6' %></option>
-      <option value="7"><%= t 'form.shared.responsibility.answers.a7' %></option>
+      <option value="0"><%= t 'form.water_advanced.management.shared.answers.a0' %></option>
+      <option value="1"><%= t 'form.water_advanced.management.shared.answers.a1' %></option>
+      <option value="2"><%= t 'form.water_advanced.management.shared.answers.a2' %></option>
+      <option value="3"><%= t 'form.water_advanced.management.shared.answers.a3' %></option>
+      <option value="4"><%= t 'form.water_advanced.management.shared.answers.a4' %></option>
+      <option value="5"><%= t 'form.water_advanced.management.shared.answers.a5' %></option>
+      <option value="6"><%= t 'form.water_advanced.management.shared.answers.a6' %></option>
+      <option value="7"><%= t 'form.water_advanced.management.shared.answers.a7' %></option>
     </select>
   </div>
   <div class="grid">
-    <label for="who_enforces">5. <%= t 'form.water_advanced.who_enforces.question' %></label>
+    <label for="who_enforces">5. <%= t 'form.water_advanced.management.who_enforces.question' %></label>
     <select name="who_enforces" id="who_enforces" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
       <option></option>
-      <option value="0"><%= t 'form.shared.responsibility.answers.a0' %></option>
-      <option value="1"><%= t 'form.shared.responsibility.answers.a1' %></option>
-      <option value="2"><%= t 'form.shared.responsibility.answers.a2' %></option>
-      <option value="3"><%= t 'form.shared.responsibility.answers.a3' %></option>
-      <option value="4"><%= t 'form.shared.responsibility.answers.a4' %></option>
-      <option value="5"><%= t 'form.shared.responsibility.answers.a5' %></option>
-      <option value="6"><%= t 'form.shared.responsibility.answers.a6' %></option>
-      <option value="7"><%= t 'form.shared.responsibility.answers.a7' %></option>
+      <option value="0"><%= t 'form.water_advanced.management.shared.answers.a0' %></option>
+      <option value="1"><%= t 'form.water_advanced.management.shared.answers.a1' %></option>
+      <option value="2"><%= t 'form.water_advanced.management.shared.answers.a2' %></option>
+      <option value="3"><%= t 'form.water_advanced.management.shared.answers.a3' %></option>
+      <option value="4"><%= t 'form.water_advanced.management.shared.answers.a4' %></option>
+      <option value="5"><%= t 'form.water_advanced.management.shared.answers.a5' %></option>
+      <option value="6"><%= t 'form.water_advanced.management.shared.answers.a6' %></option>
+      <option value="7"><%= t 'form.water_advanced.management.shared.answers.a7' %></option>
     </select>
   </div>
   <div class="grid odd">
     <label for="who_repairs">6. <%= t 'form.water_advanced.who_repairs.question' %></label>
     <select name="who_repairs" id="who_repairs" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
       <option></option>
-      <option value="0"><%= t 'form.shared.responsibility.answers.a0' %></option>
-      <option value="1"><%= t 'form.shared.responsibility.answers.a1' %></option>
-      <option value="2"><%= t 'form.shared.responsibility.answers.a2' %></option>
-      <option value="3"><%= t 'form.shared.responsibility.answers.a3' %></option>
-      <option value="4"><%= t 'form.shared.responsibility.answers.a4' %></option>
-      <option value="5"><%= t 'form.shared.responsibility.answers.a5' %></option>
-      <option value="6"><%= t 'form.shared.responsibility.answers.a6' %></option>
-      <option value="7"><%= t 'form.shared.responsibility.answers.a7' %></option>
+      <option value="0"><%= t 'form.water_advanced.management.shared.answers.a0' %></option>
+      <option value="1"><%= t 'form.water_advanced.management.shared.answers.a1' %></option>
+      <option value="2"><%= t 'form.water_advanced.management.shared.answers.a2' %></option>
+      <option value="3"><%= t 'form.water_advanced.management.shared.answers.a3' %></option>
+      <option value="4"><%= t 'form.water_advanced.management.shared.answers.a4' %></option>
+      <option value="5"><%= t 'form.water_advanced.management.shared.answers.a5' %></option>
+      <option value="6"><%= t 'form.water_advanced.management.shared.answers.a6' %></option>
+      <option value="7"><%= t 'form.water_advanced.management.shared.answers.a7' %></option>
     </select>
   </div>
   <div class="grid">
@@ -183,7 +184,7 @@
 </section>
 
 <!-- TECHNOLOGY -->
-<section class="system">
+<section class="system" id="technology_section">
   <div class="grid">
     <label for="choiceSupply">1. <%= t 'form.water_advanced.supply_system.question' %></label>
     <select id="choiceSupply"  data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
@@ -289,7 +290,7 @@
 </section>
 
 <!-- COST -->
-<section class="cost">
+<section class="cost" id="cost_section">
   <div class="grid">
     <h2>1. <%= t 'form.water_advanced.cost.hardware.question' %></h2>
     <ul>
@@ -422,7 +423,7 @@
   </div>
 
 </section>
-<section class="service">
+<section class="service" id="service_section">
 
 </section>
 <button class="formButton" id="sendButton">Send</button>

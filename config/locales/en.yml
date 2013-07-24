@@ -27,6 +27,13 @@ en:
           quantity: "Quantity"
           quality: "Quality"
           reliability: "Reliability"
+    advanced:
+      context: "Context"
+      managing: "Managing"
+      technology: "Technology"
+      cost: "Cost"
+      serivce: "Service"
+
   buttons:
     next: "Next"
     start: "OK! Start using the calculator"
@@ -51,16 +58,6 @@ en:
         v2: "Basic service"
         v3: "High service"
       select_an_option: "Select an Option"
-      responsibility:
-        answers:
-          a0: "External donor"
-          a1: "community-based"
-          a2: "organisation"
-          a3: "public sector (local)"
-          a4: "public sector (national)"
-          a5: "utility"
-          a6: "household"
-          a7: "Don&#39;t know"
     water_basic:
       water:
         question: "What is the main water source use to provide water?"
@@ -105,7 +102,7 @@ en:
         question: "How reliable is the service? How many days per year is the water system not working?"
         answers:
           a0: "Works all the time"
-          a1: "Works most of the days, but not &gt; 12 days"
+          a1: "Works most of the days, but not > 12 days"
           a2: "Many break-downs slow repairs"
           a3: "Not working"
     sanitation_basic:
@@ -169,8 +166,8 @@ en:
         answers:
           a0: "400+ pp/km2 (urban)"
           a1: "150-399 pp/km2 (intermediate)"
-          a2: "&lt;150 pp/km2 (rural)"
-          a1: "Don&#39;t know"
+          a2: ">150 pp/km2 (rural)"
+          a3: "Don't know"
       existing:
         question: "Does this service exist already or is it planned?"
         answer:
@@ -181,28 +178,31 @@ en:
         answers:
           a0: "400+ pp/km2 (urban)"
           a1: "150-399 pp/km2 (intermediate)"
-          a2: "&lt;150 pp/km2 (rural)"
-          a1: "Don&#39;t know"
-      how_managed:
-        question: "Which of these options best describe how the water service is managed?"
-        answers:
-          a0: "community-based management"
-          a1: "public sector (local)"
-          a2: "public sector (national)"
-          a3: "private sector"
-          a4: "utility management"
-          a5: "household management"
-          a6: "other (define)"
-      who_finances:
-        question: "Who finances the construction of the water system?"
-      who_owns:
-        question: "Who owns (legally?) the water infrastructure?"
-      who_safeguards:
-        question: "Who safeguards the operation and maintenance of the infrastructure?"
-      who_enforces:
-        question: "Who has/will have responsibility for checking and enforcing the standard of water services?"
-      who_repairs:
-        question: "Who covers the cost of rehabilitation when larger repairs are needed?"
+          a2: ">150 pp/km2 (rural)"
+          a3: "Don't know"
+      management:
+        shared:
+          answers:
+            a0: "External donor"
+            a1: "community-based"
+            a2: "organisation"
+            a3: "public sector (local)"
+            a4: "public sector (national)"
+            a5: "utility"
+            a6: "household"
+            a7: "Don't know"
+        how_managed:
+          question: "Which of these options best describe how the water service is managed?"
+        who_finances:
+          question: "Who finances the construction of the water system?"
+        who_owns:
+          question: "Who owns (legally?) the water infrastructure?"
+        who_safeguards:
+          question: "Who safeguards the operation and maintenance of the infrastructure?"
+        who_enforces:
+          question: "Who has/will have responsibility for checking and enforcing the standard of water services?"
+        who_repairs:
+          question: "Who covers the cost of rehabilitation when larger repairs are needed?"
       annual_income:
         question: "What is the average annual household income in the service area?"
         placeholder: "Numeric US$"
@@ -285,7 +285,7 @@ en:
         hardware:
           question: "What is the total capital expenditure for hardware?"
         software:
-          question: "What is the total  capital expenditure (software)?"
+          question: "What is the total capital expenditure for software?"
         maintenance:
           question: "What is the minor operation and maintenance expenditure?"
         direct:
@@ -348,6 +348,15 @@ en:
       a342:	"This service is delivering more than a basic quantity - however a lack of sufficient formal sources means people may have to travel, or queue, between 30 and 60 minutes round trip from the household. Capital expenditure values are higher than found WASHCost ranges so the context may require greater capital investment to improve access."
       a343:	"The capital expenditure entered is higher than the ranges found by WASHCost and this service is delivering more than a basic quantity and formal sources are within 30 minutes round trip from the household.  So the context may require more expensive infrastructure, or cost efficiency can be improved.  "
       a344:	"The capital expenditure entered is higher than the ranges found by WASHCost and this service is delivering more than a basic quantity and formal sources are within 10 minutes round trip from the household.  A very good level of service is being achieved, and as a consequence it may require more expensive infrastructure. Another possibility may be that cost efficiency can be improved."
+    water_advanced:
+      country: "Country"
+      management:
+        how_managed: "Service Delivery Option"
+        who_finances:   "Finance"
+        who_owns: "Owned"
+        who_safeguards:  "Maintenance"
+        who_enforces:   "Responsibility"
+        who_repairs: "Rehabilitation"
 
   footer:
     final_report: "Final Reports"
