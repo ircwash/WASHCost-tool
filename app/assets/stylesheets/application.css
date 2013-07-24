@@ -608,7 +608,7 @@ form li label span {
         left: 7%;
     }
     .reliabilityInput li label {
-        background: transparent url('/assets/spriteQ9basicWater24.png')no-repeat 0 -196px;
+        background: transparent url('/assets/spriteQ9basicWater24.png') no-repeat 0 -196px;
     }
     .reliabilityInput li .relia_01 {
         background-position: -159px -196px;
@@ -805,6 +805,14 @@ form li label span {
 *   IE - Fixes
 *
 */
+    .ie7 .mainContent,
+    .ie8 .mainContent,
+    .ie9 .mainContent {
+        width: 100%;
+    }
+    .ie8 .mainContent {
+        display: block;
+    }
     .ie8 .mainContent h1,
     .ie7 .mainContent h1 {
         display: block;
@@ -816,4 +824,17 @@ form li label span {
     .ie8 .mainContent .main_content, 
     .ie7 .mainContent .main_content {
         display: block;
+    }
+    .ie8 .mainContent form {
+        width: 1023px;
+    }
+    .ie8 .choices,
+    .ie8 .mainContent ul {
+        margin-top: 0;
+    }
+    .ie8 .mainContent input {
+        margin-left: 40%;
+    }
+    .ie8 .mainContent input.selectCountry {
+        margin-left: 30%;
     }
