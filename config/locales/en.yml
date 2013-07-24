@@ -368,6 +368,23 @@ en:
         power_supply: "Main Power Supply"
         transmission: "Length of Transmission Line"
         piped: "Population (For Piped Only)"
+      cost:
+        title: "Cost Data"
+        total: "Total Support"
+        maintenance: "Maintenance"
+        support: "Support"
+        hardware: "Hardware"
+        software: "Software"
+        minor: "Minor"
+        capital: "Capital"
+        direct: "Direct"
+        indirect: "Indirect"
+        loan_yearly:
+          title: "Cost of Loan"
+          unit: "Per Year"
+        payback:
+          title: "Payback period on this loan"
+          unit: "Years"
 
 
   footer:
