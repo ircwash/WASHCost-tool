@@ -254,7 +254,7 @@ en:
           a5: "ferrocement tank"
       treatment:
         question: "How is water treated?"
-        answer:
+        answers:
           a0: "no treatment"
           a1: "boiling"
           a2: "household filter"
@@ -263,7 +263,7 @@ en:
           a5: "water treatment works"
       power_supply:
         question: "Main power supply?"
-        answer:
+        answers:
           a0: "no power"
           a1: "mains electricity"
           a2: "windmills"
@@ -357,6 +357,18 @@ en:
         who_safeguards:  "Maintenance"
         who_enforces:   "Responsibility"
         who_repairs: "Rehabilitation"
+      technology:
+        supply_system: "Supply System"
+        units: "Units"
+        people_served: "People Served by System"
+        inauguration: "In "
+        water_sources: "Water Source"
+        water_stored: "Water Stored"
+        treatment: "Water Treated"
+        power_supply: "Main Power Supply"
+        transmission: "Length of Transmission Line"
+        piped: "Population (For Piped Only)"
+
 
   footer:
     final_report: "Final Reports"

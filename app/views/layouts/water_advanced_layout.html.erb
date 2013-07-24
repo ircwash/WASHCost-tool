@@ -186,8 +186,8 @@
 <!-- TECHNOLOGY -->
 <section class="system" id="technology_section">
   <div class="grid">
-    <label for="choiceSupply">1. <%= t 'form.water_advanced.supply_system.question' %></label>
-    <select id="choiceSupply"  data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
+    <label for="supply_system">1. <%= t 'form.water_advanced.supply_system.question' %></label>
+    <select id="supply_system" name="supply_system" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
       <option></option>
       <option value="0"><%= t 'form.water_advanced.supply_system.answers.a0' %></option>
       <option value="1"><%= t 'form.water_advanced.supply_system.answers.a1' %></option>
@@ -200,19 +200,19 @@
   </div>
   <div class="grid odd">
     <label for="techApply">2. <%= t 'form.water_advanced.inauguration.question' %></label>
-    <input type="number" id="techApply" placeholder="Year">
+    <input type="number" name="inauguration"  id="techApply" placeholder="Year">
   </div>
   <div class="grid">
-    <label for="choicesSource">3. <%= t 'form.water_advanced.water_sources.question' %></label>
-    <select id="choicesSource" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
+    <label for="water_sources">3. <%= t 'form.water_advanced.water_sources.question' %></label>
+    <select id="water_sources" name="water_sources" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
       <option></option>
       <option value="0"><%= t 'form.water_advanced.water_sources.answers.a0' %></option>
       <option value="1"><%= t 'form.water_advanced.water_sources.answers.a1' %></option>
       <option value="2"><%= t 'form.water_advanced.water_sources.answers.a2' %></option>
     </select>
       <div class="supplemental">
-        <label for="waterDefine">3a. <%= t 'form.water_advanced.surface_water.question' %></label>
-        <select id="waterDefine" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
+        <label for="surface_water">3a. <%= t 'form.water_advanced.surface_water.question' %></label>
+        <select id="surface_water" name="surface_water" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
           <option></option>
           <option value="0"><%= t 'form.water_advanced.surface_water.answers.a0' %></option>
           <option value="1"><%= t 'form.water_advanced.surface_water.answers.a1' %></option>
@@ -221,8 +221,8 @@
         </select>
       </div>
       <div class="supplemental">
-        <label for="groundWater">3b. <%= t 'form.water_advanced.ground_water.question' %></label>
-        <select id="groundWater" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
+        <label for="ground_water">3b. <%= t 'form.water_advanced.ground_water.question' %></label>
+        <select id="ground_water" name="ground_water" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
           <option></option>
           <option value="0"><%= t 'form.water_advanced.ground_water.answers.a0' %></option>
           <option value="1"><%= t 'form.water_advanced.ground_water.answers.a1' %></option>
@@ -231,8 +231,8 @@
         </select>
       </div>
       <div class="supplemental">
-        <label for="waterPump">3c. <%= t 'form.water_advanced.drilled_well.question' %></label>
-        <select id="waterPump" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
+        <label for="drilled_well">3c. <%= t 'form.water_advanced.drilled_well.question' %></label>
+        <select id="drilled_well" name="drilled_well" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
           <option></option>
           <option value="0"><%= t 'form.water_advanced.drilled_well.answers.a0' %></option>
           <option value="1"><%= t 'form.water_advanced.drilled_well.answers.a1' %></option>
@@ -240,8 +240,8 @@
       </div>
   </div>
   <div class="grid odd">
-    <label for="waterStored">4. <%= t 'form.water_advanced.water_storage.question' %></label>
-    <select id="waterStored" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
+    <label for="water_storage">4. <%= t 'form.water_advanced.water_storage.question' %></label>
+    <select id="water_storage" name="water_storage" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
       <option></option>
       <option value="0"><%= t 'form.water_advanced.water_storage.answers.a0' %></option>
       <option value="1"><%= t 'form.water_advanced.water_storage.answers.a1' %></option>
@@ -253,8 +253,8 @@
     <div class="input_shim_triple_labels"></div>
   </div>
   <div class="grid">
-    <label for="waterTreated">5. <%= t 'form.water_advanced.treatment.question' %></label>
-    <select id="waterTreated" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
+    <label for="treatment">5. <%= t 'form.water_advanced.treatment.question' %></label>
+    <select id="treatment" name="treatment" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
       <option></option>
       <option value="0"><%= t 'form.water_advanced.treatment.answers.a0' %></option>
       <option value="1"><%= t 'form.water_advanced.treatment.answers.a1' %></option>
@@ -265,8 +265,8 @@
     </select>
   </div>
   <div class="grid odd">
-    <label for="powerSupply">6. <%= t 'form.water_advanced.power_supply.question' %></label>
-    <select id="powerSupply" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
+    <label for="power_supply">6. <%= t 'form.water_advanced.power_supply.question' %></label>
+    <select id="power_supply" name="power_supply" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
       <option></option>
       <option value="0"><%= t 'form.water_advanced.power_supply.answers.a0' %></option>
       <option value="1"><%= t 'form.water_advanced.power_supply.answers.a1' %></option>
@@ -277,11 +277,11 @@
   </div>
   <div class="grid">
     <label for="lengthKm">7. <%= t 'form.water_advanced.transmission.question' %></label>
-    <input id="lengthKm" type="number" placeholder="Km" min="0" max="10000" step="1">
+    <input id="lengthKm" name="transmission" type="number" placeholder="Km" min="0" max="10000" step="1">
   </div>
   <div class="grid odd">
     <label for="pipeSupplies">8. <%= t 'form.water_advanced.piped.question' %></label>
-    <input id="pipeSupplies" type="number" placeholder="% Population" min="0" max="100" step="1">
+    <input id="pipeSupplies" name="piped" type="number" placeholder="% Population" min="0" max="100" step="1">
   </div>
   <div class="notes">
     <p><%= t 'form.water_advanced.notes.stars_1' %></p>

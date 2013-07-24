@@ -17,20 +17,20 @@ class WaterAdvancedController < ApplicationController
       :country => get_country(params[:country]),
       :area_type => get_area_type(params[:area_type]),
 
-      :how_managed => get_management(params[:how_managed]),
-      :who_finances => get_management(params[:who_finances]),
-      :who_owns => get_management(params[:who_owns]),
-      :who_safeguards => get_management(params[:who_safeguards]),
-      :who_enforces => get_management(params[:who_enforces]),
-      :who_repairs => get_management(params[:who_repairs]),
-      :annual_income => get_management(params[:annual_income]),
+      :how_managed => get_management('how_managed', params[:how_managed]),
+      :who_finances => get_management('who_finances', params[:who_finances]),
+      :who_owns => get_management('who_owns', params[:who_owns]),
+      :who_safeguards => get_management('who_safeguards', params[:who_safeguards]),
+      :who_enforces => get_management('who_enforces', params[:who_enforces]),
+      :who_repairs => get_management('who_repairs', params[:who_repairs]),
+      :annual_income => get_annual_income(params[:annual_income]),
 
-      :supply_system => get_supply_system(params[:supply_system]),
+      :supply_system => get_indexed_value('form.water_advanced.supply_system.answers.a', :supply_system, params[:supply_system]),
       :inauguration => get_inauguration(params[:inauguration]),
-      :water_sources => get_water_sources(params[:water_sources]),
-      :water_storage => get_water_storage(params[:water_storage]),
-      :treatment => get_treatment(params[:treatment]),
-      :power_supply => get_power_supply(params[:power_supply]),
+      :water_sources => get_indexed_value('form.water_advanced.water_sources.answers.a', :water_sources,params[:water_sources]),
+      :water_storage => get_indexed_value('form.water_advanced.water_storage.answers.a', :water_storage, params[:water_storage]),
+      :treatment => get_indexed_value('form.water_advanced.treatment.answers.a', :treatment, params[:treatment]),
+      :power_supply => get_indexed_value('form.water_advanced.power_supply.answers.a',:power_supply, params[:power_supply]),
       :transmission => get_transmission(params[:transmission]),
       :piped => get_piped(params[:piped]),
 
@@ -62,6 +62,8 @@ class WaterAdvancedController < ApplicationController
     country= Country.new(country_code)
     if(country.data == nil)
       country = nil
+    else
+      country= country.name
     end
 
     add_to_session_form('country', country)
@@ -79,92 +81,53 @@ class WaterAdvancedController < ApplicationController
     return text
   end
 
-  def get_management(index)
+  def get_management(key, index)
 
     text= 'Value Not Set'
 
     if index
       text= I18n.t 'form.water_advanced.management.shared.answers.a'+index
+
+      add_to_session_form(key, index)
     end
 
     return text
   end
 
-
-  def get_how_managed(how_managed)
-  
-    return 'blergh'
-  end
-    
-  def get_who_finances(who_finances)
-
-    return 'blergh'
-  end
-
-  def get_who_owns(who_owns)
-
-    return 'blergh'
-  end
-
-  def get_who_safeguard(who_safeguards)
-
-    return 'blergh'
-  end
-
-  def get_who_enforces(who_enforces)
-
-    return 'blergh'
-  end
-
-  def get_who_repairs(who_repairs)
-
-    return 'blergh'
-  end
-
   def get_annual_income(annual_income)
 
-    return 'blergh'
+    return annual_income
 
   end
 
-  def get_supply_system(supply_system)
+  def get_indexed_value(i18nPrefix, key, index)
 
-    return 'blergh'
+    text= 'Value Not Set'
+
+    if index
+      text= I18n.t i18nPrefix+index
+
+      add_to_session_form(key, index)
+    end
+
+    return text
   end
 
   def get_inauguration(inauguration)
-
-    return 'blergh'
+    #YeAR TEST
+    return inauguration
   end
 
-  def get_water_sources(water_sources)
-
-  end
-
-  def get_water_storage(water_storage)
-
-    return 'blergh'
-  end
-
-  def get_treatment(treatment)
-
-    return 'blergh'
-  end
-
-  def get_power_supply(power_supply)
-
-    return 'blergh'
-  end
 
   def get_transmission(transmission)
-
-    return 'blergh'
+     # INT TEST
+    return transmission
   end
 
   def get_piped(piped)
 
-
-    return 'blergh'
+    # % TEST
+    return piped
   end
 
   def get_total_cost(total_cost)
