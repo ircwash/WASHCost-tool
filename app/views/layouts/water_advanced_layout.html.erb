@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>WashCostApp - Advances</title>
+  <title>WASHCostApp - Advancef</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -53,44 +53,47 @@
 <h1>Water Advance Questionnaire</h1>
 <legend>Advance Questionnaire</legend>
 <section class="context">
+
+  <!-- ROW 1 -->
   <div class="grid">
-    <label for="choiceCountry">Country?</label>
-    <select id="choiceCountry" data-placeholder="Select a country" class="chzn-select" tabindex="2">
+    <label for="choiceCountry">1. <%= t 'form.water_advanced.location.question' %></label>
+    <select name="country" id="country" data-placeholder="Select a country" class="chzn-select" tabindex="2">
       <%= render "shared/country_select_options"%>
     </select>
+    <div class="supplemental">
+      <input type="text" name="region" placeholder="<%= t 'form.water_advanced.region.placeholder' %>" class="supplemental"/>
+      <input type="text" name="city" placeholder="<%= t 'form.water_advanced.city.placeholder' %>"/>
+    </div>
   </div>
+
   <div class="grid odd">
-    <label for="areaType">Area type</label>
-    <select id="areaType" data-placeholder="Select an area type" class="chzn-select" tabindex="2">
-      <option value="1">Rural</option>
-      <option value="2">Small-town</option>
-      <option value="3">Peri-urban</option>
-      <option value="4">Urban</option>
+    <label for="areaType">2. <%= t 'form.water_advanced.area_type.question' %></label>
+    <select name="areaType" id="areaType" data-placeholder="<%= t 'form.water_advanced.area_type.placeholder' %>" class="chzn-select" tabindex="2">
+      <option></option>
+      <option value="0"><%= t 'form.water_advanced.area_type.answers.a0' %></option>
+      <option value="1"><%= t 'form.water_advanced.area_type.answers.a1' %></option>
+      <option value="2"><%= t 'form.water_advanced.area_type.answers.a2' %></option>
+      <option value="3"><%= t 'form.water_advanced.area_type.answers.a3' %></option>
     </select>
-  </div>
-  <div class="grid">
-    <label for="choiceService">Does this service existal already or is it planned?</label>
-    <a class="iconTip" href="#">iconTip</a>
-    <select id="choiceService" data-placeholder="Select an service" class="chzn-select" tabindex="2">
-      <option value="1">Budgeted/Estimated</option>
-      <option value="2">Real cost based on expenditure data</option>
+    <div class="supplemental">
+    <select name="density" id="density" data-placeholder="<%= t 'form.water_advanced.density.placeholder' %>" class="chzn-select" tabindex="2">
+      <option></option>
+      <option value="0"><%= t 'form.water_advanced.density.answers.a0' %></option>
+      <option value="1"><%= t 'form.water_advanced.density.answers.a1' %></option>
+      <option value="2"><%= t 'form.water_advanced.density.answers.a2' %></option>
+      <option value="3"><%= t 'form.water_advanced.density.answers.a3' %></option>
     </select>
-  </div>
-  <div class="grid odd">
-    <label for="desityArea">What is the population density of the service area?</label>
-    <select id="desityArea" data-placeholder="Select an area type" class="chzn-select" tabindex="2">
-      <option value="1">400+ pp/km2 (urban)</option>
-      <option value="2">150-399 pp/km2 (intermediate)</option>
-      <option value="3">&lt;150 pp/km2 (rural)</option>
-      <option value="4">Don&#39;t know</option>
-    </select>
-    <a class="comentAnchor" href="#">Add a comment</a>
+    </div>
+    <div class="input_shim_single"></div>
   </div>
 </section>
+
+
 <section class="managing">
+  <!-- ROW 2 -->
   <div class="grid">
-    <label for="choiceManaging"><%= t 'form.water_advanced.how_managed.question' %></label>
-    <select id="choiceManaging" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
+    <label for="how_managed">1. <%= t 'form.water_advanced.how_managed.question' %></label>
+    <select name="how_managed" id="how_managed" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
       <option></option>
       <option value="0"><%= t 'form.water_advanced.how_managed.answers.a0' %></option>
       <option value="1"><%= t 'form.water_advanced.how_managed.answers.a1' %></option>
@@ -102,8 +105,8 @@
     </select>
   </div>
   <div class="grid odd">
-    <label for="choiceSystem"><%= t 'form.water_advanced.who_finances.question' %></label>
-    <select id="choiceSystem" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
+    <label for="who_finances">2. <%= t 'form.water_advanced.who_finances.question' %></label>
+    <select name="who_finances" id="who_finances" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
       <option></option>
       <option value="0"><%= t 'form.shared.responsibility.answers.a0' %></option>
       <option value="1"><%= t 'form.shared.responsibility.answers.a1' %></option>
@@ -115,9 +118,11 @@
       <option value="7"><%= t 'form.shared.responsibility.answers.a7' %></option>
     </select>
   </div>
+
+  <!-- ROW 3 -->
   <div class="grid">
-    <label for="choiceInfra"><%= t 'form.water_advanced.who_owns.question' %></label>
-    <select id="choiceInfra" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
+    <label for="who_owns">3. <%= t 'form.water_advanced.who_owns.question' %></label>
+    <select name="who_owns" id="who_owns" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
       <option></option>
       <option value="0"><%= t 'form.shared.responsibility.answers.a0' %></option>
       <option value="1"><%= t 'form.shared.responsibility.answers.a1' %></option>
@@ -130,8 +135,8 @@
     </select>
   </div>
   <div class="grid odd">
-    <label for="choiceMain"><%= t 'form.water_advanced.who_safeguards.question' %></label>
-    <select id="choiceMain" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
+    <label for="who_safeguards">4. <%= t 'form.water_advanced.who_safeguards.question' %></label>
+    <select name="who_safeguards" id="who_safeguards" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
       <option></option>
       <option value="0"><%= t 'form.shared.responsibility.answers.a0' %></option>
       <option value="1"><%= t 'form.shared.responsibility.answers.a1' %></option>
@@ -144,8 +149,8 @@
     </select>
   </div>
   <div class="grid">
-    <label for="choiceStandard"><%= t 'form.water_advanced.who_enforces.question' %></label>
-    <select id="choiceStandard" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
+    <label for="who_enforces">5. <%= t 'form.water_advanced.who_enforces.question' %></label>
+    <select name="who_enforces" id="who_enforces" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
       <option></option>
       <option value="0"><%= t 'form.shared.responsibility.answers.a0' %></option>
       <option value="1"><%= t 'form.shared.responsibility.answers.a1' %></option>
@@ -158,8 +163,8 @@
     </select>
   </div>
   <div class="grid odd">
-    <label for="choiceCost"><%= t 'form.water_advanced.who_repairs.question' %></label>
-    <select id="choiceCost" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
+    <label for="who_repairs">6. <%= t 'form.water_advanced.who_repairs.question' %></label>
+    <select name="who_repairs" id="who_repairs" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
       <option></option>
       <option value="0"><%= t 'form.shared.responsibility.answers.a0' %></option>
       <option value="1"><%= t 'form.shared.responsibility.answers.a1' %></option>
@@ -172,13 +177,15 @@
     </select>
   </div>
   <div class="grid">
-    <label for="annualHousehold"><%= t 'form.water_advanced.annual_income.question' %></label>
-    <input id="annualHousehold" type="number" placeholder="Numeric US$" min="0" max="10000" step="1">
+    <label for="annual_income">7. <%= t 'form.water_advanced.annual_income.question' %></label>
+    <input name="annual_income" id="annual_income" type="number" placeholder="<%= t 'form.water_advanced.annual_income.placeholder' %>" min="0" max="10000" step="1">
   </div>
 </section>
+
+<!-- TECHNOLOGY -->
 <section class="system">
   <div class="grid">
-    <label for="choiceSupply"><%= t 'form.water_advanced.supply_system.question' %></label>
+    <label for="choiceSupply">1. <%= t 'form.water_advanced.supply_system.question' %></label>
     <select id="choiceSupply"  data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
       <option></option>
       <option value="0"><%= t 'form.water_advanced.supply_system.answers.a0' %></option>
@@ -191,48 +198,48 @@
     </select>
   </div>
   <div class="grid odd">
-    <label for="techApply"><%= t 'form.water_advanced.inauguration.question' %></label>
+    <label for="techApply">2. <%= t 'form.water_advanced.inauguration.question' %></label>
     <input type="number" id="techApply" placeholder="Year">
   </div>
   <div class="grid">
-    <label for="choicesSource"><%= t 'form.water_advanced.water_sources.question' %></label>
+    <label for="choicesSource">3. <%= t 'form.water_advanced.water_sources.question' %></label>
     <select id="choicesSource" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
       <option></option>
       <option value="0"><%= t 'form.water_advanced.water_sources.answers.a0' %></option>
       <option value="1"><%= t 'form.water_advanced.water_sources.answers.a1' %></option>
       <option value="2"><%= t 'form.water_advanced.water_sources.answers.a2' %></option>
     </select>
+      <div class="supplemental">
+        <label for="waterDefine">3a. <%= t 'form.water_advanced.surface_water.question' %></label>
+        <select id="waterDefine" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
+          <option></option>
+          <option value="0"><%= t 'form.water_advanced.surface_water.answers.a0' %></option>
+          <option value="1"><%= t 'form.water_advanced.surface_water.answers.a1' %></option>
+          <option value="2"><%= t 'form.water_advanced.surface_water.answers.a2' %></option>
+          <option value="3"><%= t 'form.water_advanced.surface_water.answers.a3' %></option>
+        </select>
+      </div>
+      <div class="supplemental">
+        <label for="groundWater">3b. <%= t 'form.water_advanced.ground_water.question' %></label>
+        <select id="groundWater" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
+          <option></option>
+          <option value="0"><%= t 'form.water_advanced.ground_water.answers.a0' %></option>
+          <option value="1"><%= t 'form.water_advanced.ground_water.answers.a1' %></option>
+          <option value="2"><%= t 'form.water_advanced.ground_water.answers.a2' %></option>
+          <option value="3"><%= t 'form.water_advanced.ground_water.answers.a3' %></option>
+        </select>
+      </div>
+      <div class="supplemental">
+        <label for="waterPump">3c. <%= t 'form.water_advanced.drilled_well.question' %></label>
+        <select id="waterPump" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
+          <option></option>
+          <option value="0"><%= t 'form.water_advanced.drilled_well.answers.a0' %></option>
+          <option value="1"><%= t 'form.water_advanced.drilled_well.answers.a1' %></option>
+        </select>
+      </div>
   </div>
   <div class="grid odd">
-    <label for="waterDefine"><%= t 'form.water_advanced.surface_water.question' %></label>
-    <select id="waterDefine" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
-      <option></option>
-      <option value="0"><%= t 'form.water_advanced.surface_water.answers.a0' %></option>
-      <option value="1"><%= t 'form.water_advanced.surface_water.answers.a1' %></option>
-      <option value="2"><%= t 'form.water_advanced.surface_water.answers.a2' %></option>
-      <option value="3"><%= t 'form.water_advanced.surface_water.answers.a3' %></option>
-    </select>
-  </div>
-  <div class="grid">
-    <label for="groundWater"><%= t 'form.water_advanced.ground_water.question' %></label>
-    <select id="groundWater" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
-      <option></option>
-      <option value="0"><%= t 'form.water_advanced.ground_water.answers.a0' %></option>
-      <option value="1"><%= t 'form.water_advanced.ground_water.answers.a1' %></option>
-      <option value="2"><%= t 'form.water_advanced.ground_water.answers.a2' %></option>
-      <option value="3"><%= t 'form.water_advanced.ground_water.answers.a3' %></option>
-    </select>
-  </div>
-  <div class="grid odd">
-    <label for="waterPump"><%= t 'form.water_advanced.drilled_well.question' %></label>
-    <select id="waterPump" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
-      <option></option>
-      <option value="0"><%= t 'form.water_advanced.drilled_well.answers.a0' %></option>
-      <option value="1"><%= t 'form.water_advanced.drilled_well.answers.a1' %></option>
-    </select>
-  </div>
-  <div class="grid">
-    <label for="waterStored"><%= t 'form.water_advanced.water_storage.question' %></label>
+    <label for="waterStored">4. <%= t 'form.water_advanced.water_storage.question' %></label>
     <select id="waterStored" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
       <option></option>
       <option value="0"><%= t 'form.water_advanced.water_storage.answers.a0' %></option>
@@ -242,9 +249,10 @@
       <option value="4"><%= t 'form.water_advanced.water_storage.answers.a4' %></option>
       <option value="5"><%= t 'form.water_advanced.water_storage.answers.a5' %></option>
     </select>
+    <div class="input_shim_triple_labels"></div>
   </div>
-  <div class="grid odd">
-    <label for="waterTreated"><%= t 'form.water_advanced.treatment.question' %></label>
+  <div class="grid">
+    <label for="waterTreated">5. <%= t 'form.water_advanced.treatment.question' %></label>
     <select id="waterTreated" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
       <option></option>
       <option value="0"><%= t 'form.water_advanced.treatment.answers.a0' %></option>
@@ -255,8 +263,8 @@
       <option value="5"><%= t 'form.water_advanced.treatment.answers.a5' %></option>
     </select>
   </div>
-  <div class="grid">
-    <label for="powerSupply"><%= t 'form.water_advanced.power_supply.question' %></label>
+  <div class="grid odd">
+    <label for="powerSupply">6. <%= t 'form.water_advanced.power_supply.question' %></label>
     <select id="powerSupply" data-placeholder="<%= t 'form.shared.select_an_option'%>" class="chzn-select" tabindex="2">
       <option></option>
       <option value="0"><%= t 'form.water_advanced.power_supply.answers.a0' %></option>
@@ -266,12 +274,12 @@
       <option value="4"><%= t 'form.water_advanced.power_supply.answers.a4' %></option>
     </select>
   </div>
-  <div class="grid odd">
-    <label for="lengthKm"><%= t 'form.water_advanced.transmission.question' %></label>
+  <div class="grid">
+    <label for="lengthKm">7. <%= t 'form.water_advanced.transmission.question' %></label>
     <input id="lengthKm" type="number" placeholder="Km" min="0" max="10000" step="1">
   </div>
-  <div class="grid">
-    <label for="pipeSupplies"><%= t 'form.water_advanced.piped.question' %></label>
+  <div class="grid odd">
+    <label for="pipeSupplies">8. <%= t 'form.water_advanced.piped.question' %></label>
     <input id="pipeSupplies" type="number" placeholder="% Population" min="0" max="100" step="1">
   </div>
   <div class="notes">
@@ -279,149 +287,143 @@
     <p><%= t 'form.water_advanced.notes.stars_2' %></p>
   </div>
 </section>
+
+<!-- COST -->
 <section class="cost">
   <div class="grid">
-    <h2><%= t 'form.water_advanced.expenditure.header' %></h2>
+    <h2>1. <%= t 'form.water_advanced.cost.hardware.question' %></h2>
     <ul>
       <li>
-        <label for="costHardware" class="hiddenLabel"><%= t 'form.water_advanced.expenditure_total.question' %></label>
-        <input type="number" id="costHardware" placeholder="Numeric (US$ per person)" min="100" max="100000" step="1">
+        <label for="cost_hardware" class="hiddenLabel"><%= t 'form.water_advanced.cost.hardware.question' %></label>
+        <input type="number" id="cost_hardware" placeholder="<%= t 'form.water_advanced.cost.shared.placeholder' %>" min="100" max="100000" step="1">
       </li>
       <li>
-        <label class="checkBox" for="costDontKnow">
-          <input type="checkbox" id="costDontKnow">
-          <%= t 'form.water_advanced.expenditure_total.answer.a0' %>
+        <label class="checkBox" for="cost_hardware_alt_0">
+          <input type="checkbox" id="cost_hardware_alt_0" name="cost_hardware_alt_0" value="0">
+          <%= t 'form.water_advanced.cost.shared.answers.a0' %>
         </label>
       </li>
       <li>
         <label class="checkBox" for="costNoApply">
-          <input type="checkbox" id="costNoApply">
-          <%= t 'form.water_advanced.expenditure_total.answer.a1' %>
+          <input type="checkbox" id="cost_hardware_alt_1" name="cost_hardware_alt_1" value="1">
+          <%= t 'form.water_advanced.cost.shared.answers.a1' %>
         </label>
       </li>
     </ul>
   </div>
   <div class="grid odd">
-    <h2><%= t 'form.water_advanced.expenditure_maintenance.header' %></h2>
+    <h2>2. <%= t 'form.water_advanced.cost.software.question' %></h2>
     <ul>
       <li>
-        <label for="costMaintenance" class="hiddenLabel"><%= t 'form.water_advanced.expenditure_maintenance.question' %></label>
-        <input type="number" id="costMaintenance" placeholder="Numeric (US$ per person)" min="100" max="100000" step="1">
+        <label for="cost_software" class="hiddenLabel"><%= t 'form.water_advanced.cost.software.question' %></label>
+        <input type="number" id="cost_software" placeholder="<%= t 'form.water_advanced.cost.shared.placeholder' %>" min="100" max="100000" step="1">
       </li>
       <li>
-        <label class="checkBox" for="mainDontKnow">
-          <input type="checkbox" id="mainDontKnow">
-          <%= t 'form.water_advanced.expenditure_maintenance.answer.a0' %>
+        <label class="checkBox" for="cost_software_alt_0">
+          <input type="checkbox" id="cost_software_alt_0" name="cost_software_alt_0" value="0">
+          <%= t 'form.water_advanced.cost.shared.answers.a0' %>
         </label>
       </li>
       <li>
-        <label class="checkBox" for="mainNoApply">
-          <input type="checkbox" id="mainNoApply">
-          <%= t 'form.water_advanced.expenditure_maintenance.answer.a1' %>
+        <label class="checkBox" for="costNoApply">
+          <input type="checkbox" id="cost_software_alt_1" name="cost_software_alt_1" value="1">
+          <%= t 'form.water_advanced.cost.shared.answers.a1' %>
         </label>
       </li>
     </ul>
   </div>
   <div class="grid">
-    <h2>What has been spent/will be spent on capital maintenance expenditure?</h2>
+    <h2>3. <%= t 'form.water_advanced.cost.maintenance.question' %></h2>
     <ul>
       <li>
-        <label for="capitalMaintenance" class="hiddenLabel">spent/will on capital maintainance expenditure US$ per person</label>
-        <input type="number" id="capitalMaintenance" placeholder="Numeric (US$ per person)" min="100" max="100000" step="1">
+        <label for="cost_maintenance" class="hiddenLabel"><%= t 'form.water_advanced.cost.maintenance.question' %></label>
+        <input type="number" id="cost_maintenance" placeholder="<%= t 'form.water_advanced.cost.shared.placeholder' %>" min="100" max="100000" step="1">
       </li>
       <li>
-        <label class="checkBox" for="capitalDontKnow">
-          <input type="checkbox" id="capitalDontKnow">
-          Don&#39;t know
+        <label class="checkBox" for="cost_maintenance_alt_0">
+          <input type="checkbox" id="cost_maintenance_alt_0" name="cost_maintenance_alt_0" value="0">
+          <%= t 'form.water_advanced.cost.shared.answers.a0' %>
         </label>
       </li>
       <li>
-        <label class="checkBox" for="capitalNoApply">
-          <input type="checkbox" id="capitalNoApply">
-          Not aplicable
+        <label class="checkBox" for="costNoApply">
+          <input type="checkbox" id="cost_maintenance_alt_1" name="cost_maintenance_alt_1" value="1">
+          <%= t 'form.water_advanced.cost.shared.answers.a1' %>
         </label>
       </li>
     </ul>
   </div>
   <div class="grid odd">
-    <h2>What has been spent/will be spent on expenditure on direct support?</h2>
+    <h2>4. <%= t 'form.water_advanced.cost.direct.question' %></h2>
     <ul>
       <li>
-        <label for="capitalMaintenance" class="hiddenLabel">expenditure on direct support numeric US$ per person</label>
-        <input type="number" id="capitalMaintenance" placeholder="Numeric (US$ per person)" min="100" max="100000" step="1">
+        <label for="cost_direct" class="hiddenLabel"><%= t 'form.water_advanced.cost.direct.question' %></label>
+        <input type="number" id="cost_direct" placeholder="<%= t 'form.water_advanced.cost.shared.placeholder' %>" min="100" max="100000" step="1">
       </li>
       <li>
-        <label class="checkBox" for="supportDontKnow">
-          <input type="checkbox" id="supportDontKnow">
-          Don&#39;t know
+        <label class="checkBox" for="cost_direct_alt_0">
+          <input type="checkbox" id="cost_direct_alt_0" name="cost_direct_alt_0" value="0">
+          <%= t 'form.water_advanced.cost.shared.answers.a0' %>
         </label>
       </li>
       <li>
-        <label class="checkBox" for="supportNoApply">
-          <input type="checkbox" id="supportNoApply">
-          Not aplicable
+        <label class="checkBox" for="costNoApply">
+          <input type="checkbox" id="cost_direct_alt_1" name="cost_direct_alt_1" value="1">
+          <%= t 'form.water_advanced.cost.shared.answers.a1' %>
         </label>
       </li>
     </ul>
   </div>
   <div class="grid">
-    <h2>What has been/will be the expenditure on indirect support?</h2>
+    <h2>5. <%= t 'form.water_advanced.cost.indirect.question' %></h2>
     <ul>
       <li>
-        <label for="indirectSupport" class="hiddenLabel">expenditure on indirect support numeric US$ per person</label>
-        <input type="number" id="indirectSupport" placeholder="Numeric (US$ per person)" min="100" max="100000" step="1">
+        <label for="cost_indirect" class="hiddenLabel"><%= t 'form.water_advanced.cost.indirect.question' %></label>
+        <input type="number" id="cost_indirect" placeholder="<%= t 'form.water_advanced.cost.shared.placeholder' %>" min="100" max="100000" step="1">
       </li>
       <li>
-        <label class="checkBox" for="indirectDontKnow">
-          <input type="checkbox" id="indiDontKnow">
-          Don&#39;t know
+        <label class="checkBox" for="cost_indirect_alt_0">
+          <input type="checkbox" id="cost_indirect_alt_0" name="cost_indirect_alt_0" value="0">
+          <%= t 'form.water_advanced.cost.shared.answers.a0' %>
         </label>
       </li>
       <li>
-        <label class="checkBox" for="indirectNoApply">
-          <input type="checkbox" id="indiNoApply">
-          Not aplicable
+        <label class="checkBox" for="costNoApply">
+          <input type="checkbox" id="cost_indirect_alt_1" name="cost_indirect_alt_1" value="1">
+          <%= t 'form.water_advanced.cost.shared.answers.a1' %>
         </label>
       </li>
     </ul>
   </div>
   <div class="grid odd">
-    <h2>>What is the cost servicing any loans taken to fund the service?</h2>
+    <h2>7. <%= t 'form.water_advanced.cost.loan.question' %></h2>
     <ul>
       <li>
-        <label for="fundService" class="hiddenLabel">loans taken to fund the service numeric US$ per person</label>
-        <input type="number" id="fundService" placeholder="Numeric (US$ per person)" min="100" max="100000" step="1">
+        <label for="cost_loan" class="hiddenLabel"><%= t 'form.water_advanced.cost.loan.question' %></label>
+        <input type="number" id="cost_loan" placeholder="<%= t 'form.water_advanced.cost.shared.placeholder' %>" min="100" max="100000" step="1">
       </li>
       <li>
-        <label class="checkBox" for="fundDontKnow">
-          <input type="checkbox" id="fundDontKnow">
-          Don&#39;t know
+        <label class="checkBox" for="cost_loan_alt_0">
+          <input type="checkbox" id="cost_loan_alt_0" name="cost_loan_alt_0" value="0">
+          <%= t 'form.water_advanced.cost.shared.answers.a0' %>
         </label>
       </li>
       <li>
-        <label class="checkBox" for="fundNoApply">
-          <input type="checkbox" id="fundNoApply">
-          Not aplicable
+        <label class="checkBox" for="costNoApply">
+          <input type="checkbox" id="cost_loan_alt_1" name="cost_loan_alt_1" value="1">
+          <%= t 'form.water_advanced.cost.shared.answers.a1' %>
         </label>
       </li>
     </ul>
   </div>
   <div class="grid">
-    <label for="costLoan">What is the payback period on this loan?</label>
-    <input id="costLoan" type="number" placeholder="Years" min="1940" max="2013" step="1">
+    <label for="cost_payback">8. <%= t 'form.water_advanced.cost.payback.question' %></label>
+    <input id="cost_payback" name="cost_payback" type="number" placeholder="<%= t 'form.water_advanced.cost.payback.placeholder' %>" min="1940" max="2013" step="1">
   </div>
-  <div class="notes">
-    <p>*If the service is young (i.e. under 3 years) – we would not expect CapManEx to be very high. Below benchmark values for these schemes may not therefore be a problem.  I recommend that a) the CapManEx for &ldquo;young&rdquo; schemes are discounted from the benchmark calculations and b) a new set of responses are created for young schemes e.g.: &ldquo;Current expenditure on capital maintenance is below the benchmark ranges. This may be because the system has been recently constructed. In the coming years it is important to make sure more is budgeted for the major repair and replacement of system components.&rdquo;</p>
-  </div>
+
 </section>
 <section class="service">
-  <div class="grid">
-    <label for="serviceLevel">What has been spent/will be spent on expenditure on direct support?</label>
-    <input id="serviceLevel" type="number" placeholder="50%" min="0" max="100" step="1">
-  </div>
-  <div class="notes">
-    <p>*At the moment, the working assumption is that services can only “qualify” to update the global benchmarks if at least 75% of users receive a basic level of service for each of the four water/sanitation service indicators.</p>
-  </div>
+
 </section>
 <button class="formButton" id="sendButton">Send</button>
 </div>

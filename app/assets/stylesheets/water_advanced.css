@@ -558,6 +558,7 @@ a.installButton:hover {
     width: 45%;
     float: left;
     min-height: 125px;
+    margin-bottom: 25px;
 }
 .context .grid {
     min-height: 115px;
@@ -1078,4 +1079,20 @@ form .grid h2 {
 .ie7 .advanceSetting {
     margin-top: 0;
     padding-top: 0;
+}
+
+div.supplemental{
+    margin-top: 10px;
+}
+
+input.supplemental{
+    margin-bottom: 10px;
+}
+
+div.input_shim_single{
+    height: 78px;
+}
+
+div.input_shim_triple_labels{
+    height: 305px
 }
