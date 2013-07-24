@@ -68,13 +68,26 @@
 
   <div class="grid odd">
     <label for="area_type">2. <%= t 'form.water_advanced.area_type.question' %></label>
-    <select name="area_type" id="areaType" data-placeholder="<%= t 'form.water_advanced.area_type.placeholder' %>" class="chzn-select" tabindex="2">
-      <option></option>
-      <option value="0"><%= t 'form.water_advanced.area_type.answers.a0' %></option>
-      <option value="1"><%= t 'form.water_advanced.area_type.answers.a1' %></option>
-      <option value="2"><%= t 'form.water_advanced.area_type.answers.a2' %></option>
-      <option value="3"><%= t 'form.water_advanced.area_type.answers.a3' %></option>
-    </select>
+
+    <%= select_tag "area_type",
+       options_for_select([[(t 'form.water_advanced.area_type.answers.a0'),0],
+                           [(t 'form.water_advanced.area_type.answers.a1'),1],
+                           [(t 'form.water_advanced.area_type.answers.a2'),2],
+                           [(t 'form.water_advanced.area_type.answers.a3'),3]
+                          ], flash[:area_type]),
+      :include_blank=>(t 'form.water_advanced.area_type.placeholder'),
+      :class=>"chzn-select", :tabindex=>2
+    %>
+
+
+
+    <!--<select name="area_type" id="">-->
+      <!--<option></option>-->
+      <!--<option value="0"><%=  %></option>-->
+      <!--<option value="1"><%= t 'form.water_advanced.area_type.answers.a1' %></option>-->
+      <!--<option value="2"><%= t 'form.water_advanced.area_type.answers.a2' %></option>-->
+      <!--<option value="3"><%= t 'form.water_advanced.area_type.answers.a3' %></option>-->
+    <!--</select>-->
     <div class="supplemental">
     <select name="density" id="density" data-placeholder="<%= t 'form.water_advanced.density.placeholder' %>" class="chzn-select" tabindex="2">
       <option></option>
@@ -296,17 +309,17 @@
     <ul>
       <li>
         <label for="cost_hardware" class="hiddenLabel"><%= t 'form.water_advanced.cost.hardware.question' %></label>
-        <input type="number" id="cost_hardware" placeholder="<%= t 'form.water_advanced.cost.shared.placeholder' %>" min="100" max="100000" step="1">
+        <input type="number" name="cost_hardware" id="cost_hardware" placeholder="<%= t 'form.water_advanced.cost.shared.placeholder' %>" min="100" max="100000" step="1">
       </li>
       <li>
         <label class="checkBox" for="cost_hardware_alt_0">
-          <input type="checkbox" id="cost_hardware_alt_0" name="cost_hardware_alt_0" value="0">
+          <input type="checkbox" name="cost_hardware_alt_0" id="cost_hardware_alt_0" name="cost_hardware_alt_0" value="0">
           <%= t 'form.water_advanced.cost.shared.answers.a0' %>
         </label>
       </li>
       <li>
         <label class="checkBox" for="costNoApply">
-          <input type="checkbox" id="cost_hardware_alt_1" name="cost_hardware_alt_1" value="1">
+          <input type="checkbox" name="cost_hardware_alt_1" id="cost_hardware_alt_1" name="cost_hardware_alt_1" value="1">
           <%= t 'form.water_advanced.cost.shared.answers.a1' %>
         </label>
       </li>
@@ -317,17 +330,17 @@
     <ul>
       <li>
         <label for="cost_software" class="hiddenLabel"><%= t 'form.water_advanced.cost.software.question' %></label>
-        <input type="number" id="cost_software" placeholder="<%= t 'form.water_advanced.cost.shared.placeholder' %>" min="100" max="100000" step="1">
+        <input type="number" name="cost_software" id="cost_software" placeholder="<%= t 'form.water_advanced.cost.shared.placeholder' %>" min="100" max="100000" step="1">
       </li>
       <li>
         <label class="checkBox" for="cost_software_alt_0">
-          <input type="checkbox" id="cost_software_alt_0" name="cost_software_alt_0" value="0">
+          <input type="checkbox" name="cost_software_alt_0" id="cost_software_alt_0" name="cost_software_alt_0" value="0">
           <%= t 'form.water_advanced.cost.shared.answers.a0' %>
         </label>
       </li>
       <li>
         <label class="checkBox" for="costNoApply">
-          <input type="checkbox" id="cost_software_alt_1" name="cost_software_alt_1" value="1">
+          <input type="checkbox" name="cost_software_alt_0" id="cost_software_alt_1" name="cost_software_alt_1" value="1">
           <%= t 'form.water_advanced.cost.shared.answers.a1' %>
         </label>
       </li>
@@ -338,17 +351,17 @@
     <ul>
       <li>
         <label for="cost_maintenance" class="hiddenLabel"><%= t 'form.water_advanced.cost.maintenance.question' %></label>
-        <input type="number" id="cost_maintenance" placeholder="<%= t 'form.water_advanced.cost.shared.placeholder' %>" min="100" max="100000" step="1">
+        <input type="number" name="cost_maintenance" id="cost_maintenance" placeholder="<%= t 'form.water_advanced.cost.shared.placeholder' %>" min="100" max="100000" step="1">
       </li>
       <li>
         <label class="checkBox" for="cost_maintenance_alt_0">
-          <input type="checkbox" id="cost_maintenance_alt_0" name="cost_maintenance_alt_0" value="0">
+          <input type="checkbox" name="cost_maintenance_alt_0" id="cost_maintenance_alt_0" name="cost_maintenance_alt_0" value="0">
           <%= t 'form.water_advanced.cost.shared.answers.a0' %>
         </label>
       </li>
       <li>
         <label class="checkBox" for="costNoApply">
-          <input type="checkbox" id="cost_maintenance_alt_1" name="cost_maintenance_alt_1" value="1">
+          <input type="checkbox" name="cost_maintenance_alt_1" id="cost_maintenance_alt_1" name="cost_maintenance_alt_1" value="1">
           <%= t 'form.water_advanced.cost.shared.answers.a1' %>
         </label>
       </li>
@@ -359,17 +372,17 @@
     <ul>
       <li>
         <label for="cost_direct" class="hiddenLabel"><%= t 'form.water_advanced.cost.direct.question' %></label>
-        <input type="number" id="cost_direct" placeholder="<%= t 'form.water_advanced.cost.shared.placeholder' %>" min="100" max="100000" step="1">
+        <input type="number" name="cost_direct" id="cost_direct" placeholder="<%= t 'form.water_advanced.cost.shared.placeholder' %>" min="100" max="100000" step="1">
       </li>
       <li>
         <label class="checkBox" for="cost_direct_alt_0">
-          <input type="checkbox" id="cost_direct_alt_0" name="cost_direct_alt_0" value="0">
+          <input type="checkbox" name="cost_direct_alt_0" id="cost_direct_alt_0" name="cost_direct_alt_0" value="0">
           <%= t 'form.water_advanced.cost.shared.answers.a0' %>
         </label>
       </li>
       <li>
-        <label class="checkBox" for="costNoApply">
-          <input type="checkbox" id="cost_direct_alt_1" name="cost_direct_alt_1" value="1">
+        <label class="checkBox" for="cost_direct_alt_1">
+          <input type="checkbox" name="cost_direct_alt_1" id="cost_direct_alt_1" name="cost_direct_alt_1" value="1">
           <%= t 'form.water_advanced.cost.shared.answers.a1' %>
         </label>
       </li>
@@ -380,17 +393,17 @@
     <ul>
       <li>
         <label for="cost_indirect" class="hiddenLabel"><%= t 'form.water_advanced.cost.indirect.question' %></label>
-        <input type="number" id="cost_indirect" placeholder="<%= t 'form.water_advanced.cost.shared.placeholder' %>" min="100" max="100000" step="1">
+        <input type="number" name="cost_indirect" id="cost_indirect" placeholder="<%= t 'form.water_advanced.cost.shared.placeholder' %>" min="100" max="100000" step="1">
       </li>
       <li>
         <label class="checkBox" for="cost_indirect_alt_0">
-          <input type="checkbox" id="cost_indirect_alt_0" name="cost_indirect_alt_0" value="0">
+          <input type="checkbox" name="cost_indirect_alt_0" id="cost_indirect_alt_0" name="cost_indirect_alt_0" value="0">
           <%= t 'form.water_advanced.cost.shared.answers.a0' %>
         </label>
       </li>
       <li>
         <label class="checkBox" for="costNoApply">
-          <input type="checkbox" id="cost_indirect_alt_1" name="cost_indirect_alt_1" value="1">
+          <input type="checkbox" name="cost_indirect_alt_1" id="cost_indirect_alt_1" name="cost_indirect_alt_1" value="1">
           <%= t 'form.water_advanced.cost.shared.answers.a1' %>
         </label>
       </li>
@@ -401,17 +414,17 @@
     <ul>
       <li>
         <label for="cost_loan" class="hiddenLabel"><%= t 'form.water_advanced.cost.loan.question' %></label>
-        <input type="number" id="cost_loan" placeholder="<%= t 'form.water_advanced.cost.shared.placeholder' %>" min="100" max="100000" step="1">
+        <input type="number" name="cost_loan" id="cost_loan" placeholder="<%= t 'form.water_advanced.cost.shared.placeholder' %>" min="100" max="100000" step="1">
       </li>
       <li>
         <label class="checkBox" for="cost_loan_alt_0">
-          <input type="checkbox" id="cost_loan_alt_0" name="cost_loan_alt_0" value="0">
+          <input type="checkbox" name="cost_loan_alt_0" id="cost_loan_alt_0" name="cost_loan_alt_0" value="0">
           <%= t 'form.water_advanced.cost.shared.answers.a0' %>
         </label>
       </li>
       <li>
-        <label class="checkBox" for="costNoApply">
-          <input type="checkbox" id="cost_loan_alt_1" name="cost_loan_alt_1" value="1">
+        <label class="checkBox" for="cost_loan_alt_1">
+          <input type="checkbox" name="cost_loan_alt_1" id="cost_loan_alt_1" name="cost_loan_alt_1" value="1">
           <%= t 'form.water_advanced.cost.shared.answers.a1' %>
         </label>
       </li>

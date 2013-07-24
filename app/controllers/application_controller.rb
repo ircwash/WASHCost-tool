@@ -67,6 +67,14 @@ class ApplicationController < ActionController::Base
 
   end
 
+  def increase_complete_percent(form)
+
+    pages_complete= session[form].present? ? session[form] : 0
+    pages_complete+= 1;
+    session[form] =  pages_complete
+
+  end
+
   def is_number(string)
     true if Integer(string) rescue false
   end
