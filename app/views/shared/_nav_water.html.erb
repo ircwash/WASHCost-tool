@@ -11,7 +11,7 @@
           <% content_nav.each do |key, value| %>
               <% active = get_class_for_section(key) %>
               <li>
-                <a class="<%= active %>" href="<%= key %>">
+                <a class="<%= active %>" href="/water_basic/<%= key %>">
                   <%= content_nav[key] %>
                 </a>
               </li>

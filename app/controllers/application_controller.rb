@@ -53,20 +53,20 @@ class ApplicationController < ActionController::Base
   end
 
   def add_to_session_form(form_name, key, value)
+
+
     form= session[form_name].present? ? session[form_name] : Hash.new(0)
+
+    if !form[key].present?
+      increase_complete_percent(:water_advanced_completed)
+    end
+
     form[key]= value
 
     session[form_name]= form
     puts session[form_name]
   end
 
-  def increase_pages_complete
-
-    pages_complete= session[:pages_complete].present? ? session[:pages_complete] : 0
-    pages_complete+= 1;
-    session[:pages_complete] =  pages_complete
-
-  end
 
   def increase_complete_percent(form)
 

@@ -6,13 +6,15 @@
 
     <div class="choices">
       <img src="/assets/world8.png" alt="Which country are we">
-      <select data-placeholder="Choose a Country..." class="chzn-select" tabindex="2" name="country">
-        <%= render "shared/country_select_options"%>
-      </select>
+      <%= select_tag "country",
+                     options_for_select(get_countries, flash[:country_code]),
+                     :include_blank=>(t 'form.advanced.shared.country.placeholder'),
+                     :class=>"chzn-select", :tabindex=>1
+      %>
     </div>
 
     <%= submit_tag((t 'buttons.start'), class: "next_button selectCountry") %>
-    <a class="skip" href="#">skip this question</a>
+    <a class="skip" href="./water">skip this question</a>
 
     <% end %>
 
@@ -24,9 +26,3 @@
       </div>
     </div>
 
-    <script>
-        var d= document.getElementById('waterBasicForm');
-        var first= d.getElementsByTagName('div')[0];
-        var last= d.getElementsByTagName('div')[-1];
-        d.insertBefore(first, last)
-    </script>

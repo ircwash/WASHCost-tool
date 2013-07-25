@@ -150,14 +150,16 @@ class WaterAdvancedController < ApplicationController
 
   def get_indexed_value(i18nPrefix, key)
 
-    index= params[key]
-
     text= 'Value Not Set'
 
-    if index
+    if params.has_key?(key) && params[key]!=nil
+
+      index= params[key]
+
       text= I18n.t i18nPrefix+index
 
       add_to_session_advanced(key, index)
+
     end
 
     return text

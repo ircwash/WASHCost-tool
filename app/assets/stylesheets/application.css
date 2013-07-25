@@ -970,6 +970,14 @@ a.sbSelector:hover {
     .general .levelStar_0 {
         background: transparent url('/assets/starsLevel8.png') no-repeat 50% 0;
     }
+.general .levelStar_1 {
+    background: transparent url('/assets/starsLevel8.png') no-repeat 50% 0;
+}    .general .levelStar_2 {
+         background: transparent url('/assets/starsLevel8.png') no-repeat 50% 0;
+     }    .general .levelStar_3 {
+              background: transparent url('/assets/starsLevel8.png') no-repeat 50% -100px;
+          }
+
     .content h2 {
         margin-bottom: 56px;
     }

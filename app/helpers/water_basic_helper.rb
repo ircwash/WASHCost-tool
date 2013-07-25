@@ -8,7 +8,7 @@ module WaterBasicHelper
 
     if params[:action].to_s === section.to_s
       className= 'active'
-    elsif session[:water_basic_form].present? && session[:water_basic_form][section]
+    elsif session[:water_basic_form].present? && session[:water_basic_form].has_key?(section)
       className= 'done'
     end
 

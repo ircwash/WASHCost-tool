@@ -25,10 +25,12 @@ module ReportHelper
 
     form= get_session_form
 
-    sustainability= get_general_sustainability(form[:water],form[:capital],form[:recurrent], form[:reliability])
+    rating= get_rating(form[:water],form[:capital],form[:recurrent], form[:reliability])
     service_level= get_level_of_service(form[:water],form[:capital], form[:quantity], form[:time])
 
     results = {
+      :service_level => service_level,
+      :rating => rating,
       :country => get_country(form[:country]),
       :water => get_water(form[:water]),
       :population => get_population(form[:population]),
@@ -37,9 +39,11 @@ module ReportHelper
       :total => get_total(form[:capital], form[:recurrent]),
       :time => get_time(form[:time]),
       :quantity => get_quantity(form[:quantity]),
+      :quantity_index => get_index(form[:quantity]),
       :quality => get_quantity(form[:quality]),
+      :quality_index => get_index(form[:quality]),
       :reliability => get_quantity(form[:reliability]),
-      :service_level => service_level
+      :reliability_index => get_index(form[:reliability])
     }
 
     return results
@@ -54,6 +58,10 @@ module ReportHelper
     end
 
     return country
+  end
+
+  def get_index(index)
+    return index
   end
 
   def get_water(index)
@@ -148,7 +156,7 @@ module ReportHelper
       return rating
   end
 
-  def get_general_sustainability(water, capital, recurring, reliability)
+  def get_rating(water, capital, recurring, reliability)
 
     capExScore= get_capEx_benchmark_rating(water, capital)
     recExScore= get_recEx_benchmark_rating(water, recurring)
@@ -161,20 +169,16 @@ module ReportHelper
     backgroundPosition= 0
 
     if score>=7.5
-        rating = 'Low risk'
-        backgroundPosition= 0
+        rating = 3
     elsif score>=5 && score <7.5
-      rating = 'Medium risk'
-      backgroundPosition= -340
+      rating = 2
     elsif score>=2 && score < 5
-      rating = 'Low risk'
-      backgroundPosition= 0
+      rating = 2
     else
-      rating = 'Not sustainable'
-      backgroundPosition= -170
+      rating = 0
     end
 
-    rating = { :rating => rating, :position => backgroundPosition }
+    #rating = { :rating => rating, :position => backgroundPosition }
     return rating
   end
 

@@ -49,11 +49,11 @@
         </dl>
         <dl class="levelService">
             <dt>Level of Service</dt>
-            <dd class="levelStar_0"><span>Sub-standard</span></dd>
+            <dd class="levelStar_<%= flash[:results][:rating] %>"><span>Sub-standard</span></dd>
         </dl>
         <div class="review">
-          <a href="#">Read full review</a>
-          <div>
+          <a href="javascript:revealService();">Read full review</a>
+          <div id="service_level_full">
             <p><%=flash[:results][:service_level] %></p>
           </div>
         </div>
@@ -61,7 +61,7 @@
     </section>
 
     <section class="content">
-      <h2>Context</h2>
+      <h2><%= t 'report.water_advanced.context.title' %></h2>
       <div class="sectionWrapper">
         <div>
           <dl>
@@ -88,7 +88,7 @@
     </section>
 
     <section class="cost">
-      <h2>COST DATA</h2>
+      <h2><%= t 'report.water_advanced.cost.title' %></h2>
       <h3>Cost on 10 years (for a population of 2000 people)</h3>
 
       <div id="graph">
@@ -131,18 +131,18 @@
           </li>
           <li class="rowQQR">
             <span class="label">Quantity</span>
-            <span class="value quantity_00"><%= flash[:results][:quantity]%></span>
-            <a href="#"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
+            <span class="value quantity_0<%= flash[:results][:quantity_index]%>"><%= flash[:results][:quantity]%></span>
+            <a href="./quantity"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
           </li>
           <li class="rowQQR">
-            <span class="label quantity_01">Quality</span>
+            <span class="label quantity_0<%= flash[:results][:quality_index]%>">Quality</span>
             <span class="value"><%= flash[:results][:quality]%></span>
-            <a href="#"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
+            <a href="./quality"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
           </li>
           <li class="rowQQR">
-            <span class="label quantity_02">Reliability</span>
+            <span class="label quality_0<%= flash[:results][:reliability_index]%>">Reliability</span>
             <span class="value"><%= flash[:results][:reliability]%></span>
-            <a href="#"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
+            <a href="./reliability"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
           </li>
         </ul>
       </div>
@@ -210,12 +210,15 @@
                     'chartArea': { top: -3, 'width': '100%', 'height': '90%'}
                 }
         );
-
-        //https://developers.google.com/chart/interactive/docs/roles#annotationrole
     }
 
 
     google.setOnLoadCallback(expenditureGraph);
+
+    function revealService()
+    {
+        document.getElementById('service_level_full').style.display= 'block'
+    }
 </script>
 
 </body>
