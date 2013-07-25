@@ -1,7 +1,6 @@
 /* @group Base */
 .chzn-container {
     font-size: 15px;
-    /*  background: #fff;*/
     position: relative;
     display: inline-block;
     vertical-align: middle;
@@ -12,22 +11,10 @@
 
 .chzn-container .chzn-drop {
     font-size: 15px;
-    /*  background: #fff;*/
-    /*  border: 0px solid #aaa;*/
     border-top: 0;
     position: absolute;
     top: 100%;
     left: -9999px;
-    /*  -webkit-box-shadow: 0 4px 5px rgba(0,0,0,.15);
-      -moz-box-shadow   : 0 4px 5px rgba(0,0,0,.15);
-      box-shadow        : 0 4px 5px rgba(0,0,0,.15);
-      z-index: 1010;
-      width: 100%;
-      -moz-box-sizing   : border-box;
-      -ms-box-sizing    : border-box;
-      -webkit-box-sizing: border-box;
-      -khtml-box-sizing : border-box;
-      box-sizing        : border-box;*/
 }
 
 .chzn-container.chzn-with-drop .chzn-drop {
@@ -272,22 +259,9 @@
 .chzn-container .chzn-results li.disabled-result em {
     background: transparent;
 }
-/*.chzn-container .chzn-results li.highlighted {
-  background-color: #3875d7;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #3875d7), color-stop(90%, #2a62bc));
-  background-image: -webkit-linear-gradient(#3875d7 20%, #2a62bc 90%);
-  background-image: -moz-linear-gradient(#3875d7 20%, #2a62bc 90%);
-  background-image: -o-linear-gradient(#3875d7 20%, #2a62bc 90%);
-  background-image: linear-gradient(#3875d7 20%, #2a62bc 90%);
-  color: #fff;
-}*/
 .chzn-container .chzn-results li.highlighted em {
     background: transparent;
 }
-/*.chzn-container .chzn-results li.no-results {
-  display: list-item;
-  background: #f4f4f4;
-}*/
 .chzn-container .chzn-results li.group-result {
     color: #999;
     font-weight: bold;
@@ -306,19 +280,6 @@
 .chzn-container-active .chzn-single {
     border: 1px solid #5897fb;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
-.chzn-container-active.chzn-with-drop .chzn-single {
-    /*  border: 1px solid #aaa;
-      -moz-border-radius-bottomright: 0;
-      border-bottom-right-radius: 0;
-      -moz-border-radius-bottomleft: 0;
-      border-bottom-left-radius: 0;
-      background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #eeeeee), color-stop(80%, #ffffff));
-      background-image: -webkit-linear-gradient(#eeeeee 20%, #ffffff 80%);
-      background-image: -moz-linear-gradient(#eeeeee 20%, #ffffff 80%);
-      background-image: -o-linear-gradient(#eeeeee 20%, #ffffff 80%);
-      background-image: linear-gradient(#eeeeee 20%, #ffffff 80%);
-      box-shadow: 0 1px 0 #fff inset;*/
 }
 .chzn-container-active.chzn-with-drop .chzn-single div {
     border-left: none;

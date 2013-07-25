@@ -1,5 +1,5 @@
 /*-------------------------------------------
-PROJECT: WashCost - Application.css
+PROJECT: WashCost Basic - Application.css
 URL: 
 Created: July 22nd, 2013
 Author: Brilliant Basics
@@ -299,7 +299,7 @@ footer h2 {
     height: 54px;
     border: 0px;
     color: #d6d6d6;
-    padding: 20px 94px;
+    padding: 20px 94px 39px;
     margin: 20px auto 10px;
     background-color: #363636;
     text-transform: uppercase;
@@ -319,9 +319,9 @@ footer h2 {
     z-index: 100;
     display: inline-block;
     position: absolute;
-    width: 713px;
-    top: 8%;
-    left: 15%;
+    width: 780px;
+    top: 5%;
+    left: 12%;
     font-size: 40px;
     font-weight: normal;
     line-height: 1;
@@ -333,93 +333,6 @@ footer h2 {
     font-size: 11px;
     color: #217f8b;
     margin-top: 5px;
-}
-.chzn-container-single .chzn-single span,
-.chzn-container-single .chzn-default,
-.sbSelector {
-    display: block;
-    font-size: 20px;
-    font-weight: bold;
-    color: #217F8B;
-    text-decoration: none;
-    background: transparent url('/assets/bgWhiteTransparency.png') repeat 0 0;
-
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-}
-.chzn-container-single .chzn-search {
-    background-color: #000;
-    border-left: 0;
-    border-right: 0;
-}
-.chzn-search input {
-    border-sizing: none;
-}
-.chzn-results {
-    border: none;
-    width: 99%;
-}
-.chzn-container.chzn-with-drop .chzn-drop {
-    width: 100%;
-}
-.chzn-container-single .chzn-single span {
-    background: none;
-}
-a.sbSelector:hover {
-    text-decoration: none;
-}
-.chzn-container-single .chzn-single div b {
-    margin: 10px 0 20px 0;
-    background: transparent url('/assets/spriteArrow8.png') no-repeat 85% -184px;
-}
-.chzn-results,
-.sbOptions {
-    overflow-y: scroll;
-    background-color: #333333;
-    padding: 20px 5px;
-
-    -webkit-border-radius: 0 0 5px 5px;
-    -moz-border-radius: 0 0 5px 5px;
-    border-radius: 0 0 5px 5px;
-}
-.chzn-results li,
-.sbOptions li {
-    clear: both;
-    float: left;
-    width: 100%;
-}
-.chzn-container .chzn-results .highlighted,
-.sbOptions li:hover {
-    width: 95%;
-    background-color: #5C5C5C;
-}
-.chzn-results li,
-.sbOptions a {
-    display: block;
-    color: #fff;
-    text-align: left;
-    padding: 15px 20px;
-}
-.chzn-container-active .chzn-single {
-    display: block;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 13px 25px;
-    color: #217F8B;
-    text-decoration: none;
-    background: transparent url('/assets/bgWhiteTransparency.png') repeat 0 0;
-
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-}
-.chzn-container .chzn-results li.active-result {
-    padding: 15px 20px;
-    width: 90%;
-}
-.chzn-container .chzn-results li.active-result {
-    padding: 15px 20px;   
 }
 form li {
     position: relative;
@@ -471,14 +384,139 @@ form li label span {
     font-weight: bold;
     margin-top: 5px;
 }
+
+a.sbSelector:hover {
+    text-decoration: none;
+}
+.chzn-container-single .chzn-single span,
+.chzn-container-single .chzn-default,
+.sbSelector {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 13px 25px;
+    color: #217F8B;
+    text-decoration: none;
+    background: transparent url('/assets/bgWhiteTransparency.png') repeat 0 0;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.chzn-container-single .chzn-single span {
+    padding: 0;
+    width: 100%;
+    background-image: none;
+}
+.chzn-container-single .chzn-single div b {
+    margin: 10px 0 20px 0;
+    background: transparent url('/assets/spriteArrow8.png') no-repeat 85% -187px;
+}
+.chzn-container-active.chzn-with-drop .chzn-single div b {
+    background-position: 0 -237px;
+}
+a.sbSelector:hover {
+    text-decoration: none;
+}
+.chzn-container-single .chzn-search {
+    background-color: #000;
+    border-left: 0;
+    border-right: 0;
+}
+.chzn-search input {
+    border-sizing: none;
+}
+.chzn-results {
+    border: none;
+    width: 99%;
+}
+.chzn-container.chzn-with-drop .chzn-drop {
+    width: 100%;
+}
+.chzn-container-single .chzn-single,
+.chzn-container-single .chzn-single span {
+    background: none;
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #217F8B;
+    text-decoration: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.chzn-container-single .chzn-single {
+    padding: 13px 25px;
+    background: transparent url('/assets/bgWhiteTransparency.png') repeat 0 0;
+}
+a.sbSelector:hover {
+    text-decoration: none;
+}
+.chzn-container .chzn-results {
+    z-index: 100;
+    padding-bottom: 10px;
+}
+.chzn-results,
+.sbOptions {
+    overflow-y: scroll;
+    background-color: #333333;
+    padding: 20px 5px;
+
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+}
+.chzn-results li,
+.sbOptions li {
+    clear: both;
+    float: left;
+    width: 100%;
+}
+.chzn-container .chzn-results .highlighted,
+.sbOptions li:hover {
+    width: 95%;
+    background-color: #5C5C5C;
+}
+.chzn-results li,
+.sbOptions a {
+    display: block;
+    color: #fff;
+    text-align: left;
+    padding: 15px 20px;
+}
+.sbOptions a {
+    display: block;
+    color: #fff;
+    text-align: left;
+    font-size: 15px;
+    padding: 15px 20px;
+    text-decoration: none;
+}
+.chzn-container-active .chzn-single {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 13px 25px;
+    color: #217F8B;
+    text-decoration: none;
+    background: transparent url('/assets/bgWhiteTransparency.png') repeat 0 0;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.chzn-container .chzn-results li.active-result {
+    padding: 15px 20px;
+    width: 86%;
+}
 /* q1Country */
     .choices {
         width: 520px;
-        margin: -25px auto 75px;
+        margin: -10px auto 100px;
     }
     .choices img {
         float: left;
-        margin-right: 25px;
+        margin-left: 25px;
     }
     .choices.time img {
         margin: 0;
