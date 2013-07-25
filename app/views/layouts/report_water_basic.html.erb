@@ -14,7 +14,7 @@
 
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
   <%= javascript_include_tag "jquery-1.9.1", "jquery-ui-1.10.3.custom.min", "chosen.jquery", "db_water", "application", "modernizr", "water_basic" %>
-  <%= stylesheet_link_tag "application", "report", :media => "all" %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
 
 </head>
 <body>
@@ -44,12 +44,12 @@
       <h2>Summary</h2>
       <div class="sectionWrapper">
         <dl>
-            <dt>General Sustainability</dt>
-            <dd class="stars_1">Below Basic Sustainability</dd>
+            <dt>WASHCost Index</dt>
+            <dd class="indexStar_0"><span>Low risk</span></dd>
         </dl>
-        <dl>
-            <dt>Level of service</dt>
-            <dd class="stars_3">Sub-standard</dd>
+        <dl class="levelService">
+            <dt>Level of Service</dt>
+            <dd class="levelStar_0"><span>Sub-standard</span></dd>
         </dl>
         <div class="review">
           <a href="#">Read full review</a>
@@ -66,21 +66,21 @@
         <div>
           <dl>
             <dt>Country</dt>
-            <dd><%= flash[:results][:country].name %></dd>
+            <dd class="countryResult"><span><%= flash[:results][:country].name %></span></dd>
           </dl>
           <a href="./country"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
         </div>
         <div>
           <dl>
             <dt>Water Source</dt>
-            <dd><%= flash[:results][:water]%></dd>
+            <dd class="waterResult"><span><%= flash[:results][:water]%></span></dd>
           </dl>
           <a href="./water"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
         </div>
         <div>
           <dl>
             <dt>Population</dt>
-            <dd><%= flash[:results][:population]%></dd>
+            <dd class="populationResults"><span><%= flash[:results][:population]%></span></dd>
           </dl>
           <a href="./population"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
         </div>
@@ -125,21 +125,24 @@
       <div class="sectionWrapper">
         <ul>
           <li class="distance">
-            <span class="label"><%= t 'form.water_basic.time.value_label' %></span>
+            <span class="label">Distance</span>
             <span class="value"><%= flash[:results][:time]%></span>
             <a href="./time"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
           </li>
           <li class="rowQQR">
             <span class="label">Quantity</span>
-            <span class="value"><%= flash[:results][:quantity]%></span>
+            <span class="value quantity_00"><%= flash[:results][:quantity]%></span>
+            <a href="#"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
           </li>
           <li class="rowQQR">
-            <span class="label">Quality</span>
+            <span class="label quantity_01">Quality</span>
             <span class="value"><%= flash[:results][:quality]%></span>
+            <a href="#"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
           </li>
           <li class="rowQQR">
-            <span class="label">Reliability</span>
+            <span class="label quantity_02">Reliability</span>
             <span class="value"><%= flash[:results][:reliability]%></span>
+            <a href="#"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
           </li>
         </ul>
       </div>

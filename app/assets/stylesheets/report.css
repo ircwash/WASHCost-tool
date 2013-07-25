@@ -1,4 +1,4 @@
-.report {
+/*.report {
     padding-top: 5px;
     color : #ffffff;
 }
@@ -17,14 +17,15 @@
     height: 2px;
 }
 
+*/
 /*section{
     text-align: center;
     width: 100%;
     padding-top: 40px;
-}
-*/
+}*/
 
-dl div{
+
+/*dl div{
     float: left;
     text-align: center;
     margin-right: 175px;
@@ -38,13 +39,13 @@ dd {
     margin: 0px;
 
     background: url(/assets/report/report_icon.png) center 25px no-repeat;
-}
+}*/
 
-.report h1{
+/*.report h1{
     margin-bottom: 45px;
 }
-
-.report h2{
+*/
+/*.report h2{
     margin-bottom: 52px;
 }
 
@@ -54,22 +55,22 @@ section.general dd {
     text-align: center;
     margin: 0px;
     height: 100px;
-}
-
+}*/
+/*
 .stars_1{
     background: url(/assets/report/stars_1.png) center 25px no-repeat;
 }
 .stars_3{
     background: url(/assets/report/stars_3.png) center 25px no-repeat;
-}
-section.content {
+}*/
+/*section.content {
     text-align: center;
     height: 395px;
     width: 750px;
     margin: 0px auto 0px auto;
 }
-
-section.cost {
+*/
+/*section.cost {
     text-align: center;
     height: 525px;
 }
@@ -131,42 +132,5 @@ section.cost dd.total{
     -webkit-border-radius: 0px;
     -moz-border-radius   : 0px;
     border-radius        : 0px;
-}
-.no_margin{
-    margin: 0px;
-}
-section.content dd {
-    padding-top: 165px;
-    padding-bottom: 0px;
-}
-.service ul{
-    width: 730px;
-    margin: 0px auto 0px auto;
-    font-weight: bold;
-}
-.service li{
-    float: left;
-    width: 180px;
-}
-
-.service li.distance{
-
-    background: url('/assets/report/bg_distance.png') 35px 0px no-repeat;
-    width: 730px;
-    height: 200px;
-
-}
-
-.service li .distance_value{
-    font-size: 40px;
-}
-
-.service li.row2{
-    margin-left: 50px;
-}
-
-.service li div.value {
-
-    background: url('/assets/report/icon_service.png') center 0px no-repeat;
-    padding-top: 150px;
-}
+}*/
+  
