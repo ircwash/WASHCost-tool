@@ -47,18 +47,18 @@
             <li>
               <%= label_tag("advWater", nil, class: "tickCheckBox advanceWater") do %>
                 <span>Water</span>
-                <%= radio_button_tag("r_advance", 0, id: "advWater") %>
+                <%= radio_button_tag("targetForm", 'water', id: "advWater") %>
               <% end %>
             </li>
             <li>
               <%= label_tag("advSanita", nil, class: "tickCheckBox advanceSanitation") do %>
                 <span>Sanitation</span>
-                <%= radio_button_tag("r_advance", 1, id: "advSanita") %>
+                <%= radio_button_tag("targetForm", 'sanitation', id: "advSanita") %>
               <% end %>
             </li>
           </ul>
-          <input class="schemeSwitcher" value="&#43; Calculate Existing Scheme" type="submit" />
-          <input class="schemeSwitcher" value="&#43; Calculate Planned Scheme" type="submit" />
+          <input class="schemeSwitcher" value="&#43; Calculate Existing Scheme" type="submit" onclick="submitForm('existing');" />
+          <input class="schemeSwitcher" value="&#43; Calculate Planned Scheme" type="submit" onclick="submitForm('planned');" />
 
         </section>
       </div>
@@ -74,16 +74,16 @@
       </div>
     </div>
   </footer>
-    <input type="hidden" name="targetForm" id="targetFormType"/>
+    <input type="hidden" name="calculationType" id="calculationType"/>
   </form>
   <script src="/assets/jquery-1.9.1.js" type="text/javascript"></script>
   <script src="/assets/chosen.jquery.js" type="text/javascript"></script>
   <script src="/assets/application.js" type="text/javascript"></script>
   <script>
 
-    function submitForm(targetFormType)
+    function submitForm(calculationType)
     {
-        $('#targetFormType').val(targetFormType);
+        $('#calculationType').val(calculationType);
         $('#advancedSelectorForm').submit();
     }
 
