@@ -226,7 +226,7 @@ en:
             question: "What is spent on expenditure on direct support?"
           indirect:
             question: "What is the expenditure on indirect support?"
-          servicing:
+          loan:
            question: "What is the cost servicing any loans taken to fund the service?"
           payback:
             question: "What is the payback period on this loan?"
@@ -416,8 +416,18 @@ en:
       a343:	"The capital expenditure entered is higher than the ranges found by WASHCost and this service is delivering more than a basic quantity and formal sources are within 30 minutes round trip from the household.  So the context may require more expensive infrastructure, or cost efficiency can be improved.  "
       a344:	"The capital expenditure entered is higher than the ranges found by WASHCost and this service is delivering more than a basic quantity and formal sources are within 10 minutes round trip from the household.  A very good level of service is being achieved, and as a consequence it may require more expensive infrastructure. Another possibility may be that cost efficiency can be improved."
     water_advanced:
-      country: "Country"
+      general:
+        title: "GENERAL FEEDBACK"
+        cost: "Total Cost"
+        service: "Level of service"
+        read_full: "Read Full Review"
+      context:
+        title: "CONTEXT"
+        type: "Calculation Type"
+        country: "Country"
+        area_type: "Area Type"
       management:
+        title: "MANAGING"
         how_managed: "Service Delivery Option"
         who_finances:   "Finance"
         who_owns: "Owned"
@@ -425,6 +435,7 @@ en:
         who_enforces:   "Responsibility"
         who_repairs: "Rehabilitation"
       technology:
+        title: "TECHNOLOGY"
         supply_system: "Supply System"
         units: "Units"
         people_served: "People Served by System"
@@ -436,7 +447,7 @@ en:
         transmission: "Length of Transmission Line"
         piped: "Population (For Piped Only)"
       cost:
-        title: "Cost Data"
+        title: "COST DATA"
         total: "Total Support"
         maintenance: "Maintenance"
         support: "Support"
