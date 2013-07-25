@@ -344,7 +344,7 @@
       <li>
         <label class="checkBox" for="cost_hardware_alt_0">
 
-          <%= check_box_tag("cost_hardware_alt_1", value = "1", checked = flash[:cost_hardware_alt_0]) %>
+          <%= check_box_tag("cost_hardware_alt_0", value = "1", checked = flash[:cost_hardware_alt_0]) %>
           <%= t 'form.advanced.shared.cost.shared.answers.a0' %>
         </label>
       </li>
@@ -371,7 +371,7 @@
       </li>
       <li>
         <label class="checkBox" for="costNoApply">
-          <input type="checkbox" name="cost_software_alt_0" id="cost_software_alt_1" name="cost_software_alt_1" value="1">
+          <%= check_box_tag("cost_software_alt_1", value = "1", checked = flash[:cost_software_alt_1]) %>
           <%= t 'form.advanced.shared.cost.shared.answers.a1' %>
         </label>
       </li>
@@ -381,18 +381,18 @@
     <h2>3. <%= t 'form.advanced.shared.cost.maintenance.question' %></h2>
     <ul>
       <li>
-        <label for="cost_maintenance" class="hiddenLabel"><%= t 'form.advanced.shared.cost.maintenance.question' %></label>
-        <input type="number" name="cost_maintenance" id="cost_maintenance" placeholder="<%= t 'form.advanced.shared.cost.shared.placeholder' %>" min="100" max="100000" step="1">
+        <label for="maintenance" class="hiddenLabel"><%= t 'form.advanced.shared.cost.maintenance.question' %></label>
+        <input type="number" name="maintenance" id="maintenance" value="<%= flash[:maintenance] %>" placeholder="<%= t 'form.advanced.shared.cost.shared.placeholder' %>" min="100" max="100000" step="1">
       </li>
       <li>
         <label class="checkBox" for="cost_maintenance_alt_0">
-          <input type="checkbox" name="cost_maintenance_alt_0" id="cost_maintenance_alt_0" name="cost_maintenance_alt_0" value="0">
+          <%= check_box_tag("cost_maintenance_alt_0", value = "1", checked = flash[:cost_maintenance_alt_0]) %>
           <%= t 'form.advanced.shared.cost.shared.answers.a0' %>
         </label>
       </li>
       <li>
         <label class="checkBox" for="costNoApply">
-          <input type="checkbox" name="cost_maintenance_alt_1" id="cost_maintenance_alt_1" name="cost_maintenance_alt_1" value="1">
+          <%= check_box_tag("cost_maintenance_alt_1", value = "1", checked = flash[:cost_maintenance_alt_1]) %>
           <%= t 'form.advanced.shared.cost.shared.answers.a1' %>
         </label>
       </li>
@@ -402,18 +402,18 @@
     <h2>4. <%= t 'form.advanced.shared.cost.direct.question' %></h2>
     <ul>
       <li>
-        <label for="cost_direct" class="hiddenLabel"><%= t 'form.advanced.shared.cost.direct.question' %></label>
-        <input type="number" name="cost_direct" id="cost_direct" placeholder="<%= t 'form.advanced.shared.cost.shared.placeholder' %>" min="100" max="100000" step="1">
+        <label for="direct" class="hiddenLabel"><%= t 'form.advanced.shared.cost.direct.question' %></label>
+        <input type="number" name="direct" id="direct" value="<%= flash[:direct] %>" placeholder="<%= t 'form.advanced.shared.cost.shared.placeholder' %>" min="100" max="100000" step="1">
       </li>
       <li>
         <label class="checkBox" for="cost_direct_alt_0">
-          <input type="checkbox" name="cost_direct_alt_0" id="cost_direct_alt_0" name="cost_direct_alt_0" value="0">
+          <%= check_box_tag("cost_direct_alt_0", value = "1", checked = flash[:cost_direct_alt_0]) %>
           <%= t 'form.advanced.shared.cost.shared.answers.a0' %>
         </label>
       </li>
       <li>
         <label class="checkBox" for="cost_direct_alt_1">
-          <input type="checkbox" name="cost_direct_alt_1" id="cost_direct_alt_1" name="cost_direct_alt_1" value="1">
+          <%= check_box_tag("cost_direct_alt_1", value = "1", checked = flash[:cost_direct_alt_1]) %>
           <%= t 'form.advanced.shared.cost.shared.answers.a1' %>
         </label>
       </li>
@@ -423,18 +423,18 @@
     <h2>5. <%= t 'form.advanced.shared.cost.indirect.question' %></h2>
     <ul>
       <li>
-        <label for="cost_indirect" class="hiddenLabel"><%= t 'form.advanced.shared.cost.indirect.question' %></label>
-        <input type="number" name="cost_indirect" id="cost_indirect" placeholder="<%= t 'form.advanced.shared.cost.shared.placeholder' %>" min="100" max="100000" step="1">
+        <label for="indirect" class="hiddenLabel"><%= t 'form.advanced.shared.cost.indirect.question' %></label>
+        <input type="number" name="indirect" id="indirect" value="<%= flash[:indirect] %>" placeholder="<%= t 'form.advanced.shared.cost.shared.placeholder' %>" min="1" max="999999999999" step="1">
       </li>
       <li>
         <label class="checkBox" for="cost_indirect_alt_0">
-          <input type="checkbox" name="cost_indirect_alt_0" id="cost_indirect_alt_0" name="cost_indirect_alt_0" value="0">
+          <%= check_box_tag("cost_indirect_alt_0", value = "1", checked = flash[:cost_indirect_alt_0]) %>
           <%= t 'form.advanced.shared.cost.shared.answers.a0' %>
         </label>
       </li>
       <li>
         <label class="checkBox" for="costNoApply">
-          <input type="checkbox" name="cost_indirect_alt_1" id="cost_indirect_alt_1" name="cost_indirect_alt_1" value="1">
+          <%= check_box_tag("cost_indirect_alt_1", value = "1", checked = flash[:cost_indirect_alt_1]) %>
           <%= t 'form.advanced.shared.cost.shared.answers.a1' %>
         </label>
       </li>
@@ -444,26 +444,26 @@
     <h2>7. <%= t 'form.advanced.shared.cost.loan.question' %></h2>
     <ul>
       <li>
-        <label for="cost_loan" class="hiddenLabel"><%= t 'form.advanced.shared.cost.loan.question' %></label>
-        <input type="number" name="cost_loan" id="cost_loan" placeholder="<%= t 'form.advanced.shared.cost.shared.placeholder' %>" min="100" max="100000" step="1">
+        <label for="loan" class="hiddenLabel"><%= t 'form.advanced.shared.cost.loan.question' %></label>
+        <input type="number" name="loan" id="loan" value="<%= flash[:loan] %>" placeholder="<%= t 'form.advanced.shared.cost.shared.placeholder' %>" min="100" max="100000" step="1">
       </li>
       <li>
         <label class="checkBox" for="cost_loan_alt_0">
-          <input type="checkbox" name="cost_loan_alt_0" id="cost_loan_alt_0" name="cost_loan_alt_0" value="0">
+          <%= check_box_tag("cost_loan_alt_0", value = "1", checked = flash[:cost_loan_alt_0]) %>
           <%= t 'form.advanced.shared.cost.shared.answers.a0' %>
         </label>
       </li>
       <li>
         <label class="checkBox" for="cost_loan_alt_1">
-          <input type="checkbox" name="cost_loan_alt_1" id="cost_loan_alt_1" name="cost_loan_alt_1" value="1">
+          <%= check_box_tag("cost_loan_alt_1", value = "1", checked = flash[:cost_loan_alt_1]) %>
           <%= t 'form.advanced.shared.cost.shared.answers.a1' %>
         </label>
       </li>
     </ul>
   </div>
   <div class="grid">
-    <label for="cost_payback">8. <%= t 'form.advanced.shared.cost.payback.question' %></label>
-    <input id="cost_payback" name="cost_payback" type="number" placeholder="<%= t 'form.advanced.shared.cost.payback.placeholder' %>" min="1940" max="2013" step="1">
+    <label for="payback">8. <%= t 'form.advanced.shared.cost.payback.question' %></label>
+    <input id="payback" name="payback" value="<%=flash[:payback]%>" type="number" placeholder="<%= t 'form.advanced.shared.cost.payback.placeholder' %>" min="0" max="1000" step="1">
   </div>
 
 </section>
@@ -474,7 +474,7 @@
 </div>
 <footer>
   <div class="footerWrapper">
-    <h2><span>Advance</span> Water | Final Report</h2>
+    <h2><span>Advanced</span> Water | Final Report</h2>
     <div class="progressBar">
       <div class="outerBar">
         <div class="innerBar" style="width:30%"></div>

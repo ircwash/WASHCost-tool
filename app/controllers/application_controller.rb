@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
         targetForm= params[:targetForm]
         if targetForm== 'water' || targetForm=='sanitation'
 
-            redirect_to :controller => "water_advanced", :action => "index", :params => { :type => 99 }
+            redirect_to :controller => "water_advanced", :action => "index", :params => { :type => params[:calculationType] }
 
         end
       end

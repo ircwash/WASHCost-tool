@@ -1,13 +1,16 @@
 class WaterAdvancedController < ApplicationController
 
-
-  layout "water_advanced_layout"
+  layout "water_advanced_questionnaire"
 
   def index
     if session[:water_advanced]
       copy_session_form_values_to_flash
     else
-      init_session_form
+      if params.has_key?(:type) && (params[:type]== 'existing' || params[:type]== 'planned')
+        init_session_form(params[:type])
+      else
+        redirect_to :controller => "application", :action => "select_advanced"
+      end
     end
   end
 
@@ -56,19 +59,20 @@ class WaterAdvancedController < ApplicationController
       :indirect =>      unchecked(:indirect),
         :cost_indirect_alt_0 => checkbox_value(:cost_indirect_alt_0),
         :cost_indirect_alt_1 => checkbox_value(:cost_indirect_alt_1),
-
       :loan =>          unchecked(:loan),
+        :cost_loan_alt_0 => checkbox_value(:cost_loan_alt_0),
+        :cost_loan_alt_1 => checkbox_value(:cost_loan_alt_1),
       :payback =>       unchecked(:payback)
     }
 
     flash[:results]= results
 
 
-    render layout: 'report_water_advanced'
+    render layout: 'water_advanced_report'
   end
 
-  def init_session_form
-    session[:water_advanced]= Hash.new(0)
+  def init_session_form(type)
+    session[:water_advanced]= { :type=>type }
   end
 
   def copy_session_form_values_to_flash
@@ -87,7 +91,9 @@ class WaterAdvancedController < ApplicationController
                       :cost_direct_alt_0, :cost_direct_alt_1,
                     :indirect,
                       :cost_indirect_alt_0, :cost_indirect_alt_1,
-        :loan, :payback
+                    :loan,
+                      :cost_loan_alt_0, :cost_loan_alt_1,
+        :payback
     ]
 
     form_params.each do |param|
