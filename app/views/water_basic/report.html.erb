@@ -18,7 +18,7 @@
 </div>
 <section class="mainContent">
     <section class="resultTotal">
-        <h1>General FeedBack</h1>
+        <h1>General FeedBack---really</h1>
         <ul>
             <li>
                 <h2>Bellow Basic</h2>
@@ -124,15 +124,16 @@
     </section>
 </section>
 <footer>
-    <h2>Final Report</h2>
-    <div class="progressBar">
-        <p>30% Complete</p>
-        <div class="outerBar">
+    <div class="footerWrapper">
+      <a href="#">Go to report page</a>
+      <div class="progressBarWrapper">
+        <h2><%= t 'footer.footer_layout' %> <span><%= t 'footer.final_report' %></span></h2>
+        <div class="progressBar">
+          <div class="outerBar">
             <div class="innerBar" style="width:30%"></div>
+            <p><%= session[:pages_complete] %>% <%= t 'footer.complete' %></p>
+          </div>
         </div>
+      </div>
     </div>
-    <ul class="social">
-        <li><a href="#">Save</a></li>
-        <li><a href="#">Share</a></li>
-    </ul>
 </footer>

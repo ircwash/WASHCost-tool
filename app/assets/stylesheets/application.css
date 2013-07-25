@@ -88,6 +88,7 @@ input.next_button {
 #outer_container_report {
     position: relative;
     max-width: 1025px;
+    overflow: hidden;
     margin: 0 auto;
     background-color: #fff;
 }
@@ -245,6 +246,7 @@ footer .footerWrapper {
     width: 945px;
     margin: 0 auto;
     background-color: #333;
+    padding-top: 5px;
 }
 footer .footerWrapper a {
     display: block;
@@ -856,6 +858,30 @@ a.sbSelector:hover {
     .ui-slider {
         width: 525px;
     }
+
+/* Report */
+
+    dl {
+        /*width: 50%;*/
+        float: left;
+    }
+    
+    .review {
+        clear: both;
+        width: 45%;
+        margin: 0 auto;
+    }
+    .review p {
+        text-align: left;
+    }
+    #graphContent {
+        display:inline-block; 
+        width: 765px; 
+        height: 260px;
+    }
+
+
+
 /*
 *
 *   IE - Fixes

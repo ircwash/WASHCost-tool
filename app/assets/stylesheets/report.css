@@ -17,12 +17,12 @@
     height: 2px;
 }
 
-section{
+/*section{
     text-align: center;
     width: 100%;
     padding-top: 40px;
 }
-
+*/
 
 dl div{
     float: left;
@@ -62,13 +62,6 @@ section.general dd {
 .stars_3{
     background: url(/assets/report/stars_3.png) center 25px no-repeat;
 }
-
-section.general dl{
-    width: 500px;
-    margin: 0px auto 0px auto;
-}
-
-
 section.content {
     text-align: center;
     height: 395px;
@@ -128,43 +121,24 @@ section.cost dl div{
     margin: 0px;
 
 }
-
-
 section.cost dd.total{
     font-size: 66px;
     background-color: transparent;
-
-
-    margin: 0px;
+    margin: 10px 0 0 0;
     padding: 0px;
-    margin-top: 10px;
-
-
     width: 157px;
-    height: 57px;
-
     font-weight: bold;
-
     -webkit-border-radius: 0px;
     -moz-border-radius   : 0px;
     border-radius        : 0px;
 }
-
 .no_margin{
     margin: 0px;
 }
-
-
 section.content dd {
     padding-top: 165px;
     padding-bottom: 0px;
 }
-
-
-section.service{
-
-}
-
 .service ul{
     width: 730px;
     margin: 0px auto 0px auto;
@@ -177,7 +151,7 @@ section.service{
 
 .service li.distance{
 
-    background: url(/assets/report/bg_distance.png) 35px 0px no-repeat;
+    background: url('/assets/report/bg_distance.png') 35px 0px no-repeat;
     width: 730px;
     height: 200px;
 
@@ -193,6 +167,6 @@ section.service{
 
 .service li div.value {
 
-    background: url(/assets/report/icon_service.png) center 0px no-repeat;
+    background: url('/assets/report/icon_service.png') center 0px no-repeat;
     padding-top: 150px;
 }
