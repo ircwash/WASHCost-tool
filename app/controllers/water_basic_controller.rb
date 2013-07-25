@@ -21,7 +21,6 @@ class WaterBasicController < ApplicationController
         redirect_to :action => "water"
       end
     end
-
   end
 
   def water

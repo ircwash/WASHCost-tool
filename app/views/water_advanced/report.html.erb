@@ -6,7 +6,7 @@
     <dl>
       <div>
         <dt><%= t 'report.water_advanced.general.cost' %></dt>
-        <dd class="stars_1">Blah</dd>
+        <dd class="stars_1">COST IS??</dd>
       </div>
 
       <div class="no_margin">
@@ -26,42 +26,91 @@
 
       <div>
         <dt><%= t 'report.water_advanced.context.type' %></dt>
-        <dd><%= flash[:results][:calculator_type]%></dd>
-        <a href="./water"><img src="/assets/report/icon_edit.png" /></a>
+        <dd><%= flash[:results][:type]%></dd>
+        <a href="./"><img src="/assets/report/icon_edit.png" /></a>
       </div>
 
       <div>
         <dt><%= t 'report.water_advanced.context.country' %></dt>
         <dd><%= flash[:results][:country] %></dd>
-        <a href="./country"><img src="/assets/report/icon_edit.png" /></a>
+        <a href="./"><img src="/assets/report/icon_edit.png" /></a>
       </div>
       <div class="no_margin">
         <dt><%= t 'report.water_advanced.context.area_type' %></dt>
         <dd><%= flash[:results][:area_type]%></dd>
-        <a href="./population"><img src="/assets/report/icon_edit.png" /></a>
+        <a href="./"><img src="/assets/report/icon_edit.png" /></a>
       </div>
     </dl>
 
   </section>
   <hr/>
-  <section class="cost">
+
+  <style>
+
+      .input-like{
+          background: none;
+
+          margin-top: 10px;
+
+          width: 157px;
+          height: 57px;
+          background-color:#3BB4C4;
+          padding: 0px;
+          font-size: 30px;
+          line-height: 57px;
+          font-weight: bold;
+
+          -webkit-border-radius: 5px;
+          -moz-border-radius   : 5px;
+          border-radius        : 5px;
+      }
+
+      section.report ul{
+          height: 150px;
+          width: 100%;
+          font-weight: bold;
+      }
+
+      section.report li{
+          float: left;
+          width: 339px;
+          margin: 0px;
+          padding: 0px;
+          display: inline-block;
+          margin-top: 40px;
+          line-height: 20px;
+      }
+
+
+
+      .q10{
+          width: 50%;
+          text-align: center;
+          margin: 20px auto 40px auto
+      }
+
+
+  </style>
+  <section class="report">
     <h2><%= t 'report.water_advanced.management.title' %></h2>
 
     <ul>
-      <li><%= t 'report.water_advanced.management.how_managed' %>: <%= flash[:results][:who_owns] %></li>
-      <li><%= t 'report.water_advanced.management.who_owns' %>: <%= flash[:results][:who_owns] %></li>
-      <li><%= t 'report.water_advanced.management.who_finances' %>: <%= flash[:results][:who_finances] %></li>
-      <li><%= t 'report.water_advanced.management.who_enforces' %>: <%= flash[:results][:who_enforces] %></li>
-      <li><%= t 'report.water_advanced.management.who_repairs' %>: <%= flash[:results][:who_repairs] %></li>
-      <li><%= t 'report.water_advanced.management.who_safeguards' %>: <%= flash[:results][:who_safeguards] %></li>
+      <li><%= t 'report.water_advanced.management.how_managed' %><br/><%= flash[:results][:who_owns] %></li>
+      <li><%= t 'report.water_advanced.management.who_owns' %><br/> <%= flash[:results][:who_owns] %></li>
+      <li><%= t 'report.water_advanced.management.who_finances' %><br/><%= flash[:results][:who_finances] %></li>
+      <li><%= t 'report.water_advanced.management.who_enforces' %><br/> <%= flash[:results][:who_enforces] %></li>
+      <li><%= t 'report.water_advanced.management.who_repairs' %><br/> <%= flash[:results][:who_repairs] %></li>
+      <li><%= t 'report.water_advanced.management.who_safeguards' %><br/> <%= flash[:results][:who_safeguards] %></li>
     </ul>
 
-    <%= t 'form.advanced.shared.annual_income.question' %>:
-    <%= flash[:results][:annual_income] %>
+    <div class="q10">
+        <%= t 'form.advanced.shared.annual_income.question' %>:
+        <div class="input-like"> <%= flash[:results][:annual_income] %>   </div>
+    </div>
   </section>
 
   <hr/>
-  <section class="service">
+  <section class="report">
 
     <h2><%= t 'report.water_advanced.technology.title' %></h2>
     <ul>

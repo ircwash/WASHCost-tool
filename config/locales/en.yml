@@ -152,8 +152,10 @@ en:
       shared:
         location:
           question: "Location"
+          info: "Info popup content for location"
         region:
           placeholder: "Region"
+          info: "Info popup content for region"
         city:
           placeholder: "City, town, community or district"
         area_type:

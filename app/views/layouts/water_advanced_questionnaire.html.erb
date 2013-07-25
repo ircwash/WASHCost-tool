@@ -48,6 +48,8 @@
   </nav>
 </div>
 <form class="bgGradient" action="/water_advanced/report" method="post">
+
+<input type="hidden" value="<%= flash[:type] %>" name="type"/>
 <fieldset>
 <div class="main">
 <h1>Water Advance Questionnaire</h1>
@@ -57,9 +59,12 @@
   <!-- ROW 1 -->
   <div class="grid">
     <label for="choiceCountry">1. <%= t 'form.advanced.shared.location.question' %></label>
-    <select name="country" id="country" data-placeholder="Select a country" class="chzn-select" tabindex="2">
-      <%= render "shared/country_select_options"%>
-    </select>
+    <%= select_tag "country",
+           options_for_select(get_countries, flash[:country_code]),
+           :include_blank=>(t 'form.advanced.shared.country.placeholder'),
+           :class=>"chzn-select", :tabindex=>1
+    %>
+
     <div class="supplemental">
       <input type="text" name="region" placeholder="<%= t 'form.advanced.shared.region.placeholder' %>" value="<%= flash[:region] %>" class="supplemental"/>
       <input type="text" name="city" placeholder="<%= t 'form.advanced.shared.city.placeholder' %>" value="<%= flash[:city]%>" />

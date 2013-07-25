@@ -10,11 +10,13 @@ class ApplicationController < ActionController::Base
 
       puts params
 
-      if(params[:targetForm].present?)
+      if(params[:targetForm].present? && params[:type].present?)
         targetForm= params[:targetForm]
-        if targetForm== 'water' || targetForm=='sanitation'
+        type= params[:type]
 
-            redirect_to :controller => "water_advanced", :action => "index", :params => { :type => params[:calculationType] }
+        if (targetForm== 'water' || targetForm=='sanitation') &&  (type== 'existing' || type=='planned')
+
+            redirect_to :controller => "water_advanced", :action => "index", :params => { :type => type }
 
         end
       end
@@ -53,8 +55,6 @@ class ApplicationController < ActionController::Base
   def add_to_session_form(form_name, key, value)
     form= session[form_name].present? ? session[form_name] : Hash.new(0)
     form[key]= value
-
-    puts "SESSION FORM:"
 
     session[form_name]= form
     puts session[form_name]

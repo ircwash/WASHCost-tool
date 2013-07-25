@@ -1,3 +1,4 @@
+# encoding: utf-8
 class WaterAdvancedController < ApplicationController
 
   layout "water_advanced_questionnaire"
@@ -7,7 +8,7 @@ class WaterAdvancedController < ApplicationController
       copy_session_form_values_to_flash
     else
       if params.has_key?(:type) && (params[:type]== 'existing' || params[:type]== 'planned')
-        init_session_form(params[:type])
+        flash[:type]= params[:type]
       else
         redirect_to :controller => "application", :action => "select_advanced"
       end
@@ -18,7 +19,7 @@ class WaterAdvancedController < ApplicationController
   def report
 
     results= {
-      :calculator_type => get_calculator_type,
+      :type =>  unchecked(:type),
 
       :country => get_country(params[:country]),
       :region => unchecked(:region),
@@ -71,13 +72,10 @@ class WaterAdvancedController < ApplicationController
     render layout: 'water_advanced_report'
   end
 
-  def init_session_form(type)
-    session[:water_advanced]= { :type=>type }
-  end
-
   def copy_session_form_values_to_flash
 
     form_params= [
+        :type,
         :country, :region, :city, :area_type, :density,
         :how_managed, :who_finances, :who_owns, :who_safeguards, :who_enforces, :who_repairs, :annual_income,
         :supply_system, :inauguration, :water_sources, :water_sources, :water_storage, :treatment, :power_supply, :transmission, :piped,
@@ -101,12 +99,6 @@ class WaterAdvancedController < ApplicationController
     end
   end
 
-
-  def get_calculator_type
-
-    return 'Planned Scheme'
-  end
-
   def checkbox_value(key)
 
     value= params[key]
@@ -125,14 +117,17 @@ class WaterAdvancedController < ApplicationController
 
   def get_country(country_code)
 
-    country= Country.new(country_code)
-    if(country.data == nil)
+    country_object= Country.new(country_code)
+    country= "Not Set"
+
+    if(country_object.data == nil)
       country = nil
     else
-      country= country.name
+      country= country_object.name
+      add_to_session_advanced(:country_code, country_code)
+      add_to_session_advanced('country', country)
     end
 
-    add_to_session_advanced('country', country)
     return country
   end
 
