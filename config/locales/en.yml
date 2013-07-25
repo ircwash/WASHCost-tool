@@ -455,5 +455,6 @@ en:
 
 
   footer:
-    final_report: "Final Reports"
+    footer_layout: "Basic"
+    final_report: " | Final Reports"
     complete: "Complete"

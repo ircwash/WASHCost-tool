@@ -244,17 +244,35 @@ footer .footerWrapper {
     position: relative;
     width: 945px;
     margin: 0 auto;
-    padding: 20px 40px 40px;
     background-color: #333;
+}
+footer .footerWrapper a {
+    display: block;
+    width: 45px;
+    height: 37px;
+    float: left;
+    text-indent: -10000px;
+    margin-right: 20px;
+    background: transparent url('/assets/spriteGoReport8.png') no-repeat 0 0;
+}
+footer .footerWrapper a:hover {
+    background-position: -55px 0;
+}
+footer .progressBarWrapper {
+    float: left;
+    padding-top: 14px;
 }
 footer h2 {
     float: left;
     font-size: 11px;
+    font-weight: normal;
     color: #bfbfbf;
     margin-right: 20px;
     margin-top: 2px;
     text-transform: uppercase;
-    background: transparent url('/assets/arrowUp8.png') no-repeat 0 2px;
+}
+footer h2 span {
+    font-weight: bold;
 }
 .progressBar {
     position: relative;

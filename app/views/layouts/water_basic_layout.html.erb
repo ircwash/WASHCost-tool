@@ -35,11 +35,14 @@
   </div>
   <footer>
     <div class="footerWrapper">
-      <h2><%= t 'footer.final_report' %></h2>
-      <div class="progressBar">
-        <div class="outerBar">
-          <div class="innerBar" style="width:30%"></div>
-          <p><%= session[:pages_complete] %>% <%= t 'footer.complete' %></p>
+      <a href="#">Go to report page</a>
+      <div class="progressBarWrapper">
+        <h2><%= t 'footer.footer_layout' %> <span><%= t 'footer.final_report' %></span></h2>
+        <div class="progressBar">
+          <div class="outerBar">
+            <div class="innerBar" style="width:30%"></div>
+            <p><%= session[:pages_complete] %>% <%= t 'footer.complete' %></p>
+          </div>
         </div>
       </div>
     </div>
