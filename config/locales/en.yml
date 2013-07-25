@@ -416,6 +416,11 @@ en:
       a343:	"The capital expenditure entered is higher than the ranges found by WASHCost and this service is delivering more than a basic quantity and formal sources are within 30 minutes round trip from the household.  So the context may require more expensive infrastructure, or cost efficiency can be improved.  "
       a344:	"The capital expenditure entered is higher than the ranges found by WASHCost and this service is delivering more than a basic quantity and formal sources are within 10 minutes round trip from the household.  A very good level of service is being achieved, and as a consequence it may require more expensive infrastructure. Another possibility may be that cost efficiency can be improved."
     water_advanced:
+      general:
+        title: "GENERAL FEEDBACK"
+        cost: "Total Cost"
+        service: "Level of service"
+        read_full: "Read Full Review"
       context:
         title: "CONTEXT"
         type: "Calculation Type"
