@@ -1,7 +1,9 @@
 
 
 en:
-
+  global:
+    yes: "Yes"
+    no: "No"
   nav:
     utility:
       about: "About"
@@ -41,6 +43,7 @@ en:
 
   inputs:
     choose_a_country: "Choose a country"
+
   form:
     value_not_set: "Value Not Set"
     skip: "skip this question"
@@ -145,158 +148,222 @@ en:
           a0: "Yes"
           a1: "Unreliable"
           a2: "Not"
-    water_advanced:
-      location:
-        question: "Location"
-      region:
-        placeholder: "Region"
-      city:
-        placeholder: "City, town, community or district"
-      area_type:
-        question: "Area Type"
-        placeholder: "Select an area type"
-        answers:
-          a0: "rural"
-          a1: "small town"
-          a2: "peri-urban"
-          a3: "urban"
-      density:
-        question: "What is the population density of the service area?"
-        placeholder: "Select a density"
-        answers:
-          a0: "400+ pp/km2 (urban)"
-          a1: "150-399 pp/km2 (intermediate)"
-          a2: ">150 pp/km2 (rural)"
-          a3: "Don't know"
-      existing:
-        question: "Does this service exist already or is it planned?"
-        answer:
-          a0: "Existing"
-          a1: "Planned"
-      service_area:
-        question: "What is the population density of the service area?"
-        answers:
-          a0: "400+ pp/km2 (urban)"
-          a1: "150-399 pp/km2 (intermediate)"
-          a2: ">150 pp/km2 (rural)"
-          a3: "Don't know"
-      management:
-        shared:
+    advanced:
+      shared:
+        location:
+          question: "Location"
+        region:
+          placeholder: "Region"
+        city:
+          placeholder: "City, town, community or district"
+        area_type:
+          question: "Area Type"
+          placeholder: "Select an area type"
           answers:
-            a0: "External donor"
-            a1: "community-based"
-            a2: "organisation"
-            a3: "public sector (local)"
-            a4: "public sector (national)"
-            a5: "utility"
-            a6: "household"
-            a7: "Don't know"
-        how_managed:
-          question: "Which of these options best describe how the water service is managed?"
-        who_finances:
-          question: "Who finances the construction of the water system?"
-        who_owns:
-          question: "Who owns (legally?) the water infrastructure?"
-        who_safeguards:
-          question: "Who safeguards the operation and maintenance of the infrastructure?"
-        who_enforces:
-          question: "Who has/will have responsibility for checking and enforcing the standard of water services?"
-        who_repairs:
-          question: "Who covers the cost of rehabilitation when larger repairs are needed?"
-      annual_income:
-        question: "What is the average annual household income in the service area?"
-        placeholder: "Numeric US$"
-      supply_system:
-        question: "What supply system(s) are used to deliver water services?*"
-        answers:
-          a0: "borehole and handpump"
-          a1: "mechanised borehole"
-          a2: "single town system"
-          a3: "multi-town system"
-          a4: "small scale rain fed systems"
-          a5: "protected well"
-          a6: "rural gravity fed system"
-      inauguration:
-        question: "In what year was the supply system inaugurated?**"
-      water_sources:
-        question: "Water sources?"
-        answers:
-          a0: "ground water"
-          a1: "surface water"
-          a2: "rainwater"
-      surface_water:
-        question: "If surface water. Define:"
-        answers:
-          a0: "rainwater harvesting"
-          a1: "catchment storage dam"
-          a2: "sub-surface harvesting (sump)"
-          a3:  "river"
-      ground_water:
-        question: "if ground water. Define:"
-        answers:
-          a0: "unprotected dug well"
-          a1: "protected dug well"
-          a2: "drilled well with mechanised pump"
-          a3: "drilled well with non mechanised pump"
-      drilled_well:
-        question: "if drilled well with non-mechanised pump. Define pump:"
-        answers:
-          a0: "rope pump"
-          a1: "hand pump (I could put more detail on the hand pump)"
-      water_storage:
-        question: "How is the water stored?"
-        answers:
-          a0: "no storage"
-          a1: "reinforced concrete reservoir"
-          a2: "elevated steel reservoir"
-          a3: "cistern"
-          a4: "household storage"
-          a5: "ferrocement tank"
-      treatment:
-        question: "How is water treated?"
-        answers:
-          a0: "no treatment"
-          a1: "boiling"
-          a2: "household filter"
-          a3: "household chlorination"
-          a4: "chlorination in piped system"
-          a5: "water treatment works"
-      power_supply:
-        question: "Main power supply?"
-        answers:
-          a0: "no power"
-          a1: "mains electricity"
-          a2: "windmills"
-          a3: "solar power systems"
-          a4: "generator"
-      transmission:
-        question: "Length of transmission line (Km)?"
-      piped:
-        question: "For piped supplies: Percentage population served by household connections and/or stand post?"
-      notes:
-        stars_1: "* (Select all that are applicable to your service area. Once a box is selected they are given a counter to input the number of systems, and the number of people served by that system)."
-        stars_2: "** This will need to be completed for each technology group as defined in Q1"
-      cost:
-        shared:
+            a0: "rural"
+            a1: "small town"
+            a2: "peri-urban"
+            a3: "urban"
+        density:
+          question: "What is the population density of the service area?"
+          placeholder: "Select a density"
           answers:
-            a0: "Don't know"
-            a1: "Not applicable"
-          placeholder: "Numeric (US$ per person)"
-        hardware:
-          question: "What is the total capital expenditure for hardware?"
-        software:
-          question: "What is the total capital expenditure for software?"
-        maintenance:
-          question: "What is the minor operation and maintenance expenditure?"
-        direct:
-          question: "What is spent on expenditure on direct support?"
-        indirect:
-          question: "What is the expenditure on indirect support?"
-        servicing:
-         question: "What is the cost servicing any loans taken to fund the service?"
-        payback:
-          question: "What is the payback period on this loan?"
-          placeholder: "Years"
+            a0: "400+ pp/km2 (urban)"
+            a1: "150-399 pp/km2 (intermediate)"
+            a2: ">150 pp/km2 (rural)"
+            a3: "Don't know"
+        existing:
+          question: "Does this service exist already or is it planned?"
+          answer:
+            a0: "Existing"
+            a1: "Planned"
+        service_area:
+          question: "What is the population density of the service area?"
+          answers:
+            a0: "400+ pp/km2 (urban)"
+            a1: "150-399 pp/km2 (intermediate)"
+            a2: ">150 pp/km2 (rural)"
+            a3: "Don't know"
+        management:
+          shared:
+            answers:
+              a0: "External donor"
+              a1: "community-based"
+              a2: "organisation"
+              a3: "public sector (local)"
+              a4: "public sector (national)"
+              a5: "utility"
+              a6: "household"
+              a7: "Don't know"
+          how_managed:
+            question: "Which of these options best describe how the water service is managed?"
+          who_finances:
+            question: "Who finances the construction of the water system?"
+          who_owns:
+            question: "Who owns (legally?) the water infrastructure?"
+          who_safeguards:
+            question: "Who safeguards the operation and maintenance of the infrastructure?"
+          who_enforces:
+            question: "Who has/will have responsibility for checking and enforcing the standard of water services?"
+          who_repairs:
+            question: "Who covers the cost of rehabilitation when larger repairs are needed?"
+        annual_income:
+          question: "What is the average annual household income in the service area?"
+          placeholder: "Numeric US$"
+        cost:
+          shared:
+            answers:
+              a0: "Don't know"
+              a1: "Not applicable"
+            placeholder: "Numeric (US$ per person)"
+          hardware:
+            question: "What is the total capital expenditure for hardware?"
+          software:
+            question: "What is the total capital expenditure for software?"
+          maintenance:
+            question: "What is the minor operation and maintenance expenditure?"
+          direct:
+            question: "What is spent on expenditure on direct support?"
+          indirect:
+            question: "What is the expenditure on indirect support?"
+          servicing:
+           question: "What is the cost servicing any loans taken to fund the service?"
+          payback:
+            question: "What is the payback period on this loan?"
+            placeholder: "Years"
+      water:
+        supply_system:
+          question: "What supply system(s) are used to deliver water services?*"
+          answers:
+            a0: "borehole and handpump"
+            a1: "mechanised borehole"
+            a2: "single town system"
+            a3: "multi-town system"
+            a4: "small scale rain fed systems"
+            a5: "protected well"
+            a6: "rural gravity fed system"
+        inauguration:
+          question: "In what year was the supply system inaugurated?**"
+        water_sources:
+          question: "Water sources?"
+          answers:
+            a0: "ground water"
+            a1: "surface water"
+            a2: "rainwater"
+        surface_water:
+          question: "If surface water. Define:"
+          answers:
+            a0: "rainwater harvesting"
+            a1: "catchment storage dam"
+            a2: "sub-surface harvesting (sump)"
+            a3:  "river"
+        ground_water:
+          question: "if ground water. Define:"
+          answers:
+            a0: "unprotected dug well"
+            a1: "protected dug well"
+            a2: "drilled well with mechanised pump"
+            a3: "drilled well with non mechanised pump"
+        drilled_well:
+          question: "if drilled well with non-mechanised pump. Define pump:"
+          answers:
+            a0: "rope pump"
+            a1: "hand pump (I could put more detail on the hand pump)"
+        water_storage:
+          question: "How is the water stored?"
+          answers:
+            a0: "no storage"
+            a1: "reinforced concrete reservoir"
+            a2: "elevated steel reservoir"
+            a3: "cistern"
+            a4: "household storage"
+            a5: "ferrocement tank"
+        treatment:
+          question: "How is water treated?"
+          answers:
+            a0: "no treatment"
+            a1: "boiling"
+            a2: "household filter"
+            a3: "household chlorination"
+            a4: "chlorination in piped system"
+            a5: "water treatment works"
+        power_supply:
+          question: "Main power supply?"
+          answers:
+            a0: "no power"
+            a1: "mains electricity"
+            a2: "windmills"
+            a3: "solar power systems"
+            a4: "generator"
+        transmission:
+          question: "Length of transmission line (Km)?"
+        piped:
+          question: "For piped supplies: Percentage population served by household connections and/or stand post?"
+      sanitation:
+        latrine_type:
+          question: "Name of latrine"
+          answers:
+            a0: "traditional pit latrine"
+            a1: "traditional improved pit latrine"
+            a2: "ventilated improved pit latrine"
+            a3: "Kumasi ventilated improved pit latrine"
+            a4: "pour flush latrine (single pit)"
+            a5: "pour flush latrine (double pit)"
+            a6: "other (define)"
+        slab:
+          question: "Type of slab"
+          answers:
+            a0: "logs"
+            a1: "wood or equivalent"
+            a2: "compacted mud"
+            a3: "SanPlat"
+            a4: "concrete slab"
+        ventilation:
+          question: "Ventilation pipe"
+        lining:
+          question: "Pit Lining"
+          answers:
+            a0: "no lining"
+            a1: "concrete rings"
+            a2: "bricks"
+            a3: "cement"
+            a4: "other"
+        seal:
+          question: "Water seal"
+        pit_count:
+          question: "Number of pits"
+          numeric: "Numeric"
+        pit_location:
+          question: "Location of pit(s)"
+          answers:
+            a0: "directly below"
+            a1: "off-set"
+            a2: "NA"
+        superstructure:
+          question: "Superstructure"
+          answers:
+            a0: "bamboo/reed"
+            a1: "corrugated iron"
+            a2: "concrete"
+            a3: "brick"
+        septic_tank:
+          question: "Septic tank"
+        connected:
+          question: "Connected to sewerage system"
+        urine_diversion:
+          question: "Urine diversion system"
+        sludge_treatment:
+          question: "Sludge treatment"
+          answers:
+            a0: "disposal to water"
+            a1: "disposal to land"
+            a2: "composting, other"
+        service_area:
+          question: "How many people in the service area are targeted by the sanitation service"
+        latrine_count:
+          question: "How many latrines are there in the service area?"
+
+
 
   report:
     water_basic:
