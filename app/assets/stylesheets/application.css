@@ -88,6 +88,7 @@ input.next_button {
 #outer_container_report {
     position: relative;
     max-width: 1025px;
+    overflow: hidden;
     margin: 0 auto;
     background-color: #fff;
 }
@@ -244,17 +245,36 @@ footer .footerWrapper {
     position: relative;
     width: 945px;
     margin: 0 auto;
-    padding: 20px 40px 40px;
     background-color: #333;
+    padding-top: 5px;
+}
+footer .footerWrapper a {
+    display: block;
+    width: 45px;
+    height: 37px;
+    float: left;
+    text-indent: -10000px;
+    margin-right: 20px;
+    background: transparent url('/assets/spriteGoReport8.png') no-repeat 0 0;
+}
+footer .footerWrapper a:hover {
+    background-position: -55px 0;
+}
+footer .progressBarWrapper {
+    float: left;
+    padding-top: 14px;
 }
 footer h2 {
     float: left;
     font-size: 11px;
+    font-weight: normal;
     color: #bfbfbf;
     margin-right: 20px;
     margin-top: 2px;
     text-transform: uppercase;
-    background: transparent url('/assets/arrowUp8.png') no-repeat 0 2px;
+}
+footer h2 span {
+    font-weight: bold;
 }
 .progressBar {
     position: relative;
@@ -838,6 +858,30 @@ a.sbSelector:hover {
     .ui-slider {
         width: 525px;
     }
+
+/* Report */
+
+    dl {
+        /*width: 50%;*/
+        float: left;
+    }
+    
+    .review {
+        clear: both;
+        width: 45%;
+        margin: 0 auto;
+    }
+    .review p {
+        text-align: left;
+    }
+    #graphContent {
+        display:inline-block; 
+        width: 765px; 
+        height: 260px;
+    }
+
+
+
 /*
 *
 *   IE - Fixes

@@ -175,31 +175,6 @@
       </ul>
     </div>
 
-    <!--
-
-
-
-
-             cost:
-      title: "Cost Data"
-      total: "Total Support"
-      maintenance: "Maintenance"
-      support: "Support"
-
-      hardware: "Hardware"
-      software: "Software"
-      minor: "Minor"
-      capital: "Capital"
-      direct: "Direct"
-      indirect: "Indirect"
-      loan_yearly:
-        title: "Cost of Loan"
-        unit: "Per Year"
-      payback:
-        title: "Payback period on this loan"
-        uit: "Years"
-    -->
-
   </section>
 
   <hr/>
@@ -215,17 +190,20 @@
 </div>
 </div>
 
-<footer>
-  <div class="footerWrapper">
-    <h2>Final Report</h2>
-    <div class="progressBar">
-      <div class="outerBar">
-        <div class="innerBar" style="width:30%"></div>
-        <p>30% Complete</p>
+  <footer>
+    <div class="footerWrapper">
+      <a href="#">Go to report page</a>
+      <div class="progressBarWrapper">
+        <h2><%= t 'footer.footer_layout' %> <span><%= t 'footer.final_report' %></span></h2>
+        <div class="progressBar">
+          <div class="outerBar">
+            <div class="innerBar" style="width:30%"></div>
+            <p><%= session[:pages_complete] %>% <%= t 'footer.complete' %></p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
 <script type="text/javascript" src="http://www.google.com/jsapi"></script>
 <script type="text/javascript">
