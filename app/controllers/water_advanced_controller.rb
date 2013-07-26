@@ -76,7 +76,7 @@ class WaterAdvancedController < ApplicationController
 
     form_params= [
         :type,
-        :country, :region, :city, :area_type, :density,
+        :country, :country_code, :region, :city, :area_type, :density,
         :how_managed, :who_finances, :who_owns, :who_safeguards, :who_enforces, :who_repairs, :annual_income,
         :supply_system, :inauguration, :water_sources, :water_sources, :water_storage, :treatment, :power_supply, :transmission, :piped,
         :total_cost, :hardware,

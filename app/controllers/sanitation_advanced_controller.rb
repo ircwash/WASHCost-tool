@@ -59,7 +59,7 @@ class SanitationAdvancedController < AdvancedController
 
     form_params= [
         :type,
-        :country, :region, :city, :area_type, :density,
+        :country, :country_code, :region, :city, :area_type, :density,
         :how_managed, :who_finances, :who_owns, :who_safeguards, :who_enforces, :who_repairs, :annual_income,
 
 
