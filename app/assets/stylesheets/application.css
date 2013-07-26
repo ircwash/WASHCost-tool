@@ -1059,34 +1059,41 @@ a.sbSelector:hover {
     .content .populationResults .result_03 {
         background-position: -448px -180px;
     }
-
     #graph {
         width: 800px;
         margin: 0 auto 60px;
     }
     .cost .sectionWrapper div {
+        position: relative;
         width: 33%;
         float: left;
+        text-align: center;
+    }
+    .cost dl {
+        width: 100%;
+    }
+    .cost dl dt {
+        width: 100%;
+        text-align: center;
     }
     .cost dl dd {
         height: auto;
     }
-    .cost dl dt,
-    .cost dl dd {
-        font-size: 12px;
-        text-align: center;
-    }
     .cost .sectionWrapper div a {
         clear: both;
         position: absolute;
-        bottom: 44px;
+        right: 28px;
+        bottom: -2px;
         text-align: center;
     }
-    .cost .sectionWrapper dl dd {
+    .cost dl dd {
+        width: 50%;
         font-size: 30px;
         font-weight: bold;
         color: #fff;
         padding: 16px 0;
+        margin-left: 50px;
+
         background-color: #3cb1c5;
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
