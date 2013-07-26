@@ -65,11 +65,11 @@ en:
       water:
         question: "What is the main water source use to provide water?"
         answers:
-          a0: "Borehole & Handpump"
-          a1: "Mechanised "
-          a2: "Single-Town"
-          a3: "Multi-Town1"
-          a4: "Multi-Town2"
+          a0: "Borehole and Handpump"
+          a1: "Mechanised Borehole"
+          a2: "Single-Town Scheme"
+          a3: "Multi-Town Scheme"
+          a4: "Mixed-Pipe Supply"
       population:
         question: "How many people live in the area of intervention?"
         value_label: "People"
@@ -368,6 +368,9 @@ en:
 
 
   report:
+    benchmark_below: "Below Benchmarks"
+    benchmark_with: "Within the Benchmarks"
+    benchmark_above: "above the Benchmarks"
     water_basic:
       a111:	"This service is not delivering a desired minimum quantity perhaps due to low capital expenditure and the sources are not within 60 minutes roundtrip from the household. Or factors other than costs are influencing service delivery"
       a112:	"This service is not delivering a desired minimum quantity perhaps due to low capital expenditure and the sources are between 30 and 60 minutes roundtrip from the household. Or factors other than costs are influencing service delivery"

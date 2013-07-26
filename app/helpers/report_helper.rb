@@ -27,8 +27,12 @@ module ReportHelper
 
     rating= get_rating(form[:water],form[:capital],form[:recurrent], form[:reliability])
     service_level= get_level_of_service(form[:water],form[:capital], form[:quantity], form[:time])
+    cost_rating= get_cost_rating(form[:water], form[:capital])
+    cost_rating_label= get_cost_rating_label(cost_rating)
 
     results = {
+      :cost_rating=> cost_rating,
+      :cost_rating_label=>cost_rating_label,
       :service_level => service_level,
       :rating => rating,
       :country => get_country(form[:country]),
@@ -141,6 +145,56 @@ module ReportHelper
 
     return reliability
   end
+
+
+  def get_cost_rating(water_index, capEx)
+    benchmark= 0
+
+    if water_index && capEx
+      if water_index==0
+
+        if capEx < 20
+          0
+        elsif capEx > 61
+          1
+        else
+          2
+        end
+
+      else
+
+        if capEx < 30
+          0
+        elsif capEx > 131
+          1
+        else
+          2
+        end
+
+      end
+    end
+
+    return benchmark
+  end
+
+  def get_cost_rating_label(rating)
+
+    label=  ''
+
+    if rating==0
+      label= (t 'report.benchmark_below')
+    elsif rating==1
+      label= (t 'report.benchmark_within')
+    elsif rating==2
+      label= (t 'report.benchmark_above')
+    else
+      label= 'Please Enter a <a href="./water">waterIndex</a> and <a href="./capital">Capital Expenditure<a/>'
+    end
+
+    return label
+
+  end
+
 
   def  get_capEx_benchmark_rating(waterSourceIndex, ex)
       bench= @@water_values[waterSourceIndex][:capExBench]

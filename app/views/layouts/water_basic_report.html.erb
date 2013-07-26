@@ -44,8 +44,8 @@
       <h2>Summary</h2>
       <div class="sectionWrapper">
         <dl>
-            <dt>WASHCost Index</dt>
-            <dd class="indexStar_0"><span>Low risk</span></dd>
+            <dt>Total Cost</dt>
+            <dd class="indexStar_<%= flash[:results][:cost_rating] %>"><span><%= flash[:results][:cost_rating_label].html_safe %></span></dd>
         </dl>
         <dl class="levelService">
             <dt>Level of Service</dt>

@@ -21,9 +21,7 @@ class WaterBasicController < ApplicationController
       end
     end
 
-    if session[:water_basic_form].present?
-      flash[:country_code]= session[:water_basic_form]['country']
-    end
+    flash[:country_code]= session[:water_basic_form][:country]
 
   end
 
