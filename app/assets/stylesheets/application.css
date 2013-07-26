@@ -887,6 +887,8 @@ a.sbSelector:hover {
     }
     .review p {
         text-align: left;
+        color: #fff;
+        padding-top: 10px;
     }
     .review div {
         display: none;
@@ -936,6 +938,7 @@ a.sbSelector:hover {
     .report dl dt {
         text-align: center;
         color: #fff;
+        margin-bottom: 30px;
     }
     .report dl dd {
         width: 100%;
@@ -1003,8 +1006,9 @@ a.sbSelector:hover {
         margin-bottom: 56px;
     }
     .content .sectionWrapper div {
-        width: 33%;
+        width: 28%;
         float: left;
+        margin-left: 25px;
     }
     .content .sectionWrapper div  a {
         display: block;
@@ -1014,9 +1018,48 @@ a.sbSelector:hover {
         width: 100%;
         text-align: center;
     }
+    .content dl dd {
+        height: 110px;
+    }
     .content dl dd span {
         margin-top: 0;
     }
+    .content dl dd span {
+        position: absolute;
+        bottom: 6px;
+        width: 100%;
+    }
+    .content .waterResult dd {
+        background: transparent url('/assets/spriteQ2basicWater24.png') no-repeat -10000px -180px;
+    }
+    .content .waterResult .result_01 {
+        background-position: -114px -180px;
+    }
+    .content .waterResult .result_02 {
+        background-position: -286px -180px;
+    }
+    .content .waterResult .result_03 {
+        background-position: -438px -180px;
+    }
+    .content .waterResult .result_04 {
+        background-position: -445px -180px;
+    }
+    .content .waterResult .result_05 {
+        background-position: -605px -180px;
+    }
+    .content .populationResults dd {
+        background: transparent url('/assets/spriteQ3basicWater24.png') no-repeat -10000px -180px;
+    }
+    .content .populationResults .result_01 {
+        background-position: -117px -180px;
+    }
+    .content .populationResults .result_02 {
+        background-position: -283px -180px;
+    }
+    .content .populationResults .result_03 {
+        background-position: -448px -180px;
+    }
+
     #graph {
         width: 800px;
         margin: 0 auto 60px;
