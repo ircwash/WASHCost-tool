@@ -334,7 +334,7 @@ en:
           question: "Water seal"
         pit_count:
           question: "Number of pits"
-          numeric: "Numeric"
+          placheholder: "Numeric"
         pit_location:
           question: "Location of pit(s)"
           answers:

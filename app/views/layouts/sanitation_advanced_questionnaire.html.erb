@@ -213,7 +213,105 @@
 
 <!-- TECHNOLOGY -->
 <section class="system" id="technology_section">
-  [TECHNOLOGY GOES HERE]
+  <div class="grid">
+    <label for="latrine_type">1. <%= t 'form.advanced.sanitation.latrine_type.question' %></label>
+    <%=
+        select_tag "latrine_type",
+                   options_for_select([[(t 'form.advanced.sanitation.latrine_type.answers.a0'),0],
+                                       [(t 'form.advanced.sanitation.latrine_type.answers.a1'),1],
+                                       [(t 'form.advanced.sanitation.latrine_type.answers.a2'),2],
+                                       [(t 'form.advanced.sanitation.latrine_type.answers.a3'),3],
+                                       [(t 'form.advanced.sanitation.latrine_type.answers.a4'),4],
+                                       [(t 'form.advanced.sanitation.latrine_type.answers.a5'),5],
+                                       [(t 'form.advanced.sanitation.latrine_type.answers.a6'),6]
+                                      ], flash[:latrine_type]),
+                   :include_blank=>(t 'form.shared.select_an_option'),
+                   :class=>"chzn-select", :tabindex=>10
+    %>
+  </div>
+
+  <div class="grid odd">
+    <label for="slab">2. <%= t 'form.advanced.sanitation.slab.question' %></label>
+    <%=
+        select_tag "slab",
+                   options_for_select([[(t 'form.advanced.sanitation.slab.answers.a0'),0],
+                                       [(t 'form.advanced.sanitation.slab.answers.a1'),1],
+                                       [(t 'form.advanced.sanitation.slab.answers.a2'),2],
+                                       [(t 'form.advanced.sanitation.slab.answers.a3'),3],
+                                       [(t 'form.advanced.sanitation.slab.answers.a4'),4]
+                                      ], flash[:slab]),
+                   :include_blank=>(t 'form.shared.select_an_option'),
+                   :class=>"chzn-select", :tabindex=>11
+    %>
+  </div>
+
+  <div class="grid">
+    <label for="ventilation">2. <%= t 'form.advanced.sanitation.ventilation.question' %></label>
+    <%=
+        select_tag "ventilation",
+                   options_for_select([[(t 'global.no'),0],
+                                       [(t 'global.yes'),1],
+                                      ], flash[:ventilation]),
+                   :include_blank=>(t 'form.shared.select_an_option'),
+                   :class=>"chzn-select", :tabindex=>11
+    %>
+  </div>
+
+  <div class="grid odd">
+    <label for="lining">2. <%= t 'form.advanced.sanitation.lining.question' %></label>
+    <%=
+        select_tag "lining",
+                   options_for_select([[(t 'form.advanced.sanitation.lining.answers.a0'),0],
+                                       [(t 'form.advanced.sanitation.lining.answers.a1'),1],
+                                       [(t 'form.advanced.sanitation.lining.answers.a2'),2],
+                                       [(t 'form.advanced.sanitation.lining.answers.a3'),3],
+                                       [(t 'form.advanced.sanitation.lining.answers.a4'),4]
+                                      ], flash[:lining]),
+           :include_blank=>(t 'form.shared.select_an_option'),
+           :class=>"chzn-select", :tabindex=>11
+    %>
+  </div>
+
+  <div class="grid">
+    <label for="seal">2. <%= t 'form.advanced.sanitation.seal.question' %></label>
+    <%=
+        select_tag "seal",
+                   options_for_select([[(t 'global.no'),0],
+                                       [(t 'global.yes'),1],
+                                      ], flash[:seal]),
+                   :include_blank=>(t 'form.shared.select_an_option'),
+                   :class=>"chzn-select", :tabindex=>11
+    %>
+  </div>
+
+
+  <div class="grid odd">
+    <label for="pit_count">7. <%= t 'form.advanced.sanitation.pit_count.question' %></label>
+    <input tabindex="10" name="pit_count" id="pit_count" type="number" placeholder="Numeric" value="<%=flash[:pit_count]%>" min="0" max="10000" step="1">
+  </div>
+
+  <div class="grid">
+    <label for="service_area">7. <%= t 'form.advanced.sanitation.service_area.question' %></label>
+    <input tabindex="10" name="service_area" id="service_area" type="number" placeholder="Number of People" value="<%=flash[:service_area]%>" min="0" max="10000" step="1">
+  </div>
+
+
+  <div class="grid odd">
+    <label for="latrine_count">7. <%= t 'form.advanced.sanitation.latrine_count.question' %></label>
+    <input tabindex="10" name="latrine_count" id="latrine_count" type="number" placeholder="Numeric" value="<%=flash[:latrine_count]%>" min="0" max="10000" step="1">
+  </div>
+
+
+  <!--
+
+  e Location of pit(s)	directly below, off-set, NA
+  o Superstructure	bamboo/reed, corrugated iron, concrete, brick
+  e Septic tank	Yes, No
+    Connected to sewerage system	Yes, No
+  e  Urine diversion system	Yes, No
+     Sludge treatment	disposal to water, disposal to land, composting, other
+
+  -->
 </section>
 
 <!-- COST -->
