@@ -137,17 +137,17 @@
             <span class="value"><%= flash[:results][:time]%></span>
             <a href="./time"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
           </li>
-          <li class="rowQQR">
+          <li class="rowQQR quantity result_0<%= flash[:results][:quantity_index]%>">
             <span class="label">Quantity</span>
             <span class="value quantity_0<%= flash[:results][:quantity_index]%>"><%= flash[:results][:quantity]%></span>
             <a href="./quantity"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
           </li>
-          <li class="rowQQR">
-            <span class="label quantity_0<%= flash[:results][:quality_index]%>">Quality</span>
+          <li class="rowQQR quality result_0<%= flash[:results][:quality_index]%>">
+            <span class="label quality_0<%= flash[:results][:quality_index]%>">Quality</span>
             <span class="value"><%= flash[:results][:quality]%></span>
             <a href="./quality"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
           </li>
-          <li class="rowQQR">
+          <li class="rowQQR reliability result_0<%= flash[:results][:reliability_index]%>"">
             <span class="label quality_0<%= flash[:results][:reliability_index]%>">Reliability</span>
             <span class="value"><%= flash[:results][:reliability]%></span>
             <a href="./reliability"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
