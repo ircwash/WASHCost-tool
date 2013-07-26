@@ -6,7 +6,7 @@ describe ApplicationController do
   describe "Session Form Utility" do
 
     before(:each) do
-      subject.add_to_session_form("foo","bar")
+      subject.add_to_session_form(:water_basic_form, :water_basic_complete, "foo","bar")
     end
 
     it "should create a session" do
@@ -24,69 +24,21 @@ describe ApplicationController do
     end
   end
 
-  describe "Session Form Completion Tracking" do
+  describe "Session Complete Increasing" do
 
-    before(:each) do
-      ApplicationController.class_variable_set :@@pages, 10
-      subject.increase_pages_complete
+
+    it "should not exist before" do
+      session[:foo].should be_nil
     end
 
-    it "should have a total number of pages" do
-      subject.pages.should eq(10)
-    end
 
-    it "should create a session when increased" do
-      session[:pages_complete].should_not be_nil
-    end
+    it "should increase the completeness" do
 
-    it "should be one" do
-      session[:pages_complete].should eq(1)
+      subject.increase_complete_percent(:foo)
+      session[:foo].should eq 1
     end
 
   end
 
-  describe "Number Util" do
 
-    it "should return false for nil" do
-      subject.is_number(nil).should eq(false)
-    end
-
-    it "should return false for string" do
-      subject.is_number("a").should eq(false)
-    end
-
-    it "should return true for zero" do
-      subject.is_number("0").should eq(true)
-    end
-
-    it "should return true for number" do
-      subject.is_number(0).should eq(true)
-    end
-
-    it "should return true for nex" do
-      subject.is_number(-1).should eq(true)
-    end
-  end
-
-  describe '#is_valid_country_code' do
-
-    it "should return true when a valid ISO country" do
-
-      expect subject.is_valid_country_code("AAA").should be_true
-
-    end
-
-    it "should return false when a valid ISO country" do
-
-      expect subject.is_valid_country_code("AA").should be_false
-
-    end
-
-    it "should return false when a valid ISO country" do
-
-      expect subject.is_valid_country_code(nil).should be_false
-
-    end
-
-  end
 end
