@@ -1296,3 +1296,12 @@ a.sbSelector:hover {
     .ie9 .service .reliability.result_04 {
         background-position: -480px -176px;
     }
+    .ie7 .cost dl dd {
+        margin-left: 0;
+    }
+    .ie7 .cost .sectionWrapper div a {
+        bottom: 0;
+    }
+    .ie7 .content dl dd span {
+        left: 0;
+    }
