@@ -963,21 +963,42 @@ a.sbSelector:hover {
         float: right;
         margin: 0;
     }
-
-    .general .indexStar_0 {
-        background: transparent url('/assets/starsIndex8.png') no-repeat 50% 0;
+    .general .costService dd {
+        background: transparent url('/assets/starsIndex8.png') no-repeat 0 0;
     }
-    .general .levelStar_0 {
-        background: transparent url('/assets/starsLevel8.png') no-repeat 50% 0;
+    .costService dd.indexStar_0 {
+        background-position: 50% 0;
     }
-.general .levelStar_1 {
-    background: transparent url('/assets/starsLevel8.png') no-repeat 50% 0;
-}    .general .levelStar_2 {
-         background: transparent url('/assets/starsLevel8.png') no-repeat 50% 0;
-     }    .general .levelStar_3 {
-              background: transparent url('/assets/starsLevel8.png') no-repeat 50% -100px;
-          }
-
+    .costService dd.indexStar_1 {
+        background-position: 50% -50px;
+    }
+    .costService dd.indexStar_2 {
+        background-position: 50% -100px;
+    }
+    .costService dd.indexStar_3 {
+        background-position: 50% -150px;
+    }
+    .costService dd.indexStar_4 {
+        background-position: 50% -200px;
+    }
+    .levelService dd {
+        background: transparent url('/assets/starsLevel8.png') no-repeat 0 0;
+    }
+    .levelService dd.levelStar_0 {
+        background-position: 50% 0;
+    }
+    .levelService dd.levelStar_1 {
+        background-position: 50% -50px;
+    }
+    .levelService dd.levelStar_2 {
+        background-position: 50% -100px;
+    }
+    .levelService dd.levelStar_3 {
+        background-position: 50% -150px;
+    }
+    .levelService dd.levelStar_4 {
+        background-position: 50% -200px;
+    }
     .content h2 {
         margin-bottom: 56px;
     }
