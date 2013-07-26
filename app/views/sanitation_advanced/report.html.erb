@@ -1,0 +1,273 @@
+<div class="report">
+
+<section class="general">
+  <h1><%= t 'report.water_advanced.general.title' %></h1>
+
+  <dl>
+    <div>
+      <dt><%= t 'report.water_advanced.general.cost' %></dt>
+      <dd class="stars_1">COST IS??</dd>
+    </div>
+
+    <div class="no_margin">
+      <dt><%= t 'report.water_advanced.general.service' %></dt>
+      <dd class="stars_3"><%=flash[:results][:service_level] %></dd>
+    </div>
+  </dl>
+  <div>
+    <%= t 'report.water_advanced.general.read_full' %>
+  </div>
+</section>
+
+<hr/>
+<section class="content report">
+  <h2><%= t 'report.water_advanced.context.title' %></h2>
+  <dl>
+
+    <div>
+      <dt><%= t 'report.water_advanced.context.type' %></dt>
+      <dd><%= flash[:results][:type]%></dd>
+      <a href="./"><img src="/assets/report/icon_edit.png" /></a>
+    </div>
+
+    <div>
+      <dt><%= t 'report.water_advanced.context.country' %></dt>
+      <dd><%= flash[:results][:country] %></dd>
+      <a href="./"><img src="/assets/report/icon_edit.png" /></a>
+    </div>
+    <div class="no_margin">
+      <dt><%= t 'report.water_advanced.context.area_type' %></dt>
+      <dd><%= flash[:results][:area_type]%></dd>
+      <a href="./"><img src="/assets/report/icon_edit.png" /></a>
+    </div>
+  </dl>
+
+</section>
+<hr/>
+
+<style>
+
+    .input-like{
+        background: none;
+
+        margin-top: 10px;
+
+        width: 157px;
+        height: 57px;
+        background-color:#3BB4C4;
+        padding: 0px;
+        font-size: 30px;
+        line-height: 57px;
+        font-weight: bold;
+
+        -webkit-border-radius: 5px;
+        -moz-border-radius   : 5px;
+        border-radius        : 5px;
+    }
+
+    section{
+        text-align: center
+    }
+
+    section.report{
+        text-align: center;
+    }
+    section.report ul{
+        height: 150px;
+        width: 100%;
+        font-weight: bold;
+    }
+
+    section.report li{
+        float: left;
+        width: 339px;
+        margin: 0px;
+        padding: 0px;
+        display: inline-block;
+        margin-top: 40px;
+        line-height: 20px;
+    }
+
+
+
+    .q10{
+        width: 50%;
+        text-align: center;
+        margin: 20px auto 40px auto
+    }
+
+
+    section.report hr{
+        border: 0;
+        width: 66%;
+        background-color: #fff;
+        height: 1px;
+    }
+</style>
+<section class="report">
+  <h2><%= t 'report.water_advanced.management.title' %></h2>
+
+  <ul>
+    <li><%= t 'report.water_advanced.management.how_managed' %><br/><%= flash[:results][:who_owns] %></li>
+    <li><%= t 'report.water_advanced.management.who_owns' %><br/> <%= flash[:results][:who_owns] %></li>
+    <li><%= t 'report.water_advanced.management.who_finances' %><br/><%= flash[:results][:who_finances] %></li>
+    <li><%= t 'report.water_advanced.management.who_enforces' %><br/> <%= flash[:results][:who_enforces] %></li>
+    <li><%= t 'report.water_advanced.management.who_repairs' %><br/> <%= flash[:results][:who_repairs] %></li>
+    <li><%= t 'report.water_advanced.management.who_safeguards' %><br/> <%= flash[:results][:who_safeguards] %></li>
+  </ul>
+
+  <div class="q10">
+    <%= t 'form.advanced.shared.annual_income.question' %>:
+    <div class="input-like"> <%= flash[:results][:annual_income] %>   </div>
+  </div>
+</section>
+
+<hr/>
+<section class="report">
+
+  <h2><%= t 'report.water_advanced.technology.title' %></h2>
+
+  <h3><%= t 'report.water_advanced.supply_system'%></h3>
+
+  <hr/>
+  <ul>
+    <li><%= flash[:results][:supply_system] %></li>
+    <li><%= t 'report.water_advanced.units'%>: ??</li>
+    <li><%= t 'report.water_advanced.people_served'%>: [??]</li>
+    <li><%= t 'report.water_advanced.inauguration'%>: <%= flash[:results][:inauguration] %></li>
+  </ul>
+  <hr/>
+
+  <ul>
+    <li><%= t 'report.water_advanced.water_sources'%><br/><%= flash[:results][:water_sources] %></li>
+    <li><%= t 'report.water_advanced.water_storage'%><br/><%= flash[:results][:water_storage] %></li>
+    <li><%= t 'report.water_advanced.treatment'%><br/><%= flash[:results][:treatment] %></li>
+    <li><%= t 'report.water_advanced.power_supply'%><br/><%= flash[:results][:power_supply] %></li>
+    <li><%= t 'report.water_advanced.transmission'%><br/>$<%= flash[:results][:transmission] %></li>
+    <li><%= t 'report.water_advanced.piped'%><br/><%= flash[:results][:piped] %>%</li>
+  </ul>
+
+</section>
+
+<hr/>
+
+<section class="service">
+
+  <h2><%= t 'report.water_advanced.cost.title' %></h2>
+
+  <div id="chart_div" style="width: 765px; height: 265px;padding-left: 280px"></div>
+
+  <div style="clear: both; height: 150px;">
+    <h3><%= t 'report.water_advanced.cost.total' %></h3>
+    <ul>
+      <li><%= t 'report.water_advanced.cost.hardware' %>: </li>
+      <li><%= t 'report.water_advanced.cost.software' %>: </li>
+    </ul>
+  </div>
+
+  <div style="clear: both; height: 150px;">
+
+    <h3><%= t 'report.water_advanced.cost.maintenance' %></h3>
+    <ul>
+      <li><%= t 'report.water_advanced.cost.minor' %>: </li>
+      <li><%= t 'report.water_advanced.cost.capital' %>: </li>
+    </ul>
+  </div>
+
+  <div style="clear: both; height: 150px;">
+    <h3><%= t 'report.water_advanced.cost.support' %></h3>
+    <ul>
+      <li><%= t 'report.water_advanced.cost.direct' %>: </li>
+      <li><%= t 'report.water_advanced.cost.indirect' %>: </li>
+    </ul>
+  </div>
+
+  <div style="clear: both; height: 150px;">
+    <ul>
+      <li>
+        <%= t 'report.water_advanced.cost.loan_yearly.title' %>:
+        <%= t 'report.water_advanced.cost.loan_yearly.unit' %>
+      </li>
+      <li>
+        <%= t 'report.water_advanced.cost.payback.title' %>:
+        <%= t 'report.water_advanced.cost.payback.unit' %>
+      </li>
+    </ul>
+  </div>
+
+</section>
+
+<hr/>
+<section class="service">
+
+  <h2>SERVICE LEVEL</h2>
+
+
+</section>
+</div>
+<div style="height: 550px;">
+
+</div>
+</div>
+
+<footer>
+  <div class="footerWrapper">
+    <a href="#">Go to report page</a>
+    <div class="progressBarWrapper">
+      <h2><%= t 'footer.footer_layout' %> <span><%= t 'footer.final_report' %></span></h2>
+      <div class="progressBar">
+        <div class="outerBar">
+          <div class="innerBar" style="width:30%"></div>
+          <p><%= session[:pages_complete] %>% <%= t 'footer.complete' %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+
+    // Load the Visualization API and the piechart package.
+    google.load('visualization', '1.0', {'packages':['corechart']});
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.setOnLoadCallback(drawChart);
+
+    // Callback that creates and populates a data table,
+    // instantiates the pie chart, passes in the data and
+    // draws it.
+    function drawChart() {
+
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Expenditure');
+        data.addColumn('number', 'Amount');
+        data.addColumn({type:'string', role:'annotation'});
+        data.addColumn({type:'string', role:'annotationText'});
+
+        data.addRows([
+            ['Indirect Support', 3000, 'A', null],
+            ['Direct Support', 1000, 'A', null],
+            ['Total Expenditure (Hardware and Software)', 5000, 'A', null],
+            ['Capital Maintenance', 1000, 'A', null],
+            ['Minor Maintenance', 2000, 'A', null]
+        ]);
+
+        // Set chart options
+        var options = {
+            chartArea:{ width: 765,height: 260,left:0,top:10,width:"100%",height:"90%"},
+            backgroundColor: "transparent",
+            'colors' : ['#A69556'],
+            'legend' : 'none',
+            'pieSliceText': 'none',
+            'width':400,
+            'height':300};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+</script>
