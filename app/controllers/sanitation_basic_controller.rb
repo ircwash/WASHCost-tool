@@ -176,6 +176,6 @@ class SanitationBasicController < ApplicationController
     puts results
 
     flash[:results] = results
-    render layout: "report_sanitation_basic"
+    render layout: "sanitation_basic_report"
   end
 end
