@@ -52,13 +52,13 @@ class ApplicationController < ActionController::Base
     return valid
   end
 
-  def add_to_session_form(form_name, key, value)
+  def add_to_session_form(form_name, complete_name, key, value)
 
 
     form= session[form_name].present? ? session[form_name] : Hash.new(0)
 
     if !form[key].present?
-      increase_complete_percent(:water_advanced_completed)
+      increase_complete_percent(complete_name)
     end
 
     form[key]= value
@@ -79,5 +79,6 @@ class ApplicationController < ActionController::Base
   def is_number(string)
     true if Integer(string) rescue false
   end
+
 
 end
