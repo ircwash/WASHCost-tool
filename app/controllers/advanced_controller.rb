@@ -1,12 +1,9 @@
 # encoding: utf-8
 class AdvancedController < ApplicationController
 
-  @session_form = nil
-  @session_complete= nil
-
 
   def index
-    if session[@session_form]
+    if session[:s]
       copy_session_form_values_to_flash
     else
       if params.has_key?(:type) && (params[:type]== 'existing' || params[:type]== 'planned')
