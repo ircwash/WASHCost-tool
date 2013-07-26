@@ -51,6 +51,10 @@ p {
     margin: 0;
     padding: 0;
 }
+img {
+    margin: 0;
+    border: 0;
+}
 ul, li {
     margin: 0;
     padding: 0;
@@ -1055,6 +1059,7 @@ a.sbSelector:hover {
     .service .quantity {
         background: transparent url('/assets/spriteQ7basicWater24.png') no-repeat 0 0;
     }
+    .service .quantity.result_00,
     .service .quantity.result_01 {
         background-position: 40px -127px;
     }
@@ -1070,6 +1075,7 @@ a.sbSelector:hover {
     .service .quality {
         background: transparent url('/assets/spriteQ8basicWater24.png') no-repeat 0 0;
     }
+    .service .quality.result_00,
     .service .quality.result_01 {
         background-position: 32px -127px; 
     }
@@ -1085,6 +1091,7 @@ a.sbSelector:hover {
     .service .reliability {
         background: transparent url('/assets/spriteQ9basicWater24.png') no-repeat 0 0;   
     }
+    .service .reliability.result_00,
     .service .reliability.result_01 {
         background-position: 33px -176px; 
     }
@@ -1239,4 +1246,53 @@ a.sbSelector:hover {
     }
     .ie8 .mainContent input.selectCountry {
         margin-left: 30%;
+    }
+    .ie9 .rowQQR {
+        width: 20%;
+        margin-right: 150px;
+    }
+    .ie9 .rowQQR.quantity {
+        margin-left: 10px;
+    }
+    .ie9 .rowQQR.reliability {
+        margin-right: 0;
+    } 
+    .ie9 .service .quantity.result_00,
+    .ie9 .service .quantity.result_01 {
+        background-position: 5px -127px;
+    }
+    .ie9 .service .quantity.result_02 {
+        background-position: -152px -127px;
+    }
+    .ie9 .service .quantity.result_03 {
+        background-position: -310px -127px;
+    }
+    .ie9 .service .quantity.result_04 {
+        background-position: -472px -127px;
+    }
+    .ie9 .service .quality.result_00,
+    .ie9 .service .quality.result_01 {
+        background-position: 0px -127px;
+    }
+    .ie9 .service .quality.result_02 {
+        background-position: -155px -127px;
+    }
+    .ie9 .service .quality.result_03 {
+        background-position: -315px -127px;
+    }
+    .ie9 .service .quality.result_04 {
+        background-position: -478px -127px;
+    }
+    .ie9 .service .reliability.result_00,
+    .ie9 .service .reliability.result_01 {
+        background-position: 0px -176px;
+    }
+    .ie9 .service .reliability.result_02 {
+        background-position: 0 -176px;
+    }
+    .ie9 .service .reliability.result_03 {
+        background-position: -300px -176px;
+    }
+    .ie9 .service .reliability.result_04 {
+        background-position: -480px -176px;
     }
