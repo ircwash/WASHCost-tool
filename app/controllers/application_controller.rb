@@ -16,6 +16,8 @@ class ApplicationController < ActionController::Base
 
         if (targetForm== 'water' || targetForm=='sanitation') &&  (type== 'existing' || type=='planned')
 
+            puts "GOING TO :"+ targetForm
+
             redirect_to :controller => (targetForm+"_advanced"), :action => "index", :params => { :type => type }
 
         end
