@@ -763,6 +763,11 @@ a.sbSelector:hover {
     }
     /* Report */
 
+    .summary_cost{
+        color: #fff; font-size: 32px; font-weight: bold;
+        padding-left: 30px
+    }
+
     .bench_icon_0{
        background: url('/assets/benchmark_symbol_sprite.png') no-repeat 0 -50px;
        height:32px;

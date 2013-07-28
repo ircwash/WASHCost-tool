@@ -1,38 +1,18 @@
 <% @title = "3 of 9 (Population)" %>
-<h1><%= t 'form.water_basic.population.question' %></h1>
 
+<h1><%= t 'form.water_basic.population.question' %></h1>
 <%= form_tag({controller: "water_basic", action: "population"}, class: "main_content", id: "waterBasicForm") do %>
 
-  <ul class="populationArea">
-    <li>
-      <%= label_tag("areaLess", nil, class: "tickCheckBox") do %>
-        <span><%= t 'form.water_basic.population.answers.a0' %></span>
-        <%= radio_button_tag("r_population", 0, false, id: "areaLess") %>
-      <% end %>
-    </li>
-    <li>
-      <%= label_tag("areaFive", nil, class: "tickCheckBox populationArea_01") do %>
-        <span><%= t 'form.water_basic.population.answers.a1' %></span>
-        <%= radio_button_tag("r_population", 1, id: "areaFive") %>
-      <% end %>
-    </li>
-    <li>
-      <%= label_tag("areaFiveHundred", nil, class: "tickCheckBox populationArea_02") do %>
-        <span><%= t 'form.water_basic.population.answers.a2' %></span>
-        <%= radio_button_tag("r_population", 2, id: "areaFiveHundred") %>
-      <% end %>
-    </li>
-    <li>
-      <%= label_tag("areaMore", nil, class: "tickCheckBox populationArea_03") do %>
-        <span><%= t 'form.water_basic.population.answers.a3' %></span>
-        <%= radio_button_tag("population", 3, id: "areaMore") %>
-      <% end %>
-    </li>
-  </ul>
+  <div class="choices">
+    <div id="populationValue" class="valueOutput">500</div>
+    <div class="valueLabel"><%= t 'form.water_basic.population.answers.value_label' %></div>
+    <div id="populationSlider">
+
+    </div>
+  </div>
 
   <input type="hidden" name="population"/>
   <%= submit_tag((t 'buttons.next'), class: "next_button") %>
-    <a class="skip" href="./capital">skip this question</a>
 <% end %>
 
 <div class="infoTab">

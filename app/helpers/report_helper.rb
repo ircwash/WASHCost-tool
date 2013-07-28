@@ -44,7 +44,7 @@ module ReportHelper
       :population => get_population(form[:population]),
       :capital => get_capital(form[:capital]),
       :recurrent => get_recurrent(form[:recurrent]),
-      :total => get_total(form[:capital], form[:recurrent]),
+      :total => get_total(form[:capital], form[:recurrent], form[:population]),
       :time => get_time(form[:time]),
       :quantity => get_quantity(form[:quantity]),
       :quantity_index => get_index(form[:quantity]),
@@ -91,13 +91,12 @@ module ReportHelper
     return recurrent
   end
 
-  def get_total(capital, recurrent)
-    puts "CAP & RECURR"
+  def get_total(capital, recurrent, population)
 
-    puts capital
-    puts recurrent
+    total_cost = capital + (recurrent * 10)
+    total_cost_for_population = total_cost * population
+    return total_cost_for_population
 
-    return capital * recurrent
   end
 
   def get_population(index)

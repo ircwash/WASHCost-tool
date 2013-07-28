@@ -55,11 +55,11 @@ class WaterBasicController < ApplicationController
   def population
 
     if request.post?
-      population_index= params[:population]
+      population= params[:population]
 
-      if(population_index && is_number(population_index) && population_index.to_i > -1 && population_index.to_i < 5)
+      if(population && is_number(population) && population.to_i > -1 && population.to_i < 150001)
 
-        add_to_session_form(:water_basic_form, :water_advanced_completed, "population", population_index.to_i)
+        add_to_session_form(:water_basic_form, :water_advanced_completed, "population", population.to_i)
 
         redirect_to :action => "capital"
       end

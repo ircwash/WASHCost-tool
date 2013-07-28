@@ -7,12 +7,17 @@ $(document).ready(function(){
         $('input[name="population"]').val(0);
 
         $( "#populationSlider" ).slider({
-            min: 0,
-            max: 3,
-            step: 1,
+            min: 500,
+            max: 15000,
+            step: 500,
             change: function( event, ui ) {
                 $('input[name="population"]').val(ui.value);
-                $('#populationValue').html(I18n["en"]["form"]["water_basic"]["population"]['answers']['a'+ui.value]);
+
+                var stringVal= '';
+
+                stringValue= ui.value.toLocaleString();
+
+                $('#populationValue').html(stringValue);
             }
         });
     }
