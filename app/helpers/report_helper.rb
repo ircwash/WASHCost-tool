@@ -58,12 +58,16 @@ module ReportHelper
 
   end
 
+
   def get_country(country_code)
 
-    country= Country.new(country_code)
-    if(country.data == nil)
-      country = nil
-    end
+    country= 'Not Set'
+    country_object= Country.new(country_code)
+      if(country_object.data == nil)
+        country = nil
+      else
+        country= country_object.name
+      end
 
     return country
   end

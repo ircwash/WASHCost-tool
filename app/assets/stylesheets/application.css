@@ -1138,50 +1138,215 @@ a.sbSelector:hover {
     *
     */
 
-    .main_content .latrineInput {
-        width: 612px;
-        overflow: hidden;
-        margin-bottom: 50px;
+    .latrineInput li label, .latrine_00 {
+        background: transparent url('/assets/sprite_latrine.png') no-repeat 0 -135px;
+        width: 144px
     }
-    .main_content .latrineInput li {
-        width: 99px;
+    .latrineInput li label.ticked {
+        background-position: 0 0;
     }
-    .latrineInput li label {
-        background: transparent url('/assets/inputTraditionalLatrine8.png') no-repeat 0 0;
+
+    .latrineInput .latrine_01, {
+        background-position: -143px -135px;
     }
-    .latrineInput li label span {
-        top: 47px;
+    .latrineInput .latrine_01.ticked {
+        background-position: -143px 0;
     }
-    .main_content .houseInput {
-        width: 206px;
+
+    .latrineInput .latrine_02 {
+        background-position: -286px -135px;
     }
-    .main_content .houseInput li {
-        width: 100px;
+    .latrineInput .latrine_02.ticked {
+        background-position: -286px 0;
     }
-    .houseInput li label {
-        background: transparent url('/assets/spriteInputLatrines8.png') no-repeat 0 0;
+
+    .latrineInput .latrine_03 {
+        background-position: -428px -135px;
     }
-    .houseInput li:last-child label {
-        background-position: 0 -80px;
+    .latrineInput .latrine_03.ticked {
+        background-position: -428px 0;
     }
-    .main_content .houseInput label span {
+
+    .latrineInput .latrine_04 {
+        background-position: -571px -135px;
+    }
+    .latrineInput .latrine_04.ticked {
+        background-position: -571px 0;
+    }
+
+    .latrineInput .latrine_05 {
+        background-position: -714px -135px;
+    }
+    .latrineInput .latrine_05.ticked {
+        background-position: -714px 0;
+    }
+
+    .content .populationResults dd.results_latrine_0 {
+        background: transparent url('/assets/sprite_latrine.png') no-repeat 40px -160px;
+    }
+    .content .populationResults dd.results_latrine_1 {
+        background: transparent url('/assets/sprite_latrine.png') no-repeat -105px -160px;
+    }
+    .content .populationResults dd.results_latrine_2 {
+        background: transparent url('/assets/sprite_latrine.png') no-repeat -250px -160px;
+    }
+
+    .content .populationResults dd.results_latrine_3 {
+        background: transparent url('/assets/sprite_latrine.png') no-repeat -388px -160px;
+    }
+    .content .populationResults dd.results_latrine_4 {
+        background: transparent url('/assets/sprite_latrine.png') no-repeat -530px -160px;
+    }
+    .content .populationResults dd.results_latrine_5 {
+        background: transparent url('/assets/sprite_latrine.png') no-repeat -675px -160px;
+    }
+
+
+.providingInput{
+        width: 600px
+    }
+
+    .providingInput li{
+        width: 256px
+    }
+
+    .providingInput li label {
+        background: transparent url('/assets/sprite_providing.png') no-repeat 0 -135px;
+        width: 256px
+    }
+    .providingInput li label.ticked {
+        background-position: 0 0;
+    }
+
+    .providingInput .latrine_01 {
+        background-position: -254px -135px;
+    }
+    .providingInput .latrine_01.ticked {
+        background-position: -254px 0;
+    }
+
+    .environmentInput{
+        width: 600px
+    }
+
+    .environmentInput li{
+        width: 175px
+    }
+
+    .environmentInput li label {
+        background: transparent url('/assets/sprite_environment.png') no-repeat 0 -138px;
+    }
+    .environmentInput li label.ticked {
+        background-position: 0 0;
+    }
+
+    .environmentInput .environment_01 {
+        background-position: -240px -135px;
+    }
+    .environmentInput .environment_01.ticked {
+        background-position: -240px 0;
+    }
+
+    .environmentInput .environment_02 {
+        background-position: -465px -135px;
+    }
+    .environmentInput .environment_02.ticked {
+        background-position: -465px 0;
+    }
+
+
+    .impermeabilityInput {
+        padding-left: 100px
+    }
+
+    .impermeabilityInput li{
+        width: 160px
+    }
+
+    .impermeabilityInput li label {
+        background: transparent url('/assets/sprite_impermeability.png') no-repeat 0 -135px;
+        width: 162px
+    }
+    .impermeabilityInput li label.ticked {
+        background-position: 0 0;
+    }
+
+    .impermeabilityInput .impermeability_01 {
+        background-position: -162px -135px;
+    }
+    .impermeabilityInput .impermeability_01.ticked {
+        background-position: -162px 0;
+    }
+
+    .impermeabilityInput .impermeability_02 {
+        background-position: -162px -135px;
+    }
+    .impermeabilityInput .impermeability_02.ticked {
+        background-position: -162px 0;
+    }
+
+    ul.usageInput {
+        width: 725px;
+    }
+
+    .usageInput li {
+        width: 235px;
+    }
+
+    .usageInput li label {
+        background: transparent url('/assets/sprite_usage.png') no-repeat 0 -135px;
+    }
+    .usageInput li label.ticked {
+        background-position: 0 0;
+    }
+
+    .usageInput .usage_01 {
+        background-position: -250px -135px;
+    }
+    .usageInput .usage_01.ticked {
+        background-position: -250px 0;
+    }
+
+    .usageInput .usage_02 {
+        background-position: -515px -135px;
+    }
+    .usageInput .usage_02.ticked {
+        background-position: -515px 0;
+    }
+
+    .reliabilityInput li{
+        width: 160px;
+    }
+
+    .reliabilityInput li label {
+        background: transparent url('/assets/spriteQ9basicWater24.png') no-repeat 0 -195px;
+    }
+    .reliabilityInput li label.ticked {
+        background-position: 0 0px;
+    }
+
+    .reliabilityInput .reliability_01 {
+        background-position: -160px -195px;
+    }
+    .reliabilityInput .reliability_01.ticked {
+        background-position: -160px 0;
+    }
+
+    .reliabilityInput .reliability_02 {
+        background-position: -480px -195px;
+    }
+    .reliabilityInput .reliability_02.ticked {
+        background-position: -480px 0px;
+    }
+
+
+
+.main_content .houseInput label span {
         top: 50px;
         width: 100%;
     }
-    .main_content .impermeability {
-        width: 126px;
-        overflow: hidden;
-        padding-bottom: 50px;
-    }
-    .impermeability li label {
-        background: transparent url('/assets/spriteInputSlab8.png') no-repeat 0 0;
-    }
-    .impermeability li label span {
-        top: 80px;
-    }
-    .impermeability li:last-child label {
-        background-position: 0 -74px;
-    }
+
+
     .main_content .disposalInput {
         width: 370px;
     }
@@ -1194,6 +1359,7 @@ a.sbSelector:hover {
     .main_content .disposalInput label span {
         top: 80px;
     }
+
     .disposalInput li label {
         background: transparent url('/assets/spriteInputDisposal8.png') no-repeat 0 0;
     }

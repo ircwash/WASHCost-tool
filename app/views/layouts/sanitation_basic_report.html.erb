@@ -14,102 +14,110 @@
 
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
   <%= javascript_include_tag "jquery-1.9.1", "jquery-ui-1.10.3.custom.min", "chosen.jquery", "db_water", "application", "modernizr", "water_basic" %>
-  <%= stylesheet_link_tag "application", "report", :media => "all" %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
 
 </head>
 <body>
 <div id="outer_container_report" class="bgGradient">
 
-  <div class="header">
-    <a href="#" class="logo">
-      <img src="/assets/logoWashCost8.png" alt="WASHCost" />
-    </a>
-    <ul>
-      <li><a href="#">about</a></li>
-      <li><a href="#">contact</a></li>
-      <li>
-        <ul class="languageSwitcher">
-          <li><a class="active" href="#">English</a></li>
-          <li><a href="#">French</a></li>
-        </ul>
-      </li>
-      <li><a class="sign" href="#">Sign in</a></li>
-    </ul>
-  </div>
 
+  <%= render "shared/header" %>
 
   <div class="report">
-
+    <h1>Basic <span>Water | Final report</span></h1>
     <section class="general">
-      <h1>GENERAL FEEDBACK (Sanitation)</h1>
+      <h2>Summary</h2>
+      <div class="sectionWrapper">
+        <dl class="costService">
+          <dt>Total Cost</dt>
 
-      <dl>
-        <div>
-          <dt>General Sustainability</dt>
-          <dd class="stars_1">Below Basic Sustainability</dd>
-        </div>
+          <div class="summary_cost">
+            $<%= number_with_delimiter(flash[:results][:total], :delimiter=>',')%>
+          </div>
+          <div class="bench_icon_<%=flash[:results][:cost_rating]%>">
+            <div class="benchmark_text"><%= flash[:results][:cost_rating_label]%></div>
+          </div>
 
-        <div class="no_margin">
-          <dt>Level of service</dt>
-          <dd class="stars_3"><%=flash[:results][:service_level] %></dd>
+        </dl>
+        <dl class="levelService">
+          <dt>Level of Service</dt>
+          <dd class="levelStar_<%= flash[:results][:rating] %>"><span>Sub-standard</span></dd>
+        </dl>
+        <div class="review">
+          <!-- <a href="javascript:revealService();">Read full review</a> -->
+          <a href="#">Read full review</a>
+          <div id="service_level_full">
+            <p><%=flash[:results][:service_level] %></p>
+          </div>
         </div>
-      </dl>
+      </div>
     </section>
-
     <hr/>
 
     <section class="content">
-      <h2>CONTENT</h2>
-      <dl>
+      <h2><%= t 'report.water_advanced.context.title' %></h2>
+      <div class="sectionWrapper">
         <div>
-          <dt>Country</dt>
-          <dd><%= flash[:results][:country].name %></dd>
-          <a href="./country"><img src="/assets/report/icon_edit.png" /></a>
+          <dl>
+            <dt>Country</dt>
+            <dd class="countryResult">
+              <img src="/assets/world8.png" alt="world country" />
+              <span><%= flash[:results][:country] %></span>
+            </dd>
+          </dl>
+          <a href="./country"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
         </div>
-
-        <div>
-          <dt>Household</dt>
-          <dd><%= flash[:results][:household]%></dd>
-          <a href="./water"><img src="/assets/report/icon_edit.png" /></a>
+        <div class="waterResult">
+          <dl>
+            <dt>Household</dt>
+            <dd class="result_01">
+              <span><%= flash[:results][:household]%></span>
+            </dd>
+          </dl>
+          <a href="./population"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
         </div>
-
-        <div class="no_margin">
-          <dt>Latrine Type</dt>
-          <dd><%= flash[:results][:latrine]%></dd>
-          <a href="./population"><img src="/assets/report/icon_edit.png" /></a>
+        <div class="populationResults">
+          <dl>
+            <dt>Latrine Type</dt>
+            <dd class="results_latrine_5">
+              <span><%= flash[:results][:latrine]%></span>
+            </dd>
+          </dl>
+          <a href="./latrine"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
         </div>
-      </dl>
-
+      </div>
     </section>
-    <hr/>
+
     <section class="cost">
-      <h2>COST DATA</h2>
+      <h2><%= t 'report.water_advanced.cost.title' %></h2>
+      <h3>Cost on 10 years (for a population of 2000 people)</h3>
 
       <div id="graph">
-        <div class="explain">
-          Cost on 10 years (for a population of 2000 people)
-        </div>
-        <img src="/assets/report/graph.png" style="display:inline-block"/>
+        <div id="graphContent"></div>
       </div>
 
-      <dl>
+      <div class="sectionWrapper">
         <div>
-          <dt>Capital Expenditure</dt>
-          <dd class="country_0">$<%= flash[:results][:capital]%></dd>
+          <dl>
+            <dt>Capital Expenditure</dt>
+            <dd class="country_0">$<%= flash[:results][:capital]%></dd>
+          </dl>
+          <a href="./capital"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
         </div>
-        <a href="./capital"><img src="/assets/report/icon_edit.png" /></a>
-
         <div>
-          <dt>Recurrent Expenditure</dt>
-          <dd class="household_0">$<%= flash[:results][:recurrent]%></dd>
+          <dl>
+            <dt>Recurrent Expenditure</dt>
+            <dd class="household_0">$<%= flash[:results][:recurrent]%></dd>
+          </dl>
+          <a href="./recurrent"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
         </div>
-        <a href="./recurrent"><img src="/assets/report/icon_edit.png" /></a>
-
         <div>
-          <dt>Total</dt>
-          <dd class="total">$<%= flash[:results][:total]%></dd>
+          <dl>
+            <dt>Total</dt>
+            <dd class="total">$<%= number_with_delimiter(flash[:results][:total], :delimiter=>',')%></dd>
+          </dl>
         </div>
-      </dl>
+      </div>
     </section>
     <hr/>
     <section class="service">
@@ -157,4 +165,62 @@
 </footer>
 
 </body>
+
+
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+    google.load('visualization', '1', {packages: ['corechart']});
+</script>
+
+<script type="text/javascript">
+    function expenditureGraph() {
+
+        var _C= <%= flash[:results][:capital]%>;
+        var _R= <%= flash[:results][:recurrent]%>;
+
+        var data = new google.visualization.DataTable();
+
+
+        data.addColumn('string', 'Year');
+        data.addColumn('number', 'Expenditure');
+        data.addColumn({type:'string', role:'annotation'}); // annotation role col.
+        data.addColumn({type:'string', role:'annotationText'}); // annotationText col
+
+        data.addRows([
+            ['YR1',   _C, _C+'', 'You Spent '+_C+' Dollars Your first year'],
+            ['YR2',   _R, _R+'', _R+' Dollars is your recurring cost'],
+            ['YR3',   _R, null, null],
+            ['YR4',   _R, null, null],
+            ['YR5',   _R, null, null],
+            ['YR6',   _R, null, null],
+            ['YR7',   _R, null, null],
+            ['YR8',   _R, null, null],
+            ['YR9',   _R, null, null],
+            ['YR10',  _R, null, null]
+        ]);
+
+        // Create and draw the visualization.
+        new google.visualization.LineChart(document.getElementById('graphContent')).
+                draw(data, {curveType: "none",
+                    legend: { position: "none" },
+                    width: 765, height: 260,
+                    hAxis: { textStyle: { color: '#fff' } },
+                    vAxis: { textStyle: { color: 'transparent'},   baselineColor: 'transparent', gridlines: {color: 'transparent'} ,maxValue: 80},
+
+                    backgroundColor: "transparent",
+                    lineWidth: 5,
+                    colors: ['#fff'],
+                    'chartArea': { top: -3, 'width': '100%', 'height': '90%'}
+                }
+        );
+    }
+
+
+    google.setOnLoadCallback(expenditureGraph);
+
+    function revealService()
+    {
+        document.getElementById('service_level_full').style.display= 'block'
+    }
+</script>
 </html>

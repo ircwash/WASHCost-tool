@@ -14,31 +14,31 @@
           <% end %>
         </li>
         <li>
-          <%= label_tag("improved", nil, class: "tickCheckBox") do %>
+          <%= label_tag("improved", nil, class: "tickCheckBox latrine_01") do %>
             <%= radio_button_tag("r_latrine", 1, id: "improved") %>
             <span><%= t 'form.sanitation_basic.latrine.answers.a1' %></span>
           <% end %>
         </li>
         <li>
-          <%= label_tag("slab", nil, class: "tickCheckBox") do %>
+          <%= label_tag("slab", nil, class: "tickCheckBox latrine_02") do %>
             <%= radio_button_tag("r_latrine", 2, id: "slab") %>
             <span><%= t 'form.sanitation_basic.latrine.answers.a2' %></span>
           <% end %>
         </li>
         <li>
-          <%= label_tag("vip", nil, class: "tickCheckBox") do %>
+          <%= label_tag("vip", nil, class: "tickCheckBox  latrine_03") do %>
             <%= radio_button_tag("r_latrine", 3, id: "vip") %>
             <span><%= t 'form.sanitation_basic.latrine.answers.a3' %></span>
           <% end %>
         </li>
         <li>
-          <%= label_tag("flush", nil, class: "tickCheckBox") do %>
+          <%= label_tag("flush", nil, class: "tickCheckBox  latrine_04") do %>
             <%= radio_button_tag("r_latrine", 4, id: "flush") %>
             <span><%= t 'form.sanitation_basic.latrine.answers.a4' %></span>
           <% end %>
         </li>
         <li>
-          <%= label_tag("septik", nil, class: "tickCheckBox") do %>
+          <%= label_tag("septik", nil, class: "tickCheckBox latrine_05") do %>
             <%= radio_button_tag("r_latrine", 5, id: "septik") %>
             <span><%= t 'form.sanitation_basic.latrine.answers.a5' %></span>
           <% end %>
@@ -48,7 +48,7 @@
 
    <input type="hidden" name="latrine"/>
     <%= submit_tag("Next", class: "next_button") %>
-    <a class="skip" href="#"><%= t 'form.skip' %></a>
+    <a class="skip" href="capital"><%= t 'form.skip' %></a>
 <% end %>
 
 <div class="infoTab">

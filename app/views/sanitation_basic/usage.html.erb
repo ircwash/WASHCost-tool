@@ -3,7 +3,7 @@
 <h1><%= t 'form.sanitation_basic.usage.question' %></h1>
 <%= form_tag({controller: "sanitation_basic", action: "usage"}, class: "main_content", id: "waterBasicForm") do %>
 
-  <ul class="familyInput choices">
+  <ul class="usageInput choices">
     <li>
       <%= label_tag("all", nil, class: "tickCheckBox") do %>
         <%= radio_button_tag("r_usage", 0, false, id: "all") %>
@@ -11,13 +11,13 @@
       <% end %>
     </li>
     <li>
-      <%= label_tag("some", nil, class: "tickCheckBox") do %>
+      <%= label_tag("some", nil, class: "tickCheckBox usage_01") do %>
         <%= radio_button_tag("r_usage", 1, id: "some") %>
         <span><%= t 'form.sanitation_basic.usage.answers.a1' %></span>
       <% end %>
     </li>
     <li>
-      <%= label_tag("none", nil, class: "tickCheckBox") do %>
+      <%= label_tag("none", nil, class: "tickCheckBox usage_02") do %>
         <%= radio_button_tag("r_usage", 2, id: "none") %>
         <span><%= t 'form.sanitation_basic.usage.answers.a2' %></span>
       <% end %>
@@ -26,7 +26,7 @@
 
   <input type="hidden" name="usage" value="usage"/>
   <%= submit_tag("Next", class: "next_button") %>
-  <a class="skip" href="#"><%= t 'form.skip' %></a>
+  <a class="skip" href="./reliability"><%= t 'form.skip' %></a>
 <% end %>
 
 <div class="infoTab">
