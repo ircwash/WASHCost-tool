@@ -1138,7 +1138,7 @@ a.sbSelector:hover {
     *
     */
 
-    .latrineInput li label, .latrine_00 {
+    .latrineInput li label{
         background: transparent url('/assets/sprite_latrine.png') no-repeat 0 -135px;
         width: 144px
     }
