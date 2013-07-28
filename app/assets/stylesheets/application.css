@@ -90,7 +90,7 @@ input.next_button {
     height: 95%;
     max-width: 1025px;
     margin: 0 auto;
-    background-color: #fff; 
+    background-color: #fff;
 }
 
 #outer_container_report {
@@ -763,6 +763,28 @@ a.sbSelector:hover {
     }
     /* Report */
 
+    .bench_icon_0{
+       background: url('/assets/benchmark_symbol_sprite.png') no-repeat 0 -50px;
+       height:32px;
+    }
+
+    .bench_icon_1{
+        background: url('/assets/benchmark_symbol_sprite.png') no-repeat;
+        height:32px;
+    }
+
+    .bench_icon_2{
+        background: url('/assets/benchmark_symbol_sprite.png') no-repeat 0 -50px;
+        height:32px;
+    }
+
+    .benchmark_text {
+        padding-left: 32px;
+        background: url('/assets/benchmark_bg.png')  repeat-x;
+        height:32px; line-height: 30px;
+        color: #fff
+    }
+
     dl {
         float: left;
     }
@@ -1247,6 +1269,7 @@ a.sbSelector:hover {
     .ie8 .mainContent input.selectCountry {
         margin-left: 30%;
     }
+
     .ie9 .rowQQR {
         width: 20%;
         margin-right: 150px;
@@ -1305,3 +1328,4 @@ a.sbSelector:hover {
     .ie7 .content dl dd span {
         left: 0;
     }
+

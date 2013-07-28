@@ -27,12 +27,16 @@ module ReportHelper
 
     rating= get_rating(form[:water],form[:capital],form[:recurrent], form[:reliability])
     service_level= get_level_of_service(form[:water],form[:capital], form[:quantity], form[:time])
+
+    #
+    # (annual income/person) / ((total cost/person) / 10)
+
     cost_rating= get_cost_rating(form[:water], form[:capital])
     cost_rating_label= get_cost_rating_label(cost_rating)
 
     results = {
       :cost_rating=> cost_rating,
-      :cost_rating_label=>cost_rating_label,
+      :cost_rating_label=> cost_rating_label,
       :service_level => service_level,
       :rating => rating,
       :country => get_country(form[:country]),
@@ -88,6 +92,11 @@ module ReportHelper
   end
 
   def get_total(capital, recurrent)
+    puts "CAP & RECURR"
+
+    puts capital
+    puts recurrent
+
     return capital * recurrent
   end
 
@@ -179,7 +188,7 @@ module ReportHelper
 
   def get_cost_rating_label(rating)
 
-    label=  ''
+    label=  t 'report.benchmark_below'
 
     if rating==0
       label= (t 'report.benchmark_below')
@@ -248,6 +257,7 @@ module ReportHelper
     level_of_service= t ('report.water_basic.a'+concatenation)
 
     return level_of_service
+
   end
 
   @@capEx_rating_code = {

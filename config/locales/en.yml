@@ -368,6 +368,7 @@ en:
 
 
   report:
+    complete: "Report Complete"
     benchmark_below: "Below Benchmarks"
     benchmark_with: "Within the Benchmarks"
     benchmark_above: "above the Benchmarks"

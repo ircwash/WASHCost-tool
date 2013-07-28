@@ -1,13 +1,21 @@
 class WaterBasicController < ApplicationController
 
+  after_filter :set_percent_complete
+
   include WaterBasicHelper
 
   layout "water_basic_layout"
 
   def init_vars
-    @@pages= 10
+    @@pages= 9
     super
   end
+
+
+  def set_percent_complete
+    flash[:percent_complete]= get_percent_complete(:water_advanced_completed)
+  end
+
 
   def country
 
@@ -154,10 +162,6 @@ class WaterBasicController < ApplicationController
   def report
 
     results= get_water_basic_report
-
-    puts "RESULTS"
-    puts results
-
     flash[:results] = results
 
     render layout: "water_basic_report"

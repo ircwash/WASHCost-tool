@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
   before_filter :init_vars
 
+  @@pages= nil
+
 
   def select_advanced
 
@@ -23,8 +25,6 @@ class ApplicationController < ActionController::Base
     end
 
   end
-
-  @@pages= nil
 
   def pages
     return @@pages
@@ -57,7 +57,7 @@ class ApplicationController < ActionController::Base
 
     form= session[form_name].present? ? session[form_name] : Hash.new(0)
 
-    if !form[key].present?
+    if !form.has_key?(key)
       increase_complete_percent(complete_name)
     end
 
@@ -78,6 +78,16 @@ class ApplicationController < ActionController::Base
 
   def is_number(string)
     true if Integer(string) rescue false
+  end
+
+  def get_percent_complete(form)
+
+    pages_complete= session[form].present? ? session[form] : 0
+
+    percent_complete= ((pages_complete.to_f/@@pages.to_f) * 100).to_i
+
+    return percent_complete
+
   end
 
 
