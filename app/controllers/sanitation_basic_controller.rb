@@ -21,8 +21,7 @@ class SanitationBasicController < ApplicationController
 
         puts("COUNTRY: ")
         puts(country_code);
-        add_to_session_form(:sanitation_basic_form, "country", country_code)
-        increase_pages_complete
+        add_to_session_form(:sanitation_basic_form, :sanitation_complete, "country", country_code)
 
         redirect_to :action => "household"
       end
@@ -37,8 +36,7 @@ class SanitationBasicController < ApplicationController
 
       if(is_number(household) && household.to_i > -1 && household.to_i < 12)
 
-        add_to_session_form(:sanitation_basic_form, "household", household.to_i)
-        increase_pages_complete
+        add_to_session_form(:sanitation_basic_form, :sanitation_complete, "household", household.to_i)
 
         redirect_to :action => "latrine"
       end
@@ -52,8 +50,7 @@ class SanitationBasicController < ApplicationController
 
       if(latrine_index && is_number(latrine_index) && latrine_index.to_i > -1 && latrine_index.to_i < 6)
 
-        add_to_session_form(:sanitation_basic_form, "latrine", latrine_index.to_i)
-        increase_pages_complete
+        add_to_session_form(:sanitation_basic_form, :sanitation_complete, "latrine", latrine_index.to_i)
 
         redirect_to :action =>"capital"
       end
@@ -68,8 +65,7 @@ class SanitationBasicController < ApplicationController
 
       if(capital_amount && is_number(capital_amount) && capital_amount.to_i > -1)
 
-        add_to_session_form(:sanitation_basic_form, "capital", capital_amount.to_i)
-        increase_pages_complete
+        add_to_session_form(:sanitation_basic_form, :sanitation_complete, "capital", capital_amount.to_i)
 
         redirect_to :action => "recurrent"
       end
@@ -83,8 +79,7 @@ class SanitationBasicController < ApplicationController
 
       if(recurrent_amount && is_number(recurrent_amount) && recurrent_amount.to_i > -1)
 
-        add_to_session_form(:sanitation_basic_form, "recurrent", recurrent_amount.to_i)
-        increase_pages_complete
+        add_to_session_form(:sanitation_basic_form, :sanitation_complete, "recurrent", recurrent_amount.to_i)
 
         redirect_to :action => "providing"
       end
@@ -98,8 +93,7 @@ class SanitationBasicController < ApplicationController
 
       if(providing_index && is_number(providing_index) && providing_index.to_i > -1 && providing_index.to_i < 2)
 
-        add_to_session_form(:sanitation_basic_form, "providing", providing_index.to_i)
-        increase_pages_complete
+        add_to_session_form(:sanitation_basic_form, :sanitation_complete, "providing", providing_index.to_i)
 
         redirect_to :action =>"impermeability"
       end
@@ -113,9 +107,7 @@ class SanitationBasicController < ApplicationController
 
       if(impermeability_index && is_number(impermeability_index) && impermeability_index.to_i > -1 && impermeability_index.to_i < 2)
 
-        add_to_session_form(:sanitation_basic_form, "impermeability",  impermeability_index.to_i)
-        increase_pages_complete
-
+        add_to_session_form(:sanitation_basic_form, :sanitation_complete,"impermeability",  impermeability_index.to_i)
         redirect_to :action =>"environment"
       end
     end
@@ -127,8 +119,7 @@ class SanitationBasicController < ApplicationController
 
       if(environment_index && is_number(environment_index) && environment_index.to_i > -1 && environment_index.to_i < 3)
 
-        add_to_session_form(:sanitation_basic_form, "environment",  environment_index.to_i)
-        increase_pages_complete
+        add_to_session_form(:sanitation_basic_form, :sanitation_complete, "environment",  environment_index.to_i)
 
         redirect_to :action =>"usage"
       end
@@ -141,8 +132,7 @@ class SanitationBasicController < ApplicationController
 
       if(usage_index && is_number(usage_index) && usage_index.to_i > -1 && usage_index.to_i < 3)
 
-        add_to_session_form(:sanitation_basic_form, "usage",  usage_index.to_i)
-        increase_pages_complete
+        add_to_session_form(:sanitation_basic_form,:sanitation_complete, "usage",  usage_index.to_i)
 
         redirect_to :action =>"reliability"
       end
@@ -160,7 +150,7 @@ class SanitationBasicController < ApplicationController
 
     if(radio_index && is_number(radio_index) && radio_index.to_i > min && radio_index.to_i < max)
 
-      add_to_session_form(:sanitation_basic_form, key,  usage_index.to_i)
+      add_to_session_form(:sanitation_basic_form, :sanitation_complete, key,  usage_index.to_i)
       increase_pages_complete
 
       redirect_to :action => redirect
