@@ -13,11 +13,6 @@ class SanitationBasicController < ApplicationController
   end
 
   def set_percent_complete
-
-    puts "PERCENT:"
-    puts get_percent_complete(:sanitation_basic_complete)
-    puts session[:sanitation_basic_complete]
-
     flash[:percent_complete]= get_percent_complete(:sanitation_basic_complete)
   end
 
@@ -165,8 +160,8 @@ class SanitationBasicController < ApplicationController
   end
 
 
-  def report
-
+  def
+    report
     results= get_sanitation_basic_report
 
     flash[:results] = results

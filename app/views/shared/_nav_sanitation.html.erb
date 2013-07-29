@@ -1,52 +1,115 @@
 <% set_categories_for_navigation %>
 
+<style>
+
+    ul.navigation {
+        margin-top: 35px;
+        text-align: center;
+    }
+
+    ul.navigation li {
+
+      float: left;
+  }
+
+  ul.navigation li.section {
+     float: left;
+      width: 33%;
+      text-transform:uppercase;
+      margin-bottom: 20px;
+    }
+
+    ul.navigation li.section a {
+
+        font-size: 18px;
+        color: #fff;
+        font-weight: bold;
+    }
+
+
+    ul.navigation .context {
+          text-align: right
+      }
+
+      ul.navigation .service {
+          text-align: left
+      }
+    .navigation li.subnavigation ul{
+        background-color: #359ec0;
+
+        height: 42px;
+    }
+
+    .navigation li li {
+        width: auto;
+        float: left;
+    }
+
+    .navigation li li a.done {
+        display: block;
+        color: #fff;
+        background:transparent url('/assets/spriteArrow8.png') no-repeat 100% -384px;
+    }
+
+    .navigation li li a {
+        display: block;
+        font-size: 12px;
+        margin: 0;
+        padding: 14px 30px;
+        color: #fff;
+        font-weight: bold;
+        text-transform:uppercase;
+    }
+
+    .navigation li li a.active {
+        color: #359ec0;
+        background-color: #fff;
+
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+</style>
 <nav>
   <div class="navWrapper">
-    <ul class="main">
-
-      <li class="content">
-        <a href="#" class="<%= is_active_category?('context_class') %>"><%= t 'nav.main.content.title' %></a>
-        <ul>
-          <% content_nav.each do |key, value| %>
-              <% active = params[:action] == key ? "active" : "" %>
+    <ul class="navigation">
+      <li class="section context">
+        <a href="/sanitation_basic/country/" class="<%= is_active_category?('context_class') %>"><%= t 'nav.main.content.title' %></a>
+      </li>
+      <li  class="section cost">
+        <a href="/sanitation_basic/capital" class="<%= is_active_category?('cost_class') %>"><%= t 'nav.main.cost.title' %></a>
+      </li>
+      <li class="section service">
+        <a href="/sanitation_basic/providing" class="<%= is_active_category?('cost_class') %>"><%= t 'nav.main.service.title' %></a>
+      </li>
+      <li class="subnavigation">
+        <ul style="position: absolute; top: 70px; left:<%=get_section_left%>">
+          <% sanitation_context_nav.each do |key, value| %>
+              <% active = get_class_for_section(:sanitation_basic_form, key) %>
               <li>
-                <a class="<%= active %>" href="<%= key %>">
-                  <%= content_nav[key] %>
+                <a class="<%= active %>" href="/sanitation_basic/<%= key %>">
+                  <%= sanitation_context_nav[key] %>
                 </a>
               </li>
           <% end %>
-        </ul>
-      </li>
-
-      <li class="cost">
-        <a href="#" class="<%= is_active_category?('cost_class') %>"><%= t 'nav.main.cost.title' %></a>
-        <ul>
           <% cost_nav.each do |key, value| %>
-              <% active = params[:action] == key ? "active" : "" %>
+              <% active = get_class_for_section(:sanitation_basic_form, key) %>
               <li>
-                <a class="<%= active %>" href="<%= key %>">
+                <a class="<%= active %>" href="/sanitation_basic/<%= key %>">
                   <%= cost_nav[key] %>
                 </a>
               </li>
           <% end %>
-        </ul>
-      </li>
-
-      <li class="service">
-        <a href="#" class="<%= is_active_category?('cost_class') %>"><%= t 'nav.main.service.title' %></a>
-        <ul>
-          <% service_nav.each do |key, value| %>
-              <% active = params[:action] == key ? "active" : "" %>
+          <% sanitation_service_nav.each do |key, value| %>
+              <% active = get_class_for_section(:sanitation_basic_form, key) %>
               <li>
-                <a class="<%= active %>" href="<%= key %>">
-                  <%= service_nav[key] %>
+                <a class="<%= active %>" href="/sanitation_basic/<%= key %>">
+                  <%= sanitation_service_nav[key] %>
                 </a>
               </li>
           <% end %>
         </ul>
       </li>
-
-
     </ul>
   </div>
   <div class="pag">

@@ -17,6 +17,8 @@ en:
           country: "Country"
           water: "Water"
           population: "Population"
+          household: "Household"
+          latrine: "Latrine"
       cost:
         title: "Cost Data"
         items:
@@ -28,6 +30,10 @@ en:
           time: "Time"
           quantity: "Quantity"
           quality: "Quality"
+          providing: "Providing"
+          impermeability: "Impermeability"
+          environment: "Environment"
+          usage: "Usage"
           reliability: "Reliability"
     advanced:
       context: "Context"
