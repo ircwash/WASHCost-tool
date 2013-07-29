@@ -12,7 +12,7 @@ var db= {
     /* Page 3 - Population */
     "population" : [
         { "label": "Less than 500", "value": 1 },
-        { "label": "Between 501 and 5,000", "value": 2 },
+        { "label": "Between 501 and 1100", "value": 2 },
         { "label": "Between 5,001 and 15,000", "value": 3 },
         { "label": "More than 15,000", "value": 4 }
     ] ,

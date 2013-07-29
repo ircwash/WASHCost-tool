@@ -1,20 +1,20 @@
 <% @title = "Start" %>
 
-
 <h1><%= t 'form.shared.country.question' %></h1>
 
 <%= form_tag({controller: "sanitation_basic", action: "country"}, class: "main_content", id: "waterBasicForm") do %>
 
     <div class="choices">
-      <span style="text-align: left">
-       <select data-placeholder="Choose a Country..." class="chzn-select" style="width:350px; " tabindex="2" name="country">
-         <%= render "shared/country_select_options"%>
-       </select>
-      </span>
+      <img src="/assets/world8.png" alt="Which country are we">
+      <%= select_tag "country",
+                     options_for_select(get_countries, flash[:country_code]),
+                     :include_blank=>(t 'form.advanced.shared.country.placeholder'),
+                     :class=>"chzn-select", :tabindex=>1
+      %>
     </div>
 
-    <%= submit_tag((t 'buttons.start'), class: "next_button") %>
-    <a class="skip" href="#">skip this question</a>
+    <%= submit_tag((t 'buttons.start'), class: "next_button selectCountry") %>
+    <a class="skip" href="./houshold">skip this question</a>
 
 <% end %>
 
@@ -25,3 +25,4 @@
     <p>Maecenas elementum tristique nunc sed vehicula. Mauris dignissim erat ut lectus rutrum elementum. Etiam pharetra ac massa sit amet mattis. Nam blandit, nibh sed mattis accumsan, nisi risus vulputate eros, in aliquam leo tellus et est. Vivamus pretium ultrices dui, vitae lobortis tellus malesuada id. Ut quis convallis odio. Duis egestas dolor quis mi tempor laoreet.</p>
   </div>
 </div>
+

@@ -4,27 +4,28 @@
 
 <%= form_tag({controller: "sanitation_basic", action: "report"}, class: "main_content", id: "waterBasicForm") do %>
 
-  <ul class="familyInput choices">
+  <ul class="reliabilityInput choices">
     <li>
       <%= label_tag("reliYes", nil, class: "tickCheckBox") do %>
-        <%= radio_button_tag("r_eliability", 0, false, id: "reliYes") %>
+        <%= radio_button_tag("r_reliability", 0, false, id: "reliYes") %>
         <span><%= t 'form.sanitation_basic.reliability.answers.a0' %></span>
       <% end %>
     </li>
     <li>
-      <%= label_tag("unreliable", nil, class: "tickCheckBox") do %>
-        <%= radio_button_tag("r_eliability", 1, id: "unreliable") %>
+      <%= label_tag("unreliable", nil, class: "tickCheckBox reliability_01") do %>
+        <%= radio_button_tag("r_reliability", 1, id: "unreliable") %>
         <span><%= t 'form.sanitation_basic.reliability.answers.a1' %></span>
       <% end %>
     </li>
     <li>
-      <%= label_tag("relyNot", nil, class: "tickCheckBox") do %>
-        <%= radio_button_tag("r_eliability", 2, id: "relyNot") %>
+      <%= label_tag("relyNot", nil, class: "tickCheckBox reliability_02") do %>
+        <%= radio_button_tag("r_reliability", 2, id: "relyNot") %>
         <span><%= t 'form.sanitation_basic.reliability.answers.a2' %></span>
       <% end %>
     </li>
   </ul>
 
+  <input type="hidden" name="reliability"/>
   <%= submit_tag("Save", class: "next_button") %>
     <a class="skip" href="#"><%= t 'form.skip' %></a>
 <% end %>

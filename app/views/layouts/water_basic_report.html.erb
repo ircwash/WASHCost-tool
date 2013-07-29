@@ -8,7 +8,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>WashCostApp - Start</title>
+  <title>WASHCost - Basic Report -Water</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -20,23 +20,7 @@
 <body>
 <div id="outer_container_report" class="bgGradient">
 
-  <div class="header">
-    <a href="#" class="logo">
-      <img src="/assets/logoWashCost8.png" alt="WASHCost" />
-    </a>
-    <ul>
-      <li><a href="#">about</a></li>
-      <li><a href="#">contact</a></li>
-      <li>
-        <ul class="languageSwitcher">
-          <li><a class="active" href="#">English</a></li>
-          <li><a href="#">French</a></li>
-        </ul>
-      </li>
-      <li><a class="sign" href="#">Sign in</a></li>
-    </ul>
-  </div>
-
+  <%= render "shared/header" %>
 
   <div class="report">
     <h1>Basic <span>Water | Final report</span></h1>
@@ -45,8 +29,15 @@
       <div class="sectionWrapper">
         <dl class="costService">
             <dt>Total Cost</dt>
-            <dd class="indexStar_<%= flash[:results][:cost_rating] %>"><span><%= flash[:results][:cost_rating_label].html_safe %></span></dd>
-        </dl>
+
+            <div class="summary_cost">
+              $<%= number_with_delimiter(flash[:results][:total], :delimiter=>',')%>
+            </div>
+            <div class="bench_icon_<%=flash[:results][:cost_rating]%>">
+                <div class="benchmark_text"><%= flash[:results][:cost_rating_label]%></div>
+            </div>
+
+          </dl>
         <dl class="levelService">
             <dt>Level of Service</dt>
             <dd class="levelStar_<%= flash[:results][:rating] %>"><span>Sub-standard</span></dd>
@@ -69,7 +60,7 @@
             <dt>Country</dt>
             <dd class="countryResult">
               <img src="/assets/world8.png" alt="world country" />
-              <span><%= flash[:results][:country].name %></span>
+              <span><%= flash[:results][:country] %></span>
             </dd>
           </dl>
           <a href="./country"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
@@ -121,7 +112,7 @@
         <div>
           <dl>
             <dt>Total</dt>
-            <dd class="total">$<%= flash[:results][:total]%></dd>
+            <dd class="total">$<%= number_with_delimiter(flash[:results][:total], :delimiter=>',')%></dd>
           </dl>
         </div>
       </div>
@@ -147,7 +138,7 @@
             <span class="value"><%= flash[:results][:quality]%></span>
             <a href="./quality"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
           </li>
-          <li class="rowQQR reliability result_0<%= flash[:results][:reliability_index]%>"">
+          <li class="rowQQR reliability result_0<%= flash[:results][:reliability_index]%>">
             <span class="label quality_0<%= flash[:results][:reliability_index]%>">Reliability</span>
             <span class="value"><%= flash[:results][:reliability]%></span>
             <a href="./reliability"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
@@ -165,7 +156,7 @@
       <div class="progressBar">
         <div class="outerBar">
           <div class="innerBar" style="width:30%"></div>
-          <p><%= session[:pages_complete] %>% <%= t 'footer.complete' %></p>
+          <p><%= flash[:percent_complete] %>% <%= t 'footer.complete' %></p>
         </div>
       </div>
     </div>

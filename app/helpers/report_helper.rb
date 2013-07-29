@@ -27,12 +27,16 @@ module ReportHelper
 
     rating= get_rating(form[:water],form[:capital],form[:recurrent], form[:reliability])
     service_level= get_level_of_service(form[:water],form[:capital], form[:quantity], form[:time])
+
+    #
+    # (annual income/person) / ((total cost/person) / 10)
+
     cost_rating= get_cost_rating(form[:water], form[:capital])
     cost_rating_label= get_cost_rating_label(cost_rating)
 
     results = {
       :cost_rating=> cost_rating,
-      :cost_rating_label=>cost_rating_label,
+      :cost_rating_label=> cost_rating_label,
       :service_level => service_level,
       :rating => rating,
       :country => get_country(form[:country]),
@@ -40,7 +44,7 @@ module ReportHelper
       :population => get_population(form[:population]),
       :capital => get_capital(form[:capital]),
       :recurrent => get_recurrent(form[:recurrent]),
-      :total => get_total(form[:capital], form[:recurrent]),
+      :total => get_total(form[:capital], form[:recurrent], form[:population]),
       :time => get_time(form[:time]),
       :quantity => get_quantity(form[:quantity]),
       :quantity_index => get_index(form[:quantity]),
@@ -54,12 +58,16 @@ module ReportHelper
 
   end
 
+
   def get_country(country_code)
 
-    country= Country.new(country_code)
-    if(country.data == nil)
-      country = nil
-    end
+    country= 'Not Set'
+    country_object= Country.new(country_code)
+      if(country_object.data == nil)
+        country = nil
+      else
+        country= country_object.name
+      end
 
     return country
   end
@@ -87,8 +95,12 @@ module ReportHelper
     return recurrent
   end
 
-  def get_total(capital, recurrent)
-    return capital * recurrent
+  def get_total(capital, recurrent, population)
+
+    total_cost = capital + (recurrent * 10)
+    total_cost_for_population = total_cost * population
+    return total_cost_for_population
+
   end
 
   def get_population(index)
@@ -179,7 +191,7 @@ module ReportHelper
 
   def get_cost_rating_label(rating)
 
-    label=  ''
+    label=  t 'report.benchmark_below'
 
     if rating==0
       label= (t 'report.benchmark_below')
@@ -248,6 +260,7 @@ module ReportHelper
     level_of_service= t ('report.water_basic.a'+concatenation)
 
     return level_of_service
+
   end
 
   @@capEx_rating_code = {

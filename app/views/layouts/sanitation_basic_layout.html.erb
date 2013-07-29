@@ -39,7 +39,7 @@
     <div class="progressBar">
       <div class="outerBar">
         <div class="innerBar" style="width:30%"></div>
-        <p>30% <%= t 'footer.complete' %></p>
+        <p><%= flash[:percent_complete] %>% <%= t 'footer.complete' %></p>
       </div>
     </div>
   </div>

@@ -2,19 +2,31 @@ module WaterBasicHelper
 
   include ReportHelper
 
-  def get_class_for_section(section)
+  def get_class_for_section(form, section)
 
     className= ''
 
     if params[:action].to_s === section.to_s
       className= 'active'
-    elsif session[:water_basic_form].present? && session[:water_basic_form].has_key?(section)
+    elsif session[form].present? && session[form].has_key?(section)
       className= 'done'
     end
 
-
     return className
+  end
 
+  def get_section_left
+    left= ''
+
+    if is_active_category?('context_class')
+      left= '0px'
+    elsif is_active_category?('cost_class')
+      left= '-372px'
+    else
+      left= '-785px'
+    end
+
+    return left
   end
 
   def set_categories_for_navigation

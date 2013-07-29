@@ -4,15 +4,19 @@ module SanitationReportHelper
 
     form= get_session_form
 
-    #sustainability= get_general_sustainability(form[:water],form[:capital],form[:recurrent], form[:reliability])
-    #service_level= get_level_of_service(form[:water],form[:capital], form[:quantity], form[:time])
+    cost_rating= get_cost_rating(form[:water], form[:capital])
+    cost_rating_label= get_cost_rating_label(cost_rating)
 
     results = {
+        :cost_rating=> cost_rating,
+        :cost_rating_label=> cost_rating_label,
         :country => get_country(form[:country]),
         :household => get_household(form[:household]),
+        :latrine_index => form[:latrine],
         :latrine => get_latrine(form[:latrine]),
         :capital => get_capital(form[:capital]),
         :recurrent => get_recurrent(form[:recurrent]),
+        :total => get_total(form[:capital], form[:recurrent], 500),
         :providing => get_providing(form[:providing]),
         :usage => get_usage(form[:usage]),
         :impermeability => get_impermeability(form[:impermeability]),
@@ -151,4 +155,61 @@ module SanitationReportHelper
       { :value => (I18n.t 'form.sanitation_basic.reliability.answers.a1')} ,
       { :value => (I18n.t 'form.sanitation_basic.reliability.answers.a2')}
   ]
+
+  def get_total(capital, recurrent, population)
+
+    total_cost = capital + (recurrent * 10)
+    total_cost_for_population = total_cost * population
+    return total_cost_for_population
+
+  end
+
+
+  def get_cost_rating(water_index, capEx)
+    benchmark= 0
+
+    if water_index && capEx
+      if water_index==0
+
+        if capEx < 20
+          0
+        elsif capEx > 61
+          1
+        else
+          2
+        end
+
+      else
+
+        if capEx < 30
+          0
+        elsif capEx > 131
+          1
+        else
+          2
+        end
+
+      end
+    end
+
+    return benchmark
+  end
+
+  def get_cost_rating_label(rating)
+
+    label=  t 'report.benchmark_below'
+
+    if rating==0
+      label= (t 'report.benchmark_below')
+    elsif rating==1
+      label= (t 'report.benchmark_within')
+    elsif rating==2
+      label= (t 'report.benchmark_above')
+    else
+      label= 'Please Enter a <a href="./water">waterIndex</a> and <a href="./capital">Capital Expenditure<a/>'
+    end
+
+    return label
+
+  end
 end

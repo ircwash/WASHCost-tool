@@ -12,11 +12,13 @@ en:
       sign_in: "Sign In"
     main:
       content:
-        title: "Content"
+        title: "Context"
         items:
           country: "Country"
           water: "Water"
           population: "Population"
+          household: "Household"
+          latrine: "Latrine"
       cost:
         title: "Cost Data"
         items:
@@ -28,6 +30,10 @@ en:
           time: "Time"
           quantity: "Quantity"
           quality: "Quality"
+          providing: "Providing"
+          impermeability: "Impermeability"
+          environment: "Environment"
+          usage: "Usage"
           reliability: "Reliability"
     advanced:
       context: "Context"
@@ -40,6 +46,7 @@ en:
     next: "Next"
     start: "OK! Start using the calculator"
     save: "Save"
+    view_report: "View Report"
 
   inputs:
     choose_a_country: "Choose a country"
@@ -51,9 +58,9 @@ en:
       country:
         question: "In which country does your programme (intervention) take place?"
       capital:
-        question: "What is the capital expenditure to set up the water service per person?"
+        question: "How much has been/will be spent constructing the water service (per person)?"
       recurrent:
-        question: "What is the recurrent expenditure to operate, maintain and support service delivery per person per year?"
+        question: "How much is being spent/will be spent to operate, maintain and support the delivery of water services (per person per year)?"
         value_label: "Per person<br/> per year"
       values:
         v0: "No service"
@@ -65,11 +72,11 @@ en:
       water:
         question: "What is the main water source use to provide water?"
         answers:
-          a0: "Borehole and Handpump"
-          a1: "Mechanised Borehole"
-          a2: "Single-Town Scheme"
-          a3: "Multi-Town Scheme"
-          a4: "Mixed-Pipe Supply"
+          a0: "Borehole & handpump"
+          a1: "Mechanised borehole"
+          a2: "Single-town scheme"
+          a3: "Multi-town scheme"
+          a4: "Mixed-pipe supply"
       population:
         question: "How many people live in the area of intervention?"
         value_label: "People"
@@ -105,14 +112,14 @@ en:
         question: "How reliable is the service? How many days per year is the water system not working?"
         answers:
           a0: "Works all the time"
-          a1: "Works most of the days, but not > 12 days"
+          a1: "Works most of the time"
           a2: "Many break-downs slow repairs"
           a3: "Not working"
     sanitation_basic:
       household:
         question: "What is the typical household size?"
       latrine:
-        question: "What is the main improved water source used to provide water?"
+        question: "What type of latrine is being used?"
         answers:
           a0: "Traditional pit latrine"
           a1: "Trad. improved pit latrine"
@@ -129,11 +136,11 @@ en:
         question: "Does the latrine have an impermeable slab?"
         answers:
           a0: "Impermeable slab"
-          a1: "Not impermeable slab"
+          a1: "No impermeable slab"
       environment:
         question: "What is the environmental impact of the delivery model?"
         answers:
-          a0: "Non problematic +safe disposal +re-usability"
+          a0: "Non problematic + safe disposal + re-use of bi-products "
           a1: "Non problematic +safe disposal"
           a2: "Significant pollution"
       usage:
@@ -143,19 +150,17 @@ en:
           a1: "Some"
           a2: "None"
       reliability:
-        question: "Is the latrine cleaned and emptied?"
+        question: "Is the latrine cleaned and emptied when required?"
         answers:
           a0: "Yes"
-          a1: "Unreliable"
-          a2: "Not"
+          a1: "Not consistently"
+          a2: "No"
     advanced:
       shared:
         location:
           question: "Location"
-          info: "Info popup content for location"
         region:
           placeholder: "Region"
-          info: "Info popup content for region"
         city:
           placeholder: "City, town, community or district"
         area_type:
@@ -170,9 +175,9 @@ en:
           question: "What is the population density of the service area?"
           placeholder: "Select a density"
           answers:
-            a0: "400+ pp/km2 (urban)"
-            a1: "150-399 pp/km2 (intermediate)"
-            a2: ">150 pp/km2 (rural)"
+            a0: "300+ pp/km2"
+            a1: "150-299 pp/km2"
+            a2: ">150 pp/km2"
             a3: "Don't know"
         existing:
           question: "Does this service exist already or is it planned?"
@@ -182,9 +187,9 @@ en:
         service_area:
           question: "What is the population density of the service area?"
           answers:
-            a0: "400+ pp/km2 (urban)"
-            a1: "150-399 pp/km2 (intermediate)"
-            a2: ">150 pp/km2 (rural)"
+            a0: "300+ pp/km2"
+            a1: "150-299 pp/km2"
+            a2: ">150 pp/km2"
             a3: "Don't know"
         management:
           shared:
@@ -270,7 +275,7 @@ en:
           question: "if drilled well with non-mechanised pump. Define pump:"
           answers:
             a0: "rope pump"
-            a1: "hand pump (I could put more detail on the hand pump)"
+            a1: "hand pump"
         water_storage:
           question: "How is the water stored?"
           answers:
@@ -334,7 +339,7 @@ en:
           question: "Water seal"
         pit_count:
           question: "Number of pits"
-          placheholder: "Numeric"
+          numeric: "Numeric"
         pit_location:
           question: "Location of pit(s)"
           answers:
@@ -368,6 +373,7 @@ en:
 
 
   report:
+    complete: "Report Complete"
     benchmark_below: "Below Benchmarks"
     benchmark_with: "Within the Benchmarks"
     benchmark_above: "above the Benchmarks"
@@ -474,3 +480,4 @@ en:
     footer_layout: "Basic"
     final_report: " | Final Reports"
     complete: "Complete"
+

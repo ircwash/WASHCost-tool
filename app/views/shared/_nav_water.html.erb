@@ -9,7 +9,7 @@
         <a href="#" class="<%= is_active_category?('context_class') %>"><%= t 'nav.main.content.title' %></a>
         <ul>
           <% content_nav.each do |key, value| %>
-              <% active = get_class_for_section(key) %>
+              <% active = get_class_for_section(:water_basic_form, key) %>
               <li>
                 <a class="<%= active %>" href="/water_basic/<%= key %>">
                   <%= content_nav[key] %>
@@ -23,7 +23,7 @@
         <a href="#" class="<%= is_active_category?('cost_class') %>"><%= t 'nav.main.cost.title' %></a>
         <ul>
           <% cost_nav.each do |key, value| %>
-              <% active = get_class_for_section(key) %>
+              <% active = get_class_for_section(:water_basic_form, key) %>
               <li>
                 <a class="<%= active %>" href="<%= key %>">
                   <%= cost_nav[key] %>
@@ -37,7 +37,7 @@
         <a href="#" class="<%= is_active_category?('cost_class') %>"><%= t 'nav.main.service.title' %></a>
         <ul>
           <% service_nav.each do |key, value| %>
-              <% active = get_class_for_section(key) %>
+              <% active = get_class_for_section(:water_basic_form, key) %>
               <li>
                 <a class="<%= active %>" href="<%= key %>">
                   <%= service_nav[key] %>

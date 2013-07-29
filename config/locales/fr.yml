@@ -1,7 +1,9 @@
 
 
-fr:
-
+ef:
+  global:
+    yes: "f-Yes"
+    no: "f-No"
   nav:
     utility:
       about: "f-About"
@@ -10,7 +12,7 @@ fr:
       sign_in: "f-Sign In"
     main:
       content:
-        title: "f-Content"
+        title: "f-Context"
         items:
           country: "f-Country"
           water: "f-Water"
@@ -27,11 +29,18 @@ fr:
           quantity: "f-Quantity"
           quality: "f-Quality"
           reliability: "f-Reliability"
+    advanced:
+      context: "f-Context"
+      managing: "f-Managing"
+      technology: "f-Technology"
+      cost: "f-Cost"
+      serivce: "f-Service"
 
   buttons:
     next: "f-Next"
     start: "f-OK! Start using the calculator"
     save: "f-Save"
+    view_report: "f-View Report"
 
   inputs:
     choose_a_country: "f-Choose a country"
@@ -43,9 +52,9 @@ fr:
       country:
         question: "f-In which country does your programme (intervention) take place?"
       capital:
-        question: "f-What is the capital expenditure to set up the water service per person?"
+        question: "f-How much has been/will be spent constructing the water service (per person)?"
       recurrent:
-        question: "f-What is the recurrent expenditure to operate, maintain and support service delivery per person per year?"
+        question: "f-How much is being spent/will be spent to operate, maintain and support the delivery of water services (per person per year)?"
         value_label: "f-Per person<br/> per year"
       values:
         v0: "f-No service"
@@ -53,32 +62,22 @@ fr:
         v2: "f-Basic service"
         v3: "f-High service"
       select_an_option: "f-Select an Option"
-      responsibility:
-        answers:
-          a0: "f-External donor"
-          a1: "f-community-based"
-          a2: "f-organisation"
-          a3: "f-public sector (local)"
-          a4: "f-public sector (national)"
-          a5: "f-utility"
-          a6: "f-household"
-          a7: "f-Don&#39;t know"
     water_basic:
       water:
         question: "f-What is the main water source use to provide water?"
         answers:
-          a0: "f-Borehole & Handpump"
-          a1: "f-Mechanised "
-          a2: "f-Single-Town"
-          a3: "f-Multi-Town1"
-          a4: "f-Multi-Town2"
+          a0: "f-Borehole & handpump"
+          a1: "f-Mechanised borehole"
+          a2: "f-Single-town scheme"
+          a3: "f-Multi-town scheme"
+          a4: "f-Mixed-pipe supply"
       population:
         question: "f-How many people live in the area of intervention?"
         value_label: "f-People"
         answers:
           a0: "f-Less than 500"
-          a1: "f-Between 501 and 5,000"
-          a2: "f-Between 5,001 and 15,000"
+          a1: "f-501 - 5,000"
+          a2: "f-5,001 - 15,000"
           a3: "f-More than 15,000"
       time:
         question: "f-How long does water collection take per day from the formal sources?"
@@ -89,13 +88,13 @@ fr:
           a2: "f-Between 30 and 60"
           a3: "f-More than 60"
       quantity:
-        question: "f-What is the actual use of water from formal sources? (Litres per person per day)"
-        value_label: "f-Per person<br/> per day"
+        question: "f-What is the actual use of water from formal sources?"
+        value_label: "f-(Litres per person per day)"
         answers:
-          a0: "f-Less than 5 liters"
-          a1: "f-Between 5 and 20 liters"
-          a2: "f-Between 21-60 liters"
-          a3: "f-More than 60 liters"
+          a0: "f-Less than 5L"
+          a1: "f-5 - 19L"
+          a2: "f-20-60L"
+          a3: "f-More than 60L"
       quality:
         question: "f-Is water quality testing done?"
         answers:
@@ -107,14 +106,14 @@ fr:
         question: "f-How reliable is the service? How many days per year is the water system not working?"
         answers:
           a0: "f-Works all the time"
-          a1: "f-Works most of the days, but not &gt; 12 days"
+          a1: "f-Works most of the time"
           a2: "f-Many break-downs slow repairs"
           a3: "f-Not working"
     sanitation_basic:
       household:
         question: "f-What is the typical household size?"
       latrine:
-        question: "f-What is the main improved water source used to provide water?"
+        question: "f-What type of latrine is being used?"
         answers:
           a0: "f-Traditional pit latrine"
           a1: "f-Trad. improved pit latrine"
@@ -131,11 +130,11 @@ fr:
         question: "f-Does the latrine have an impermeable slab?"
         answers:
           a0: "f-Impermeable slab"
-          a1: "f-Not impermeable slab"
+          a1: "f-No impermeable slab"
       environment:
         question: "f-What is the environmental impact of the delivery model?"
         answers:
-          a0: "f-Non problematic +safe disposal +re-usability"
+          a0: "f-Non problematic + safe disposal + re-use of bi-products "
           a1: "f-Non problematic +safe disposal"
           a2: "f-Significant pollution"
       usage:
@@ -145,104 +144,233 @@ fr:
           a1: "f-Some"
           a2: "f-None"
       reliability:
-        question: "f-Is the latrine cleaned and emptied?"
+        question: "f-Is the latrine cleaned and emptied when required?"
         answers:
           a0: "f-Yes"
-          a1: "f-Unreliable"
-          a2: "f-Not"
-    water_advanced:
-      country:
-        question: "f-Country?"
-      area_type:
-        question: "f-Area Type"
-        answers:
-          a0: "f-rural"
-          a1: "f-small town"
-          a2: "f-peri-urban"
-          a3: "f-urban"
-      existing:
-        question: "f-Does this service exist already or is it planned?"
-        answer:
-          a0: "f-Existing"
-          a1: "f-Planned"
-      service_area:
-        question: "f-What is the population density of the service area?"
-        answers:
-          a0: "f-400+ pp/km2 (urban)"
-          a1: "f-150-399 pp/km2 (intermediate)"
-          a2: "f-&lt;150 pp/km2 (rural)"
-          a1: "f-Don&#39;t know"
-      how_managed:
-        question: "f-Which of these options best describe how the water service is managed?"
-        answers:
-          a0: "f-community-based management"
-          a1: "f-public sector (local)"
-          a2: "f-public sector (national)"
-          a3: "f-private sector"
-          a4: "f-utility management"
-          a5: "f-household management"
-          a6: "f-other (define)"
-      who_finances:
-        question: "f-Who finances the construction of the water system?"
-      who_owns:
-        question: "f-Who owns (legally?) the water infrastructure?"
-      who_safeguards:
-        question: "f-Who safeguards the operation and maintenance of the infrastructure?"
-      who_enforces:
-        question: "f-Who has/will have responsibility for checking and enforcing the standard of water services?"
-      who_repairs:
-        question: "f-Who covers the cost of rehabilitation when larger repairs are needed?"
-      annual_income:
-        question: "f-What is the average annual household income in the service area?"
-      supply_system:
-        question: "f-What supply system(s) are used to deliver water services?*"
-        answers:
-          a0: "f-borehole and handpump"
-          a1: "f-mechanised borehole"
-          a2: "f-single town system"
-          a3: "f-multi-town system"
-          a4: "f-small scale rain fed systems"
-          a5: "f-protected well"
-          a6: "f-rural gravity fed system"
-      inauguration:
-        question: "f-In what year was the supply system inaugurated?**"
-      water_sources:
-        question: "f-Water sources?"
-        answers:
-          a0: "f-ground water"
-          a1: "f-surface water"
-          a2: "f-rainwater"
-      surface_water:
-        question: "f-If surface water. Define:"
-        answers:
-          a0: "f-rainwater harvesting"
-          a1: "f-catchment storage dam"
-          a2: "f-sub-surface harvesting (sump)"
-          a3:  "river"
-      ground_water:
-        question: "f-if ground water. Define:"
-        answers:
-          a0: "f-unprotected dug well"
-          a1: "f-protected dug well"
-          a2: "f-drilled well with mechanised pump"
-          a3: "f-drilled well with non mechanised pump"
-      drilled_well:
-        question: "f-if drilled well with non-mechanised pump. Define pump:"
-        answers:
-          a0: "f-rope pump"
-          a1: "f-hand pump (I could put more detail on the hand pump)"
-      water_storage:
-        question: "f-How is the water stored?"
-        answers:
-          a0: "f-no storage"
-          a1: "f-reinforced concrete reservoir"
-          a2: "f-elevated steel reservoir"
-          a3: "f-cistern"
-          a4: "f-household storage"
-          a5: "f-ferrocement tank"
+          a1: "f-Not consistently"
+          a2: "f-No"
+    advanced:
+      shared:
+        location:
+          question: "f-Location"
+        region:
+          placeholder: "f-Region"
+        city:
+          placeholder: "f-City, town, community or district"
+        area_type:
+          question: "f-Area Type"
+          placeholder: "f-Select an area type"
+          answers:
+            a0: "f-rural"
+            a1: "f-small town"
+            a2: "f-peri-urban"
+            a3: "f-urban"
+        density:
+          question: "f-What is the population density of the service area?"
+          placeholder: "f-Select a density"
+          answers:
+            a0: "f-300+ pp/km2"
+            a1: "f-150-299 pp/km2"
+            a2: "f->150 pp/km2"
+            a3: "f-Don't know"
+        existing:
+          question: "f-Does this service exist already or is it planned?"
+          answer:
+            a0: "f-Existing"
+            a1: "f-Planned"
+        service_area:
+          question: "f-What is the population density of the service area?"
+          answers:
+            a0: "f-300+ pp/km2"
+            a1: "f-150-299 pp/km2"
+            a2: "f->150 pp/km2"
+            a3: "f-Don't know"
+        management:
+          shared:
+            answers:
+              a0: "f-External donor"
+              a1: "f-community-based"
+              a2: "f-organisation"
+              a3: "f-public sector (local)"
+              a4: "f-public sector (national)"
+              a5: "f-utility"
+              a6: "f-household"
+              a7: "f-Don't know"
+          how_managed:
+            question: "f-Which of these options best describe how the water service is managed?"
+          who_finances:
+            question: "f-Who finances the construction of the water system?"
+          who_owns:
+            question: "f-Who owns (legally?) the water infrastructure?"
+          who_safeguards:
+            question: "f-Who safeguards the operation and maintenance of the infrastructure?"
+          who_enforces:
+            question: "f-Who has/will have responsibility for checking and enforcing the standard of water services?"
+          who_repairs:
+            question: "f-Who covers the cost of rehabilitation when larger repairs are needed?"
+        annual_income:
+          question: "f-What is the average annual household income in the service area?"
+          placeholder: "f-Numeric US$"
+        cost:
+          shared:
+            answers:
+              a0: "f-Don't know"
+              a1: "f-Not applicable"
+            placeholder: "f-Numeric (US$ per person)"
+          hardware:
+            question: "f-What is the total capital expenditure for hardware?"
+          software:
+            question: "f-What is the total capital expenditure for software?"
+          maintenance:
+            question: "f-What is the minor operation and maintenance expenditure?"
+          direct:
+            question: "f-What is spent on expenditure on direct support?"
+          indirect:
+            question: "f-What is the expenditure on indirect support?"
+          loan:
+           question: "f-What is the cost servicing any loans taken to fund the service?"
+          payback:
+            question: "f-What is the payback period on this loan?"
+            placeholder: "f-Years"
+      water:
+        supply_system:
+          question: "f-What supply system(s) are used to deliver water services?*"
+          answers:
+            a0: "f-borehole and handpump"
+            a1: "f-mechanised borehole"
+            a2: "f-single town system"
+            a3: "f-multi-town system"
+            a4: "f-small scale rain fed systems"
+            a5: "f-protected well"
+            a6: "f-rural gravity fed system"
+        inauguration:
+          question: "f-In what year was the supply system inaugurated?**"
+        water_sources:
+          question: "f-Water sources?"
+          answers:
+            a0: "f-ground water"
+            a1: "f-surface water"
+            a2: "f-rainwater"
+        surface_water:
+          question: "f-If surface water. Define:"
+          answers:
+            a0: "f-rainwater harvesting"
+            a1: "f-catchment storage dam"
+            a2: "f-sub-surface harvesting (sump)"
+            a3:  "river"
+        ground_water:
+          question: "f-if ground water. Define:"
+          answers:
+            a0: "f-unprotected dug well"
+            a1: "f-protected dug well"
+            a2: "f-drilled well with mechanised pump"
+            a3: "f-drilled well with non mechanised pump"
+        drilled_well:
+          question: "f-if drilled well with non-mechanised pump. Define pump:"
+          answers:
+            a0: "f-rope pump"
+            a1: "f-hand pump"
+        water_storage:
+          question: "f-How is the water stored?"
+          answers:
+            a0: "f-no storage"
+            a1: "f-reinforced concrete reservoir"
+            a2: "f-elevated steel reservoir"
+            a3: "f-cistern"
+            a4: "f-household storage"
+            a5: "f-ferrocement tank"
+        treatment:
+          question: "f-How is water treated?"
+          answers:
+            a0: "f-no treatment"
+            a1: "f-boiling"
+            a2: "f-household filter"
+            a3: "f-household chlorination"
+            a4: "f-chlorination in piped system"
+            a5: "f-water treatment works"
+        power_supply:
+          question: "f-Main power supply?"
+          answers:
+            a0: "f-no power"
+            a1: "f-mains electricity"
+            a2: "f-windmills"
+            a3: "f-solar power systems"
+            a4: "f-generator"
+        transmission:
+          question: "f-Length of transmission line (Km)?"
+        piped:
+          question: "f-For piped supplies: Percentage population served by household connections and/or stand post?"
+      sanitation:
+        latrine_type:
+          question: "f-Name of latrine"
+          answers:
+            a0: "f-traditional pit latrine"
+            a1: "f-traditional improved pit latrine"
+            a2: "f-ventilated improved pit latrine"
+            a3: "f-Kumasi ventilated improved pit latrine"
+            a4: "f-pour flush latrine (single pit)"
+            a5: "f-pour flush latrine (double pit)"
+            a6: "f-other (define)"
+        slab:
+          question: "f-Type of slab"
+          answers:
+            a0: "f-logs"
+            a1: "f-wood or equivalent"
+            a2: "f-compacted mud"
+            a3: "f-SanPlat"
+            a4: "f-concrete slab"
+        ventilation:
+          question: "f-Ventilation pipe"
+        lining:
+          question: "f-Pit Lining"
+          answers:
+            a0: "f-no lining"
+            a1: "f-concrete rings"
+            a2: "f-bricks"
+            a3: "f-cement"
+            a4: "f-other"
+        seal:
+          question: "f-Water seal"
+        pit_count:
+          question: "f-Number of pits"
+          numeric: "f-Numeric"
+        pit_location:
+          question: "f-Location of pit(s)"
+          answers:
+            a0: "f-directly below"
+            a1: "f-off-set"
+            a2: "f-NA"
+        superstructure:
+          question: "f-Superstructure"
+          answers:
+            a0: "f-bamboo/reed"
+            a1: "f-corrugated iron"
+            a2: "f-concrete"
+            a3: "f-brick"
+        septic_tank:
+          question: "f-Septic tank"
+        connected:
+          question: "f-Connected to sewerage system"
+        urine_diversion:
+          question: "f-Urine diversion system"
+        sludge_treatment:
+          question: "f-Sludge treatment"
+          answers:
+            a0: "f-disposal to water"
+            a1: "f-disposal to land"
+            a2: "f-composting, other"
+        service_area:
+          question: "f-How many people in the service area are targeted by the sanitation service"
+        latrine_count:
+          question: "f-How many latrines are there in the service area?"
+
 
 
   report:
+    complete: "f-Report Complete"
+    benchmark_below: "f-Below Benchmarks"
+    benchmark_with: "f-Within the Benchmarks"
+    benchmark_above: "f-above the Benchmarks"
     water_basic:
       a111:	"This service is not delivering a desired minimum quantity perhaps due to low capital expenditure and the sources are not within 60 minutes roundtrip from the household. Or factors other than costs are influencing service delivery"
       a112:	"This service is not delivering a desired minimum quantity perhaps due to low capital expenditure and the sources are between 30 and 60 minutes roundtrip from the household. Or factors other than costs are influencing service delivery"
@@ -292,7 +420,58 @@ fr:
       a342:	"This service is delivering more than a basic quantity - however a lack of sufficient formal sources means people may have to travel, or queue, between 30 and 60 minutes round trip from the household. Capital expenditure values are higher than found WASHCost ranges so the context may require greater capital investment to improve access."
       a343:	"The capital expenditure entered is higher than the ranges found by WASHCost and this service is delivering more than a basic quantity and formal sources are within 30 minutes round trip from the household.  So the context may require more expensive infrastructure, or cost efficiency can be improved.  "
       a344:	"The capital expenditure entered is higher than the ranges found by WASHCost and this service is delivering more than a basic quantity and formal sources are within 10 minutes round trip from the household.  A very good level of service is being achieved, and as a consequence it may require more expensive infrastructure. Another possibility may be that cost efficiency can be improved."
+    water_advanced:
+      general:
+        title: "f-GENERAL FEEDBACK"
+        cost: "f-Total Cost"
+        service: "f-Level of service"
+        read_full: "f-Read Full Review"
+      context:
+        title: "f-CONTEXT"
+        type: "f-Calculation Type"
+        country: "f-Country"
+        area_type: "f-Area Type"
+      management:
+        title: "f-MANAGING"
+        how_managed: "f-Service Delivery Option"
+        who_finances:   "Finance"
+        who_owns: "f-Owned"
+        who_safeguards:  "Maintenance"
+        who_enforces:   "Responsibility"
+        who_repairs: "f-Rehabilitation"
+      technology:
+        title: "f-TECHNOLOGY"
+        supply_system: "f-Supply System"
+        units: "f-Units"
+        people_served: "f-People Served by System"
+        inauguration: "f-In "
+        water_sources: "f-Water Source"
+        water_stored: "f-Water Stored"
+        treatment: "f-Water Treated"
+        power_supply: "f-Main Power Supply"
+        transmission: "f-Length of Transmission Line"
+        piped: "f-Population (For Piped Only)"
+      cost:
+        title: "f-COST DATA"
+        total: "f-Total Support"
+        maintenance: "f-Maintenance"
+        support: "f-Support"
+        hardware: "f-Hardware"
+        software: "f-Software"
+        minor: "f-Minor"
+        capital: "f-Capital"
+        direct: "f-Direct"
+        indirect: "f-Indirect"
+        loan_yearly:
+          title: "f-Cost of Loan"
+          unit: "f-Per Year"
+        payback:
+          title: "f-Payback period on this loan"
+          unit: "f-Years"
+
 
   footer:
-    final_report: "f-Final Reports"
+    footer_layout: "f-Basic"
+    final_report: "f- | Final Reports"
     complete: "f-Complete"
+
