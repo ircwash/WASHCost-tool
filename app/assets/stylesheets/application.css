@@ -482,6 +482,7 @@ a.sbSelector:hover {
 }
 .chzn-container .chzn-results {
     z-index: 100;
+    padding-top: 5px;
     padding-bottom: 10px;
 }
 .chzn-results,
@@ -535,7 +536,23 @@ a.sbSelector:hover {
 }
 .chzn-container .chzn-results li.active-result {
     padding: 15px 20px;
-    width: 86%;
+    width: 88%;
+}
+.chzn-container-single .chzn-search {
+    display: none;
+}
+.ui-state-default, 
+.ui-widget-content .ui-state-default, 
+.ui-widget-header .ui-state-default {
+    border: none;
+    margin-top: -15px;
+    width: 40px;
+    height: 42px;
+    background: transparent url('/assets/sliderScroll24.png') no-repeat 0 0;
+}
+.ui-slider {
+    width: 525px;
+    height: 2px;
 }
 /* q1Country */
     .choices {
@@ -1205,9 +1222,6 @@ a.sbSelector:hover {
     }
     .reliableInput li label span {
         top: 75px;
-    }
-    .ui-slider {
-        width: 525px;
     }
 /*
 *
