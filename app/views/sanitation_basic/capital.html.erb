@@ -1,12 +1,27 @@
 <% @title = "4 of 9 (Capital Expenditure)" %>
 
 <h1><%= t 'form.shared.capital.question' %></h1>
-<%= form_tag({controller: "sanitation_basic", action: "capital"}, class: "main_content", id: "waterBasicForm") do %>
+<%= form_tag({controller: "sanitation_basic", action: "impermeability"}, class: "main_content", id: "waterBasicForm") do %>
 
-  <div class="choices">
+<!--   <div class="choices">
       <div id="capitalValue" class="valueOutput">30</div>
       <div id="capitalSlider"></div>
-  </div>
+  </div> -->
+
+  <ul class="capitalInput">
+    <li>
+      <%= label_tag("capitalYes", nil, class: "tickCheckBox") do %>
+        <%= radio_button_tag("r_latrine", 0, false, id: "capitalYes") %>
+        <span><%= t 'form.shared.capital.answers.a0' %></span>
+      <% end %>
+    </li>
+    <li>
+      <%= label_tag("capitalNo", nil, class: "tickCheckBox capital_01") do %>
+        <%= radio_button_tag("r_latrine", 1, id: "capitalNo") %>
+        <span><%= t 'fform.shared.capital.answers.a0' %></span>
+      <% end %>
+    </li>
+  </ul>
 
   <input type="hidden" name="capital"/>
   <%= submit_tag("Next", class: "next_button") %>

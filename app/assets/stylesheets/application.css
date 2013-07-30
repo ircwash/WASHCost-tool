@@ -1198,11 +1198,10 @@ a.sbSelector:hover {
     .choices .valueOutput {
         margin-bottom: 40px;
     }
-
     .latrineInput {
         width: 865px;
         overflow: hidden;
-        margin: 0 auto 50px;
+        margin: -115px auto 75px;
     }
     .latrineInput li {
         width: 140px;
@@ -1250,6 +1249,37 @@ a.sbSelector:hover {
     .latrineInput li label span {
         width: 75%;
         left: 8%;
+    }
+    .latrineInput li label.ticked span {
+        color: #fff;
+    }
+    .capitalInput {
+        overflow: hidden;
+        width: 470px;
+        margin: 0 auto;
+    }
+    .capitalInput li {
+        width: 232px;
+    }
+    .capitalInput li label {
+        height: 165px;
+        background: transparent url('/assets/spriteQ6basicProviding24.png') no-repeat 1px -133px;
+    }
+    .capitalInput li label.ticked {
+        background-position: 0 0;
+    }
+    .capitalInput .capital_01 {
+        background-position: -264px -133px
+    }
+    .capitalInput .capital_01.ticked {
+        background-position: -265px 0;
+    }
+    .capitalInput li:last-child {
+        margin-right: 0;
+    }
+    .capitalInput li label.ticked span {
+        display: block;
+        color: #fff;
     }
 /*    .main_content .latrineInput li {
         width: 99px;

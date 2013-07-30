@@ -59,6 +59,9 @@ en:
         question: "In which country does your programme (intervention) take place?"
       capital:
         question: "How much has been/will be spent constructing the water service (per person)?"
+        answers:
+          a0: "Yes, at household level"
+          a1: "No service at household level"
       recurrent:
         question: "How much is being spent/will be spent to operate, maintain and support the delivery of water services (per person per year)?"
         value_label: "Per person<br/> per year"
