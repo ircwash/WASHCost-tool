@@ -1198,7 +1198,7 @@ a.sbSelector:hover {
     .choices .valueOutput {
         margin-bottom: 40px;
     }
-    .sanitation {
+    .sanitation ul {
         overflow: hidden;
         margin: -115px auto 75px;
     }
@@ -1278,6 +1278,29 @@ a.sbSelector:hover {
     }
     .capitalInput .capital_01.ticked {
         background-position: -265px 0;
+    }
+    .impermeabilityInput {
+        width: 345px;
+    }
+    .impermeabilityInput li {
+        width: 170px;
+    }
+    .impermeabilityInput li label {
+        height: 160px;
+        background: transparent url('/assets/spriteQ7basicImpermeability24.png') no-repeat 0 0;
+    }
+    .impermeabilityInput li label.ticked {
+        background-position: 0 -134px;
+    }
+    .impermeabilityInput li label span {
+        width: 75%;
+        left: 15%;
+    }
+    .impermeabilityInput .impermeability_01 {
+        background-position: -179px 0;
+    }
+    .impermeabilityInput .impermeability_01.ticked {
+        background-position: -179px -134px;
     }
 /*    .main_content .latrineInput li {
         width: 99px;
