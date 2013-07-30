@@ -36,12 +36,11 @@
         <dl class="levelService">
             <dt>Level of Service</dt>
             <dd class="levelStar_<%= flash[:results][:rating] %>">
-              <span>Sub-standard</span>
+              <span><%= flash[:results][:rating_label]%></span>
               <!-- <span><%= flash[:results][:rating_label]%></span> -->
             </dd>
         </dl>
         <div class="review">
-          <!-- <a href="javascript:revealService();">Read full review</a> -->
           <a class="readMore" href="#">Read full review</a>
           <div id="service_level_full">
             <p><%=flash[:results][:service_level] %></p>

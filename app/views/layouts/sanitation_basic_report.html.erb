@@ -44,7 +44,6 @@
           <dd class="levelStar_<%= flash[:results][:rating] %>"><span>Sub-standard</span></dd>
         </dl>
         <div class="review">
-          <!-- <a href="javascript:revealService();">Read full review</a> -->
           <a class="readMore" href="#">Read full review</a>
           <div id="service_level_full">
             <p><%=flash[:results][:service_level] %></p>
@@ -52,7 +51,6 @@
         </div>
       </div>
     </section>
-    <hr/>
 
     <section class="content">
       <h2><%= t 'report.water_advanced.context.title' %></h2>
@@ -218,13 +216,5 @@
 
     google.setOnLoadCallback(expenditureGraph);
 
-    function revealService()
-    {
-        // document.getElementById('service_level_full').style.display= 'block'
-
-        $()
-    }
-
-    revealService();
 </script>
 </html>

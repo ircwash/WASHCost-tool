@@ -50,8 +50,6 @@ $(document).ready(function()
                     var targetHiddenInput= $inputTick.attr('name').split('_')[1];
                     var clickedLabelsInputValue= $(this).find('input').val();
 
-                    console.log(clickedLabelsInputValue);
-
                     $('input[name="'+targetHiddenInput+'"]').val(clickedLabelsInputValue);
                 }
             }
@@ -67,7 +65,7 @@ $(document).ready(function()
 
             $(this).next().slideToggle();
             e.preventDefault();
-            
+
         });
         
     } readMore();
