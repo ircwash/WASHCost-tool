@@ -1198,10 +1198,21 @@ a.sbSelector:hover {
     .choices .valueOutput {
         margin-bottom: 40px;
     }
-    .latrineInput {
-        width: 865px;
+    .sanitation {
         overflow: hidden;
         margin: -115px auto 75px;
+    }
+    .sanitation li:last-child {
+        margin-right: 0;
+    }
+    .sanitation li label span {
+        font-weight: bold;
+    }
+    .sanitation li label.ticked span {
+        color: #fff;
+    }
+    .latrineInput {
+        width: 865px;
     }
     .latrineInput li {
         width: 140px;
@@ -1243,15 +1254,9 @@ a.sbSelector:hover {
     .latrineInput li .latrine_05.ticked {
         background-position: -603px 0;
     }
-    .latrineInput li:last-child {
-        margin-right: 0;
-    }
     .latrineInput li label span {
         width: 75%;
         left: 8%;
-    }
-    .latrineInput li label.ticked span {
-        color: #fff;
     }
     .capitalInput {
         overflow: hidden;
@@ -1273,13 +1278,6 @@ a.sbSelector:hover {
     }
     .capitalInput .capital_01.ticked {
         background-position: -265px 0;
-    }
-    .capitalInput li:last-child {
-        margin-right: 0;
-    }
-    .capitalInput li label.ticked span {
-        display: block;
-        color: #fff;
     }
 /*    .main_content .latrineInput li {
         width: 99px;

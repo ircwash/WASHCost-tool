@@ -1,9 +1,8 @@
 <% @title = "7 of 10 (Impermeability)" %>
 
 <h1><%= t 'form.sanitation_basic.impermeability.question' %></h1>
-<%= form_tag({controller: "sanitation_basic", action: "impermeability"}, class: "main_content", id: "waterBasicForm") do %>
+<%= form_tag({controller: "sanitation_basic", action: "impermeability"}, class: "main_content sanitation", id: "waterBasicForm") do %>
 
-  <div class="choices">
   <ul class="impermeabilityInput">
     <li>
       <%= label_tag("slab", nil, class: "tickCheckBox") do %>
@@ -18,13 +17,12 @@
       <% end %>
     </li>
   </ul>
-  </div>
 
+  <input type="hidden" name="impermeability"/>
 
-    <input type="hidden" name="impermeability"/>
+  <%= submit_tag("Next", class: "next_button") %>
+  <a class="skip" href="./environment"><%= t 'form.skip' %></a>
 
-    <%= submit_tag("Next", class: "next_button") %>
-    <a class="skip" href="./environment"><%= t 'form.skip' %></a>
 <% end %>
 
 <div class="infoTab">

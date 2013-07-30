@@ -1,12 +1,7 @@
 <% @title = "4 of 9 (Capital Expenditure)" %>
 
 <h1><%= t 'form.shared.capital.question' %></h1>
-<%= form_tag({controller: "sanitation_basic", action: "impermeability"}, class: "main_content", id: "waterBasicForm") do %>
-
-<!--   <div class="choices">
-      <div id="capitalValue" class="valueOutput">30</div>
-      <div id="capitalSlider"></div>
-  </div> -->
+<%= form_tag({controller: "sanitation_basic", action: "impermeability"}, class: "main_content sanitation", id: "waterBasicForm") do %>
 
   <ul class="capitalInput">
     <li>
