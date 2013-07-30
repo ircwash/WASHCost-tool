@@ -1287,20 +1287,49 @@ a.sbSelector:hover {
     }
     .impermeabilityInput li label {
         height: 160px;
-        background: transparent url('/assets/spriteQ7basicImpermeability24.png') no-repeat 0 0;
+        background: transparent url('/assets/spriteQ7basicImpermeability24.png') no-repeat 0 -194px;
     }
     .impermeabilityInput li label.ticked {
-        background-position: 0 -134px;
+        background-position: 0 0;
     }
     .impermeabilityInput li label span {
         width: 75%;
         left: 15%;
     }
     .impermeabilityInput .impermeability_01 {
-        background-position: -179px 0;
+        background-position: -179px -194px;
     }
     .impermeabilityInput .impermeability_01.ticked {
-        background-position: -179px -134px;
+        background-position: -179px 0;
+    }
+    .environmentInput {
+        width: 490px
+    }
+    .environmentInput li {
+        width: 160px;
+    }
+    .environmentInput li label {
+        height: 200px;
+        background: transparent url('/assets/spriteQ8basicEnviroment24.png') no-repeat -17px -230px;
+    }
+    .environmentInput li label.ticked {
+        background-position: -17px 0;
+    }
+    .environmentInput li .environment_01 {
+        background-position: -250px -230px;
+    }
+    .environmentInput li .environment_02 {
+         background-position:  -474px -230px;   
+    }
+    .environmentInput li .environment_01.ticked {
+        background-position: -250px 0;
+    }
+    .environmentInput li .environment_02.ticked {
+         background-position:  -474px 0;   
+    }
+    .environmentInput li label span {
+        width: 90%;
+        left: 3%;
     }
 /*    .main_content .latrineInput li {
         width: 99px;

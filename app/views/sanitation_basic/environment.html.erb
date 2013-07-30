@@ -1,9 +1,9 @@
 <% @title = "8 of 10 (Environment)" %>
 <h1><%= t 'form.sanitation_basic.environment.question' %></h1>
-<%= form_tag({controller: "sanitation_basic", action: "usage"}, class: "main_content", id: "waterBasicForm") do %>
+<%= form_tag({controller: "sanitation_basic", action: "usage"}, class: "main_content sanitation", id: "waterBasicForm") do %>
 
 
-  <ul class="environmentInput choices">
+  <ul class="environmentInput">
     <li>
       <%= label_tag("safe", nil, class: "tickCheckBox") do %>
         <%= radio_button_tag("r_environment", 0, false, id: "safe") %>
@@ -23,9 +23,7 @@
       <% end %>
     </li>
   </ul>
-
-
-
+  
     <input type="hidden" name="environment"/>
     <%= submit_tag("Next", class: "next_button") %>
     <a class="skip" href="./usage"><%= t 'form.skip' %></a>
