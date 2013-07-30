@@ -92,7 +92,6 @@ input.next_button {
     margin: 0 auto;
     background-color: #fff; 
 }
-
 #outer_container_report {
     position: relative;
     max-width: 1025px;
@@ -100,7 +99,6 @@ input.next_button {
     margin: 0 auto;
     background-color: #fff;
 }
-
 .bgGradient {
     background: #017faf; /* Old browsers */
     /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -541,25 +539,6 @@ a.sbSelector:hover {
 .chzn-container-single .chzn-search {
     display: none;
 }
-.ui-state-default, 
-.ui-widget-content .ui-state-default, 
-.ui-widget-header .ui-state-default {
-    border: none;
-    cursor: pointer;
-    width: 40px;
-    height: 42px;
-    background: transparent url('/assets/sliderScroll24.png') no-repeat 0 0;
-}
-.ui-slider {
-    width: 850px;
-    height: 30px;
-}
-.ui-widget-content {
-    z-index: 100;
-    border: none;
-    margin: 0 auto;
-    background: transparent url('/assets/sliderBackgroundWidget8.png') no-repeat 0 0;
-}
 .labelScale {
     position: relative;
     width: 100%;
@@ -597,6 +576,37 @@ a.sbSelector:hover {
     position: absolute;
     bottom: 0;
     right: 149px;
+}
+.ui-widget-content {
+    background: none;
+    background-color: #fff;
+}
+.ui-slider {
+    height: 3px;
+}
+.ui-state-default, 
+.ui-widget-content .ui-state-default, 
+.ui-widget-header .ui-state-default {
+    margin-top: -13px;
+}
+.ui-state-default, 
+.ui-widget-content .ui-state-default, 
+.ui-widget-header .ui-state-default {
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 42px;
+    background: transparent url('/assets/sliderScroll24.png') no-repeat 0 0;
+}
+.capitalSlider .ui-slider {
+    width: 850px;
+    height: 30px;
+}
+.capitalSlider .ui-widget-content {
+    z-index: 100;
+    border: none;
+    margin: 0 auto;
+    background: transparent url('/assets/sliderBackgroundWidget8.png') no-repeat 0 0;
 }
 /* q1Country */
     .choices {
