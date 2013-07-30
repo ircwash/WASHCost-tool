@@ -608,20 +608,33 @@ a.sbSelector:hover {
     margin: 0 auto;
     background: transparent url('/assets/sliderBackgroundWidget8.png') no-repeat 0 0;
 }
+.capitalSlider .ui-state-default, 
+.capitalSlider .ui-widget-content .ui-state-default, 
+.capitalSlider .ui-widget-header .ui-state-default {
+    margin-top: 0;
+}
+.choiceTime {
+    width: 550px;
+    margin: 0 auto;
+}
+.choiceTime .imgTime {
+    float: right;
+}
+.choiceTime img {
+    float: left;
+}
+.choices {
+    width: 850px;
+    margin: -110px auto 55px
+}
 /* q1Country */
-    .choices {
-        width: 850px;
+    .choices.countryChoices {
+        width: 525px;
         margin: -10px auto 100px;
     }
-    .choices img {
+    .countryChoices img {
         float: left;
         margin-left: 25px;
-    }
-    .choices.time img {
-        margin: 0;
-    }
-    .choices.time img.imgTime {
-        float: right;
     }
     .choices .sbHolder,
     .choices #country {
