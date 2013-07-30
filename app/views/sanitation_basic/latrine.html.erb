@@ -4,8 +4,6 @@
 
 <%= form_tag({controller: "sanitation_basic", action: "latrine"}, class: "main_content", id: "waterBasicForm") do %>
 
-
-    <div class="choices">
       <ul class="latrineInput">
         <li>
           <%= label_tag("traditional", nil, class: "tickCheckBox") do %>
@@ -44,7 +42,6 @@
           <% end %>
         </li>
       </ul>
-    </div>
 
    <input type="hidden" name="latrine"/>
     <%= submit_tag("Next", class: "next_button") %>
