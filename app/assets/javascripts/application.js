@@ -58,4 +58,17 @@ $(document).ready(function()
         });
 
     } radioInputTick();
+
+    function readMore() {
+
+        var $target = $('.readMore');
+
+        $target.on('click', function(e) {
+
+            $(this).next().slideToggle();
+            e.preventDefault();
+            
+        });
+        
+    } readMore();
 });

@@ -29,22 +29,20 @@
       <div class="sectionWrapper">
         <dl class="costService">
             <dt>Total Cost</dt>
-
-            <div class="summary_cost">
-              $<%= number_with_delimiter(flash[:results][:total], :delimiter=>',')%>
-            </div>
-            <div class="bench_icon_<%=flash[:results][:cost_rating]%>">
-                <div class="benchmark_text"><%= flash[:results][:cost_rating_label]%></div>
-            </div>
-
+            <dd class="indexStar_<%=flash[:results][:cost_rating]%>">
+              <span><%= flash[:results][:cost_rating_label]%></span>
+            </dd>
           </dl>
         <dl class="levelService">
             <dt>Level of Service</dt>
-            <dd class="levelStar_<%= flash[:results][:rating] %>"><span>Sub-standard</span></dd>
+            <dd class="levelStar_<%= flash[:results][:rating] %>">
+              <span>Sub-standard</span>
+              <!-- <span><%= flash[:results][:rating_label]%></span> -->
+            </dd>
         </dl>
         <div class="review">
           <!-- <a href="javascript:revealService();">Read full review</a> -->
-          <a href="#">Read full review</a>
+          <a class="readMore" href="#">Read full review</a>
           <div id="service_level_full">
             <p><%=flash[:results][:service_level] %></p>
           </div>
@@ -211,13 +209,8 @@
         );
     }
 
-
     google.setOnLoadCallback(expenditureGraph);
 
-    function revealService()
-    {
-        document.getElementById('service_level_full').style.display= 'block'
-    }
 </script>
 
 </body>

@@ -1191,9 +1191,13 @@ a.sbSelector:hover {
 
     /*
     *
-    * BASIC LATRINE
+    * BASIC SANITATION
     *
     */
+
+    .choices .valueOutput {
+        margin-bottom: 40px;
+    }
 
     .main_content .latrineInput {
         width: 612px;
