@@ -967,7 +967,7 @@ a.sbSelector:hover {
         background-position: 50% -200px;
     }
     .levelService dd {
-        background: transparent url('/assets/starsLevel8.png') no-repeat 0 0;
+        background: transparent url('/assets/starsLevel8.png') no-repeat 50% 0;
     }
     .levelService dd.levelStar_0 {
         background-position: 50% 0;
