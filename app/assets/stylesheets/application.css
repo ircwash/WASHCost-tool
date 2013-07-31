@@ -1473,13 +1473,31 @@ a.sbSelector:hover {
         width: 23%;
         height: 160px;
         margin-right: 100px;
-        background: transparent url('/assets/spriteQ8basicEnviroment24.png') no-repeat 0 -245px;
+        background: transparent url('/assets/spriteQ8basicEnviroment24.png') no-repeat -1000px -245px;
     }
+    .service .rowQQR.enviroment.result_0 {
+        background-position: 0 -245px;
+    }
+    .service .rowQQR.enviroment.result_1 {
+        background-position: -238px -245px;
+    }
+    .service .rowQQR.enviroment.result_2 {
+        background-position: -460px -245px;
+    } 
     .service .rowQQR.usage {
         width: 29%;
         height: 160px;
         margin-right: 95px;
-        background: transparent url('/assets/spriteQ8basicUsage24.png') no-repeat -5px -143px;
+        background: transparent url('/assets/spriteQ8basicUsage24.png') no-repeat -1500px -143px;
+    }
+    .service .rowQQR.usage.result_1 {
+        background-position: -5px -143px;
+    }
+    .service .rowQQR.usage.result_2 {
+        background-position: -255px -143px;
+    }
+    .service .rowQQR.usage.result_3 {
+        background-position: -500px -143px;
     }
     .service .rowQQR.reliability {
         height: 160px;
