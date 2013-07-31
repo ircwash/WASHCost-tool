@@ -1,26 +1,33 @@
-∑<% @title = "4 of 9 (Capital Expenditure)" %>
+<% @title = "4 of 9 (Capital Expenditure)" %>
 
 <h1><%= t 'form.shared.capital.question' %></h1>
-<%= form_tag({controller: "sanitation_basic", action: "impermeability"}, class: "main_content sanitation", id: "waterBasicForm") do %>
+<%= form_tag({controller: "sanitation_basic", action: "capital"}, class: "main_content sanitation", id: "waterBasicForm") do %>
 
-  <ul class="capitalInput">
-    <li>
-      <%= label_tag("capitalYes", nil, class: "tickCheckBox") do %>
-        <%= radio_button_tag("r_latrine", 0, false, id: "capitalYes") %>
-        <span><%= t 'form.shared.capital.answers.a0' %></span>
-      <% end %>
-    </li>
-    <li>
-      <%= label_tag("capitalNo", nil, class: "tickCheckBox capital_01") do %>
-        <%= radio_button_tag("r_latrine", 1, id: "capitalNo") %>
-        <span><%= t 'fform.shared.capital.answers.a0' %></span>
-      <% end %>
-    </li>
-  </ul>
 
-  <input type="hidden" name="capital"/>
-  <%= submit_tag("Next", class: "next_button") %>
-  <a class="skip" href="./recurrent"><%= t 'form.skip' %></a>
+    <div class="choices capitalSlider">
+      <div class="value">
+        <div class="valueOutput"><span id="capitalValue">30</span>$</div>
+        <div class="valueLabel">Per person (USD)</div>
+      </div>
+      <div id="capitalSlider">
+      </div>
+      <ul class="labelScale">
+        <li class="first">
+          <span class="estimate">Bellow</span>
+            <span class="numRounding">48</span>
+        </li>
+        <li class="last">
+          <span class="estimate">Above</span>
+          <span class="numRounding">109</span>
+        </li>
+      </ul>
+    </div>
+
+    <input type="hidden" name="capital"/>
+    <%= submit_tag((t 'buttons.next'), class: "next_button") %>
+    <a class="skip" href="./recurrent">skip this question</a>
+
+
 <% end %>
 
 <div class="infoTab">

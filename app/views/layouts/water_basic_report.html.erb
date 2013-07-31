@@ -28,9 +28,17 @@
       <div class="sectionWrapper">
         <dl class="costService">
           <dt>Total Cost</dt>
-            <dt class="summary_cost">$<%= number_with_delimiter(flash[:results][:total], :delimiter=>',')%></dt>
+            <dt class="summary_cost">
+              <span>
+                $<%= number_with_delimiter(flash[:results][:total], :delimiter=>',')%>
+              </span><br/>
+              <span>
+                For a population of <%=flash[:results][:population]%> people
+              </span>
+            </dt>
+
             <dd class="bench_icon_<%=flash[:results][:cost_rating]%>">
-                <span class="benchmark_text"><%= flash[:results][:cost_rating_label]%></span>
+                <span class="benchmark_text">Below Benchmarks</span>
             </dd>
 
         </dl>
