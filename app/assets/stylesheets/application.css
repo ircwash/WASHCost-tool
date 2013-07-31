@@ -1041,6 +1041,15 @@ a.sbSelector:hover {
     .content .populationResults .result_03 {
         background-position: -448px -180px;
     }
+    .sanitation .content dl dd { 
+        height: 120px;
+    }
+    .sanitation .content dl {
+        margin-bottom: 5px;
+    }
+    .sanitation .latrineResults dd {
+        background: transparent url('/assets/spriteQ3basicLatrine24.png') no-repeat -113px -203px;
+    }
     #graph {
         width: 800px;
         margin: 0 auto 60px;
@@ -1092,21 +1101,18 @@ a.sbSelector:hover {
     .service h2 {
         margin-bottom: 44px;
     }
-    .service .distance {
+    .service li {
         width: 82%;
         height: 100px;
         margin: 0 auto 100px;
-        background: transparent url('/assets/serviceLevel8.png') no-repeat 0 100%;
     }
-    .service .distance span.label {
+    .service li span.label {
         display: block;
         text-align: center;
         color: #fff;
     }
-    .service .distance span.value {
+    .service li span.value {
         display: block;
-        position: absolute;
-        left: 45%;
         margin: 25px 0 0 0;
         width: 50px;
         float: left;
@@ -1115,7 +1121,7 @@ a.sbSelector:hover {
         text-align: center;
         color: #fff;
     }
-    .service .distance a {
+    .service li a {
         display: block;
         text-align: center;
         margin-top: 85px;
@@ -1139,6 +1145,13 @@ a.sbSelector:hover {
         width: 100%;
         margin-top: 120px;
         margin-bottom: 10px;
+    }
+    .service .distance {
+        background: transparent url('/assets/serviceLevel8.png') no-repeat 0 100%;
+    }
+    .service .distance span.value {
+        position: absolute;
+        left: 45%;
     }
     .service .quantity {
         background: transparent url('/assets/spriteQ7basicWater24.png') no-repeat 0 0;
@@ -1376,6 +1389,25 @@ a.sbSelector:hover {
     .sanitation .reliability_02.ticked {
         background-position: -480px 0;
     }
+    /* Sanitation Report */
+
+    .sanitation .service ul {
+        margin-top: 0;
+    }
+    .sanitation .service ul li {
+        margin-right: 0;
+    }
+    .sanitation .service .rowQQR {
+        width: 33%;
+    }
+    .sanitation .service .permeability,
+    .sanitation .service .providing {
+        width: 49%;
+    }
+/*    .sanitation .service li span.value {
+        left: 0;
+        bottom: 0;
+    }*/
 /*
 *
 *   IE - Fixes

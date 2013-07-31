@@ -22,7 +22,7 @@
 
   <%= render "shared/header" %>
 
-  <div class="report">
+  <div class="report sanitation">
     <h1>Basic <span>Water | Final report</span></h1>
     <section class="general">
       <h2>Summary</h2>
@@ -69,10 +69,10 @@
           </dl>
           <a href="./population"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
         </div>
-        <div class="populationResults">
+        <div class="latrineResults">
           <dl>
             <dt>Latrine Type</dt>
-            <dd class="results_latrine_5">
+            <dd class="latrine_01">
               <span><%= flash[:results][:latrine]%></span>
             </dd>
           </dl>
@@ -113,31 +113,36 @@
       </div>
     </section>
     <section class="service">
-
       <h2>SERVICE</h2>
-
-      <ul>
-        <li>
-          <div>Providing</div>
-          <div class="value"><%= flash[:results][:providing]%></div>
-        </li>
-        <li class="row2">
-          <div>Permeability</div>
-          <div class="value"><%= flash[:results][:permeability]%></div>
-        </li>
-        <li class="row2">
-          <div>Environment</div>
-          <div class="value"><%= flash[:results][:environment]%></div>
-        </li>
-        <li class="row2">
-          <div>Usage</div>
-          <div class="value"><%= flash[:results][:usage]%></div>
-        </li>
-        <li class="row2">
-          <div>Reliability</div>
-          <div class="value"><%= flash[:results][:reliability]%></div>
-        </li>
-      </ul>
+      <div class="sectionWrapper">
+        <ul>
+          <li class="rowQQR providing">
+            <span class="label">Providing</span>
+            <span class="value"><%= flash[:results][:providing]%></span>
+            <a href="./providing"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
+          </li>
+          <li class="rowQQR permeability result_0<%= flash[:results][:permeability_index]%>">
+            <span class="label">Permeability</span>
+            <span class="value"><%= flash[:results][:permeability]%></span>
+            <a href="./providing"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
+          </li>
+          <li class="rowQQR enviroment result_0<%= flash[:results][:environment_index]%>">
+            <span class="label">Environment</span>
+            <span class="value"><%= flash[:results][:environment]%></span>
+            <a href="./enviroment"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
+          </li>
+          <li class="rowQQR usage result_0<%= flash[:results][:usage_index]%>">
+            <span class="label">Usage</span>
+            <span class="value"><%= flash[:results][:usage]%></span>
+            <a href="./usage"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
+          </li>
+          <li class="rowQQR reliability result_0<%= flash[:results][:reliability_index]%>">
+            <span class="label">Reliability</span>
+            <span class="value"><%= flash[:results][:reliability]%></span>
+            <a href="./reliability"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
+          </li>
+        </ul>
+      </div>
     </section>
   </div>
 </div>
