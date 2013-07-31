@@ -1312,27 +1312,23 @@ a.sbSelector:hover {
         width: 75%;
         left: 8%;
     }
-    .capitalInput {
-        overflow: hidden;
+    .provideInput {
         width: 470px;
-        margin: 0 auto;
     }
-
-    .capitalInput li {
+    .provideInput li {
         width: 232px;
     }
-
-    .capitalInput li label {
+    .provideInput li label {
         height: 165px;
         background: transparent url('/assets/spriteQ6basicProviding24.png') no-repeat 1px -133px;
     }
-    .capitalInput li label.ticked {
+    .provideInput li label.ticked {
         background-position: 0 0;
     }
-    .capitalInput .capital_01 {
+    .provideInput .provideInput_01 {
         background-position: -264px -133px
     }
-    .capitalInput .capital_01.ticked {
+    .provideInput .provideInput_01.ticked {
         background-position: -265px 0;
     }
     .impermeabilityInput {
@@ -1394,19 +1390,19 @@ a.sbSelector:hover {
         width: 229px;
     }
     .usageInput li label {
-        background: transparent url('/assets/spriteQ8basicUsage24.png') no-repeat -6px 0;
+        background: transparent url('/assets/spriteQ8basicUsage24.png') no-repeat -6px -144px;
     }
     .usageInput li .usage_01 {
-        background-position: -256px 0;
+        background-position: -256px -144px;
     }
     .usageInput li .usage_02 {
-        background-position: -520px 0;
+        background-position: -520px -144px;
     }
     .usageInput li label.ticked {
-        background-position: -6px -144px;
+        background-position: -6px 0;
     }
     .usageInput li .usage_01.ticked {
-        background-position: -256px -144px;
+        background-position: -256px 0;
     }
     .usageInput li .usage_02.ticked {
         background-position: -520px 0;
