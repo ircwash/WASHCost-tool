@@ -186,11 +186,6 @@ module WaterReportHelper
     return reliability
   end
 
-  def get_cost_bench
-
-  end
-
-
   def get_cost_rating(water_index, capEx)
 
     rating= -1

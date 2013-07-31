@@ -14,15 +14,15 @@ module SanitationReportHelper
         :country => get_country(form[:country]),
         :household => get_household(form[:household]),
         :latrine_index => form[:latrine],
-        :latrine => get_latrine(form[:latrine]),
+        :latrine => get_indexed(@@latrine_values, form[:latrine]),
         :capital => get_capital(form[:capital]),
         :recurrent => get_recurrent(form[:recurrent]),
         :total => get_total(form[:capital], form[:recurrent], 500),
-        :providing => get_providing(form[:providing]),
-        :usage => get_usage(form[:usage]),
-        :impermeability => get_impermeability(form[:impermeability]),
-        :environment => get_environment(form[:environment]),
-        :reliability => get_reliability(form[:reliability])
+        :providing => get_indexed(@@providing_values, form[:providing]),
+        :usage => get_indexed(@@usage_values, form[:usage]),
+        :environment => get_indexed(@@environment_values, form[:environment]),
+        :impermeability => get_indexed(@@impermeability_values, form[:impermeability]),
+        :reliability => get_indexed(@@reliability_values, form[:reliability])
     }
 
     return results
@@ -31,21 +31,40 @@ module SanitationReportHelper
 
   def get_session_form
 
-    puts "form from session"
-    puts session[:sanitation_basic_form]
 
     form= {
-        :country => session[:sanitation_basic_form]["country"],
-        :household => session[:sanitation_basic_form]["household"],
-        :latrine => session[:sanitation_basic_form]["latrine"],
-        :capital => session[:sanitation_basic_form]["capital"],
-        :recurrent => session[:sanitation_basic_form]["recurrent"],
-        :providing => session[:sanitation_basic_form]["providing"],
-        :usage => session[:sanitation_basic_form]["usage"],
-        :impermeability => session[:sanitation_basic_form]["impermeability"],
-        :environment => session[:sanitation_basic_form]["environment"],
-        :reliability => session[:sanitation_basic_form]["reliability"]
+        :cost_rating=> nil,
+        :cost_rating_label=> nil,
+        :country => nil,
+        :household => nil,
+        :latrine_index => nil,
+        :latrine => nil,
+        :capital => nil,
+        :recurrent => nil,
+        :total => nil,
+        :providing => nil,
+        :usage => nil,
+        :impermeability => nil,
+        :environment => nil,
+        :reliability => nil
     }
+
+    if(session[:sanitation_basic_form].present?)
+
+      form= {
+          :country => session[:sanitation_basic_form]["country"],
+          :household => session[:sanitation_basic_form]["household"],
+          :latrine => session[:sanitation_basic_form]["latrine"],
+          :capital => session[:sanitation_basic_form]["capital"],
+          :recurrent => session[:sanitation_basic_form]["recurrent"],
+          :providing => session[:sanitation_basic_form]["providing"],
+          :usage => session[:sanitation_basic_form]["usage"],
+          :impermeability => session[:sanitation_basic_form]["impermeability"],
+          :environment => session[:sanitation_basic_form]["environment"],
+          :reliability => session[:sanitation_basic_form]["reliability"]
+      }
+
+    end
 
     return form
   end
@@ -65,18 +84,17 @@ module SanitationReportHelper
     return household
   end
 
-  def get_latrine(index)
 
-    latrine= @@latrine_values[index][:value]
+  def get_indexed(collection, index)
+    indexed= t 'form.value_not_set'
 
-    return latrine
+    if index && collection[index].present?
+      indexed= collection[index][:value]
+    end
+
+    return indexed
   end
 
-  def get_usage(index)
-
-    usage= @@usage_values[index][:value]
-    return usage
-  end
 
   def get_capital(capital)
 
@@ -88,32 +106,7 @@ module SanitationReportHelper
     return recurrent
   end
 
-  def get_providing(index)
 
-    providing= @@providing_values[index][:value]
-
-    return providing
-  end
-
-  def get_environment(index)
-    environment= @@environment_values[index][:value]
-    return environment
-  end
-
-  def get_impermeability(index)
-
-    impermeability= @@impermeability_values[index][:value]
-
-    return impermeability
-  end
-
-  def get_reliability(index)
-
-
-    reliability= @@reliability_values[index][:value]
-
-    return reliability
-  end
 
   @@latrine_values= [
     { :value => (I18n.t 'form.sanitation_basic.latrine.answers.a0')},
@@ -159,46 +152,53 @@ module SanitationReportHelper
 
   def get_total(capital, recurrent, population)
 
-    total_cost = capital + (recurrent * 10)
-    total_cost_for_population = total_cost * population
+    total_cost_for_population= nil
+
+    if(capital && recurrent & population)
+      total_cost = capital + (recurrent * 10)
+      total_cost_for_population = total_cost * population
+    end
+
     return total_cost_for_population
 
   end
 
 
   def get_cost_rating(water_index, capEx)
-    benchmark= 0
+
+    rating= -1
 
     if water_index && capEx
+
       if water_index==0
 
         if capEx < 20
-          0
+          rating = 0
         elsif capEx > 61
-          1
+          rating = 1
         else
-          2
+          rating = 2
         end
 
       else
 
         if capEx < 30
-          0
+          rating = 0
         elsif capEx > 131
-          1
+          rating = 1
         else
-          2
+          rating = 2
         end
 
       end
     end
 
-    return benchmark
+    return rating
   end
 
   def get_cost_rating_label(rating)
 
-    label=  t 'report.benchmark_below'
+    label=  t 'form.value_not_set'
 
     if rating==0
       label= (t 'report.benchmark_below')
@@ -207,10 +207,12 @@ module SanitationReportHelper
     elsif rating==2
       label= (t 'report.benchmark_above')
     else
-      label= 'Please Enter a <a href="./water">waterIndex</a> and <a href="./capital">Capital Expenditure<a/>'
+      label= 'Please Enter a <a href="./population">Population</a> and <a href="./capital">Capital Expenditure<a/>'
     end
 
     return label
 
   end
+
+
 end
