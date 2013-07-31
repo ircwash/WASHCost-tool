@@ -25,6 +25,8 @@
     <h1>Basic <span>Water | Final report</span></h1>
     <section class="general">
       <h2>Summary</h2>
+
+      <% flash[:results][:form_ready]  %>
       <div class="sectionWrapper">
         <% if flash[:results][:form_ready] == true %>
             <dl class="costService">
@@ -36,7 +38,7 @@
                   <span class="sumaryPeople">
                     For a population of <%=flash[:results][:population]%> people
                   </span>
-                  <span class="benchText benchIcon<%=flash[:results][:cost_rating]%>"></span>
+                  <span class="benchText benchIcon<%=flash[:results][:cost_rating]%>"><%=flash[:results][:cost_rating_label].html_safe%></span>
               </dd>
             </dl>
             <dl class="levelService">
@@ -94,6 +96,7 @@
     <section class="cost">
       <h2><%= t 'report.water_advanced.cost.title' %></h2>
 
+      <% flash[:results][:form_ready]  %>
       <% if flash[:results][:form_ready] == true %>
       <h3>Cost on 10 years (for a population of 2000 people)</h3>
 
@@ -102,7 +105,7 @@
       </div>
 
       <% else %>
-          <div id="graphContent" style="text-align: center">
+          <div style="width: 300px; margin: 50px auto 50px auto; text-align: center">
 
             <%= I18n.t 'form.not_ready.cost' %>
 

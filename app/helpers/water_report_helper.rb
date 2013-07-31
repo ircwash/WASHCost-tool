@@ -72,9 +72,10 @@ module WaterReportHelper
 
   def is_form_ready?(form)
     ready= false
-    if water && capital && recurring && reliability
+    if form[:water] && form[:capital] && form[:recurrent] && form[:reliability]
       ready= true
     end
+    return ready
   end
 
   def get_country(country_code)
@@ -192,34 +193,34 @@ module WaterReportHelper
 
   def get_cost_rating(water_index, capEx)
 
-    benchmark= -1
+    rating= -1
 
     if water_index && capEx
 
       if water_index==0
 
         if capEx < 20
-          0
+          rating = 0
         elsif capEx > 61
-          1
+          rating = 1
         else
-          2
+          rating = 2
         end
 
       else
 
         if capEx < 30
-          0
+          rating = 0
         elsif capEx > 131
-          1
+          rating = 1
         else
-          2
+          rating = 2
         end
 
       end
     end
 
-    return benchmark
+    return rating
   end
 
   def get_cost_rating_label(rating)
