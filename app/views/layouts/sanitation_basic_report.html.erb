@@ -23,16 +23,21 @@
   <%= render "shared/header" %>
 
   <div class="report sanitation">
-    <h1>Basic <span>Water | Final report</span></h1>
+    <h1>Basic <span>Sanitation | Final report</span></h1>
     <section class="general">
       <h2>Summary</h2>
       <div class="sectionWrapper">
         <dl class="costService">
           <dt>Total Cost</dt>
-            <dt class="summary_cost">$<%= number_with_delimiter(flash[:results][:total], :delimiter=>',')%></dt>
-            <dd class="bench_icon_<%=flash[:results][:cost_rating]%>">
-                <span class="benchmark_text"><%= flash[:results][:cost_rating_label]%></span>
-            </dd>
+            <dd class="sumaryCost">
+              <span class="sumaryTotal">
+                $<%= number_with_delimiter(flash[:results][:total], :delimiter=>',')%>
+              </span>
+              <span class="sumaryPeople">
+                For a population of <%=flash[:results][:population]%> people
+              </span>
+              <span class="benchText benchIcon<%=flash[:results][:cost_rating]%>">Below Benchmarks</span>
+          </dd>
         </dl>
         <dl class="levelService">
           <dt>Level of Service</dt>
@@ -148,11 +153,14 @@
 </div>
 <footer>
   <div class="footerWrapper">
-    <h2>Final Report</h2>
-    <div class="progressBar">
-      <div class="outerBar">
-        <div class="innerBar" style="width:30%"></div>
-        <p>30% Complete</p>
+    <a href="#">Go to report page</a>
+    <div class="progressBarWrapper">
+      <h2><%= t 'footer.footer_layout_sanitation' %> <span><%= t 'footer.final_report' %></span></h2>
+      <div class="progressBar">
+        <div class="outerBar">
+          <div class="innerBar" style="width:30%"></div>
+          <p><%= flash[:percent_complete] %>% <%= t 'footer.complete' %></p>
+        </div>
       </div>
     </div>
   </div>
