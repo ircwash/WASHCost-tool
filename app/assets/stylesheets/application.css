@@ -965,7 +965,7 @@ a.sbSelector:hover {
         float: right;
         margin: 0;
     }
-    .general .costService dd {
+/*    .general .costService dd {
         background: transparent url('/assets/starsIndex8.png') no-repeat 0 0;
     }
     .costService dd.indexStar_0 {
@@ -982,7 +982,7 @@ a.sbSelector:hover {
     }
     .costService dd.indexStar_4 {
         background-position: 50% -200px;
-    }
+    }*/
     .levelService dd {
         background: transparent url('/assets/starsLevel8.png') no-repeat 50% 0;
     }
