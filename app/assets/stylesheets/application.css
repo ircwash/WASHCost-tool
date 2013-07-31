@@ -1396,18 +1396,38 @@ a.sbSelector:hover {
     }
     .sanitation .service ul li {
         margin-right: 0;
+        height: 140px;
     }
     .sanitation .service .rowQQR {
         width: 33%;
     }
-    .sanitation .service .permeability,
-    .sanitation .service .providing {
-        width: 49%;
+    .sanitation .service .rowQQR .value {
+        margin-top: 140px;
     }
-/*    .sanitation .service li span.value {
-        left: 0;
-        bottom: 0;
-    }*/
+    .service .rowQQR.providing {
+        width: 29%;
+        margin: 0 25px 0 155px;
+        background: transparent url('/assets/spriteQ6basicProviding24.png') no-repeat -1px -133px;
+    }
+    .service .rowQQR.impermeability {
+        width: 22%;
+        margin-right: 45px;
+        background: transparent url('/assets/spriteQ7basicImpermeability24.png') no-repeat 0 -205px;
+    }
+    .service .rowQQR.enviroment {
+        width: 21%;
+        margin-right: 100px;
+        background: transparent url('/assets/spriteQ8basicEnviroment24.png') no-repeat 0 0;
+    }
+    .service .rowQQR.usage {
+        width: 29%;
+        margin-right: 95px;
+        background: transparent url('/assets/spriteQ8basicUsage24.png') no-repeat -5px 0;
+    }
+    .service .rowQQR.reliability {
+        width: 20%;
+        background: transparent url('/assets/spriteQ9basicWater24.png') no-repeat 0 0;
+    }
 /*
 *
 *   IE - Fixes
