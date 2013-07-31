@@ -1,9 +1,9 @@
 <% @title = "9 of 10 (Usage)" %>
 
 <h1><%= t 'form.sanitation_basic.usage.question' %></h1>
-<%= form_tag({controller: "sanitation_basic", action: "usage"}, class: "main_content", id: "waterBasicForm") do %>
+<%= form_tag({controller: "sanitation_basic", action: "usage"}, class: "main_content sanitation", id: "waterBasicForm") do %>
 
-  <ul class="usageInput choices">
+  <ul class="usageInput">
     <li>
       <%= label_tag("all", nil, class: "tickCheckBox") do %>
         <%= radio_button_tag("r_usage", 0, false, id: "all") %>

@@ -1331,96 +1331,30 @@ a.sbSelector:hover {
         width: 90%;
         left: 3%;
     }
-/*    .main_content .latrineInput li {
-        width: 99px;
+    .usageInput {
+        width: 700px;
     }
-    .latrineInput li label {
-        background: transparent url('/assets/inputTraditionalLatrine8.png') no-repeat 0 0;
+    .usageInput li {
+        width: 229px;
     }
-    .latrineInput li label span {
-        top: 47px;
+    .usageInput li label {
+        background: transparent url('/assets/spriteQ8basicUsage24.png') no-repeat -6px 0;
     }
-    .main_content .houseInput {
-        width: 206px;
+    .usageInput li .usage_01 {
+        background-position: -256px 0;
     }
-    .main_content .houseInput li {
-        width: 100px;
+    .usageInput li .usage_02 {
+        background-position: -520px 0;
     }
-    .houseInput li label {
-        background: transparent url('/assets/spriteInputLatrines8.png') no-repeat 0 0;
+    .usageInput li label.ticked {
+        background-position: -6px -144px;
     }
-    .houseInput li:last-child label {
-        background-position: 0 -80px;
+    .usageInput li .usage_01.ticked {
+        background-position: -256px -144px;
     }
-    .main_content .houseInput label span {
-        top: 50px;
-        width: 100%;
+    .usageInput li .usage_02.ticked {
+        background-position: -520px -144px;
     }
-    .main_content .impermeability {
-        width: 126px;
-        overflow: hidden;
-        padding-bottom: 50px;
-    }
-    .impermeability li label {
-        background: transparent url('/assets/spriteInputSlab8.png') no-repeat 0 0;
-    }
-    .impermeability li label span {
-        top: 80px;
-    }
-    .impermeability li:last-child label {
-        background-position: 0 -74px;
-    }
-    .main_content .disposalInput {
-        width: 370px;
-    }
-    .main_content .disposalInput li {
-        width: 120px;
-    }
-    .main_content .disposalInput label {
-        min-height: 135px;
-    }
-    .main_content .disposalInput label span {
-        top: 80px;
-    }
-    .disposalInput li label {
-        background: transparent url('/assets/spriteInputDisposal8.png') no-repeat 0 0;
-    }
-    .disposalInput li:nth-child(2) label {
-        background-position: -132px 0;
-    }
-    .disposalInput li:nth-child(3) label {
-        background-position: -283px 0;
-    }
-    .main_content .familyInput {
-        width: 381px;
-    }
-    .main_content .familyInput li {
-       width: 124px;
-    }
-    .familyInput li label {
-        background: transparent url('/assets/spriteInputFamilyMembers8.png') no-repeat 0 0;
-    }
-    .familyInput li:nth-child(2) label {
-        background-position: -142px 0;
-    }
-    .familyInput li:nth-child(3) label {
-        background-position: -290px 0;
-    }
-    .main_content .familyInput label span {
-        top: 75px;
-    }
-    .main_content .reliableInput {
-        width: 441px;
-    }
-    .reliableInput li {
-        width: 144px;
-    }
-    .reliableInput li label {
-        background: transparent url('/assets/inputLactrine8.png') no-repeat 0 0;
-    }
-    .reliableInput li label span {
-        top: 75px;
-    }*/
 /*
 *
 *   IE - Fixes
