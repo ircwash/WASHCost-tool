@@ -1173,6 +1173,9 @@ a.sbSelector:hover {
     .service .quantity {
         background: transparent url('/assets/spriteQ7basicWater24.png') no-repeat 0 0;
     }
+    .service .quantity.result_0{
+        background: none
+    }
     .service .quantity.result_00,
     .service .quantity.result_01 {
         background-position: 40px -127px;
@@ -1189,6 +1192,10 @@ a.sbSelector:hover {
     .service .quality {
         background: transparent url('/assets/spriteQ8basicWater24.png') no-repeat 0 0;
     }
+
+    .service .quality.result_0{
+        background: none
+    }
     .service .quality.result_00,
     .service .quality.result_01 {
         background-position: 32px -127px; 
@@ -1202,8 +1209,13 @@ a.sbSelector:hover {
     .service .quality.result_04 {
         background-position: -444px -127px;
     }
+
+
     .service .reliability {
         background: transparent url('/assets/spriteQ9basicWater24.png') no-repeat 0 0;   
+    }
+    .service .reliability.result_0{
+        background: none
     }
     .service .reliability.result_00,
     .service .reliability.result_01 {
@@ -1421,6 +1433,7 @@ a.sbSelector:hover {
     .sanitation .service .rowQQR .value {
         margin-top: 140px;
     }
+
     .service .rowQQR.providing {
         width: 29%;
         margin: 0 25px 0 155px;
@@ -1440,6 +1453,10 @@ a.sbSelector:hover {
         width: 29%;
         margin-right: 95px;
         background: transparent url('/assets/spriteQ8basicUsage24.png') no-repeat -5px 0;
+    }
+
+    .service .rowQQR.reliability.result_0{
+        background: none;
     }
     .service .rowQQR.reliability {
         width: 20%;

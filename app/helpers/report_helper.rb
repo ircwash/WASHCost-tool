@@ -2,21 +2,35 @@ module ReportHelper
 
   def get_session_form
 
-    puts "form from session"
-    puts session[:water_basic_form]
 
     form= {
-        :country => session[:water_basic_form]["country"],
-        :water => session[:water_basic_form]["water"],
-        :population => session[:water_basic_form]["population"],
-        :capital => session[:water_basic_form]["capital"],
-        :recurrent => session[:water_basic_form]["recurrent"],
-        :time => session[:water_basic_form]["time"],
-        :quality => session[:water_basic_form]["quality"],
-        :quantity => session[:water_basic_form]["quantity"],
-        :water => session[:water_basic_form]["water"],
-        :reliability => session[:water_basic_form]["reliability"]
+        :country => nil,
+        :water => nil,
+        :population => nil,
+        :capital => nil,
+        :recurrent => nil,
+        :time => nil,
+        :quality => nil,
+        :quantity => nil,
+        :water => nil,
+        :reliability => nil
     }
+
+    if(session[:water_basic_form].present?)
+
+      form= {
+          :country => session[:water_basic_form]["country"],
+          :water => session[:water_basic_form]["water"],
+          :population => session[:water_basic_form]["population"],
+          :capital => session[:water_basic_form]["capital"],
+          :recurrent => session[:water_basic_form]["recurrent"],
+          :time => session[:water_basic_form]["time"],
+          :quality => session[:water_basic_form]["quality"],
+          :quantity => session[:water_basic_form]["quantity"],
+          :water => session[:water_basic_form]["water"],
+          :reliability => session[:water_basic_form]["reliability"]
+      }
+    end
 
     return form
   end
@@ -61,18 +75,23 @@ module ReportHelper
 
   def get_country(country_code)
 
-    country= 'Not Set'
+    country= t 'form.value_not_set'
+
+    if country_code
     country_object= Country.new(country_code)
       if(country_object.data == nil)
         country = nil
       else
         country= country_object.name
       end
+    end
 
     return country
   end
 
   def get_index(index)
+
+
     return index
   end
 
@@ -97,8 +116,13 @@ module ReportHelper
 
   def get_total(capital, recurrent, population)
 
-    total_cost = capital + (recurrent * 10)
-    total_cost_for_population = total_cost * population
+    total_cost_for_population= nil
+
+    if(capital && recurrent & population)
+      total_cost = capital + (recurrent * 10)
+      total_cost_for_population = total_cost * population
+    end
+
     return total_cost_for_population
 
   end
@@ -224,24 +248,27 @@ module ReportHelper
 
   def get_rating(water, capital, recurring, reliability)
 
-    capExScore= get_capEx_benchmark_rating(water, capital)
-    recExScore= get_recEx_benchmark_rating(water, recurring)
+    rating= 0
 
-    serviceLevel= (4 * @@reliability_values[reliability][:value])
+    if(water && capital && recurring && reliability)
+      capExScore= get_capEx_benchmark_rating(water, capital)
+      recExScore= get_recEx_benchmark_rating(water, recurring)
 
-    score= (capExScore + recExScore + serviceLevel);
+      serviceLevel= (4 * @@reliability_values[reliability][:value])
 
-    rating= 'Undefined'
-    backgroundPosition= 0
+      score= (capExScore + recExScore + serviceLevel);
 
-    if score>=7.5
-        rating = 3
-    elsif score>=5 && score <7.5
-      rating = 2
-    elsif score>=2 && score < 5
-      rating = 2
-    else
-      rating = 0
+      backgroundPosition= 0
+
+      if score>=7.5
+          rating = 3
+      elsif score>=5 && score <7.5
+        rating = 2
+      elsif score>=2 && score < 5
+        rating = 2
+      else
+        rating = 0
+      end
     end
 
     #rating = { :rating => rating, :position => backgroundPosition }
@@ -250,14 +277,18 @@ module ReportHelper
 
   def get_level_of_service(water, capital, quantity, time)
 
-    capEx_score= get_capEx_benchmark_rating(water, capital)
+    level_of_service= 'Please complete the form.'
 
-    capEx_code= @@capEx_rating_code[capEx_score]
-    quantity_code= quantity+1
-    access_code= time+1
+    if water && capital && quantity && time
+      capEx_score= get_capEx_benchmark_rating(water, capital)
 
-    concatenation= capEx_code.to_s + quantity_code.to_s+ access_code.to_s
-    level_of_service= t ('report.water_basic.a'+concatenation)
+      capEx_code= @@capEx_rating_code[capEx_score]
+      quantity_code= quantity+1
+      access_code= time+1
+
+      concatenation= capEx_code.to_s + quantity_code.to_s+ access_code.to_s
+      level_of_service= t ('report.water_basic.a'+concatenation)
+    end
 
     return level_of_service
 
