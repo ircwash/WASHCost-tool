@@ -2,9 +2,9 @@
 
 <h1><%= t 'form.sanitation_basic.reliability.question' %></h1>
 
-<%= form_tag({controller: "sanitation_basic", action: "report"}, class: "main_content", id: "waterBasicForm") do %>
+<%= form_tag({controller: "sanitation_basic", action: "report"}, class: "main_content sanitation", id: "waterBasicForm") do %>
 
-  <ul class="reliabilityInput choices">
+  <ul class="reliabilityInput">
     <li>
       <%= label_tag("reliYes", nil, class: "tickCheckBox") do %>
         <%= radio_button_tag("r_reliability", 0, false, id: "reliYes") %>

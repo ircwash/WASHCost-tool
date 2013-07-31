@@ -1353,7 +1353,28 @@ a.sbSelector:hover {
         background-position: -256px -144px;
     }
     .usageInput li .usage_02.ticked {
-        background-position: -520px -144px;
+        background-position: -520px 0;
+    }
+    .sanitation .reliabilityInput {
+        width: 490px;
+    }
+    .sanitation label {
+        background-position: 0 -196px;
+    }
+    .sanitation .reliability_01 {
+        background-position: -159px -196px;
+    }
+    .sanitation .reliability_02 {
+        background-position: -480px -196px;
+    }
+    .sanitation label.ticked {
+        background-position: 0 0;
+    }
+    .sanitation .reliability_01.ticked {
+        background-position: -159px 0;
+    }
+    .sanitation .reliability_02.ticked {
+        background-position: -480px 0;
     }
 /*
 *
