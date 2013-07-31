@@ -1463,10 +1463,10 @@ a.sbSelector:hover {
         margin-right: 45px;
         background: transparent url('/assets/spriteQ7basicImpermeability24.png') no-repeat -1000px -200px;
     }
-    .service .rowQQR.impermeability .result_0 {
+    .service .rowQQR.impermeability.result_0 {
         background-position: 0 -205px;
     }
-    .service .rowQQR.impermeability .result_1 {
+    .service .rowQQR.impermeability.result_1 {
         background-position: -170px -205px;
     }
     .service .rowQQR.enviroment {
@@ -1490,18 +1490,30 @@ a.sbSelector:hover {
         margin-right: 95px;
         background: transparent url('/assets/spriteQ8basicUsage24.png') no-repeat -1500px -143px;
     }
-    .service .rowQQR.usage.result_1 {
+    .service .rowQQR.usage.result_0 {
         background-position: -5px -143px;
     }
-    .service .rowQQR.usage.result_2 {
+    .service .rowQQR.usage.result_1 {
         background-position: -255px -143px;
     }
-    .service .rowQQR.usage.result_3 {
+    .service .rowQQR.usage.result_2 {
         background-position: -500px -143px;
     }
-    .service .rowQQR.reliability {
+    .sanitation .service .rowQQR.reliability.result_0 {
         height: 160px;
+        background: transparent url('/assets/spriteQ9basicWater24.png') no-repeat -3000px -180px;
+    }
+    .sanitation .service .rowQQR.reliability.result_0 {
         background-position: 0 -180px;
+    }
+    .sanitation .service .rowQQR.reliability.result_1 {
+        background-position: -160px -180px;
+    }
+    .sanitation .service .rowQQR.reliability.result_2 {
+        background-position: -320px -180px;
+    }
+    .sanitation .service .rowQQR.reliability.result_3 {
+        background-position: -479px -180px;
     }
 /*
 *
