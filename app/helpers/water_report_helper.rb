@@ -1,7 +1,6 @@
-module ReportHelper
+module WaterReportHelper
 
   def get_session_form
-
 
     form= {
         :country => nil,
@@ -38,17 +37,16 @@ module ReportHelper
   def get_water_basic_report
 
     form= get_session_form
-
-    rating= get_rating(form[:water],form[:capital],form[:recurrent], form[:reliability])
-    service_level= get_level_of_service(form[:water],form[:capital], form[:quantity], form[:time])
-
-    #
-    # (annual income/person) / ((total cost/person) / 10)
+    form_ready= is_form_ready?(form)
 
     cost_rating= get_cost_rating(form[:water], form[:capital])
     cost_rating_label= get_cost_rating_label(cost_rating)
 
+    rating= get_rating(form[:water],form[:capital],form[:recurrent], form[:reliability])
+    service_level= get_level_of_service(form[:water],form[:capital], form[:quantity], form[:time])
+
     results = {
+      :form_ready => form_ready,
       :cost_rating=> cost_rating,
       :cost_rating_label=> cost_rating_label,
       :service_level => service_level,
@@ -72,6 +70,12 @@ module ReportHelper
 
   end
 
+  def is_form_ready?(form)
+    ready= false
+    if water && capital && recurring && reliability
+      ready= true
+    end
+  end
 
   def get_country(country_code)
 
@@ -161,7 +165,6 @@ module ReportHelper
 
   def get_quality(index)
 
-
     quality= t 'form.value_not_set'
     if index && @@quality_values[index].present?
       quality= @@quality_values[index][:value]
@@ -188,6 +191,7 @@ module ReportHelper
 
 
   def get_cost_rating(water_index, capEx)
+
     benchmark= -1
 
     if water_index && capEx

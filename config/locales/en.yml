@@ -1,5 +1,3 @@
-
-
 en:
   global:
     yes: "Yes"
@@ -11,7 +9,7 @@ en:
       contact: "Contact"
       sign_in: "Sign In"
     main:
-      content:
+      context:
         title: "Context"
         items:
           country: "Country"
@@ -40,56 +38,62 @@ en:
       managing: "Managing"
       technology: "Technology"
       cost: "Cost"
-      serivce: "Service"
-
+      service: "Service"
   buttons:
     next: "Next"
     start: "OK! Start using the calculator"
     save: "Save"
     view_report: "View Report"
-
   inputs:
     choose_a_country: "Choose a country"
-
   form:
+    not_ready:
+      summary: "You must complete the form before we can provide summary analysis"
+      cost: "You must complete the form before we can provide cost analysis"
     value_not_set: "Value Not Set"
     skip: "skip this question"
     shared:
       country:
-        question: "In which country does your programme (intervention) take place?"
+        question: "In which country does your water service take place?"
       capital:
-        question: "How much has been/will be spent constructing the water service (per person)?"
-        answers:
-          a0: "Yes, at household level"
-          a1: "No service at household level"
+        question: "How much has been/will be spent setting up the water service including construction (per person)?"
+        info: "Capital Expediture (hardware): Capital invested in constructing or purchasing fixed assets such as concrete structures, pumps and pipes. Capital Expenditure (software): The costs of one-off work with stakeholders prior to construction or implementation, extension, enhancement and augmentation (including costs of one-off capacity building activities). See: http://akvopedia.org/wiki/Capital_Expenditure_(CapEx)"
       recurrent:
         question: "How much is being spent/will be spent to operate, maintain and support the delivery of water services (per person per year)?"
+        info: "Operating and minor maintenance expenditure: typically comprises regular expenditure such as labour, fuel, chemicals, materials, and purchases of any bulk water. See: http://akvopedia.org/wiki/Operational_and_Minor_Maintenance_Expenditure_(OpEx) Capital maintenance expenditure: Asset renewal and replacement cost: occasional and ‘lumpy’ costs that seek to restore the functionality of a system, such as replacing pump rods or foot valves in handpumps, or a diesel generator in motorised systems. See: http://akvopedia.org/wiki/Capital_Maintenance_Expenditure_(CapManEx) Expediture of direct support: Direct support is structured support to service providers and users or user groups related to the operation and management of a WASH service; direct support costs are the costs of such support. They cover monitoring, technical advice and administrative, organisational or legal support.  The costs of support before and during the capital construction of a project are not included; they are considered to be capital software. Direct support is often used synonymously with “post-construction support”. See: http://akvopedia.org/wiki/Expenditure_Direct_Support_(ExpDS) Expenditure of indirect support: Indirect support costs cover expenditure on this macro-level support, including planning and policy making, and support to decentralised service authorities or local government. Indirect support includes capacity building for professionals and technicians and capacity support to local government as service authorities, for example to adhere to national norms, standards and guidelines. See: http://akvopedia.org/wiki/Expenditure_Indirect_Support_(ExpIDS)"
         value_label: "Per person<br/> per year"
       values:
         v0: "No service"
         v1: "Sub-standard service"
         v2: "Basic service"
         v3: "High service"
+        info: "A water service level characterises the benefits that users receive, measured by a combination of four criteria; quantity of water, quality of water, accessibility, and reliability. See: http://www.washcost.info/page/2454"
       select_an_option: "Select an Option"
     water_basic:
       water:
-        question: "What is the main water source use to provide water?"
+        question: "What is the main water source used to provide water?"
         answers:
           a0: "Borehole & handpump"
           a1: "Mechanised borehole"
           a2: "Single-town scheme"
           a3: "Multi-town scheme"
           a4: "Mixed-pipe supply"
+        info:
+          i0: "Reticulated supply with pumping, storage and distribution through public stand posts with provision for house connections."
+          i1: "Water is supplied through a small distribution network and connected public stand posts. Water storage is limited, typically to an overhead storage tank  directly connected to the pump.  Household connections are rare."
+          i3: "Reticulated supply with pumping, storage and distribution supplied to a number of interconnected towns or villages. Each village with its own storage and distribution network."
+          i4: "Water is supplied through a combination of separate, often overlapping, service delivery systems."
       population:
-        question: "How many people live in the area of intervention?"
+        question: "How many people are served by a [enter name of technology chosen]?"
         value_label: "People"
         answers:
           a0: "Less than 500"
           a1: "501 - 5,000"
           a2: "5,001 - 15,000"
           a3: "More than 15,000"
+        info: "A water system will typically have a design population, sometimes defined by local regulations, for how many people it is meant to serve. Please indicate the number of people that this system is designed to serve."
       time:
-        question: "How long does water collection take per day from the formal sources?"
+        question: "How long does it take to collect water per day from these services?"
         value_label: "Minutes per day"
         answers:
           a0:  "Less than 10"
@@ -97,7 +101,7 @@ en:
           a2: "Between 30 and 60"
           a3: "More than 60"
       quantity:
-        question: "What is the actual use of water from formal sources?"
+        question: "How much water is used from the water service?"
         value_label: "(Litres per person per day)"
         answers:
           a0: "Less than 5L"
@@ -112,7 +116,7 @@ en:
           a2: "Occasional and meets standards"
           a3: "Regular and meets standards"
       reliability:
-        question: "How reliable is the service? How many days per year is the water system not working?"
+        question: "How many days per year is the service working?"
         answers:
           a0: "Works all the time"
           a1: "Works most of the time"
@@ -122,7 +126,7 @@ en:
       household:
         question: "What is the typical household size?"
       latrine:
-        question: "What type of latrine is being used?"
+        question: "What type of latrine technology is being used?"
         answers:
           a0: "Traditional pit latrine"
           a1: "Trad. improved pit latrine"
@@ -131,7 +135,7 @@ en:
           a4: "Pour Flush Latrine"
           a5: "Latrine with septic tank"
       providing:
-        question: "Does the delivery model provide latrines at the household level?"
+        question: "Does the service provide latrines at the household level?"
         answers:
           a0: "Yes"
           a1: "No"
@@ -140,6 +144,7 @@ en:
         answers:
           a0: "Impermeable slab"
           a1: "No impermeable slab"
+        info: "This can be a traditional pit latrine with an impermeable slab (made from local materials, a pit latrine with a concrete impermeable slab, or a pour-flush or septic tank latrines, often with a concrete or bricked lines pit/tank with sealed impermeable slab."
       environment:
         question: "What is the environmental impact of the delivery model?"
         answers:
@@ -182,11 +187,13 @@ en:
             a1: "150-299 pp/km2"
             a2: ">150 pp/km2"
             a3: "Don't know"
+          info: "There is no international standard typology that adequately defines rural and urban areas and definitions vary greatly between nations. Knowing the population density of an area helps to better understand the the demographics of the service areas. The population density classifications provided are roughly in line with rural/small town/urban definitions. A density of less that 150 inhabitants per km2 defined as rural  and a population density of >=300 inhabitants per km2 (and a minimum population of 5,000) classed as urban (OECD, 2010). Anything community laying between these values can be considered as a small town. See: OECD, (2010). Chapter 15: A revised rural-urban typology - EuroStat regional yearbook 2010. Retrieved from: http://epp.eurostat.ec.europa.eu/cache/ITY_OFFPUB/KS-HA-10-001-15/EN/KS-HA-10-001-15-EN.PDF"
         existing:
           question: "Does this service exist already or is it planned?"
           answer:
             a0: "Existing"
             a1: "Planned"
+          info: "If the sanitation service already exists and you are using mostly past real expenditure information to answer these questions, then please select already existing. If you are making an estimate for an existing or new service, please select planned."
         service_area:
           question: "What is the population density of the service area?"
           answers:
@@ -205,8 +212,14 @@ en:
               a5: "utility"
               a6: "household"
               a7: "Don't know"
+            info:
+              i0: "Small-scale systems directly managed and operated by water committees. Larger and more complex systems managed by water committees with individual operational functions out-sourced to private individuals or small companies. Larger and more complex systems managed by water committees with all O&M out-sourced to private sector operators.  Associations of water committees providing economies of scale for certain O&M functions."
+              i1: "Municipal water company providing management services to rural communities. Associations of municipal companies providing management services to rural communities. Local public utilities providing management services to rural communities, including maintenance contracts."
+              i2: "National public utilities providing management services to rural communities, including maintenance contracts."
+              i3: "Individual households or clusters of or neighbouring households"
           how_managed:
             question: "Which of these options best describe how the water service is managed?"
+            info: "See: Lockwood, H. and Smits, S. 2011. Supporting rural water supply: moving towards a service delivery approach. The Hague: IRC International Water and Sanitation Centre, Wivenhoe: Aguaconsult and London: Practical Action Publishing - Table 8 pag. 86 Available at: http://www.waterservicesthatlast.org/publications/multi_country_synthesis"
           who_finances:
             question: "Who finances the construction of the water system?"
           who_owns:
@@ -228,8 +241,10 @@ en:
             placeholder: "Numeric (US$ per person)"
           hardware:
             question: "What is the total capital expenditure for hardware?"
+            info: "Capital invested in constructing or purchasing fixed assets such as concrete structures, pumps and pipes. See: http://akvopedia.org/wiki/Capital_Expenditure_(CapEx)"
           software:
             question: "What is the total capital expenditure for software?"
+            info: "The costs of one-off work with stakeholders prior to construction or implementation, extension, enhancement and augmentation (including costs of one-off capacity building activities).See: http://akvopedia.org/wiki/Capital_Expenditure_(CapEx)"
           maintenance:
             question: "What is the minor operation and maintenance expenditure?"
           direct:
@@ -484,4 +499,3 @@ en:
     final_report: " | Final Reports"
     complete: "Complete"
     footer_layout_sanitation: "Sanitation"
-
