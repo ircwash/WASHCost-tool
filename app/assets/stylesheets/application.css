@@ -1298,9 +1298,11 @@ a.sbSelector:hover {
         width: 470px;
         margin: 0 auto;
     }
+
     .capitalInput li {
         width: 232px;
     }
+
     .capitalInput li label {
         height: 165px;
         background: transparent url('/assets/spriteQ6basicProviding24.png') no-repeat 1px -133px;

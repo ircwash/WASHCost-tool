@@ -5,20 +5,20 @@
 
 
  <div class="choices">
-  <ul class="providingInput">
-    <li>
-      <%= label_tag("houseYes", nil, class: "tickCheckBox") do %>
-        <%= radio_button_tag("r_providing", 0, false, id: "houseYes") %>
-        <span><%= t 'form.sanitation_basic.providing.answers.a0' %> </span>
-      <% end %>
-    </li>
-    <li>
-      <%= label_tag("houseNot", nil, class: "tickCheckBox latrine_01") do %>
-        <%= radio_button_tag("r_providing", 1, id: "houseNot") %>
-        <span><%= t 'form.sanitation_basic.providing.answers.a1' %></span>
-      <% end %>
-    </li>
-  </ul>
+   <ul class="capitalInput">
+     <li>
+       <%= label_tag("capitalYes", nil, class: "tickCheckBox") do %>
+           <%= radio_button_tag("r_providing", 0, false, id: "capitalYes") %>
+           <span><%= t 'form.shared.capital.answers.a0' %></span>
+       <% end %>
+     </li>
+     <li>
+       <%= label_tag("capitalNo", nil, class: "tickCheckBox capital_01") do %>
+           <%= radio_button_tag("r_providing", 1, id: "capitalNo") %>
+           <span><%= t 'form.shared.capital.answers.a1' %></span>
+       <% end %>
+     </li>
+   </ul>
  </div>
 
     <input type="hidden" name="providing"/>

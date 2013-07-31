@@ -127,16 +127,16 @@ module ReportHelper
 
   end
 
-  def get_population(index)
+  def get_population(input)
 
     population= t 'form.value_not_set'
-    if index && @@population_values[index].present?
-      population= @@population_values[index][:label]
+    if input && input.to_i && input.to_i > -1
+      population= input.to_i
     end
 
     return population
   end
-  
+
   def get_time(index)
 
     time= t 'form.value_not_set'
@@ -182,11 +182,16 @@ module ReportHelper
     return reliability
   end
 
+  def get_cost_bench
+
+  end
+
 
   def get_cost_rating(water_index, capEx)
-    benchmark= 0
+    benchmark= -1
 
     if water_index && capEx
+
       if water_index==0
 
         if capEx < 20
@@ -215,7 +220,7 @@ module ReportHelper
 
   def get_cost_rating_label(rating)
 
-    label=  t 'report.benchmark_below'
+    label=  t 'form.value_not_set'
 
     if rating==0
       label= (t 'report.benchmark_below')
@@ -224,7 +229,7 @@ module ReportHelper
     elsif rating==2
       label= (t 'report.benchmark_above')
     else
-      label= 'Please Enter a <a href="./water">waterIndex</a> and <a href="./capital">Capital Expenditure<a/>'
+      label= 'Please Enter a <a href="./population">Population</a> and <a href="./capital">Capital Expenditure<a/>'
     end
 
     return label
@@ -248,7 +253,7 @@ module ReportHelper
 
   def get_rating(water, capital, recurring, reliability)
 
-    rating= 0
+    rating= nil
 
     if(water && capital && recurring && reliability)
       capExScore= get_capEx_benchmark_rating(water, capital)

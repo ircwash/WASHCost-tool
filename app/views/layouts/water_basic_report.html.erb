@@ -31,12 +31,24 @@
             <dd class="bench_icon_<%=flash[:results][:cost_rating]%>">
                 <span class="summary_cost">$<%= number_with_delimiter(flash[:results][:total], :delimiter=>',')%></span>
                 <span class="benchmark_text "><%= flash[:results][:cost_rating_label]%></span>
+            <dt class="summary_cost">
+              <span>
+                $<%= number_with_delimiter(flash[:results][:total], :delimiter=>',')%>
+              </span><br/>
+              <span>
+                For a population of <%=flash[:results][:population]%> people
+              </span>
+            </dt>
+
+            <dd class="bench_icon_<%=flash[:results][:cost_rating]%>">
+                <span class="benchmark_text">Below Benchmarks</span>
             </dd>
         </dl>
         <dl class="levelService">
             <dt>Level of Service</dt>
             <dd class="levelStar_<%= flash[:results][:rating] %>">
               <span><%= flash[:results][:rating_label]%>Sub-standard</span>
+              <span>Above Benchmarks</span>
             </dd>
         </dl>
         <div class="review">
