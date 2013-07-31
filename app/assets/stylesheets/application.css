@@ -871,7 +871,7 @@ a.sbSelector:hover {
         clear: both;
         width: 83%;
         margin: 0 auto;
-        padding-top: 30px;
+        padding-top: 65px;
     }
     .review a {
         display: block;
@@ -888,6 +888,7 @@ a.sbSelector:hover {
         text-align: left;
         color: #fff;
         padding-top: 10px;
+        line-height: 1.5;
     }
     .review div {
         display: none;
@@ -961,20 +962,39 @@ a.sbSelector:hover {
         text-align: center;
         width: 100%;
     }
-    .general dl.levelService {
+    .general .levelService {
         float: right;
         margin: 0;
     }
-    .general .costService .summary_cost {
-        font-size: 36px;
-        color: #ACCD4B;
-        font-weight: bold;
+    .general .levelService dt {
+        margin-bottom: 0;
     }
     .general .costService dt {
         margin-bottom: 0;
     }
-    .costService dd.bench_icon_0 {
-        background: transparent url('/assets/benchBack24.png') no-repeat 0 0;
+    .general .sumaryTotal {
+        font-size: 36px;
+        color: #ACCD4B;
+        font-weight: bold;
+    }
+    .general .sumaryCost span {
+        position: relative;
+    }
+    .general .sumaryTotal {
+        font-size: 36px;
+        font-weight: bold;
+        color: #ACCD4B;
+    }
+    .general .sumaryPeople {
+        margin-bottom: 15px;
+    }
+    .sumaryCost .benchText {
+        width: 100%;
+        font-weight: bold;
+        padding: 6px 0 6px 0;
+    }
+    .sumaryCost .benchIcon-1 {
+        background: transparent url('/assets/benchBack24.png') no-repeat center 0;
     }
     .levelService dd {
         background: transparent url('/assets/starsLevel8.png') no-repeat 50% 0;
