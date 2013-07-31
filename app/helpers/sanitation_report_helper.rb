@@ -8,6 +8,7 @@ module SanitationReportHelper
     cost_rating_label= get_cost_rating_label(cost_rating)
 
     results = {
+
         :cost_rating=> cost_rating,
         :cost_rating_label=> cost_rating_label,
         :country => get_country(form[:country]),
