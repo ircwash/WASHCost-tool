@@ -1,43 +1,41 @@
-<% set_categories_for_navigation %>
+<%
+   params[:is_sanitation]= true
+%>
 <nav>
   <div class="navWrapper">
-    <ul class="main">
-      <li class="content">
-        <a href="/sanitation_basic/country/" class="<%= is_active_category?('context_class') %>"><%= t 'nav.main.content.title' %></a>
-        <ul>
-          <% content_nav.each do |key, value| %>
+    <ul class="navigation">
+      <li class="section context">
+        <a href="/sanitation_basic/country/" class="<%= get_main_nav_cssClass(:context, params[:action]) %>"><%= t 'nav.main.content.title' %></a>
+      </li>
+      <li  class="section cost">
+        <a href="/sanitation_basic/capital" class="<%= get_main_nav_cssClass(:cost, params[:action]) %>"><%= t 'nav.main.cost.title' %></a>
+      </li>
+      <li class="section service">
+        <a href="/sanitation_basic/providing" class="<%= get_main_nav_cssClass(:service, params[:action]) %>"><%= t 'nav.main.service.title' %></a>
+      </li>
+      <li id="subnavigation">
+        <ul id="navSled" style="left:<%= get_nav_offset %>px">
+          <% get_nav_items[:context][:items].each do |key, value| %>
               <% active = get_class_for_section(:sanitation_basic_form, key) %>
               <li>
-                <a class="<%= active %>" href="/water_basic/<%= key %>">
-                  <%= content_nav[key] %>
+                <a class="<%= active %>" href="/sanitation_basic/<%= key %>">
+                  <%= get_nav_items[:context][:items][key] %>
                 </a>
               </li>
           <% end %>
-        </ul>
-      </li>
-
-      <li class="cost">
-        <a href="/sanitation_basic/capital" class="<%= is_active_category?('cost_class') %>"><%= t 'nav.main.cost.title' %></a>
-        <ul>
-          <% cost_nav.each do |key, value| %>
+          <% get_nav_items[:cost][:items].each do |key, value| %>
               <% active = get_class_for_section(:sanitation_basic_form, key) %>
               <li>
-                <a class="<%= active %>" href="<%= key %>">
-                  <%= cost_nav[key] %>
+                <a class="<%= active %>" href="/sanitation_basic/<%= key %>">
+                  <%= get_nav_items[:cost][:items][key] %>
                 </a>
               </li>
           <% end %>
-        </ul>
-      </li>
-
-      <li class="service">
-        <a href="/sanitation_basic/providing" class="<%= is_active_category?('cost_class') %>"><%= t 'nav.main.service.title' %></a>
-        <ul>
-          <% service_nav.each do |key, value| %>
+          <% get_nav_items[:service][:items].each do |key, value| %>
               <% active = get_class_for_section(:sanitation_basic_form, key) %>
               <li>
-                <a class="<%= active %>" href="<%= key %>">
-                  <%= service_nav[key] %>
+                <a class="<%= active %>" href="/sanitation_basic/<%= key %>">
+                  <%= get_nav_items[:service][:items][key] %>
                 </a>
               </li>
           <% end %>
@@ -46,7 +44,7 @@
     </ul>
   </div>
   <div class="pag">
-    <a class="pagPrev" href="#">prev</a>
-    <a class="pagNext" href="#">next</a>
+    <a class="pagPrev" href="#" id="navButtonLeft">prev</a>
+    <a class="pagNext" href="#" id="navButtonRight">next</a>
   </div>
 </nav>

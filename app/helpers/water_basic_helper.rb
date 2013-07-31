@@ -2,6 +2,7 @@ module WaterBasicHelper
 
   include ReportHelper
 
+
   def get_class_for_section(form, section)
 
     className= ''
@@ -15,59 +16,105 @@ module WaterBasicHelper
     return className
   end
 
-  def get_section_left
-    left= ''
+  def is_main_nav_current?(main_nav, action)
 
-    if is_active_category?('context_class')
-      left= '0px'
-    elsif is_active_category?('cost_class')
-      left= '-372px'
-    else
-      left= '-785px'
+    is_current= false
+
+    get_nav_items[main_nav][:items].each do |key, value|
+      if(action === key)
+        is_current= true
+        break
+      end
     end
 
-    return left
+    return is_current
   end
 
-  def set_categories_for_navigation
-    categories = {}
-    current_action = params[:action]
+  def get_main_nav_cssClass(main_nav, action)
 
-    categories["context_class"] = true if !!(current_action.match /country|water|population|household|latrine/)
-    categories["cost_class"] = true if !!(current_action.match /capital|recurrent/)
-    categories["service_class"] = true if !!(current_action.match /time|quantity|quality|providing|impermeability|environment|usage|reliability/)
+    cssClass=''
 
-    params[:categories] = categories
+    if is_main_nav_current?(main_nav, action)
+      cssClass= 'active'
+    end
+
+    return cssClass
   end
 
-  def content_nav
-    nav= {
-      'country' => (I18n.t 'nav.main.content.items.country'),
-      'water' => (I18n.t 'nav.main.content.items.water'),
-      'population' => (I18n.t 'nav.main.content.items.population')
+  def get_nav_offset
+    nav_offset= '0'
+
+    get_nav_items.each do |key, value|
+
+      if is_main_nav_current?(key, params[:action])
+        nav_offset= value[:offset]
+        break
+      end
+
+    end
+
+    return nav_offset
+  end
+
+
+  def get_nav_items
+
+    if(params[:is_sanitation]== true)
+      return {
+          :context => {
+              :offset => '0',
+              :items => {
+                  'country' => (I18n.t 'nav.main.content.items.country'),
+                  'household' => (I18n.t 'nav.main.content.items.household'),
+                  'latrine' => (I18n.t 'nav.main.content.items.latrine'),
+              }
+          },
+          :cost => {
+              :offset => '-280',
+              :items => {
+                  'capital' => (I18n.t 'nav.main.cost.items.capital'),
+                  'recurrent' => (I18n.t 'nav.main.cost.items.recurrent')
+              }
+          },
+          :service => {
+              :offset => '-280',
+              :items => {
+                  'providing' => (I18n.t 'nav.main.service.items.providing'),
+                  'impermeability' => (I18n.t 'nav.main.service.items.impermeability'),
+                  'environment' => (I18n.t 'nav.main.service.items.environment'),
+                  'usage' => (I18n.t 'nav.main.service.items.usage')      ,
+                  'reliability' => (I18n.t 'nav.main.service.items.reliability')
+              }
+          }
+      }
+    end
+
+    return {
+        :context => {
+            :offset => '0',
+            :items => {
+                'country' => (I18n.t 'nav.main.content.items.country'),
+                'water' => (I18n.t 'nav.main.content.items.water'),
+                'population' => (I18n.t 'nav.main.content.items.population')
+            }
+        },
+        :cost => {
+            :offset => '-250',
+            :items => {
+                'capital' => (I18n.t 'nav.main.cost.items.capital'),
+                'recurrent' => (I18n.t 'nav.main.cost.items.recurrent')
+            }
+        },
+        :service => {
+            :offset => '-250',
+            :items => {
+                'quantity' => (I18n.t 'nav.main.service.items.quantity'),
+                'quality' => (I18n.t 'nav.main.service.items.quality'),
+                'reliability' => (I18n.t 'nav.main.service.items.reliability')
+            }
+        }
     }
-    return nav
+
   end
-
-  def cost_nav
-    nav= {
-      'capital' => (I18n.t 'nav.main.cost.items.capital'),
-      'recurrent' => (I18n.t 'nav.main.cost.items.recurrent')
-    }
-  end
-
-  def service_nav
-    nav= {
-      'quantity' => (I18n.t 'nav.main.service.items.quantity'),
-      'quality' => (I18n.t 'nav.main.service.items.quality'),
-      'reliability' => (I18n.t 'nav.main.service.items.reliability')
-    }
-  end
-
-  def is_active_category?( name )
-    params[:categories].has_key?(name) ? "active" : ""
-  end
-
-
 
 end

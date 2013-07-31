@@ -149,88 +149,105 @@ input.next_button {
     padding-right: 23px;
     background: transparent url('/assets/spriteArrow8.png') no-repeat 100% -295px;
 }
-nav {
-    position: relative;
-}
-.navWrapper {
-    position: relative;
-    width: 935px;
-    height: 120px;
-    overflow: hidden;
-    margin: 0 auto;
-}
-.main {
-    position: absolute;
-    width: 1000000px;
-    margin: 30px 0 0 0;
-}
-.main li {
-    position: relative;
-    width: auto;
-    float: left;
-}
-.main li a {
-    display: block;
-    font-size: 18px;
-    font-weight: bold;
-    color: #9acfdf;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-.main li a.active {
-    color: #fff;
-}
-.main li.content a {
-    display: block;
-    float: right;
-}
-.main li.cost a {
-    display: block;
-    margin-left: 55px;
-}
-.main li.service a {
-    display: block;
-    margin-left: -195px;
-}
-.main li ul {
-    clear: both;
-    overflow: hidden;
-    background: #359ec0 url('/assets/spriteArrow8.png') no-repeat 102% -490px;
-}
-.main li li {
-    width: auto;
-    float: left;
-}
-.main li li a.done {
-    display: block;
-    color: #fff;
-    background: transparent url('/assets/spriteArrow8.png') no-repeat 100% -384px;
-}
-.navWrapper .main li li a {
-    display: block;
-    font-size: 12px;
-    margin: 0;
-    padding: 14px 30px;
 
-}
-.main li li a.active {
-    color: #359ec0;
-    background-color: #fff;
+/* NAVIGATION */
+    nav {
+        position: relative;
+    }
+    .navWrapper {
+        position: relative;
+        width: 935px;
+        height: 120px;
+        overflow: hidden;
+        margin: 0 auto;
+    }
 
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-}
-.pag a {
-    display: block;
-    position: absolute;
-    top: 50%;
-    width: 25px;
-    height: 30px;
-    margin-top: 25px;
-    background: transparent url('/assets/spriteArrow8.png') no-repeat 0 -101px;
-    text-indent: -10000px;
-}
+    ul.navigation {
+        margin-top: 35px;
+        text-align: center;
+    }
+
+    ul.navigation li {
+
+        float: left;
+    }
+
+    ul.navigation .context {
+        text-align: right
+    }
+
+    ul.navigation .service {
+        text-align: left
+    }
+
+    ul.navigation li.section {
+        float: left;
+        width: 33%;
+        text-transform:uppercase;
+        margin-bottom: 20px;
+    }
+
+    ul.navigation li.section a {
+
+        font-size: 18px;
+        color: #9acfdf;
+        font-weight: bold;
+    }
+
+    ul.navigation li.section a.active {
+
+        color: #fff;
+    }
+
+    .navigation #subnavigation ul{
+        background-color: #359ec0;
+        top: 70px; position: absolute;
+        white-space: nowrap;
+        height: 42px;
+    }
+
+    .navigation li li {
+        width: auto;
+        float: left;
+    }
+
+    .navigation li li a.done {
+        display: block;
+        color: #fff;
+        background:transparent url('/assets/spriteArrow8.png') no-repeat 100% -384px;
+    }
+
+    .navigation li li a {
+        display: block;
+        font-size: 12px;
+        margin: 0;
+        padding: 14px 30px;
+        color: #fff;
+        font-weight: bold;
+        text-transform:uppercase;
+    }
+
+    .navigation li li a.active {
+        color: #359ec0;
+        background-color: #fff;
+
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+
+
+    .pag a {
+        display: block;
+        position: absolute;
+        top: 50%;
+        width: 25px;
+        height: 30px;
+        margin-top: 25px;
+        background: transparent url('/assets/spriteArrow8.png') no-repeat 0 -101px;
+        text-indent: -10000px;
+    }
+
 .pag .pagPrev {
     left: 18px;
 }
