@@ -993,18 +993,17 @@ a.sbSelector:hover {
         font-weight: bold;
         padding: 6px 0 6px 0;
     }
-    .sumaryCost .benchIcon-1 {
-        background: transparent url('/assets/benchBack24.png') no-repeat 0 -51px;
-    }
-.sumaryCost .benchIcon0 {
-    background: transparent url('/assets/benchBack24.png') no-repeat 0 -51px;
-}    .sumaryCost .benchIcon1{
+    .sumaryCost .benchIcon2 ,
+    .sumaryCost .benchIcon0 {
+        background: transparent url('/assets/benchBack24.png') no-repeat center -51px;
+    }    
+    .sumaryCost .benchIcon1{
          background: transparent url('/assets/benchBack24.png') no-repeat center 0;
-     }    .sumaryCost .benchIcon2 {
-              background: transparent url('/assets/benchBack24.png') no-repeat 0 -51px;
-          }
-
-
+     }    
+    .sumaryCost .benchText.benchIcon2,
+    .sumaryCost .benchText.benchIcon0 {
+        text-indent: 20px;
+    } 
     .levelService dd {
         background: transparent url('/assets/starsLevel8.png') no-repeat 50% 0;
     }
