@@ -952,7 +952,7 @@ a.sbSelector:hover {
     }
     .general .sectionWrapper {
         width: 440px;
-        margin: 0 auto;
+        margin: 0 auto 50px;
     }
     .general dl dd span {
         display: block;
@@ -1451,7 +1451,6 @@ a.sbSelector:hover {
     .sanitation .service .rowQQR .value {
         margin-top: 140px;
     }
-
     .service .rowQQR.providing {
         width: 29%;
         margin: 0 25px 0 155px;
@@ -1525,6 +1524,19 @@ a.sbSelector:hover {
         width: 765px;
         height: 265px;
         padding-left: 280px;
+    }
+/*    section .sectionWrapper {
+        width: 865px;
+    }*/
+/*    .content .sectionWrapper {
+        width: 440px;
+        margin: 0 auto 50px;
+    }*/
+    .cost .sectionWrapper,
+    .technology .sectionWrapper,
+    .managing .sectionWrapper,
+    .content .sectionWrapper {
+        width: 865px;
     }
     .advance section {
         position: relative;
