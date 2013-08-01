@@ -1515,6 +1515,18 @@ a.sbSelector:hover {
     .sanitation .service .rowQQR.reliability.result_3 {
         background-position: -479px -180px;
     }
+    /* advance report */
+    .advance section {
+        position: relative;
+    }
+    .advance section .reportHeading a {
+        position: absolute;
+        top: 35px;
+        right: 50px;
+    }
+    .advance .content dl dd {
+        height: 145px;
+    }
 /*
 *
 *   IE - Fixes
