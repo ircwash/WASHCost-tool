@@ -1,6 +1,6 @@
 module WaterBasicHelper
 
-  include ReportHelper
+  include WaterReportHelper
 
 
   def get_class_for_section(form, section)
@@ -21,7 +21,7 @@ module WaterBasicHelper
     is_current= false
 
     get_nav_items[main_nav][:items].each do |key, value|
-      if(action === key)
+      if action === key
         is_current= true
         break
       end
@@ -42,6 +42,7 @@ module WaterBasicHelper
   end
 
   def get_nav_offset
+
     nav_offset= '0'
 
     get_nav_items.each do |key, value|
@@ -64,9 +65,9 @@ module WaterBasicHelper
           :context => {
               :offset => '0',
               :items => {
-                  'country' => (I18n.t 'nav.main.content.items.country'),
-                  'household' => (I18n.t 'nav.main.content.items.household'),
-                  'latrine' => (I18n.t 'nav.main.content.items.latrine'),
+                  'country' => (I18n.t 'nav.main.context.items.country'),
+                  'household' => (I18n.t 'nav.main.context.items.household'),
+                  'latrine' => (I18n.t 'nav.main.context.items.latrine'),
               }
           },
           :cost => {
@@ -93,9 +94,9 @@ module WaterBasicHelper
         :context => {
             :offset => '0',
             :items => {
-                'country' => (I18n.t 'nav.main.content.items.country'),
-                'water' => (I18n.t 'nav.main.content.items.water'),
-                'population' => (I18n.t 'nav.main.content.items.population')
+                'country' => (I18n.t 'nav.main.context.items.country'),
+                'water' => (I18n.t 'nav.main.context.items.water'),
+                'population' => (I18n.t 'nav.main.context.items.population')
             }
         },
         :cost => {

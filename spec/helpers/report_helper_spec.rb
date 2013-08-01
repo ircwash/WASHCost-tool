@@ -1,6 +1,6 @@
 require_relative  '../spec_helper'
 
-describe ReportHelper, :type => :helper do
+describe WaterReportHelper, :type => :helper do
 
   describe "Get the report values from ession" do
 
