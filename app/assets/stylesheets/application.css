@@ -1521,6 +1521,11 @@ a.sbSelector:hover {
         background-position: -479px -180px;
     }
     /* advance report */
+    #chart_div {
+        width: 765px;
+        height: 265px;
+        padding-left: 280px;
+    }
     .advance section {
         position: relative;
     }

@@ -87,22 +87,18 @@
         <div class="input-like"> <%= flash[:results][:annual_income] %>   </div>
     </div>
   </section>
-
-  <hr/>
   <section class="report">
 
     <h2><%= t 'report.water_advanced.technology.title' %></h2>
 
     <h3><%= t 'report.water_advanced.supply_system'%></h3>
 
-    <hr/>
     <ul>
       <li><%= flash[:results][:supply_system] %></li>
       <li><%= t 'report.water_advanced.units'%>: ??</li>
       <li><%= t 'report.water_advanced.people_served'%>: [??]</li>
       <li><%= t 'report.water_advanced.inauguration'%>: <%= flash[:results][:inauguration] %></li>
     </ul>
-    <hr/>
 
     <ul>
       <li><%= t 'report.water_advanced.water_sources'%><br/><%= flash[:results][:water_sources] %></li>
@@ -115,55 +111,49 @@
 
   </section>
 
-  <hr/>
-
   <section class="service">
 
     <h2><%= t 'report.water_advanced.cost.title' %></h2>
 
-    <div id="chart_div" style="width: 765px; height: 265px;padding-left: 280px"></div>
+    <div id="chart_div"></div>
 
-    <div style="clear: both; height: 150px;">
-      <h3><%= t 'report.water_advanced.cost.total' %></h3>
-      <ul>
-        <li><%= t 'report.water_advanced.cost.hardware' %>: </li>
-        <li><%= t 'report.water_advanced.cost.software' %>: </li>
-      </ul>
-    </div>
-
-    <div style="clear: both; height: 150px;">
-
-      <h3><%= t 'report.water_advanced.cost.maintenance' %></h3>
-      <ul>
-        <li><%= t 'report.water_advanced.cost.minor' %>: </li>
-        <li><%= t 'report.water_advanced.cost.capital' %>: </li>
-      </ul>
-    </div>
-
-    <div style="clear: both; height: 150px;">
-      <h3><%= t 'report.water_advanced.cost.support' %></h3>
-      <ul>
-        <li><%= t 'report.water_advanced.cost.direct' %>: </li>
-        <li><%= t 'report.water_advanced.cost.indirect' %>: </li>
-      </ul>
-    </div>
-
-    <div style="clear: both; height: 150px;">
-      <ul>
-        <li>
-          <%= t 'report.water_advanced.cost.loan_yearly.title' %>:
-          <%= t 'report.water_advanced.cost.loan_yearly.unit' %>
-        </li>
-        <li>
-          <%= t 'report.water_advanced.cost.payback.title' %>:
-          <%= t 'report.water_advanced.cost.payback.unit' %>
-        </li>
-      </ul>
-    </div>
-
+    <ul>
+      <li>
+        <h3><%= t 'report.water_advanced.cost.total' %></h3>
+          <ul>
+            <li><%= t 'report.water_advanced.cost.hardware' %>: </li>
+            <li><%= t 'report.water_advanced.cost.software' %>: </li>
+          </ul>
+      </li>
+      <li>
+        <h3><%= t 'report.water_advanced.cost.maintenance' %></h3>
+        <ul>
+          <li><%= t 'report.water_advanced.cost.minor' %>: </li>
+          <li><%= t 'report.water_advanced.cost.capital' %>: </li>
+        </ul>
+      </li>
+      <li>
+        <h3><%= t 'report.water_advanced.cost.support' %></h3>
+        <ul>
+          <li><%= t 'report.water_advanced.cost.direct' %>: </li>
+          <li><%= t 'report.water_advanced.cost.indirect' %>: </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <%= t 'report.water_advanced.cost.loan_yearly.title' %>:
+            <%= t 'report.water_advanced.cost.loan_yearly.unit' %>
+          </li>
+          <li>
+            <%= t 'report.water_advanced.cost.payback.title' %>:
+            <%= t 'report.water_advanced.cost.payback.unit' %>
+          </li>
+        </ul>
+      </li>
+    </ul>
   </section>
 
-  <hr/>
   <section class="service">
 
     <h2>SERVICE LEVEL</h2>
@@ -171,25 +161,20 @@
 
   </section>
 </div>
-<div style="height: 550px;">
-
-</div>
-</div>
-
-  <footer>
-    <div class="footerWrapper">
-      <a href="#">Go to report page</a>
-      <div class="progressBarWrapper">
-        <h2><%= t 'footer.footer_layout' %> <span><%= t 'footer.final_report' %></span></h2>
-        <div class="progressBar">
-          <div class="outerBar">
-            <div class="innerBar" style="width:30%"></div>
-            <p><%= session[:pages_complete] %>% <%= t 'footer.complete' %></p>
-          </div>
+<footer>
+  <div class="footerWrapper">
+    <a href="#">Go to report page</a>
+    <div class="progressBarWrapper">
+      <h2><%= t 'footer.footer_layout' %> <span><%= t 'footer.final_report' %></span></h2>
+      <div class="progressBar">
+        <div class="outerBar">
+          <div class="innerBar" style="width:30%"></div>
+          <p><%= session[:pages_complete] %>% <%= t 'footer.complete' %></p>
         </div>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
 
 
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
