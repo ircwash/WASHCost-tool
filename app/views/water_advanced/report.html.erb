@@ -1,7 +1,5 @@
 <div class="report advance">
 
-  <section class="report">
-
     <h1><%= t 'report.water_advanced.general.title' %></h1>
 
     <section class="general">
@@ -34,7 +32,7 @@
       </div>
     </section>
     <section class="content">
-      <div class="reportHeading">
+      <div class="sectionHeading">
           <h2><%= t 'report.water_advanced.context.title' %></h2>
           <a href="./"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
       </div>
@@ -69,67 +67,11 @@
         </div>
       </div>
     </section>
-  <style>
-
-      .input-like{
-          background: none;
-
-          margin-top: 10px;
-
-          width: 157px;
-          height: 57px;
-          background-color:#3BB4C4;
-          padding: 0px;
-          font-size: 30px;
-          line-height: 57px;
-          font-weight: bold;
-
-          -webkit-border-radius: 5px;
-          -moz-border-radius   : 5px;
-          border-radius        : 5px;
-      }
-
-      section{
-          text-align: center
-      }
-
-      section.report{
-          text-align: center;
-      }
-      section.report ul{
-          height: 150px;
-          width: 100%;
-          font-weight: bold;
-      }
-
-      section.report li{
-          float: left;
-          width: 339px;
-          margin: 0px;
-          padding: 0px;
-          display: inline-block;
-          margin-top: 40px;
-          line-height: 20px;
-      }
-
-
-
-      .q10{
-          width: 50%;
-          text-align: center;
-          margin: 20px auto 40px auto
-      }
-
-
-      section.report hr{
-          border: 0;
-          width: 66%;
-          background-color: #fff;
-          height: 1px;
-      }
-  </style>
   <section class="report">
-    <h2><%= t 'report.water_advanced.management.title' %></h2>
+    <div class="sectionHeading">
+      <h2><%= t 'report.water_advanced.management.title' %></h2>
+      <a href="./"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
+    </div>
 
     <ul>
       <li><%= t 'report.water_advanced.management.how_managed' %><br/><%= flash[:results][:who_owns] %></li>

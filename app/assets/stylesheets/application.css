@@ -1524,7 +1524,7 @@ a.sbSelector:hover {
     .advance section {
         position: relative;
     }
-    .advance section .reportHeading a {
+    .advance .sectionHeading a {
         position: absolute;
         top: 35px;
         right: 50px;
