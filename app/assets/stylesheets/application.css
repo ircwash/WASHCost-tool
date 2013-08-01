@@ -1525,19 +1525,6 @@ a.sbSelector:hover {
         height: 265px;
         padding-left: 280px;
     }
-/*    section .sectionWrapper {
-        width: 865px;
-    }*/
-/*    .content .sectionWrapper {
-        width: 440px;
-        margin: 0 auto 50px;
-    }*/
-    .cost .sectionWrapper,
-    .technology .sectionWrapper,
-    .managing .sectionWrapper,
-    .content .sectionWrapper {
-        width: 865px;
-    }
     .advance section {
         position: relative;
     }
@@ -1548,6 +1535,21 @@ a.sbSelector:hover {
     }
     .advance .content dl dd {
         height: 145px;
+    }
+    .cost .sectionWrapper,
+    .technology .sectionWrapper,
+    .managing .sectionWrapper,
+    .content .sectionWrapper {
+        width: 865px;
+    }
+    .managing dl {
+        width: 33%;
+        text-align: center;
+        font-weight: bold;
+        color: #fff;
+    }
+    .managing dl dt {
+        margin-bottom: 0;
     }
 /*
 *
