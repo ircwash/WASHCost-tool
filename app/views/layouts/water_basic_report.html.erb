@@ -32,7 +32,7 @@
               <dt>Total Cost</dt>
                 <dd class="sumaryCost">
                   <span class="sumaryTotal">
-                    $<%= number_with_delimiter(flash[:results][:total], :delimiter=>',')%>
+                    US$<%= number_with_delimiter(flash[:results][:total], :delimiter=>',')%>
                   </span>
                   <span class="sumaryPeople">
                     For a population of <%=flash[:results][:population]%> people
@@ -117,21 +117,21 @@
         <div>
           <dl>
             <dt>Capital Expenditure</dt>
-            <dd class="country_0">$<%= flash[:results][:capital]%></dd>
+            <dd class="country_0">US$<%= flash[:results][:capital]%></dd>
           </dl>
           <a href="./capital"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
         </div>
         <div>
           <dl>
             <dt>Recurrent Expenditure</dt>
-            <dd class="household_0">$<%= flash[:results][:recurrent]%></dd>
+            <dd class="household_0">US$<%= flash[:results][:recurrent]%></dd>
           </dl>
           <a href="./recurrent"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
         </div>
         <div>
           <dl>
             <dt>Total</dt>
-            <dd class="total">$<%= number_with_delimiter(flash[:results][:total], :delimiter=>',')%></dd>
+            <dd class="total">US$<%= number_with_delimiter(flash[:results][:total], :delimiter=>',')%></dd>
           </dl>
         </div>
       </div>
