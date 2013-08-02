@@ -1331,7 +1331,7 @@ a.sbSelector:hover {
         left: 8%;
     }
     .provideInput {
-        width: 470px;
+        width: 475px;
     }
     .provideInput li {
         width: 232px;
@@ -1350,7 +1350,7 @@ a.sbSelector:hover {
         background-position: -265px 0;
     }
     .impermeabilityInput {
-        width: 345px;
+        width: 350px;
     }
     .impermeabilityInput li {
         width: 170px;
@@ -1373,7 +1373,7 @@ a.sbSelector:hover {
         background-position: -179px 0;
     }
     .environmentInput {
-        width: 490px
+        width: 495px
     }
     .environmentInput li {
         width: 160px;
@@ -1402,7 +1402,7 @@ a.sbSelector:hover {
         left: 3%;
     }
     .usageInput {
-        width: 700px;
+        width: 705px;
     }
     .usageInput label {
         height: 185px;
@@ -1429,7 +1429,7 @@ a.sbSelector:hover {
         background-position: -520px 26px
     }
     .sanitation .reliabilityInput {
-        width: 490px;
+        width: 495px;
     }
     .sanitation label {
         background-position: 0 -196px;
