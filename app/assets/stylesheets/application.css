@@ -86,7 +86,6 @@ input.next_button {
 /* layout */
 #outer_container {
     position: relative;
-    overflow: hidden;
     height: 95%;
     height: 100%;
     max-width: 1025px;
