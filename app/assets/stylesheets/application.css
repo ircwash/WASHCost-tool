@@ -1683,3 +1683,16 @@ a.sbSelector:hover {
     .ie8 .capitalSlider .labelScale {
         margin-top: -100px;
     }
+    .ie7 .countryChoices input {
+        width: 500px;
+        margin-top: 25px;
+    }
+    .ie7 .countryChoices img {
+        margin-right: 20px;
+    }
+    .ie7 .choiceTime .valueOutput {
+        width: 200px;
+    }
+    .ie7 .choiceTime img.imgTime {
+        width: -50px;
+    }
