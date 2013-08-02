@@ -362,7 +362,7 @@ footer h2 span {
 .mainContent h1 {
     width: 85%;
     color: #fff;
-    margin: 40px auto 30px;
+    margin: 40px Author 30px;
 }
 .mainContent h1 span {
     display: block;
@@ -1059,16 +1059,18 @@ a.sbSelector:hover {
         background-position: -605px -180px;
     }
     .content .populationResults dd {
+        width: 80%;
+        background-color: red;
         background: transparent url('/assets/spriteQ3basicWater24.png') no-repeat -10000px -180px;
     }
     .content .populationResults .result_01 {
-        background-position: -125px -180px;
+        background-position: -116px -180px;
     }
     .content .populationResults .result_02 {
-        background-position: -283px -180px;
+        background-position: -277px -180px;
     }
     .content .populationResults .result_03 {
-        background-position: -448px -180px;
+        background-position: -444px -180px;
     }
     .sanitation .content dl dd { 
         height: 120px;
