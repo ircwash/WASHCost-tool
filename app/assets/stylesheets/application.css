@@ -1680,3 +1680,6 @@ a.sbSelector:hover {
     .ie7 .content dl dd span {
         left: 0;
     }
+    .ie8 .capitalSlider .labelScale {
+        margin-top: -100px;
+    }
