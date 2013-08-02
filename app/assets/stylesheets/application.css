@@ -995,13 +995,17 @@ a.sbSelector:hover {
         text-indent: 20px;
         padding: 6px 0 6px 0;
     }
+    .sumaryCost .benchIcon2 ,
     .sumaryCost .benchIcon0 {
         background: transparent url('/assets/benchBack24.png') no-repeat center -51px;
-    }   
-    .sumaryCost .benchIcon2,
-    .sumaryCost .benchIcon1 {
+    }    
+    .sumaryCost .benchIcon1{
          background: transparent url('/assets/benchBack24.png') no-repeat center 0;
-     }
+     }    
+    .sumaryCost .benchText.benchIcon2,
+    .sumaryCost .benchText.benchIcon0 {
+        text-indent: 20px;
+    } 
     .levelService dd {
         background: transparent url('/assets/starsLevel8.png') no-repeat 50% 0;
     }
@@ -1268,10 +1272,6 @@ a.sbSelector:hover {
     * BASIC SANITATION
     *
     */
-
-/*    .sanitation .choices .valueLabel {
-        margin-bottom: 40px;
-    }*/
     .sanitation ul {
         overflow: hidden;
         margin: 0 auto 75px;

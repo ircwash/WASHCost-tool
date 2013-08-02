@@ -192,9 +192,10 @@
     function expenditureGraph() {
 
 
+        var _C= <%= (flash[:results][:capital]|| 0) %>;
+        var _R= <%= (flash[:results][:recurrent]|| 0) %>;
+
         if(_C && _R){
-            var _C= <%= (flash[:results][:capital]|| 0) %>;
-            var _R= <%= (flash[:results][:recurrent]|| 0) %>;
 
 
             var data = new google.visualization.DataTable();
