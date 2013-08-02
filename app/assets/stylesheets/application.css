@@ -86,11 +86,11 @@ input.next_button {
 /* layout */
 #outer_container {
     position: relative;
-    overflow: hidden;
-    height: 95%;
+    height: 100%;
     max-width: 1025px;
     margin: 0 auto;
-    background-color: #fff; 
+    background-color: #fff;
+    border: 1px solid red;
 }
 #outer_container_report {
     position: relative;
@@ -256,6 +256,7 @@ input.next_button {
     background-position: 0 0;
 }
 footer {
+    z-index: 2000;
     clear: both;
     position: fixed;
     width: 100%;
@@ -320,19 +321,13 @@ footer h2 span {
 }
 .mainContent {
     position: relative;
-    display: table;
     text-align: center;
     height: 100%;
     margin: 0 auto;
-    padding-bottom: 100px;
-    border-collapse: collapse;
+    overflow: hidden;
 }
 .main_content {
     position: relative;
-    display: table-cell;
-    min-height: 100%;
-    width: 100%;
-    vertical-align: middle;
 }
 .next_button {
     clear: both;
@@ -359,17 +354,11 @@ footer h2 span {
     color: #fff;
 }
 .mainContent h1 {
-    z-index: 100;
-    display: inline-block;
-    position: absolute;
-    width: 780px;
-    top: 5%;
-    left: 12%;
+    width: 85%;
     font-size: 40px;
     font-weight: normal;
-    line-height: 1;
-    margin: 0 auto;
     color: #fff;
+    margin: 40px auto 30px;
 }
 .mainContent h1 span {
     display: block;
@@ -426,6 +415,13 @@ form li label span {
     font-size: 11px;
     font-weight: bold;
     margin-top: 5px;
+}
+.valueLabel span {
+    display: block;
+    margin-top: -30px;
+}
+.valueLabel span.translation_missing {
+    margin-top: 0;
 }
 
 a.sbSelector:hover {
@@ -600,6 +596,7 @@ a.sbSelector:hover {
 }
 .ui-slider {
     height: 3px;
+    margin-bottom: 50px;
 }
 .ui-state-default, 
 .ui-widget-content .ui-state-default, 
@@ -642,12 +639,12 @@ a.sbSelector:hover {
 }
 .choices {
     width: 850px;
-    margin: -110px auto 55px
+    margin: 0 auto;
 }
 /* q1Country */
     .choices.countryChoices {
         width: 525px;
-        margin: -10px auto 100px;
+        margin: 50px auto 80px;
     }
     .countryChoices img {
         float: left;
@@ -663,11 +660,13 @@ a.sbSelector:hover {
     }
 /* info tab */
     .infoTab {
+        z-index: 100;
         clear: both;
         position: absolute;
         width: auto;
-        top: 235px;
+        top: 50%;
         right: -214px;
+        margin-top: -100px;
     }
     .tab {
         display: block;
@@ -695,11 +694,11 @@ a.sbSelector:hover {
     .tabContent p {
         color: #d5d7cf;
     }
-/* CONTENT */
+/* content basicLayout */
     .waterInput {
         overflow: hidden;
         width: 825px;
-        margin: -150px auto 50px;
+        margin: 0 auto 50px;
     }
     .waterInput li label {
         background: transparent url('/assets/spriteQ2basicWater24.png') no-repeat 0 -146px;
@@ -734,7 +733,7 @@ a.sbSelector:hover {
     .waterQuality {
         width: 665px;
         overflow: hidden;
-        margin: -130px auto 50px;
+        margin: 0 auto 50px;
     }
     .waterQuality li label {
         background: transparent url('/assets/spriteQ8basicWater24.png') no-repeat 0 -148px;
@@ -768,7 +767,7 @@ a.sbSelector:hover {
     .reliabilityInput {
         width: 660px;
         overflow: hidden;
-        margin: -100px auto 50px;
+        margin: 0 auto 50px;
     }
     .reliabilityInput label span {
         width: 90%;
@@ -801,7 +800,7 @@ a.sbSelector:hover {
     .waterSource {
         width: 660px;
         overflow: hidden;
-        margin: -160px auto 50px;
+        margin: 0 auto 50px;
     }
     .waterSource li label {
         height: 145px;
@@ -952,7 +951,7 @@ a.sbSelector:hover {
     }
     .general .sectionWrapper {
         width: 440px;
-        margin: 0 auto;
+        margin: 0 auto 50px;
     }
     .general dl dd span {
         display: block;
@@ -991,6 +990,7 @@ a.sbSelector:hover {
     .sumaryCost .benchText {
         width: 100%;
         font-weight: bold;
+        text-indent: 20px;
         padding: 6px 0 6px 0;
     }
     .sumaryCost .benchIcon2 ,
@@ -1026,7 +1026,7 @@ a.sbSelector:hover {
         margin-bottom: 56px;
     }
     .content .sectionWrapper div {
-        width: 28%;
+        width: 27%;
         float: left;
         margin-left: 25px;
     }
@@ -1068,16 +1068,18 @@ a.sbSelector:hover {
         background-position: -605px -180px;
     }
     .content .populationResults dd {
+        width: 80%;
+        background-color: red;
         background: transparent url('/assets/spriteQ3basicWater24.png') no-repeat -10000px -180px;
     }
     .content .populationResults .result_01 {
-        background-position: -125px -180px;
+        background-position: -116px -180px;
     }
     .content .populationResults .result_02 {
-        background-position: -283px -180px;
+        background-position: -277px -180px;
     }
     .content .populationResults .result_03 {
-        background-position: -448px -180px;
+        background-position: -444px -180px;
     }
     .sanitation .content dl dd { 
         height: 120px;
@@ -1230,8 +1232,6 @@ a.sbSelector:hover {
     .service .quality.result_04 {
         background-position: -444px -127px;
     }
-
-
     .service .reliability {
         background: transparent url('/assets/spriteQ9basicWater24.png') no-repeat 0 0;   
     }
@@ -1250,19 +1250,29 @@ a.sbSelector:hover {
     .service .reliability.result_04 {
         background-position: -445px -176px;
     }
+    /* Error no data */
+
+    .errorNoData {
+        border: 2px dashed #67aed0;
+        padding: 40px 60px;
+        margin: 0 auto;
+        background-color: #026d9e;
+    }
+    .errorNoData p {
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 1.5;
+        color: #CCE2EC;
+    }
 
     /*
     *
     * BASIC SANITATION
     *
     */
-
-    .choices .valueOutput {
-        margin-bottom: 40px;
-    }
     .sanitation ul {
         overflow: hidden;
-        margin: -115px auto 75px;
+        margin: 0 auto 75px;
     }
     .sanitation li:last-child {
         margin-right: 0;
@@ -1394,6 +1404,9 @@ a.sbSelector:hover {
     .usageInput {
         width: 700px;
     }
+    .usageInput label {
+        height: 185px;
+    }
     .usageInput li {
         width: 229px;
     }
@@ -1407,13 +1420,13 @@ a.sbSelector:hover {
         background-position: -520px -144px;
     }
     .usageInput li label.ticked {
-        background-position: -6px 0;
+        background-position: -6px 26px;
     }
     .usageInput li .usage_01.ticked {
-        background-position: -256px 0;
+        background-position: -256px 26px;
     }
     .usageInput li .usage_02.ticked {
-        background-position: -520px 0;
+        background-position: -520px 26px
     }
     .sanitation .reliabilityInput {
         width: 490px;
@@ -1438,6 +1451,9 @@ a.sbSelector:hover {
     }
     /* Sanitation Report */
 
+    .sanitation .ui-slider {
+        margin-bottom: 50px;
+    }
     .sanitation .service ul {
         margin-top: 0;
     }
@@ -1450,11 +1466,25 @@ a.sbSelector:hover {
     }
     .sanitation .service .rowQQR {
         width: 20%;
+        height: 230px;
     }
     .sanitation .service .rowQQR .value {
         margin-top: 140px;
     }
-
+    .sanitation .service li {
+        margin-bottom: 50px;
+    }
+    .sanitation .labelScale {
+        margin-top: -97px;
+    }
+    .sanitation .errorNoData {
+        width: 50%;
+        margin-bottom: 40px;
+    }
+    .sanitation .errorNoData p {
+        text-align: center;
+        margin: 0 auto;
+    } 
     .service .rowQQR.providing {
         width: 29%;
         margin: 0 25px 0 155px;
@@ -1479,7 +1509,6 @@ a.sbSelector:hover {
     }
     .service .rowQQR.enviroment {
         width: 23%;
-        height: 160px;
         margin-right: 100px;
         background: transparent url('/assets/spriteQ8basicEnviroment24.png') no-repeat -1000px -245px;
     }
@@ -1524,16 +1553,36 @@ a.sbSelector:hover {
         background-position: -479px -180px;
     }
     /* advance report */
+    #chart_div {
+        width: 765px;
+        height: 265px;
+        padding-left: 280px;
+    }
     .advance section {
         position: relative;
     }
-    .advance section .reportHeading a {
+    .advance .sectionHeading a {
         position: absolute;
         top: 35px;
         right: 50px;
     }
     .advance .content dl dd {
         height: 145px;
+    }
+    .cost .sectionWrapper,
+    .technology .sectionWrapper,
+    .managing .sectionWrapper,
+    .content .sectionWrapper {
+        width: 865px;
+    }
+    .managing dl {
+        width: 33%;
+        text-align: center;
+        font-weight: bold;
+        color: #fff;
+    }
+    .managing dl dt {
+        margin-bottom: 0;
     }
 /*
 *

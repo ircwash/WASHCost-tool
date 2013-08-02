@@ -8,7 +8,9 @@
   <div class="choices">
     <div class="value">
       <div class="valueOutput"><span id="recurrentValue">3</span> $</div>
-      <div class="valueLabel"><%= t 'form.water_basic.recurrent.value_label' %> (USD)</div>
+      <div class="valueLabel">
+        <%= t 'form.water_basic.recurrent.value_label' %> (USD)
+      </div>
     </div>
     <div id="recurrentSlider"></div>
   </div>
@@ -16,12 +18,14 @@
   <input type="hidden" name="recurrent"/>
   <%= submit_tag((t 'buttons.next'), class: "next_button") %>
     <a class="skip" href="./time">skip this question</a>
-<% end %>
 
-<div class="infoTab">
-  <a href="#" class="tab">infoTab</a>
-  <div class="tabContent">
-      <h3>Lorem ipsum dolor sit amet</h3>
-      <p>Maecenas elementum tristique nunc sed vehicula. Mauris dignissim erat ut lectus rutrum elementum. Etiam pharetra ac massa sit amet mattis. Nam blandit, nibh sed mattis accumsan, nisi risus vulputate eros, in aliquam leo tellus et est. Vivamus pretium ultrices dui, vitae lobortis tellus malesuada id. Ut quis convallis odio. Duis egestas dolor quis mi tempor laoreet.</p>
-  </div>
-</div>
+    <div class="infoTab">
+      <a href="#" class="tab">infoTab</a>
+      <div class="tabContent">
+        <h3>Lorem ipsum dolor sit amet</h3>
+        <p>Maecenas elementum tristique nunc sed vehicula. Mauris dignissim erat ut lectus rutrum elementum. Etiam pharetra ac massa sit amet mattis. Nam blandit, nibh sed mattis accumsan, nisi risus vulputate eros, in aliquam leo tellus et est. Vivamus pretium ultrices dui, vitae lobortis tellus malesuada id. Ut quis convallis odio. Duis egestas dolor quis mi tempor laoreet.</p>
+      </div>
+    </div>
+
+
+<% end %>
