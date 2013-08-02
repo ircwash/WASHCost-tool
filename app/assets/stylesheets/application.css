@@ -86,11 +86,11 @@ input.next_button {
 /* layout */
 #outer_container {
     position: relative;
-    height: 95%;
     height: 100%;
     max-width: 1025px;
     margin: 0 auto;
-    background-color: #fff; 
+    background-color: #fff;
+    border: 1px solid red;
 }
 #outer_container_report {
     position: relative;
@@ -322,9 +322,8 @@ footer h2 span {
 .mainContent {
     position: relative;
     text-align: center;
-    height: 90%;
+    height: 100%;
     margin: 0 auto;
-    padding-bottom: 100px;
     overflow: hidden;
 }
 .main_content {
