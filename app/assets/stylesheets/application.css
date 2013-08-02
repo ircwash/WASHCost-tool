@@ -361,8 +361,10 @@ footer h2 span {
 }
 .mainContent h1 {
     width: 85%;
+    font-size: 40px;
+    font-weight: normal;
     color: #fff;
-    margin: 40px Author 30px;
+    margin: 40px auto 30px;
 }
 .mainContent h1 span {
     display: block;
@@ -419,6 +421,13 @@ form li label span {
     font-size: 11px;
     font-weight: bold;
     margin-top: 5px;
+}
+.valueLabel span {
+    display: block;
+    margin-top: -30px;
+}
+.valueLabel span.translation_missing {
+    margin-top: 0;
 }
 
 a.sbSelector:hover {
@@ -593,6 +602,7 @@ a.sbSelector:hover {
 }
 .ui-slider {
     height: 3px;
+    margin-bottom: 50px;
 }
 .ui-state-default, 
 .ui-widget-content .ui-state-default, 
@@ -641,7 +651,7 @@ a.sbSelector:hover {
 /* q1Country */
     .choices.countryChoices {
         width: 525px;
-        margin: 0 auto 100px;
+        margin: 50px auto 80px;
     }
     .countryChoices img {
         float: left;
@@ -1250,7 +1260,7 @@ a.sbSelector:hover {
     *
     */
 
-    .choices .valueOutput {
+    .sanitation .choices .valueOutput {
         margin-bottom: 40px;
     }
     .sanitation ul {
