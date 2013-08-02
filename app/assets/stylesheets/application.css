@@ -86,8 +86,9 @@ input.next_button {
 /* layout */
 #outer_container {
     position: relative;
-    overflow: hidden;
-    height: 95%;
+    /*overflow: hidden;*/
+    /*height: 95%;*/
+    height: 100%;
     max-width: 1025px;
     margin: 0 auto;
     background-color: #fff; 
@@ -322,17 +323,17 @@ footer h2 span {
     position: relative;
     display: table;
     text-align: center;
-    height: 100%;
+    height: 90%;
     margin: 0 auto;
     padding-bottom: 100px;
     border-collapse: collapse;
 }
 .main_content {
     position: relative;
-    display: table-cell;
-    min-height: 100%;
+    /*min-height: 100%;
+    height: 100%;
     width: 100%;
-    vertical-align: middle;
+    vertical-align: middle;*/
 }
 .next_button {
     clear: both;
@@ -359,17 +360,9 @@ footer h2 span {
     color: #fff;
 }
 .mainContent h1 {
-    z-index: 100;
-    display: inline-block;
-    position: absolute;
-    width: 780px;
-    top: 5%;
-    left: 12%;
-    font-size: 40px;
-    font-weight: normal;
-    line-height: 1;
-    margin: 0 auto;
+    width: 85%;
     color: #fff;
+    margin: 40px auto 30px;
 }
 .mainContent h1 span {
     display: block;
@@ -642,12 +635,13 @@ a.sbSelector:hover {
 }
 .choices {
     width: 850px;
-    margin: -110px auto 55px
+    /*margin: -110px auto 55px*/
+    margin: 0 auto;
 }
 /* q1Country */
     .choices.countryChoices {
         width: 525px;
-        margin: -10px auto 100px;
+        margin: 0 auto 100px;
     }
     .countryChoices img {
         float: left;
@@ -699,7 +693,7 @@ a.sbSelector:hover {
     .waterInput {
         overflow: hidden;
         width: 825px;
-        margin: -150px auto 50px;
+        margin: 0 auto 50px;
     }
     .waterInput li label {
         background: transparent url('/assets/spriteQ2basicWater24.png') no-repeat 0 -146px;
@@ -734,7 +728,7 @@ a.sbSelector:hover {
     .waterQuality {
         width: 665px;
         overflow: hidden;
-        margin: -130px auto 50px;
+        margin: 0 auto 50px;
     }
     .waterQuality li label {
         background: transparent url('/assets/spriteQ8basicWater24.png') no-repeat 0 -148px;
@@ -768,7 +762,7 @@ a.sbSelector:hover {
     .reliabilityInput {
         width: 660px;
         overflow: hidden;
-        margin: -100px auto 50px;
+        margin: 0 auto 50px;
     }
     .reliabilityInput label span {
         width: 90%;
@@ -801,7 +795,7 @@ a.sbSelector:hover {
     .waterSource {
         width: 660px;
         overflow: hidden;
-        margin: -160px auto 50px;
+        margin: 0 auto 50px;
     }
     .waterSource li label {
         height: 145px;
