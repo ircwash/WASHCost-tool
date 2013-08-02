@@ -393,8 +393,13 @@ en:
   report:
     complete: "Report Complete"
     benchmark_below: "Below Benchmarks"
-    benchmark_with: "Within the Benchmarks"
+    benchmark_within: "Within the Benchmarks"
     benchmark_above: "above the Benchmarks"
+    sustainability:
+      low: "Low risk"
+      medium: "Medium risk"
+      high: "High risk"
+      not: "Not sustainable"
     water_basic:
       a111:	"This service is not delivering a desired minimum quantity perhaps due to low capital expenditure and the sources are not within 60 minutes roundtrip from the household. Or factors other than costs are influencing service delivery"
       a112:	"This service is not delivering a desired minimum quantity perhaps due to low capital expenditure and the sources are between 30 and 60 minutes roundtrip from the household. Or factors other than costs are influencing service delivery"

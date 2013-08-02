@@ -8,7 +8,7 @@ class SanitationBasicController < ApplicationController
 
 
   def init_vars
-    @@pages= 10
+    @@pages= 11
     super
   end
 
@@ -39,6 +39,20 @@ class SanitationBasicController < ApplicationController
       if(is_number(household) && household.to_i > -1 && household.to_i < 12)
 
         add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete, "household", household.to_i)
+
+        redirect_to :action => "population"
+      end
+    end
+  end
+
+  def population
+
+    if request.post?
+      population= params[:population]
+
+      if(population && is_number(population) && population.to_i > -1 && population.to_i < 150001)
+
+        add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete, "population", population.to_i)
 
         redirect_to :action => "latrine"
       end

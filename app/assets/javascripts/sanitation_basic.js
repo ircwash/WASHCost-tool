@@ -20,6 +20,30 @@ $(document).ready(function(){
     // Page 3
 
     // Page 4
+    if( document.getElementById('populationSlider')){
+
+
+        //default
+        $('input[name="capital"]').val(0);
+
+        $( "#populationSlider" ).slider({
+            min: 500,
+            max: 15000,
+            step: 500,
+            change: function( event, ui ) {
+                $('input[name="population"]').val(ui.value);
+
+                var stringVal= '';
+
+                stringValue= ui.value.toLocaleString();
+
+                $('#populationValue').html(stringValue);
+            }
+        });
+    }
+
+
+    // Page 4
     if( document.getElementById('capitalSlider')){
 
 

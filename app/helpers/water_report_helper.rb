@@ -42,15 +42,17 @@ module WaterReportHelper
     cost_rating= get_cost_rating(form[:water], form[:capital])
     cost_rating_label= get_cost_rating_label(cost_rating)
 
-    rating= get_rating(form[:water],form[:capital],form[:recurrent], form[:reliability])
+    service_rating= get_rating(form[:water],form[:capital],form[:recurrent], form[:reliability])
     service_level= get_level_of_service(form[:water],form[:capital], form[:quantity], form[:time])
+    service_label= get_service_rating_label(service_rating)
 
     results = {
       :form_ready => form_ready,
       :cost_rating=> cost_rating,
       :cost_rating_label=> cost_rating_label,
+      :service_rating => service_rating,
+      :service_label => service_label,
       :service_level => service_level,
-      :rating => rating,
       :country => get_country(form[:country]),
       :water => get_water(form[:water]),
       :population => get_population(form[:population]),
@@ -296,6 +298,24 @@ module WaterReportHelper
     end
 
     return level_of_service
+
+  end
+
+  def get_service_rating_label(rating)
+
+    label=  t 'form.value_not_set'
+
+    if rating == 0
+      label= (t 'report.sustainability.not')
+    elsif rating == 1
+      label= (t 'report.sustainability.low')
+    elsif rating == 2
+      label= (t 'report.sustainability.medium')
+    elsif rating == 3
+      label= (t 'report.sustainability.high')
+    end
+
+    return label
 
   end
 
