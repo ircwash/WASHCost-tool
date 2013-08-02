@@ -697,8 +697,9 @@ form .grid h2 {
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
-#saveButton {
+footer li.formButton {
     margin-top: -6px;
+    font-weight: bold;
 }
 /* Create an account */
 .newAccount form {
@@ -966,6 +967,21 @@ form .grid h2 {
 .accountReport li:last-child {
     margin: 0 0 0 15px;
 }
+div.supplemental{
+    margin-top: 10px;
+}
+
+input.supplemental{
+    margin-bottom: 10px;
+}
+
+div.input_shim_single{
+    height: 78px;
+}
+
+div.input_shim_triple_labels{
+    height: 305px
+}
 
 /*
 *
@@ -1079,20 +1095,4 @@ form .grid h2 {
 .ie7 .advanceSetting {
     margin-top: 0;
     padding-top: 0;
-}
-
-div.supplemental{
-    margin-top: 10px;
-}
-
-input.supplemental{
-    margin-bottom: 10px;
-}
-
-div.input_shim_single{
-    height: 78px;
-}
-
-div.input_shim_triple_labels{
-    height: 305px
 }
