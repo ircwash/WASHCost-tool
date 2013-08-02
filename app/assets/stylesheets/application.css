@@ -90,7 +90,6 @@ input.next_button {
     max-width: 1025px;
     margin: 0 auto;
     background-color: #fff;
-    border: 1px solid red;
 }
 #outer_container_report {
     position: relative;
