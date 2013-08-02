@@ -44,6 +44,7 @@ en:
     start: "OK! Start using the calculator"
     save: "Save"
     view_report: "View Report"
+    complete: "Complete"
   inputs:
     choose_a_country: "Choose a country"
   form:
