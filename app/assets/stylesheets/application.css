@@ -43,6 +43,7 @@ a {
     font-size: 12px;
     text-decoration: none;
     color: #333;
+    outline: 0;
 }
 a:hover {
     text-decoration: underline;
@@ -1695,4 +1696,7 @@ a.sbSelector:hover {
     }
     .ie7 .choiceTime img.imgTime {
         width: -50px;
+    }
+    .ie7 .header li {
+        width: 100px;
     }
