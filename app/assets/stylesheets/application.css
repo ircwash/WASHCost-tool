@@ -257,6 +257,7 @@ input.next_button {
     background-position: 0 0;
 }
 footer {
+    z-index: 2000;
     clear: both;
     position: fixed;
     width: 100%;
@@ -662,6 +663,7 @@ a.sbSelector:hover {
     }
 /* info tab */
     .infoTab {
+        z-index: 100;
         clear: both;
         position: absolute;
         width: auto;
@@ -1023,7 +1025,7 @@ a.sbSelector:hover {
         margin-bottom: 56px;
     }
     .content .sectionWrapper div {
-        width: 28%;
+        width: 27%;
         float: left;
         margin-left: 25px;
     }
@@ -1229,8 +1231,6 @@ a.sbSelector:hover {
     .service .quality.result_04 {
         background-position: -444px -127px;
     }
-
-
     .service .reliability {
         background: transparent url('/assets/spriteQ9basicWater24.png') no-repeat 0 0;   
     }
@@ -1249,6 +1249,20 @@ a.sbSelector:hover {
     .service .reliability.result_04 {
         background-position: -445px -176px;
     }
+    /* Error no data */
+
+    .errorNoData {
+        border: 2px dashed #67aed0;
+        padding: 40px 60px;
+        margin: 0 auto;
+        background-color: #026d9e;
+    }
+    .errorNoData p {
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 1.5;
+        color: #CCE2EC;
+    }
 
     /*
     *
@@ -1256,12 +1270,12 @@ a.sbSelector:hover {
     *
     */
 
-    .sanitation .choices .valueOutput {
+/*    .sanitation .choices .valueLabel {
         margin-bottom: 40px;
-    }
+    }*/
     .sanitation ul {
         overflow: hidden;
-        margin: -115px auto 75px;
+        margin: 0 auto 75px;
     }
     .sanitation li:last-child {
         margin-right: 0;
@@ -1393,6 +1407,9 @@ a.sbSelector:hover {
     .usageInput {
         width: 700px;
     }
+    .usageInput label {
+        height: 185px;
+    }
     .usageInput li {
         width: 229px;
     }
@@ -1406,13 +1423,13 @@ a.sbSelector:hover {
         background-position: -520px -144px;
     }
     .usageInput li label.ticked {
-        background-position: -6px 0;
+        background-position: -6px 26px;
     }
     .usageInput li .usage_01.ticked {
-        background-position: -256px 0;
+        background-position: -256px 26px;
     }
     .usageInput li .usage_02.ticked {
-        background-position: -520px 0;
+        background-position: -520px 26px
     }
     .sanitation .reliabilityInput {
         width: 490px;
@@ -1437,6 +1454,9 @@ a.sbSelector:hover {
     }
     /* Sanitation Report */
 
+    .sanitation .ui-slider {
+        margin-bottom: 50px;
+    }
     .sanitation .service ul {
         margin-top: 0;
     }
@@ -1449,9 +1469,13 @@ a.sbSelector:hover {
     }
     .sanitation .service .rowQQR {
         width: 20%;
+        height: 230px;
     }
     .sanitation .service .rowQQR .value {
         margin-top: 140px;
+    }
+    .sanitation .service li {
+        margin-bottom: 50px;
     }
     .service .rowQQR.providing {
         width: 29%;
@@ -1477,7 +1501,6 @@ a.sbSelector:hover {
     }
     .service .rowQQR.enviroment {
         width: 23%;
-        height: 160px;
         margin-right: 100px;
         background: transparent url('/assets/spriteQ8basicEnviroment24.png') no-repeat -1000px -245px;
     }

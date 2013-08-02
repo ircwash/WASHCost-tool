@@ -54,7 +54,9 @@
               </div>
             </div>
         <% else %>
-            <%= I18n.t 'form.not_ready.summary' %>
+            <div class="errorNoData">
+              <p><%= I18n.t 'form.not_ready.summary' %></p>
+            </div>
         <% end %>
       </div>
     </section>
