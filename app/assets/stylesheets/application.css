@@ -952,6 +952,7 @@ a.sbSelector:hover {
     .report dl dd {
         width: 100%;
         height: 61px;
+        color: #fff;
     }
     .report dl dd span {
         display: block;
@@ -1606,6 +1607,7 @@ a.sbSelector:hover {
         text-align: left;
         margin: 0 5px 0;
         text-indent: 100px;
+        font-weight: bold;
     }
     .technology dl dd {
         width: auto;
@@ -1618,6 +1620,7 @@ a.sbSelector:hover {
         float: left;
         position: relative;
         text-align: left;
+        margin: 0 5px 0 0;
     }
     .technology .reportWrapper {
         width: 100%;
@@ -1654,6 +1657,8 @@ a.sbSelector:hover {
     .technology .reportTech dl dt {
         text-align: center;
         width: 100%;
+        margin-bottom: 10px;
+        font-weight: bold;
     }
     .technology .reportTech dl dd {
         text-align: center;
@@ -1663,6 +1668,18 @@ a.sbSelector:hover {
     .technology .reportTech dl dt span {
         font-weight: bold;
         color: #fff;
+    }
+    .technology .reportTech .errorReport {
+        display: block;
+        width: 80%;
+        text-align: center;
+        float: none;
+        padding: 10px;
+        margin: 0 auto;
+        border: 1px dashed #cee6f0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
     }
 /*
 *
