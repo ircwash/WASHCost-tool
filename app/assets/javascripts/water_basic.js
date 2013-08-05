@@ -26,11 +26,11 @@ $(document).ready(function(){
     if( document.getElementById('capitalSlider')){
 
         //default
-        $('input[name="capital"]').val(30);
+        $('input[name="capital"]').val(0);
 
         $( "#capitalSlider" ).slider({
-            min: 30,
-            max: 131,
+            min: 0,
+            max: 1000,
             change: function( event, ui ) {
                 $('input[name="capital"]').val(ui.value);
                 $('#capitalValue').html(ui.value);
