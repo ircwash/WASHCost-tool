@@ -209,16 +209,16 @@
             data.addColumn({type:'string', role:'annotationText'}); // annotationText col
 
             data.addRows([
-                ['YR1',   _C, _C+'', 'You Spent '+_C+' Dollars Your first year'],
-                ['YR2',   _R, _R+'', _R+' Dollars is your recurring cost'],
-                ['YR3',   _R, null, null],
-                ['YR4',   _R, null, null],
-                ['YR5',   _R, null, null],
-                ['YR6',   _R, null, null],
-                ['YR7',   _R, null, null],
-                ['YR8',   _R, null, null],
-                ['YR9',   _R, null, null],
-                ['YR10',  _R, null, null]
+                ['0',   _C, _C+'', 'You Spent '+_C+' Dollars Your first year'],
+                ['1',   _R, _R+'', _R+' Dollars is your recurring cost'],
+                ['2',   _R, null, null],
+                ['3',   _R, null, null],
+                ['4',   _R, null, null],
+                ['5',   _R, null, null],
+                ['6',   _R, null, null],
+                ['7',   _R, null, null],
+                ['8',   _R, null, null],
+                ['9',  _R, null, null]
             ]);
 
             // Create and draw the visualization.
@@ -227,7 +227,7 @@
                         legend: { position: "none" },
                         width: 765, height: 260,
                         hAxis: { textStyle: { color: '#fff' } },
-                        vAxis: { textStyle: { color: 'transparent'},   baselineColor: 'transparent', gridlines: {color: 'transparent'} ,maxValue: 80},
+                        vAxis: { textStyle: { color: '#fff'},   baselineColor: 'transparent', gridlines: {color: 'transparent'} ,maxValue: 80},
 
                         backgroundColor: "transparent",
                         lineWidth: 5,

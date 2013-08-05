@@ -7,6 +7,13 @@ group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 2.4'
   gem 'ruby-prof'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  #gem 'meta_request' #uncomment for use with rails pannel
+  gem 'awesome_print'
+  gem 'pry'
+  gem 'pry-doc'
+  gem 'pry-nav'
 end
 
 group :test do
@@ -30,6 +37,5 @@ gem 'jquery-rails'
 gem 'jquery-ui-sass-rails'
 
 gem 'countries'
-
 
 
