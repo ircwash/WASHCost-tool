@@ -151,50 +151,65 @@
 
   </section>
 
-  <section class="cost">
+  <section class="costData">
 
     <div class="sectionWrapper">
 
-      <h2><%= t 'report.water_advanced.cost.title' %></h2>
+      <div class="sectionHeading">
+        <h2><%= t 'report.water_advanced.cost.title' %></h2>
+        <a href="./"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
+      </div>
 
       <div id="chart_div"></div>
 
-      <ul>
-        <li>
-          <h3><%= t 'report.water_advanced.cost.total' %></h3>
-            <ul>
-              <li><%= t 'report.water_advanced.cost.hardware' %>: </li>
-              <li><%= t 'report.water_advanced.cost.software' %>: </li>
-            </ul>
-        </li>
-        <li>
-          <h3><%= t 'report.water_advanced.cost.maintenance' %></h3>
-          <ul>
-            <li><%= t 'report.water_advanced.cost.minor' %>: </li>
-            <li><%= t 'report.water_advanced.cost.capital' %>: </li>
-          </ul>
-        </li>
-        <li>
-          <h3><%= t 'report.water_advanced.cost.support' %></h3>
-          <ul>
-            <li><%= t 'report.water_advanced.cost.direct' %>: </li>
-            <li><%= t 'report.water_advanced.cost.indirect' %>: </li>
-          </ul>
-        </li>
-        <li>
-          <ul>
-            <li>
-              <%= t 'report.water_advanced.cost.loan_yearly.title' %>:
-              <%= t 'report.water_advanced.cost.loan_yearly.unit' %>
-            </li>
-            <li>
-              <%= t 'report.water_advanced.cost.payback.title' %>:
-              <%= t 'report.water_advanced.cost.payback.unit' %>
-            </li>
-          </ul>
-        </li>
-      </ul>
+      <div class="grid">
 
+        <div class="gridGroup">
+          <h3><%= t 'report.water_advanced.cost.total' %></h3>
+          <dl>
+            <dt>18. <%= t 'report.water_advanced.cost.hardware' %></dt>
+            <dd><span>DummyNumber</span><span>a Year</span></dd>
+          </dl>
+          <dl>
+            <dt>19. <%= t 'report.water_advanced.cost.software' %></dt>
+             <dd><span>DummyNumber</span><span>a Year</span></dd>
+          </dl>
+        </div>
+        <div class="gridGroup">
+          <h3><%= t 'report.water_advanced.cost.maintenance' %></h3>
+          <dl>
+            <dt>20. <%= t 'report.water_advanced.cost.minor' %></dt>
+             <dd><span>DummyNumber</span><span>a Year</span></dd>
+          </dl>
+          <dl>
+            <dt>21. <%= t 'report.water_advanced.cost.capital' %></dt>
+             <dd><span>DummyNumber</span><span>a Year</span></dd>
+          </dl>
+        </div>
+        <div class="gridGroup">
+          <h3><%= t 'report.water_advanced.cost.support' %></h3>
+          <dl>
+            <dt>22. <%= t 'report.water_advanced.cost.direct' %></dt>
+            <dd><span>DummyNumber</span><span>a Year</span></dd>
+          </dl>
+          <dl>
+            <dt>23. <%= t 'report.water_advanced.cost.indirect' %></dt>
+             <dd><span>DummyNumber</span><span>a Year</span></dd>
+          </dl>
+        </div>
+      </div>
+      <dl>
+        <dt>24. <%= t 'report.water_advanced.cost.payback.title' %></dt>
+        <dd><%= t 'report.water_advanced.cost.payback.unit' %></dd>
+      </dl>
+      <dl>
+        <dt>25. <%= t 'report.water_advanced.cost.loan_yearly.title' %></dt>
+        <dd><span>DummyNumber</span> a Year</dd>
+      </dl>
+      <dl>
+        <dt>26. <%= t 'report.water_advanced.cost.loan_yearly.unit' %></dt>
+        <dd><span>DummyNumber</span> a Year</dd>
+      </dl>
     </div>
   </section>
 </div>

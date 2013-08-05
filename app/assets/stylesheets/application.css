@@ -1566,8 +1566,8 @@ a.sbSelector:hover {
     /* advance report */
     #chart_div {
         width: 765px;
-        height: 265px;
-        padding-left: 280px;
+        height: 300px;
+        padding-left: 210px;
     }
     .report.advance section .sectionWrapper {
         margin-bottom: 0;
@@ -1680,6 +1680,38 @@ a.sbSelector:hover {
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
         border-radius: 3px;
+    }
+    .costData .sectionWrapper .grid {
+        width: 100%;
+        overflow: hidden;
+    }
+    .costData .grid .gridGroup {
+        clear: all;
+        width: 100%;
+    }
+    .costData .grid .gridGroup h3 {
+        clear: both;
+        width: 35%;
+        float: left;
+        text-align: left;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .costData .grid .gridGroup dl {
+        width: 30%;
+        float: left;
+    }
+    .costData .sectionWrapper {
+        overflow: hidden;
+        margin-bottom: 50px;
+    }
+    .costData .sectionWrapper dl {
+        width: 33%;
+        float: left;
+    }
+    .costData .sectionWrapper dd span {
+        width: auto;
+        margin-top: 0;
     }
 /*
 *
