@@ -1,70 +1,71 @@
 <div class="report advance">
 
-    <h1><%= t 'report.water_advanced.general.title' %></h1>
+  <h1><%= t 'report.water_advanced.general.title' %></h1>
 
-    <section class="general">
-      <h2>Summary</h2>
-      <div class="sectionWrapper">
-        <dl class="costService">
-          <dt>Total Cost</dt>
-            <dd class="sumaryCost">
-              <span class="sumaryTotal">
-                $3,000
-              </span>
-              <span class="sumaryPeople">
-                For a population of <%=flash[:results][:population]%> people
-              </span>
-              <span class="benchText benchIcon<%=flash[:results][:cost_rating]%>">Below Benchmarks</span>
+  <section class="general">
+    <h2>Summary</h2>
+    <div class="sectionWrapper">
+      <dl class="costService">
+        <dt>Total Cost</dt>
+          <dd class="sumaryCost">
+            <span class="sumaryTotal">
+              $3,000
+            </span>
+            <span class="sumaryPeople">
+              For a population of <%=flash[:results][:population]%> people
+            </span>
+            <span class="benchText benchIcon<%=flash[:results][:cost_rating]%>">Below Benchmarks</span>
+        </dd>
+      </dl>
+      <dl class="levelService">
+          <dt><%= t 'report.water_advanced.general.service' %></dt>
+          <dd class="levelStar_<%=flash[:results][:service_level] %>">
+            <span><%= flash[:results][:serice_label]%>Sub-standard</span>
+          </dd>
+      </dl>
+      <div class="review">
+        <a class="readMore" href="#">Read full review</a>
+        <div id="service_level_full">
+          <p><%= t 'report.water_advanced.general.read_full' %></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="content">
+    <div class="sectionHeading">
+        <h2><%= t 'report.water_advanced.context.title' %></h2>
+        <a href="./"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
+    </div>
+    <div class="sectionWrapper">
+      <div>
+        <dl>
+          <dt><%= t 'report.water_advanced.context.type' %></dt>
+          <dd class="countryResult">
+            <img src="/assets/advCalculaType8.png" alt="world country" />
+            <span><%= flash[:results][:type]%></span>
           </dd>
         </dl>
-        <dl class="levelService">
-            <dt><%= t 'report.water_advanced.general.service' %></dt>
-            <dd class="levelStar_<%=flash[:results][:service_level] %>">
-              <span><%= flash[:results][:serice_label]%>Sub-standard</span>
-            </dd>
+      </div>
+      <div>
+        <dl>
+          <dt><%= t 'report.water_advanced.context.country' %></dt>
+          <dd>
+            <img src="/assets/advCountry8.png" alt="world country" />
+            <span><%= flash[:results][:country] %></span>
+          </dd>
         </dl>
-        <div class="review">
-          <a class="readMore" href="#">Read full review</a>
-          <div id="service_level_full">
-            <p><%= t 'report.water_advanced.general.read_full' %></p>
-          </div>
-        </div>
       </div>
-    <section class="content">
-      <div class="sectionHeading">
-          <h2><%= t 'report.water_advanced.context.title' %></h2>
-          <a href="./"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
+      <div>
+        <dl>
+          <dt><%= t 'report.water_advanced.context.area_type' %></dt>
+          <dd>
+            <img src="/assets/advAreaType8.png" alt="area type advance" />
+            <span><%= flash[:results][:area_type]%></span>
+          </dd>
+        </dl>
       </div>
-      <div class="sectionWrapper">
-        <div>
-          <dl>
-            <dt><%= t 'report.water_advanced.context.type' %></dt>
-            <dd class="countryResult">
-              <img src="/assets/advCalculaType8.png" alt="world country" />
-              <span><%= flash[:results][:type]%></span>
-            </dd>
-          </dl>
-        </div>
-        <div>
-          <dl>
-            <dt><%= t 'report.water_advanced.context.country' %></dt>
-            <dd>
-              <img src="/assets/advCountry8.png" alt="world country" />
-              <span><%= flash[:results][:country] %></span>
-            </dd>
-          </dl>
-        </div>
-        <div>
-          <dl>
-            <dt><%= t 'report.water_advanced.context.area_type' %></dt>
-            <dd>
-              <img src="/assets/advAreaType8.png" alt="area type advance" />
-              <span><%= flash[:results][:area_type]%></span>
-            </dd>
-          </dl>
-        </div>
-      </div>
-    </section>
+    </div>
+  </section>
   <section class="managing">
     <div class="sectionHeading">
       <h2><%= t 'report.water_advanced.management.title' %></h2>
@@ -195,7 +196,6 @@
       </ul>
 
     </div>
-
   </section>
 </div>
 <footer>
