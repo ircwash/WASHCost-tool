@@ -103,7 +103,7 @@
       <div id="graph">
         <div id="graphContent"></div>
       </div>
-      
+
       <% else %>
           <div style="width: 300px; margin: 50px auto 50px auto; text-align: center">
 
@@ -208,30 +208,31 @@
             data.addColumn({type:'string', role:'annotationText'}); // annotationText col
 
             data.addRows([
-                ['YR1',   _C, _C+'', 'You Spent '+_C+' Dollars Your first year'],
-                ['YR2',   _R, _R+'', _R+' Dollars is your recurring cost'],
-                ['YR3',   _R, null, null],
-                ['YR4',   _R, null, null],
-                ['YR5',   _R, null, null],
-                ['YR6',   _R, null, null],
-                ['YR7',   _R, null, null],
-                ['YR8',   _R, null, null],
-                ['YR9',   _R, null, null],
-                ['YR10',  _R, null, null]
+                ['0',   _C, _C+'', 'You Spent '+_C+' Dollars Your first year'],
+                ['1',   _R, _R+'', _R+' Dollars is your recurring cost'],
+                ['2',   _R, null, null],
+                ['3',   _R, null, null],
+                ['4',   _R, null, null],
+                ['5',   _R, null, null],
+                ['6',   _R, null, null],
+                ['7',   _R, null, null],
+                ['8',   _R, null, null],
+                ['9',  _R, null, null]
             ]);
 
             // Create and draw the visualization.
             new google.visualization.LineChart(document.getElementById('graphContent')).
                     draw(data, {curveType: "none",
+                        axisTitlesPosition: "out",
                         legend: { position: "none" },
                         width: 765, height: 260,
-                        hAxis: { textStyle: { color: '#fff' } },
-                        vAxis: { textStyle: { color: 'transparent'},   baselineColor: 'transparent', gridlines: {color: 'transparent'} ,maxValue: 80},
-
+                        hAxis: { title: 'Year', titleTextStyle: { color: '#fff' }, textStyle: { color: '#fff' }, baselineColor: '#fff',
+                          gridlines: {color: '#fff'} },
+                        vAxis: { title: 'Expenditure', titleTextStyle: { color: '#fff' }, textStyle: { color: '#fff' }, baselineColor: '#fff', gridlines: {color: '#fff'}, maxValue: 50},
                         backgroundColor: "transparent",
                         lineWidth: 5,
                         colors: ['#fff'],
-                        'chartArea': { top: -3, 'width': '100%', 'height': '90%'}
+                        'chartArea': { 'width': '60%', 'height': '60%'}
                     }
             );
         }

@@ -13,7 +13,7 @@ en:
         title: "Context"
         items:
           country: "Country"
-          water: "Water"
+          water: "Technology"
           population: "Population"
           household: "Household"
           latrine: "Latrine"
@@ -28,7 +28,7 @@ en:
           time: "Time"
           quantity: "Quantity"
           quality: "Quality"
-          providing: "Providing"
+          providing: "Household Latrine"
           impermeability: "Impermeability"
           environment: "Environment"
           usage: "Usage"
@@ -51,7 +51,7 @@ en:
     not_ready:
       summary: "You must complete the form before we can provide summary analysis"
       cost: "You must complete the form before we can provide cost analysis"
-    value_not_set: "Value Not Set"
+    value_not_set: "No answer provided"
     skip: "skip this question"
     shared:
       country:
@@ -97,10 +97,10 @@ en:
         question: "How long does it take to collect water per day from these services?"
         value_label: "Minutes per day"
         answers:
-          a0:  "Less than 10"
-          a1: "Between 10 and 30"
-          a2: "Between 30 and 60"
-          a3: "More than 60"
+          a0: "More than 60"
+          a1: "Between 30 and 60"
+          a2: "Between 10 and 30"
+          a3:  "Less than 10"
       quantity:
         question: "How much water is used from the water service?"
         value_label: "(Litres per person per day)"
@@ -123,6 +123,8 @@ en:
           a1: "Works most of the time"
           a2: "Many break-downs slow repairs"
           a3: "Not working"
+      recurrent:
+        value_label: "(US$ Per person per Year)"
     sanitation_basic:
       household:
         question: "What is the typical household size?"
