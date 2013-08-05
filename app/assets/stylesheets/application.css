@@ -92,6 +92,9 @@ input.next_button {
     margin: 0 auto;
     background-color: #fff;
     padding-bottom: 200px;
+    -webkit-box-shadow: -2px 0px 12px rgba(46, 46, 46, 1);
+    -moz-box-shadow:    -2px 0px 12px rgba(46, 46, 46, 1);
+    box-shadow:         -2px 0px 12px rgba(46, 46, 46, 1);
 }
 #outer_container_report {
     position: relative;
@@ -268,10 +271,15 @@ footer {
 }
 footer .footerWrapper {
     position: relative;
-    width: 945px;
+    width: 915px;
+    overflow: hidden;
     margin: 0 auto;
     background-color: #333;
     padding-top: 5px;
+    padding: 5px 55px 0;
+    -webkit-box-shadow: -2px 0px 12px rgba(46, 46, 46, 1);
+    -moz-box-shadow:    -2px 0px 12px rgba(46, 46, 46, 1);
+    box-shadow:         -2px 0px 12px rgba(46, 46, 46, 1);
 }
 footer .footerWrapper a {
     display: block;
