@@ -22,7 +22,6 @@ class SanitationBasicController < ApplicationController
       country_code= params[:country]
 
       if(is_valid_country_code(country_code))
-
         add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete, "country", country_code)
 
         redirect_to :action => "household"

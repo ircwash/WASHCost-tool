@@ -72,7 +72,7 @@ en:
       select_an_option: "Select an Option"
     water_basic:
       water:
-        question: "What is the main water source used to provide water?"
+        question: "What is the main water supply technology used?"
         answers:
           a0: "Borehole & handpump"
           a1: "Mechanised borehole"
@@ -117,7 +117,7 @@ en:
           a2: "One-off after construction"
           a3: "No testing"
       reliability:
-        question: "How many days per year is the service working?"
+        question: "How reliable is the water service?"
         answers:
           a0: "Works all the time"
           a1: "Not working less than 12 days a year"
@@ -126,6 +126,12 @@ en:
       recurrent:
         value_label: "US$ Per person per Year"
     sanitation_basic:
+      country:
+        question: "In which country does your sanitation service take place?"
+      recurrent:
+        question: "How much is being spent/will be spent to operate, maintain and support the delivery of sanitation services (per person per year)?"
+        info: "Operating and minor maintenance expenditure: typically comprises regular expenditure such as labour, fuel, chemicals, materials, and purchases of any bulk water. See: http://akvopedia.org/wiki/Operational_and_Minor_Maintenance_Expenditure_(OpEx) Capital maintenance expenditure: Asset renewal and replacement cost: occasional and ‘lumpy’ costs that seek to restore the functionality of a system, such as replacing pump rods or foot valves in handpumps, or a diesel generator in motorised systems. See: http://akvopedia.org/wiki/Capital_Maintenance_Expenditure_(CapManEx) Expediture of direct support: Direct support is structured support to service providers and users or user groups related to the operation and management of a WASH service; direct support costs are the costs of such support. They cover monitoring, technical advice and administrative, organisational or legal support.  The costs of support before and during the capital construction of a project are not included; they are considered to be capital software. Direct support is often used synonymously with “post-construction support”. See: http://akvopedia.org/wiki/Expenditure_Direct_Support_(ExpDS) Expenditure of indirect support: Indirect support costs cover expenditure on this macro-level support, including planning and policy making, and support to decentralised service authorities or local government. Indirect support includes capacity building for professionals and technicians and capacity support to local government as service authorities, for example to adhere to national norms, standards and guidelines. See: http://akvopedia.org/wiki/Expenditure_Indirect_Support_(ExpIDS)"
+        value_label: "Per person<br/> per year"
       household:
         question: "What is the typical household size?"
       latrine:
