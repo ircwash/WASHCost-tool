@@ -123,6 +123,8 @@ en:
           a1: "Works most of the time"
           a2: "Many break-downs slow repairs"
           a3: "Not working"
+      recurrent:
+        value_label: "(US$ Per person per Year)"
     sanitation_basic:
       household:
         question: "What is the typical household size?"
