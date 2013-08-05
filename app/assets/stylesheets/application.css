@@ -205,7 +205,8 @@ input.next_button {
 
     .navigation #subnavigation ul{
         background-color: #359ec0;
-        top: 70px; position: absolute;
+        top: 70px; 
+        position: absolute;
         white-space: nowrap;
         height: 42px;
     }
