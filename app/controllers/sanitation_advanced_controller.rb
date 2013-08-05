@@ -145,7 +145,7 @@ class SanitationAdvancedController < ApplicationController
 
   def get_indexed_value(i18nPrefix, key)
 
-    text= 'Value Not Set'
+    text= 'No answer provided'
 
     if params.has_key?(key) && params[key]!=nil
 
