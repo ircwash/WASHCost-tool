@@ -46,6 +46,7 @@ class WaterBasicController < ApplicationController
         add_to_session_form(:water_basic_form, :water_basic_complete, "water", water_index.to_i)
 
         redirect_to :action => "population"
+
       end
     end
 

@@ -55,6 +55,7 @@ module WaterReportHelper
       :service_level => service_level,
       :country => get_country(form[:country]),
       :water => get_water(form[:water]),
+      :water_index => form[:water],
       :population => get_population(form[:population]),
       :capital => get_capital(form[:capital]),
       :recurrent => get_recurrent(form[:recurrent]),
