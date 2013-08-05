@@ -1681,6 +1681,36 @@ a.sbSelector:hover {
         -moz-border-radius: 3px;
         border-radius: 3px;
     }
+    .costData .sectionWrapper .grid {
+        width: 100%;
+        overflow: hidden;
+    }
+    .costData .grid .gridGroup {
+        clear: all;
+        width: 100%;
+    }
+    .costData .grid .gridGroup h3 {
+        clear: both;
+        float: left;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .costData .grid .gridGroup dl {
+        width: 30%;
+        float: left;
+    }
+    .costData .sectionWrapper {
+        overflow: hidden;
+        margin-bottom: 50px;
+    }
+    .costData .sectionWrapper dl {
+        width: 33%;
+        float: left;
+    }
+    .costData .sectionWrapper dd span {
+        width: auto;
+        margin-top: 0;
+    }
 /*
 *
 *   IE - Fixes
