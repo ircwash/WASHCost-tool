@@ -7,15 +7,9 @@
     <%= form_tag({controller: "water_basic", action: "quality"}, class: "main_content", id: "waterBasicForm") do %>
       <ul class="waterQuality">
         <li>
-          <%= label_tag("regular", nil, class: "tickCheckBox waterQuality_03") do %>
-              <span><%= t 'form.water_basic.quality.answers.a0' %></span>
-            <%= radio_button_tag("r_quality", 0, false, id: "regular") %>
-          <% end %>
-        </li>
-        <li>
-          <%= label_tag("occasional", nil, class: "tickCheckBox waterQuality_02") do %>
-            <span><%= t 'form.water_basic.quality.answers.a1' %></span>
-            <%= radio_button_tag("r_quality", 1, id: "occasional") %>
+          <%= label_tag("noTest", nil, class: "tickCheckBox") do %>
+            <span><%= t 'form.water_basic.quality.answers.a3' %></span>
+            <%= radio_button_tag("r_quality", 3, id: "noTest") %>
           <% end %>
         </li>
         <li>
@@ -25,9 +19,15 @@
           <% end %>
         </li>
         <li>
-          <%= label_tag("noTest", nil, class: "tickCheckBox") do %>
-            <span><%= t 'form.water_basic.quality.answers.a3' %></span>
-            <%= radio_button_tag("r_quality", 3, id: "noTest") %>
+          <%= label_tag("occasional", nil, class: "tickCheckBox waterQuality_02") do %>
+            <span><%= t 'form.water_basic.quality.answers.a1' %></span>
+            <%= radio_button_tag("r_quality", 1, id: "occasional") %>
+          <% end %>
+        </li>
+        <li>
+          <%= label_tag("regular", nil, class: "tickCheckBox waterQuality_03") do %>
+              <span><%= t 'form.water_basic.quality.answers.a0' %></span>
+            <%= radio_button_tag("r_quality", 0, false, id: "regular") %>
           <% end %>
         </li>
       </ul>
