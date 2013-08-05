@@ -103,7 +103,7 @@ en:
           a3:  "Less than 10"
       quantity:
         question: "How much water is used from the water service?"
-        value_label: "(Litres per person per day)"
+        value_label: "Litres per person per day"
         answers:
           a0: "Less than 5L"
           a1: "5 - 19L"
@@ -120,11 +120,11 @@ en:
         question: "How many days per year is the service working?"
         answers:
           a0: "Works all the time"
-          a1: "Works most of the time"
-          a2: "Many break-downs slow repairs"
-          a3: "Not working"
+          a1: "Not working less than 12 days a year"
+          a2: "Not working more than 12 days a year"
+          a3: "Not working all of the time"
       recurrent:
-        value_label: "(US$ Per person per Year)"
+        value_label: "US$ Per person per Year"
     sanitation_basic:
       household:
         question: "What is the typical household size?"
@@ -149,7 +149,7 @@ en:
           a1: "No impermeable slab"
         info: "This can be a traditional pit latrine with an impermeable slab (made from local materials, a pit latrine with a concrete impermeable slab, or a pour-flush or septic tank latrines, often with a concrete or bricked lines pit/tank with sealed impermeable slab."
       environment:
-        question: "What is the environmental impact of the delivery model?"
+        question: "What is the environmental impact of the service?"
         answers:
           a0: "Non problematic + safe disposal + re-use of bi-products "
           a1: "Non problematic +safe disposal"
@@ -166,6 +166,8 @@ en:
           a0: "Yes"
           a1: "Not consistently"
           a2: "No"
+      recurrent:
+        value_label: "US$ Per person per Year"
     advanced:
       shared:
         location:

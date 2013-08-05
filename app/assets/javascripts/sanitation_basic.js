@@ -9,7 +9,7 @@ $(document).ready(function(){
         $( "#householdSlider" ).slider({
             step: 1,
             min: 1,
-            max: 11,
+            max: 20,
             change: function( event, ui ) {
                 $('input[name="household"]').val(ui.value);
                 $('#householdValue').html(ui.value);
@@ -51,7 +51,7 @@ $(document).ready(function(){
         $('input[name="capital"]').val(0);
 
         $( "#capitalSlider" ).slider({
-            min: 30,
+            min: 0,
             max: 310,
             change: function( event, ui ) {
                 $('input[name="capital"]').val(ui.value);
