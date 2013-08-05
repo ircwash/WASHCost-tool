@@ -112,10 +112,10 @@ en:
       quality:
         question: "Is water quality testing done?"
         answers:
-          a0: "No testing"
-          a1: "One-off test after construction"
-          a2: "Occasional and meets standards"
-          a3: "Regular and meets standards"
+          a0: "Regular and meets standards"
+          a1: "Occational and meets standards"
+          a2: "One-off after construction"
+          a3: "No testing"
       reliability:
         question: "How many days per year is the service working?"
         answers:
