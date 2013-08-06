@@ -948,6 +948,7 @@ a.sbSelector:hover {
         text-align: center;
         color: #fff;
         margin-bottom: 30px;
+        font-weight: bold;
     }
     .report dl dd {
         width: 100%;
@@ -1686,21 +1687,47 @@ a.sbSelector:hover {
         overflow: hidden;
     }
     .costData .grid .gridGroup {
-        clear: all;
-        width: 100%;
+        clear: both;
+        overflow: hidden;
+        padding: 15px 50px;
+        border-top: 1px solid #fff;
+    }
+    .costData .grid .gridGroup.last {
+        border-bottom: 1px solid #fff;
     }
     .costData .grid .gridGroup h3 {
-        clear: both;
         width: 35%;
         float: left;
         text-align: left;
         font-size: 12px;
         font-weight: bold;
+        padding: 5px 0;
+        text-indent: 25px;
+        background: transparent url('/assets/iconInfoRed8.png') no-repeat 0 48%;
     }
     .costData .grid .gridGroup dl {
         width: 30%;
         float: left;
+        margin: 0;
     }
+    .costData .grid .gridGroup dl dd span,
+    .costData .grid .gridGroup dl dt {
+        font-weight: bold;
+    }
+    .costData .sectionWrapper dd span.editable,
+    .costData .gridGroup dl dd  span.editable {
+        display: block;
+        float: left;
+        margin-right: 5px;
+        padding: 11px 22px;
+        background-color: #3cb1c5;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+     .costData .sectionWrapper dd {
+        padding-left: 75px;
+     }
     .costData .sectionWrapper {
         overflow: hidden;
         margin-bottom: 50px;
@@ -1708,11 +1735,23 @@ a.sbSelector:hover {
     .costData .sectionWrapper dl {
         width: 33%;
         float: left;
+        margin: 20px 0 30px;
     }
     .costData .sectionWrapper dd span {
+        display: block;
         width: auto;
+        float: left;
         margin-top: 0;
+        padding-top: 11px;
+        font-weight: bold;
     }
+    .costData .gridGroup dl dd {
+        width: auto;
+        text-align: center;
+        height: auto;
+        padding-left: 75px;
+    }
+
 /*
 *
 *   IE - Fixes
