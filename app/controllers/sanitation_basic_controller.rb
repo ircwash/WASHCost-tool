@@ -138,6 +138,8 @@ class SanitationBasicController < ApplicationController
         redirect_to :action =>"environment"
       end
     end
+
+    flash[:impermeability] = retrieve_previous_answer_for("impermeability")
   end
 
   def environment
@@ -151,6 +153,8 @@ class SanitationBasicController < ApplicationController
         redirect_to :action =>"usage"
       end
     end
+
+    flash[:environment] = retrieve_previous_answer_for("environment")
   end
 
   def usage
@@ -183,7 +187,6 @@ class SanitationBasicController < ApplicationController
       redirect_to :action => redirect
     end
   end
-
 
   def
     report
