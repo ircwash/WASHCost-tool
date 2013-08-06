@@ -161,6 +161,7 @@ class WaterBasicController < ApplicationController
       end
     end
 
+   flash[:reliability] = retrieve_previous_answer_for("reliability")
   end
 
   def report
