@@ -85,6 +85,9 @@ $(document).ready(function(){
                 $('#recurrentValue').html(ui.value);
             }
         });
+
+        var slider_value = document.getElementById('recurrentSlider').getAttribute("data-slider_value")
+        $( "#recurrentSlider" ).slider( {value: slider_value})
     }
 
     // Page 6

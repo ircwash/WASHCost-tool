@@ -108,6 +108,8 @@ class SanitationBasicController < ApplicationController
         redirect_to :action => "providing"
       end
     end
+
+    flash[:recurrent] = retrieve_previous_answer_for("recurrent")
   end
 
   def providing
