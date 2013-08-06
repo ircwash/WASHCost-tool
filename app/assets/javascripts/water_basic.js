@@ -22,8 +22,11 @@ $(document).ready(function(){
                 stringValue= ui.value.toLocaleString();
 
                 $('#populationValue').html(stringValue);
-            }
+            },
         });
+
+        var slider_value = document.getElementById('populationSlider').getAttribute("data-slider_value")
+        $( "#populationSlider" ).slider( {value: slider_value})
     }
 
     // Page 4

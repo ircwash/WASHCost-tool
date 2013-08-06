@@ -28,14 +28,10 @@ class WaterBasicController < ApplicationController
 
     end
 
-    begin
-      flash[:country_code] = session[:water_basic_form]["country"]
-    rescue
-      flash[:country_code] = nil
-    end
-
+    flash[:country_code] = retrieve_previous_answer_for("country")
     flash[:pages_complete] = session[:water_basic_complete]
   end
+
 
   def water
 
@@ -51,12 +47,7 @@ class WaterBasicController < ApplicationController
       end
     end
 
-    begin
-      flash[:water] = session[:water_basic_form].has_key?("water") ? session[:water_basic_form]["water"] : nil
-    rescue
-      flash[:water] = nil
-    end
-
+    flash[:water] = retrieve_previous_answer_for("water")
   end
 
   def population
@@ -72,6 +63,7 @@ class WaterBasicController < ApplicationController
       end
     end
 
+    flash[:population] = retrieve_previous_answer_for("population")
   end
 
   def capital
@@ -172,6 +164,16 @@ class WaterBasicController < ApplicationController
     flash[:results] = results
 
     render layout: "water_basic_report"
+  end
+
+  private
+
+  def retrieve_previous_answer_for(user_step)
+    begin
+      session[:water_basic_form].has_key?(user_step) ? session[:water_basic_form][user_step] : nil
+    rescue
+      nil
+    end
   end
 
 end
