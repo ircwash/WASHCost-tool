@@ -130,6 +130,7 @@ class WaterBasicController < ApplicationController
       end
     end
 
+    flash[:quantity] = retrieve_previous_answer_for("quantity")
   end
 
   def quality
