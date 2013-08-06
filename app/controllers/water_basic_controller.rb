@@ -97,6 +97,7 @@ class WaterBasicController < ApplicationController
       end
     end
 
+    flash[:recurrent] = retrieve_previous_answer_for("recurrent")
   end
 
   def time
