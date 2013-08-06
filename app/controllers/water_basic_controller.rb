@@ -80,6 +80,7 @@ class WaterBasicController < ApplicationController
       end
     end
 
+    flash[:capital] = retrieve_previous_answer_for("capital")
   end
 
   def recurrent
