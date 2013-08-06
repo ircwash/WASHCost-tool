@@ -113,7 +113,7 @@
       <% end %>
 
       <div class="sectionWrapper">
-        <div>
+        <div class="first">
           <dl>
             <dt>Capital Expenditure</dt>
             <dd class="country_0">$<%= flash[:results][:capital]%></dd>
@@ -127,7 +127,7 @@
           </dl>
           <a href="./recurrent"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
         </div>
-        <div>
+        <div class="last">
           <dl>
             <dt>Total</dt>
             <dd class="total">$<%= number_with_delimiter(flash[:results][:total], :delimiter=>',')%></dd>
