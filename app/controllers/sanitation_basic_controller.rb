@@ -125,6 +125,7 @@ class SanitationBasicController < ApplicationController
       end
     end
 
+    flash[:providing] = retrieve_previous_answer_for("providing")
   end
 
   def impermeability
