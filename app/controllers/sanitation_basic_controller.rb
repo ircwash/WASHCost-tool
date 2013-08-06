@@ -28,6 +28,8 @@ class SanitationBasicController < ApplicationController
       end
     end
 
+    flash[:country_code] = retrieve_previous_answer_for("country")
+
   end
 
   def household
@@ -180,4 +182,15 @@ class SanitationBasicController < ApplicationController
     flash[:results] = results
     render layout: "sanitation_basic_report"
   end
+
+  private
+
+  def retrieve_previous_answer_for(user_step)
+    begin
+      session[:sanitation_basic_form].has_key?(user_step) ? session[:sanitation_basic_form][user_step] : nil
+    rescue
+      nil
+    end
+  end
+
 end
