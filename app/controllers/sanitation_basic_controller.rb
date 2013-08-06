@@ -44,6 +44,8 @@ class SanitationBasicController < ApplicationController
         redirect_to :action => "population"
       end
     end
+
+     flash[:household] =retrieve_previous_answer_for("household")
   end
 
   def population

@@ -15,6 +15,9 @@ $(document).ready(function(){
                 $('#householdValue').html(ui.value);
             }
         });
+
+        var slider_value = document.getElementById('householdSlider').getAttribute("data-slider_value")
+        $( "#householdSlider" ).slider( {value: slider_value})
     }
 
     // Page 3
