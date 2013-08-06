@@ -54,7 +54,9 @@
               </div>
             </div>
           <% else %>
-            <%= I18n.t 'form.not_ready.summary' %>
+          <div class="errorNoData">
+            <p><%= I18n.t 'form.not_ready.summary' %></p>
+          </div>
           <% end %>
       </div>
     </section>
@@ -105,9 +107,9 @@
       </div>
 
       <% else %>
-          <div style="width: 300px; margin: 50px auto 50px auto; text-align: center">
+          <div class="errorNoData">
 
-            <%= I18n.t 'form.not_ready.cost' %>
+            <p><%= I18n.t 'form.not_ready.cost' %></p>
 
           </div>
 
