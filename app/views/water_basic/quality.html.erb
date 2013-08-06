@@ -9,19 +9,19 @@
         <li>
           <%= label_tag("noTest", nil, class: "tickCheckBox waterQuality_03") do %>
             <span><%= t 'form.water_basic.quality.answers.a3' %></span>
-            <%= radio_button_tag("r_quality", 3, id: "noTest") %>
+            <%= radio_button_tag("r_quality", 3, false, id: "noTest") %>
           <% end %>
         </li>
         <li>
           <%= label_tag("test", nil, class: "tickCheckBox waterQuality_02") do %>
             <span><%= t 'form.water_basic.quality.answers.a2' %></span>
-            <%= radio_button_tag("r_quality", 2, id: "test") %>
+            <%= radio_button_tag("r_quality", 2, false, id: "test") %>
           <% end %>
         </li>
         <li>
           <%= label_tag("occasional", nil, class: "tickCheckBox waterQuality_01") do %>
             <span><%= t 'form.water_basic.quality.answers.a1' %></span>
-            <%= radio_button_tag("r_quality", 1, id: "occasional") %>
+            <%= radio_button_tag("r_quality", 1, false, id: "occasional") %>
           <% end %>
         </li>
         <li>

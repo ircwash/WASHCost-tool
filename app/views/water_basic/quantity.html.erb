@@ -15,19 +15,19 @@
     </li>
     <li>
       <%= label_tag("waterFromFive", nil, class: "tickCheckBox waterSource_01") do %>
-        <%= radio_button_tag("r_quantity", 1, id: "waterFromFive") %>
+        <%= radio_button_tag("r_quantity", 1, false, id: "waterFromFive") %>
         <span><%= t 'form.water_basic.quantity.answers.a1' %></span>
       <% end %>
     </li>
     <li>
       <%= label_tag("waterFromTwenty", nil, class: "tickCheckBox waterSource_02") do %>
-        <%= radio_button_tag("r_quantity", 2, id: "waterFromTwenty") %>
+        <%= radio_button_tag("r_quantity", 2, false, id: "waterFromTwenty") %>
         <span><%= t 'form.water_basic.quantity.answers.a2' %></span>
       <% end %>
     </li>
     <li>
       <%= label_tag("waterMoreThan", nil, class: "tickCheckBox waterSource_03") do %>
-        <%= radio_button_tag("r_quantity", 3, id: "waterMoreThan") %>
+        <%= radio_button_tag("r_quantity", 3, false, id: "waterMoreThan") %>
         <span><%= t 'form.water_basic.quantity.answers.a3' %></span>
       <% end %>
     </li>
