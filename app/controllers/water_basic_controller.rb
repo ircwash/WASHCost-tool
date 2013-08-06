@@ -144,6 +144,8 @@ class WaterBasicController < ApplicationController
         redirect_to :action => "reliability"
       end
     end
+
+    flash[:quality] = retrieve_previous_answer_for("quality")
   end
 
   def reliability
