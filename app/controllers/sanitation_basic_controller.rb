@@ -45,7 +45,7 @@ class SanitationBasicController < ApplicationController
       end
     end
 
-     flash[:household] =retrieve_previous_answer_for("household")
+     flash[:household] = retrieve_previous_answer_for("household")
   end
 
   def population
@@ -60,6 +60,8 @@ class SanitationBasicController < ApplicationController
         redirect_to :action => "latrine"
       end
     end
+
+    flash[:population] = retrieve_previous_answer_for("population")
   end
 
   def latrine
@@ -74,6 +76,8 @@ class SanitationBasicController < ApplicationController
         redirect_to :action =>"capital"
       end
     end
+
+    flash[:latrine] = retrieve_previous_answer_for("latrine")
 
   end
 

@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+    // Option buttons that are checked should be highlighted.
+    $( "[checked='checked']" ).parent().addClass('ticked');
+
     // Page 2
     if( document.getElementById('householdSlider')){
 
@@ -43,6 +46,9 @@ $(document).ready(function(){
                 $('#populationValue').html(stringValue);
             }
         });
+
+        var slider_value = document.getElementById('populationSlider').getAttribute("data-slider_value")
+        $( "#populationSlider" ).slider( {value: slider_value})
     }
 
 
