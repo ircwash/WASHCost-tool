@@ -74,7 +74,7 @@
               <span><%= flash[:results][:country] %></span>
             </dd>
           </dl>
-          <a href="./country"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
+          <a href="./country" class="editAnchor"><img src="/assets/iconEdit24.png" alt="icon edit" /></a>
         </div>
         <div class="waterResult">
           <dl>
@@ -83,7 +83,7 @@
               <span><%= flash[:results][:water]%></span>
             </dd>
           </dl>
-          <a href="./water"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
+          <a href="./water" class="editAnchor"><img src="/assets/iconEdit24.png" alt="icon edit" /></a>
         </div>
         <div class="populationResults">
           <dl>
@@ -92,7 +92,7 @@
               <span><%= flash[:results][:population]%></span>
             </dd>
           </dl>
-          <a href="./population"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
+          <a href="./population" class="editAnchor"><img src="/assets/iconEdit24.png" alt="icon edit" /></a>
         </div>
       </div>
     </section>
@@ -123,14 +123,14 @@
             <dt>Capital Expenditure</dt>
             <dd class="country_0">US$<%= flash[:results][:capital]%></dd>
           </dl>
-          <a href="./capital"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
+          <a href="./capital" class="editAnchor"><img src="/assets/iconEdit24.png" alt="icon edit" /></a>
         </div>
         <div>
           <dl>
             <dt>Recurrent Expenditure</dt>
             <dd class="household_0">US$<%= flash[:results][:recurrent]%></dd>
           </dl>
-          <a href="./recurrent"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
+          <a href="./recurrent" class="editAnchor"><img src="/assets/iconEdit24.png" alt="icon edit" /></a>
         </div>
         <div class="last">
           <dl>
@@ -151,22 +151,22 @@
           <li class="distance">
             <span class="label">Distance</span>
             <span class="value"><%= flash[:results][:time]%></span>
-            <a href="./time"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
+            <a href="./time" class="editAnchor"><img src="/assets/iconEdit24.png" alt="icon edit" /></a>
           </li>
           <li class="rowQQR quantity result_0<%= flash[:results][:quantity_index]%>">
             <span class="label">Quantity</span>
             <span class="value quantity_0<%= flash[:results][:quantity_index]%>"><%= flash[:results][:quantity]%></span>
-            <a href="./quantity"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
+            <a href="./quantity" class="editAnchor"><img src="/assets/iconEdit24.png" alt="icon edit" /></a>
           </li>
           <li class="rowQQR quality result_0<%= flash[:results][:quality_index]%>">
             <span class="label quality_0<%= flash[:results][:quality_index]%>">Quality</span>
             <span class="value"><%= flash[:results][:quality]%></span>
-            <a href="./quality"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
+            <a href="./quality" class="editAnchor"><img src="/assets/iconEdit24.png" alt="icon edit" /></a>
           </li>
           <li class="rowQQR reliability result_0<%= flash[:results][:reliability_index]%>">
             <span class="label quality_0<%= flash[:results][:reliability_index]%>">Reliability</span>
             <span class="value"><%= flash[:results][:reliability]%></span>
-            <a href="./reliability"><img src="/assets/report/icon_edit.png" alt="icon edit" /></a>
+            <a href="./reliability" class="editAnchor"><img src="/assets/iconEdit24.png" alt="icon edit" /></a>
           </li>
         </ul>
       </div>

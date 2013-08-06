@@ -886,15 +886,15 @@ a.sbSelector:hover {
         width: 100%;
         text-align: center;
         padding: 14px 0;
-        color: #fff;
+        color: #796d49;
         font-size: 12px;
         font-weight: bold;
-        border-top: 1px solid #4FA3C9;
-        border-bottom: 1px solid #4FA3C9;
+        border-top: 1px solid #796d49;
+        border-bottom: 1px solid #796d49;
     }
     .review p {
         text-align: left;
-        color: #fff;
+        color: #a6955f;
         padding-top: 10px;
         line-height: 1.5;
     }
@@ -909,6 +909,20 @@ a.sbSelector:hover {
     .sectionWrapper {
         width: 800px;
         margin: 0 auto;
+    }
+    section .sectionWrapper a.editAnchor {
+        display: block;
+        width: 35px;
+        height: 34px;
+        background-color: #d5cea3;
+        margin: 0;
+
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+    section .sectionWrapper a.editAnchor img {
+        padding-top: 9px;
     }
     .report section {
         position: relative;
@@ -943,14 +957,14 @@ a.sbSelector:hover {
     .report h2 {
         font-size: 18px;
         font-weight: bold;
-        color: #fff;
+        color: #796D49;
         text-align: center;
         margin-bottom: 30px;
     }
     .report h3 {
         font-size: 12px;
         text-align: center;
-        color: #fff;
+        color: #a6955f;
     }
     .report dl {
         width: 50%;
@@ -958,7 +972,7 @@ a.sbSelector:hover {
     }
     .report dl dt {
         text-align: center;
-        color: #fff;
+        color: #a6955f;
         margin-bottom: 15px;
         font-weight: bold;
     }
@@ -970,7 +984,7 @@ a.sbSelector:hover {
     .report dl dd span {
         display: block;
         text-align: center;
-        color: #cee6f0;
+        color: #a6955f;
         margin-top: 49px;
     }
     .general .sectionWrapper {
@@ -1050,11 +1064,17 @@ a.sbSelector:hover {
         margin-bottom: 56px;
     }
     .content .sectionWrapper div {
+        position: relative;
+        overflow: hidden;
         width: 27%;
         float: left;
         margin-left: 25px;
+        padding-bottom: 40px;
     }
     .content .sectionWrapper div  a {
+        position: absolute;
+        bottom: 0;
+        left: 100px;
         display: block;
         text-align: center;
     }
@@ -1153,8 +1173,8 @@ a.sbSelector:hover {
         font-weight: bold;
         color: #fff;
         padding: 16px 10px;
+        background-color: #d5cea3;
 
-        background-color: #3cb1c5;
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         border-radius: 5px;
@@ -1178,7 +1198,7 @@ a.sbSelector:hover {
     .service li span.label {
         display: block;
         text-align: center;
-        color: #fff;
+        color: #a6955f;
     }
     .service li span.value {
         display: block;
@@ -1188,7 +1208,7 @@ a.sbSelector:hover {
         font-size: 15px;
         font-weight: bold;
         text-align: center;
-        color: #fff;
+        color: #a6955f;
     }
     .service li a {
         display: block;
@@ -1215,12 +1235,21 @@ a.sbSelector:hover {
         margin-top: 120px;
         margin-bottom: 10px;
     }
+    .service .rowQQR a.editAnchor {
+        position: absolute;
+        bottom: 0;
+        left: 94px;
+    }
     .service .distance {
         background: transparent url('/assets/serviceLevel8.png') no-repeat 0 100%;
     }
     .service .distance span.value {
         position: absolute;
         left: 45%;
+    }
+    .service .distance a.editAnchor {
+        margin: 0 auto;
+        margin-top: 80px;
     }
     .service .quantity {
         background: transparent url('/assets/spriteQ7basicWater24.png') no-repeat 0 0;
