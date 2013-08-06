@@ -1,5 +1,9 @@
 $(document).ready(function(){
 
+    // Option buttons that are checked should be highlighted.
+    $( "[checked='checked']" ).parent().addClass('ticked');
+
+
     // Page 3
     if( document.getElementById('populationSlider')){
 

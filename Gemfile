@@ -9,7 +9,7 @@ group :development, :test do
   gem 'ruby-prof'
   gem 'better_errors'
   gem 'binding_of_caller'
-  #gem 'meta_request' #uncomment for use with rails pannel
+  gem 'meta_request' #uncomment for use with rails pannel
   gem 'awesome_print'
   gem 'pry'
   gem 'pry-doc'
