@@ -13,13 +13,13 @@
     </li>
     <li>
       <%= label_tag("unreliable", nil, class: "tickCheckBox reliability_01") do %>
-        <%= radio_button_tag("r_reliability", 1, id: "unreliable") %>
+        <%= radio_button_tag("r_reliability", 1, false, id: "unreliable") %>
         <span><%= t 'form.sanitation_basic.reliability.answers.a1' %></span>
       <% end %>
     </li>
     <li>
       <%= label_tag("relyNot", nil, class: "tickCheckBox reliability_02") do %>
-        <%= radio_button_tag("r_reliability", 2, id: "relyNot") %>
+        <%= radio_button_tag("r_reliability", 2, false, id: "relyNot") %>
         <span><%= t 'form.sanitation_basic.reliability.answers.a2' %></span>
       <% end %>
     </li>
@@ -28,5 +28,5 @@
   <input type="hidden" name="reliability"/>
   <%= submit_tag("Save", class: "next_button") %>
     <a class="skip" href="#"><%= t 'form.skip' %></a>
-    
+
 <% end %>

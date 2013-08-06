@@ -7,13 +7,13 @@
    <ul class="provideInput">
      <li>
        <%= label_tag("capitalYes", nil, class: "tickCheckBox") do %>
-           <%= radio_button_tag("r_providing", 0, false, id: "capitalYes") %>
+           <%= radio_button_tag("r_providing", 0, 0 == flash[:providing], id: "capitalYes") %>
            <span><%= t 'form.sanitation_basic.providing.answers.a0' %></span>
        <% end %>
      </li>
      <li>
        <%= label_tag("capitalNo", nil, class: "tickCheckBox provideInput_01") do %>
-           <%= radio_button_tag("r_providing", 1, id: "capitalNo") %>
+           <%= radio_button_tag("r_providing", 1, 1 == flash[:providing], id: "capitalNo") %>
            <span><%= t 'form.sanitation_basic.providing.answers.a1' %></span>
        <% end %>
      </li>

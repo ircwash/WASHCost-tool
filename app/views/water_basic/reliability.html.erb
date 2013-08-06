@@ -9,32 +9,30 @@
         <li>
           <%= label_tag("worksAll", nil, class: "tickCheckBox") do %>
             <span><%= t 'form.water_basic.reliability.answers.a0' %></span>
-            <%= radio_button_tag("r_reliability", 0, false, id: "worksAll") %>
+            <%= radio_button_tag("r_reliability", 0, 0 == flash[:reliability], id: "worksAll") %>
           <% end %>
         </li>
         <li>
           <%= label_tag("worksMostly", nil, class: "tickCheckBox relia_01") do %>
             <span><%= t 'form.water_basic.reliability.answers.a1' %></span>
-            <%= radio_button_tag("r_reliability", 1, false, id: "worksMostly") %>
+            <%= radio_button_tag("r_reliability", 1, 1 == flash[:reliability], id: "worksMostly") %>
           <% end %>
         </li>
         <li>
           <%= label_tag("breakDown", nil, class: "tickCheckBox relia_02") do %>
             <span><%= t 'form.water_basic.reliability.answers.a2' %></span>
-            <%= radio_button_tag("r_reliability", 2, false, id: "breakDown") %>
+            <%= radio_button_tag("r_reliability", 2, 2 == flash[:reliability], id: "breakDown") %>
           <% end %>
         </li>
         <li>
           <%= label_tag("notWorking", nil, class: "tickCheckBox relia_03") do %>
             <span><%= t 'form.water_basic.reliability.answers.a3' %></span>
-            <%= radio_button_tag("r_reliability", 3, false, id: "notWorking") %>
+            <%= radio_button_tag("r_reliability", 3, 3 == flash[:reliability], id: "notWorking") %>
           <% end %>
         </li>
       </ul>
 
-
         <input type="hidden" name="reliability"/>
         <%= submit_tag((t 'buttons.complete'), class: "next_button") %>
-
 
     <% end %>

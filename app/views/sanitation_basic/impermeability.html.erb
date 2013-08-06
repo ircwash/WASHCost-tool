@@ -6,13 +6,13 @@
   <ul class="impermeabilityInput">
     <li>
       <%= label_tag("slab", nil, class: "tickCheckBox") do %>
-        <%= radio_button_tag("r_impermeability", 0, false, id: "slab") %>
+        <%= radio_button_tag("r_impermeability", 0, 0 == flash[:impermeability], id: "slab") %>
         <span><%= t 'form.sanitation_basic.impermeability.answers.a0' %></span>
       <% end %>
     </li>
     <li>
       <%= label_tag("slabNo", nil, class: "tickCheckBox impermeability_01") do %>
-        <%= radio_button_tag("r_impermeability", 1, id: "slabNo") %>
+        <%= radio_button_tag("r_impermeability", 1, 1 == flash[:impermeability], id: "slabNo") %>
         <span> <%= t 'form.sanitation_basic.impermeability.answers.a1' %></span>
       <% end %>
     </li>

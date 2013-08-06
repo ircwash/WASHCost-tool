@@ -28,6 +28,8 @@ class SanitationBasicController < ApplicationController
       end
     end
 
+    flash[:country_code] = retrieve_previous_answer_for("country")
+
   end
 
   def household
@@ -42,6 +44,8 @@ class SanitationBasicController < ApplicationController
         redirect_to :action => "population"
       end
     end
+
+     flash[:household] = retrieve_previous_answer_for("household")
   end
 
   def population
@@ -56,6 +60,8 @@ class SanitationBasicController < ApplicationController
         redirect_to :action => "latrine"
       end
     end
+
+    flash[:population] = retrieve_previous_answer_for("population")
   end
 
   def latrine
@@ -71,6 +77,7 @@ class SanitationBasicController < ApplicationController
       end
     end
 
+    flash[:latrine] = retrieve_previous_answer_for("latrine")
   end
 
   def capital
@@ -85,6 +92,8 @@ class SanitationBasicController < ApplicationController
         redirect_to :action => "recurrent"
       end
     end
+
+    flash[:capital] = retrieve_previous_answer_for("capital")
   end
 
   def recurrent
@@ -99,6 +108,8 @@ class SanitationBasicController < ApplicationController
         redirect_to :action => "providing"
       end
     end
+
+    flash[:recurrent] = retrieve_previous_answer_for("recurrent")
   end
 
   def providing
@@ -114,6 +125,7 @@ class SanitationBasicController < ApplicationController
       end
     end
 
+    flash[:providing] = retrieve_previous_answer_for("providing")
   end
 
   def impermeability
@@ -126,6 +138,8 @@ class SanitationBasicController < ApplicationController
         redirect_to :action =>"environment"
       end
     end
+
+    flash[:impermeability] = retrieve_previous_answer_for("impermeability")
   end
 
   def environment
@@ -139,6 +153,8 @@ class SanitationBasicController < ApplicationController
         redirect_to :action =>"usage"
       end
     end
+
+    flash[:environment] = retrieve_previous_answer_for("environment")
   end
 
   def usage
@@ -172,7 +188,6 @@ class SanitationBasicController < ApplicationController
     end
   end
 
-
   def
     report
     results= get_sanitation_basic_report
@@ -180,4 +195,15 @@ class SanitationBasicController < ApplicationController
     flash[:results] = results
     render layout: "sanitation_basic_report"
   end
+
+  private
+
+  def retrieve_previous_answer_for(user_step)
+    begin
+      session[:sanitation_basic_form].has_key?(user_step) ? session[:sanitation_basic_form][user_step] : nil
+    rescue
+      nil
+    end
+  end
+
 end

@@ -3,7 +3,6 @@ $(document).ready(function(){
     // Option buttons that are checked should be highlighted.
     $( "[checked='checked']" ).parent().addClass('ticked');
 
-
     // Page 3
     if( document.getElementById('populationSlider')){
 
@@ -22,8 +21,11 @@ $(document).ready(function(){
                 stringValue= ui.value.toLocaleString();
 
                 $('#populationValue').html(stringValue);
-            }
+            },
         });
+
+        var slider_value = document.getElementById('populationSlider').getAttribute("data-slider_value")
+        $( "#populationSlider" ).slider( {value: slider_value})
     }
 
     // Page 4
@@ -40,6 +42,9 @@ $(document).ready(function(){
                 $('#capitalValue').html(ui.value);
             }
         });
+
+        var slider_value = document.getElementById('capitalSlider').getAttribute("data-slider_value")
+        $( "#capitalSlider" ).slider( {value: slider_value})
     }
 
     // Page 5
@@ -56,6 +61,9 @@ $(document).ready(function(){
                 $('#recurrentValue').html(ui.value);
             }
         });
+
+        var slider_value = document.getElementById('recurrentSlider').getAttribute("data-slider_value")
+        $( "#recurrentSlider" ).slider( {value: slider_value})
     }
 
     // Page 6 (Time & Distance)

@@ -1,29 +1,29 @@
 <% @title = "8 of 10 (Environment)" %>
 <h1><%= t 'form.sanitation_basic.environment.question' %></h1>
-<%= form_tag({controller: "sanitation_basic", action: "usage"}, class: "main_content sanitation", id: "waterBasicForm") do %>
+<%= form_tag({controller: "sanitation_basic", action: "environment"}, class: "main_content sanitation", id: "waterBasicForm") do %>
 
 
   <ul class="environmentInput">
     <li>
       <%= label_tag("safe", nil, class: "tickCheckBox") do %>
-        <%= radio_button_tag("r_environment", 0, false, id: "safe") %>
+        <%= radio_button_tag("r_environment", 0, 0 == flash[:environment], id: "safe") %>
         <span><%= t 'form.sanitation_basic.environment.answers.a0' %></span>
       <% end %>
     </li>
     <li>
       <%= label_tag("reusable", nil, class: "tickCheckBox environment_01") do %>
-        <%= radio_button_tag("r_environment", 1, id: "reusable") %>
+        <%= radio_button_tag("r_environment", 1, 1 == flash[:environment], id: "reusable") %>
         <span><%= t 'form.sanitation_basic.environment.answers.a1' %></span>
       <% end %>
     </li>
     <li>
       <%= label_tag("pollution", nil, class: "tickCheckBox environment_02") do %>
-        <%= radio_button_tag("r_environment", 2, id: "pollution") %>
+        <%= radio_button_tag("r_environment", 2, 2 == flash[:environment], id: "pollution") %>
         <span><%= t 'form.sanitation_basic.environment.answers.a2' %></span>
       <% end %>
     </li>
   </ul>
-  
+
     <input type="hidden" name="environment"/>
     <%= submit_tag("Next", class: "next_button") %>
     <a class="skip" href="./usage"><%= t 'form.skip' %></a>

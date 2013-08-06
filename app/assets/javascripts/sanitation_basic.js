@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+    // Option buttons that are checked should be highlighted.
+    $( "[checked='checked']" ).parent().addClass('ticked');
+
     // Page 2
     if( document.getElementById('householdSlider')){
 
@@ -15,6 +18,9 @@ $(document).ready(function(){
                 $('#householdValue').html(ui.value);
             }
         });
+
+        var slider_value = document.getElementById('householdSlider').getAttribute("data-slider_value")
+        $( "#householdSlider" ).slider( {value: slider_value})
     }
 
     // Page 3
@@ -40,6 +46,9 @@ $(document).ready(function(){
                 $('#populationValue').html(stringValue);
             }
         });
+
+        var slider_value = document.getElementById('populationSlider').getAttribute("data-slider_value")
+        $( "#populationSlider" ).slider( {value: slider_value})
     }
 
 
@@ -58,6 +67,9 @@ $(document).ready(function(){
                 $('#capitalValue').html(ui.value);
             }
         });
+
+        var slider_value = document.getElementById('capitalSlider').getAttribute("data-slider_value")
+        $( "#capitalSlider" ).slider( {value: slider_value})
     }
 
     // Page 5
@@ -73,6 +85,9 @@ $(document).ready(function(){
                 $('#recurrentValue').html(ui.value);
             }
         });
+
+        var slider_value = document.getElementById('recurrentSlider').getAttribute("data-slider_value")
+        $( "#recurrentSlider" ).slider( {value: slider_value})
     }
 
     // Page 6
