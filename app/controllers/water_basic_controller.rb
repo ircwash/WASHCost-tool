@@ -11,7 +11,6 @@ class WaterBasicController < ApplicationController
     super
   end
 
-
   def set_percent_complete
     flash[:percent_complete]= get_percent_complete(:water_basic_complete)
   end
@@ -26,14 +25,16 @@ class WaterBasicController < ApplicationController
 
         redirect_to :action => "water"
       end
+
     end
 
-    if session[:water_basic_form].present? && session[:water_basic_form]
-      flash[:country_code]= session[:water_basic_form][:country]
+    begin
+      flash[:country_code] = session[:water_basic_form]["country"]
+    rescue
+      flash[:country_code] = nil
     end
 
     flash[:pages_complete] = session[:water_basic_complete]
-
   end
 
   def water
@@ -49,6 +50,7 @@ class WaterBasicController < ApplicationController
 
       end
     end
+    flash[:water] = session[:water_basic_form]["water"] if session[:water_basic_form]["water"]
 
   end
 

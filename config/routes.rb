@@ -18,4 +18,6 @@ WashCostApp::Application.routes.draw do
 
   get "/path" => "controller#get_action"
   post "/path" => "controller#post_action"
+
+  match '/clean_session', :controller => 'application', :action => 'clean_session'
 end

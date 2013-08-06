@@ -54,7 +54,6 @@ class ApplicationController < ActionController::Base
 
   def add_to_session_form(form_name, complete_name, key, value)
 
-
     form= session[form_name].present? ? session[form_name] : Hash.new(0)
 
     if !form.has_key?(key)
@@ -90,5 +89,9 @@ class ApplicationController < ActionController::Base
 
   end
 
+  def clean_session
+    reset_session
+    render :text => 'Session cleaned'
+  end
 
 end
