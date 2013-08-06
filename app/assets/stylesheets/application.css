@@ -1182,6 +1182,7 @@ a.sbSelector:hover {
     .cost .sectionWrapper dl dd.total {
         font-size: 60px;
         padding: 0;
+        color: #accd4b;
         background-color: transparent;
     }
     .report .service {
@@ -1236,9 +1237,7 @@ a.sbSelector:hover {
         margin-bottom: 10px;
     }
     .service .rowQQR a.editAnchor {
-        position: absolute;
-        bottom: 0;
-        left: 94px;
+        margin: 147px auto;
     }
     .service .distance {
         background: transparent url('/assets/serviceLevel8.png') no-repeat 0 100%;
@@ -1282,7 +1281,7 @@ a.sbSelector:hover {
         background-position: 32px -127px; 
     }
     .service .quality.result_02 {
-        background-position: -120px -127px;
+        background-position: -127px -127px;
     }
     .service .quality.result_03 {
         background-position: -285px -127px;
