@@ -1,3 +1,4 @@
+<% puts "water selection is: #{flash[:water]} " %>
 <% @title = "2 of 9 (Water Source)" %>
 
 <h1>
@@ -9,7 +10,7 @@
   <ul class="waterInput">
     <li>
       <%= label_tag("boreHold", nil, class: "tickCheckBox") do %>
-        <%= radio_button_tag("r_water", 0, 0 == flash[:water] , id: "boreHold") %>
+        <%= radio_button_tag("r_water", 0, 0 == flash[:water], id: "boreHold") %>
         <span><%= t 'form.water_basic.water.answers.a0' %></span>
       <% end %>
     </li>
@@ -21,19 +22,19 @@
     </li>
     <li>
       <%= label_tag("singleTown", nil, class: "tickCheckBox boreHold_02") do %>
-        <%= radio_button_tag("r_water", 2 == flash[:water], false, id: "singleTown") %>
+        <%= radio_button_tag("r_water", 2, 2 == flash[:water], id: "singleTown") %>
         <span><%= t 'form.water_basic.water.answers.a2' %></span>
       <% end %>
     </li>
     <li>
       <%= label_tag("multiTown", nil, class: "tickCheckBox boreHold_03") do %>
-        <%= radio_button_tag("r_water", 3 == flash[:water], false, id: "multiTown") %>
+        <%= radio_button_tag("r_water", 3, 3 == flash[:water], id: "multiTown") %>
         <span><%= t 'form.water_basic.water.answers.a3' %></span>
       <% end %>
     </li>
     <li>
       <%= label_tag("mixedPipe", nil, class: "tickCheckBox boreHold_04") do %>
-        <%= radio_button_tag("r_water", 4 == flash[:water], true, id: "mixedPipe") %>
+        <%= radio_button_tag("r_water", 4, 4 == flash[:water], id: "mixedPipe") %>
         <span><%= t 'form.water_basic.water.answers.a4' %></span>
       <% end %>
     </li>

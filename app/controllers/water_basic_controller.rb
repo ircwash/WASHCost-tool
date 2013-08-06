@@ -42,7 +42,7 @@ class WaterBasicController < ApplicationController
     if request.post?
       water_index= params[:water]
 
-      if(water_index && water_index.to_i > -1 && water_index.to_i < 4)
+      if(water_index && water_index.to_i > -1 && water_index.to_i <= 4)
 
         add_to_session_form(:water_basic_form, :water_basic_complete, "water", water_index.to_i)
 
@@ -50,7 +50,12 @@ class WaterBasicController < ApplicationController
 
       end
     end
-    flash[:water] = session[:water_basic_form]["water"] if session[:water_basic_form]["water"]
+
+    begin
+      flash[:water] = session[:water_basic_form].has_key?("water") ? session[:water_basic_form]["water"] : nil
+    rescue
+      flash[:water] = nil
+    end
 
   end
 
