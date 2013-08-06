@@ -947,7 +947,7 @@ a.sbSelector:hover {
     .report dl dt {
         text-align: center;
         color: #fff;
-        margin-bottom: 30px;
+        margin-bottom: 15px;
         font-weight: bold;
     }
     .report dl dd {
@@ -1104,7 +1104,7 @@ a.sbSelector:hover {
     }
     #graph {
         width: 800px;
-        margin: 0 auto 60px;
+        margin: 0 auto 30px;
     }
     .cost .sectionWrapper div {
         position: relative;
@@ -1112,8 +1112,18 @@ a.sbSelector:hover {
         float: left;
         text-align: center;
     }
+    .cost .sectionWrapper div.first {
+        margin-left: 200px;
+    }
+    .cost .sectionWrapper div.last {
+        clear: both;
+        float: none;
+        width: 50%;
+        text-align: center;
+        margin: 0 auto;
+    }
     .cost dl {
-        width: 100%;
+        width: auto;
     }
     .cost dl dt {
         width: 100%;
@@ -1123,19 +1133,15 @@ a.sbSelector:hover {
         height: auto;
     }
     .cost .sectionWrapper div a {
-        clear: both;
-        position: absolute;
-        right: 28px;
-        bottom: -2px;
-        text-align: center;
+        display: block;
+        float: left;
+        margin: 60px 30px 30px;
     }
     .cost dl dd {
-        width: 50%;
         font-size: 30px;
         font-weight: bold;
         color: #fff;
-        padding: 16px 0;
-        margin-left: 50px;
+        padding: 16px 10px;
 
         background-color: #3cb1c5;
         -webkit-border-radius: 5px;
