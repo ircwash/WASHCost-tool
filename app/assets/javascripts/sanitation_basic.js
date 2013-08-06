@@ -67,6 +67,9 @@ $(document).ready(function(){
                 $('#capitalValue').html(ui.value);
             }
         });
+
+        var slider_value = document.getElementById('capitalSlider').getAttribute("data-slider_value")
+        $( "#capitalSlider" ).slider( {value: slider_value})
     }
 
     // Page 5

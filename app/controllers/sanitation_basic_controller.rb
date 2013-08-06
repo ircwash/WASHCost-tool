@@ -78,7 +78,6 @@ class SanitationBasicController < ApplicationController
     end
 
     flash[:latrine] = retrieve_previous_answer_for("latrine")
-
   end
 
   def capital
@@ -93,6 +92,8 @@ class SanitationBasicController < ApplicationController
         redirect_to :action => "recurrent"
       end
     end
+
+    flash[:capital] = retrieve_previous_answer_for("capital")
   end
 
   def recurrent
