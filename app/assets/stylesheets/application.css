@@ -872,7 +872,6 @@ a.sbSelector:hover {
         left: 0;
     }
     /* Report */
-
     dl {
         float: left;
     }
@@ -916,6 +915,18 @@ a.sbSelector:hover {
         overflow: hidden;
         padding: 44px 0;
         border-top: 2px solid #fff;
+        background: transparent url('/assets/backYellow8.png') repeat-y 0 0;
+    }
+    .report .sectionHeading {
+        overflow: hidden;
+        padding: 0;
+        border-top: none;
+        background-image: none;
+        background-color: #accd4b;
+    }
+    .report .general {
+        background-image: none;
+        background-color: #edeccb;
     }
     .report h1 {
         font-size: 18px;
@@ -924,6 +935,7 @@ a.sbSelector:hover {
         padding: 43px 0 36px 0;
         text-align: center;
         text-transform: uppercase;
+        background-image: none;
     }
     .report h1 span {
         font-weight: bold;
@@ -1281,7 +1293,6 @@ a.sbSelector:hover {
         line-height: 1.5;
         color: #CCE2EC;
     }
-
     /*
     *
     * BASIC SANITATION
