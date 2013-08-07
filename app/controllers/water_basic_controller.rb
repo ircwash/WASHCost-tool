@@ -122,7 +122,7 @@ class WaterBasicController < ApplicationController
     if request.post?
       quantity_index= params[:quantity]
 
-      if(quantity_index && is_number(quantity_index) && quantity_index.to_i > -1 && quantity_index.to_i < 4)
+      if(quantity_index && quantity_index.to_i > -1 && quantity_index.to_i < 3)
 
         add_to_session_form(:water_basic_form, :water_basic_complete, "quantity", quantity_index.to_i)
 
@@ -137,7 +137,7 @@ class WaterBasicController < ApplicationController
     if request.post?
       quality_index= params[:quality]
 
-      if(quality_index && is_number(quality_index) && quality_index.to_i > -1 && quality_index.to_i < 4)
+      if(quality_index && quality_index.to_i > -1 && quality_index.to_i < 3)
 
         add_to_session_form(:water_basic_form, :water_basic_complete, "quality", quality_index.to_i)
 
@@ -153,7 +153,7 @@ class WaterBasicController < ApplicationController
     if request.post?
       reliability_index= params[:reliability]
 
-      if(reliability_index && is_number(reliability_index) && reliability_index.to_i > -1 && reliability_index.to_i < 4)
+      if(reliability_index && reliability_index.to_i > -1 && reliability_index.to_i < 3)
 
         add_to_session_form(:water_basic_form, :water_basic_complete, "reliability", reliability_index.to_i)
 
