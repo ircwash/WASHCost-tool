@@ -168,12 +168,14 @@ class SanitationBasicController < ApplicationController
         redirect_to :action =>"reliability"
       end
     end
+    flash[:usage] = retrieve_previous_answer_for("usage")
   end
 
   def reliability
     if request.post?
-      put_index_in_session(:reliability, -1, 3, "reliability")
+      put_index_in_session(:reliability, -1, 3, "report")
     end
+    flash[:reliability] = retrieve_previous_answer_for("reliability")
   end
 
   def put_index_in_session(key, min, max, redirect)
@@ -181,8 +183,8 @@ class SanitationBasicController < ApplicationController
 
     if(radio_index && radio_index.to_i > min && radio_index.to_i < max)
 
-      add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete, key,  usage_index.to_i)
-      increase_pages_complete
+      add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete, key.to_s,  radio_index.to_i)
+      #increase_pages_complete
 
       redirect_to :action => redirect
     end
