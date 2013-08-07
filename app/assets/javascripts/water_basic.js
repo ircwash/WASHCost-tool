@@ -55,7 +55,7 @@ $(document).ready(function(){
 
         $( "#recurrentSlider" ).slider({
             min: 0,
-            max: 300,
+            max: 20,
             change: function( event, ui ) {
                 $('input[name="recurrent"]').val(ui.value);
                 $('#recurrentValue').html(ui.value);
