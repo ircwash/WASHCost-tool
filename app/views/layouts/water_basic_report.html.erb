@@ -149,7 +149,7 @@
       <div class="sectionWrapper">
         <ul>
           <li class="distance">
-            <span class="label">Access</span>
+            <span class="label">Distance</span>
             <span class="value"><%= flash[:results][:time]%></span>
             <a href="./time" class="editAnchor"><img src="/assets/iconEdit24.png" alt="icon edit" /></a>
           </li>
@@ -199,6 +199,7 @@
 
         var _C= <%= (flash[:results][:capital]|| 0) %>;
         var _R= <%= (flash[:results][:recurrent]|| 0) %>;
+        var _P= <%= (flash[:results][:population]|| 0) %>;
 
         if(_C && _R){
 
@@ -213,15 +214,15 @@
 
             data.addRows([
                 ['Setup',   _C, _C+'', 'You Spent '+_C+' Dollars Your first year'],
-                ['1',   _R, _R+'', _R+' Dollars is your recurring cost'],
-                ['2',   _R, null, null],
-                ['3',   _R, null, null],
-                ['4',   _R, null, null],
-                ['5',   _R, null, null],
-                ['6',   _R, null, null],
-                ['7',   _R, null, null],
-                ['8',   _R, null, null],
-                ['9',  _R, null, null]
+                ['1',   _R*_P, _R+'', _R+' Dollars is your recurring cost'],
+                ['2',   _R*_P, null, null],
+                ['3',   _R*_P, null, null],
+                ['4',   _R*_P, null, null],
+                ['5',   _R*_P, null, null],
+                ['6',   _R*_P, null, null],
+                ['7',   _R*_P, null, null],
+                ['8',   _R*_P, null, null],
+                ['9',  _R*_P, null, null]
             ]);
 
             // Create and draw the visualization.
