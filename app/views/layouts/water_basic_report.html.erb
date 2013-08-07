@@ -102,7 +102,7 @@
 
       <% flash[:results][:form_ready]  %>
       <% if flash[:results][:form_ready] == true %>
-      <h3>Cost on 10 years (for a population of 2000 people)</h3>
+      <h3>Cost on 10 years (for a population of <%= flash[:results][:population]%> people)</h3>
 
       <div id="graph">
         <div id="graphContent"></div>
@@ -212,7 +212,7 @@
             data.addColumn({type:'string', role:'annotationText'}); // annotationText col
 
             data.addRows([
-                ['0',   _C, _C+'', 'You Spent '+_C+' Dollars Your first year'],
+                ['Setup',   _C, _C+'', 'You Spent '+_C+' Dollars Your first year'],
                 ['1',   _R, _R+'', _R+' Dollars is your recurring cost'],
                 ['2',   _R, null, null],
                 ['3',   _R, null, null],
