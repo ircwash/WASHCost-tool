@@ -562,9 +562,6 @@ a.sbSelector:hover {
     padding: 15px 20px;
     width: 88%;
 }
-.chzn-container-single .chzn-search {
-    display: none;
-}
 .labelScale {
     position: relative;
     width: 100%;
@@ -940,8 +937,10 @@ a.sbSelector:hover {
         padding: 0;
         border-top: none;
         background-image: none;
-        background-color: #accd4b;
     }
+    .report .sectionHeading.generalTitle {
+        background-color: #accd4b;
+    } 
     .report .general {
         background-image: none;
         background-color: #edeccb;
@@ -1108,13 +1107,13 @@ a.sbSelector:hover {
         background: transparent url('/assets/spriteQ2basicWater24.png') no-repeat -10000px -180px;
     }
     .content .waterResult .result_01 {
-        background-position: -114px -180px;
+        background-position: 38px -180px;
     }
     .content .waterResult .result_02 {
-        background-position: -286px -180px;
+        background-position: -114px -180px;
     }
     .content .waterResult .result_03 {
-        background-position: -438px -180px;
+        background-position: -286px -180px;
     }
     .content .waterResult .result_04 {
         background-position: -445px -180px;
@@ -1128,12 +1127,15 @@ a.sbSelector:hover {
         background: transparent url('/assets/spriteQ3basicWater24.png') no-repeat -10000px -180px;
     }
     .content .populationResults .result_01 {
-        background-position: -116px -180px;
+        background-position: 40px -180px;
     }
     .content .populationResults .result_02 {
-        background-position: -277px -180px;
+        background-position: -116px -180px;
     }
     .content .populationResults .result_03 {
+        background-position: -277px -180px;
+    }
+    .content .populationResults .result_04 {
         background-position: -444px -180px;
     }
     .sanitation .content dl dd { 
@@ -1633,6 +1635,9 @@ a.sbSelector:hover {
     .report.advance section .sectionWrapper {
         margin-bottom: 0;
     }
+    .report.advance .general {
+        padding-bottom: 44px;
+    } 
     .advance section {
         position: relative;
     }
@@ -1780,7 +1785,7 @@ a.sbSelector:hover {
         float: left;
         margin-right: 5px;
         padding: 11px 22px;
-        background-color: #3cb1c5;
+        background-color: #d5cea3;
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
         border-radius: 3px;

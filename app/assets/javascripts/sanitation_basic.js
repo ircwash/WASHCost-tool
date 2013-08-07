@@ -19,8 +19,8 @@ $(document).ready(function(){
             }
         });
 
-        var slider_value = document.getElementById('householdSlider').getAttribute("data-slider_value")
-        $( "#householdSlider" ).slider( {value: slider_value})
+        var slider_value = document.getElementById('householdSlider').getAttribute("data-slider_value");
+        $( "#householdSlider" ).slider({value: slider_value});
     }
 
     // Page 3
@@ -33,22 +33,20 @@ $(document).ready(function(){
         $('input[name="capital"]').val(0);
 
         $( "#populationSlider" ).slider({
-            min: 500,
-            max: 15000,
+            min: LOG_SLIDER.gMinPrice,
+            max: LOG_SLIDER.gMaxPrice,
             step: 500,
             change: function( event, ui ) {
-                $('input[name="population"]').val(ui.value);
-
+                var value = Math.round(Number(LOG_SLIDER.expon(ui.value)/100)) * 100;
+                $('input[name="population"]').val(value);
                 var stringVal= '';
-
-                stringValue= ui.value.toLocaleString();
-
+                stringValue= value.toLocaleString();
                 $('#populationValue').html(stringValue);
             }
         });
 
-        var slider_value = document.getElementById('populationSlider').getAttribute("data-slider_value")
-        $( "#populationSlider" ).slider( {value: slider_value})
+        var slider_value = Number(document.getElementById('populationSlider').getAttribute("data-slider_value"));
+        $( "#populationSlider" ).slider({value: LOG_SLIDER.logposition(slider_value)});
     }
 
 
@@ -68,8 +66,8 @@ $(document).ready(function(){
             }
         });
 
-        var slider_value = document.getElementById('capitalSlider').getAttribute("data-slider_value")
-        $( "#capitalSlider" ).slider( {value: slider_value})
+        var slider_value = document.getElementById('capitalSlider').getAttribute("data-slider_value");
+        $( "#capitalSlider" ).slider({value: slider_value});
     }
 
     // Page 5
@@ -86,8 +84,8 @@ $(document).ready(function(){
             }
         });
 
-        var slider_value = document.getElementById('recurrentSlider').getAttribute("data-slider_value")
-        $( "#recurrentSlider" ).slider( {value: slider_value})
+        var slider_value = document.getElementById('recurrentSlider').getAttribute("data-slider_value");
+        $( "#recurrentSlider" ).slider({value: slider_value});
     }
 
     // Page 6

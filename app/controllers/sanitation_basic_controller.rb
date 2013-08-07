@@ -69,7 +69,7 @@ class SanitationBasicController < ApplicationController
     if request.post?
       latrine_index= params[:latrine]
 
-      if(latrine_index && is_number(latrine_index) && latrine_index.to_i > -1 && latrine_index.to_i < 6)
+      if(latrine_index && latrine_index.to_i > -1 && latrine_index.to_i < 6)
 
         add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete, "latrine", latrine_index.to_i)
 
@@ -117,7 +117,7 @@ class SanitationBasicController < ApplicationController
     if request.post?
       providing_index= params[:providing]
 
-      if(providing_index && is_number(providing_index) && providing_index.to_i > -1 && providing_index.to_i < 2)
+      if(providing_index && providing_index.to_i > -1 && providing_index.to_i < 2)
 
         add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete, "providing", providing_index.to_i)
 
@@ -132,7 +132,7 @@ class SanitationBasicController < ApplicationController
     if request.post?
       impermeability_index= params[:impermeability]
 
-      if(impermeability_index && is_number(impermeability_index) && impermeability_index.to_i > -1 && impermeability_index.to_i < 2)
+      if(impermeability_index && impermeability_index.to_i > -1 && impermeability_index.to_i < 2)
 
         add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete,"impermeability",  impermeability_index.to_i)
         redirect_to :action =>"environment"
@@ -146,7 +146,7 @@ class SanitationBasicController < ApplicationController
     if request.post?
       environment_index= params[:environment]
 
-      if(environment_index && is_number(environment_index) && environment_index.to_i > -1 && environment_index.to_i < 3)
+      if(environment_index && environment_index.to_i > -1 && environment_index.to_i < 3)
 
         add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete, "environment",  environment_index.to_i)
 
@@ -161,28 +161,30 @@ class SanitationBasicController < ApplicationController
     if request.post?
       usage_index= params[:usage]
 
-      if(usage_index && is_number(usage_index) && usage_index.to_i > -1 && usage_index.to_i < 3)
+      if(usage_index && usage_index.to_i > -1 && usage_index.to_i < 3)
 
         add_to_session_form(:sanitation_basic_form,:sanitation_basic_complete, "usage",  usage_index.to_i)
 
         redirect_to :action =>"reliability"
       end
     end
+    flash[:usage] = retrieve_previous_answer_for("usage")
   end
 
   def reliability
     if request.post?
-      put_index_in_session(:reliability, -1, 3, "reliability")
+      put_index_in_session(:reliability, -1, 3, "report")
     end
+    flash[:reliability] = retrieve_previous_answer_for("reliability")
   end
 
   def put_index_in_session(key, min, max, redirect)
     radio_index= params[key]
 
-    if(radio_index && is_number(radio_index) && radio_index.to_i > min && radio_index.to_i < max)
+    if(radio_index && radio_index.to_i > min && radio_index.to_i < max)
 
-      add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete, key,  usage_index.to_i)
-      increase_pages_complete
+      add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete, key.to_s,  radio_index.to_i)
+      #increase_pages_complete
 
       redirect_to :action => redirect
     end
