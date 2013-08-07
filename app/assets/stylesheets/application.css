@@ -937,8 +937,10 @@ a.sbSelector:hover {
         padding: 0;
         border-top: none;
         background-image: none;
-        background-color: #accd4b;
     }
+    .report .sectionHeading.generalTitle {
+        background-color: #accd4b;
+    } 
     .report .general {
         background-image: none;
         background-color: #edeccb;
@@ -1780,7 +1782,7 @@ a.sbSelector:hover {
         float: left;
         margin-right: 5px;
         padding: 11px 22px;
-        background-color: #3cb1c5;
+        background-color: #d5cea3;
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
         border-radius: 3px;
