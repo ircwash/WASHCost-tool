@@ -13,37 +13,27 @@ describe WaterBasicController do
   end
 
   describe "Country Page" do
-    def do_country(country_code)
-      post :country, :country => country_code
-    end
-
     it "should return the country view" do
       get :country
       response.should render_template('country')
     end
 
-    it "should return the country view when an invalid country posted" do
-      do_country("AA")
-      response.should render_template('country')
-    end
-
     it "should go to water view when a valid country posted" do
-      do_country("AAA")
-      response.should redirect_to  :action => 'water'
+      post :country, :country => "BI"
+      expect(response).to redirect_to(:action => 'water')
     end
 
     it "should create session when a valid country posted" do
-        do_country("AAA")
+        post :country, :country => "BI"
         session[:water_basic_form].should_not be_nil
     end
 
     it "should put the country in session when a valid country posted" do
-      do_country("AAA")
+      post :country, :country => "BI"
       session[:water_basic_form]["country"].should_not be_nil
-      session[:water_basic_form]["country"].should eq("AAA")
+      session[:water_basic_form]["country"].should eq("BI")
     end
   end
-
 
   describe "Water Page" do
     def do_water(water_value)
