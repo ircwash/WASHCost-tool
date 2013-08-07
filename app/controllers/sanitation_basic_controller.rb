@@ -24,7 +24,7 @@ class SanitationBasicController < ApplicationController
       if(is_valid_country_code(country_code))
         add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete, "country", country_code)
 
-        redirect_to :action => "household"
+        redirect_to :action => "population"
       end
     end
 
@@ -32,21 +32,21 @@ class SanitationBasicController < ApplicationController
 
   end
 
-  def household
-    if request.post?
+  # def household
+  #   if request.post?
 
-      household= params[:household]
+  #     household= params[:household]
 
-      if(is_number(household) && household.to_i > -1 && household.to_i < 12)
+  #     if(is_number(household) && household.to_i > -1 && household.to_i < 12)
 
-        add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete, "household", household.to_i)
+  #       add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete, "household", household.to_i)
 
-        redirect_to :action => "population"
-      end
-    end
+  #       redirect_to :action => "population"
+  #     end
+  #   end
 
-     flash[:household] = retrieve_previous_answer_for("household")
-  end
+  #    flash[:household] = retrieve_previous_answer_for("household")
+  # end
 
   def population
 

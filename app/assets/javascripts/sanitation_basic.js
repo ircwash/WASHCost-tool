@@ -76,7 +76,7 @@ $(document).ready(function(){
         $('input[name="recurrent"]').val(0);
 
         $( "#recurrentSlider" ).slider({
-            min: 3,
+            min: 0,
             max: 15,
             change: function( event, ui ) {
                 $('input[name="recurrent"]').val(ui.value);
