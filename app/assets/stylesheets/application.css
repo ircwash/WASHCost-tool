@@ -911,6 +911,7 @@ a.sbSelector:hover {
         margin: 0 auto;
     }
     section .sectionWrapper a.editAnchor {
+        clear: both;
         display: block;
         width: 35px;
         height: 34px;
@@ -1045,6 +1046,7 @@ a.sbSelector:hover {
     .sumaryCost .benchText.benchIcon0 {
         text-indent: 20px;
     } 
+    .sumaryCost .benchText.benchIcon2,
     .sumaryCost .benchText.benchIcon0 {
         background-position: center -39px;
     }
@@ -1170,6 +1172,7 @@ a.sbSelector:hover {
         height: auto;
     }
     .cost .sectionWrapper div a {
+        clear: none;
         display: block;
         float: left;
         margin: 60px 30px 30px;
