@@ -1232,7 +1232,7 @@ a.sbSelector:hover {
         float: left;
         text-align: center;
         color: #fff;
-        margin-right: 42px;
+        margin-right: 66px;
     }
     .service .rowQQR label {
         display: block;
@@ -1265,6 +1265,9 @@ a.sbSelector:hover {
     .service .quantity.result_0{
         background: none
     }
+    .service .quantity.result_01  {
+        margin-right: 62px;
+    }
     .service .quantity.result_00,
     .service .quantity.result_01 {
         background-position: 40px -127px;
@@ -1281,7 +1284,6 @@ a.sbSelector:hover {
     .service .quality {
         background: transparent url('/assets/spriteQ8basicWater24.png') no-repeat 0 0;
     }
-
     .service .quality.result_0{
         background: none
     }
@@ -1299,6 +1301,7 @@ a.sbSelector:hover {
         background-position: -444px -127px;
     }
     .service .reliability {
+        margin-right: 0;
         background: transparent url('/assets/spriteQ9basicWater24.png') no-repeat 0 0;   
     }
     .service .reliability.result_00 {
