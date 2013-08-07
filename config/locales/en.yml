@@ -92,7 +92,7 @@ en:
           a1: "501 - 5,000"
           a2: "5,001 - 15,000"
           a3: "More than 15,000"
-        info: "A water system will typically have a design population, sometimes defined by local regulations, for how many people it is meant to serve. Please indicate the number of people that this system is designed to serve."
+        info: "Please indicate the total number of people that are meant to be using the service in the area. A water system will typically have a design population, sometimes defined by local regulations, for how many people it is meant to serve. The total number of people would be the design population of the system times the number of systems in the area. For example, if a handpump is meant to serve 300 people and there are 100 handpumps in the area, the number of people that are meant to be using the service is 30,000 people (300 people x 100 handpumps)."
       time:
         question: "How long does it take to collect water per day from these services?"
         value_label: "Minutes per day"
