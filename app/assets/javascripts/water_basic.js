@@ -21,7 +21,7 @@ $(document).ready(function(){
         });
 
         var slider_value = Number(document.getElementById('populationSlider').getAttribute("data-slider_value"));
-        $( "#populationSlider" ).slider({value: LOG_SLIDER.logposition(slider_value)} );
+        $( "#populationSlider" ).slider({value: LOG_SLIDER.logposition(slider_value)});
     }
 
     // Page 4
