@@ -6,19 +6,19 @@
   <ul class="usageInput">
     <li>
       <%= label_tag("all", nil, class: "tickCheckBox") do %>
-        <%= radio_button_tag("r_usage", 0, false, id: "all") %>
+        <%= radio_button_tag("r_usage", 0, 0  == flash[:usage], id: "all") %>
         <span><%= t 'form.sanitation_basic.usage.answers.a0' %></span>
       <% end %>
     </li>
     <li>
       <%= label_tag("some", nil, class: "tickCheckBox usage_01") do %>
-        <%= radio_button_tag("r_usage", 1, false, id: "some") %>
+        <%= radio_button_tag("r_usage", 1, 1 == flash[:usage], id: "some") %>
         <span><%= t 'form.sanitation_basic.usage.answers.a1' %></span>
       <% end %>
     </li>
     <li>
       <%= label_tag("none", nil, class: "tickCheckBox usage_02") do %>
-        <%= radio_button_tag("r_usage", 2, false, id: "none") %>
+        <%= radio_button_tag("r_usage", 2, 2 == flash[:usage], id: "none") %>
         <span><%= t 'form.sanitation_basic.usage.answers.a2' %></span>
       <% end %>
     </li>
