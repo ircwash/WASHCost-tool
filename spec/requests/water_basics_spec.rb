@@ -18,10 +18,6 @@ describe "WaterBasicFormPages" do
       page.should have_selector("form[method='post']")
     end
 
-
   end
-
-
-
 
 end

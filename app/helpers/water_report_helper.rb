@@ -34,7 +34,6 @@ module WaterReportHelper
   end
 
   def get_water_basic_report
-
     form= get_session_form
     form_ready= is_form_ready?(form)
 
