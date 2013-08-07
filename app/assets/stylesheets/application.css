@@ -1635,6 +1635,9 @@ a.sbSelector:hover {
     .report.advance section .sectionWrapper {
         margin-bottom: 0;
     }
+    .report.advance .general {
+        padding-bottom: 44px;
+    } 
     .advance section {
         position: relative;
     }
