@@ -145,6 +145,7 @@ en:
           a5: "Latrine with septic tank"
       population:
         question: "How many people in the area of interest are receiving the sanitation service?"
+        value_label: "People"
       providing:
         question: "Does the service provide latrines at the household level?"
         answers:
