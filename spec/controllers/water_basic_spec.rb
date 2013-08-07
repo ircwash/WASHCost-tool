@@ -36,29 +36,25 @@ describe WaterBasicController do
   end
 
   describe "Water Page" do
-    def do_water(water_value)
-      post :water, :water => water_value
-    end
-
     it "should return the country view" do
       get :water
       expect(response).to render_template('water')
     end
 
     it "should return the water view when an invalid index is set" do
-      do_water(nil)
+      post :water, :water => nil
       response.should render_template('water')
     end
 
     it "should go to population view when a valid index posted" do
       (0..3).to_a.each do |v|
-        do_water(v)
+        post :water, :water => v
         expect(response).to redirect_to  :action =>'population'
       end
     end
 
     it "should put the water variable in session when a valid water posted" do
-      do_water(2)
+      post :water, :water => 2
       session[:water_basic_form]["water"].should_not be_nil
       session[:water_basic_form]["water"].to_i.should eq(2)
     end
