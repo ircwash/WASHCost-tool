@@ -9,9 +9,6 @@ class ApplicationController < ActionController::Base
   def select_advanced
 
     if request.post?
-
-      puts params
-
       if(params[:targetForm].present? && params[:type].present?)
         targetForm= params[:targetForm]
         type= params[:type]
@@ -63,7 +60,6 @@ class ApplicationController < ActionController::Base
     form[key]= value
 
     session[form_name]= form
-    puts session[form_name]
   end
 
 
