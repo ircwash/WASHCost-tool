@@ -2,7 +2,7 @@ module WaterReportHelper
 
   def get_session_form
 
-    form= {
+    form = {
         :country => nil,
         :water => nil,
         :population => nil,
@@ -16,8 +16,7 @@ module WaterReportHelper
     }
 
     if(session[:water_basic_form].present?)
-
-      form= {
+      form = {
           :country => session[:water_basic_form]["country"],
           :water => session[:water_basic_form]["water"],
           :population => session[:water_basic_form]["population"],
@@ -82,11 +81,10 @@ module WaterReportHelper
   end
 
   def get_country(country_code)
-
-    country= t 'form.value_not_set'
+    country = t 'form.value_not_set'
 
     if country_code
-    country_object= Country.new(country_code)
+      country_object = Country.new(country_code)
       if(country_object.data == nil)
         country = nil
       else
@@ -104,8 +102,8 @@ module WaterReportHelper
   end
 
   def get_water(index)
-
     water= t 'form.value_not_set'
+
     if index && @@water_values[index].present?
       water= @@water_values[index][:label]
     end
