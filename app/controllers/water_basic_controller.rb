@@ -1,6 +1,6 @@
 class WaterBasicController < ApplicationController
 
-  after_filter :set_percent_complete
+  before_filter :set_percent_complete
 
   include WaterBasicHelper
 
