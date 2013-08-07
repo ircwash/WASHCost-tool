@@ -226,15 +226,16 @@
             // Create and draw the visualization.
             new google.visualization.LineChart(document.getElementById('graphContent')).
                     draw(data, {curveType: "none",
+                        axisTitlesPosition: "out",
                         legend: { position: "none" },
                         width: 765, height: 260,
-                        hAxis: { textStyle: { color: '#fff' } },
-                        vAxis: { textStyle: { color: '#fff'},   baselineColor: 'transparent', gridlines: {color: 'transparent'} ,maxValue: 80},
-
+                        hAxis: { title: 'Year', titleTextStyle: { color: '#a6955f' }, textStyle: { color: '#a6955f' }, baselineColor: '#a6955f',
+                          gridlines: {color: '#fff'} },
+                        vAxis: { title: 'Expenditure', titleTextStyle: { color: '#a6955f' }, textStyle: { color: '#a6955f' }, baselineColor: '#a6955f', gridlines: {color: '#a6955f'}, maxValue: 50},
                         backgroundColor: "transparent",
                         lineWidth: 5,
-                        colors: ['#fff'],
-                        'chartArea': { top: -3, 'width': '100%', 'height': '90%'}
+                        colors: ['#ACCD4B'],
+                        'chartArea': {'width': '60%', 'height': '60%'}
                     }
             );
         }
