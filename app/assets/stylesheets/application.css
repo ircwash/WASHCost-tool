@@ -991,7 +991,7 @@ a.sbSelector:hover {
         padding-bottom: 0;
     }
     .general .sectionWrapper {
-        width: 440px;
+        width: 470px;
         margin: 0 auto 50px;
     }
     .general dl dd span {
@@ -1045,6 +1045,9 @@ a.sbSelector:hover {
     .sumaryCost .benchText.benchIcon0 {
         text-indent: 20px;
     } 
+    .sumaryCost .benchText.benchIcon0 {
+        background-position: center -39px;
+    }
     .levelService dd {
         background: transparent url('/assets/starsLevel8.png') no-repeat 50% 0;
     }
@@ -1071,7 +1074,7 @@ a.sbSelector:hover {
         overflow: hidden;
         width: 27%;
         float: left;
-        margin-left: 25px;
+        margin-left: 44px;
         padding-bottom: 40px;
     }
     .content .sectionWrapper div  a {
