@@ -209,11 +209,7 @@ describe WaterBasicController do
       @helper= Object.new.extend WaterBasicHelper
       @helper.stub!(:get_report_results).and_return(valid_report)
 
-      puts "results:"
-      puts session[:results]
-
       expect(session[:results]["foo"]).to eq("bar")
-
     end
 
   end
