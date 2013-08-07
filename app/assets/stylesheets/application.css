@@ -987,6 +987,9 @@ a.sbSelector:hover {
         color: #a6955f;
         margin-top: 49px;
     }
+    .report .general {
+        padding-bottom: 0;
+    }
     .general .sectionWrapper {
         width: 440px;
         margin: 0 auto 50px;
@@ -1029,7 +1032,7 @@ a.sbSelector:hover {
         width: 100%;
         font-weight: bold;
         text-indent: 20px;
-        padding: 6px 0 6px 0;
+        padding: 9px 0 6px 0;
     }
     .sumaryCost .benchIcon2 ,
     .sumaryCost .benchIcon0 {
