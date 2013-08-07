@@ -110,6 +110,7 @@ module WaterBasicHelper
         :service => {
             :offset => '-250',
             :items => {
+                'time' => (I18n.t 'nav.main.service.items.time'),
                 'quantity' => (I18n.t 'nav.main.service.items.quantity'),
                 'quality' => (I18n.t 'nav.main.service.items.quality'),
                 'reliability' => (I18n.t 'nav.main.service.items.reliability')
