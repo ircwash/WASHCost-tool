@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
     // Option buttons that are checked should be highlighted.
     $( "[checked='checked']" ).parent().addClass('ticked');
 
@@ -10,22 +9,19 @@ $(document).ready(function(){
         $('input[name="population"]').val(0);
 
         $( "#populationSlider" ).slider({
-            min: 500,
-            max: 15000,
-            step: 500,
+            min: LOG_SLIDER.gMinPrice,
+            max: LOG_SLIDER.gMaxPrice,
             change: function( event, ui ) {
-                $('input[name="population"]').val(ui.value);
-
-                var stringVal= '';
-
-                stringValue= ui.value.toLocaleString();
-
+                var value = Math.round(Number(LOG_SLIDER.expon(ui.value)/100)) * 100;
+                $('input[name="population"]').val(value);
+                var stringVal = '';
+                stringValue= value.toLocaleString();
                 $('#populationValue').html(stringValue);
             },
         });
 
-        var slider_value = document.getElementById('populationSlider').getAttribute("data-slider_value")
-        $( "#populationSlider" ).slider( {value: slider_value})
+        var slider_value = Number(document.getElementById('populationSlider').getAttribute("data-slider_value"));
+        $( "#populationSlider" ).slider({value: LOG_SLIDER.logposition(slider_value)});
     }
 
     // Page 4
@@ -43,8 +39,8 @@ $(document).ready(function(){
             }
         });
 
-        var slider_value = document.getElementById('capitalSlider').getAttribute("data-slider_value")
-        $( "#capitalSlider" ).slider( {value: slider_value})
+        var slider_value = document.getElementById('capitalSlider').getAttribute("data-slider_value");
+        $( "#capitalSlider" ).slider({value: slider_value});
     }
 
     // Page 5
@@ -55,15 +51,15 @@ $(document).ready(function(){
 
         $( "#recurrentSlider" ).slider({
             min: 0,
-            max: 300,
+            max: 20,
             change: function( event, ui ) {
                 $('input[name="recurrent"]').val(ui.value);
                 $('#recurrentValue').html(ui.value);
             }
         });
 
-        var slider_value = document.getElementById('recurrentSlider').getAttribute("data-slider_value")
-        $( "#recurrentSlider" ).slider( {value: slider_value})
+        var slider_value = document.getElementById('recurrentSlider').getAttribute("data-slider_value");
+        $( "#recurrentSlider" ).slider({value: slider_value});
     }
 
     // Page 6 (Time & Distance)
