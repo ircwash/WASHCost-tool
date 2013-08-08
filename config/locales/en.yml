@@ -247,13 +247,14 @@ en:
             question: "Who covers the cost of rehabilitation when larger repairs are needed?"
         annual_income:
           question: "What is the average annual household income in the service area?"
-          placeholder: "Numeric US$"
+          placeholder: "Number 0 to 10000 (US$)"
         cost:
           shared:
             answers:
               a0: "Don't know"
               a1: "Not applicable"
-            placeholder: "Numeric (US$ per person)"
+            placeholder: "100 to 100000 (US$ / person)"
+            placeholder_1: "1 to 100000 (US$ / person)"
           hardware:
             question: "What is the total capital expenditure for hardware?"
             info: "Capital invested in constructing or purchasing fixed assets such as concrete structures, pumps and pipes. See: http://akvopedia.org/wiki/Capital_Expenditure_(CapEx)"
@@ -270,7 +271,7 @@ en:
            question: "What is the cost servicing any loans taken to fund the service?"
           payback:
             question: "What is the payback period on this loan?"
-            placeholder: "Years"
+            placeholder: "Number of Years"
       water:
         supply_system:
           question: "What supply system(s) are used to deliver water services?*"
@@ -337,6 +338,7 @@ en:
             a4: "generator"
         transmission:
           question: "Length of transmission line (Km)?"
+          placeholder: "Number 0 to 10000 (Km)"
         piped:
           question: "For piped supplies: Percentage population served by household connections and/or stand post?"
       sanitation:

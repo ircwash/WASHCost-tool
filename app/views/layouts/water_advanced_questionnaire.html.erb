@@ -329,7 +329,7 @@
   </div>
   <div class="grid">
     <label for="transmission">7. <%= t 'form.advanced.water.transmission.question' %></label>
-    <input id="transmission" name="transmission" value="<%= flash[:transmission] %>" type="number" placeholder="Km" min="0" max="10000" step="1">
+    <input id="transmission" name="transmission" value="<%= flash[:transmission] %>" type="number" placeholder="<%= t 'form.advanced.water.transmission.placeholder' %>" min="0" max="10000" step="1">
   </div>
   <div class="grid odd">
     <label for="piped">8. <%= t 'form.advanced.water.piped.question' %></label>
@@ -429,7 +429,7 @@
     <ul>
       <li>
         <label for="indirect" class="hiddenLabel"><%= t 'form.advanced.shared.cost.indirect.question' %></label>
-        <input type="number" name="indirect" id="indirect" value="<%= flash[:indirect] %>" placeholder="<%= t 'form.advanced.shared.cost.shared.placeholder' %>" min="1" max="999999999999" step="1">
+        <input type="number" name="indirect" id="indirect" value="<%= flash[:indirect] %>" placeholder="<%= t 'form.advanced.shared.cost.shared.placeholder_1' %>" min="1" max="999999999999" step="1">
       </li>
       <li>
         <label class="checkBox" for="cost_indirect_alt_0">
