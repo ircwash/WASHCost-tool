@@ -78,7 +78,7 @@ module WaterBasicHelper
               }
           },
           :service => {
-              :offset => '-730',
+              :offset => '-610',
               :items => {
                   'providing' => (I18n.t 'nav.main.service.items.providing'),
                   'impermeability' => (I18n.t 'nav.main.service.items.impermeability'),
@@ -107,7 +107,7 @@ module WaterBasicHelper
             }
         },
         :service => {
-            :offset => '-350',
+            :offset => '-370',
             :items => {
                 'time' => (I18n.t 'nav.main.service.items.time'),
                 'quantity' => (I18n.t 'nav.main.service.items.quantity'),
