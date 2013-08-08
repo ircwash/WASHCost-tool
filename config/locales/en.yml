@@ -25,7 +25,7 @@ en:
       service:
         title: "Service"
         items:
-          time: "Time"
+          time: "Access"
           quantity: "Quantity"
           quality: "Quality"
           providing: "Household Latrine"

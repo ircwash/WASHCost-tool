@@ -60,7 +60,7 @@ class WaterBasicController < ApplicationController
     end
     flash[:population] = retrieve_previous_answer_for("population")
   end
-  
+
   def capital
     if request.post?
       capital_amount = params[:capital]
