@@ -33,18 +33,13 @@ class SanitationBasicController < ApplicationController
   end
 
   def population
-
     if request.post?
       population= params[:population]
-
-      if(population && is_number(population) && population.to_i > -1 && population.to_i < 150001)
-
+      if population && is_number(population) && population.to_i > -1 && population.to_i <= 1000000
         add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete, "population", population.to_i)
-
         redirect_to :action => "latrine"
       end
     end
-
     flash[:population] = retrieve_previous_answer_for("population")
   end
 

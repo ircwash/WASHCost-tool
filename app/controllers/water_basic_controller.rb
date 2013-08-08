@@ -51,21 +51,16 @@ class WaterBasicController < ApplicationController
   end
 
   def population
-
     if request.post?
       population= params[:population]
-
-      if(population && is_number(population) && population.to_i > -1 && population.to_i < 150001)
-
+      if population && is_number(population) && population.to_i > -1 && population.to_i <= 1000000
         add_to_session_form(:water_basic_form, :water_basic_complete, "population", population.to_i)
-
         redirect_to :action => "capital"
       end
     end
-
     flash[:population] = retrieve_previous_answer_for("population")
   end
-
+  
   def capital
     if request.post?
       capital_amount = params[:capital]
