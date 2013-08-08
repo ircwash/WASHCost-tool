@@ -21,7 +21,6 @@ module SanitationReportHelper
         :service_level => service_level,
         :service_label => service_label,
         :country => get_country(form[:country]),
-        :household => get_household(form[:household]),
         :latrine_index => form[:latrine],
         :latrine => get_indexed(@@latrine_values, form[:latrine]),
         :capital => get_capital(form[:capital]),
@@ -64,7 +63,6 @@ module SanitationReportHelper
 
       form= {
           :country => session[:sanitation_basic_form]["country"],
-          :household => session[:sanitation_basic_form]["household"],
           :latrine => session[:sanitation_basic_form]["latrine"],
           :capital => session[:sanitation_basic_form]["capital"],
           :population => session[:sanitation_basic_form]["population"],

@@ -32,22 +32,6 @@ class SanitationBasicController < ApplicationController
 
   end
 
-  # def household
-  #   if request.post?
-
-  #     household= params[:household]
-
-  #     if(is_number(household) && household.to_i > -1 && household.to_i < 12)
-
-  #       add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete, "household", household.to_i)
-
-  #       redirect_to :action => "population"
-  #     end
-  #   end
-
-  #    flash[:household] = retrieve_previous_answer_for("household")
-  # end
-
   def population
 
     if request.post?
@@ -190,10 +174,8 @@ class SanitationBasicController < ApplicationController
     end
   end
 
-  def
-    report
+  def report
     results= get_sanitation_basic_report
-
     flash[:results] = results
     render layout: "sanitation_basic_report"
   end

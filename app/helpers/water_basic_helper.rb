@@ -66,7 +66,6 @@ module WaterBasicHelper
               :offset => '0',
               :items => {
                   'country' => (I18n.t 'nav.main.context.items.country'),
-                  'household' => (I18n.t 'nav.main.context.items.household'),
                   'population' => (I18n.t 'nav.main.context.items.population'),
                   'latrine' => (I18n.t 'nav.main.context.items.latrine'),
               }

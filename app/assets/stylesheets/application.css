@@ -1078,12 +1078,12 @@ a.sbSelector:hover {
     .content h2 {
         margin-bottom: 56px;
     }
-    .content .sectionWrapper div {
+    .report .content .sectionWrapper div {
         position: relative;
         overflow: hidden;
         width: 27%;
         float: left;
-        margin-left: 44px;
+        margin-left: 130px;
         padding-bottom: 40px;
     }
     .content .sectionWrapper div  a {
