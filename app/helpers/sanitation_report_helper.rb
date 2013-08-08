@@ -21,6 +21,7 @@ module SanitationReportHelper
         :service_level => service_level,
         :service_label => service_label,
         :country => get_country(form[:country]),
+        :population=> get_population(form[:population]),
         :latrine_index => form[:latrine],
         :latrine => get_indexed(@@latrine_values, form[:latrine]),
         :capital => get_capital(form[:capital]),
@@ -82,6 +83,10 @@ module SanitationReportHelper
   def get_country(country_code)
     country = Country.new(country_code) || nil
     country.present? && country.data.present? && country.name.present? ? country.name : t('form.value_not_set')
+  end
+
+  def get_population(population)
+    population.present? ? population : t('form.value_not_set')
   end
 
   def get_household(household)
