@@ -82,8 +82,8 @@ module SanitationReportHelper
   end
 
   def get_country(country_code)
-    country= Country.new(country_code)
-    country.name.present? ? country.name : t('form.value_not_set')
+    country = Country.new(country_code) || nil
+    country.present? && country.data.present? && country.name.present? ? country.name : t('form.value_not_set')
   end
 
   def get_household(household)
