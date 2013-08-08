@@ -34,15 +34,15 @@ module WaterReportHelper
   end
 
   def get_water_basic_report
-    form= get_session_form
-    form_ready= is_form_ready?(form)
+    form = get_session_form
+    form_ready = is_form_ready?(form)
 
-    cost_rating= get_cost_rating(form[:water], form[:capital])
-    cost_rating_label= get_cost_rating_label(cost_rating)
+    cost_rating = get_cost_rating(form[:water], form[:capital])
+    cost_rating_label = get_cost_rating_label(cost_rating)
 
-    service_rating= get_rating(form[:water],form[:capital],form[:recurrent], form[:reliability])
-    service_level= get_level_of_service(form[:water],form[:capital], form[:quantity], form[:time])
-    service_label= get_service_rating_label(service_rating)
+    service_rating = get_rating(form[:water],form[:capital],form[:recurrent], form[:reliability])
+    service_level = get_level_of_service(form[:water],form[:capital], form[:quantity], form[:time])
+    service_label = get_service_rating_label(service_rating)
 
     results = {
       :form_ready => form_ready,
@@ -178,9 +178,9 @@ module WaterReportHelper
   def get_reliability(index)
 
 
-    reliability= t 'form.value_not_set'
+    reliability = t 'form.value_not_set'
     if index && @@reliability_values[index].present?
-      reliability= @@reliability_values[index][:label]
+      reliability = @@reliability_values[index][:label]
     end
 
     return reliability
@@ -188,11 +188,11 @@ module WaterReportHelper
 
   def get_cost_rating(water_index, capEx)
 
-    rating= -1
+    rating = -1
 
     if water_index && capEx
 
-      if water_index==0
+      if water_index == 0
 
         if capEx < 20
           rating = 0
@@ -220,13 +220,13 @@ module WaterReportHelper
 
   def get_cost_rating_label(rating)
 
-    label=  t 'form.value_not_set'
+    label =  t 'form.value_not_set'
 
-    if rating==0
-      label= (t 'report.benchmark_below')
-    elsif rating==1
+    if rating ==0
+      label = (t 'report.benchmark_below')
+    elsif rating ==1
       label= (t 'report.benchmark_within')
-    elsif rating==2
+    elsif rating ==2
       label= (t 'report.benchmark_above')
     else
       label= 'Please Enter a <a href="./population">Population</a> and <a href="./capital">Capital Expenditure<a/>'
@@ -256,20 +256,20 @@ module WaterReportHelper
     rating= nil
 
     if(water && capital && recurring && reliability)
-      capExScore= get_capEx_benchmark_rating(water, capital)
-      recExScore= get_recEx_benchmark_rating(water, recurring)
+      capExScore = get_capEx_benchmark_rating(water, capital)
+      recExScore = get_recEx_benchmark_rating(water, recurring)
 
-      serviceLevel= (4 * @@reliability_values[reliability][:value])
+      serviceLevel = (4 * @@reliability_values[reliability][:value])
 
-      score= (capExScore + recExScore + serviceLevel);
+      score = (capExScore + recExScore + serviceLevel);
 
-      backgroundPosition= 0
+      backgroundPosition = 0
 
-      if score>=7.5
+      if score >= 7.5
           rating = 3
-      elsif score>=5 && score <7.5
+      elsif score >=5 && score < 7.5
         rating = 2
-      elsif score>=2 && score < 5
+      elsif score >=2 && score < 5
         rating = 2
       else
         rating = 0
@@ -285,14 +285,14 @@ module WaterReportHelper
     level_of_service= 'Please complete the form.'
 
     if water && capital && quantity && time
-      capEx_score= get_capEx_benchmark_rating(water, capital)
+      capEx_score = get_capEx_benchmark_rating(water, capital)
 
-      capEx_code= @@capEx_rating_code[capEx_score]
-      quantity_code= quantity+1
-      access_code= time+1
+      capEx_code = @@capEx_rating_code[capEx_score]
+      quantity_code = quantity + 1
+      access_code = time + 1
 
-      concatenation= capEx_code.to_s + quantity_code.to_s+ access_code.to_s
-      level_of_service= t ('report.water_basic.a'+concatenation)
+      concatenation = capEx_code.to_s + quantity_code.to_s+ access_code.to_s
+      level_of_service = t ('report.water_basic.a'+concatenation)
     end
 
     return level_of_service
@@ -304,13 +304,13 @@ module WaterReportHelper
     label=  t 'form.value_not_set'
 
     if rating == 0
-      label= (t 'report.sustainability.not')
+      label = (t 'report.sustainability.not')
     elsif rating == 1
-      label= (t 'report.sustainability.low')
+      label = (t 'report.sustainability.low')
     elsif rating == 2
-      label= (t 'report.sustainability.medium')
+      label = (t 'report.sustainability.medium')
     elsif rating == 3
-      label= (t 'report.sustainability.high')
+      label = (t 'report.sustainability.high')
     end
 
     return label

@@ -55,11 +55,11 @@
                 <p><%=flash[:results][:service_level] %></p>
               </div>
             </div>
-          <% else %>
+        <% else %>
           <div class="errorNoData">
             <p><%= I18n.t 'form.not_ready.summary' %></p>
           </div>
-          <% end %>
+        <% end %>
       </div>
     </section>
 
@@ -198,16 +198,13 @@
 <script type="text/javascript">
     function expenditureGraph() {
 
-
         var _C= <%= (flash[:results][:capital]|| 0) %>;
         var _R= <%= (flash[:results][:recurrent]|| 0) %>;
         var _P= <%= (flash[:results][:population]|| 0) %>;
 
         if(_C && _R){
 
-
             var data = new google.visualization.DataTable();
-
 
             data.addColumn('string', 'Year');
             data.addColumn('number', 'Expenditure');
