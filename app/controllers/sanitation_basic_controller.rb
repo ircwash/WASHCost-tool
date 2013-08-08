@@ -88,7 +88,7 @@ class SanitationBasicController < ApplicationController
   def recurrent
     if request.post?
       recurrent_amount = params[:recurrent]
-      if recurrent_amount && is_number(recurrent_amount) && recurrent_amount.to_i > -1
+      if recurrent_amount && recurrent_amount.to_i > -1
         add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete, "recurrent", recurrent_amount.to_i)
         redirect_to :action => "providing"
       end
