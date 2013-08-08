@@ -872,6 +872,11 @@ a.sbSelector:hover {
         left: 0;
     }
     /* Report */
+
+    .sectionWrapper dl .unity_quantity_cost_label{
+        margin-left: 10px;
+    }
+
     dl {
         float: left;
     }
