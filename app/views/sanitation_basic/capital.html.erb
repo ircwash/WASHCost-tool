@@ -9,20 +9,20 @@
         <div class="valueOutput"><span id="capitalValue">30</span>$</div>
         <div class="valueLabel">US$ Per person</div>
       </div>
-      <div id="capitalSlider" data-slider_value=<%=flash[:capital]%>>
+      <div id="capitalSlider" data-slider_value=<%=@capital[:value]%>>
       </div>
       <ul class="labelScale">
         <li class="first">
           <span class="estimate">Below</span>
-            <span class="numRounding">48</span>
+            <span class="numRounding"><%=@capital[:below_value]%></span>
         </li>
         <li class="last">
           <span class="estimate">Above</span>
-          <span class="numRounding">109</span>
+          <span class="numRounding"><%=@capital[:above_value]%></span>
         </li>
       </ul>
     </div>
 
-    <input type="hidden" name="capital"/>
+    <input type="hidden" name="capital" data-min-value=<%=@capital[:min_value]%>  data-max-value=<%=@capital[:max_value]%> />
     <%= submit_tag((t 'buttons.next'), class: "next_button") %>
 <% end %>

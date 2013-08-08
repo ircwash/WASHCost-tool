@@ -12,10 +12,10 @@
         <%= t 'form.water_basic.recurrent.value_label' %>
       </div>
     </div>
-    <div id="recurrentSlider" data-slider_value=<%=flash[:recurrent][:value]%>></div>
+    <div id="recurrentSlider" data-slider_value=<%=@recurrent[:value]%>></div>
   </div>
 
-  <input type="hidden" name="recurrent" data-min-value=<%=flash[:recurrent][:min_value]%>  data-max-value=<%=flash[:recurrent][:max_value]%> />
+  <input type="hidden" name="recurrent" data-min-value=<%=@recurrent[:min_value]%>  data-max-value=<%=@recurrent[:max_value]%> />
   <%= submit_tag((t 'buttons.next'), class: "next_button") %>
     <a class="skip" href="./time">skip this question</a>
 
