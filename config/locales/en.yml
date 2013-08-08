@@ -271,7 +271,7 @@ en:
            question: "What is the cost servicing any loans taken to fund the service?"
           payback:
             question: "What is the payback period on this loan?"
-            placeholder: "Number of Years"
+            placeholder: "Number 0 to 1000 (Years)"
       water:
         supply_system:
           question: "What supply system(s) are used to deliver water services?*"
@@ -375,6 +375,7 @@ en:
         pit_count:
           question: "Number of pits"
           numeric: "Numeric"
+          placeholder: "Number 0 to 10000"
         pit_location:
           question: "Location of pit(s)"
           answers:
@@ -402,9 +403,10 @@ en:
             a2: "composting, other"
         service_area:
           question: "How many people in the service area are targeted by the sanitation service"
+          placeholder: "Number 0 to 1000000"
         latrine_count:
           question: "How many latrines are there in the service area?"
-
+          placeholder: "Number 0 to 10000"
 
 
   report:

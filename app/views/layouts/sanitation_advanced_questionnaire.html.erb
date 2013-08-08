@@ -287,18 +287,18 @@
 
   <div class="grid odd">
     <label for="pit_count">7. <%= t 'form.advanced.sanitation.pit_count.question' %></label>
-    <input tabindex="10" name="pit_count" id="pit_count" type="number" placeholder="Numeric" value="<%=flash[:pit_count]%>" min="0" max="10000" step="1">
+    <input tabindex="10" name="pit_count" id="pit_count" type="number" placeholder="<%= t 'form.advanced.sanitation.pit_count.placeholder' %>" value="<%=flash[:pit_count]%>" min="0" max="10000" step="1">
   </div>
 
   <div class="grid">
     <label for="service_area">7. <%= t 'form.advanced.sanitation.service_area.question' %></label>
-    <input tabindex="10" name="service_area" id="service_area" type="number" placeholder="Number of People" value="<%=flash[:service_area]%>" min="0" max="10000" step="1">
+    <input tabindex="10" name="service_area" id="service_area" type="number" placeholder="<%= t 'form.advanced.sanitation.service_area.placeholder' %>" value="<%=flash[:service_area]%>" min="0" max="1000000" step="1">
   </div>
 
 
   <div class="grid odd">
     <label for="latrine_count">7. <%= t 'form.advanced.sanitation.latrine_count.question' %></label>
-    <input tabindex="10" name="latrine_count" id="latrine_count" type="number" placeholder="Numeric" value="<%=flash[:latrine_count]%>" min="0" max="10000" step="1">
+    <input tabindex="10" name="latrine_count" id="latrine_count" type="number" placeholder="<%= t 'form.advanced.sanitation.latrine_count.placeholder' %>" value="<%=flash[:latrine_count]%>" min="0" max="10000" step="1">
   </div>
 
 
@@ -406,7 +406,7 @@
     <ul>
       <li>
         <label for="indirect" class="hiddenLabel"><%= t 'form.advanced.shared.cost.indirect.question' %></label>
-        <input type="number" name="indirect" id="indirect" value="<%= flash[:indirect] %>" placeholder="<%= t 'form.advanced.shared.cost.shared.placeholder' %>" min="1" max="999999999999" step="1">
+        <input type="number" name="indirect" id="indirect" value="<%= flash[:indirect] %>" placeholder="<%= t 'form.advanced.shared.cost.shared.placeholder_1' %>" min="1" max="999999999999" step="1">
       </li>
       <li>
         <label class="checkBox" for="cost_indirect_alt_0">
@@ -445,7 +445,7 @@
   </div>
   <div class="grid">
     <label for="payback">8. <%= t 'form.advanced.shared.cost.payback.question' %></label>
-    <input id="payback" name="payback" value="<%=flash[:payback]%>" type="number" placeholder="<%= t 'form.advanced.shared.cost.payback.placeholder' %>" min="0" max="1000" step="1">
+    <input id="payback" name="payback" value="<%=flash[:payback]%>" type="form.advanced.shared.cost.payback.placeholder" placeholder="<%= t 'form.advanced.shared.cost.payback.placeholder' %>" min="0" max="1000" step="1">
   </div>
 
 </section>
