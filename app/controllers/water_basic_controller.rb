@@ -67,37 +67,45 @@ class WaterBasicController < ApplicationController
   end
 
   def capital
-
     if request.post?
       capital_amount = params[:capital]
-
-
-      if(capital_amount && is_number(capital_amount) && capital_amount.to_i > -1)
-
+      if capital_amount && is_number(capital_amount) && capital_amount.to_i > -1
         add_to_session_form(:water_basic_form, :water_basic_complete, "capital", capital_amount.to_i)
-
         redirect_to :action => "recurrent"
       end
     end
-
-    flash[:capital] = retrieve_previous_answer_for("capital")
+    flash[:capital] = {}
+    water_sources_index = retrieve_previous_answer_for("water") || 0
+    case water_sources_index
+      when 0
+        flash[:capital][:min_value] = 20
+        flash[:capital][:max_value] = 61
+      else
+        flash[:capital][:min_value] = 30
+        flash[:capital][:max_value] = 131
+    end
+    flash[:capital][:value] = retrieve_previous_answer_for("capital") || flash[:capital][:min_value]
   end
 
   def recurrent
-
     if request.post?
       recurrent_amount = params[:recurrent]
-
-
-      if(recurrent_amount && is_number(recurrent_amount) && recurrent_amount.to_i > -1)
-
+      if recurrent_amount && is_number(recurrent_amount) && recurrent_amount.to_i > -1
         add_to_session_form(:water_basic_form, :water_basic_complete, "recurrent", recurrent_amount.to_i)
-
         redirect_to :action => "time"
       end
     end
-
-    flash[:recurrent] = retrieve_previous_answer_for("recurrent")
+    flash[:recurrent] = {}
+    water_sources_index = retrieve_previous_answer_for("water") || 0
+    case water_sources_index
+      when 0
+        flash[:recurrent][:min_value] = 3
+        flash[:recurrent][:max_value] = 6
+      else
+        flash[:recurrent][:min_value] = 3
+        flash[:recurrent][:max_value] = 15
+    end
+    flash[:recurrent][:value] = retrieve_previous_answer_for("recurrent") || flash[:recurrent][:min_value]
   end
 
   def time

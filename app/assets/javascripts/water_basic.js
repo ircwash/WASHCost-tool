@@ -26,15 +26,14 @@ $(document).ready(function(){
 
     // Page 4
     if( document.getElementById('capitalSlider')){
-
+        inputCapital = $('input[name="capital"]');
         //default
-        $('input[name="capital"]').val(0);
-
+        inputCapital.val(0);
         $( "#capitalSlider" ).slider({
-            min: 0,
-            max: 1000,
+            min: inputCapital.data('min-value'),
+            max: inputCapital.data('max-value'),
             change: function( event, ui ) {
-                $('input[name="capital"]').val(ui.value);
+                inputCapital.val(ui.value);
                 $('#capitalValue').html(ui.value);
             }
         });
@@ -45,15 +44,15 @@ $(document).ready(function(){
 
     // Page 5
     if( document.getElementById('recurrentSlider')){
-
+        inputRecurrent = $('input[name="recurrent"]');
         //default
-        $('input[name="recurrent"]').val(3);
+        inputRecurrent.val(3);
 
         $( "#recurrentSlider" ).slider({
-            min: 0,
-            max: 20,
+            min: inputRecurrent.data('min-value'),
+            max: inputRecurrent.data('max-value'),
             change: function( event, ui ) {
-                $('input[name="recurrent"]').val(ui.value);
+                inputRecurrent.val(ui.value);
                 $('#recurrentValue').html(ui.value);
             }
         });
