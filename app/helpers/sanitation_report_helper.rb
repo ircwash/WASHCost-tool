@@ -2,16 +2,16 @@ module SanitationReportHelper
 
   def get_sanitation_basic_report
 
-    form= get_session_form
-    form_ready= is_form_ready?(form)
+    form = get_session_form
+    form_ready = is_form_ready?(form)
 
-    cost_rating= get_cost_rating(form[:latrine], form[:capital])
-    cost_rating_label= get_cost_rating_label(cost_rating)
+    cost_rating = get_cost_rating(form[:latrine], form[:capital])
+    cost_rating_label = get_cost_rating_label(cost_rating)
 
 
-    service_rating= get_rating(form[:latrine],form[:capital],form[:recurrent], form[:reliability])
-    service_level= get_level_of_service(form[:latrine],form[:capital], form[:usage], form[:providing])
-    service_label= get_service_rating_label(service_rating)
+    service_rating = get_rating(form[:latrine],form[:capital],form[:recurrent], form[:reliability])
+    service_level = get_level_of_service(form[:latrine],form[:capital], form[:usage], form[:providing])
+    service_label = get_service_rating_label(service_rating)
 
     results = {
         :form_ready => form_ready,
@@ -26,7 +26,7 @@ module SanitationReportHelper
         :latrine => get_indexed(@@latrine_values, form[:latrine]),
         :capital => get_capital(form[:capital]),
         :recurrent => get_recurrent(form[:recurrent]),
-        :total => get_total(form[:capital], form[:recurrent], 500),
+        :total => get_total(form[:capital], form[:recurrent], form[:population]),
         :providing => get_indexed(@@providing_values, form[:providing]),
         :usage => get_indexed(@@usage_values, form[:usage]),
         :environment => get_indexed(@@environment_values, form[:environment]),
@@ -39,7 +39,7 @@ module SanitationReportHelper
   end
 
   def get_session_form
-    form= {
+    form = {
         :cost_rating=> nil,
         :cost_rating_label=> nil,
         :country => nil,
@@ -59,7 +59,7 @@ module SanitationReportHelper
     }
 
     if(session[:sanitation_basic_form].present?)
-      form= {
+      form = {
           :country => session[:sanitation_basic_form]["country"],
           :latrine => session[:sanitation_basic_form]["latrine"],
           :capital => session[:sanitation_basic_form]["capital"],
