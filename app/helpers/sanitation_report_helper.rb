@@ -39,8 +39,6 @@ module SanitationReportHelper
   end
 
   def get_session_form
-
-
     form= {
         :cost_rating=> nil,
         :cost_rating_label=> nil,
@@ -61,7 +59,6 @@ module SanitationReportHelper
     }
 
     if(session[:sanitation_basic_form].present?)
-
       form= {
           :country => session[:sanitation_basic_form]["country"],
           :latrine => session[:sanitation_basic_form]["latrine"],
@@ -74,7 +71,6 @@ module SanitationReportHelper
           :environment => session[:sanitation_basic_form]["environment"],
           :reliability => session[:sanitation_basic_form]["reliability"]
       }
-
     end
 
     return form
@@ -172,7 +168,7 @@ module SanitationReportHelper
 
     total_cost_for_population= nil
 
-    if(capital && recurrent & population)
+    if(capital && recurrent && population)
       total_cost = capital + (recurrent * 10)
       total_cost_for_population = total_cost * population
     end
