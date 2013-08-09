@@ -12,11 +12,8 @@ class ApplicationController < ActionController::Base
       if(params[:targetForm].present? && params[:type].present?)
         targetForm= params[:targetForm]
         type= params[:type]
-
         if (targetForm== 'water' || targetForm=='sanitation') &&  (type== 'existing' || type=='planned')
-
           redirect_to :controller => (targetForm+"_advanced"), :action => "index", :params => { :type => type }
-
         end
       end
     end
@@ -50,25 +47,19 @@ class ApplicationController < ActionController::Base
   end
 
   def add_to_session_form(form_name, complete_name, key, value)
-
-    form= session[form_name].present? ? session[form_name] : Hash.new(0)
-
+    form = session[form_name].present? ? session[form_name] : Hash.new(0)
     if !form.has_key?(key)
       increase_complete_percent(complete_name)
     end
-
     form[key]= value
-
     session[form_name]= form
   end
 
 
   def increase_complete_percent(form)
-
-    pages_complete= session[form].present? ? session[form] : 0
-    pages_complete+= 1;
+    pages_complete = session[form].present? ? session[form] : 0
+    pages_complete += 1;
     session[form] =  pages_complete
-
   end
 
   def is_number(string)
@@ -76,13 +67,9 @@ class ApplicationController < ActionController::Base
   end
 
   def get_percent_complete(form)
-
-    pages_complete= session[form].present? ? session[form] : 0
-
-    percent_complete= ((pages_complete.to_f/@@pages.to_f) * 100).to_i
-
+    pages_complete = session[form].present? ? session[form] : 0
+    percent_complete = ((pages_complete.to_f/@@pages.to_f) * 100).to_i
     return percent_complete
-
   end
 
   def clean_session

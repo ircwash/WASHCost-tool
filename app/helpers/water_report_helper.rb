@@ -9,7 +9,7 @@ module WaterReportHelper
         :capital => nil,
         :recurrent => nil,
         :time => nil,
-        :quality => nil,
+        :quality  => nil,
         :quantity => nil,
         :water => nil,
         :reliability => nil
@@ -75,16 +75,11 @@ module WaterReportHelper
   end
 
   def is_form_ready?(form)
-    ready= false
-    if form[:water] && form[:capital] && form[:recurrent] && form[:reliability]
-      ready= true
-    end
-    return ready
+    form[:water] && form[:capital] && form[:recurrent] && form[:reliability]
   end
 
   def get_country(country_code)
     country = t 'form.value_not_set'
-
     if country_code
       country_object = Country.new(country_code)
       if(country_object.data == nil)
@@ -93,7 +88,6 @@ module WaterReportHelper
         country= country_object.name
       end
     end
-
     return country
   end
 
@@ -101,77 +95,68 @@ module WaterReportHelper
     return index
   end
 
+  # @return [String], return the label of technology selected in the step 1
   def get_water(index)
-    water= t 'form.value_not_set'
-
+    index = index || 0
     if index && @@water_values[index].present?
-      water= @@water_values[index][:label]
+      @@water_values[index][:label]
+    else
+      t 'form.value_not_set'
     end
-
-    return water
   end
 
+  # @return [Integer], return the capital value take into account the rules based on technology
   def get_capital(capital)
-
-    return capital
+    form = get_session_form
+    capital_min_value = capital_range_water_based(form[:water].to_i)[:min_value]
+    capital && capital >= capital_min_value ? capital : capital_min_value
   end
 
+
+  # @return [Integer], return the recurrent value take into account the rules based on technology
   def get_recurrent(recurrent)
-    return recurrent
+    form = get_session_form
+    recurrent_min_value = recurrent_range_water_based(form[:water].to_i)[:min_value]
+    recurrent && recurrent >= recurrent_min_value ? recurrent : recurrent_min_value
   end
 
+  # @return [Integer], return the total costs for population including capital and recurrent expenditures
   def get_total(capital, recurrent, population)
-
-    total_cost_for_population= nil
-
-    if(capital && recurrent && population)
-      total_cost = capital + (recurrent * 10)
-      total_cost_for_population = total_cost * population
+    if capital && recurrent && population
+      total_cost = get_capital(capital) + (get_recurrent(recurrent) * 10)
+      total_cost * get_population(population)
+    else
+      nil
     end
-
-    return total_cost_for_population
-
   end
 
+  # @return [Integer], return the population value take into account the rules of range
   def get_population(input)
-
-    population= t 'form.value_not_set'
-    if input && input.to_i && input.to_i > -1
-      population= input.to_i
-    end
-
-    return population
+    input.present? && input >= @@population_ranges[:min] ? input : @@population_ranges[:min]
   end
 
   def get_time(index)
-
     time= t 'form.value_not_set'
     if index && @@time_values[index].present?
       time= @@time_values[index][:label]
     end
-
     return time
   end
 
   def get_quantity(index)
-
-
     quantity= t 'form.value_not_set'
     if index && @@quantity_values[index].present?
       quantity= @@quantity_values[index][:label]
     end
-
     return quantity
   end
 
 
   def get_quality(index)
-
     quality= t 'form.value_not_set'
     if index && @@quality_values[index].present?
       quality= @@quality_values[index][:label]
     end
-
     return quality
   end
 
@@ -186,6 +171,29 @@ module WaterReportHelper
 
     return reliability
   end
+
+  ####  Logic of capital and recurrent cost ranges ####
+
+  def capital_range_water_based(water_sources_index)
+    case water_sources_index
+      when 0
+        { min_value: 20, max_value: 61 }
+      else
+        { min_value: 30, max_value: 131 }
+    end
+  end
+
+  def recurrent_range_water_based(water_sources_index)
+    case water_sources_index
+      when 0
+        { min_value: 3, max_value: 6 }
+      else
+        { min_value: 3, max_value: 15 }
+    end
+  end
+
+
+  #### Logic of Report calculates ####
 
   def get_cost_rating(water_index, capEx)
 
@@ -337,6 +345,11 @@ module WaterReportHelper
     0.5 => "1",
     2 =>   "2",
     1 =>   "3"
+  }
+
+  @@population_ranges = {
+      min: 100,
+      max: 1000000,
   }
 
   @@water_values = [
