@@ -66,8 +66,8 @@ $(document).ready(function(){
 
         //default
         $('input[name="time"]').val(0);
-
-        $( "#timeSlider" ).slider({
+        timeSlider = $("#timeSlider");
+        timeSlider.slider({
             min: 0,
             max: 3,
             step: 1,
@@ -76,6 +76,8 @@ $(document).ready(function(){
                 $('#timeValue').html(I18n["en"]["form"]["water_basic"]["time"]['answers']['a'+ui.value]);
             }
         });
+        slider_value = document.getElementById('timeValue').getAttribute("data-slider_value");
+        timeSlider.slider({value: slider_value});
     }
 
     // Page 7

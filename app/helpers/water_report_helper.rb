@@ -339,10 +339,10 @@ module WaterReportHelper
   ]
 
   @@time_values = [
-      { :label => (I18n.t 'form.water_basic.time.answers.a0'), :value => 4 },
-      { :label => (I18n.t 'form.water_basic.time.answers.a1'), :value => 3 },
-      { :label => (I18n.t 'form.water_basic.time.answers.a2'), :value => 2 },
-      { :label => (I18n.t 'form.water_basic.time.answers.a3'), :value => 1 }
+      { :label => (I18n.t 'form.water_basic.time.answers.a0'), :value => 1 },
+      { :label => (I18n.t 'form.water_basic.time.answers.a1'), :value => 2 },
+      { :label => (I18n.t 'form.water_basic.time.answers.a2'), :value => 3 },
+      { :label => (I18n.t 'form.water_basic.time.answers.a3'), :value => 4 }
   ]
 
   @@quantity_values = [

@@ -108,19 +108,14 @@ class WaterBasicController < ApplicationController
   end
 
   def time
-    view = "time"
-
     if request.post?
       time_index= params[:time]
-
-      if(time_index && is_number(time_index) && time_index.to_i > -1 && time_index.to_i < 4)
-
+      if time_index && is_number(time_index) && time_index.to_i > -1 && time_index.to_i < 4
         add_to_session_form(:water_basic_form, :water_basic_complete, "time", time_index.to_i)
-
         redirect_to :action => "quantity"
       end
-
     end
+    @time = retrieve_previous_answer_for("time")
   end
 
   def quantity

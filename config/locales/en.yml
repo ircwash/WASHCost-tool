@@ -98,10 +98,10 @@ en:
         question: "How long does it take to collect water per day from these services?"
         value_label: "Minutes per day"
         answers:
-          a0: "More than 60"
-          a1: "Between 30 and 60"
-          a2: "Between 10 and 30"
-          a3:  "Less than 10"
+          a0: "Less than 10"
+          a1: "Between 10 and 30"
+          a2: "Between 30 and 60"
+          a3: "More than 60"
       quantity:
         question: "How much water is used from the water service?"
         value_label: "Litres per person per day"

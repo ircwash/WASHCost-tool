@@ -24,10 +24,10 @@ var db= {
 
     /* Page 6 - Time & Distance */
     "time" : [
-        { "label" : "Less than 10", "value" : 4 },
-        { "label" : "Between 10 and 30", "value" : 3 },
-        { "label" : "Between 30 and 60", "value" : 2 },
-        { "label" : "More than 60", "value" : 1 }
+        { "label" : "Less than 10", "value" : 1 },
+        { "label" : "Between 10 and 30", "value" : 2 },
+        { "label" : "Between 30 and 60", "value" : 3 },
+        { "label" : "More than 60", "value" : 4 }
     ],
 
     /* Page 7- Quantity */
