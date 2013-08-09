@@ -61,9 +61,9 @@ module WaterReportHelper
       :time => get_time(form[:time]),
       :quantity => get_quantity(form[:quantity]),
       :quantity_index => get_index(form[:quantity]),
-      :quality => get_quantity(form[:quality]),
+      :quality => get_quality(form[:quality]),
       :quality_index => get_index(form[:quality]),
-      :reliability => get_quantity(form[:reliability]),
+      :reliability => get_reliability(form[:reliability]),
       :reliability_index => get_index(form[:reliability])
     }
 
@@ -157,7 +157,7 @@ module WaterReportHelper
 
     quantity= t 'form.value_not_set'
     if index && @@quantity_values[index].present?
-      quantity= @@quantity_values[index][:value]
+      quantity= @@quantity_values[index][:label]
     end
 
     return quantity
@@ -168,7 +168,7 @@ module WaterReportHelper
 
     quality= t 'form.value_not_set'
     if index && @@quality_values[index].present?
-      quality= @@quality_values[index][:value]
+      quality= @@quality_values[index][:label]
     end
 
     return quality
