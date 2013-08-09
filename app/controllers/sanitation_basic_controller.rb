@@ -40,23 +40,18 @@ class SanitationBasicController < ApplicationController
         redirect_to :action => "latrine"
       end
     end
-    flash[:population] = retrieve_previous_answer_for("population")
+    @population = retrieve_previous_answer_for("population")
   end
 
   def latrine
-
     if request.post?
       latrine_index= params[:latrine]
-
-      if(latrine_index && latrine_index.to_i > -1 && latrine_index.to_i < 6)
-
+      if latrine_index && latrine_index.to_i > -1 && latrine_index.to_i < 6
         add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete, "latrine", latrine_index.to_i)
-
         redirect_to :action =>"capital"
       end
     end
-
-    flash[:latrine] = retrieve_previous_answer_for("latrine")
+    @latrine = retrieve_previous_answer_for("latrine")
   end
 
   def capital
@@ -69,17 +64,9 @@ class SanitationBasicController < ApplicationController
     end
     @capital = {}
     latrine_sources_index = retrieve_previous_answer_for("latrine") || 0
-    case latrine_sources_index
-      when 2..3
-        @capital[:min_value] = 36
-        @capital[:max_value] = 358
-      when 4..5
-        @capital[:min_value] = 92
-        @capital[:max_value] = 358
-      else
-        @capital[:min_value] = 7
-        @capital[:max_value] = 26
-    end
+    range = capital_range_latrine_based latrine_sources_index
+    @capital[:min_value] = range[:min_value]
+    @capital[:max_value] = range[:max_value]
     @capital[:value] = retrieve_previous_answer_for("capital") || @capital[:min_value]
     @capital[:below_value] = ((@capital[:max_value]-@capital[:min_value]).to_f*0.2).round+@capital[:min_value]
     @capital[:above_value] = ((@capital[:max_value]-@capital[:min_value]).to_f*0.8).round+@capital[:min_value]
@@ -95,17 +82,9 @@ class SanitationBasicController < ApplicationController
     end
     @recurrent = {}
     latrine_sources_index = retrieve_previous_answer_for("latrine") || 0
-    case latrine_sources_index
-      when 2..3
-        @recurrent[:min_value] = 2.5
-        @recurrent[:max_value] = 8.5
-      when 4..5
-        @recurrent[:min_value] = 3.5
-        @recurrent[:max_value] = 11.5
-      else
-        @recurrent[:min_value] = 1.5
-        @recurrent[:max_value] = 4.0
-    end
+    range = recurrent_range_latrine_based latrine_sources_index
+    @recurrent[:min_value] = range[:min_value]
+    @recurrent[:max_value] = range[:max_value]
     @recurrent[:value] = retrieve_previous_answer_for("recurrent") || @recurrent[:min_value]
   end
 
@@ -188,7 +167,7 @@ class SanitationBasicController < ApplicationController
   end
 
   def report
-    results= get_sanitation_basic_report
+    results = get_sanitation_basic_report
     flash[:results] = results
     render layout: "sanitation_basic_report"
   end

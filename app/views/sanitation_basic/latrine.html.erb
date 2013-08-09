@@ -7,37 +7,37 @@
       <ul class="latrineInput">
         <li>
           <%= label_tag("traditional", nil, class: "tickCheckBox") do %>
-            <%= radio_button_tag("r_latrine", 0, 0 == flash[:latrine] , id: "traditional") %>
+            <%= radio_button_tag("r_latrine", 0, 0 == @latrine , id: "traditional") %>
             <span><%= t 'form.sanitation_basic.latrine.answers.a0' %></span>
           <% end %>
         </li>
         <li>
           <%= label_tag("improved", nil, class: "tickCheckBox latrine_01") do %>
-            <%= radio_button_tag("r_latrine", 1, 1 == flash[:latrine], id: "improved") %>
+            <%= radio_button_tag("r_latrine", 1, 1 == @latrine, id: "improved") %>
             <span><%= t 'form.sanitation_basic.latrine.answers.a1' %></span>
           <% end %>
         </li>
         <li>
           <%= label_tag("slab", nil, class: "tickCheckBox latrine_02") do %>
-            <%= radio_button_tag("r_latrine", 2, 2 == flash[:latrine], id: "slab") %>
+            <%= radio_button_tag("r_latrine", 2, 2 == @latrine, id: "slab") %>
             <span><%= t 'form.sanitation_basic.latrine.answers.a2' %></span>
           <% end %>
         </li>
         <li>
           <%= label_tag("vip", nil, class: "tickCheckBox  latrine_03") do %>
-            <%= radio_button_tag("r_latrine", 3, 3 == flash[:latrine], id: "vip") %>
+            <%= radio_button_tag("r_latrine", 3, 3 == @latrine, id: "vip") %>
             <span><%= t 'form.sanitation_basic.latrine.answers.a3' %></span>
           <% end %>
         </li>
         <li>
           <%= label_tag("flush", nil, class: "tickCheckBox  latrine_04") do %>
-            <%= radio_button_tag("r_latrine", 4, 4 == flash[:latrine], id: "flush") %>
+            <%= radio_button_tag("r_latrine", 4, 4 == @latrine, id: "flush") %>
             <span><%= t 'form.sanitation_basic.latrine.answers.a4' %></span>
           <% end %>
         </li>
         <li>
           <%= label_tag("septik", nil, class: "tickCheckBox latrine_05") do %>
-            <%= radio_button_tag("r_latrine", 5, 5 == flash[:latrine], id: "septik") %>
+            <%= radio_button_tag("r_latrine", 5, 5 == @latrine, id: "septik") %>
             <span><%= t 'form.sanitation_basic.latrine.answers.a5' %></span>
           <% end %>
         </li>

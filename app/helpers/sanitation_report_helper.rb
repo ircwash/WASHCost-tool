@@ -8,7 +8,6 @@ module SanitationReportHelper
     cost_rating = get_cost_rating(form[:latrine], form[:capital])
     cost_rating_label = get_cost_rating_label(cost_rating)
 
-
     service_rating = get_rating(form[:latrine],form[:capital],form[:recurrent], form[:reliability])
     service_level = get_level_of_service(form[:latrine],form[:capital], form[:usage], form[:providing])
     service_label = get_service_rating_label(service_rating)
@@ -81,38 +80,64 @@ module SanitationReportHelper
     country.present? && country.data.present? && country.name.present? ? country.name : t('form.value_not_set')
   end
 
+  # @return [Integer], return the population value take into account the rules of range
   def get_population(population)
-    population.present? ? population : t('form.value_not_set')
+    population.present? && population >= @@population_ranges[:min] ? population : @@population_ranges[:min]
   end
 
-  def get_household(household)
-
-    return household
-  end
-
-
+  # @return [String], return the label of collections in the specific index
   def get_indexed(collection, index)
-    indexed= t 'form.value_not_set'
-
+    puts 'index', collection, index
     if index && collection[index].present?
-      indexed= collection[index][:value]
+      collection[index][:value]
+    else
+      collection.first[:value]
     end
-
-    return indexed
   end
 
-
+  # @return [Integer], return the capital value take into account the rules based on latrine technology
   def get_capital(capital)
-
-    return capital
+    form = get_session_form
+    capital_min_value = capital_range_latrine_based(form[:latrine].to_i)[:min_value]
+    capital && capital >= capital_min_value ? capital : capital_min_value
   end
 
+  # @return [Integer], return the recurrent value take into account the rules based on technology
   def get_recurrent(recurrent)
+    form = get_session_form
+    recurrent_min_value = recurrent_range_latrine_based(form[:latrine].to_i)[:min_value]
+    recurrent && recurrent >= recurrent_min_value ? recurrent : recurrent_min_value
+  end
 
-    return recurrent
+  ####  Logic of capital and recurrent cost ranges ####
+
+  def capital_range_latrine_based(latrine_sources_index)
+    case latrine_sources_index
+      when 2..3
+        { min_value: 36, max_value:  358}
+      when 4..5
+        { min_value: 92, max_value: 358 }
+      else
+        { min_value: 7, max_value: 26 }
+    end
+  end
+
+  def recurrent_range_latrine_based(latrine_sources_index)
+    case latrine_sources_index
+      when 2..3
+        { min_value: 2.5 , max_value: 8.5 }
+      when 4..5
+        { min_value: 3.5, max_value: 11.5 }
+      else
+        { min_value: 1.5, max_value: 4.0 }
+    end
   end
 
 
+  @@population_ranges = {
+      min: 100,
+      max: 1000000,
+  }
 
   @@latrine_values= [
     { :value => (I18n.t 'form.sanitation_basic.latrine.answers.a0'), :recExBench => { :min =>  1.5, :max => 5 }, :capExBench => { :min => 7, :max =>26 }},
@@ -126,11 +151,6 @@ module SanitationReportHelper
   @@providing_values= [
       { :value => (I18n.t 'form.sanitation_basic.providing.answers.a0')},
       { :value => (I18n.t 'form.sanitation_basic.providing.answers.a1')}
-  ]
-
-  @@permeability_values= [
-      { :value => (I18n.t 'form.sanitation_basic.permeability.answers.a0')},
-      { :value => (I18n.t 'form.sanitation_basic.permeability.answers.a1')}
   ]
 
   @@environment_values= [
@@ -147,8 +167,7 @@ module SanitationReportHelper
 
   @@impermeability_values= [
       { :value => (I18n.t 'form.sanitation_basic.impermeability.answers.a0')},
-      { :value => (I18n.t 'form.sanitation_basic.impermeability.answers.a1')} ,
-      { :value => (I18n.t 'form.sanitation_basic.impermeability.answers.a2')}
+      { :value => (I18n.t 'form.sanitation_basic.impermeability.answers.a1')},
   ]
 
   @@reliability_values= [
@@ -164,16 +183,14 @@ module SanitationReportHelper
   }
 
   # Total Cost & Cost Rating/Benchmarking Calculations
+  # @return [Integer], return the total costs for population including capital and recurrent expenditures
   def get_total(capital, recurrent, population)
-
-    total_cost_for_population= nil
-
-    if(capital && recurrent && population)
-      total_cost = capital + (recurrent * 10)
-      total_cost_for_population = total_cost * population
+    if capital && recurrent && population
+      total_cost = get_capital(capital) + (get_recurrent(recurrent) * 10)
+      total_cost * get_population(population)
+    else
+      nil
     end
-
-    return total_cost_for_population
 
   end
 
