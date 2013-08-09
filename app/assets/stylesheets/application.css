@@ -874,6 +874,10 @@ a.sbSelector:hover {
     /* Report */
 
     .sectionWrapper dl .unity_quantity_cost_label{
+        margin-left: 9.5px;
+    }
+
+    .sectionWrapper dl .quantity_cost_label{
         margin-left: 10px;
     }
 
