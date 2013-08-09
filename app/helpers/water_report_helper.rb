@@ -284,13 +284,13 @@ module WaterReportHelper
     return rating
   end
 
-  def rating_for_service_level(label)
-    levels = { I18n.t('form.shared.values.v3').to_s => 1.5,
-               I18n.t('form.shared.values.v2').to_s => 1,
-               I18n.t('form.shared.values.v1').to_s => 0.25,
-               I18n.t('form.shared.values.v0').to_s => 0,
-              }
-    levels[label]
+  #Used to normalise reliability so that the best service is represented with index = 0
+  def move_highest_level_to_the_right(level)
+    { 0 => 3, 1 => 2, 2 => 1, 3 => 0 }[level]
+  end
+
+  def rating_for_service_level(level)
+    { 0 => 0, 1 => 0.25, 2 => 1, 3 => 1.5 }[level]
   end
 
   def get_level_of_service(water, capital, quantity, time)
