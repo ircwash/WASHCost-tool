@@ -1,6 +1,6 @@
 <% @title = "3 of 9 (Population)" %>
 
-<h1><%= t 'form.water_basic.population.question' %></h1>
+<h1><%= @population[:question_label] %></h1>
 
 <%= form_tag({controller: "water_basic", action: "population"}, class: "main_content", id: "waterBasicForm") do %>
 
@@ -9,7 +9,7 @@
       <div id="populationValue" class="valueOutput">500</div>
       <div class="valueLabel"><%= t 'form.water_basic.population.value_label' %></div>
     </div>
-    <div id="populationSlider" data-slider_value=<%=flash[:population]%> ></div>
+    <div id="populationSlider" data-slider_value=<%=@population[:value]%> ></div>
   </div>
 
   <input type="hidden" name="population"/>

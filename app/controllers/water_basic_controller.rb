@@ -51,6 +51,7 @@ class WaterBasicController < ApplicationController
   end
 
   def population
+    @population = {}
     if request.post?
       population= params[:population]
       if population && is_number(population) && population.to_i > -1 && population.to_i <= 1000000
@@ -58,7 +59,8 @@ class WaterBasicController < ApplicationController
         redirect_to :action => "capital"
       end
     end
-    flash[:population] = retrieve_previous_answer_for("population")
+    @population[:value] = retrieve_previous_answer_for("population")
+    @population[:question_label] =  retrieve_previous_answer_for("water").present? ? t('form.water_basic.population.question', technology: @@water_values[retrieve_previous_answer_for("water").to_i][:label]) : t('form.water_basic.population.default_question')
   end
 
   def capital
