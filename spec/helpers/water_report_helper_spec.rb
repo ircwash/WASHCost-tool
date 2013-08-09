@@ -64,4 +64,26 @@ describe WaterReportHelper, :type => :helper do
 
   end
 
+  describe "#rating_for_service_level" do
+
+    describe "When is high" do
+      it "should be 1.5" do
+        expect(rating_for_service_level(I18n.t('form.shared.values.v3'))).to eq(1.5)
+      end
+    end
+
+    describe "When is basic" do
+      it "should be 1.5" do
+        expect(rating_for_service_level(I18n.t('form.shared.values.v1'))).to eq(0.25)
+      end
+    end
+
+    describe "When there no service" do
+      it "should be 1.5" do
+        expect(rating_for_service_level(I18n.t('form.shared.values.v0'))).to eq(0)
+      end
+    end
+
+  end
+
 end

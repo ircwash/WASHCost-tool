@@ -237,15 +237,15 @@ module WaterReportHelper
 
   def get_capEx_benchmark_rating(waterSourceIndex, ex)
     bench = @@water_values[waterSourceIndex][:capExBench]
-    rating_for ex, bench[:min], bench[:max]
+    rating_for_expenditure ex, bench[:min], bench[:max]
   end
 
   def get_recEx_benchmark_rating(waterSourceIndex, ex)
     bench = @@water_values[waterSourceIndex][:recExBench]
-    rating_for ex, bench[:min], bench[:max]
+    rating_for_expenditure ex, bench[:min], bench[:max]
   end
 
-  def rating_for(val, min, max)
+  def rating_for_expenditure(val, min, max)
     if val < min
       0.5
     elsif (val >= min && val <= max)
@@ -263,7 +263,7 @@ module WaterReportHelper
       capExScore = get_capEx_benchmark_rating(water, capital)
       recExScore = get_recEx_benchmark_rating(water, recurring)
 
-      serviceLevel = (4 * @@reliability_values[reliability][:value])
+      serviceLevel = 4 * rating_for_service_level(@@reliability_values[reliability][:label])
 
       score = (capExScore + recExScore + serviceLevel);
 
@@ -282,6 +282,15 @@ module WaterReportHelper
 
     #rating = { :rating => rating, :position => backgroundPosition }
     return rating
+  end
+
+  def rating_for_service_level(label)
+    levels = { I18n.t('form.shared.values.v3').to_s => 1.5,
+               I18n.t('form.shared.values.v2').to_s => 1,
+               I18n.t('form.shared.values.v1').to_s => 0.25,
+               I18n.t('form.shared.values.v0').to_s => 0,
+              }
+    levels[label]
   end
 
   def get_level_of_service(water, capital, quantity, time)
@@ -347,24 +356,24 @@ module WaterReportHelper
   ]
 
   @@quantity_values = [
-      { :label =>  (I18n.t 'form.water_basic.quantity.answers.a0'), :value => (I18n.t 'form.shared.values.v0') },
-      { :label =>  (I18n.t 'form.water_basic.quantity.answers.a1'), :value => (I18n.t 'form.shared.values.v1') },
-      { :label =>  (I18n.t 'form.water_basic.quantity.answers.a2'), :value => (I18n.t 'form.shared.values.v2') },
-      { :label =>  (I18n.t 'form.water_basic.quantity.answers.a3'), :value => (I18n.t 'form.shared.values.v3') }
+      { :label =>  (I18n.t 'form.water_basic.quantity.answers.a0') },
+      { :label =>  (I18n.t 'form.water_basic.quantity.answers.a1') },
+      { :label =>  (I18n.t 'form.water_basic.quantity.answers.a2') },
+      { :label =>  (I18n.t 'form.water_basic.quantity.answers.a3') }
   ]
 
   @@quality_values = [
-      { :label => (I18n.t 'form.water_basic.quality.answers.a0'), :value => (I18n.t 'form.shared.values.v0') },
-      { :label => (I18n.t 'form.water_basic.quality.answers.a1'), :value => (I18n.t 'form.shared.values.v1') },
-      { :label => (I18n.t 'form.water_basic.quality.answers.a2'), :value => (I18n.t 'form.shared.values.v2') },
-      { :label => (I18n.t 'form.water_basic.quality.answers.a3'), :value => (I18n.t 'form.shared.values.v3') }
+      { :label => (I18n.t 'form.water_basic.quality.answers.a0') },
+      { :label => (I18n.t 'form.water_basic.quality.answers.a1') },
+      { :label => (I18n.t 'form.water_basic.quality.answers.a2') },
+      { :label => (I18n.t 'form.water_basic.quality.answers.a3') }
   ]
 
   @@reliability_values = [
-      { :label =>  ( I18n.t 'form.water_basic.reliability.answers.a0'), :value => 1.5 },
-      { :label =>  ( I18n.t 'form.water_basic.reliability.answers.a1'), :value => 1.0 },
-      { :label =>  ( I18n.t 'form.water_basic.reliability.answers.a2'), :value => 0.25 },
-      { :label =>  ( I18n.t 'form.water_basic.reliability.answers.a3'), :value => 0.0 }
+      { :label =>  ( I18n.t 'form.water_basic.reliability.answers.a0') },
+      { :label =>  ( I18n.t 'form.water_basic.reliability.answers.a1') },
+      { :label =>  ( I18n.t 'form.water_basic.reliability.answers.a2') },
+      { :label =>  ( I18n.t 'form.water_basic.reliability.answers.a3') }
   ]
 
 end
