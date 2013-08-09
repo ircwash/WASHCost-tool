@@ -16,21 +16,21 @@ describe WaterReportHelper, :type => :helper do
 
   describe "#get_capEx_benchmark_rating" do
 
-    describe "When below benchmarks" do
+    context "When below benchmarks" do
       it "should be 0.5" do
         waterSourceIndex, expense = 0, 19
         expect(get_capEx_benchmark_rating(waterSourceIndex, expense)).to eq(0.5)
       end
     end
 
-    describe "When within benchmarks" do
+    context "When within benchmarks" do
       it "should be 2" do
         waterSourceIndex, expense = 0, 21
         expect(get_capEx_benchmark_rating(waterSourceIndex, expense)).to eq(2)
       end
     end
 
-    describe "When above benchmarks" do
+    context "When above benchmarks" do
       it "should be 1" do
         waterSourceIndex, expense = 0, 62
         expect(get_capEx_benchmark_rating(waterSourceIndex, expense)).to eq(1)
@@ -41,21 +41,21 @@ describe WaterReportHelper, :type => :helper do
 
   describe "#get_recEx_benchmark_rating" do
 
-    describe "When below benchmarks" do
+    context "When below benchmarks" do
       it "should be 0.5" do
         waterSourceIndex, expense = 0, 2
         expect(get_recEx_benchmark_rating(waterSourceIndex, expense)).to eq(0.5)
       end
     end
 
-    describe "When within benchmarks" do
+    context "When within benchmarks" do
       it "should be 2" do
         waterSourceIndex, expense = 0, 5
         expect(get_recEx_benchmark_rating(waterSourceIndex, expense)).to eq(2)
       end
     end
 
-    describe "When above benchmarks" do
+    context "When above benchmarks" do
       it "should be 1" do
         waterSourceIndex, expense = 0, 7
         expect(get_recEx_benchmark_rating(waterSourceIndex, expense)).to eq(1)
@@ -66,25 +66,25 @@ describe WaterReportHelper, :type => :helper do
 
   describe "#rating_for_service_level" do
 
-    describe "When is high" do
+    context "When is high" do
       it "should be 1.5" do
         expect(rating_for_service_level(3)).to eq(1.5)
       end
     end
 
-    describe "When is basic" do
+    context "When is basic" do
       it "should be 1.5" do
         expect(rating_for_service_level(2)).to eq(1)
       end
     end
 
-    describe "When is sub-standard" do
+    context "When is sub-standard" do
       it "should be 0.25" do
         expect(rating_for_service_level(1)).to eq(0.25)
       end
     end
 
-    describe "When there no service" do
+    context "When there no service" do
       it "should be 0" do
         expect(rating_for_service_level(0)).to eq(0)
       end
@@ -92,33 +92,52 @@ describe WaterReportHelper, :type => :helper do
 
   end
 
+  describe "#normalise_best_level_to_be_3" do
 
-  describe "#move_highest_level_to_the_right" do
-
-    describe "When is 3" do
+    context "When is 3" do
       it "should be 0" do
-        expect(move_highest_level_to_the_right(3)).to eq(0)
+        expect(normalise_best_level_to_be_3(3)).to eq(0)
       end
     end
 
-    describe "When is 2" do
+    context "When is 2" do
       it "should be 1" do
-        expect(move_highest_level_to_the_right(2)).to eq(1)
+        expect(normalise_best_level_to_be_3(2)).to eq(1)
       end
     end
 
-    describe "When is 1" do
+    context "When is 1" do
       it "should be 2" do
-        expect(move_highest_level_to_the_right(1)).to eq(2)
+        expect(normalise_best_level_to_be_3(1)).to eq(2)
       end
     end
 
-    describe "When is 0" do
+    context "When is 0" do
       it "should be 3" do
-        expect(move_highest_level_to_the_right(0)).to eq(3)
+        expect(normalise_best_level_to_be_3(0)).to eq(3)
       end
     end
 
   end
 
+  describe "#get_rating" do
+
+    context "When using: Borehole & handpump, capital ex = 18, recurrent ex = 4, \
+              accessibility = 0, quality = 3, quantity = 3, reliability = 0" do
+      it "should be 3 stars"  do
+        water = 0
+        capital, recurring = 18, 4
+        accessibility, quality, quantity, reliability = 0, 3, 3, 0
+        expect(get_rating(water, capital, recurring, accessibility,
+               quality, quantity, reliability)).to eq(3)
+      end
+    end
+
+    context "When an argument is nil" do
+      it "should be nil" do
+        expect(get_rating(0, 1, 1, 0, nil, 3, 0)).to be_nil
+      end
+    end
+
+  end
 end

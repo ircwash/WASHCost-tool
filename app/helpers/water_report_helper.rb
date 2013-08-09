@@ -40,7 +40,10 @@ module WaterReportHelper
     cost_rating = get_cost_rating(form[:water], form[:capital])
     cost_rating_label = get_cost_rating_label(cost_rating)
 
-    service_rating = get_rating(form[:water], form[:capital], form[:recurrent], form[:reliability])
+    service_rating = get_rating(form[:water], form[:capital],
+                                form[:recurrent], form[:time],
+                                form[:quality], form[:quantity], form[:reliability])
+
     service_level = get_level_of_service(form[:water],form[:capital], form[:quantity], form[:time])
     service_label = get_service_rating_label(service_rating)
 
@@ -255,15 +258,19 @@ module WaterReportHelper
     end
   end
 
-  def get_rating(water, capital, recurring, reliability)
+  def get_rating(water, capital, recurring, accesibility, quantity, quality, reliability)
+    params = [water, capital, recurring, accesibility, quantity, quality, reliability]
 
-    rating= nil
-
-    if(water && capital && recurring && reliability)
+    if params.all?
       capExScore = get_capEx_benchmark_rating(water, capital)
       recExScore = get_recEx_benchmark_rating(water, recurring)
 
-      serviceLevel = 4 * rating_for_service_level(@@reliability_values[reliability][:label])
+      accesibility = normalise_best_level_to_be_3(accesibility)
+      reliability = normalise_best_level_to_be_3(reliability)
+
+      serviceLevel = [accesibility, quantity, quality, reliability].inject(0) do |sum, element|
+        sum += rating_for_service_level(element)
+      end
 
       score = (capExScore + recExScore + serviceLevel);
 
@@ -280,12 +287,11 @@ module WaterReportHelper
       end
     end
 
-    #rating = { :rating => rating, :position => backgroundPosition }
-    return rating
+    rating
   end
 
-  #Used to normalise reliability so that the best service is represented with index = 0
-  def move_highest_level_to_the_right(level)
+  #Used to normalise reliability so that the best service is represented with index = 3
+  def normalise_best_level_to_be_3(level)
     { 0 => 3, 1 => 2, 2 => 1, 3 => 0 }[level]
   end
 
