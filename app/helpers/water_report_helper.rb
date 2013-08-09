@@ -40,7 +40,7 @@ module WaterReportHelper
     cost_rating = get_cost_rating(form[:water], form[:capital])
     cost_rating_label = get_cost_rating_label(cost_rating)
 
-    service_rating = get_rating(form[:water],form[:capital],form[:recurrent], form[:reliability])
+    service_rating = get_rating(form[:water], form[:capital], form[:recurrent], form[:reliability])
     service_level = get_level_of_service(form[:water],form[:capital], form[:quantity], form[:time])
     service_label = get_service_rating_label(service_rating)
 
@@ -235,18 +235,24 @@ module WaterReportHelper
   end
 
 
-  def  get_capEx_benchmark_rating(waterSourceIndex, ex)
-      bench= @@water_values[waterSourceIndex][:capExBench]
-      rating= (ex >= bench[:min] && ex <= bench[:max]) ? 2 : ( (ex < bench[:min]) ? 0.5 : 1  )
-
-      return rating
+  def get_capEx_benchmark_rating(waterSourceIndex, ex)
+    bench = @@water_values[waterSourceIndex][:capExBench]
+    rating_for ex, bench[:min], bench[:max]
   end
 
   def get_recEx_benchmark_rating(waterSourceIndex, ex)
-      bench= @@water_values[waterSourceIndex][:recExBench]
-      rating= (ex >= bench[:min] && ex <= bench[:max]) ? 2 : ( (ex < bench[:min]) ? 0.5 : 1  )
+    bench = @@water_values[waterSourceIndex][:recExBench]
+    rating_for ex, bench[:min], bench[:max]
+  end
 
-      return rating
+  def rating_for(val, min, max)
+    if val < min
+      0.5
+    elsif (val >= min && val <= max)
+      2
+    else
+      1
+    end
   end
 
   def get_rating(water, capital, recurring, reliability)
