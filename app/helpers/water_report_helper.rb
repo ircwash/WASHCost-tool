@@ -289,8 +289,8 @@ module WaterReportHelper
       quantity_code = quantity + 1
       access_code = time + 1
 
-      concatenation = capEx_code.to_s + quantity_code.to_s+ access_code.to_s
-      level_of_service = t ('report.water_basic.a'+concatenation)
+      concatenation = capEx_code.to_s + quantity_code.to_s + access_code.to_s
+      level_of_service = t ('report.water_basic.a' + concatenation)
     end
 
     return level_of_service
@@ -298,21 +298,18 @@ module WaterReportHelper
   end
 
   def get_service_rating_label(rating)
-
-    label=  t 'form.value_not_set'
-
-    if rating == 0
-      label = (t 'report.sustainability.not')
+    label = if rating == 0
+      t 'report.sustainability.not'
     elsif rating == 1
-      label = (t 'report.sustainability.low')
+      t 'report.sustainability.low'
     elsif rating == 2
-      label = (t 'report.sustainability.medium')
+      t 'report.sustainability.medium'
     elsif rating == 3
-      label = (t 'report.sustainability.high')
+      t 'report.sustainability.high'
+    else
+      t 'form.value_not_set'
     end
-
     return label
-
   end
 
   @@capEx_rating_code = {
