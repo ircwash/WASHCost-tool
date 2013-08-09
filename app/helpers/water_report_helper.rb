@@ -95,8 +95,6 @@ module WaterReportHelper
   end
 
   def get_index(index)
-
-
     return index
   end
 
@@ -123,7 +121,7 @@ module WaterReportHelper
 
     total_cost_for_population= nil
 
-    if(capital && recurrent & population)
+    if(capital && recurrent && population)
       total_cost = capital + (recurrent * 10)
       total_cost_for_population = total_cost * population
     end
