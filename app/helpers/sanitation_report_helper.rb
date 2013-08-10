@@ -329,13 +329,8 @@ module SanitationReportHelper
 
   end
 
-
   def is_form_ready?(form)
-    ready= false
-    if form[:latrine] && form[:capital] && form[:recurrent] && form[:reliability].present?
-      ready= true
-    end
-    return ready
+    [form[:latrine], form[:capital], form[:recurrent], form[:reliability]].all?
   end
 
 end

@@ -75,7 +75,8 @@ module WaterReportHelper
   end
 
   def is_form_ready?(form)
-    form[:water] && form[:capital] && form[:recurrent] && form[:reliability]
+    [form[:water], form[:capital], form[:recurrent], form[:time],
+     form[:quality], form[:quantity], form[:reliability]].all?
   end
 
   def get_country(country_code)
