@@ -1,6 +1,6 @@
 /*-------------------------------------------
 PROJECT: WashCost Basic - Application.css
-URL: 
+URL:
 Created: July 22nd, 2013
 Author: Brilliant Basics
 --------------------------------------------*/
@@ -205,7 +205,7 @@ input.next_button {
 
     .navigation #subnavigation ul{
         background-color: #359ec0;
-        top: 70px; 
+        top: 70px;
         position: absolute;
         white-space: nowrap;
         height: 42px;
@@ -400,7 +400,7 @@ form li label span {
     font-size: 11px;
     bottom: 0;
     width: 50%;
-    left: 25%;   
+    left: 25%;
 }
 .value {
     display: inline-block;
@@ -608,13 +608,13 @@ a.sbSelector:hover {
     height: 3px;
     margin-bottom: 50px;
 }
-.ui-state-default, 
-.ui-widget-content .ui-state-default, 
+.ui-state-default,
+.ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
     margin-top: -13px;
 }
-.ui-state-default, 
-.ui-widget-content .ui-state-default, 
+.ui-state-default,
+.ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
     border: none;
     cursor: pointer;
@@ -632,8 +632,8 @@ a.sbSelector:hover {
     margin: 0 auto;
     background: transparent url('/assets/sliderBackgroundWidget8.png') no-repeat 0 0;
 }
-.capitalSlider .ui-state-default, 
-.capitalSlider .ui-widget-content .ui-state-default, 
+.capitalSlider .ui-state-default,
+.capitalSlider .ui-widget-content .ui-state-default,
 .capitalSlider .ui-widget-header .ui-state-default {
     margin-top: 0;
 }
@@ -911,8 +911,8 @@ a.sbSelector:hover {
         display: none;
     }
     #graphContent {
-        display:inline-block; 
-        width: 765px; 
+        display:inline-block;
+        width: 765px;
         height: 260px;
     }
     .sectionWrapper {
@@ -949,7 +949,7 @@ a.sbSelector:hover {
     }
     .report .sectionHeading.generalTitle {
         background-color: #accd4b;
-    } 
+    }
     .report .general {
         background-image: none;
         background-color: #edeccb;
@@ -1049,14 +1049,14 @@ a.sbSelector:hover {
     .sumaryCost .benchIcon2 ,
     .sumaryCost .benchIcon0 {
         background: transparent url('/assets/benchBack24.png') no-repeat center -51px;
-    }    
+    }
     .sumaryCost .benchIcon1{
          background: transparent url('/assets/benchBack24.png') no-repeat center 0;
-     }    
+     }
     .sumaryCost .benchText.benchIcon2,
     .sumaryCost .benchText.benchIcon0 {
         text-indent: 20px;
-    } 
+    }
     .sumaryCost .benchText.benchIcon2,
     .sumaryCost .benchText.benchIcon0 {
         background-position: center -39px;
@@ -1071,10 +1071,10 @@ a.sbSelector:hover {
         background-position: 50% -50px;
     }
     .levelService dd.levelStar_2 {
-        background-position: 50% -100px;
+        background-position: 50% -150px;
     }
     .levelService dd.levelStar_3 {
-        background-position: 50% -150px;
+        background-position: 50% -100px;
     }
     .levelService dd.levelStar_4 {
         background-position: 50% -200px;
@@ -1147,7 +1147,7 @@ a.sbSelector:hover {
     .content .populationResults .result_04 {
         background-position: -444px -180px;
     }
-    .sanitation .content dl dd { 
+    .sanitation .content dl dd {
         height: 120px;
     }
     .sanitation .content dl {
@@ -1304,7 +1304,7 @@ a.sbSelector:hover {
     }
     .service .quality.result_00,
     .service .quality.result_01 {
-        background-position: 32px -127px; 
+        background-position: 32px -127px;
     }
     .service .quality.result_02 {
         background-position: -127px -127px;
@@ -1317,13 +1317,13 @@ a.sbSelector:hover {
     }
     .service .reliability {
         margin-right: 0;
-        background: transparent url('/assets/spriteQ9basicWater24.png') no-repeat 0 0;   
+        background: transparent url('/assets/spriteQ9basicWater24.png') no-repeat 0 0;
     }
     .service .reliability.result_00 {
         background: none
     }
     .service .reliability.result_01 {
-        background-position: 33px -176px; 
+        background-position: 33px -176px;
     }
     .service .reliability.result_02 {
         background-position: -122px -176px;
@@ -1472,13 +1472,13 @@ a.sbSelector:hover {
         background-position: -250px -230px;
     }
     .environmentInput li .environment_02 {
-         background-position:  -474px -230px;   
+         background-position:  -474px -230px;
     }
     .environmentInput li .environment_01.ticked {
         background-position: -250px 0;
     }
     .environmentInput li .environment_02.ticked {
-         background-position:  -474px 0;   
+         background-position:  -474px 0;
     }
     .environmentInput li label span {
         width: 90%;
@@ -1567,7 +1567,7 @@ a.sbSelector:hover {
     .sanitation .errorNoData p {
         text-align: center;
         margin: 0 auto;
-    } 
+    }
     .service .rowQQR.providing {
         width: 29%;
         margin: 0 25px 0 155px;
@@ -1603,7 +1603,7 @@ a.sbSelector:hover {
     }
     .service .rowQQR.enviroment.result_2 {
         background-position: -460px -245px;
-    } 
+    }
     .service .rowQQR.usage {
         width: 29%;
         height: 160px;
@@ -1646,7 +1646,7 @@ a.sbSelector:hover {
     }
     .report.advance .general {
         padding-bottom: 44px;
-    } 
+    }
     .advance section {
         position: relative;
     }
@@ -1847,7 +1847,7 @@ a.sbSelector:hover {
         left: 0;
         margin-bottom: 20px;
     }
-    .ie8 .mainContent .main_content, 
+    .ie8 .mainContent .main_content,
     .ie7 .mainContent .main_content {
         display: block;
     }
@@ -1873,7 +1873,7 @@ a.sbSelector:hover {
     }
     .ie9 .rowQQR.reliability {
         margin-right: 0;
-    } 
+    }
     .ie9 .service .quantity.result_00,
     .ie9 .service .quantity.result_01 {
         background-position: 5px -127px;
