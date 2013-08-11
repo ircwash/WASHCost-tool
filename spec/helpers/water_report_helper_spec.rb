@@ -1,11 +1,7 @@
 require_relative  '../spec_helper'
 
 describe WaterReportHelper, :type => :helper do
-  subject {
-    class Test_report
-      include WaterReportHelper
-    end.New
-  }
+  subject { Class.new.include WaterReportHelper }
 
   describe "#get_total" do
     it "should return a valid total" do
@@ -16,21 +12,21 @@ describe WaterReportHelper, :type => :helper do
 
   describe "#get_capEx_benchmark_rating" do
 
-    context "When below benchmarks" do
+    context "when below benchmarks" do
       it "should be 0.5" do
         waterSourceIndex, expense = 0, 19
         expect(get_capEx_benchmark_rating(waterSourceIndex, expense)).to eq(0.5)
       end
     end
 
-    context "When within benchmarks" do
+    context "when within benchmarks" do
       it "should be 2" do
         waterSourceIndex, expense = 0, 21
         expect(get_capEx_benchmark_rating(waterSourceIndex, expense)).to eq(2)
       end
     end
 
-    context "When above benchmarks" do
+    context "when above benchmarks" do
       it "should be 1" do
         waterSourceIndex, expense = 0, 62
         expect(get_capEx_benchmark_rating(waterSourceIndex, expense)).to eq(1)
@@ -41,21 +37,21 @@ describe WaterReportHelper, :type => :helper do
 
   describe "#get_recEx_benchmark_rating" do
 
-    context "When below benchmarks" do
+    context "when below benchmarks" do
       it "should be 0.5" do
         waterSourceIndex, expense = 0, 2
         expect(get_recEx_benchmark_rating(waterSourceIndex, expense)).to eq(0.5)
       end
     end
 
-    context "When within benchmarks" do
+    context "when within benchmarks" do
       it "should be 2" do
         waterSourceIndex, expense = 0, 5
         expect(get_recEx_benchmark_rating(waterSourceIndex, expense)).to eq(2)
       end
     end
 
-    context "When above benchmarks" do
+    context "when above benchmarks" do
       it "should be 1" do
         waterSourceIndex, expense = 0, 7
         expect(get_recEx_benchmark_rating(waterSourceIndex, expense)).to eq(1)
@@ -66,25 +62,25 @@ describe WaterReportHelper, :type => :helper do
 
   describe "#rating_for_service_level" do
 
-    context "When is high" do
+    context "when is high" do
       it "should be 1.5" do
         expect(rating_for_service_level(3)).to eq(1.5)
       end
     end
 
-    context "When is basic" do
+    context "when is basic" do
       it "should be 1.5" do
         expect(rating_for_service_level(2)).to eq(1)
       end
     end
 
-    context "When is sub-standard" do
+    context "when is sub-standard" do
       it "should be 0.25" do
         expect(rating_for_service_level(1)).to eq(0.25)
       end
     end
 
-    context "When there no service" do
+    context "when there no service" do
       it "should be 0" do
         expect(rating_for_service_level(0)).to eq(0)
       end
@@ -94,25 +90,25 @@ describe WaterReportHelper, :type => :helper do
 
   describe "#normalise_best_level_to_be_3" do
 
-    context "When is 3" do
+    context "when is 3" do
       it "should be 0" do
         expect(normalise_best_level_to_be_3(3)).to eq(0)
       end
     end
 
-    context "When is 2" do
+    context "when is 2" do
       it "should be 1" do
         expect(normalise_best_level_to_be_3(2)).to eq(1)
       end
     end
 
-    context "When is 1" do
+    context "when is 1" do
       it "should be 2" do
         expect(normalise_best_level_to_be_3(1)).to eq(2)
       end
     end
 
-    context "When is 0" do
+    context "when is 0" do
       it "should be 3" do
         expect(normalise_best_level_to_be_3(0)).to eq(3)
       end
@@ -121,8 +117,7 @@ describe WaterReportHelper, :type => :helper do
   end
 
   describe "#get_rating" do
-
-    context "When using: Borehole & handpump, capital ex = 18, recurrent ex = 4, \
+    context "when using: Borehole & handpump, capital ex = 18, recurrent ex = 4, \
               accessibility = 0, quality = 3, quantity = 3, reliability = 0" do
       it "should be 3 stars"  do
         water = 0
@@ -133,11 +128,32 @@ describe WaterReportHelper, :type => :helper do
       end
     end
 
-    context "When an argument is nil" do
+    context "when an argument is nil" do
       it "should be nil" do
         expect(get_rating(0, 1, 1, 0, nil, 3, 0)).to be_nil
       end
     end
-
   end
+
+  describe "#is_ready_form" do
+    let (:complete_form) {
+        { :water => 0,:capital => 1, :recurrent => 2, :time => 3,
+          :quality  => 4, :quantity => 5,:reliability => 6 }
+      }
+    let (:incomplete_form) {
+        { :water => 0, :capital => nil, :recurrent => 2, :time => 3,
+          :quality  => 4, :quantity => 5,:reliability => 6 }
+      }
+    context "when the form is complete" do
+      it "should be true" do
+        expect(is_form_ready?(complete_form)).to be_true
+      end
+    end
+    context "when the form is incomplete" do
+      it "should be false" do
+        expect(is_form_ready?(incomplete_form)).to be_false
+      end
+    end
+  end
+
 end
