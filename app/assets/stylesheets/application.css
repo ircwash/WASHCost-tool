@@ -589,16 +589,15 @@ a.sbSelector:hover {
 .labelScale li.first .numRounding {
     position: absolute;
     bottom: 0;
-    left: 10px;
+    left: 6px;
 }
 .labelScale li.last .estimate {
-    text-align: right;
-    margin-right: 140px;
+    text-align: left;
 }
 .labelScale li.last .numRounding {
     position: absolute;
+    padding-left: 6px;
     bottom: 0;
-    right: 149px;
 }
 .ui-widget-content {
     background: none;
@@ -630,7 +629,11 @@ a.sbSelector:hover {
     z-index: 100;
     border: none;
     margin: 0 auto;
-    background: transparent url('/assets/sliderBackgroundWidget8.png') no-repeat 0 0;
+    background-color: transparent;
+    background-image: url(/assets/slider/sliderCursorRight.png), url(/assets/slider/sliderCursorLeft.png), url(/assets/slider/sliderGrayLine.png);
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position-y: 1px, 0, 0px;
+    background-position-x: 800px, 20px, 1px;
 }
 .capitalSlider .ui-state-default,
 .capitalSlider .ui-widget-content .ui-state-default,

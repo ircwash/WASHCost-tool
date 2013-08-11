@@ -53,9 +53,26 @@ $(document).ready(function(){
     // Page 4
     if( document.getElementById('capitalSlider')){
         inputCapital = $('input[name="capital"]');
+        capitalSlider = $( "#capitalSlider" );
         //default
         inputCapital.val(0);
-        $( "#capitalSlider" ).slider({
+        bar_slider_lenght = 850.0;
+        offset_cursor = 10;
+        slider_lenght = inputCapital.data('max-value') - inputCapital.data('min-value');
+        above_value = Math.round(slider_lenght*0.80);
+        below_value = Math.round(slider_lenght*0.20);
+        step_slider = bar_slider_lenght/slider_lenght;
+        css_above_value = above_value * step_slider + offset_cursor;
+        css_below_value = below_value * step_slider + offset_cursor;
+
+       // labels
+        label_first = $('.labelScale li.first span');
+        label_first.css('margin-left',css_below_value-offset_cursor+"px");
+        label_last = $('.labelScale li.last span');
+        label_last.css('margin-left',css_above_value-(bar_slider_lenght/2)-offset_cursor+"px");
+
+        capitalSlider.css('backgroundPosition', css_above_value+"px 1px, "+css_below_value+"px 0px, 1px 0px");
+        capitalSlider.slider({
             min: inputCapital.data('min-value'),
             max: inputCapital.data('max-value'),
             change: function( event, ui ) {
@@ -63,8 +80,9 @@ $(document).ready(function(){
                 $('#capitalValue').html(ui.value);
             }
         });
+
         var slider_value = document.getElementById('capitalSlider').getAttribute("data-slider_value");
-        $( "#capitalSlider" ).slider({value: slider_value});
+        capitalSlider.slider({value: slider_value});
     }
 
     // Page 5
