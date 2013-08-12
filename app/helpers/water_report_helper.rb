@@ -290,7 +290,7 @@ module WaterReportHelper
       elsif score >=5 && score < 7.5
         rating = 2
       elsif score >=2 && score < 5
-        rating = 2
+        rating = 1
       else
         rating = 0
       end

@@ -9,6 +9,7 @@ module SanitationReportHelper
     cost_rating_label = get_cost_rating_label(cost_rating)
 
     service_rating = get_rating(form[:latrine],form[:capital],form[:recurrent], form[:reliability])
+
     service_level = get_level_of_service(form[:latrine],form[:capital], form[:usage], form[:providing])
     service_label = get_service_rating_label(service_rating)
 
@@ -283,7 +284,7 @@ module SanitationReportHelper
       elsif score>=5 && score <7.5
         rating = 2
       elsif score>=2 && score < 5
-        rating = 2
+        rating = 1
       else
         rating = 0
       end

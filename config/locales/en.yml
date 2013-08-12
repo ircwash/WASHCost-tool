@@ -417,12 +417,12 @@ en:
     benchmark_above: "above the Benchmarks"
     sustainability:
       water:
-        one_star: "Not service"
+        one_star: "No service"
         two_stars: "Sub-standard service"
         three_stars: "Basic service"
         four_stars: "High standard of service"
       sanitation:
-        one_star: "Not service"
+        one_star: "No service"
         two_stars: " Limited service"
         three_stars: "Basic service"
         four_stars: "Improved service"
