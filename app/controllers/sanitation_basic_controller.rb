@@ -6,7 +6,6 @@ class SanitationBasicController < ApplicationController
 
   layout "sanitation_basic_layout"
 
-
   def init_vars
     @@pages= 11
     super

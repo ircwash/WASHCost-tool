@@ -164,8 +164,6 @@ module WaterReportHelper
 
 
   def get_reliability(index)
-
-
     reliability = t 'form.value_not_set'
     if index && @@reliability_values[index].present?
       reliability = @@reliability_values[index][:label]
@@ -198,7 +196,6 @@ module WaterReportHelper
   #### Logic of Report calculates ####
 
   def get_cost_rating(water_index, capEx)
-
     rating = -1
 
     if water_index && capEx
@@ -230,7 +227,6 @@ module WaterReportHelper
   end
 
   def get_cost_rating_label(rating)
-
     label =  t 'form.value_not_set'
 
     if rating ==0
@@ -244,9 +240,7 @@ module WaterReportHelper
     end
 
     return label
-
   end
-
 
   def get_capEx_benchmark_rating(waterSourceIndex, ex)
     bench = @@water_values[waterSourceIndex][:capExBench]
@@ -256,16 +250,6 @@ module WaterReportHelper
   def get_recEx_benchmark_rating(waterSourceIndex, ex)
     bench = @@water_values[waterSourceIndex][:recExBench]
     rating_for_expenditure ex, bench[:min], bench[:max]
-  end
-
-  def rating_for_expenditure(val, min, max)
-    if val < min
-      0.5
-    elsif (val >= min && val <= max)
-      2
-    else
-      1
-    end
   end
 
   def get_rating(water, capital, recurring, accesibility, quantity, quality, reliability)
@@ -302,7 +286,6 @@ module WaterReportHelper
   end
 
   def get_level_of_service(water, capital, quantity, time)
-
     level_of_service= 'Please complete the form.'
 
     if water && capital && quantity && time
