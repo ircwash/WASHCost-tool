@@ -297,13 +297,13 @@ module SanitationReportHelper
     label=  t 'form.value_not_set'
 
     if rating == 0
-      label= (t 'report.sustainability.not')
+      label= (t 'report.sustainability.sanitation.one_star')
     elsif rating == 1
-      label= (t 'report.sustainability.low')
+      label= (t 'report.sustainability.sanitation.two_stars')
     elsif rating == 2
-      label= (t 'report.sustainability.medium')
+      label= (t 'report.sustainability.sanitation.three_stars')
     elsif rating == 3
-      label= (t 'report.sustainability.high')
+      label= (t 'report.sustainability.sanitation.four_stars')
     end
 
     return label

@@ -28,4 +28,28 @@ describe SanitationReportHelper, :type => :helper do
       end
     end
   end
+
+  describe "#get_service_rating_label" do
+    context "when has one star" do
+      it "should read No service" do
+        expect(get_service_rating_label(0)).to eq(t 'report.sustainability.sanitation.one_star')
+      end
+    end
+    context "when has two stars" do
+      it "should read Sub-standard service" do
+        expect(get_service_rating_label(1)).to eq(t 'report.sustainability.sanitation.two_stars')
+      end
+    end
+    context "when has three stars" do
+      it "should read Basic service" do
+        expect(get_service_rating_label(2)).to eq(t 'report.sustainability.sanitation.three_stars')
+      end
+    end
+    context "when has four stars" do
+      it "should read High standard service" do
+        expect(get_service_rating_label(3)).to eq(t 'report.sustainability.sanitation.four_stars')
+      end
+    end
+  end
+
 end

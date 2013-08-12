@@ -329,13 +329,13 @@ module WaterReportHelper
 
   def get_service_rating_label(rating)
     label = if rating == 0
-      t 'report.sustainability.not'
+      t 'report.sustainability.water.one_star'
     elsif rating == 1
-      t 'report.sustainability.low'
+      t 'report.sustainability.water.two_stars'
     elsif rating == 2
-      t 'report.sustainability.medium'
+      t 'report.sustainability.water.three_stars'
     elsif rating == 3
-      t 'report.sustainability.high'
+      t 'report.sustainability.water.four_stars'
     else
       t 'form.value_not_set'
     end
