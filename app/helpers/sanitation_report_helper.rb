@@ -279,18 +279,22 @@ module SanitationReportHelper
 
       backgroundPosition= 0
 
-      if score>=7.5
-        rating = 3
-      elsif score>=5 && score <7.5
-        rating = 2
-      elsif score>=2 && score < 5
-        rating = 1
-      else
-        rating = 0
-      end
+      rating = compute_rating_from_score(score)
     end
 
     return rating
+  end
+
+  def compute_rating_from_score(score)
+    if score >= 7.5
+      3
+    elsif score >= 5 && score < 7.5
+      2
+    elsif score >= 2 && score < 5
+      1
+    else
+      0
+    end
   end
 
   def get_service_rating_label(rating)
