@@ -88,7 +88,7 @@
         <div class="latrineResults">
           <dl>
             <dt>Latrine Type</dt>
-            <dd class="latrine_01">
+            <dd class="latrine_0<%= flash[:results][:latrine_index]%>">
               <span><%= flash[:results][:latrine]%></span>
             </dd>
           </dl>
@@ -149,7 +149,7 @@
             <span class="value"><%= flash[:results][:providing]%></span>
             <a href="./providing" class="editAnchor"><img src="/assets/iconEdit24.png" alt="icon edit" /></a>
           </li>
-          <li class="rowQQR impermeability result_0<%= flash[:results][:permeability_index]%>">
+          <li class="rowQQR impermeability result_0<%= flash[:results][:impermeability_index]%>">
             <span class="label">Permeability</span>
             <span class="value"><%= flash[:results][:impermeability]%></span>
             <a href="./impermeability" class="editAnchor"><img src="/assets/iconEdit24.png" alt="icon edit" /></a>

@@ -1159,6 +1159,24 @@ a.sbSelector:hover {
     .sanitation .latrineResults dd {
         background: transparent url('/assets/spriteQ3basicLatrine24.png') no-repeat -113px -203px;
     }
+    .sanitation .latrineResults dd.latrine_00 {
+        background-position: 41px -203px;
+    }
+    .sanitation .latrineResults dd.latrine_01 {
+        background-position: -107px -203px;
+    }
+    .sanitation .latrineResults dd.latrine_02 {
+        background-position: -258px -203px;
+    }
+    .sanitation .latrineResults dd.latrine_03 {
+        background-position: -405px -203px;
+    }
+    .sanitation .latrineResults dd.latrine_04 {
+        background-position: -405px -203px;
+    }
+    .sanitation .latrineResults dd.latrine_05 {
+        background-position: -562px -203px;
+    }
     #graph {
         width: 800px;
         margin: 0 auto 30px;
@@ -1576,35 +1594,35 @@ a.sbSelector:hover {
         margin: 0 25px 0 155px;
         background: transparent url('/assets/spriteQ6basicProviding24.png') no-repeat -2000px -133px;
     }
-    .service .rowQQR.providing.result_0 {
-        background-position: -276px -133px;
+    .service .rowQQR.providing.result_00 {
+        background-position: -8px -133px;
     }
-    .service .rowQQR.providing.result_1 {
-        background-position: -1px -133px;
+    .service .rowQQR.providing.result_01 {
+        background-position: -266px -133px;
     }
     .service .rowQQR.impermeability {
         width: 22%;
         margin-right: 45px;
         background: transparent url('/assets/spriteQ7basicImpermeability24.png') no-repeat -1000px -200px;
     }
-    .service .rowQQR.impermeability.result_0 {
-        background-position: 0 -205px;
+    .service .rowQQR.impermeability.result_00 {
+        background-position: 1px -205px;
     }
-    .service .rowQQR.impermeability.result_1 {
-        background-position: -170px -205px;
+    .service .rowQQR.impermeability.result_01 {
+        background-position: -168px -205px;
     }
     .service .rowQQR.enviroment {
         width: 23%;
         margin-right: 100px;
         background: transparent url('/assets/spriteQ8basicEnviroment24.png') no-repeat -1000px -245px;
     }
-    .service .rowQQR.enviroment.result_0 {
+    .service .rowQQR.enviroment.result_00 {
         background-position: 0 -245px;
     }
-    .service .rowQQR.enviroment.result_1 {
+    .service .rowQQR.enviroment.result_01 {
         background-position: -238px -245px;
     }
-    .service .rowQQR.enviroment.result_2 {
+    .service .rowQQR.enviroment.result_02 {
         background-position: -460px -245px;
     }
     .service .rowQQR.usage {
@@ -1613,29 +1631,29 @@ a.sbSelector:hover {
         margin-right: 95px;
         background: transparent url('/assets/spriteQ8basicUsage24.png') no-repeat -1500px -143px;
     }
-    .service .rowQQR.usage.result_0 {
+    .service .rowQQR.usage.result_00 {
         background-position: -5px -143px;
     }
-    .service .rowQQR.usage.result_1 {
+    .service .rowQQR.usage.result_01 {
         background-position: -255px -143px;
     }
-    .service .rowQQR.usage.result_2 {
+    .service .rowQQR.usage.result_02 {
         background-position: -500px -143px;
     }
     .sanitation .service .rowQQR.reliability.result_0 {
         height: 160px;
         background: transparent url('/assets/spriteQ9basicWater24.png') no-repeat -3000px -180px;
     }
-    .sanitation .service .rowQQR.reliability.result_0 {
+    .sanitation .service .rowQQR.reliability.result_00 {
         background-position: 0 -180px;
     }
-    .sanitation .service .rowQQR.reliability.result_1 {
+    .sanitation .service .rowQQR.reliability.result_01 {
         background-position: -160px -180px;
     }
-    .sanitation .service .rowQQR.reliability.result_2 {
-        background-position: -320px -180px;
+    .sanitation .service .rowQQR.reliability.result_02 {
+        background-position: -479px -180px;
     }
-    .sanitation .service .rowQQR.reliability.result_3 {
+    .sanitation .service .rowQQR.reliability.result_03 {
         background-position: -479px -180px;
     }
     /* advance report */

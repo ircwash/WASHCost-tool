@@ -28,10 +28,15 @@ module SanitationReportHelper
         :recurrent => get_recurrent(form[:recurrent]),
         :total => get_total(form[:capital], form[:recurrent], form[:population]),
         :providing => get_indexed(@@providing_values, form[:providing]),
+        :providing_index => form[:providing],
         :usage => get_indexed(@@usage_values, form[:usage]),
+        :usage_index => form[:usage],
         :environment => get_indexed(@@environment_values, form[:environment]),
+        :environment_index => form[:environment],
         :impermeability => get_indexed(@@impermeability_values, form[:impermeability]),
-        :reliability => get_indexed(@@reliability_values, form[:reliability])
+        :impermeability_index => form[:impermeability],
+        :reliability => get_reliability(form[:reliability]),
+        :reliability_index => form[:reliability],
     }
 
     return results
@@ -84,6 +89,11 @@ module SanitationReportHelper
   # @return [Integer], return the population value take into account the rules of range
   def get_population(population)
     population.present? && population >= @@population_ranges[:min] ? population : @@population_ranges[:min]
+  end
+
+  # @return [String], return the reliability label associated to answer (default: "yes")
+  def get_reliability(reliability_index)
+    reliability_index.present? ? @@reliability_values[reliability_index][:label] : @@reliability_values.first[:label]
   end
 
   # @return [String], return the label of collections in the specific index
