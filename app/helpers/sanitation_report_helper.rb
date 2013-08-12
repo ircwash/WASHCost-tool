@@ -264,16 +264,12 @@ module SanitationReportHelper
   #Level of Service Calculations
   def  get_capEx_benchmark_rating(latrineIndex, ex)
     bench= @@latrine_values[latrineIndex][:capExBench]
-    rating= (ex >= bench[:min] && ex <= bench[:max]) ? 2 : ( (ex < bench[:min]) ? 0.5 : 1  )
-
-    return rating
+    rating_for_expenditure ex, bench[:min], bench[:max]
   end
 
   def get_recEx_benchmark_rating(latrineIndex, ex)
     bench= @@latrine_values[latrineIndex][:recExBench]
-    rating= (ex >= bench[:min] && ex <= bench[:max]) ? 2 : ( (ex < bench[:min]) ? 0.5 : 1  )
-
-    return rating
+    rating_for_expenditure ex, bench[:min], bench[:max]
   end
 
   def get_rating(water, capital, recurring, reliability)

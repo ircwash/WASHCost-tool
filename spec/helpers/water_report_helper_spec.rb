@@ -11,7 +11,6 @@ describe WaterReportHelper, :type => :helper do
   end
 
   describe "#get_capEx_benchmark_rating" do
-
     context "when below benchmarks" do
       it "should be 0.5" do
         waterSourceIndex, expense = 0, 19
@@ -32,11 +31,9 @@ describe WaterReportHelper, :type => :helper do
         expect(get_capEx_benchmark_rating(waterSourceIndex, expense)).to eq(1)
       end
     end
-
   end
 
   describe "#get_recEx_benchmark_rating" do
-
     context "when below benchmarks" do
       it "should be 0.5" do
         waterSourceIndex, expense = 0, 2
@@ -57,11 +54,9 @@ describe WaterReportHelper, :type => :helper do
         expect(get_recEx_benchmark_rating(waterSourceIndex, expense)).to eq(1)
       end
     end
-
   end
 
   describe "#rating_for_service_level" do
-
     context "when is high" do
       it "should be 1.5" do
         expect(rating_for_service_level(3)).to eq(1.5)
@@ -85,11 +80,9 @@ describe WaterReportHelper, :type => :helper do
         expect(rating_for_service_level(0)).to eq(0)
       end
     end
-
   end
 
   describe "#normalise_best_level_to_be_3" do
-
     context "when is 3" do
       it "should be 0" do
         expect(normalise_best_level_to_be_3(3)).to eq(0)
@@ -113,7 +106,6 @@ describe WaterReportHelper, :type => :helper do
         expect(normalise_best_level_to_be_3(0)).to eq(3)
       end
     end
-
   end
 
   describe "#get_rating" do
@@ -178,5 +170,4 @@ describe WaterReportHelper, :type => :helper do
       end
     end
   end
-
 end
