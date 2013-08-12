@@ -1118,19 +1118,19 @@ a.sbSelector:hover {
     .content .waterResult dd {
         background: transparent url('/assets/spriteQ2basicWater24.png') no-repeat -10000px -180px;
     }
-    .content .waterResult .result_01 {
+    .content .waterResult .result_00 {
         background-position: 38px -180px;
     }
-    .content .waterResult .result_02 {
+    .content .waterResult .result_01 {
         background-position: -114px -180px;
     }
-    .content .waterResult .result_03 {
+    .content .waterResult .result_02 {
         background-position: -286px -180px;
     }
-    .content .waterResult .result_04 {
+    .content .waterResult .result_03 {
         background-position: -445px -180px;
     }
-    .content .waterResult .result_05 {
+    .content .waterResult .result_04 {
         background-position: -605px -180px;
     }
     .content .populationResults dd {
@@ -1285,17 +1285,17 @@ a.sbSelector:hover {
     .service .quantity.result_01  {
         margin-right: 62px;
     }
-    .service .quantity.result_00,
-    .service .quantity.result_01 {
+    /*.service .quantity.result_00,*/
+    .service .quantity.result_00 {
         background-position: 40px -127px;
     }
-    .service .quantity.result_02 {
+    .service .quantity.result_01 {
         background-position: -120px -127px;
     }
-    .service .quantity.result_03 {
+    .service .quantity.result_02 {
         background-position: -280px -127px;
     }
-    .service .quantity.result_04 {
+    .service .quantity.result_03 {
         background-position: -440px -127px;
     }
     .service .quality {
@@ -1305,36 +1305,36 @@ a.sbSelector:hover {
     .service .quality.result_0 {
         background: none
     }
-    .service .quality.result_00,
-    .service .quality.result_01 {
+    /*.service .quality.result_00,*/
+    .service .quality.result_00 {
         background-position: 32px -127px;
     }
-    .service .quality.result_02 {
+    .service .quality.result_01 {
         background-position: -127px -127px;
     }
-    .service .quality.result_03 {
+    .service .quality.result_02 {
         background-position: -285px -127px;
     }
-    .service .quality.result_04 {
+    .service .quality.result_03 {
         background-position: -444px -127px;
     }
     .service .reliability {
         margin-right: 0;
         background: transparent url('/assets/spriteQ9basicWater24.png') no-repeat 0 0;
     }
+    /*.service .reliability.result_00 {*/
+        /*background: none*/
+    /*}*/
     .service .reliability.result_00 {
-        background: none
-    }
-    .service .reliability.result_01 {
         background-position: 33px -176px;
     }
-    .service .reliability.result_02 {
+    .service .reliability.result_01 {
         background-position: -122px -176px;
     }
-    .service .reliability.result_03 {
+    .service .reliability.result_02 {
         background-position: -285px -176px;
     }
-    .service .reliability.result_04 {
+    .service .reliability.result_03 {
         background-position: -445px -176px;
     }
     /* Error no data */
