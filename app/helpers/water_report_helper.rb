@@ -1,4 +1,5 @@
 module WaterReportHelper
+  include ReportHelper
 
   def get_session_form
 
@@ -289,18 +290,6 @@ module WaterReportHelper
     end
 
     rating
-  end
-
-  def compute_rating_from_score(score)
-    if score >= 7.5
-      3
-    elsif score >= 5 && score < 7.5
-      2
-    elsif score >= 2 && score < 5
-      1
-    else
-      0
-    end
   end
 
   #Used to normalise reliability so that the best service is represented with index = 3
