@@ -102,4 +102,34 @@ describe SanitationReportHelper, :type => :helper do
       end
     end
   end
+
+  describe "#get_rating" do
+    context "when using: Borehole & handpump, capital ex = 18, recurrent ex = 4, \
+              accessibility = 0, quality = 3, quantity = 3, reliability = 0" do
+      xit "should be 3 stars"  do
+        latrine = 0
+        capital, recurring = 25, 7 #2, 1
+        reliability =  0
+        #accessibility, quality, quantity
+        expect(get_rating(water, capital, recurring, reliability)).to eq(3)
+      end
+    end
+
+    context "when an argument is nil" do
+      it "should be nil" do
+        expect(get_rating(0, 1, 1, nil)).to be_nil
+      end
+    end
+  end
+
+  describe "#get_access_service_level" do
+    answers = [ [0, 0, 3], [0, 1, 1], [1, 0, 2], [1, 1, 1] ]
+    answers.each do |answer|
+      context "when providing is #{answer[0]} and impermeability is #{answer[1]}" do
+        it "should be #{answer[2]}" do
+          expect(get_access_service_level(answer[0], answer[1])).to eq(answer[2])
+        end
+      end
+    end
+  end
 end

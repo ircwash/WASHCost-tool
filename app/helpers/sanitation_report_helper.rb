@@ -333,4 +333,8 @@ module SanitationReportHelper
     [form[:latrine], form[:capital], form[:recurrent], form[:reliability]].all?
   end
 
+  def get_access_service_level(providing, impermeability)
+    [ [3, 1], [2, 1] ][providing][impermeability]
+  end
+
 end

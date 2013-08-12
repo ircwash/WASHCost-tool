@@ -20,4 +20,8 @@ module ReportHelper
       1
     end
   end
+
+  def rating_for_service_level(level)
+    { 0 => 0, 1 => 0.25, 2 => 1, 3 => 1.5 }[level]
+  end
 end

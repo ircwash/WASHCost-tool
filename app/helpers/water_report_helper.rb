@@ -281,10 +281,6 @@ module WaterReportHelper
     { 0 => 3, 1 => 2, 2 => 1, 3 => 0 }[level]
   end
 
-  def rating_for_service_level(level)
-    { 0 => 0, 1 => 0.25, 2 => 1, 3 => 1.5 }[level]
-  end
-
   def get_level_of_service(water, capital, quantity, time)
     level_of_service= 'Please complete the form.'
 
