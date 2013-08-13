@@ -253,8 +253,8 @@ en:
             answers:
               a0: "Don't know"
               a1: "Not applicable"
-            placeholder: "100 to 100000 (US$ / person)"
-            placeholder_1: "1 to 100000 (US$ / person)"
+            placeholder: "US$ per person"
+            placeholder_1: "US$ per person"
           hardware:
             question: "What is the total capital expenditure hardware?"
             info: "Capital invested in constructing or purchasing fixed assets such as concrete structures, pumps and pipes. See: http://akvopedia.org/wiki/Capital_Expenditure_(CapEx)"
