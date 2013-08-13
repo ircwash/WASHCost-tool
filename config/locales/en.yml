@@ -191,10 +191,10 @@ en:
           question: "Area Type"
           placeholder: "Select an area type"
           answers:
-            a0: "rural"
-            a1: "small town"
-            a2: "peri-urban"
-            a3: "urban"
+            a0: "Rural"
+            a1: "Small Town"
+            a2: "Peri-Urban"
+            a3: "Urban"
         density:
           question: "What is the population density of the service area?"
           placeholder: "Select a density"
@@ -220,13 +220,13 @@ en:
         management:
           shared:
             answers:
-              a0: "External donor"
-              a1: "community based organisation"
-              a2: "public sector (local)"
-              a3: "public sector (national)"
-              a4: "utility"
-              a5: "household"
-              a6: "Don't know"
+              a0: "External Donor"
+              a1: "Community Based Organisation"
+              a2: "Public sector (local)"
+              a3: "Public sector (national)"
+              a4: "Utility"
+              a5: "Household"
+              a6: "Don't Know"
             info:
               i0: "Small-scale systems directly managed and operated by water committees. Larger and more complex systems managed by water committees with individual operational functions out-sourced to private individuals or small companies. Larger and more complex systems managed by water committees with all O&M out-sourced to private sector operators.  Associations of water committees providing economies of scale for certain O&M functions."
               i1: "Municipal water company providing management services to rural communities. Associations of municipal companies providing management services to rural communities. Local public utilities providing management services to rural communities, including maintenance contracts."
