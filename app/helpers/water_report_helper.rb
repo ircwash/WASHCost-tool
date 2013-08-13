@@ -153,7 +153,6 @@ module WaterReportHelper
     return quantity
   end
 
-
   def get_quality(index)
     quality= t 'form.value_not_set'
     if index && @@quality_values[index].present?
@@ -161,7 +160,6 @@ module WaterReportHelper
     end
     return quality
   end
-
 
   def get_reliability(index)
     reliability = t 'form.value_not_set'
@@ -281,6 +279,10 @@ module WaterReportHelper
     { 0 => 3, 1 => 2, 2 => 1, 3 => 0 }[level]
   end
 
+  def rating_for_service_level(level)
+    { 0 => 0, 1 => 0.25, 2 => 1, 3 => 1.5 }[level]
+  end
+
   def get_level_of_service(water, capital, quantity, time)
     level_of_service= 'Please complete the form.'
 
@@ -367,5 +369,4 @@ module WaterReportHelper
       { :label =>  ( I18n.t 'form.water_basic.reliability.answers.a2') },
       { :label =>  ( I18n.t 'form.water_basic.reliability.answers.a3') }
   ]
-
 end

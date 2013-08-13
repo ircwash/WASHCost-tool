@@ -41,7 +41,6 @@ module SanitationReportHelper
     }
 
     return results
-
   end
 
   def get_session_form
@@ -78,7 +77,6 @@ module SanitationReportHelper
           :reliability => session[:sanitation_basic_form]["reliability"]
       }
     end
-
     return form
   end
 
@@ -203,7 +201,6 @@ module SanitationReportHelper
     else
       nil
     end
-
   end
 
 
@@ -258,7 +255,6 @@ module SanitationReportHelper
     end
 
     return label
-
   end
 
   #Level of Service Calculations
@@ -307,7 +303,6 @@ module SanitationReportHelper
     end
 
     return label
-
   end
 
   def get_level_of_service(latrine, capital, usage, providing)
@@ -326,7 +321,6 @@ module SanitationReportHelper
     end
 
     return level_of_service
-
   end
 
   def is_form_ready?(form)
@@ -337,4 +331,7 @@ module SanitationReportHelper
     [ [3, 1], [2, 1] ][providing][impermeability]
   end
 
+  def rating_for_service_level(level)
+    { 0 => 3, 1 => 2, 2 => 0 }[level]
+  end
 end

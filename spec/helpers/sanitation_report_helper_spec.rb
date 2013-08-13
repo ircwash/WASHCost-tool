@@ -109,9 +109,10 @@ describe SanitationReportHelper, :type => :helper do
       xit "should be 3 stars"  do
         latrine = 0
         capital, recurring = 25, 7 #2, 1
-        reliability =  0
-        #accessibility, quality, quantity
-        expect(get_rating(water, capital, recurring, reliability)).to eq(3)
+        providing, impermeability = 0, 0 #3
+        environment, usage, reliability =  0, 0, 0 #1.5 x 3
+        expect(get_rating(latrine, capital, recurring, providing,
+          impermeability, environment, usage, reliability)).to eq(3)
       end
     end
 
@@ -132,4 +133,25 @@ describe SanitationReportHelper, :type => :helper do
       end
     end
   end
+
+  describe "#rating_for_service_level" do
+    context "when improved service (0)" do
+      it "should be 3" do
+        expect(rating_for_service_level(0)).to eq(3)
+      end
+    end
+
+    context "when basic service (1)" do
+      it "should be 2" do
+        expect(rating_for_service_level(1)).to eq(2)
+      end
+    end
+
+    context "when limited/no service (2)" do
+      it "should be 0" do
+        expect(rating_for_service_level(1)).to eq(2)
+      end
+    end
+  end
+
 end

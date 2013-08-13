@@ -28,30 +28,4 @@ describe ReportHelper, :type => :helper do
       end
     end
   end
-
-  describe "#rating_for_service_level" do
-    context "when is high" do
-      it "should be 1.5" do
-        expect(rating_for_service_level(3)).to eq(1.5)
-      end
-    end
-
-    context "when is basic" do
-      it "should be 1.5" do
-        expect(rating_for_service_level(2)).to eq(1)
-      end
-    end
-
-    context "when is sub-standard" do
-      it "should be 0.25" do
-        expect(rating_for_service_level(1)).to eq(0.25)
-      end
-    end
-
-    context "when there no service" do
-      it "should be 0" do
-        expect(rating_for_service_level(0)).to eq(0)
-      end
-    end
-  end
 end
