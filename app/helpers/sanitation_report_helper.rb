@@ -2,15 +2,14 @@ module SanitationReportHelper
   include ReportHelper
 
   def get_sanitation_basic_report
-
     form = get_session_form
     form_ready = is_form_ready?(form)
 
     cost_rating = get_cost_rating(form[:latrine], form[:capital])
     cost_rating_label = get_cost_rating_label(cost_rating)
 
-    service_rating = get_rating(form[:latrine],form[:capital],form[:recurrent], form[:reliability])
-
+    service_rating = get_rating(form[:latrine], form[:capital], form[:recurrent],
+      form[:providing], form[:impermeability], form[:environment], form[:usage], form[:reliability])
     service_level = get_level_of_service(form[:latrine],form[:capital], form[:usage], form[:providing])
     service_label = get_service_rating_label(service_rating)
 
@@ -243,20 +242,16 @@ module SanitationReportHelper
   end
 
   def get_cost_rating_label(rating)
-
-    label=  t 'form.value_not_set'
-
     if rating == 0
-      label= (t 'report.benchmark_below')
+      t 'report.benchmark_below'
     elsif rating == 1
-      label= (t 'report.benchmark_within')
+      t 'report.benchmark_within'
     elsif rating == 2
-      label= (t 'report.benchmark_above')
+      t 'report.benchmark_above'
+    else
+      t 'form.value_not_set'
     end
-
-    return label
   end
-
 
   def get_rating(latrine, capital, recurring, providing, impermeability, environment, usage, reliability)
     return nil unless [latrine, capital, recurring, providing, impermeability, environment, usage, reliability].all?
