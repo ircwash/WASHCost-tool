@@ -256,10 +256,10 @@ en:
             placeholder: "100 to 100000 (US$ / person)"
             placeholder_1: "1 to 100000 (US$ / person)"
           hardware:
-            question: "What is the total capital expenditure for hardware?"
+            question: "What is the total capital expenditure hardware?"
             info: "Capital invested in constructing or purchasing fixed assets such as concrete structures, pumps and pipes. See: http://akvopedia.org/wiki/Capital_Expenditure_(CapEx)"
           software:
-            question: "What is the total capital expenditure for software?"
+            question: "What is the total capital expenditure software?"
             info: "The costs of one-off work with stakeholders prior to construction or implementation, extension, enhancement and augmentation (including costs of one-off capacity building activities).See: http://akvopedia.org/wiki/Capital_Expenditure_(CapEx)"
           maintenance:
             question: "What is the minor operation and maintenance expenditure?"
