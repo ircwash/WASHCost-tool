@@ -4,7 +4,7 @@
 
 <%= form_tag({controller: "sanitation_basic", action: "recurrent"}, class: "main_content", id: "waterBasicForm") do %>
 
-  <div class="choices">
+  <div class="choices washCostSlider">
     <div class="value">
       <div id="recurrentValue" class="valueOutput">3</div>
 		  <div class="valueLabel">
@@ -12,10 +12,20 @@
       </div>
 
     </div>
-      <div id="recurrentSlider" data-slider_value=<%=@recurrent[:value]%> ></div>
+    <div id="recurrentSlider" data-slider_value=<%=@recurrent[:value]%> ></div>
+    <ul class="labelScale">
+      <li class="first">
+        <span class="estimate">Below</span>
+        <span class="numRounding"><%=@recurrent[:below_value]%></span>
+      </li>
+      <li class="last">
+        <span class="estimate">Above</span>
+        <span class="numRounding"><%=@recurrent[:above_value]%></span>
+      </li>
+    </ul>
   </div>
 
-  <input type="hidden" name="recurrent" data-min-value=<%=@recurrent[:min_value]%>  data-max-value=<%=@recurrent[:max_value]%> />
+  <input type="hidden" name="recurrent" data-min-value=<%=@recurrent[:min_value]%>  data-max-value=<%=@recurrent[:max_value]%> data-below-value=<%=@recurrent[:below_value]%> data-above-value=<%=@recurrent[:above_value]%> />
   <%= submit_tag("Next", class: "next_button") %>
   <a class="skip" href="./providing"><%= t 'form.skip' %></a>
 

@@ -121,24 +121,27 @@ module SanitationReportHelper
   ####  Logic of capital and recurrent cost ranges ####
 
   def capital_range_latrine_based(latrine_sources_index)
+    response = { max_value: @@water_capExp_absolute_range[:max], min_value: @@water_capExp_absolute_range[:min]}
     case latrine_sources_index
       when 2..3
-        { min_value: 36, max_value:  358}
+        response.merge( below_value: 36, above_value:  358)
       when 4..5
-        { min_value: 92, max_value: 358 }
+        response.merge( below_value: 92, above_value: 358 )
       else
-        { min_value: 7, max_value: 26 }
+        # modify max limit due business rules
+        response[:max_value]=50
+        response.merge({ below_value: 7, above_value: 26 })
     end
   end
 
   def recurrent_range_latrine_based(latrine_sources_index)
     case latrine_sources_index
       when 2..3
-        { min_value: 2.5 , max_value: 8.5 }
+        { max_value: 17, min_value: 0, below_value: 2.5 , above_value: 8.5 }
       when 4..5
-        { min_value: 3.5, max_value: 11.5 }
+        { max_value: 23, min_value: 0, below_value: 3.5, above_value: 11.5 }
       else
-        { min_value: 1.5, max_value: 4.0 }
+        { max_value: 8, min_value: 0, below_value: 1.5, above_value: 4.0 }
     end
   end
 
@@ -146,6 +149,16 @@ module SanitationReportHelper
   @@population_ranges = {
       min: 100,
       max: 1000000,
+  }
+
+  @@water_capExp_absolute_range = {
+      min: 0,
+      max: 500,
+  }
+
+  @@water_recurrent_absolute_range = {
+      min: 0,
+      max: 30,
   }
 
   @@latrine_values= [
