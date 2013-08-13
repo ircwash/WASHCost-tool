@@ -274,7 +274,7 @@ en:
             placeholder: "Number 0 to 1000 (Years)"
       water:
         supply_system:
-          question: "What supply system(s) are used to deliver water services?*"
+          question: "What supply system(s) are used to deliver water services?"
           answers:
             a0: "borehole and handpump"
             a1: "mechanised borehole"
@@ -284,7 +284,7 @@ en:
             a5: "protected well"
             a6: "rural gravity fed system"
         inauguration:
-          question: "In what year was the supply system inaugurated?**"
+          question: "In what year was the supply system inaugurated?"
         water_sources:
           question: "Water sources?"
           answers:
