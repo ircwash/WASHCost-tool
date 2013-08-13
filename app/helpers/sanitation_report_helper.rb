@@ -261,19 +261,19 @@ module SanitationReportHelper
   def get_rating(latrine, capital, recurring, providing, impermeability, environment, usage, reliability)
     return nil unless [latrine, capital, recurring, providing, impermeability, environment, usage, reliability].all?
 
-    capex_core = get_capEx_benchmark_rating(latrine, capital)
-    recex_score = get_recEx_benchmark_rating(latrine, recurring)
+    capex_core = get_capex_benchmark_rating(latrine, capital)
+    recex_score = get_recex_benchmark_rating(latrine, recurring)
     service_score = rating_for_combined_service_levels(providing, impermeability, environment, usage, reliability)
 
     rating = compute_rating_from_score (capex_core + recex_score + service_score)
   end
 
-  def get_capEx_benchmark_rating(latrineIndex, ex)
+  def get_capex_benchmark_rating(latrineIndex, ex)
     bench= @@latrine_values[latrineIndex][:capExBench]
     rating_for_expenditure ex, bench[:min], bench[:max]
   end
 
-  def get_recEx_benchmark_rating(latrineIndex, ex)
+  def get_recex_benchmark_rating(latrineIndex, ex)
     bench= @@latrine_values[latrineIndex][:recExBench]
     rating_for_expenditure ex, bench[:min], bench[:max]
   end
@@ -316,7 +316,7 @@ module SanitationReportHelper
     level_of_service= 'Pease complete the form.'
 
     if latrine && capital && usage && providing
-      capEx_score= get_capEx_benchmark_rating(latrine, capital)
+      capEx_score= get_capex_benchmark_rating(latrine, capital)
 
       capEx_code= @@capEx_rating_code[capEx_score]
       quantity_code= usage+1

@@ -10,48 +10,48 @@ describe WaterReportHelper, :type => :helper do
     end
   end
 
-  describe "#get_capEx_benchmark_rating" do
+  describe "#get_capex_benchmark_rating" do
     context "when below benchmarks" do
       it "should be 0.5" do
         waterSourceIndex, expense = 0, 19
-        expect(get_capEx_benchmark_rating(waterSourceIndex, expense)).to eq(0.5)
+        expect(get_capex_benchmark_rating(waterSourceIndex, expense)).to eq(0.5)
       end
     end
 
     context "when within benchmarks" do
       it "should be 2" do
         waterSourceIndex, expense = 0, 21
-        expect(get_capEx_benchmark_rating(waterSourceIndex, expense)).to eq(2)
+        expect(get_capex_benchmark_rating(waterSourceIndex, expense)).to eq(2)
       end
     end
 
     context "when above benchmarks" do
       it "should be 1" do
         waterSourceIndex, expense = 0, 62
-        expect(get_capEx_benchmark_rating(waterSourceIndex, expense)).to eq(1)
+        expect(get_capex_benchmark_rating(waterSourceIndex, expense)).to eq(1)
       end
     end
   end
 
-  describe "#get_recEx_benchmark_rating" do
+  describe "#get_recex_benchmark_rating" do
     context "when below benchmarks" do
       it "should be 0.5" do
         waterSourceIndex, expense = 0, 2
-        expect(get_recEx_benchmark_rating(waterSourceIndex, expense)).to eq(0.5)
+        expect(get_recex_benchmark_rating(waterSourceIndex, expense)).to eq(0.5)
       end
     end
 
     context "when within benchmarks" do
       it "should be 2" do
         waterSourceIndex, expense = 0, 5
-        expect(get_recEx_benchmark_rating(waterSourceIndex, expense)).to eq(2)
+        expect(get_recex_benchmark_rating(waterSourceIndex, expense)).to eq(2)
       end
     end
 
     context "when above benchmarks" do
       it "should be 1" do
         waterSourceIndex, expense = 0, 7
-        expect(get_recEx_benchmark_rating(waterSourceIndex, expense)).to eq(1)
+        expect(get_recex_benchmark_rating(waterSourceIndex, expense)).to eq(1)
       end
     end
   end

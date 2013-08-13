@@ -243,19 +243,19 @@ module WaterReportHelper
   def get_rating(water, capital, recurring, accesibility, quantity, quality, reliability)
     return nil unless [water, capital, recurring, accesibility, quantity, quality, reliability].all?
 
-    capex_score = get_capEx_benchmark_rating(water, capital)
-    recex_score = get_recEx_benchmark_rating(water, recurring)
+    capex_score = get_capex_benchmark_rating(water, capital)
+    recex_score = get_recex_benchmark_rating(water, recurring)
     service_score = rating_for_combined_service_levels(accesibility, quantity, quality, reliability)
 
     rating = compute_rating_from_score (capex_score + recex_score + service_score)
   end
 
-  def get_capEx_benchmark_rating(waterSourceIndex, ex)
+  def get_capex_benchmark_rating(waterSourceIndex, ex)
     bench = @@water_values[waterSourceIndex][:capExBench]
     rating_for_expenditure ex, bench[:min], bench[:max]
   end
 
-  def get_recEx_benchmark_rating(waterSourceIndex, ex)
+  def get_recex_benchmark_rating(waterSourceIndex, ex)
     bench = @@water_values[waterSourceIndex][:recExBench]
     rating_for_expenditure ex, bench[:min], bench[:max]
   end
@@ -281,7 +281,7 @@ module WaterReportHelper
     level_of_service= 'Please complete the form.'
 
     if water && capital && quantity && time
-      capEx_score = get_capEx_benchmark_rating(water, capital)
+      capEx_score = get_capex_benchmark_rating(water, capital)
 
       capEx_code = @@capEx_rating_code[capEx_score]
       quantity_code = quantity + 1
