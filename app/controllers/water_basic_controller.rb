@@ -70,8 +70,10 @@ class WaterBasicController < ApplicationController
     @capital[:min_value] = range[:min_value]
     @capital[:max_value] = range[:max_value]
     @capital[:value] = retrieve_previous_answer_for("capital") || @capital[:min_value]
-    @capital[:below_value] = ((@capital[:max_value]-@capital[:min_value]).to_f*0.2).round+@capital[:min_value]
-    @capital[:above_value] = ((@capital[:max_value]-@capital[:min_value]).to_f*0.8).round+@capital[:min_value]
+    #@capital[:below_value] = ((@capital[:max_value]-@capital[:min_value]).to_f*0.2).round+@capital[:min_value]
+    #@capital[:above_value] = ((@capital[:max_value]-@capital[:min_value]).to_f*0.8).round+@capital[:min_value]
+    @capital[:below_value] = range[:below_value]
+    @capital[:above_value] = range[:above_value]
   end
 
   def recurrent
@@ -88,6 +90,8 @@ class WaterBasicController < ApplicationController
     @recurrent[:min_value] = range[:min_value]
     @recurrent[:max_value] = range[:max_value]
     @recurrent[:value] = retrieve_previous_answer_for("recurrent") || @recurrent[:min_value]
+    @recurrent[:above_value] = range[:above_value]
+    @recurrent[:below_value] = range[:below_value]
   end
 
   def time

@@ -34,8 +34,8 @@ $(document).ready(function(){
         offset_cursor = 10;
         bar_slider_lenght = 850.0;
         slider_lenght = inputCapital.data('max-value') - inputCapital.data('min-value');
-        above_value = Math.round(slider_lenght*0.80);
-        below_value = Math.round(slider_lenght*0.20);
+        above_value = inputCapital.data('above-value');
+        below_value = inputCapital.data('below-value');
         step_slider = bar_slider_lenght/slider_lenght;
         css_above_value = above_value * step_slider + offset_cursor;
         css_below_value = below_value * step_slider + offset_cursor;
@@ -63,10 +63,27 @@ $(document).ready(function(){
     // Page 5
     if( document.getElementById('recurrentSlider')){
         inputRecurrent = $('input[name="recurrent"]');
+        recurrentSlider = $( "#recurrentSlider" );
+
         //default
         inputRecurrent.val(3);
+        offset_cursor = 4;
+        bar_slider_lenght = 850.0;
+        slider_lenght = inputRecurrent.data('max-value') - inputRecurrent.data('min-value');
+        above_value = inputRecurrent.data('above-value');
+        below_value = inputRecurrent.data('below-value');
+        step_slider = bar_slider_lenght/slider_lenght;
+        css_above_value = above_value * step_slider + offset_cursor;
+        css_below_value = below_value * step_slider + offset_cursor;
 
-        $( "#recurrentSlider" ).slider({
+        //labels
+        label_first = $('.labelScale li.first span');
+        label_first.css('margin-left',css_below_value-offset_cursor+"px");
+        label_last = $('.labelScale li.last span');
+        label_last.css('margin-left',css_above_value-(bar_slider_lenght/2)-offset_cursor+"px");
+
+       recurrentSlider.css('backgroundPosition', css_above_value+"px 1px, "+css_below_value+"px 0px, 1px 0px");
+        recurrentSlider.slider({
             min: inputRecurrent.data('min-value'),
             max: inputRecurrent.data('max-value'),
             change: function( event, ui ) {

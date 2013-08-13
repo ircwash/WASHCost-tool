@@ -4,7 +4,7 @@
 
     <%= form_tag({controller: "water_basic", action: "capital"}, class: "main_content sanitation", id: "waterBasicForm") do %>
 
-      <div class="choices capitalSlider">
+      <div class="choices washCostSlider">
         <div class="value">
             <div class="valueOutput"><span id="capitalValue">0</span>$</div>
             <div class="valueLabel">Per person US$</div>
@@ -23,7 +23,7 @@
         </ul>
       </div>
 
-        <input type="hidden" name="capital" data-min-value=<%=@capital[:min_value]%>  data-max-value=<%=@capital[:max_value]%> />
+        <input type="hidden" name="capital" data-min-value=<%=@capital[:min_value]%>  data-max-value=<%=@capital[:max_value]%> data-below-value=<%=@capital[:below_value]%> data-above-value=<%=@capital[:above_value]%> />
         <%= submit_tag((t 'buttons.next'), class: "next_button") %>
         <a class="skip" href="./recurrent">skip this question</a>
     <div class="infoTab">

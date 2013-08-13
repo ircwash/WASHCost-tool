@@ -173,20 +173,22 @@ module WaterReportHelper
   ####  Logic of capital and recurrent cost ranges ####
 
   def capital_range_water_based(water_sources_index)
+    response = { max_value: @@water_capExp_absolute_range[:max], min_value: @@water_capExp_absolute_range[:min]}
     case water_sources_index
       when 0
-        { min_value: 20, max_value: 61 }
+        response.merge({ below_value: 20, above_value: 61 })
       else
-        { min_value: 30, max_value: 131 }
+        response.merge({ below_value: 30, above_value: 131})
     end
   end
 
   def recurrent_range_water_based(water_sources_index)
+    response = { max_value: @@water_recurrent_absolute_range[:max], min_value: @@water_recurrent_absolute_range[:min]}
     case water_sources_index
       when 0
-        { min_value: 3, max_value: 6 }
+        response.merge({ below_value: 3, above_value: 6 })
       else
-        { min_value: 3, max_value: 15 }
+        response.merge({ below_value: 3, above_value: 15 })
     end
   end
 
@@ -319,6 +321,16 @@ module WaterReportHelper
   @@population_ranges = {
       min: 100,
       max: 1000000,
+  }
+
+  @@water_capExp_absolute_range = {
+      min: 0,
+      max: 300,
+  }
+
+  @@water_recurrent_absolute_range = {
+      min: 0,
+      max: 30,
   }
 
   @@water_values = [

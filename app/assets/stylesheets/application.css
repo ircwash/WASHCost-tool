@@ -621,11 +621,11 @@ a.sbSelector:hover {
     height: 42px;
     background: transparent url('/assets/sliderScroll24.png') no-repeat 0 0;
 }
-.capitalSlider .ui-slider {
+.washCostSlider .ui-slider {
     width: 850px;
     height: 30px;
 }
-.capitalSlider .ui-widget-content {
+.washCostSlider .ui-widget-content {
     z-index: 100;
     border: none;
     margin: 0 auto;
@@ -635,9 +635,9 @@ a.sbSelector:hover {
     background-position-y: 1px, 0, 0px;
     background-position-x: 800px, 20px, 1px;
 }
-.capitalSlider .ui-state-default,
-.capitalSlider .ui-widget-content .ui-state-default,
-.capitalSlider .ui-widget-header .ui-state-default {
+.washCostSlider .ui-state-default,
+.washCostSlider .ui-widget-content .ui-state-default,
+.washCostSlider .ui-widget-header .ui-state-default {
     margin-top: 0;
 }
 .choiceTime {
@@ -1944,7 +1944,7 @@ a.sbSelector:hover {
     .ie7 .content dl dd span {
         left: 0;
     }
-    .ie8 .capitalSlider .labelScale {
+    .ie8 .washCostSlider .labelScale {
         margin-top: -100px;
     }
     .ie7 .countryChoices input {
