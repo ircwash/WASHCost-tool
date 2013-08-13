@@ -221,13 +221,12 @@ en:
           shared:
             answers:
               a0: "External donor"
-              a1: "community-based"
-              a2: "organisation"
-              a3: "public sector (local)"
-              a4: "public sector (national)"
-              a5: "utility"
-              a6: "household"
-              a7: "Don't know"
+              a1: "community based organisation"
+              a2: "public sector (local)"
+              a3: "public sector (national)"
+              a4: "utility"
+              a5: "household"
+              a6: "Don't know"
             info:
               i0: "Small-scale systems directly managed and operated by water committees. Larger and more complex systems managed by water committees with individual operational functions out-sourced to private individuals or small companies. Larger and more complex systems managed by water committees with all O&M out-sourced to private sector operators.  Associations of water committees providing economies of scale for certain O&M functions."
               i1: "Municipal water company providing management services to rural communities. Associations of municipal companies providing management services to rural communities. Local public utilities providing management services to rural communities, including maintenance contracts."

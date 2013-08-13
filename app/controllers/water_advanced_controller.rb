@@ -149,20 +149,13 @@ class WaterAdvancedController < ApplicationController
 
 
   def get_indexed_value(i18nPrefix, key)
-
-    text= 'No answer provided'
-
-    if params.has_key?(key) && params[key]!=nil
-
+    if params.has_key?(key) && params[key].present?
       index= params[key]
-
-      text= I18n.t i18nPrefix+index
-
       add_to_session_advanced(key, index)
-
+      I18n.t(i18nPrefix+index, :default => I18n.t('form.value_not_set'))
+    else
+      I18n.t('form.value_not_set')
     end
-
-    return text
   end
 
 
