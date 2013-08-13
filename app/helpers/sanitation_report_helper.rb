@@ -257,8 +257,18 @@ module SanitationReportHelper
     return label
   end
 
-  #Level of Service Calculations
-  def  get_capEx_benchmark_rating(latrineIndex, ex)
+
+  def get_rating(latrine, capital, recurring, providing, impermeability, environment, usage, reliability)
+    return nil unless [latrine, capital, recurring, providing, impermeability, environment, usage, reliability].all?
+
+    capex_core = get_capEx_benchmark_rating(latrine, capital)
+    recex_score = get_recEx_benchmark_rating(latrine, recurring)
+    service_score = rating_for_combined_service_levels(providing, impermeability, environment, usage, reliability)
+
+    rating = compute_rating_from_score (capex_core + recex_score + service_score)
+  end
+
+  def get_capEx_benchmark_rating(latrineIndex, ex)
     bench= @@latrine_values[latrineIndex][:capExBench]
     rating_for_expenditure ex, bench[:min], bench[:max]
   end
@@ -268,24 +278,20 @@ module SanitationReportHelper
     rating_for_expenditure ex, bench[:min], bench[:max]
   end
 
-  def get_rating(water, capital, recurring, reliability)
-
-    rating= nil
-
-    if(water && capital && recurring && reliability)
-      capExScore= get_capEx_benchmark_rating(water, capital)
-      recExScore= get_recEx_benchmark_rating(water, recurring)
-
-      serviceLevel= (4 * @@reliability_values[reliability][:value])
-
-      score= (capExScore + recExScore + serviceLevel);
-
-      backgroundPosition= 0
-
-      rating = compute_rating_from_score(score)
+  def rating_for_combined_service_levels(providing, impermeability, environment, usage, reliability)
+    access_score = get_access_service_level(providing, impermeability)
+    score_sum = [environment, usage, reliability].inject(0) do |sum, element|
+      sum += rating_for_service_level(element)
     end
+    access_score + score_sum
+  end
 
-    return rating
+  def get_access_service_level(providing, impermeability)
+    [ [3, 1], [2, 1] ][providing][impermeability]
+  end
+
+  def rating_for_service_level(level)
+    { 0 => 3, 1 => 2, 2 => 0 }[level]
   end
 
   def get_service_rating_label(rating)
@@ -325,13 +331,5 @@ module SanitationReportHelper
 
   def is_form_ready?(form)
     [form[:latrine], form[:capital], form[:recurrent], form[:reliability]].all?
-  end
-
-  def get_access_service_level(providing, impermeability)
-    [ [3, 1], [2, 1] ][providing][impermeability]
-  end
-
-  def rating_for_service_level(level)
-    { 0 => 3, 1 => 2, 2 => 0 }[level]
   end
 end

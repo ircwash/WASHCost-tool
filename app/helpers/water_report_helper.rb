@@ -240,6 +240,16 @@ module WaterReportHelper
     return label
   end
 
+  def get_rating(water, capital, recurring, accesibility, quantity, quality, reliability)
+    return nil unless [water, capital, recurring, accesibility, quantity, quality, reliability].all?
+
+    capex_score = get_capEx_benchmark_rating(water, capital)
+    recex_score = get_recEx_benchmark_rating(water, recurring)
+    service_score = rating_for_combined_service_levels(accesibility, quantity, quality, reliability)
+
+    rating = compute_rating_from_score (capex_score + recex_score + service_score)
+  end
+
   def get_capEx_benchmark_rating(waterSourceIndex, ex)
     bench = @@water_values[waterSourceIndex][:capExBench]
     rating_for_expenditure ex, bench[:min], bench[:max]
@@ -250,28 +260,12 @@ module WaterReportHelper
     rating_for_expenditure ex, bench[:min], bench[:max]
   end
 
-  def get_rating(water, capital, recurring, accesibility, quantity, quality, reliability)
-    params = [water, capital, recurring, accesibility, quantity, quality, reliability]
-
-    if params.all?
-      capExScore = get_capEx_benchmark_rating(water, capital)
-      recExScore = get_recEx_benchmark_rating(water, recurring)
-
-      accesibility = normalise_best_level_to_be_3(accesibility)
-      reliability = normalise_best_level_to_be_3(reliability)
-
-      serviceLevel = [accesibility, quantity, quality, reliability].inject(0) do |sum, element|
-        sum += rating_for_service_level(element)
-      end
-
-      score = (capExScore + recExScore + serviceLevel);
-
-      backgroundPosition = 0
-
-      rating = compute_rating_from_score(score)
+  def rating_for_combined_service_levels(accesibility, quantity, quality, reliability)
+    accesibility = normalise_best_level_to_be_3(accesibility)
+    reliability = normalise_best_level_to_be_3(reliability)
+    serviceLevel = [accesibility, quantity, quality, reliability].inject(0) do |sum, element|
+      sum += rating_for_service_level(element)
     end
-
-    rating
   end
 
   #Used to normalise reliability so that the best service is represented with index = 3

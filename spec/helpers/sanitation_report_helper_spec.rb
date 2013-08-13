@@ -104,13 +104,13 @@ describe SanitationReportHelper, :type => :helper do
   end
 
   describe "#get_rating" do
-    context "when using: Borehole & handpump, capital ex = 18, recurrent ex = 4, \
-              accessibility = 0, quality = 3, quantity = 3, reliability = 0" do
-      xit "should be 3 stars"  do
+    context "when using: Traditional pit latrine, capital ex = 25, recurrent ex = 7, \
+             providing = 0, impermeability = 0, environment = 0, usage = 0, reliability = 0" do
+      it "should be 3 stars"  do
         latrine = 0
-        capital, recurring = 25, 7 #2, 1
-        providing, impermeability = 0, 0 #3
-        environment, usage, reliability =  0, 0, 0 #1.5 x 3
+        capital, recurring = 25, 7 #Scores are: 2, 1
+        providing, impermeability = 0, 0 #Scores are: 3, 3
+        environment, usage, reliability =  0, 0, 0 #Scores are: 3, 3, 3
         expect(get_rating(latrine, capital, recurring, providing,
           impermeability, environment, usage, reliability)).to eq(3)
       end
@@ -118,7 +118,7 @@ describe SanitationReportHelper, :type => :helper do
 
     context "when an argument is nil" do
       it "should be nil" do
-        expect(get_rating(0, 1, 1, nil)).to be_nil
+        expect(get_rating(0, 0, 0, 0, nil, 0, 0, 0)).to be_nil
       end
     end
   end
