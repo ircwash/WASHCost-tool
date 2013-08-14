@@ -29,6 +29,8 @@ $(document).ready(function()
     } initSelects();
 
     function radioInputTick() {
+        // target to change the info box regarding to item selected
+        target_select = $('input[name="target-select"]').data("target");
 
         var $tick = $('.tickCheckBox'),
             $inputTick = $('.tickCheckBox input');
@@ -36,6 +38,13 @@ $(document).ready(function()
         $('.tickCheckBox').on('click', function(e)
         {
             e.preventDefault();
+            // Change the info box regarding to item selected
+            console.log(target_select);
+            $.ajax({
+                url : "/water_basic/data_info_box",
+                data : "trigger="+target_select+"&index="+$(this).find('input').val(),
+                type : "POST",
+            });
 
             if($inputTick.length)
             {

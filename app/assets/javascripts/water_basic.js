@@ -1,7 +1,14 @@
 $(document).ready(function(){
     // Option buttons that are checked should be highlighted.
-    $( "[checked='checked']" ).parent().addClass('ticked');
-
+    option_cheched = $( "[checked='checked']" )
+    option_cheched.parent().addClass('ticked');
+    // setting the default or initial value in info box
+    target_select = $('input[name="target-select"]').data("target");
+     $.ajax({
+                url : "/water_basic/data_info_box",
+                data : "trigger="+target_select+"&index="+option_cheched.val(),
+                type : "POST",
+            });
     // Page 3
     if( document.getElementById('populationSlider')){
 

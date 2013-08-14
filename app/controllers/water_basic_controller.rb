@@ -144,6 +144,17 @@ class WaterBasicController < ApplicationController
     render layout: "water_basic_report"
   end
 
+  def data_info_box
+    puts '--> box info by ajax'
+    puts params
+    trigger=params[:trigger]
+    index= params[:index]
+    @info_box = {header: I18n.t("form.water_basic.#{trigger}.answers.a#{index}", :default => "Info"), content: I18n.t("form.water_basic.#{params[:trigger]}.info.i#{index}", :default => "No Info")}
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
 
   def retrieve_previous_answer_for(user_step)

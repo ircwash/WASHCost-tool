@@ -82,6 +82,7 @@ en:
         info:
           i0: "Reticulated supply with pumping, storage and distribution through public stand posts with provision for house connections."
           i1: "Water is supplied through a small distribution network and connected public stand posts. Water storage is limited, typically to an overhead storage tank  directly connected to the pump.  Household connections are rare."
+          i2: "Maecenas elementum tristique nunc sed vehicula. Mauris dignissim erat ut lectus rutrum elementum. Etiam pharetra ac massa sit amet mattis. Nam blandit, nibh sed mattis accumsan, nisi risus vulputate eros, in ar laoreet."
           i3: "Reticulated supply with pumping, storage and distribution supplied to a number of interconnected towns or villages. Each village with its own storage and distribution network."
           i4: "Water is supplied through a combination of separate, often overlapping, service delivery systems."
       population:
