@@ -267,6 +267,8 @@ module WaterReportHelper
     rating_for_expenditure ex, bench[:min], bench[:max]
   end
 
+  # @return [Float] return the rating of all items related with the level of service, the process selects the item with
+  # least value, then this value is mapped to rating value according the business rules
   def rating_for_combined_service_levels(accesibility, quantity, quality, reliability)
     accesibility = normalise_best_level_to_be_3(accesibility)
     reliability = normalise_best_level_to_be_3(reliability)
