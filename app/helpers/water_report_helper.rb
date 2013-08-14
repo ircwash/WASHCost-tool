@@ -270,13 +270,8 @@ module WaterReportHelper
   def rating_for_combined_service_levels(accesibility, quantity, quality, reliability)
     accesibility = normalise_best_level_to_be_3(accesibility)
     reliability = normalise_best_level_to_be_3(reliability)
-    names = [:accesibility, :quantity, :quality, :reliability]
-
-    serviceLevel = [ [:accesibility, accesibility], [:quantity, quantity],
-                      [:quality, quality], [:reliability, reliability] ].inject(0) do |sum, element|
-      Rails.logger.debug "service: #{element[0]} = #{element[1]} produces score of #{rating_for_service_level(element[1])}"
-      sum += rating_for_service_level(element[1])
-    end
+    minimum_service_value = [accesibility, quantity, quality, reliability].min
+    rating_for_service_level minimum_service_value
   end
 
   #Used to normalise reliability so that the best service is represented with index = 3
