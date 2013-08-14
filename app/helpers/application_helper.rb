@@ -258,7 +258,9 @@ module ApplicationHelper
 
   def show_app_version
     if SHOW_APP_VERSION
-      "Current version is: #{APP_VERSION}"
+      %Q{<div>Current version is: #{APP_VERSION}</div>}.html_safe
+    else
+      %Q{<div style="display:none">Current version is: #{APP_VERSION}</div>}.html_safe
     end
   end
 end
