@@ -244,12 +244,17 @@ module WaterReportHelper
 
   def get_rating(water, capital, recurring, accesibility, quantity, quality, reliability)
     return nil unless [water, capital, recurring, accesibility, quantity, quality, reliability].all?
+    score = compute_score(water, capital, recurring, accesibility, quantity, quality, reliability)
+    rating = compute_rating_from_score (score)
+  end
 
+  def compute_score(water, capital, recurring, accesibility, quantity, quality, reliability)
+    Rails.logger.debug "capex: #{capital} for water: #{water} produces score of #{get_capex_benchmark_rating(water, capital)}"
     capex_score = get_capex_benchmark_rating(water, capital)
+    Rails.logger.debug "recex: #{recurring} for water: #{water} produces score of #{get_recex_benchmark_rating(water, recurring)}"
     recex_score = get_recex_benchmark_rating(water, recurring)
     service_score = rating_for_combined_service_levels(accesibility, quantity, quality, reliability)
-
-    rating = compute_rating_from_score (capex_score + recex_score + service_score)
+    capex_score + recex_score + service_score
   end
 
   def get_capex_benchmark_rating(waterSourceIndex, ex)
@@ -265,8 +270,12 @@ module WaterReportHelper
   def rating_for_combined_service_levels(accesibility, quantity, quality, reliability)
     accesibility = normalise_best_level_to_be_3(accesibility)
     reliability = normalise_best_level_to_be_3(reliability)
-    serviceLevel = [accesibility, quantity, quality, reliability].inject(0) do |sum, element|
-      sum += rating_for_service_level(element)
+    names = [:accesibility, :quantity, :quality, :reliability]
+
+    serviceLevel = [ [:accesibility, accesibility], [:quantity, quantity],
+                      [:quality, quality], [:reliability, reliability] ].inject(0) do |sum, element|
+      Rails.logger.debug "service: #{element[0]} = #{element[1]} produces score of #{rating_for_service_level(element[1])}"
+      sum += rating_for_service_level(element[1])
     end
   end
 
