@@ -254,8 +254,11 @@ module ApplicationHelper
         ["ZAMBIA","ZM"],
         ["ZIMBABWE","ZW"]
     ]
-
   end
 
-
+  def show_app_version
+    if SHOW_APP_VERSION
+      "Current version is: #{APP_VERSION}"
+    end
+  end
 end

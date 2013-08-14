@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
 
 
   def select_advanced
-
     if request.post?
       if(params[:targetForm].present? && params[:type].present?)
         targetForm= params[:targetForm]
@@ -17,7 +16,6 @@ class ApplicationController < ActionController::Base
         end
       end
     end
-
   end
 
   def pages
@@ -55,7 +53,6 @@ class ApplicationController < ActionController::Base
     session[form_name]= form
   end
 
-
   def increase_complete_percent(form)
     pages_complete = session[form].present? ? session[form] : 0
     pages_complete += 1;
@@ -76,5 +73,4 @@ class ApplicationController < ActionController::Base
     reset_session
     render :text => 'Session cleaned'
   end
-
 end
