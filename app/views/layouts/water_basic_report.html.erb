@@ -210,18 +210,19 @@
             data.addColumn('number', 'Expenditure');
             data.addColumn({type:'string', role:'annotation'}); // annotation role col.
             data.addColumn({type:'string', role:'annotationText'}); // annotationText col
-
+            capExpByPopulation = _C*_P;
+            recExpByPopulation = _R*_P;
             data.addRows([
-                ['Setup',   _C, _C+'', 'You Spent '+_C+' Dollars Your first year'],
-                ['1',   _R*_P, _R+'', _R+' Dollars is your recurring cost'],
-                ['2',   _R*_P, null, null],
-                ['3',   _R*_P, null, null],
-                ['4',   _R*_P, null, null],
-                ['5',   _R*_P, null, null],
-                ['6',   _R*_P, null, null],
-                ['7',   _R*_P, null, null],
-                ['8',   _R*_P, null, null],
-                ['9',  _R*_P, null, null]
+                ['Setup', capExpByPopulation, capExpByPopulation + '', 'You Spent '+capExpByPopulation+' Dollars Your first year'],
+                ['1',  recExpByPopulation, recExpByPopulation+'', recExpByPopulation+' Dollars is your recurring cost'],
+                ['2',  recExpByPopulation, null, null],
+                ['3',  recExpByPopulation, null, null],
+                ['4',  recExpByPopulation, null, null],
+                ['5',  recExpByPopulation, null, null],
+                ['6',  recExpByPopulation, null, null],
+                ['7',  recExpByPopulation, null, null],
+                ['8',  recExpByPopulation, null, null],
+                ['9',  recExpByPopulation, null, null]
             ]);
 
             // Create and draw the visualization.
