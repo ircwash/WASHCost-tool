@@ -203,27 +203,27 @@
         var _R= <%= (flash[:results][:recurrent]|| 0) %>;
         var _P= <%= (flash[:results][:population]|| 0) %>;
 
-
         if(_C && _R){
-            var data = new google.visualization.DataTable();
 
+            var data = new google.visualization.DataTable();
 
             data.addColumn('string', 'Year');
             data.addColumn('number', 'Expenditure');
             data.addColumn({type:'string', role:'annotation'}); // annotation role col.
             data.addColumn({type:'string', role:'annotationText'}); // annotationText col
-
+            capExpByPopulation = _C*_P;
+            recExpByPopulation = _R*_P;
             data.addRows([
-                ['0',   _C, _C+'', 'You Spent '+_C+' Dollars Your first year'],
-                ['1',   _R*_P, _R+'', _R+' Dollars is your recurring cost'],
-                ['2',   _R*_P, null, null],
-                ['3',   _R*_P, null, null],
-                ['4',   _R*_P, null, null],
-                ['5',   _R*_P, null, null],
-                ['6',   _R*_P, null, null],
-                ['7',   _R*_P, null, null],
-                ['8',   _R*_P, null, null],
-                ['9',  _R*_P, null, null]
+                ['Setup', capExpByPopulation, capExpByPopulation + '', 'You Spent '+capExpByPopulation+' Dollars Your first year'],
+                ['1',  recExpByPopulation, recExpByPopulation+'', recExpByPopulation+' Dollars is your recurring cost'],
+                ['2',  recExpByPopulation, null, null],
+                ['3',  recExpByPopulation, null, null],
+                ['4',  recExpByPopulation, null, null],
+                ['5',  recExpByPopulation, null, null],
+                ['6',  recExpByPopulation, null, null],
+                ['7',  recExpByPopulation, null, null],
+                ['8',  recExpByPopulation, null, null],
+                ['9',  recExpByPopulation, null, null]
             ]);
 
             // Create and draw the visualization.
@@ -233,12 +233,12 @@
                         legend: { position: "none" },
                         width: 765, height: 260,
                         hAxis: { title: 'Year', titleTextStyle: { color: '#a6955f' }, textStyle: { color: '#a6955f' }, baselineColor: '#a6955f',
-                          gridlines: {color: '#fff'} },
-                        vAxis: { title: 'Expenditure', titleTextStyle: { color: '#a6955f' }, textStyle: { color: '#a6955f' }, baselineColor: '#a6955f', gridlines: {color: '#a6955f'}, maxValue: 50, format:'US$ #'},
+                            gridlines: {color: '#fff'} },
+                        vAxis: { title: 'Expenditure', titleTextStyle: { color: '#a6955f' }, textStyle: { color: '#a6955f' }, baselineColor: '#a6955f', gridlines: {color: '#a6955f'}, maxValue: 50,  format:'US$ #' },
                         backgroundColor: "transparent",
                         lineWidth: 5,
                         colors: ['#ACCD4B'],
-                        'chartArea': {'width': '60%', 'height': '60%'}
+                        'chartArea': { 'width': '60%', 'height': '60%'}
                     }
             );
         }
