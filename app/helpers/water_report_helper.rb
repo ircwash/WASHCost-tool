@@ -209,6 +209,8 @@ module WaterReportHelper
   #@return [Boolean], return true if the value is within the benchmark in the expediture associated, in othwerwise the
   # method return false
   def is_value_in_benchmark_of(expenditure, value, water_index)
+    water_index = water_index || 0
+    value = value || 0
     range = send "#{expenditure}_range_water_based".to_sym, water_index
     range[:below_value]<value && value<range[:above_value]
   end
