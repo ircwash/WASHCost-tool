@@ -86,7 +86,7 @@ en:
           i3: "Reticulated supply with pumping, storage and distribution supplied to a number of interconnected towns or villages. Each village with its own storage and distribution network."
           i4: "Water is supplied through a combination of separate, often overlapping, service delivery systems."
       population:
-        default_question: "How many people in the area of interest are receiving the water service?"
+        default_question: "How many people in this area are receiving this water service?"
         question: "How many people are served by a %{technology}?"
         value_label: "People"
         answers:
@@ -146,7 +146,7 @@ en:
           a4: "Pour Flush Latrine"
           a5: "Latrine with septic tank"
       population:
-        question: "How many people in the area of interest are receiving the sanitation service?"
+        question: "How many people in this area are receiving this sanitation service?"
         value_label: "People"
       providing:
         question: "Does the service provide latrines at the household level?"
