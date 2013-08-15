@@ -108,56 +108,31 @@ describe WaterReportHelper, :type => :helper do
     end
   end
 
-  describe "#compute_score" do
-    context "when water = 0, capital ex = 18, recurring ex = 4, \
-              accessibility = 0, quality = 3, quantity = 3, reliability = 0" do
-      it "should be 3"  do
-        water = 0
-        capital, recurring = 20, 4
-        accessibility, quality, quantity, reliability = 0, 3, 3, 0
-        expect(compute_score(water, capital, recurring, accessibility,
-               quality, quantity, reliability)).to eq(10)
-      end
-    end
-
-      context "when water = 0, capital = 79, recurring = 2 \
-               accessibility = 2, quality = 2, quantity = 3, reliability = 3" do
-      it "should be 1"  do
-          water = 0
-          capital, recurring = 79, 2
-          accessibility, quality, quantity, reliability = 2, 2, 3, 2
-          expect(compute_score(water, capital, recurring, accessibility,
-                 quantity, quality,reliability)).to eq(4.5)
-        end
-      end
-  end
-
   describe "#get_rating" do
-    context "when using: Borehole & handpump, capital ex = 18, recurring ex = 4, \
-              accessibility = 0, quality = 3, quantity = 3, reliability = 0" do
+    context "accessibility = 3, quantity = 0, quality = 1, reliability = 3" do
       it "should be 3"  do
-        water = 0
-        capital, recurring = 20, 4
-        accessibility, quality, quantity, reliability = 0, 3, 3, 0
-        expect(get_rating(water, capital, recurring, accessibility,
-               quality, quantity, reliability)).to eq(3)
+        accessibility, quantity, quality,  reliability = 3, 1, 1, 3
+        expect(get_rating(accessibility, quantity, quality, reliability)).to eq(0)
       end
     end
 
-    context "when using: water = 0, capital = 79, recurring = 2 \
-               accessibility = 2, quality = 2, quantity = 3, reliability = 3" do
+    context "accessibility = 0, quantity = 3, quality = 3, reliability = 0" do
+      it "should be 3"  do
+        accessibility, quantity, quality,  reliability = 0, 2, 0, 0
+        expect(get_rating(accessibility, quantity, quality, reliability)).to eq(2)
+      end
+    end
+
+    context "accessibility = 2, quantity = 3, quality = 2, reliability = 2" do
       it "should be 1"  do
-          water = 0
-          capital, recurring = 79, 2
-          accessibility, quality, quantity, reliability = 2, 2, 3, 2
-          expect(get_rating(water, capital, recurring, accessibility,
-                quantity, quality, reliability)).to eq(1)
+          accessibility, quantity, quality, reliability = 2, 3, 2, 2
+          expect(get_rating(accessibility, quantity, quality, reliability)).to eq(1)
       end
     end
 
     context "when an argument is nil" do
       it "should be nil" do
-        expect(get_rating(0, 1, 1, 0, nil, 3, 0)).to be_nil
+        expect(get_rating(0, nil, 3, 0)).to be_nil
       end
     end
   end
