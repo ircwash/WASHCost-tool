@@ -206,10 +206,11 @@
 
             var data = new google.visualization.DataTable();
 
-            data.addColumn('string', 'Year');
-            data.addColumn('number', 'Expenditure');
+            data.addColumn('string', 'Yeare');
+            data.addColumn('number', 'Expendituree');
             data.addColumn({type:'string', role:'annotation'}); // annotation role col.
             data.addColumn({type:'string', role:'annotationText'}); // annotationText col
+
             capExpByPopulation = _C*_P;
             recExpByPopulation = _R*_P;
             accounting.settings = {
@@ -245,10 +246,9 @@
                     draw(data, {curveType: "none",
                         axisTitlesPosition: "out",
                         legend: { position: "none" },
-                        width: 765, height: 260,
-                        hAxis: { title: 'Year', titleTextStyle: { color: '#a6955f' }, textStyle: { color: '#a6955f' }, baselineColor: '#a6955f',
-                        gridlines: {color: '#fff'} },
-                        vAxis: { title: 'Expenditure', titleTextStyle: { color: '#a6955f' }, textStyle: { color: '#a6955f' }, baselineColor: '#a6955f', gridlines: {color: '#a6955f'}, maxValue: 50,  format:'US$ ###,###.##' },
+                        width: 800, height: 260,
+                        hAxis: { title: 'Year', titleTextStyle: { color: '#a6955f' }, textStyle: { color: '#a6955f' }, basline: 1, baselineColor: '#a6955f', gridlines: {color: '#fff'}, maxTextLines: 1, maxAlternation: 1 },
+                        vAxis: { title: 'Expenditure', titleTextStyle: { color: '#a6955f' }, textStyle: { color: '#a6955f' },baselineColor: '#a6955f', gridlines: {color: '#a6955f'}, maxValue: 10,  format:'US$ ###,###.##' },
                         backgroundColor: "transparent",
                         lineWidth: 5,
                         colors: ['#ACCD4B'],
