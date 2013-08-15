@@ -239,6 +239,12 @@ module WaterReportHelper
     rating_for_expenditure ex, bench[:min], bench[:max]
   end
 
+  #@return [Float], return the specific expenditure score according to position regarding to associated benchmark
+  def score_expenditure_benchmark(water_index, expenditure_name, expenditure_value)
+    benchmark = send "#{expenditure_name}_range_water_based".to_sym, water_index
+    rating_for_expenditure expenditure_value, benchmark[:below], benchmark[:above]
+  end
+
   # @return [Float] return the rating of all items related with the level of service, the process selects the item with
   # least value, then this value is mapped to rating value according the business rules
   def rating_for_combined_service_levels(accesibility, quantity, quality, reliability)
@@ -260,22 +266,17 @@ module WaterReportHelper
     { 0 => 0, 1 => 0.25, 2 => 1, 3 => 1.5 }[level]
   end
 
-  def get_level_of_service(water, capital, quantity, time)
-    level_of_service= 'Please complete the form.'
-
-    if water && capital && quantity && time
-      capEx_score = get_capex_benchmark_rating(water, capital)
-
-      capEx_code = @@capEx_rating_code[capEx_score]
-      quantity_code = quantity + 1
-      access_code = time + 1
-
-      concatenation = capEx_code.to_s + quantity_code.to_s + access_code.to_s
-      level_of_service = t ('report.water_basic.a' + concatenation)
+  def get_level_of_service(water_index, capital_value, quantity_index, access_index)
+    if water_index && capital_value && quantity_index && access_index
+      capital_expenditure_score = score_expenditure_benchmark(water_index, 'capital', capital_value)
+      capital_expenditure_code = @@capEx_rating_code[capital_expenditure_score]
+      quantity_code = quantity_index + 1
+      access_code = access_index + 1
+      concatenation = capital_expenditure_code.to_s + quantity_code.to_s + access_code.to_s
+      t ('report.water_basic.a' + concatenation)
+    else
+      'Please complete the form.'
     end
-
-    return level_of_service
-
   end
 
   def get_service_rating_label(rating)
