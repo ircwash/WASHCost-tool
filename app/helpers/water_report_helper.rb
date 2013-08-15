@@ -38,7 +38,7 @@ module WaterReportHelper
     form = get_session_form
     form_ready = is_form_ready?(form)
 
-    cost_rating = get_cost_rating(form[:water], form[:capital])
+    cost_rating = get_cost_rating(form[:water], form[:capital], form[:recurrent])
     cost_rating_label = get_cost_rating_label(cost_rating)
 
     service_rating = get_rating(form[:water], form[:capital],
@@ -195,51 +195,31 @@ module WaterReportHelper
 
   #### Logic of Report calculates ####
 
-  def get_cost_rating(water_index, capEx)
-    rating = -1
-
-    if water_index && capEx
-
-      if water_index == 0
-
-        if capEx < 20
-          rating = 0
-        elsif capEx > 61
-          rating = 1
-        else
-          rating = 2
-        end
-
-      else
-
-        if capEx < 30
-          rating = 0
-        elsif capEx > 131
-          rating = 1
-        else
-          rating = 2
-        end
-
-      end
+  #@return [Integer], return 0 if the expenditure is outside of WashCost benchmark, or 1 in otherwise
+  def get_cost_rating(water_index, capital_expenditure, recurrent_expenditure)
+    water_index = water_index || 0
+    expenditures = [{name: "capital", value: capital_expenditure}, {name: "recurrent", value: recurrent_expenditure}]
+    benchmark_results = expenditures.map do |expenditure|
+      is_value_in_benchmark_of expenditure[:name], expenditure[:value], water_index
     end
-
-    return rating
+    puts '--> benchmark results: ', benchmark_results
+    benchmark_results.all? ? 1 : 0
   end
 
+  #@return [Boolean], return true if the value is within the benchmark in the expediture associated, in othwerwise the
+  # method return false
+  def is_value_in_benchmark_of(expenditure, value, water_index)
+    range = send "#{expenditure}_range_water_based".to_sym, water_index
+    range[:below_value]<value && value<range[:above_value]
+  end
+
+  #@return [String] return the label of benchmark reagrding the cost rating
   def get_cost_rating_label(rating)
-    label =  t 'form.value_not_set'
-
-    if rating ==0
-      label = (t 'report.benchmark_below')
-    elsif rating ==1
-      label= (t 'report.benchmark_within')
-    elsif rating ==2
-      label= (t 'report.benchmark_above')
+    if rating==1
+      t 'report.benchmark_within'
     else
-      label= 'Please Enter a <a href="./population">Population</a> and <a href="./capital">Capital Expenditure<a/>'
+      t 'report.benchmark_outside'
     end
-
-    return label
   end
 
   def get_rating(water, capital, recurring, accesibility, quantity, quality, reliability)

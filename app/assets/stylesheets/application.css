@@ -1045,17 +1045,17 @@ a.sbSelector:hover {
         margin-bottom: 15px;
     }
     .sumaryCost .benchText {
-        width: 100%;
+        width: 500px;
         font-weight: bold;
         text-indent: 20px;
         padding: 9px 0 6px 0;
     }
     .sumaryCost .benchIcon2 ,
     .sumaryCost .benchIcon0 {
-        background: transparent url('/assets/benchBack24.png') no-repeat center -51px;
+        background: transparent url('/assets/benchBackground.png') no-repeat center -60px;
     }
     .sumaryCost .benchIcon1{
-         background: transparent url('/assets/benchBack24.png') no-repeat center 0;
+         background: transparent url('/assets/benchBackground.png') no-repeat center 0;
      }
     .sumaryCost .benchText.benchIcon2,
     .sumaryCost .benchText.benchIcon0 {
@@ -1063,7 +1063,7 @@ a.sbSelector:hover {
     }
     .sumaryCost .benchText.benchIcon2,
     .sumaryCost .benchText.benchIcon0 {
-        background-position: center -39px;
+        background-position: center -60px;
     }
     .levelService dd {
         background: transparent url('/assets/starsLevel8.png') no-repeat 50% 0;

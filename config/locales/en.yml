@@ -413,8 +413,9 @@ en:
   report:
     complete: "Report Complete"
     benchmark_below: "Below Benchmarks"
-    benchmark_within: "Within the Benchmarks"
+    benchmark_within: "Expenditure is within of WASHCost benchmarks. Read the review below for more information."
     benchmark_above: "above the Benchmarks"
+    benchmark_outside: "Expenditure is outside of WASHCost benchmarks. Read the review below for more information."
     sustainability:
       water:
         one_star: "No service"
