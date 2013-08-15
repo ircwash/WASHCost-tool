@@ -5,7 +5,7 @@ module SanitationReportHelper
     form = get_session_form
     form_ready = is_form_ready?(form)
 
-    cost_rating = get_cost_rating(form[:latrine], form[:capital])
+    cost_rating = get_cost_rating(form[:latrine], form[:capital], form[:recurrent])
     cost_rating_label = get_cost_rating_label(cost_rating)
 
     service_rating = get_rating(form[:latrine], form[:capital], form[:recurrent],
@@ -215,54 +215,30 @@ module SanitationReportHelper
     end
   end
 
-
-  def get_cost_rating(latrine_index, capEx)
-
-    rating= -1
-
-    if latrine_index && capEx
-
-      if latrine_index == 0 || latrine_index == 1
-        if capEx < 7
-          rating = 0
-        elsif capEx > 26
-          rating = 1
-        else
-          rating = 2
-        end
-      elsif latrine_index == 2 || latrine_index == 3
-        if capEx < 36
-          rating = 0
-        elsif capEx > 358
-          rating = 1
-        else
-          rating = 2
-        end
-
-      elsif latrine_index ==4 || latrine_index==5
-        if capEx < 92
-          rating = 0
-        elsif capEx > 358
-          rating = 1
-        else
-          rating = 2
-        end
-
-      end
+  #@return [Integer], return 0 if the expenditure is outside of WashCost benchmark, or 1 in otherwise
+  def get_cost_rating(latrine_index, capital_expenditure, recurrent_expenditure)
+    latrine_index = latrine_index || 0
+    expenditures = [{name: "capital", value: capital_expenditure}, {name: "recurrent", value: recurrent_expenditure}]
+    benchmark_results = expenditures.map do |expenditure|
+      is_value_in_benchmark_of expenditure[:name], expenditure[:value], latrine_index
     end
-
-    return rating
+    puts '--> benchmark results: ', benchmark_results
+    benchmark_results.all? ? 1 : 0
   end
 
+  #@return [Boolean], return true if the value is within the benchmark in the expediture associated, in othwerwise the
+  # method return false
+  def is_value_in_benchmark_of(expenditure, value, latrine_index)
+    range = send "#{expenditure}_range_latrine_based".to_sym, latrine_index
+    range[:below_value]<value && value<range[:above_value]
+  end
+
+  #@return [String] return the label of benchmark reagrding the cost rating
   def get_cost_rating_label(rating)
-    if rating == 0
-      t 'report.benchmark_below'
-    elsif rating == 1
+    if rating==1
       t 'report.benchmark_within'
-    elsif rating == 2
-      t 'report.benchmark_above'
     else
-      t 'form.value_not_set'
+      t 'report.benchmark_outside'
     end
   end
 
