@@ -118,7 +118,7 @@
         <div class="first">
           <dl>
             <dt class="quantity_cost_label">Capital Expenditure</dt>
-            <dd class="country_0">U$<%= flash[:results][:capital]%></dd>
+            <dd class="country_0">US$<%= flash[:results][:capital]%></dd>
             <dt class="unity_quantity_cost_label">per person</dt>
           </dl>
           <a href="./capital" class="editAnchor"><img src="/assets/iconEdit24.png" alt="icon edit" /></a>
@@ -126,7 +126,7 @@
         <div>
           <dl>
             <dt class="quantity_cost_label">Recurrent Expenditure</dt>
-            <dd class="household_0">U$<%= flash[:results][:recurrent]%></dd>
+            <dd class="household_0">US$<%= flash[:results][:recurrent]%></dd>
             <dt class="unity_quantity_cost_label">per person</dt>
           </dl>
           <a href="./recurrent" class="editAnchor"><img src="/assets/iconEdit24.png" alt="icon edit" /></a>
@@ -217,11 +217,11 @@
             recExpByPopulation = _R*_P;
             accounting.settings = {
                 currency: {
-                    symbol : "U$",   // default currency symbol is '$'
+                    symbol : "US$",   // default currency symbol is '$'
                     format: "%s %v", // controls output: %s = symbol, %v = value/number (can be object: see below)
                     decimal : ".",  // decimal point separator
                     thousand: ",",  // thousands separator
-                    precision : 2   // decimal places
+                    precision : 0   // decimal places
                 },
                 number: {
                     precision : 0,  // default precision on numbers is 0
@@ -230,7 +230,7 @@
                 }
             }
 
-            graphDataRows=[['Setup', capExpByPopulation, accounting.formatMoney(capExpByPopulation), 'You Spent '+accounting.formatMoney(capExpByPopulation)+' to setup the service', 'setup\nExpenditure: '+accounting.formatMoney(capExpByPopulation)],
+            graphDataRows=[['Setup', capExpByPopulation, accounting.formatMoney(capExpByPopulation), 'You spent '+accounting.formatMoney(capExpByPopulation)+' to setup the service', 'setup\nExpenditure: '+accounting.formatMoney(capExpByPopulation)],
                 ['1',  recExpByPopulation, accounting.formatMoney(recExpByPopulation), accounting.formatMoney(recExpByPopulation)+' is your annual expenditure', '1\nExpenditure: '+accounting.formatMoney(recExpByPopulation)],
             ];
             for(i=2;i<=10;i++){

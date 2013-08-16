@@ -216,11 +216,11 @@
             recExpByPopulation = _R*_P;
             accounting.settings = {
                 currency: {
-                    symbol : "U$",   // default currency symbol is '$'
+                    symbol : "US$",   // default currency symbol is '$'
                     format: "%s %v", // controls output: %s = symbol, %v = value/number (can be object: see below)
                     decimal : ".",  // decimal point separator
                     thousand: ",",  // thousands separator
-                    precision : 2   // decimal places
+                    precision : 0  // decimal places
                 },
                 number: {
                     precision : 0,  // default precision on numbers is 0
@@ -229,7 +229,7 @@
                 }
             }
 
-            graphDataRows=[['Setup', capExpByPopulation, accounting.formatMoney(capExpByPopulation), 'You Spent '+accounting.formatMoney(capExpByPopulation)+' to setup the service', 'setup\nExpenditure: '+accounting.formatMoney(capExpByPopulation)],
+            graphDataRows=[['Setup', capExpByPopulation, accounting.formatMoney(capExpByPopulation), 'You spent '+accounting.formatMoney(capExpByPopulation)+' to setup the service', 'setup\nExpenditure: '+accounting.formatMoney(capExpByPopulation)],
                 ['1',  recExpByPopulation, accounting.formatMoney(recExpByPopulation), accounting.formatMoney(recExpByPopulation)+' is your annual expenditure', '1\nExpenditure: '+accounting.formatMoney(recExpByPopulation)],
             ];
             for(i=2;i<=10;i++){
