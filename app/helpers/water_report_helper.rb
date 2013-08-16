@@ -242,7 +242,7 @@ module WaterReportHelper
   #@return [Float], return the specific expenditure score according to position regarding to associated benchmark
   def score_expenditure_benchmark(water_index, expenditure_name, expenditure_value)
     benchmark = send "#{expenditure_name}_range_water_based".to_sym, water_index
-    rating_for_expenditure expenditure_value, benchmark[:below], benchmark[:above]
+    rating_for_expenditure expenditure_value, benchmark[:below_value], benchmark[:above_value]
   end
 
   # @return [Float] return the rating of all items related with the level of service, the process selects the item with
@@ -271,7 +271,7 @@ module WaterReportHelper
       capital_expenditure_score = score_expenditure_benchmark(water_index, 'capital', capital_value)
       capital_expenditure_code = @@capEx_rating_code[capital_expenditure_score]
       quantity_code = quantity_index + 1
-      access_code = access_index + 1
+      access_code = normalise_best_level_to_be_3(access_index) + 1
       concatenation = capital_expenditure_code.to_s + quantity_code.to_s + access_code.to_s
       t ('report.water_basic.a' + concatenation)
     else
