@@ -8,8 +8,7 @@ module SanitationReportHelper
     cost_rating = get_cost_rating(form[:latrine], form[:capital], form[:recurrent])
     cost_rating_label = get_cost_rating_label(cost_rating)
 
-    service_rating = get_rating(form[:latrine], form[:capital], form[:recurrent],
-      form[:providing], form[:impermeability], form[:environment], form[:usage], form[:reliability])
+    service_rating = get_rating(form[:providing], form[:impermeability], form[:environment], form[:usage], form[:reliability])
     service_level = get_level_of_service(form[:latrine],form[:capital], form[:usage], form[:providing])
     service_label = get_service_rating_label(service_rating)
 
@@ -262,8 +261,11 @@ module SanitationReportHelper
 
   def rating_for_combined_service_levels(providing, impermeability, environment, usage, reliability)
     access_rating = get_access_service_level(providing, impermeability)
-    min_rating = [access_rating, environment, usage, reliability].min
-    Rails.logger.debug "Service ratings are: access_rating: #{access_rating} [providing: #{providing} +  impermeability: #{impermeability}], environment: #{environment}, usage: #{usage}, reliability: #{reliability} and minimum is #{min_rating}"
+    environment_rating = rating_for_service_level environment
+    usage_rating = rating_for_service_level usage
+    reliability_rating = rating_for_service_level reliability
+    min_rating = [access_rating, environment_rating, usage_rating, reliability_rating].min
+    Rails.logger.debug "Service ratings are: access_rating: #{access_rating} [providing: #{providing} +  impermeability: #{impermeability}], environment: #{environment_rating}, usage: #{usage_rating}, reliability: #{reliability_rating} and minimum is #{min_rating}"
     min_rating
   end
 
@@ -272,11 +274,10 @@ module SanitationReportHelper
   end
 
   def rating_for_service_level(level)
-    { 0 => 3, 1 => 2, 2 => 0 }[level]
+    { 0 => 2, 1 => 1, 2 => 0 }[level]
   end
 
   def get_service_rating_label(rating)
-
     label=  t 'form.value_not_set'
 
     if rating == 0
@@ -293,7 +294,6 @@ module SanitationReportHelper
   end
 
   def get_level_of_service(latrine, capital, usage, providing)
-
     level_of_service= 'Pease complete the form.'
 
     if latrine && capital && usage && providing

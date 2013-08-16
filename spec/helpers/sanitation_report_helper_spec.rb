@@ -105,10 +105,10 @@ describe SanitationReportHelper, :type => :helper do
 
   describe "#get_rating" do
     context "providing = 0, impermeability = 0, environment = 0, usage = 0, reliability = 0" do
-      it "should be 3"  do
+      it "should be 0"  do
         providing, impermeability = 1, 0 #Score is: 2
-        environment, usage, reliability =  3, 3, 3 #Scores are: 3, 3, 3
-        expect(get_rating(providing, impermeability, environment, usage, reliability)).to eq(2)
+        environment, usage, reliability =  2, 2, 2 #Scores are: 0, 0, 0
+        expect(get_rating(providing, impermeability, environment, usage, reliability)).to eq(0)
       end
     end
 
@@ -123,8 +123,8 @@ describe SanitationReportHelper, :type => :helper do
     context "providing = 1, impermeability = 0, environment = 1, usage = 1, reliability = 2" do
       it "should be 0"  do
         providing, impermeability = 1, 0 #Score is: 2
-        environment, usage, reliability =  1, 1, 2 #Scores are: 1, 1, 2
-        expect(get_rating(providing, impermeability, environment, usage, reliability)).to eq(1)
+        environment, usage, reliability =  1, 1, 2 #Scores are: 2, 2, 0
+        expect(get_rating(providing, impermeability, environment, usage, reliability)).to eq(0)
       end
     end
 
@@ -148,20 +148,20 @@ describe SanitationReportHelper, :type => :helper do
 
   describe "#rating_for_service_level" do
     context "when improved service (0)" do
-      it "should be 3" do
-        expect(rating_for_service_level(0)).to eq(3)
+      it "should be 2" do
+        expect(rating_for_service_level(0)).to eq(2)
       end
     end
 
     context "when basic service (1)" do
       it "should be 2" do
-        expect(rating_for_service_level(1)).to eq(2)
+        expect(rating_for_service_level(1)).to eq(1)
       end
     end
 
     context "when limited/no service (2)" do
       it "should be 0" do
-        expect(rating_for_service_level(1)).to eq(2)
+        expect(rating_for_service_level(2)).to eq(0)
       end
     end
   end
