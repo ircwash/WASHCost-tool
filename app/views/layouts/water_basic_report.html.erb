@@ -52,7 +52,7 @@
               <a class="readMore" href="#">Read full review</a>
               <div id="service_level_full">
 
-                <p><%=flash[:results][:service_level] %></p>
+                <p><%= simple_format flash[:results][:service_level]%></p>
               </div>
             </div>
         <% else %>

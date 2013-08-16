@@ -43,7 +43,7 @@ module WaterReportHelper
 
     service_rating = get_rating(form[:time], form[:quantity], form[:quality], form[:reliability])
 
-    service_level = get_level_of_service(form[:water],form[:capital], form[:quantity], form[:time])
+    service_level = get_level_of_service(form[:water],form[:capital], form[:recurrent], form[:time], form[:quantity], form[:quality], form[:reliability])
     service_label = get_service_rating_label(service_rating)
 
     results = {
@@ -251,7 +251,6 @@ module WaterReportHelper
     accesibility = normalise_best_level_to_be_3(accesibility)
     reliability = normalise_best_level_to_be_3(reliability)
     quality = normalise_best_level_to_be_3(quality)
-
     minimum_service_value = [accesibility, quantity, quality, reliability].min
     Rails.logger.debug "Service levels are :accessibility => #{accesibility}, :quantity => #{quantity}, :quality => #{quality}, :reliability => #{reliability} with minimum = #{minimum_service_value}"
     minimum_service_value
@@ -266,14 +265,25 @@ module WaterReportHelper
     { 0 => 0, 1 => 0.25, 2 => 1, 3 => 1.5 }[level]
   end
 
-  def get_level_of_service(water_index, capital_value, quantity_index, access_index)
+  #@return [String], return the full review associated to expenditures, quantity, quality, access and reliability
+  # indicators
+  def get_level_of_service(water_index, capital_value, recurrent_value, access_index, quantity_index, quality_index, reliability_index )
     if water_index && capital_value && quantity_index && access_index
       capital_expenditure_score = score_expenditure_benchmark(water_index, 'capital', capital_value)
       capital_expenditure_code = @@capEx_rating_code[capital_expenditure_score]
       quantity_code = quantity_index + 1
       access_code = normalise_best_level_to_be_3(access_index) + 1
-      concatenation = capital_expenditure_code.to_s + quantity_code.to_s + access_code.to_s
-      t ('report.water_basic.a' + concatenation)
+      # the concatenation first group service join up the access, quantity and capExp indicators
+      concat_first_service_group = capital_expenditure_code.to_s + quantity_code.to_s + access_code.to_s
+
+      recurrent_expenditure_score = recurrent_value == 0 ? 0 : score_expenditure_benchmark(water_index, 'recurrent', recurrent_value)
+      recurrent_expenditure_code = @@recEx_rating_code[recurrent_expenditure_score]
+      quality_code = normalise_best_level_to_be_3(quality_index) + 1
+      reliability_code = normalise_best_level_to_be_3(reliability_index) + 1
+      # the concatenation second group service join up the recExp, quality and reliability indicators
+      concat_second_service_group = recurrent_expenditure_code.to_s + quality_code.to_s + reliability_code.to_s
+      puts '--> LULU', concat_first_service_group, concat_second_service_group
+      "#{t ('report.water_basic.a' + concat_first_service_group)} \n #{t ('report.water_basic.b' + concat_second_service_group)}"
     else
       'Please complete the form.'
     end
@@ -298,6 +308,13 @@ module WaterReportHelper
     0.5 => "1",
     2 =>   "2",
     1 =>   "3"
+  }
+
+  @@recEx_rating_code = {
+      0 => "0",
+      0.5 => "1",
+      2 =>   "2",
+      1 =>   "3"
   }
 
   @@population_ranges = {

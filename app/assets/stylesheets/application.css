@@ -905,7 +905,7 @@ a.sbSelector:hover {
         border-bottom: 1px solid #796d49;
     }
     .review p {
-        text-align: left;
+        text-align: justify;
         color: #a6955f;
         padding-top: 10px;
         line-height: 1.5;
