@@ -9,7 +9,7 @@ module SanitationReportHelper
     cost_rating_label = get_cost_rating_label(cost_rating)
 
     service_rating = get_rating(form[:providing], form[:impermeability], form[:environment], form[:usage], form[:reliability])
-    service_level = get_level_of_service(form[:latrine],form[:capital], form[:usage], form[:providing])
+    service_level = get_level_of_service(form[:latrine],form[:recurrent], form[:usage], form[:reliability])
     service_label = get_service_rating_label(service_rating)
 
     results = {
@@ -145,6 +145,12 @@ module SanitationReportHelper
   end
 
 
+  @@recEx_rating_code = {
+      0.5 => "1",
+      2 =>   "2",
+      1 =>   "3"
+  }
+
   @@population_ranges = {
       min: 100,
       max: 1000000,
@@ -243,10 +249,17 @@ module SanitationReportHelper
     end
   end
 
+
   def get_rating(providing, impermeability, environment, usage, reliability)
     Rails.logger.debug "Service ratings are: providing: #{providing} impermeability: #{impermeability} environment: #{environment} usage: #{usage} reliability: #{reliability}"
     return nil unless [providing, impermeability, environment, usage, reliability].all?
     rating_for_combined_service_levels(providing, impermeability, environment, usage, reliability)
+
+  #Used to normalise reliability so that the best service is represented with index = 3
+  def normalise_best_level_to_be_2(level)
+    { 0 => 2, 1 => 1, 2 => 0}[level]
+  end
+
   end
 
   def get_capex_benchmark_rating(latrineIndex, ex)
@@ -257,6 +270,12 @@ module SanitationReportHelper
   def get_recex_benchmark_rating(latrineIndex, ex)
     bench= @@latrine_values[latrineIndex][:recExBench]
     rating_for_expenditure ex, bench[:min], bench[:max]
+  end
+
+  #@return [Float], return the specific expenditure score according to position regarding to associated benchmark
+  def score_expenditure_benchmark(latrine_index, expenditure_name, expenditure_value)
+    benchmark = send "#{expenditure_name}_range_latrine_based".to_sym, latrine_index
+    rating_for_expenditure expenditure_value, benchmark[:below_value], benchmark[:above_value]
   end
 
   def rating_for_combined_service_levels(providing, impermeability, environment, usage, reliability)
@@ -293,21 +312,18 @@ module SanitationReportHelper
     return label
   end
 
-  def get_level_of_service(latrine, capital, usage, providing)
-    level_of_service= 'Pease complete the form.'
-
-    if latrine && capital && usage && providing
-      capEx_score= get_capex_benchmark_rating(latrine, capital)
-
-      capEx_code= @@capEx_rating_code[capEx_score]
-      quantity_code= usage+1
-      access_code= providing+1
-
-      concatenation= capEx_code.to_s + quantity_code.to_s+ access_code.to_s
-      level_of_service= t ('report.water_basic.a'+concatenation)
+  def get_level_of_service(latrine_index, recurrent_value, usage_index, reliability_index)
+    if latrine_index && recurrent_value && usage_index && reliability_index
+      recurrent_expenditure_score = score_expenditure_benchmark(latrine_index, 'recurrent', recurrent_value)
+      recurrent_expenditure_code = @@recEx_rating_code[recurrent_expenditure_score]
+      usage_code = normalise_best_level_to_be_2(usage_index) + 1
+      reliability_code = normalise_best_level_to_be_2(reliability_index) + 1
+      # the concatenation first group service join up the recExp, usage and reliability indicators
+      concat_first_service_group = recurrent_expenditure_code.to_s + usage_code.to_s + reliability_code.to_s
+      t ('report.sanitation_basic.a'+concat_first_service_group)
+    else
+      'Pease complete the form.'
     end
-
-    return level_of_service
   end
 
   def is_form_ready?(form)
