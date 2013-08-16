@@ -106,31 +106,31 @@ describe SanitationReportHelper, :type => :helper do
   describe "#get_rating" do
     context "providing = 0, impermeability = 0, environment = 0, usage = 0, reliability = 0" do
       it "should be 3"  do
-        providing, impermeability = 0, 0 #Scores are: 3, 3
-        environment, usage, reliability =  0, 0, 0 #Scores are: 3, 3, 3
-        expect(get_rating(providing, impermeability, environment, usage, reliability)).to eq(3)
+        providing, impermeability = 1, 0 #Score is: 2
+        environment, usage, reliability =  3, 3, 3 #Scores are: 3, 3, 3
+        expect(get_rating(providing, impermeability, environment, usage, reliability)).to eq(2)
       end
     end
 
     context "providing = 1, impermeability = 1, environment = 1, usage = 1, reliability = 1" do
       it "should be 1"  do
-        providing, impermeability = 1, 1 #Scores are: 1
-        environment, usage, reliability =  1, 1, 1 #Scores are: 2, 2, 2
+        providing, impermeability = 1, 1 #Score is: 1
+        environment, usage, reliability =  1, 1, 1 #Scores are: 1, 1, 1
         expect(get_rating(providing, impermeability, environment, usage, reliability)).to eq(1)
       end
     end
 
     context "providing = 1, impermeability = 0, environment = 1, usage = 1, reliability = 2" do
       it "should be 0"  do
-        providing, impermeability = 1, 0 #Scores are: 2
-        environment, usage, reliability =  1, 1, 2 #Scores are: 2, 2, 0
-        expect(get_rating(providing, impermeability, environment, usage, reliability)).to eq(0)
+        providing, impermeability = 1, 0 #Score is: 2
+        environment, usage, reliability =  1, 1, 2 #Scores are: 1, 1, 2
+        expect(get_rating(providing, impermeability, environment, usage, reliability)).to eq(1)
       end
     end
 
     context "when an argument is nil" do
       it "should be nil" do
-        expect(get_rating(0, 0, 0, 0, nil, 0, 0, 0)).to be_nil
+        expect(get_rating(0, nil, 0, 0, 0)).to be_nil
       end
     end
   end

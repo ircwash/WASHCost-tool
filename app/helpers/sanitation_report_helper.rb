@@ -244,14 +244,10 @@ module SanitationReportHelper
     end
   end
 
-  def get_rating(latrine, capital, recurring, providing, impermeability, environment, usage, reliability)
-    return nil unless [latrine, capital, recurring, providing, impermeability, environment, usage, reliability].all?
-
-    capex_core = get_capex_benchmark_rating(latrine, capital)
-    recex_score = get_recex_benchmark_rating(latrine, recurring)
-    service_score = rating_for_combined_service_levels(providing, impermeability, environment, usage, reliability)
-
-    rating = compute_rating_from_score (capex_core + recex_score + service_score)
+  def get_rating(providing, impermeability, environment, usage, reliability)
+    Rails.logger.debug "Service ratings are: providing: #{providing} impermeability: #{impermeability} environment: #{environment} usage: #{usage} reliability: #{reliability}"
+    return nil unless [providing, impermeability, environment, usage, reliability].all?
+    rating_for_combined_service_levels(providing, impermeability, environment, usage, reliability)
   end
 
   def get_capex_benchmark_rating(latrineIndex, ex)
@@ -265,11 +261,10 @@ module SanitationReportHelper
   end
 
   def rating_for_combined_service_levels(providing, impermeability, environment, usage, reliability)
-    access_score = get_access_service_level(providing, impermeability)
-    score_sum = [environment, usage, reliability].inject(0) do |sum, element|
-      sum += rating_for_service_level(element)
-    end
-    access_score + score_sum
+    access_rating = get_access_service_level(providing, impermeability)
+    min_rating = [access_rating, environment, usage, reliability].min
+    Rails.logger.debug "Service ratings are: access_rating: #{access_rating} [providing: #{providing} +  impermeability: #{impermeability}], environment: #{environment}, usage: #{usage}, reliability: #{reliability} and minimum is #{min_rating}"
+    min_rating
   end
 
   def get_access_service_level(providing, impermeability)

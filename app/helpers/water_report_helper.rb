@@ -224,7 +224,7 @@ module WaterReportHelper
   end
 
   def get_rating(accesibility, quantity, quality, reliability)
-    Rails.logger.debug "Service levels are :accessibility => #{accesibility}, :quantity => #{quantity}, :quality => #{quality}, :reliability => #{reliability}"
+    Rails.logger.debug "Service ratings are :accessibility => #{accesibility}, :quantity => #{quantity}, :quality => #{quality}, :reliability => #{reliability}"
     return nil unless [accesibility, quantity, quality, reliability].all?
     rating_for_combined_service_levels(accesibility, quantity, quality, reliability)
   end
@@ -252,7 +252,7 @@ module WaterReportHelper
     reliability = normalise_best_level_to_be_3(reliability)
     quality = normalise_best_level_to_be_3(quality)
     minimum_service_value = [accesibility, quantity, quality, reliability].min
-    Rails.logger.debug "Service levels are :accessibility => #{accesibility}, :quantity => #{quantity}, :quality => #{quality}, :reliability => #{reliability} with minimum = #{minimum_service_value}"
+    Rails.logger.debug "Service ratings are :accessibility => #{accesibility}, :quantity => #{quantity}, :quality => #{quality}, :reliability => #{reliability} with minimum = #{minimum_service_value}"
     minimum_service_value
   end
 
