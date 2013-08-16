@@ -102,7 +102,7 @@
 
       <% flash[:results][:form_ready]  %>
       <% if flash[:results][:form_ready] == true %>
-          <h3>Cost on 10 years (for a population of 2000 people)</h3>
+          <h3>Cost on 10 years (for a population of <%= flash[:results][:population]%> people)</h3>
 
           <div id="graph">
             <div id="graphContent"></div>
