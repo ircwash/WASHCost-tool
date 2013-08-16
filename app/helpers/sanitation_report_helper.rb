@@ -274,7 +274,7 @@ module SanitationReportHelper
   end
 
   def rating_for_service_level(level)
-    { 0 => 2, 1 => 1, 2 => 0 }[level]
+    { 0 => 3, 1 => 2, 2 => 1 }[level]
   end
 
   def get_service_rating_label(rating)
