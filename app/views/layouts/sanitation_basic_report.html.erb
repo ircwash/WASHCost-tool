@@ -211,6 +211,8 @@
             data.addColumn('number', 'Expenditure');
             data.addColumn({type:'string', role:'annotation'}); // annotation role col.
             data.addColumn({type:'string', role:'annotationText'}); // annotationText col
+            data.addColumn({type:'string', role:'tooltip'}); // tooltip role col
+
             capExpByPopulation = _C*_P;
             recExpByPopulation = _R*_P;
             accounting.settings = {
@@ -227,19 +229,14 @@
                     decimal : "."
                 }
             }
-            data.addRows([
-                ['Setup', capExpByPopulation, accounting.formatMoney(capExpByPopulation), 'You Spent '+accounting.formatMoney(capExpByPopulation)+' to setup the service'],
-                ['1',  recExpByPopulation, accounting.formatMoney(recExpByPopulation), accounting.formatMoney(recExpByPopulation)+' is your annual expenditure'],
-                ['2',  recExpByPopulation, null, null],
-                ['3',  recExpByPopulation, null, null],
-                ['4',  recExpByPopulation, null, null],
-                ['5',  recExpByPopulation, null, null],
-                ['6',  recExpByPopulation, null, null],
-                ['7',  recExpByPopulation, null, null],
-                ['8',  recExpByPopulation, null, null],
-                ['9',  recExpByPopulation, null, null],
-                ['10',  recExpByPopulation, null, null],
-            ]);
+
+            graphDataRows=[['Setup', capExpByPopulation, accounting.formatMoney(capExpByPopulation), 'You Spent '+accounting.formatMoney(capExpByPopulation)+' to setup the service', 'setup\nExpenditure: '+accounting.formatMoney(capExpByPopulation)],
+                ['1',  recExpByPopulation, accounting.formatMoney(recExpByPopulation), accounting.formatMoney(recExpByPopulation)+' is your annual expenditure', '1\nExpenditure: '+accounting.formatMoney(recExpByPopulation)],
+            ];
+            for(i=2;i<=10;i++){
+                graphDataRows.push([i+'',recExpByPopulation, null, null, i+'\nExpenditure: '+accounting.formatMoney(recExpByPopulation)])
+            }
+            data.addRows(graphDataRows);
 
             // Create and draw the visualization.
             new google.visualization.LineChart(document.getElementById('graphContent')).
