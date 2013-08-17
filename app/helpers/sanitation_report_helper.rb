@@ -9,7 +9,7 @@ module SanitationReportHelper
     cost_rating_label = get_cost_rating_label(cost_rating)
 
     service_rating = get_rating(form[:providing], form[:impermeability], form[:environment], form[:usage], form[:reliability])
-    service_level = get_level_of_service(form[:latrine],form[:recurrent], form[:usage], form[:reliability])
+    service_level = get_level_of_service(form[:latrine],form[:recurrent], form[:usage], form[:reliability], form[:capital], form[:providing], form[:impermeability], form[:environment])
     service_label = get_service_rating_label(service_rating)
 
     results = {
@@ -316,9 +316,9 @@ module SanitationReportHelper
     return label
   end
 
-  #@return [String], return the full review associated to recurrent expenditure, quality and reliability
-  # indicators
-  def get_level_of_service(latrine_index, recurrent_value, usage_index, reliability_index)
+  #@return [String], return the full review associated to recurrent expenditure, quality and reliability, capExp,
+  # providing, impermeability and environment indicators
+  def get_level_of_service(latrine_index, recurrent_value, usage_index, reliability_index, capital_value, providing_index, impermeability_index, environment_index)
     if latrine_index && recurrent_value && usage_index && reliability_index
       recurrent_expenditure_score = score_expenditure_benchmark(latrine_index, 'recurrent', recurrent_value)
       recurrent_expenditure_code = @@recEx_rating_code[recurrent_expenditure_score]
@@ -326,10 +326,33 @@ module SanitationReportHelper
       reliability_code =  map_to_index_washcost(reliability_index)
       # the concatenation first group service join up the recExp, usage and reliability indicators
       concat_first_service_group = recurrent_expenditure_code.to_s + usage_code.to_s + reliability_code.to_s
+
+      capital_expenditure_score = score_expenditure_benchmark(latrine_index, 'capital', capital_value)
+      capital_expenditure_code = @@capEx_rating_code[capital_expenditure_score]
+      #usage_code =  map_to_index_washcost(usage_index)
+      accessibility_code = access_service_level(providing_index, impermeability_index)
+      evironment_code =  map_to_index_washcost(environment_index)
+      # the concatenation second group service join up the capExp, household latrine, impermeability and environment indicators
+      concat_second_service_group = capital_expenditure_code.to_s + accessibility_code.to_s + evironment_code.to_s
+      puts '----------------------', concat_second_service_group
       Rails.logger.debug 'Level of Service: #{concat_first_service_group}'
-      t ('report.sanitation_basic.a'+concat_first_service_group)
+      "#{t ('report.sanitation_basic.a' + concat_first_service_group)} \n #{t ('report.sanitation_basic.b' + concat_second_service_group)}"
     else
       'Please complete the form.'
+    end
+  end
+
+  def access_service_level(providing_index,  impermeability_index)
+    providing_index = providing_index || 1
+    impermeability_index = impermeability_index || 1
+    rule = providing_index + impermeability_index
+    case rule
+      when 0
+        4
+      when 2
+        1
+      else
+        impermeability_index==0 ? 3 : 1
     end
   end
 
