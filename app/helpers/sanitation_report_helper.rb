@@ -95,7 +95,7 @@ module SanitationReportHelper
 
   # @return [String], return the label of collections in the specific index
   def get_indexed(collection, index)
-    puts 'index', collection, index
+    Rails.logger.debug "Index: #{collection} #{index}"
     if index && collection[index].present?
       collection[index][:value]
     else
@@ -227,7 +227,7 @@ module SanitationReportHelper
     benchmark_results = expenditures.map do |expenditure|
       is_value_in_benchmark_of expenditure[:name], expenditure[:value], latrine_index
     end
-    puts '--> benchmark results: ', benchmark_results
+    Rails.logger.debug 'Benchmark results: #{benchmark_results}'
     benchmark_results.all? ? 1 : 0
   end
 
@@ -326,10 +326,10 @@ module SanitationReportHelper
       reliability_code =  map_to_index_washcost(reliability_index)
       # the concatenation first group service join up the recExp, usage and reliability indicators
       concat_first_service_group = recurrent_expenditure_code.to_s + usage_code.to_s + reliability_code.to_s
-      puts '--> ', concat_first_service_group
+      Rails.logger.debug 'Level of Service: #{concat_first_service_group}'
       t ('report.sanitation_basic.a'+concat_first_service_group)
     else
-      'Pease complete the form.'
+      'Please complete the form.'
     end
   end
 

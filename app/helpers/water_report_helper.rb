@@ -201,7 +201,7 @@ module WaterReportHelper
     benchmark_results = expenditures.map do |expenditure|
       is_value_in_benchmark_of expenditure[:name], expenditure[:value], water_index
     end
-    puts '--> benchmark results: ', benchmark_results
+    Rails.logger.debug 'Benchmark results: #{benchmark_results}'
     benchmark_results.all? ? 1 : 0
   end
 
