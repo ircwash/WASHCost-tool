@@ -329,7 +329,6 @@ module SanitationReportHelper
 
       capital_expenditure_score = score_expenditure_benchmark(latrine_index, 'capital', capital_value)
       capital_expenditure_code = @@capEx_rating_code[capital_expenditure_score]
-      #usage_code =  map_to_index_washcost(usage_index)
       accessibility_code = access_service_level(providing_index, impermeability_index)
       evironment_code =  map_to_index_washcost(environment_index)
       # the concatenation second group service join up the capExp, household latrine, impermeability and environment indicators
@@ -342,6 +341,8 @@ module SanitationReportHelper
     end
   end
 
+  # @return [Integer], return the value associated with access service level, this process take into account the
+  # provinding and impermeability indicators.
   def access_service_level(providing_index,  impermeability_index)
     providing_index = providing_index || 1
     impermeability_index = impermeability_index || 1
