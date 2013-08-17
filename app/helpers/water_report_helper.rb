@@ -282,7 +282,6 @@ module WaterReportHelper
       reliability_code = normalise_best_level_to_be_3(reliability_index) + 1
       # the concatenation second group service join up the recExp, quality and reliability indicators
       concat_second_service_group = recurrent_expenditure_code.to_s + quality_code.to_s + reliability_code.to_s
-      puts '--> LULU', concat_first_service_group, concat_second_service_group
       "#{t ('report.water_basic.a' + concat_first_service_group)} \n #{t ('report.water_basic.b' + concat_second_service_group)}"
     else
       'Please complete the form.'

@@ -254,12 +254,16 @@ module SanitationReportHelper
     Rails.logger.debug "Service ratings are: providing: #{providing} impermeability: #{impermeability} environment: #{environment} usage: #{usage} reliability: #{reliability}"
     return nil unless [providing, impermeability, environment, usage, reliability].all?
     rating_for_combined_service_levels(providing, impermeability, environment, usage, reliability)
+  end
 
   #Used to normalise reliability so that the best service is represented with index = 3
   def normalise_best_level_to_be_2(level)
     { 0 => 2, 1 => 1, 2 => 0}[level]
   end
 
+  #@return [Integer], used to map the index collect from usage and quality indicators according to business rules
+  def map_to_index_washcost(index)
+    { 0 => 4, 1 => 3, 2 => 1}[index]
   end
 
   def get_capex_benchmark_rating(latrineIndex, ex)
@@ -312,14 +316,17 @@ module SanitationReportHelper
     return label
   end
 
+  #@return [String], return the full review associated to recurrent expenditure, quality and reliability
+  # indicators
   def get_level_of_service(latrine_index, recurrent_value, usage_index, reliability_index)
     if latrine_index && recurrent_value && usage_index && reliability_index
       recurrent_expenditure_score = score_expenditure_benchmark(latrine_index, 'recurrent', recurrent_value)
       recurrent_expenditure_code = @@recEx_rating_code[recurrent_expenditure_score]
-      usage_code = normalise_best_level_to_be_2(usage_index) + 1
-      reliability_code = normalise_best_level_to_be_2(reliability_index) + 1
+      usage_code =  map_to_index_washcost(usage_index)
+      reliability_code =  map_to_index_washcost(reliability_index)
       # the concatenation first group service join up the recExp, usage and reliability indicators
       concat_first_service_group = recurrent_expenditure_code.to_s + usage_code.to_s + reliability_code.to_s
+      puts '--> ', concat_first_service_group
       t ('report.sanitation_basic.a'+concat_first_service_group)
     else
       'Pease complete the form.'
