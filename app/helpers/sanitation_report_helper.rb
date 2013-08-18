@@ -214,7 +214,7 @@ module SanitationReportHelper
   def get_total(capital, recurrent, population)
     if capital && recurrent && population
       total_cost = get_capital(capital) + (get_recurrent(recurrent) * 10)
-      total_cost * get_population(population)
+      (total_cost * get_population(population)).to_i
     else
       nil
     end
