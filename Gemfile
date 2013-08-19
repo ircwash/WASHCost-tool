@@ -4,6 +4,7 @@ gem 'rails', '3.2.13'
 gem 'devise'
 gem 'mongoid'
 gem 'bson_ext'
+gem 'haml'
 
 
 group :development, :test do
@@ -17,6 +18,7 @@ group :development, :test do
   gem 'pry-doc'
   gem 'pry-nav'
   gem 'debugger'
+  gem 'haml-rails'
 end
 
 group :test do
