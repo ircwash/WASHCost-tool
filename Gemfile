@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'devise'
 gem 'mongoid'
+gem 'therubyracer'
+gem 'devise'
 gem 'bson_ext'
 gem 'haml'
+gem 'jquery-rails'
 
 
 group :development, :test do
@@ -32,13 +34,10 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
 
-
-gem 'jquery-rails'
 gem 'jquery-ui-sass-rails'
 
 gem 'countries'
