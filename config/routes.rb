@@ -1,6 +1,8 @@
 WashCostApp::Application.routes.draw do
 
 
+  devise_for :users
+
   match '/', :controller => 'application', :action => 'index'
   match '/select_advanced' => 'application#select_advanced'
 
