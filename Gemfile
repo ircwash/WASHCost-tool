@@ -7,7 +7,6 @@ gem 'bson_ext'
 
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'rspec-rails', '~> 2.4'
   gem 'ruby-prof'
   gem 'better_errors'
