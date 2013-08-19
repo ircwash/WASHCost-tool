@@ -1,9 +1,6 @@
 WashCostApp::Application.routes.draw do
-
-
   devise_for :users
 
-  match '/', :controller => 'application', :action => 'index'
   match '/select_advanced' => 'application#select_advanced'
 
   match '/water_basic' => 'water_basic#country'
@@ -22,4 +19,6 @@ WashCostApp::Application.routes.draw do
   post "/path" => "controller#post_action"
 
   match '/clean_session', :controller => 'application', :action => 'clean_session'
+
+  root :to => "home#index"
 end
