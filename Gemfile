@@ -8,6 +8,7 @@ gem 'bson_ext'
 gem 'haml'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'cancan'
 
 
 group :development, :test do
