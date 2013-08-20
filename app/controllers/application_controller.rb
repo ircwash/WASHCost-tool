@@ -5,6 +5,11 @@ class ApplicationController < ActionController::Base
 
   @@pages= nil
 
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_path
+  end
+
+
 
   def select_advanced
     if request.post?

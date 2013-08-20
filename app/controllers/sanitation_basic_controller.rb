@@ -1,9 +1,8 @@
 class SanitationBasicController < ApplicationController
 
   before_filter :set_percent_complete
-
   include SanitationBasicHelper
-
+  authorize_resource class: WaterBasicController
   layout "sanitation_basic_layout"
 
   def init_vars

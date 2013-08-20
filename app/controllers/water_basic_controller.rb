@@ -1,10 +1,9 @@
 class WaterBasicController < ApplicationController
 
   before_filter :set_percent_complete
-
   include WaterBasicHelper
   include WaterReportHelper
-
+  authorize_resource class: WaterBasicController
   layout "water_basic_layout"
 
   def init_vars
