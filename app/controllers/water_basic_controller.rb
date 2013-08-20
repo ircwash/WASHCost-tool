@@ -1,9 +1,10 @@
 class WaterBasicController < ApplicationController
-
-  before_filter :set_percent_complete
   include WaterBasicHelper
   include WaterReportHelper
+
   authorize_resource class: WaterBasicController
+
+  before_filter :set_percent_complete
   layout "water_basic_layout"
 
   def init_vars
@@ -26,7 +27,6 @@ class WaterBasicController < ApplicationController
     flash[:country_code] = retrieve_previous_answer_for("country")
     flash[:pages_complete] = session[:water_basic_complete]
   end
-
 
   def water
     if request.post?
@@ -144,8 +144,6 @@ class WaterBasicController < ApplicationController
   end
 
   def data_info_box
-    puts '--> box info by ajax'
-    puts params
     trigger=params[:trigger]
     index= params[:index]
     @info_box = {header: I18n.t("form.water_basic.#{trigger}.answers.a#{index}", :default => "Info"), content: I18n.t("form.water_basic.#{params[:trigger]}.info.i#{index}", :default => "No Info")}
@@ -163,5 +161,4 @@ class WaterBasicController < ApplicationController
       nil
     end
   end
-
 end
