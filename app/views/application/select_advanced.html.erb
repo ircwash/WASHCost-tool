@@ -14,12 +14,14 @@
 
   <meta name="viewport" content="width=device-width">
 
-  <link href="/assets/application.css" media="all" rel="stylesheet" type="text/css">
-    <link href="/assets/global_advance_select_page.css" media="all" rel="stylesheet" type="text/css">
-  <script src="/assets/modernizr.js" type="text/javascript"></script>
+  <!--<link href="/assets/application.css" media="all" rel="stylesheet" type="text/css">-->
+  <!--<link href="/assets/global_advance_select_page.css" media="all" rel="stylesheet" type="text/css">-->
+  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
 
 </head>
 <body class="launchPage">
+<div class="advanced_tool">
 <div class="wrapper bgGradient">
   <div class="header">
     <a href="#" class="logo">
@@ -78,9 +80,6 @@
     <input type="hidden" name="targetForm" id="targetForm"/>
     <input type="hidden" name="type" id="type"/>
   </form>
-  <script src="/assets/jquery-1.9.1.js" type="text/javascript"></script>
-  <script src="/assets/chosen.jquery.js" type="text/javascript"></script>
-  <script src="/assets/application.js" type="text/javascript"></script>
   <script>
 
     function submitForm(type)
@@ -91,6 +90,7 @@
 
 
   </script>
+</div>
 </div>
 </body>
 </html>

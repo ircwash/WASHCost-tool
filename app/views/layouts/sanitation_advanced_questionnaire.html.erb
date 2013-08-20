@@ -15,10 +15,11 @@
 
   <link href="/assets/chosen_water_advanced.css" media="all" rel="stylesheet" type="text/css">
   <link href="/assets/water_advanced.css" media="all" rel="stylesheet" type="text/css">
-  <script src="/assets/modernizr.js" type="text/javascript"></script>
+  <%= javascript_include_tag "application" %>
 
 </head>
 <body>
+<div class="advanced_tool">
 <div class="wrapper">
 <div class="header">
   <%= show_app_version %>
@@ -477,9 +478,6 @@
 </fieldset>
 </form>
 </div>
-<script src="/assets/jquery-1.9.1.js" type="text/javascript"></script>
-<script src="/assets/jquery-ui-1.10.3.custom.min.js"></script>
-<script src="/assets/chosen.jquery.js" type="text/javascript"></script>
-<script src="/assets/water_advanced.js" type="text/javascript"></script>
+</div>
 </body>
 </html>
