@@ -1,18 +1,19 @@
-  /* reset */
+/* reset */
+body{
+  margin: 0;
+  padding: 0;
+  font: 12px Arial, Helvetica, sans-serif;
+  height: 100%;
+  background-color: #333;
+  -webkit-font-smoothing: antialiased;
+}
 .advanced_tool{
   html {
       height: 100%;
       margin: 0;
       padding: 0;
   }
-  body{
-      margin: 0;
-      padding: 0;
-      font: 12px Arial, Helvetica, sans-serif;
-      height: 100%;
-      background-color: #333;
-      -webkit-font-smoothing: antialiased;
-  }
+
   footer {
       margin: 0;
       padding: 0;
