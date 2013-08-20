@@ -655,6 +655,10 @@ a.sbSelector:hover {
     margin: 0 auto;
 }
 /* q1Country */
+.choices.countryChoices .chzn-container-single{
+    width: 365px !important;
+}
+
 .choices.countryChoices {
     width: 525px;
     margin: 50px auto 80px;
