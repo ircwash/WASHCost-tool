@@ -539,6 +539,8 @@ en:
       b334:	"Water quality is acceptable and the service is very reliable. The total recurrent annual expenditure is higher than WASHCost benchmarks perhaps resulting in higher levels of service. Alternatively, the context may require more expensive maintenance and support, or the service could be run more efficiently."
       b341:	"Water quality is good, however, the service provided suffers unacceptable periods of down time. Recurrent expenditure values are higher than found WASHCost ranges. There are two possibilities: the context is exceptional and requires specific measures to address reliability and/or factors other than costs are having a significant impact on service delivery. "
       b342:	"Water quality is good, however, the service provided suffers prolonged periods of down time. Recurrent expenditure values are higher than found WASHCost ranges. There are two possibilities: the context is exceptional and requires specific measures to address reliability and/or factors other than costs are having a significant impact on service delivery. "
+      b343: "Water quality is good and the service is reasonably reliable. The total recurrent annual expenditure is higher than WASHCost benchmarks. The context may require more expensive maintenance and support, or the service could be run more efficiently."
+      b344: "Water quality is good and the service is very reliable. The total recurrent annual expenditure is higher than WASHCost benchmarks perhaps contributing to the very high levels of service. Alternatively, the context may require more expensive maintenance and support, or the service could be run more efficiently."
     water_advanced:
       general:
         title: "GENERAL FEEDBACK"
