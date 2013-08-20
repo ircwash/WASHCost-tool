@@ -213,6 +213,7 @@ DEPENDENCIES
   haml
   haml-rails
   jquery-rails
+  jquery-ui-rails
   jquery-ui-sass-rails
   meta_request
   mongoid

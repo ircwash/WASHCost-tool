@@ -7,6 +7,7 @@ gem 'devise'
 gem 'bson_ext'
 gem 'haml'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 
 group :development, :test do
