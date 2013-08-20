@@ -1,0 +1,17 @@
+.header
+  %a.logo{:href => "/"}
+    %img{:alt => "WASHCost", :src => "/assets/logoWashCost8.png"}/
+  %ul
+    %li
+      %a{:href => "#"}= t 'nav.utility.about'
+    %li
+      %a{:href => "#"}= t 'nav.utility.contact'
+    %li
+      %ul.languageSwitcher
+        %li
+          %a.active{:href => "?lang=en"} English
+        %li
+          %a{:href => "?lang=fr"} Français
+    %li
+      - if user_signed_in?
+        %a.sign{:href => destroy_user_session_path, 'data-method' => :delete }= t 'nav.utility.sign_out'
