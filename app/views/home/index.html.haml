@@ -28,6 +28,11 @@
       .toc-example > * { position:relative; top:auto; left:auto; bottom:auto; right:auto; float:none; margin:0 }
       .toc-example::after { content:""; clear:both; display:block; height:0; visibility:hidden }
       .toc-changelog { font-size:12px }
+    - flash.each do |name, msg|
+      - if msg.is_a?(String) && name.to_s=='error'
+        .alert.alert-error
+          .alert-msg
+            #{msg}
     .toc-1 WASHCost
     - if user_signed_in?
       = "Welcome #{current_user.name}"

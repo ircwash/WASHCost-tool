@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   @@pages= nil
 
   rescue_from CanCan::AccessDenied do |exception|
+    flash[:error] = t(:register_if_acces_to_cuesstinaire_view)
     redirect_to root_path
   end
 
