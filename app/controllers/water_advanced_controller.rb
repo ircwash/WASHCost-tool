@@ -7,8 +7,8 @@ class WaterAdvancedController < ApplicationController
     if session[:water_advanced]
       copy_session_form_values_to_flash
     else
-      if params.has_key?(:type) && (params[:type]== 'existing' || params[:type]== 'planned')
-        flash[:type]= params[:type]
+      if params.has_key?(:type) && (params[:type] == 'existing' || params[:type] == 'planned')
+        flash[:type] = params[:type]
       else
         redirect_to :controller => "application", :action => "select_advanced"
       end
@@ -17,8 +17,7 @@ class WaterAdvancedController < ApplicationController
 
 
   def report
-
-    results= {
+    results = {
         :type =>  unchecked(:type),
 
         :country => get_country(params[:country]),
@@ -66,15 +65,12 @@ class WaterAdvancedController < ApplicationController
         :payback =>       unchecked(:payback)
     }
 
-    flash[:results]= results
-
-
+    flash[:results] = results
     render layout: 'water_advanced_report'
   end
 
   def copy_session_form_values_to_flash
-
-    form_params= [
+    form_params = [
         :type,
         :country, :country_code, :region, :city, :area_type, :density,
         :how_managed, :who_finances, :who_owns, :who_safeguards, :who_enforces, :who_repairs, :annual_income,
@@ -95,17 +91,15 @@ class WaterAdvancedController < ApplicationController
     ]
 
     form_params.each do |param|
-      flash[param]= session[:water_advanced][param]
+      flash[param] = session[:water_advanced][param]
     end
   end
 
   def checkbox_value(key)
+    value = params[key]
 
-    value= params[key]
-
-    checked= false
+    checked = false
     if value.present? && value.to_i> 0
-
       checked= true
     end
 
@@ -116,14 +110,13 @@ class WaterAdvancedController < ApplicationController
   end
 
   def get_country(country_code)
-
-    country_object= Country.new(country_code)
-    country= "Not Set"
+    country_object = Country.new(country_code)
+    country = "Not Set"
 
     if(country_object.data == nil)
       country = nil
     else
-      country= country_object.name
+      country = country_object.name
       add_to_session_advanced(:country_code, country_code)
       add_to_session_advanced('country', country)
     end
@@ -132,27 +125,23 @@ class WaterAdvancedController < ApplicationController
   end
 
   def unchecked(key)
-
     add_to_session_advanced(key, params[key])
     return params[key]
 
   end
 
   def get_total_cost(hardware, software)
-
-    total_cost= 'Please enter both Hardware & Software values'
+    total_cost = 'Please enter both Hardware & Software values'
     if hardware && software
-      return hardware+software
+      return hardware + software
     end
-
   end
-
 
   def get_indexed_value(i18nPrefix, key)
     if params.has_key?(key) && params[key].present?
-      index= params[key]
+      index = params[key]
       add_to_session_advanced(key, index)
-      I18n.t(i18nPrefix+index, :default => I18n.t('form.value_not_set'))
+      I18n.t(i18nPrefix + index, :default => I18n.t('form.value_not_set'))
     else
       I18n.t('form.value_not_set')
     end
@@ -160,15 +149,14 @@ class WaterAdvancedController < ApplicationController
 
 
   def add_to_session_advanced(key, value)
-    form= session[:water_advanced].present? ? session[:water_advanced] : Hash.new(0)
+    form = session[:water_advanced].present? ? session[:water_advanced] : Hash.new(0)
 
     if !form[key].present?
       increase_complete_percent(:water_advanced_completed)
     end
 
-    form[key]= value
-
-    session[:water_advanced]= form
+    form[key] = value
+    session[:water_advanced] = form
   end
 
 end
