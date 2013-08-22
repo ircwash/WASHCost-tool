@@ -1,4 +1,6 @@
 /*
+ * application-basic.css
+ *
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -10,5 +12,5 @@
  *
  *= require_self
  *= require jquery.ui.all
- *= require_tree .
+ *= require_tree ./basic
 */
