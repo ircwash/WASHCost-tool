@@ -1,0 +1,15 @@
+
+= simple_form_for @advanced_water_questionnaire do |f|
+  - if @advanced_water_questionnaire.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@advanced_water_questionnaire.errors.count, "error")} prohibited this advanced_water_questionnaire from being saved:"
+      %ul
+        - @advanced_water_questionnaire.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.input :title
+  - Advanced::Water::Question.all.each do |question|
+    = render_question(f, question)
+  .actions
+    = f.button :submit
