@@ -1,6 +1,12 @@
 WashCostApp::Application.routes.draw do
   devise_for :users
 
+  namespace :advanced do
+    namespace :water do
+      resources :questionnaires
+    end
+  end
+
   match '/select_advanced' => 'application#select_advanced'
 
   match '/water_basic' => 'water_basic#country'

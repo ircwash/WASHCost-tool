@@ -1,6 +1,6 @@
 class Advanced::Water::Question
   include Mongoid::Document
-
+  belongs_to :questionnaire, :class_name => "Advanced::Water::Questionnaire"
 
   field :text,                type: String
   field :i18n_text_key,       type: String
