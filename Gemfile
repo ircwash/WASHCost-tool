@@ -9,7 +9,7 @@ gem 'haml'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'cancan'
-
+gem 'simple_form'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.4'
