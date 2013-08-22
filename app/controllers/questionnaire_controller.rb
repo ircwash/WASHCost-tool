@@ -1,3 +1,3 @@
-class QuestionnaireController
-  # To change this template use File | Settings | File Templates.
+class QuestionnaireController < ApplicationController
+  
 end
