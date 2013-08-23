@@ -1,5 +1,7 @@
 class Advanced::Water::QuestionOptionGroup
   include Mongoid::Document
-  has_many :options, class_name: "Advance::Water::QuestionOption"
+
+  has_many :advanced_water_question_options, class_name: 'Advanced::Water::QuestionOption', inverse_of: 'advanced_water_question_option_group'
+
   field :name, type: String
 end
