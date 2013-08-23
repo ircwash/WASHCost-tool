@@ -1,0 +1,212 @@
+!!!
+/[if lt IE 7] <html class="no-js lt-IE7" lang="en">
+/[if IE 7] <html class="no-js ie7" lang="en">
+/[if IE 8] <html class="no-js ie8" lang="en">
+/[if IE 9] <html class="no-js ie9" lang="en">
+/ [if gt IE 8]><!
+%html.no-js{:lang => "en"}
+  / <![endif]
+  %head
+    %meta{:charset => "utf-8"}/
+    %title WashCostApp - Santiation Basic Report
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    %meta{:content => "width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0", :name => "viewport"}/
+    = javascript_include_tag "application-basic"
+    = stylesheet_link_tag "application-basic", :media => "all"
+  %body
+    #outer_container_report.bgGradient
+      = show_app_version
+      = render "shared/header"
+      .report.sanitation
+        %section.sectionHeading
+          %h1
+            Basic
+            %span Sanitation | Final report
+        %section.general
+          %h2 Summary
+          .sectionWrapper
+            - if flash[:results][:form_ready] == true
+              %dl.costService
+                %dt Total Cost
+                %dd.sumaryCost
+                  %span.sumaryTotal
+                    $#{number_with_delimiter(flash[:results][:total], :delimiter=>',')}
+                  %span.sumaryPeople
+                    For a population of #{flash[:results][:population]} people
+                  %span{:class => "benchText benchIcon#{flash[:results][:cost_rating]}"}= flash[:results][:cost_rating_label].html_safe
+              %dl.levelService
+                %dt Level of Service
+                %dd{:class => "levelStar_#{flash[:results][:service_rating] + 1}"}
+                  %span= flash[:results][:service_label]
+              .review
+                %a.readMore{:href => "#"} Read full review
+                #service_level_full
+                  %p= simple_format flash[:results][:service_level]
+            - else
+              .errorNoData
+                %p= I18n.t 'form.not_ready.summary'
+        %section.content
+          %h2= t 'report.water_advanced.context.title'
+          .sectionWrapper
+            %div
+              %dl
+                %dt Country
+                %dd.countryResult
+                  %img{:alt => "world country", :src => "/assets/world8.png"}/
+                  %span= flash[:results][:country]
+              %a.editAnchor{:href => "./country"}
+                %img{:alt => "icon edit", :src => "/assets/iconEdit24.png"}/
+            .populationResults
+              %dl
+                %dt Population
+                %dd.result_01
+                  %span= flash[:results][:population]
+              %a.editAnchor{:href => "./population"}
+                %img{:alt => "icon edit", :src => "/assets/iconEdit24.png"}/
+            .latrineResults
+              %dl
+                %dt Latrine Type
+                %dd{:class => "latrine_0#{flash[:results][:latrine_index]}"}
+                  %span= flash[:results][:latrine]
+              %a.editAnchor{:href => "./latrine"}
+                %img{:alt => "icon edit", :src => "/assets/iconEdit24.png"}/
+        %section.cost
+          %h2= t 'report.water_advanced.cost.title'
+          - flash[:results][:form_ready]
+          - if flash[:results][:form_ready] == true
+            %h3
+              Cost on 10 years (for a population of #{flash[:results][:population]} people)
+            #graph
+              #graphContent
+          - else
+            .errorNoData
+              %p= I18n.t 'form.not_ready.cost'
+          .sectionWrapper
+            .first
+              %dl
+                %dt.quantity_cost_label Capital Expenditure
+                %dd.country_0
+                  US$#{flash[:results][:capital]}
+                %dt.unity_quantity_cost_label per person
+              %a.editAnchor{:href => "./capital"}
+                %img{:alt => "icon edit", :src => "/assets/iconEdit24.png"}/
+            %div
+              %dl
+                %dt.quantity_cost_label Recurrent Expenditure
+                %dd.household_0
+                  US$#{flash[:results][:recurrent]}
+                %dt.unity_quantity_cost_label per person
+              %a.editAnchor{:href => "./recurrent"}
+                %img{:alt => "icon edit", :src => "/assets/iconEdit24.png"}/
+            .last
+              %dl
+                %dt Total
+                %dd.total
+                  U$#{number_with_delimiter(flash[:results][:total], :delimiter=>',')}
+        %section.service
+          %h2 SERVICE
+          .sectionWrapper
+            %ul
+              %li{:class => "rowQQR providing result_0#{flash[:results][:providing_index]}"}
+                %span.label Providing
+                %span.value= flash[:results][:providing]
+                %a.editAnchor{:href => "./providing"}
+                  %img{:alt => "icon edit", :src => "/assets/iconEdit24.png"}/
+              %li{:class => "rowQQR impermeability result_0#{flash[:results][:impermeability_index]}"}
+                %span.label Permeability
+                %span.value= flash[:results][:impermeability]
+                %a.editAnchor{:href => "./impermeability"}
+                  %img{:alt => "icon edit", :src => "/assets/iconEdit24.png"}/
+              %li{:class => "rowQQR enviroment result_0#{flash[:results][:environment_index]}"}
+                %span.label Environment
+                %span.value= flash[:results][:environment]
+                %a.editAnchor{:href => "./environment"}
+                  %img{:alt => "icon edit", :src => "/assets/iconEdit24.png"}/
+              %li{:class => "rowQQR usage result_0#{flash[:results][:usage_index]}"}
+                %span.label Usage
+                %span.value= flash[:results][:usage]
+                %a.editAnchor{:href => "./usage"}
+                  %img{:alt => "icon edit", :src => "/assets/iconEdit24.png"}/
+              %li{:class => "rowQQR reliability result_0#{flash[:results][:reliability_index]}"}
+                %span.label Reliability
+                %span.value= flash[:results][:reliability]
+                %a.editAnchor{:href => "./reliability"}
+                  %img{:alt => "icon edit", :src => "/assets/iconEdit24.png"}/
+    %footer.reportFooter
+      .footerWrapper
+        %a{:href => "#"} Go to report page
+        .progressBarWrapper
+          %h2
+            = t 'footer.footer_layout_sanitation'
+            %span= t 'footer.final_report'
+          .progressBar
+            .outerBar
+              .innerBar{:style => "width:30%"}
+              %p
+                = flash[:percent_complete]
+                \% #{t 'footer.complete'}
+  %script{:src => "http://www.google.com/jsapi", :type => "text/javascript"}
+  :javascript
+    google.load('visualization', '1', {packages: ['corechart']});
+  :javascript
+    function expenditureGraph() {
+
+        var _C= #{(flash[:results][:capital]|| 0)};
+        var _R= #{(flash[:results][:recurrent]|| 0)};
+        var _P= #{(flash[:results][:population]|| 0)};
+
+        if(_C && _R){
+
+            var data = new google.visualization.DataTable();
+
+            data.addColumn('string', 'Year');
+            data.addColumn('number', 'Expenditure');
+            data.addColumn({type:'string', role:'annotation'}); // annotation role col.
+            data.addColumn({type:'string', role:'annotationText'}); // annotationText col
+            data.addColumn({type:'string', role:'tooltip'}); // tooltip role col
+
+            capExpByPopulation = _C*_P;
+            recExpByPopulation = _R*_P;
+            accounting.settings = {
+                currency: {
+                    symbol : "US$",   // default currency symbol is '$'
+                    format: "%s %v", // controls output: %s = symbol, %v = value/number (can be object: see below)
+                    decimal : ".",  // decimal point separator
+                    thousand: ",",  // thousands separator
+                    precision : 0   // decimal places
+                },
+                number: {
+                    precision : 0,  // default precision on numbers is 0
+                    thousand: ",",
+                    decimal : "."
+                }
+            }
+
+            graphDataRows=[['Setup', capExpByPopulation, accounting.formatMoney(capExpByPopulation), 'You spent '+accounting.formatMoney(capExpByPopulation)+' to setup the service', 'setup\nExpenditure: '+accounting.formatMoney(capExpByPopulation)],
+                ['1',  recExpByPopulation, accounting.formatMoney(recExpByPopulation), accounting.formatMoney(recExpByPopulation)+' is your annual expenditure', '1\nExpenditure: '+accounting.formatMoney(recExpByPopulation)],
+            ];
+            for(i=2;i<=10;i++){
+                graphDataRows.push([i+'',recExpByPopulation, null, null, i+'\nExpenditure: '+accounting.formatMoney(recExpByPopulation)])
+            }
+            data.addRows(graphDataRows);
+
+            // Create and draw the visualization.
+            new google.visualization.LineChart(document.getElementById('graphContent')).
+                    draw(data, {curveType: "none",
+                        axisTitlesPosition: "out",
+                        legend: { position: "none" },
+                        width: 800, height: 260,
+                        hAxis: { title: 'Year', titleTextStyle: { color: '#a6955f' }, textStyle: { color: '#a6955f' }, basline: 1, baselineColor: '#a6955f', gridlines: {color: '#fff'}, maxTextLines: 1, maxAlternation: 1 },
+                        vAxis: { title: 'Expenditure', titleTextStyle: { color: '#a6955f' }, textStyle: { color: '#a6955f' },baselineColor: '#a6955f', gridlines: {color: '#a6955f'}, maxValue: 10,  format:'US$ ###,###.##' },
+                        backgroundColor: "transparent",
+                        lineWidth: 5,
+                        colors: ['#ACCD4B'],
+                        'chartArea': { 'width': '60%', 'height': '60%'}
+                    }
+            );
+        }
+    }
+
+
+    google.setOnLoadCallback(expenditureGraph);
