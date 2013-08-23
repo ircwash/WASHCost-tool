@@ -1,4 +1,18 @@
 WashCostApp::Application.routes.draw do
+  namespace :advanced do
+    namespace :water do
+      resources :question_option_groups
+    end
+  end
+
+
+  namespace :advanced do
+    namespace :water do
+      resources :question_options
+    end
+  end
+
+
   devise_for :users
 
   namespace :advanced do

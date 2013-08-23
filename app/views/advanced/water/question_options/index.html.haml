@@ -1,0 +1,21 @@
+%h1 Listing advanced_water_question_options
+
+%table
+  %tr
+    %th Label
+    %th Class name
+    %th
+    %th
+    %th
+
+  - @advanced_water_question_options.each do |advanced_water_question_option|
+    %tr
+      %td= advanced_water_question_option.label
+      %td= advanced_water_question_option.class_name
+      %td= link_to 'Show', advanced_water_question_option
+      %td= link_to 'Edit', edit_advanced_water_question_option_path(advanced_water_question_option)
+      %td= link_to 'Destroy', advanced_water_question_option, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Question option', new_advanced_water_question_option_path

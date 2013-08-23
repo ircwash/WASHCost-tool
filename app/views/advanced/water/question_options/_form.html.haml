@@ -1,0 +1,9 @@
+= simple_form_for(@advanced_water_question_option) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :label
+    = f.input :class_name
+
+  .form-actions
+    = f.button :submit
