@@ -957,6 +957,44 @@ section .sectionWrapper a.editAnchor img {
 .report .sectionHeading.generalTitle {
     background-color: #accd4b;
 }
+
+.report .sectionHeading.generalTitle .header_container {
+    float: left;
+    width: 33%;
+    margin-left: 33%;
+}
+
+.report .sectionHeading.generalTitle .link_action_report{
+    border: solid #ffffff 1px;
+    float: right;
+    margin-right: 20px;
+    font-weight: bolder;
+    font-size: 16px;
+    text-align: right;
+    padding-left: 18px;
+    padding-right: 10px;
+    vertical-align: middle;
+    padding-top: 17px;
+    position: relative;
+    top: 23px;
+    cursor: pointer;
+    height: 32px;
+}
+
+.report .sectionHeading.generalTitle .link_action_report:hover{
+   background-color: #d8d7b6;
+   text-decoration: none;
+}
+
+.report .sectionHeading.generalTitle .save_report{
+    width: 148px;
+    background: #edeccb url('/assets/report/save.png') no-repeat 10px 10px;
+}
+
+.report .sectionHeading.generalTitle .share_report{
+    width: 73px;
+    background: #edeccb url('/assets/report/share.png') no-repeat 10px 15px;
+}
 .report .general {
     background-image: none;
     background-color: #edeccb;
