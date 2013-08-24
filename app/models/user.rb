@@ -6,6 +6,9 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  # Persistence relations
+  embeds_many :basic_questionnaires
+
   ## Database authenticatable
   field :name,               type: String
   field :email,              type: String, default: ""
