@@ -21,6 +21,14 @@ WashCostApp::Application.routes.draw do
     end
   end
 
+  namespace :basic do
+    resource :reports do
+      member do
+        post :save
+      end
+    end
+  end
+
   match '/select_advanced' => 'application#select_advanced'
 
   match '/water_basic' => 'water_basic#country'

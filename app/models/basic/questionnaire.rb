@@ -1,4 +1,4 @@
-class Questionnaire
+class Basic::Questionnaire
   include Mongoid::Document
   include Mongoid::Timestamps
 
