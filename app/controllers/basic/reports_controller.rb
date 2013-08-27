@@ -18,15 +18,24 @@ class Basic::ReportsController < ApplicationController
         @response[:partial] = 'save_confirmation'
         @response[:action] = 'updated'
       else
+        @questionnaire = Basic::Questionnaire.new
         @response[:partial] = 'save_form'
       end
     else
       puts 'saving...'
-      title = params[:basic_questionnaire][:title]
-      session["#{tool_name}_basic_form".to_sym][:saved_form_id] = current_user.basic_questionnaires.create(title: title, tool_name: tool_name, form: form).id
-      Rails.logger.debug "Report saved with id: #{session["#{tool_name}_basic_form".to_sym][:saved_form_id]}"
-      @response[:partial] = 'save_confirmation'
-      @response[:action] = 'created'
+      params[:basic_questionnaire][:form] = form
+      @questionnaire = Basic::Questionnaire.new(params[:basic_questionnaire])
+      if @questionnaire.valid?
+        current_user.basic_questionnaires << @questionnaire
+        session["#{tool_name}_basic_form".to_sym][:saved_form_id] = @questionnaire.id
+        Rails.logger.debug "Report saved with id: #{session["#{tool_name}_basic_form".to_sym][:saved_form_id]}"
+        @response[:partial] = 'save_confirmation'
+        @response[:action] = 'created'
+      else
+        Rails.logger.debug "Report saved invalid, no title specified"
+        @response[:partial] = 'save_form'
+      end
+
     end
   end
 end

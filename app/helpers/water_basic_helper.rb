@@ -1,9 +1,9 @@
 module WaterBasicHelper
 
   include WaterReportHelper
- def report_save_container(response)
+ def report_save_container(response, questionnaire)
    puts 'response: ', response
-   render "basic/reports/#{response[:partial]}", tool_name: response[:tool_name], action: response[:action]
+   render "basic/reports/#{response[:partial]}", tool_name: response[:tool_name], action: response[:action], questionnaire: questionnaire
  end
 
   def get_class_for_section(form, section)
