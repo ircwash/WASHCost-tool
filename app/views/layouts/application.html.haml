@@ -1,0 +1,27 @@
+!!!
+%html
+  %head
+    %title Wash Cost
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    = favicon_link_tag '/favicon.png'
+  %body
+    #main-container.container-fluid.no_horizontal_padding
+      %header.row-fluid
+        .row-fluid
+          .span12
+            = render 'layouts/navigation'
+      #main.container-fluid
+        .row-fluid
+          .span10.offset1.front-background_padding
+            .row-fluid
+              .span12.mainmessage-container
+                = render 'layouts/messages'
+            = yield
+            #delta
+      %footer.container-fluid.no_horizontal_padding
+        .row-fluid
+          .span12.footer
+            = render 'layouts/footer'
