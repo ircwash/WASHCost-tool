@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'cancan'
 gem 'simple_form'
+gem 'zurb-foundation', '~> 2.2'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.4'
