@@ -1,0 +1,5 @@
+= simple_form_for Basic::Questionnaire.new, url: save_basic_reports_path, remote: true do |f|
+  = f.input :title, input_html: {size: 10}
+  = f.input :tool_name, as: :hidden, input_html: {value: tool_name}
+  .actions
+    = f.submit 'Save', name: 'commit', class: 'btn-submit'

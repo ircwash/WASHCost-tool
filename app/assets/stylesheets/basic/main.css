@@ -605,16 +605,12 @@ a.sbSelector:hover {
 }
 .ui-slider {
     height: 3px;
-    margin-bottom: 50px;
+    margin-bottom: 50px
 }
-.ui-state-default,
-.ui-widget-content .ui-state-default,
-.ui-widget-header .ui-state-default {
+.ui-slider .ui-slider-handle {
     margin-top: -13px;
 }
-.ui-state-default,
-.ui-widget-content .ui-state-default,
-.ui-widget-header .ui-state-default {
+.ui-slider .ui-slider-handle {
     border: none;
     cursor: pointer;
     width: 40px;

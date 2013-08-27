@@ -1,1 +1,3 @@
-console.log('save!')
+console.log('save!');
+$( "#save_report_modal").dialog();
+$('.save_report_modal_content').html('<%= j report_save_container(@response) %>');

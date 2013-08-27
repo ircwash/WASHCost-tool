@@ -25,7 +25,7 @@
               Basic
               %span Water | Final report
           .action_container
-            = link_to 'Save this report', save_basic_reports_path(title: 'test', tool_name: 'water'), :remote => true, :class => "save_report link_action_report", method: :post
+            = link_to 'Save this report', save_basic_reports_path(querier: 'link', tool_name: 'water'), :remote => true, :class => "save_report link_action_report", method: :post
             = link_to 'Share', '#', :remote => true, :class => "share_report link_action_report", method: :post
         %section.general
           %h2 Summary
@@ -147,6 +147,8 @@
               %p
                 = flash[:percent_complete]
                 \% #{t 'footer.complete'}
+    #save_report_modal{:title => "Save Report"}
+      .save_report_modal_content
     %script{:src => "http://www.google.com/jsapi", :type => "text/javascript"}
     :javascript
       google.load('visualization', '1', {packages: ['corechart']});
