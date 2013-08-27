@@ -2,6 +2,7 @@ module WaterBasicHelper
 
   include WaterReportHelper
  def report_save_container(response)
+   puts 'response: ', response
    render "basic/reports/#{response[:partial]}", tool_name: response[:tool_name], action: response[:action]
  end
 

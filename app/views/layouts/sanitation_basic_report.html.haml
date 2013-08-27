@@ -19,10 +19,14 @@
       = show_app_version
       = render "shared/header"
       .report.sanitation
-        %section.sectionHeading
-          %h1
-            Basic
-            %span Sanitation | Final report
+        %section.sectionHeading.generalTitle
+          .header_container
+            %h1
+              Basic
+              %span Sanitation | Final report
+          .action_container
+            = link_to 'Save this report', save_basic_reports_path(querier: 'link', tool_name: 'sanitation'), :remote => true, :class => "save_report link_action_report", method: :post
+            = link_to 'Share', '#', :remote => true, :class => "share_report link_action_report", method: :post
         %section.general
           %h2 Summary
           .sectionWrapper
@@ -146,6 +150,8 @@
               %p
                 = flash[:percent_complete]
                 \% #{t 'footer.complete'}
+    #save_report_modal{:title => "Save Report"}
+      .save_report_modal_content
   %script{:src => "http://www.google.com/jsapi", :type => "text/javascript"}
   :javascript
     google.load('visualization', '1', {packages: ['corechart']});

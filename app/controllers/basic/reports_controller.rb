@@ -2,7 +2,7 @@ class Basic::ReportsController < ApplicationController
   # this action saves the report associated with basic tool, also, this action verifies if a report session saved
   # is already exists
   def save
-    puts '--> params',params
+    puts '--> params', params
     querier = params[:querier]
     tool_name = params[:tool_name] || params[:basic_questionnaire][:tool_name]
     form = session["#{tool_name}_basic_form".to_sym] || Hash.new(0)
