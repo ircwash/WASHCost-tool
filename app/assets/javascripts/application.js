@@ -12,7 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
 //= require common/index
+//= require anew/index
+//= require foundation
 
 $(document).foundation();

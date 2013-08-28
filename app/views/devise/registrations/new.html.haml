@@ -1,32 +1,24 @@
 .row
   %h2.text-center Sign up
-  = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+  = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
     = devise_error_messages!
     .large-6.columns
       %div
-        = f.label :first_name
-        = f.text_field :first_name, :autofocus => true
+        = f.input :first_name, :autofocus => true
       %div
-        = f.label :company
-        = f.password_field :company
+        = f.input :company
       %div
-        = f.label :email
-        = f.email_field :email
+        = f.input :email
       %div
-        = f.label :password
-        = f.password_field :password
+        = f.input :password
     .large-6.columns
       %div
-        = f.label :last_name
-        = f.password_field :last_name
+        = f.input :last_name
       %div
-        = f.label :country
-        = f.password_field :country
+        = f.input :country, input_html: {class: "chzn-select"}
       %div
-        = f.label :prefered_language
-        = f.password_field :prefered_language
+        = f.input :prefered_language
       %div
-        = f.label :password_confirmation
-        = f.password_field :password_confirmation
-      .right= f.submit "Sign up", class: 'button'
+        = f.input :password_confirmation
+      .right= f.button :submit, "Register", class: 'button'
 = render "devise/shared/links"
