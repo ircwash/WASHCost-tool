@@ -15,3 +15,4 @@
 //= require foundation
 //= require common/index
 
+$(document).foundation();

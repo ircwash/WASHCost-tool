@@ -1,27 +1,31 @@
-!!!
+!!! 5
+/ paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+/[if lt IE 7 ] <html class=\"ie6\" lang=\"en\">
+/[if IE 7 ]    <html class=\"ie7\" lang=\"en\">
+/[if IE 8 ]    <html class=\"ie8\" lang=\"en\">
+/[if IE 9 ]    <html class=\"ie9\" lang=\"en\">
+/[if (gt IE 9)|!(IE)] <!--> <html lang=\"en\">
 %html
   %head
     %title Wash Cost
-    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
-    = stylesheet_link_tag    "application", :media => "all"
-    = javascript_include_tag "application"
+    %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }
+    = stylesheet_link_tag    "application", :media => :all
+    = javascript_include_tag "vendor/custom.modernizr"
+
     = csrf_meta_tags
-    = favicon_link_tag '/favicon.png'
   %body
-    #main-container.container-fluid.no_horizontal_padding
-      %header.row-fluid
-        .row-fluid
-          .span12
-            = render 'layouts/navigation'
-      #main.container-fluid
-        .row-fluid
-          .span10.offset1.front-background_padding
-            .row-fluid
-              .span12.mainmessage-container
-                = render 'layouts/messages'
-            = yield
-            #delta
-      %footer.container-fluid.no_horizontal_padding
-        .row-fluid
-          .span12.footer
-            = render 'layouts/footer'
+    .row
+      .large-12.columns
+        %header
+          =  render 'layouts/navigation'
+    .row
+      .large-10.large-offset-1.columns
+        .row
+          .large-12.columns
+            = render 'layouts/messages'
+        = yield
+    .row
+      .large-12.columns
+        %footer
+          = render 'layouts/footer'
+    = javascript_include_tag "application"

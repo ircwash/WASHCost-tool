@@ -10,7 +10,11 @@ class User
   embeds_many :basic_questionnaires, class_name: 'Basic::Questionnaire'
 
   ## Database authenticatable
-  field :name,               type: String
+  field :first_name,         type: String
+  field :last_name,          type: String
+  field :country,            type: String
+  field :prefered_language,  type: String
+  field :company,            type: String
   field :email,              type: String, default: ""
   field :encrypted_password, type: String, default: ""
   
