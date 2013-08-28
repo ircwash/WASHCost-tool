@@ -14,10 +14,10 @@
     .large-6.columns
       %div
         = f.input :last_name
-      %div
+      .select-container-simple
         = f.input :country, input_html: {class: "chzn-select"}
-      %div
-        = f.input :prefered_language
+      .select-container-simple
+        = f.input :prefered_language, collection: ['English','Spanish','French'], include_blank: false, input_html: {class: "chzn-select"}
       %div
         = f.input :password_confirmation
       .right= f.button :submit, "Register", class: 'button'
