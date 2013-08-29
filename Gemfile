@@ -10,6 +10,8 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'cancan'
 gem 'simple_form'
+gem 'quiet_assets'
+gem 'thin'
 #gem 'zurb-foundation'
 
 group :development, :test do

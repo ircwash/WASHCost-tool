@@ -60,6 +60,7 @@ GEM
     countries (0.9.2)
       currencies (>= 0.4.0)
     currencies (0.4.2)
+    daemons (1.1.9)
     debug_inspector (0.0.2)
     debugger (1.6.1)
       columnize (>= 0.3.1)
@@ -74,6 +75,7 @@ GEM
       warden (~> 1.2.1)
     diff-lcs (1.2.4)
     erubis (2.7.0)
+    eventmachine (1.0.1)
     execjs (1.4.0)
       multi_json (~> 1.0)
     haml (4.0.3)
@@ -129,6 +131,8 @@ GEM
       yard (>= 0.8)
     pry-nav (0.2.3)
       pry (~> 0.9.10)
+    quiet_assets (1.0.2)
+      railties (>= 3.1, < 5.0)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -186,6 +190,10 @@ GEM
     therubyracer (0.11.4)
       libv8 (~> 3.11.8.12)
       ref
+    thin (1.5.0)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
     thor (0.18.1)
     tilt (1.4.1)
     treetop (1.4.14)
@@ -227,11 +235,13 @@ DEPENDENCIES
   pry
   pry-doc
   pry-nav
+  quiet_assets
   rails (= 3.2.13)
   rspec-rails (~> 2.4)
   ruby-prof
   sass-rails (~> 3.2.3)
   simple_form
   therubyracer
+  thin
   uglifier (>= 1.0.3)
   zurb-foundation (~> 4.0.0)
