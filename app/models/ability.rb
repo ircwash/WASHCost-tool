@@ -16,6 +16,13 @@ class Ability
         @permission_denied[:http_request] = 'xhr'
         true
       end
+      cannot :manage, DashboardController do |kontroller|
+        @permission_denied = {}
+        @permission_denied[:url] = new_user_session_path
+        @permission_denied[:message] = 'test message'
+        @permission_denied[:http_request] = 'http'
+        true
+      end
     else
       can :manage, :all
     end
