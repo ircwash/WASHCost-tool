@@ -18,14 +18,15 @@
       .large-12.columns
     %header
       =  render 'layouts/navigation'
-    .row
+    .row.main-container
       .large-10.large-offset-1.columns
         .row
           .large-12.columns
             = render 'layouts/messages'
         = yield
+      #delta-resize
     .row
       .large-12.columns
     %footer
       = render 'layouts/footer'
-    #delta-resize
+

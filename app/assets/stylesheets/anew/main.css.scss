@@ -2,10 +2,20 @@
 .button-landing-page {
   @include button(0, #ff7149, true, false, false, false);
 }
+// body and main container style
 body{
   background: linear-gradient(to bottom, #a28a64 0%, #d5c98f 100%);
 }
+.main-container{
+  background-color: rgba(254, 255, 222, 0.1);
+}
 
+// dashboard style
+.dashboard{
+  //background-color: rgba(254, 255, 222, 0.3);
+}
+
+// chosen select flat style
 .select-container-simple{
   .chosen-container-single{
     .chosen-single{
@@ -19,6 +29,7 @@ body{
   }
 }
 
+// top nav bar style
 .main-navigation{
   .main_logo{
     margin-left: 30px;
@@ -29,6 +40,8 @@ body{
   }
 }
 
+
+// landing page selector style
 .tool-selector-container{
   section.calculatorSwitch{
     //width: 49%;
@@ -104,7 +117,4 @@ body{
     }
   }
 }
-
-// Button Customizing...
-//@import "foundation/components/buttons";
 
