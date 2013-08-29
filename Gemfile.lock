@@ -39,6 +39,8 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bourne (1.1.2)
+      mocha (= 0.10.5)
     bson (1.8.6)
     bson_ext (1.8.6)
       bson (~> 1.8.6)
@@ -51,6 +53,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-webkit (1.0.0)
+      capybara (~> 2.0, >= 2.0.2)
+      json
     coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -81,6 +86,13 @@ GEM
     eventmachine (1.0.1)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    factory_girl (4.2.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.2.1)
+      factory_girl (~> 4.2.0)
+      railties (>= 3.0.0)
+    faker (1.1.2)
+      i18n (~> 0.5)
     haml (4.0.3)
       tilt
     haml-rails (0.4)
@@ -110,9 +122,12 @@ GEM
       callsite
       rack-contrib
       railties
+    metaclass (0.0.1)
     method_source (0.8.2)
     mime-types (1.23)
     mini_portile (0.5.0)
+    mocha (0.10.5)
+      metaclass (~> 0.0.1)
     mongoid (3.1.4)
       activemodel (~> 3.2)
       moped (~> 1.4)
@@ -181,10 +196,17 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    shoulda-matchers (1.4.2)
+      activesupport (>= 3.0.0)
+      bourne (~> 1.1.2)
     simple_form (2.1.0)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
     slop (3.4.6)
+    spork (1.0.0rc3)
+    spork-rails (3.2.1)
+      rails (>= 3.0.0, < 3.3.0)
+      spork (>= 1.0rc0)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -224,11 +246,14 @@ DEPENDENCIES
   binding_of_caller
   bson_ext
   cancan
-  capybara (~> 2.1.0)
+  capybara
+  capybara-webkit
   coffee-rails (~> 3.2.1)
   countries
   debugger
   devise
+  factory_girl_rails
+  faker
   haml
   haml-rails
   jquery-rails
@@ -241,10 +266,12 @@ DEPENDENCIES
   pry-nav
   quiet_assets
   rails (= 3.2.13)
-  rspec-rails (~> 2.4)
+  rspec-rails
   ruby-prof
   sass-rails (~> 3.2.3)
+  shoulda-matchers
   simple_form
+  spork-rails
   therubyracer
   thin
   uglifier (>= 1.0.3)

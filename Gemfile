@@ -12,11 +12,10 @@ gem 'cancan'
 gem 'simple_form'
 gem 'quiet_assets'
 gem 'thin'
-gem "active_attr"
+gem 'active_attr'
 #gem 'zurb-foundation'
 
 group :development, :test do
-  gem 'rspec-rails', '~> 2.4'
   gem 'ruby-prof'
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -30,7 +29,13 @@ group :development, :test do
 end
 
 group :test do
-  gem "capybara", "~> 2.1.0"
+  gem 'rspec-rails'
+  gem 'capybara' #, '~> 2.1.0'
+  gem 'capybara-webkit'
+  gem 'shoulda-matchers'
+  gem 'spork-rails'
+  gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 # Gems used only for assets and not required
