@@ -18,7 +18,7 @@
       %p
         CONTACT MAIL:
         %strong= current_user.email.upcase
-      = link_to 'ACCOUNT SETTINGS', '#', class: 'tiny button secondary radius'
+      = link_to 'ACCOUNT SETTINGS', edit_user_registration_path, class: 'tiny button secondary radius'
     .large-4.columns
       .link-container
         = link_to '+ START A BASIC CALCULATOR', root_path, class: 'tiny button secondary expand radius'

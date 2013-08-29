@@ -1,9 +1,10 @@
 .session.pad-session
   .row
-    %h2.text-center Sign up
+    %h2.text-center
+      Edit #{resource_name.to_s.humanize}
     = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
       = devise_error_messages!
-      .large-6.columns
+      .large-5.columns
         %div
           = f.input :first_name, :autofocus => true
         %div
@@ -21,5 +22,11 @@
           = f.input :prefered_language, collection: ['English','Spanish','French'], include_blank: false, input_html: {class: "chzn-select"}
         %div
           = f.input :password_confirmation
+        %div
+          = f.input :current_password
         .right= f.button :submit, "Register", class: 'button'
-  = render "devise/shared/links"
+  .row
+    %h3 Cancel my account
+    %p
+      Unhappy? #{button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete}
+    -#= link_to "Back", :back
