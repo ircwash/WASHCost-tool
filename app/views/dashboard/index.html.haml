@@ -46,11 +46,11 @@
                 .large-5.columns
                   %img{:src => "holder.js/90x50"}
                 .large-7.columns
-                  %h4= Country.new(basic_questionnaire.form["country"]).name.upcase
+                  %h5= basic_questionnaire.form["country"].present? ? Country.new(basic_questionnaire.form["country"]).name.upcase : "NN"
             %td
               .row
                 .large-6.columns.text-left
-                  %h4= basic_questionnaire.tool_name.upcase
+                  %h5= basic_questionnaire.tool_name.upcase
                   BASIC
                 .large-6.columns.text-center
                   %br
