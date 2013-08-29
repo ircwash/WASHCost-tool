@@ -1,21 +1,59 @@
 
-.toc-1 WASHCost
-- if user_signed_in?
-  = "Welcome #{current_user.first_name}"
-  = link_to 'Sign Out', destroy_user_session_path, method: :delete
-- else
-  = link_to 'Sign In', new_user_session_path
-  = link_to 'Register', new_user_registration_path
+-#.toc-1 WASHCost
+-#- if user_signed_in?
+-#  = "Welcome #{current_user.first_name}"
+-#  = link_to 'Sign Out', destroy_user_session_path, method: :delete
+-#- else
+-#  = link_to 'Sign In', new_user_session_path
+-#  = link_to 'Register', new_user_registration_path
+-#
+-#%a{:name => "Screens"}
+-#.toc-2 Screens
+-#.toc-3 Basic
+-#.toc-item
+-#  %a.toc-link{:href => "./water_basic"} Water
+-#.toc-item
+-#  %a.toc-link{:href => "./sanitation_basic"} Sanitation
+-#.toc-3 Advanced
+-#.toc-item
+-#  %a.toc-link{:href => "./select_advanced/"} Water
+-#.toc-item
+-#  %a.toc-link{:href => "./select_advanced/"} Sanitation
+.row.text-center
+  %h3 Do the math and make it last
+.row.text-center
+  Do a stanibility check and get the personal report based on your service delivery model.
+  %br
+  Before you start, please anwser these two question:
+.row.tool-selector-container
+  %section.calculatorSwitch
+    %ul
+      .large-6.columns
+        %li.right
+          = label_tag("name", "name", class: "tickCheckBox toolWater tool_name", "data-target" => "selection_tool_name") do
+            %span Water
+            = radio_button_tag("name", '0', true, id: "advWater")
+      .large-6.columns
+        %li
+          = label_tag("name", "name", class: "tickCheckBox toolSanitation tool_name", "data-target" => "selection_tool_name") do
+            %span Sanitation
+            = radio_button_tag("name", '1', false, id: "advSanita")
+.row.tool-selector-container
+  %section.calculatorSwitch
+    %ul
+      .large-6.columns
+        %li.right
+          = label_tag("type", nil, class: "tickCheckBox toolBasic tool_type", "data-target" => "selection_tool_type") do
+            = radio_button_tag("type", '0', true, id: "advWaterw")
+      .large-6.columns
+        %li
+          = label_tag("type", nil, class: "tickCheckBox toolAdvanced tool_type", "data-target" => "selection_tool_type") do
+            = radio_button_tag("type", '1', false, id: "advSanitaw")
+.row
+  .large-8.large-offset-2
+    = simple_form_for Selection::ToolSelection.new, url: "/home/calculator", as: :selection  do |f|
+      = f.input :tool_name, :as => :hidden, :input_html => { :value => "0" }
+      = f.input :tool_type, :as => :hidden, :input_html => { :value => "0" }
+      = f.button :submit, "Start the calculator", class: 'large button expand'
 
-%a{:name => "Screens"}
-.toc-2 Screens
-.toc-3 Basic
-.toc-item
-  %a.toc-link{:href => "./water_basic"} Water
-.toc-item
-  %a.toc-link{:href => "./sanitation_basic"} Sanitation
-.toc-3 Advanced
-.toc-item
-  %a.toc-link{:href => "./select_advanced/"} Water
-.toc-item
-  %a.toc-link{:href => "./select_advanced/"} Sanitation
+

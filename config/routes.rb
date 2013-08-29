@@ -33,10 +33,15 @@ WashCostApp::Application.routes.draw do
 
   end
 
-  resources :home do
-    get :marketing
-    get :selection
-  end
+  #resource :home do
+  #  get :marketing
+  #  get :selection
+  #
+  #  post :calculator
+  #
+  #end
+
+  match '/home/calculator' => 'home#calculator'
 
   match '/select_advanced' => 'application#select_advanced'
 

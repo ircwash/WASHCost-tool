@@ -12,6 +12,7 @@ gem 'cancan'
 gem 'simple_form'
 gem 'quiet_assets'
 gem 'thin'
+gem "active_attr"
 #gem 'zurb-foundation'
 
 group :development, :test do
