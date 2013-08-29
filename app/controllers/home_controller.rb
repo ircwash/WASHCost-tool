@@ -17,7 +17,7 @@ class HomeController < ApplicationController
       when 2
         redirect_to sanitation_basic_path
       else
-        redirect_to root_path
+        redirect_to root_path, alert: "We will updated Advanced Tool very soon in the meantime, please visit washcost blog"
     end
   end
 end

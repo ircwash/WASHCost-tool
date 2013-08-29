@@ -30,9 +30,7 @@ WashCostApp::Application.routes.draw do
     end
   end
 
-  resources :dashboards do
-
-  end
+  resources :dashboard
 
   #resource :home do
   #  get :marketing
@@ -42,6 +40,7 @@ WashCostApp::Application.routes.draw do
   #
   #end
 
+  match '/dashboard' => 'dashboard#index'
   match '/home/calculator' => 'home#calculator'
 
   match '/select_advanced' => 'application#select_advanced'

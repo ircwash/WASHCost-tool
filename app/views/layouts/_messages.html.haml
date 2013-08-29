@@ -1,1 +1,5 @@
-.messages
+- flash.each do |name, msg|
+  - if msg.is_a?(String) && name.to_s=='alert'
+    .alert-box{"data-alert" => ""}
+      #{msg}
+      %a.close{:href => "#"} ×
