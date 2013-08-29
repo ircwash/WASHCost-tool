@@ -21,14 +21,17 @@
       = link_to 'ACCOUNT SETTINGS', '#', class: 'tiny button secondary radius'
     .large-4.columns
       .link-container
-        = link_to '+ START A BASIC CALCULATOR', '#', class: 'tiny button secondary expand radius'
+        = link_to '+ START A BASIC CALCULATOR', root_path, class: 'tiny button secondary expand radius'
         = link_to '+ START AN ADVANCED CALCULATOR (COMING SOON)', '#', class: 'tiny button secondary expand radius'
   .row
     %br
+    %br
+  .row
+    .reports-tag MY REPORTS
   .row
     .reports
       %table
-        %tr
+        %tr.text-left
           %th{width: 100} TITLE
           %th{width: 200} LOCATION
           %th{width: 200} CALCULATOR TYPE
@@ -37,9 +40,23 @@
 
         - current_user.basic_questionnaires.each do |basic_questionnaire|
           %tr
-            %td= basic_questionnaire.title
-            %td= Country.new(basic_questionnaire.form["country"]).name.upcase
-            %td= basic_questionnaire.tool_name
-            %td= basic_questionnaire.percent_completed
+            %td= basic_questionnaire.title.upcase
+            %td
+              .row
+                .large-5.columns
+                  %img{:src => "holder.js/90x50"}
+                .large-7.columns
+                  %h4= Country.new(basic_questionnaire.form["country"]).name.upcase
+            %td
+              .row
+                .large-6.columns.text-left
+                  %h4= basic_questionnaire.tool_name.upcase
+                  BASIC
+                .large-6.columns.text-center
+                  %br
+                  %p= "#{basic_questionnaire.percent_completed} % DONE"
+
+            %td
+              %h4 INSTALLED
             %td= link_to 'FINAL REPORT', load_basic_reports_path(id_questionnaire: basic_questionnaire.id), "data-method" => "post"
 
