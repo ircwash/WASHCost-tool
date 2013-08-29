@@ -82,4 +82,8 @@ class ApplicationController < ActionController::Base
     reset_session
     render :text => 'Session cleaned'
   end
+
+  def after_sign_in_path_for(resource)
+    dashboards_path
+  end
 end
