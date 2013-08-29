@@ -45,4 +45,8 @@ class User
 
   ## Token authenticatable
   # field :authentication_token, :type => String
+
+  def name
+    "#{first_name} #{last_name}"
+  end
 end

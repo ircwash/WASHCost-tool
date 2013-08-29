@@ -13,6 +13,22 @@ body{
 // dashboard style
 .dashboard{
   //background-color: rgba(254, 255, 222, 0.3);
+  .section{
+    background-color: rgba(254, 255, 205, 0.5);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    img{
+      padding-left: 20px;
+    }
+    p{
+      margin-bottom: 5px;
+      font-size: 13px;
+      font-family: impact, sans-serif;
+    }
+    .link-container{
+      margin-right: 20px;
+    }
+  }
 }
 
 // chosen select flat style
