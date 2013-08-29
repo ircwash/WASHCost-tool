@@ -25,6 +25,7 @@ WashCostApp::Application.routes.draw do
     resource :reports do
       member do
         post :save
+        post :load
       end
     end
   end

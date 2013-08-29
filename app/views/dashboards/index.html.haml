@@ -23,4 +23,23 @@
       .link-container
         = link_to '+ START A BASIC CALCULATOR', '#', class: 'tiny button secondary expand radius'
         = link_to '+ START AN ADVANCED CALCULATOR (COMING SOON)', '#', class: 'tiny button secondary expand radius'
+  .row
+    %br
+  .row
+    .reports
+      %table
+        %tr
+          %th{width: 100} TITLE
+          %th{width: 200} LOCATION
+          %th{width: 200} CALCULATOR TYPE
+          %th{width: 200} SERVICE
+          %th{width: 200} FINAL REPORT
+
+        - current_user.basic_questionnaires.each do |basic_questionnaire|
+          %tr
+            %td= basic_questionnaire.title
+            %td= Country.new(basic_questionnaire.form["country"]).name.upcase
+            %td= basic_questionnaire.tool_name
+            %td= basic_questionnaire.percent_completed
+            %td= link_to 'FINAL REPORT', load_basic_reports_path(id_questionnaire: basic_questionnaire.id), "data-method" => "post"
 

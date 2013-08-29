@@ -9,6 +9,7 @@ class Basic::ReportsController < ApplicationController
     querier = params[:querier]
     tool_name = params[:tool_name] || params[:basic_questionnaire][:tool_name]
     form = session["#{tool_name}_basic_form".to_sym] || Hash.new(0)
+    form[:pages_completed] = session["#{tool_name}_basic_complete".to_sym] || 0
     saved_form_id = form[:saved_form_id]
     @response = {}
     @response[:tool_name] = tool_name
@@ -40,5 +41,18 @@ class Basic::ReportsController < ApplicationController
       end
 
     end
+  end
+
+  def load
+    puts params
+    questionnaire = current_user.basic_questionnaires.find(params[:id_questionnaire])
+    tool_name = questionnaire.tool_name
+    session["#{tool_name}_basic_form".to_sym] = Hash.new(0)
+    questionnaire.form.each do |answer|
+      session["#{tool_name}_basic_form".to_sym][answer[0]]=answer[1]
+    end
+    session["#{tool_name}_basic_complete".to_sym] = questionnaire.form["pages_completed"]
+    session["#{tool_name}_basic_form".to_sym][:saved_form_id] = params[:id_questionnaire]
+    redirect_to "/#{tool_name}_basic/report"
   end
 end
