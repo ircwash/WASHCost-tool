@@ -1,4 +1,7 @@
 class Basic::ReportsController < ApplicationController
+
+  authorize_resource class: Basic::ReportsController
+  
   # this action saves the report associated with basic tool, also, this action verifies if a report session saved
   # is already exists
   def save

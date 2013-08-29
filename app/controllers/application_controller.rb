@@ -7,7 +7,10 @@ class ApplicationController < ActionController::Base
 
   rescue_from CanCan::AccessDenied do |exception|
     flash[:error] = t(:register_if_acces_to_cuesstinaire_view)
-    redirect_to root_path
+    current_ability.can? exception.action.to_sym, exception.subject.new
+    @path_to = current_ability.permission_denied[:url]
+    session[:user_return_to] = request.referer
+    current_ability.permission_denied[:http_request]=='xhr' ? render('basic/reports/redirect') : redirect_to(url)
   end
 
 
