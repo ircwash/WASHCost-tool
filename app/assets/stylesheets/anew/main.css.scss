@@ -1,3 +1,7 @@
+@import 'foundation_and_overrides';
+.button-landing-page {
+  @include button(0, #ff7149, true, false, false, false);
+}
 body{
   background: linear-gradient(to bottom, #a28a64 0%, #d5c98f 100%);
 }
@@ -24,6 +28,7 @@ body{
     color: #ff5e3d
   }
 }
+
 .tool-selector-container{
   section.calculatorSwitch{
     //width: 49%;
@@ -99,3 +104,7 @@ body{
     }
   }
 }
+
+// Button Customizing...
+//@import "foundation/components/buttons";
+
