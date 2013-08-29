@@ -1,6 +1,12 @@
 // Required global settings and mixins for Foundation
 //@import "foundation/foundation-global";
 
+//**** Top-Bar style
+$topbar-height: 60px;
+$topbar-bg: #333;
+$topbar-dropdown-bg: #848484;
+
+
 // Settings file to override Foundation variables
 
 // You can find the variables for each component at the bottom of their

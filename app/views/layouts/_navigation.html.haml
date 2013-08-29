@@ -1,1 +1,29 @@
-navigation
+%nav.top-bar.main-navigation
+  %ul.title-area
+    %li
+      = link_to root_path, class: 'link_logo' do
+        = image_tag 'logoWashCost8.png', class: 'main_logo'
+  %section.top-bar-section
+    %ul.right
+      %li
+        %a{:href => "#"} About
+      %li
+        %a{:href => "#"} Contact
+      %li.has-dropdown.not-click
+        %a{:href => "#"} Language
+        %ul.dropdown
+          %li.title.back.js-generated
+            %h5
+              %a{:href => "#"} « Back
+          %li
+            %a{:href => "http://patterntap.com"} English
+          %li
+            %a{:href => "http://www.zurb.com/word"} French
+          %li
+            %a{:href => "http://www.zurb.com/responsive"} Spanish
+      %li
+        - if user_signed_in? && current_user
+          = link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'topbar-sign'
+        - else
+          = link_to 'Sign In', new_user_session_path, class: 'topbar-sign'
+

@@ -33,6 +33,11 @@ WashCostApp::Application.routes.draw do
 
   end
 
+  resources :home do
+    get :marketing
+    get :selection
+  end
+
   match '/select_advanced' => 'application#select_advanced'
 
   match '/water_basic' => 'water_basic#country'
