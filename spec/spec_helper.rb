@@ -19,6 +19,9 @@ Spork.prefork do
   require 'capybara/rails'
   require 'capybara/rspec'
 
+  # Use RackSessionAccess middleware for accessing session data in tests
+  require "rack_session_access/capybara"
+
   require 'shoulda/matchers/integrations/rspec'
 
   # Load the seeds
@@ -82,6 +85,14 @@ Spork.prefork do
     # Include devise test helpers in controller specs
     config.include Devise::TestHelpers, :type => :controller
 
+    # Custom Steps
+    config.include WashCostStepsHelper, :type => :feature
+
+    # Session Macros
+    config.include SessionMacros, :type => :feature
+
+    # Session Macros
+    config.include WashCostSessionMacros, :type => :feature
 
     # Run specs in random order to surface order dependencies. If you find an
     # order dependency and want to debug it, you can fix the order by providing
