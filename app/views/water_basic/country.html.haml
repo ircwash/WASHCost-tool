@@ -1,0 +1,7 @@
+- @title = "Start"
+%h1.basic_tool_header_item= t 'form.shared.country.question'
+= form_tag({controller: "water_basic", action: "country"}, class: "main_content", id: "waterBasicForm") do
+  .choices.countryChoices
+    %img{:alt => "Which country are we", :src => "/assets/world8.png"}/
+    = select_tag "country", options_for_select(get_countries, flash[:country_code]), :include_blank=>(t 'form.advanced.shared.country.placeholder'), :class=>"chzn-select", :tabindex => 1
+  = submit_tag((t 'buttons.next'), class: "next_button selectCountry")
