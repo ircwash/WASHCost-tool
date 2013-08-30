@@ -55,17 +55,22 @@ Spork.prefork do
     # rspec-rails.
     config.infer_base_class_for_anonymous_controllers = true
 
+
+    # **** database configuration begin ****
+
     static_info_collections = %w[] # Configure stable data (categories, countries, stuff like that here)
 
-    config.before(:each) do
-      DatabaseCleaner.strategy = :truncation, {except: static_info_collections}
-      DatabaseCleaner.start
+    config.before(:suite) do
+      DatabaseCleaner[:mongoid].strategy = :truncation, {except: static_info_collections}
     end
 
-    config.after(:each) do
+    #clean before avoids records/documents present even if tests fail or get interrupted
+    config.before(:each) do
       DatabaseCleaner.clean
     end
+
     # **** database configuration end ****
+
 
     # Factory girl direct methods
     config.include FactoryGirl::Syntax::Methods
