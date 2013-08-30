@@ -55,10 +55,10 @@ Spork.prefork do
     # rspec-rails.
     config.infer_base_class_for_anonymous_controllers = true
 
-    static_info_tables = %w[] # Configure stable data (categories, countries, stuff like that here)
+    static_info_collections = %w[] # Configure stable data (categories, countries, stuff like that here)
 
     config.before(:each) do
-      DatabaseCleaner.strategy = :truncation, {except: static_info_tables}
+      DatabaseCleaner.strategy = :truncation, {except: static_info_collections}
       DatabaseCleaner.start
     end
 
