@@ -2,6 +2,10 @@
 require 'rubygems'
 require 'spork'
 
+def t(*args)
+  I18n.t(*args)
+end
+
 Spork.prefork do
 
   # This file is copied to spec/ when you run 'rails generate rspec:install'
