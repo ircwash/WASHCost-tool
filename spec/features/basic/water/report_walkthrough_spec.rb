@@ -8,15 +8,29 @@ describe "Basic Tool Walkthrough" do
       current_path.should == water_basic_path
     end
 
+    it 'selects the country' do
+      visit water_basic_path
+      select 'COLOMBIA', from: 'country'
+      click_button t('buttons.next')
+      current_path.should == '/water_basic/water'
+      basic_water[:country].should == "CO"
+    end
+
+    it 'selects the main water supply technology' do
+      visit '/water_basic/water'
+      choose 'mixedPipe'
+      click_button t('buttons.next')
+      current_path.should == '/water_basic/population'
+      ap session
+      basic_water[:water].should == 1
+    end
+
+    # a more semantic approach to naming the session
+    # could be named "report" too
+    def basic_water
+      basic_water_session
+    end
+
   end
 
-  # Starts a calculator from the tool selection page
-  # @param tool_name [String] the name of the tool can be either :water or :sanitation
-  # @param tool_type [String] the type of the tool can be either :basic or :advanced
-  def start_calculator(tool_name, tool_type)
-    visit root_path
-    choose "#{tool_name}_tool"
-    choose "#{tool_type}_tool"
-    click_button t('buttons.start')
-  end
 end
