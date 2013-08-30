@@ -9,6 +9,11 @@ $topbar-margin-bottom: 0;
 
 $column-gutter: 0;
 
+//**** Popup
+// overlay
+$reveal-overlay-bg: rgba(#000, .70);
+$reveal-overlay-bg-old: #000;
+
 // Settings file to override Foundation variables
 
 // You can find the variables for each component at the bottom of their

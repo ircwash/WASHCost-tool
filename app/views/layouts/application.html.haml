@@ -24,9 +24,16 @@
           .large-12.columns
             = render 'layouts/messages'
         = yield
+        .washcost-popup
+          .reveal-modal.notification.subscriber
+            = render 'popups/subscriber'
+            %a.close-reveal-modal ×
     #delta-resize
     .row
       .large-12.columns
     %footer
       = render 'layouts/footer'
+
+.row
+  .large-8.large-offset-2.columns
 

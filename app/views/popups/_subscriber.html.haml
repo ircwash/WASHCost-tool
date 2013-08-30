@@ -1,0 +1,19 @@
+.row
+  %br
+  .title COMING SOON
+  %br
+  .caption.text-center We will publish the advanced Calculator very soon. Please your email and we will let you know when the tool is ready.
+  %br
+  .form-subscriber
+    - @subscriber ||= Subscriber.new
+    = simple_form_for @subscriber, url: subscribers_path, remote: true do |f|
+      .row
+        .large-8.large-offset-2.large-cenetered.columns
+          .error-notification
+      .row
+        .large-8.large-offset-2.large-cenetered.columns
+          = f.input :email, label: false, placeholder: 'Enter your email'
+          = f.button :submit, 'Register', class: 'small button button-landing-page'
+
+  %br
+  .footpage.text-center please visit the WASHCost blog to learn more about the Advanced Calculator

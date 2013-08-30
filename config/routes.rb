@@ -40,6 +40,8 @@ WashCostApp::Application.routes.draw do
   #
   #end
 
+  resources :subscribers
+
   match '/dashboard' => 'dashboard#index'
   match '/home/calculator' => 'home#calculator'
 
