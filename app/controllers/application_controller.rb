@@ -83,7 +83,8 @@ class ApplicationController < ActionController::Base
     render :text => 'Session cleaned'
   end
 
-  #def after_sign_in_path_for(resource)
-  #  dashboards_path
-  #end
+  def after_sign_in_path_for(resource)
+    session[:user_return_to] ||= new_user_session_url
+    session[:user_return_to] == new_user_session_url ? dashboard_index_path : session[:user_return_to]
+  end
 end
