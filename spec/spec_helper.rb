@@ -45,11 +45,6 @@ Spork.prefork do
     # config.mock_with :rr
     config.mock_with :rspec
 
-    # If you're not using ActiveRecord, or you'd prefer not to run each of your
-    # examples within a transaction, remove the following line or assign false
-    # instead of true.
-    config.use_transactional_fixtures = false
-
     # This allows you to tag an exaple with :focus to make it run with Guard
     config.treat_symbols_as_metadata_keys_with_true_values = true
     config.filter_run :focus => true
@@ -83,7 +78,7 @@ Spork.prefork do
     # order dependency and want to debug it, you can fix the order by providing
     # the seed, which is printed after each run.
     #     --seed 1234
-    config.order = 'random'
+    #config.order = 'random'
   end
 
 end

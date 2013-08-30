@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 
-describe QuestionnaireController do
+describe Advanced::Water::QuestionnairesController do
   it "accepts simple calculator parameters" do
     post :create, basic_params
   end
