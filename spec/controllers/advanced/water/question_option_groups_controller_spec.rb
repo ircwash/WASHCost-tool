@@ -34,7 +34,7 @@ describe Advanced::Water::QuestionOptionGroupsController do
     it "assigns all advanced_water_question_option_groups as @advanced_water_question_option_groups" do
       question_option_group = Advanced::Water::QuestionOptionGroup.create! valid_attributes
       get :index, {}, valid_session
-      assigns(:advanced_water_question_option_groups).should eq([question_option_group])
+      assigns(:advanced_water_question_option_groups).to_a.should eq([question_option_group])
     end
   end
 
@@ -42,14 +42,14 @@ describe Advanced::Water::QuestionOptionGroupsController do
     it "assigns the requested advanced_water as @advanced_water" do
       question_option_group = Advanced::Water::QuestionOptionGroup.create! valid_attributes
       get :show, {:id => question_option_group.to_param}, valid_session
-      assigns(:advanced_water).should eq(question_option_group)
+      assigns(:advanced_water_question_option_group).should eq(question_option_group)
     end
   end
 
   describe "GET new" do
     it "assigns a new advanced_water as @advanced_water" do
       get :new, {}, valid_session
-      assigns(:advanced_water).should be_a_new(Advanced::Water::QuestionOptionGroup)
+      assigns(:advanced_water_question_option_group).should be_a_new(Advanced::Water::QuestionOptionGroup)
     end
   end
 
@@ -57,7 +57,7 @@ describe Advanced::Water::QuestionOptionGroupsController do
     it "assigns the requested advanced_water as @advanced_water" do
       question_option_group = Advanced::Water::QuestionOptionGroup.create! valid_attributes
       get :edit, {:id => question_option_group.to_param}, valid_session
-      assigns(:advanced_water).should eq(question_option_group)
+      assigns(:advanced_water_question_option_group).should eq(question_option_group)
     end
   end
 
@@ -65,18 +65,18 @@ describe Advanced::Water::QuestionOptionGroupsController do
     describe "with valid params" do
       it "creates a new Advanced::Water::QuestionOptionGroup" do
         expect {
-          post :create, {:advanced_water => valid_attributes}, valid_session
+          post :create, {:advanced_water_question_option_group => valid_attributes}, valid_session
         }.to change(Advanced::Water::QuestionOptionGroup, :count).by(1)
       end
 
       it "assigns a newly created advanced_water as @advanced_water" do
-        post :create, {:advanced_water => valid_attributes}, valid_session
-        assigns(:advanced_water).should be_a(Advanced::Water::QuestionOptionGroup)
-        assigns(:advanced_water).should be_persisted
+        post :create, {:advanced_water_question_option_group => valid_attributes}, valid_session
+        assigns(:advanced_water_question_option_group).should be_a(Advanced::Water::QuestionOptionGroup)
+        assigns(:advanced_water_question_option_group).should be_persisted
       end
 
       it "redirects to the created advanced_water" do
-        post :create, {:advanced_water => valid_attributes}, valid_session
+        post :create, {:advanced_water_question_option_group => valid_attributes}, valid_session
         response.should redirect_to(Advanced::Water::QuestionOptionGroup.last)
       end
     end
@@ -85,14 +85,14 @@ describe Advanced::Water::QuestionOptionGroupsController do
       it "assigns a newly created but unsaved advanced_water as @advanced_water" do
         # Trigger the behavior that occurs when invalid params are submitted
         Advanced::Water::QuestionOptionGroup.any_instance.stub(:save).and_return(false)
-        post :create, {:advanced_water => { "name" => "invalid value" }}, valid_session
-        assigns(:advanced_water).should be_a_new(Advanced::Water::QuestionOptionGroup)
+        post :create, {:advanced_water_question_option_group => { "name" => "invalid value" }}, valid_session
+        assigns(:advanced_water_question_option_group).should be_a_new(Advanced::Water::QuestionOptionGroup)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Advanced::Water::QuestionOptionGroup.any_instance.stub(:save).and_return(false)
-        post :create, {:advanced_water => { "name" => "invalid value" }}, valid_session
+        post :create, {:advanced_water_question_option_group => { "name" => "invalid value" }}, valid_session
         response.should render_template("new")
       end
     end
@@ -107,18 +107,18 @@ describe Advanced::Water::QuestionOptionGroupsController do
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
         Advanced::Water::QuestionOptionGroup.any_instance.should_receive(:update_attributes).with({ "name" => "MyString" })
-        put :update, {:id => question_option_group.to_param, :advanced_water => { "name" => "MyString" }}, valid_session
+        put :update, {:id => question_option_group.to_param, :advanced_water_question_option_group => { "name" => "MyString" }}, valid_session
       end
 
       it "assigns the requested advanced_water as @advanced_water" do
         question_option_group = Advanced::Water::QuestionOptionGroup.create! valid_attributes
-        put :update, {:id => question_option_group.to_param, :advanced_water => valid_attributes}, valid_session
-        assigns(:advanced_water).should eq(question_option_group)
+        put :update, {:id => question_option_group.to_param, :advanced_water_question_option_group => valid_attributes}, valid_session
+        assigns(:advanced_water_question_option_group).should eq(question_option_group)
       end
 
       it "redirects to the advanced_water" do
         question_option_group = Advanced::Water::QuestionOptionGroup.create! valid_attributes
-        put :update, {:id => question_option_group.to_param, :advanced_water => valid_attributes}, valid_session
+        put :update, {:id => question_option_group.to_param, :advanced_water_question_option_group => valid_attributes}, valid_session
         response.should redirect_to(question_option_group)
       end
     end
@@ -128,15 +128,15 @@ describe Advanced::Water::QuestionOptionGroupsController do
         question_option_group = Advanced::Water::QuestionOptionGroup.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Advanced::Water::QuestionOptionGroup.any_instance.stub(:save).and_return(false)
-        put :update, {:id => question_option_group.to_param, :advanced_water => { "name" => "invalid value" }}, valid_session
-        assigns(:advanced_water).should eq(question_option_group)
+        put :update, {:id => question_option_group.to_param, :advanced_water_question_option_group => { "name" => "invalid value" }}, valid_session
+        assigns(:advanced_water_question_option_group).should eq(question_option_group)
       end
 
       it "re-renders the 'edit' template" do
         question_option_group = Advanced::Water::QuestionOptionGroup.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Advanced::Water::QuestionOptionGroup.any_instance.stub(:save).and_return(false)
-        put :update, {:id => question_option_group.to_param, :advanced_water => { "name" => "invalid value" }}, valid_session
+        put :update, {:id => question_option_group.to_param, :advanced_water_question_option_group => { "name" => "invalid value" }}, valid_session
         response.should render_template("edit")
       end
     end
