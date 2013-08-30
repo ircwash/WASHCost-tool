@@ -17,14 +17,14 @@
         %div
           = f.input :last_name
         .select-container-simple
-          = f.input :country, input_html: {class: "chzn-select"}
+          = f.input :country, input_html: {class: "chzn-select"}, include_blank: false
         .select-container-simple
           = f.input :prefered_language, collection: ['English','Spanish','French'], include_blank: false, input_html: {class: "chzn-select"}
         %div
           = f.input :password_confirmation
         %div
           = f.input :current_password
-        .right= f.button :submit, "Register", class: 'button'
+        .right= f.button :submit, "Edit", class: 'button'
   .row
     %h3 Cancel my account
     %p

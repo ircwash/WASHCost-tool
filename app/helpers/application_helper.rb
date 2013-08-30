@@ -5,7 +5,7 @@ module ApplicationHelper
 
     return [
         ["AFGHANISTAN","AF"],
-        ['ÅLAND ISLANDS',"AX"],
+        ['ALAND ISLANDS',"AX"],
         ["ALBANIA","AL"],
         ["ALGERIA","DZ"],
         ["AMERICAN SAMOA","AS"],

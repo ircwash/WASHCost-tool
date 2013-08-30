@@ -3,22 +3,11 @@
     %h2.text-center Sign up
     = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
       = devise_error_messages!
-      .large-6.columns
-        %div
-          = f.input :first_name, :autofocus => true
-        %div
-          = f.input :company
+      .large-10.large-offset-1.columns
         %div
           = f.input :email
         %div
           = f.input :password
-      .large-5.large-offset-1.columns
-        %div
-          = f.input :last_name
-        .select-container-simple
-          = f.input :country, input_html: {class: "chzn-select"}
-        .select-container-simple
-          = f.input :prefered_language, collection: ['English','Spanish','French'], include_blank: false, input_html: {class: "chzn-select"}
         %div
           = f.input :password_confirmation
         .right= f.button :submit, "Register", class: 'button'

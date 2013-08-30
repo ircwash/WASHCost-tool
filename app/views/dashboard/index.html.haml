@@ -10,7 +10,7 @@
         %strong= current_user.company.upcase
       %p
         COUNTRY:
-        %strong= Country.new(current_user.country).name.upcase
+        %strong=  Country.new(current_user.country).data.present? ? Country.new(current_user.country).name.upcase : "NO SPECIFIED"
     .large-3.columns
       %p
         PREFERED LANGUAGE:

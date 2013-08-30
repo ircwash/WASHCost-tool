@@ -12,9 +12,9 @@ class User
   ## Database authenticatable
   field :first_name,         type: String
   field :last_name,          type: String
-  field :country,            type: String
-  field :prefered_language,  type: String
-  field :company,            type: String
+  field :country,            type: String, default: "GB"
+  field :prefered_language,  type: String, default: "English"
+  field :company,            type: String, default: "No Specified"
   field :email,              type: String, default: ""
   field :encrypted_password, type: String, default: ""
   
@@ -47,6 +47,10 @@ class User
   # field :authentication_token, :type => String
 
   def name
-    "#{first_name} #{last_name}"
+    if first_name || last_name
+      "#{first_name} #{last_name}"
+    else
+      email.split('@')[0]
+    end
   end
 end
