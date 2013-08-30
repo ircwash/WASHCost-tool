@@ -5,23 +5,23 @@
   %ul.waterInput.selectable_water
     %li
       = label_tag("boreHold", nil, class: "tickCheckBox") do
-        = radio_button_tag("water", 0, 0 == @water, id: "boreHold")
+        = radio_button_tag("r_water", 0, 0 == @water, id: "boreHold")
         %span= t 'form.water_basic.water.answers.a0'
     %li
       = label_tag("mechanised", nil, class: "tickCheckBox boreHold_01") do
-        = radio_button_tag("water", 1, 1 == @water, id: "mechanised")
+        = radio_button_tag("r_water", 1, 1 == @water, id: "mechanised")
         %span= t 'form.water_basic.water.answers.a1'
     %li
       = label_tag("singleTown", nil, class: "tickCheckBox boreHold_02") do
-        = radio_button_tag("water", 2, 2 == @water, id: "singleTown")
+        = radio_button_tag("r_water", 2, 2 == @water, id: "singleTown")
         %span= t 'form.water_basic.water.answers.a2'
     %li
       = label_tag("multiTown", nil, class: "tickCheckBox boreHold_03") do
-        = radio_button_tag("water", 3, 3 == @water, id: "multiTown")
+        = radio_button_tag("r_water", 3, 3 == @water, id: "multiTown")
         %span= t 'form.water_basic.water.answers.a3'
     %li
       = label_tag("mixedPipe", nil, class: "tickCheckBox boreHold_04") do
-        = radio_button_tag("water", 4, 4 == @water, id: "mixedPipe")
+        = radio_button_tag("r_water", 4, 4 == @water, id: "mixedPipe")
         %span= t 'form.water_basic.water.answers.a4'
   %input{"data-target" => "water", :name => "target-select", :type => "hidden"}/
   %input{:name => "water", :type => "hidden"}/
