@@ -38,6 +38,9 @@ group :test do
   gem 'database_cleaner'
   gem 'faker'
   gem 'launchy'
+
+  # Allows to set/get session variables in any test
+  gem 'rack_session_access'
 end
 
 # Gems used only for assets and not required
