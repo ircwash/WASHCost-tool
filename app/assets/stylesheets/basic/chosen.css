@@ -278,7 +278,7 @@
 /* @end */
 /* @group Active  */
 .chzn-container-active .chzn-single {
-    border: 1px solid #5897fb;
+    /*border: 1px solid #5897fb;*/
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 .chzn-container-active.chzn-with-drop .chzn-single div {
