@@ -42,14 +42,14 @@ describe Advanced::Water::QuestionnairesController do
     it "assigns the requested advanced_water as @advanced_water" do
       questionnaire = Advanced::Water::Questionnaire.create! valid_attributes
       get :show, {:id => questionnaire.to_param}, valid_session
-      assigns(:advanced_water).should eq(questionnaire)
+      assigns(:advanced_water_questionnaire).should eq(questionnaire)
     end
   end
 
   describe "GET new" do
     it "assigns a new advanced_water as @advanced_water" do
       get :new, {}, valid_session
-      assigns(:advanced_water).should be_a_new(Advanced::Water::Questionnaire)
+      assigns(:advanced_water_questionnaire).should be_a_new(Advanced::Water::Questionnaire)
     end
   end
 
@@ -57,7 +57,7 @@ describe Advanced::Water::QuestionnairesController do
     it "assigns the requested advanced_water as @advanced_water" do
       questionnaire = Advanced::Water::Questionnaire.create! valid_attributes
       get :edit, {:id => questionnaire.to_param}, valid_session
-      assigns(:advanced_water).should eq(questionnaire)
+      assigns(:advanced_water_questionnaire).should eq(questionnaire)
     end
   end
 
@@ -65,18 +65,18 @@ describe Advanced::Water::QuestionnairesController do
     describe "with valid params" do
       it "creates a new Advanced::Water::Questionnaire" do
         expect {
-          post :create, {:advanced_water => valid_attributes}, valid_session
+          post :create, {:advanced_water_questionnaire => valid_attributes}, valid_session
         }.to change(Advanced::Water::Questionnaire, :count).by(1)
       end
 
       it "assigns a newly created advanced_water as @advanced_water" do
-        post :create, {:advanced_water => valid_attributes}, valid_session
-        assigns(:advanced_water).should be_a(Advanced::Water::Questionnaire)
-        assigns(:advanced_water).should be_persisted
+        post :create, {:advanced_water_questionnaire => valid_attributes}, valid_session
+        assigns(:advanced_water_questionnaire).should be_a(Advanced::Water::Questionnaire)
+        assigns(:advanced_water_questionnaire).should be_persisted
       end
 
       it "redirects to the created advanced_water" do
-        post :create, {:advanced_water => valid_attributes}, valid_session
+        post :create, {:advanced_water_questionnaire => valid_attributes}, valid_session
         response.should redirect_to(Advanced::Water::Questionnaire.last)
       end
     end
@@ -85,14 +85,14 @@ describe Advanced::Water::QuestionnairesController do
       it "assigns a newly created but unsaved advanced_water as @advanced_water" do
         # Trigger the behavior that occurs when invalid params are submitted
         Advanced::Water::Questionnaire.any_instance.stub(:save).and_return(false)
-        post :create, {:advanced_water => { "something" => "invalid value" }}, valid_session
-        assigns(:advanced_water).should be_a_new(Advanced::Water::Questionnaire)
+        post :create, {:advanced_water_questionnaire => { "something" => "invalid value" }}, valid_session
+        assigns(:advanced_water_questionnaire).should be_a_new(Advanced::Water::Questionnaire)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Advanced::Water::Questionnaire.any_instance.stub(:save).and_return(false)
-        post :create, {:advanced_water => { "something" => "invalid value" }}, valid_session
+        post :create, {:advanced_water_questionnaire => { "something" => "invalid value" }}, valid_session
         response.should render_template("new")
       end
     end
@@ -107,18 +107,18 @@ describe Advanced::Water::QuestionnairesController do
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
         Advanced::Water::Questionnaire.any_instance.should_receive(:update_attributes).with({ "something" => "MyString" })
-        put :update, {:id => questionnaire.to_param, :advanced_water => { "something" => "MyString" }}, valid_session
+        put :update, {:id => questionnaire.to_param, :advanced_water_questionnaire => { "something" => "MyString" }}, valid_session
       end
 
       it "assigns the requested advanced_water as @advanced_water" do
         questionnaire = Advanced::Water::Questionnaire.create! valid_attributes
-        put :update, {:id => questionnaire.to_param, :advanced_water => valid_attributes}, valid_session
-        assigns(:advanced_water).should eq(questionnaire)
+        put :update, {:id => questionnaire.to_param, :advanced_water_questionnaire => valid_attributes}, valid_session
+        assigns(:advanced_water_questionnaire).should eq(questionnaire)
       end
 
       it "redirects to the advanced_water" do
         questionnaire = Advanced::Water::Questionnaire.create! valid_attributes
-        put :update, {:id => questionnaire.to_param, :advanced_water => valid_attributes}, valid_session
+        put :update, {:id => questionnaire.to_param, :advanced_water_questionnaire => valid_attributes}, valid_session
         response.should redirect_to(questionnaire)
       end
     end
@@ -128,15 +128,15 @@ describe Advanced::Water::QuestionnairesController do
         questionnaire = Advanced::Water::Questionnaire.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Advanced::Water::Questionnaire.any_instance.stub(:save).and_return(false)
-        put :update, {:id => questionnaire.to_param, :advanced_water => { "something" => "invalid value" }}, valid_session
-        assigns(:advanced_water).should eq(questionnaire)
+        put :update, {:id => questionnaire.to_param, :advanced_water_questionnaire => { "something" => "invalid value" }}, valid_session
+        assigns(:advanced_water_questionnaire).should eq(questionnaire)
       end
 
       it "re-renders the 'edit' template" do
         questionnaire = Advanced::Water::Questionnaire.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Advanced::Water::Questionnaire.any_instance.stub(:save).and_return(false)
-        put :update, {:id => questionnaire.to_param, :advanced_water => { "something" => "invalid value" }}, valid_session
+        put :update, {:id => questionnaire.to_param, :advanced_water_questionnaire => { "something" => "invalid value" }}, valid_session
         response.should render_template("edit")
       end
     end
