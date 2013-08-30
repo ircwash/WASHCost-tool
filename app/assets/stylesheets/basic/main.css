@@ -587,7 +587,7 @@ a.sbSelector:hover {
     color: #fff;
 }
 .labelScale li span.estimate {
-    color: #217f8b;
+    color: rgb(78, 59, 36);
 }
 .labelScale li.first span {
     text-align: left;
