@@ -54,6 +54,6 @@
     = simple_form_for Selection::ToolSelection.new, url: "/home/calculator", as: :selection  do |f|
       = f.input :tool_name, :as => :hidden, :input_html => { :value => "0" }
       = f.input :tool_type, :as => :hidden, :input_html => { :value => "0" }
-      = f.button :submit, t(:start_the_calculator), class: 'large button expand button-landing-page'
+      = f.button :submit, t('buttons.start'), class: 'large button expand button-landing-page'
 
 

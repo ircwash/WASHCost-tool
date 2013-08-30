@@ -42,7 +42,7 @@ en:
       service: "Service"
   buttons:
     next: "Next"
-    start: "OK! Start using the calculator"
+    start: "Start the calculator"
     save: "Save"
     view_report: "View Report"
     complete: "Complete"
@@ -653,4 +653,3 @@ en:
     complete: "Complete"
     footer_layout_sanitation: "Sanitation"
   register_if_acces_to_cuesstinaire_view: "You must be registered if you want access to basic tool"
-  start_the_calculator: "Start the calculator"

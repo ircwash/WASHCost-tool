@@ -8,7 +8,6 @@ describe "Basic Tool Walkthrough" do
       current_path.should == water_basic_path
     end
 
-
   end
 
   # Starts a calculator from the tool selection page
@@ -18,6 +17,6 @@ describe "Basic Tool Walkthrough" do
     visit root_path
     choose "#{tool_name}_tool"
     choose "#{tool_type}_tool"
-    click_button t(:start_the_calculator)
+    click_button t('buttons.start')
   end
 end
