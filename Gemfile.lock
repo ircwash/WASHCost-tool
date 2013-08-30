@@ -69,7 +69,7 @@ GEM
       currencies (>= 0.4.0)
     currencies (0.4.2)
     daemons (1.1.9)
-    database_cleaner (0.9.1)
+    database_cleaner (1.1.1)
     debug_inspector (0.0.2)
     debugger (1.6.1)
       columnize (>= 0.3.1)
