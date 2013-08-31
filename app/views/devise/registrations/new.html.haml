@@ -1,14 +1,24 @@
-.session.pad-session
+.session{style: 'margin-botton: 10px;'}
   .row
-    %h2.text-center Sign up
-    = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
-      = devise_error_messages!
-      .large-10.large-offset-1.columns
-        %div
-          = f.input :email
-        %div
-          = f.input :password
-        %div
-          = f.input :password_confirmation
-        .right= f.button :submit, "Register", class: 'button'
-  = render "devise/shared/links"
+    .large-10.large-offset-1
+      - popup |= false
+      - unless popup
+        %h5.text-center LOGIN TO YOUR ACCOUNT
+      = simple_form_for resource, :as => resource_name, :url => session_path(resource_name), html: {} do |f|
+        %div{class: "#{'container-popup' if popup}"}
+          .special-textfiled
+            = f.input :email, :required => false, :autofocus => true, label: false, input_html: { class: 'special_input_session' }, placeholder: 'Email'
+          .special-textfiled
+            = f.input :password, :required => false, label: false, input_html: { class: 'special_input_session' }, placeholder: 'Password'
+          .special-textfiled
+            = f.input :password_confirmation, :required => false, label: false, input_html: { class: 'special_input_session' }, placeholder: 'Repeat your password'
+          .row
+            .large-6.columns
+              .login-button
+                = f.button :submit, "Register", class: 'medium button button-landing-page button-landing-page-size'
+            .large-6.columns
+              .login-links.text-right
+                = render "devise/shared/links"
+
+%br
+%br
