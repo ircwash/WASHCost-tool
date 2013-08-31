@@ -7,7 +7,10 @@
 // notification popup
 .washcost-popup{
   .notification {
-    @include reveal-modal-style(#333333, 10, true, solid, 1, #888, true, 30);
+    @include reveal-modal-style(#333333, 10, true, solid, 1px, #333333, true, 30);
+    .close{
+      @include reveal-close(#fff);
+    }
     &.subscriber{
       .title{
         font-weight: 400;
