@@ -69,8 +69,8 @@ $(document).ready(function()
     //Function to resize the size of header in each page of basic tools
     header_basic_tool = $('.basic_tool_header_item');
     heihgt_header = header_basic_tool.height();
-    HEIGHT_HEADER_LIMIT = 94;
-    HEADER_FONT_SIZE_BASE = 40
+    HEIGHT_HEADER_LIMIT = 70;
+    HEADER_FONT_SIZE_BASE = 30
     if(header_basic_tool.length>0 && heihgt_header> HEIGHT_HEADER_LIMIT){
         font_size = HEADER_FONT_SIZE_BASE;
         while(heihgt_header > HEIGHT_HEADER_LIMIT){
