@@ -57,10 +57,33 @@
 
 // body and main container style
 body{
-  background: linear-gradient(to bottom, #a28a64 0%, #d5c98f 100%);
+  background: -moz-linear-gradient(top,  #9f8c61 0%, #a89761 30%, #bfb373 63%, #d1c887 100%); //* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9f8c61), color-stop(30%,#a89761), color-stop(63%,#bfb373), color-stop(100%,#d1c887));//* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #9f8c61 0%,#a89761 30%,#bfb373 63%,#d1c887 100%); //* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #9f8c61 0%,#a89761 30%,#bfb373 63%,#d1c887 100%); //* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #9f8c61 0%,#a89761 30%,#bfb373 63%,#d1c887 100%); //* IE10+ */
+  background: linear-gradient(to bottom,  #9f8c61 0%,#a89761 30%,#bfb373 63%,#d1c887 100%); //* W3C */
 }
 .main-container{
+  //background-color: rgba(254, 255, 222, 0.1);
+}
+
+.landing-container{
+  h3{
+    color: white;
+    font-weight: 200;
+  }
+  .caption{
+    color: #cfc5ad;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  margin-top: 40px;
   background-color: rgba(254, 255, 222, 0.1);
+  margin-bottom: 20px;
+  -webkit-box-shadow:  0px 0px 8px 1px rgba(0, 0, 0, 0.83);
+  box-shadow:  0px 0px 8px 1px rgba(0, 0, 0, 0.83);
+  padding-top: 20px;
 }
 
 //session devise
@@ -174,11 +197,15 @@ footer{
     //width: 49%;
     margin: 0 auto;
     overflow: hidden;
+    &.height-tool-type{
+      height: 160px;
+    }
   }
+
   .calculatorSwitch{
     ul{
       overflow: hidden;
-      margin-bottom: 45px;
+      margin-bottom: 0px;
     }
     li{
       position: relative;
@@ -199,24 +226,28 @@ footer{
         height: 100px;
       }
       &.toolSanitation{
-        background-position: -210px -194px;
+        background-position: -210px -232px;
         &.ticked{
           background-position: -210px 0;
         }
       }
       &.toolWater{
-        background-position: 0 -194px;
+        background-position: 0 -232px;
         &.ticked{
           background-position: 0 0;
         }
       }
       &.toolAdvanced{
+        margin-top: 0px;
+        height: 70px;
         background-position: -211px -273px;
         &.ticked{
           background-position: -211px 0;
         }
       }
       &.toolBasic{
+        margin-top: 0px;
+        height: 70px;
         background-position: 0 -273px;
         &.ticked{
           background-position: 0 0;
@@ -235,11 +266,12 @@ footer{
         width: 100%;
         text-align: center;
         left: 0;
+        color: #8f7e5a;
       }
 
       &.ticked{
          span{
-           color: #9e9474;
+           color: #312618;
          }
       }
     }

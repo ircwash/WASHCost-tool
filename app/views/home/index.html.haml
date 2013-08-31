@@ -1,39 +1,40 @@
-.row.text-center
-  %h3 Do the math and make it last
-.row.text-center
-  Do a stanibility check and get the personal report based on your service delivery model.
-  %br
-  Before you start, please anwser these two question:
-.row.tool-selector-container
-  %section.calculatorSwitch
-    %ul
-      .large-6.columns
-        %li.right
-          = label_tag("name", "name", class: "tickCheckBox toolWater tool_name", "data-target" => "selection_tool_name") do
-            %span Water
-            = radio_button_tag("name", '0', true, id: "water_tool")
-      .large-6.columns
-        %li
-          = label_tag("name", "name", class: "tickCheckBox toolSanitation tool_name", "data-target" => "selection_tool_name") do
-            %span Sanitation
-            = radio_button_tag("name", '1', false, id: "sanitation_tool")
-.row.tool-selector-container
-  %section.calculatorSwitch
-    %ul
-      .large-6.columns
-        %li.right
-          = label_tag("type", nil, class: "tickCheckBox toolBasic tool_type", "data-target" => "selection_tool_type") do
-            = radio_button_tag("type", '0', true, id: "basic_tool")
-      .large-6.columns
-        %li
-          = label_tag("type", nil, class: "tickCheckBox toolAdvanced tool_type", "data-target" => "selection_tool_type") do
-            = radio_button_tag("type", '1', false, id: "advanced_tool")
-.row.tool-selector-container
-  .large-8.large-offset-2.columns
-    = simple_form_for Selection::ToolSelection.new, url: "/home/calculator", as: :selection  do |f|
-      = f.input :tool_name, :as => :hidden, :input_html => { :value => "0" }
-      = f.input :tool_type, :as => :hidden, :input_html => { :value => "0" }
-      .tool-selection-submit.text-center
-        = f.button :submit, t('buttons.start'), class: 'medium button expand button-landing-page button-landing-page-size'
+.landing-container
+  .row.text-center
+    %h3 Do the math and make it last
+  .row.text-center.caption
+    Do a sustainability check and get the personal report based on your service delivery model.
+    %br
+    Before you start, please anwser these two question:
+  .row.tool-selector-container
+    %section.calculatorSwitch
+      %ul
+        .large-6.columns
+          %li.right
+            = label_tag("name", "name", class: "tickCheckBox toolWater tool_name", "data-target" => "selection_tool_name") do
+              %span Water
+              = radio_button_tag("name", '0', true, id: "water_tool")
+        .large-6.columns
+          %li
+            = label_tag("name", "name", class: "tickCheckBox toolSanitation tool_name", "data-target" => "selection_tool_name") do
+              %span Sanitation
+              = radio_button_tag("name", '1', false, id: "sanitation_tool")
+  .row.tool-selector-container
+    %section.calculatorSwitch.height-tool-type
+      %ul
+        .large-6.columns
+          %li.right
+            = label_tag("type", nil, class: "tickCheckBox toolBasic tool_type", "data-target" => "selection_tool_type") do
+              = radio_button_tag("type", '0', true, id: "basic_tool")
+        .large-6.columns
+          %li
+            = label_tag("type", nil, class: "tickCheckBox toolAdvanced tool_type", "data-target" => "selection_tool_type") do
+              = radio_button_tag("type", '1', false, id: "advanced_tool")
+  .row.tool-selector-container
+    .large-8.large-offset-2.columns
+      = simple_form_for Selection::ToolSelection.new, url: "/home/calculator", as: :selection  do |f|
+        = f.input :tool_name, :as => :hidden, :input_html => { :value => "0" }
+        = f.input :tool_type, :as => :hidden, :input_html => { :value => "0" }
+        .tool-selection-submit.text-center
+          = f.button :submit, t('buttons.start'), class: 'medium button expand button-landing-page button-landing-page-size'
 
 
