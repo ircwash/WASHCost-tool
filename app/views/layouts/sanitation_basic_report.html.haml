@@ -78,7 +78,7 @@
         %section.cost
           %h2= t 'report.water_advanced.cost.title'
           - flash[:results][:form_ready]
-          - if flash[:results][:form_ready] == true
+          - if flash[:results][:is_cost_avaliable]
             %h3
               Cost on 10 years (for a population of #{flash[:results][:population]} people)
             #graph

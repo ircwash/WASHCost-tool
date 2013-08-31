@@ -36,6 +36,7 @@ module SanitationReportHelper
         :impermeability_index => form[:impermeability],
         :reliability => get_reliability(form[:reliability]),
         :reliability_index => form[:reliability],
+        :is_cost_avaliable => cost_avaliable?(form[:capital], form[:recurrent])
     }
 
     return results
@@ -76,6 +77,10 @@ module SanitationReportHelper
       }
     end
     return form
+  end
+
+  def cost_avaliable?(capital, recurrent)
+    capital > 0 && recurrent > 0
   end
 
   def get_country(country_code)

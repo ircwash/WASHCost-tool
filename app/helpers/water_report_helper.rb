@@ -66,11 +66,16 @@ module WaterReportHelper
       :quality => get_quality(form[:quality]),
       :quality_index => get_index(form[:quality]),
       :reliability => get_reliability(form[:reliability]),
-      :reliability_index => get_index(form[:reliability])
+      :reliability_index => get_index(form[:reliability]),
+      :is_cost_avaliable => cost_avaliable?(form[:capital], form[:recurrent])
     }
 
     return results
 
+  end
+
+  def cost_avaliable?(capital, recurrent)
+    capital > 0 && recurrent > 0
   end
 
   def is_form_ready?(form)

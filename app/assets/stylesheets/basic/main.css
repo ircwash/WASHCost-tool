@@ -6,6 +6,10 @@ Author: Brilliant Basics
 --------------------------------------------*/
 
 /* reset */
+
+.chzn-results li{
+    height: 10px;
+}
 html {
     height: 100%;
     margin: 0;
@@ -1411,6 +1415,8 @@ section .sectionWrapper a.editAnchor img {
     border: 2px dashed #67aed0;
     padding: 40px 60px;
     margin: 0 auto;
+    width: 400px;
+    margin-bottom: 10px;
     background-color: #026d9e;
 }
 .errorNoData p {
