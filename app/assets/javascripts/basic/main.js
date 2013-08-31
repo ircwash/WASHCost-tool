@@ -9,7 +9,7 @@ $(document).ready(function()
             var $panel = $(this).parent();
 
             $panel.animate({
-                right: parseInt($panel.css('right'),10) == -214 ? ($panel.width()-245) : -214
+                right: parseInt($panel.css('right'),10) == -214 ? ($panel.width()-263) : -214
             }, 100);
 
         });

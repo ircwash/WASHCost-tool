@@ -687,17 +687,17 @@ a.sbSelector:hover {
     clear: both;
     position: absolute;
     width: auto;
-    top: 50%;
+    top: 45px;
     right: -214px;
     margin-top: -100px;
 }
 .tab {
     display: block;
     float: left;
-    width: 32px;
-    height: 47px;
+    width: 51px;
+    height: 51px;
     text-indent: -1000000px;
-    background: transparent url('/assets/iconInfoTab8.png') no-repeat 0 0;
+    background: #ff6633 url('/assets/iconInfoTab8.png') no-repeat 6px 4px;
 }
 .tabContent {
     float: left;
