@@ -168,9 +168,11 @@ nav {
 .navWrapper {
     position: relative;
     width: 935px;
-    height: 120px;
+    height: 109px;
     overflow: hidden;
     margin: 0 auto;
+    box-shadow: 1px 6px 8px -6px rgba(0, 0, 0, 0.10);
+    -webkit-box-shadow: 1px 6px 8px -6px rgba(0, 0, 0, 0.10);
 }
 
 ul.navigation {
@@ -237,12 +239,12 @@ ul.navigation li.section a.active {
     font-size: 12px;
     margin: 0;
     padding: 14px 30px;
-    color: #fff;
+    color: #b1a78a;
     font-weight: bold;
 }
 
 .navigation li li a.active {
-    color: rgb(78, 59, 36);
+    color: #a9985e;
     background-color: #fff;
 
     -webkit-border-radius: 5px;
