@@ -394,6 +394,7 @@ form li {
     float: left;
     width: 160px;
     margin-right: 5px;
+    height: 225px;
 }
 form li label {
     display: block;
@@ -406,11 +407,14 @@ form li input {
 }
 form li label span {
     position: absolute;
-    color: rgb(78, 59, 36);
-    font-size: 11px;
-    bottom: 0;
-    width: 50%;
-    left: 25%;
+    color: rgba(51, 51, 51, 0.4);;
+    font-size: 14px;
+    bottom: 3px;
+    width: 83%;
+    left: 8%;
+    font-weight: bold;
+    vertical-align: text-top;
+    height: 45px;
 }
 .value {
     display: inline-block;
@@ -1434,7 +1438,12 @@ section .sectionWrapper a.editAnchor img {
     font-weight: bold;
 }
 .sanitation li label.ticked span {
-    color: #fff;
+    color: #333;
+    vertical-align: text-top;
+    height: 45px;
+}
+li label.ticked span {
+    color: #333;
 }
 .latrineInput {
     width: 870px;
