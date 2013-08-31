@@ -423,25 +423,27 @@ form li label span {
 }
 .valueOutput {
     display: inline-block;
-    min-width: 50px;
+    min-width: 150px;
+    height: 31px;
     font-size: 30px;
     color: #fff;
-    padding: 10px 25px 10px;
-    margin: 0 25px auto;
-    background: #8f7e5a;
-
-    -webkit-box-shadow:  0px 0px 0px 3px rgba(75, 57, 42, 0.8);
-    box-shadow:  0px 0px 0px 3px rgba(75, 57, 42, 0.8);
-
+    padding: 6px 25px 10px;
+    margin: 0 17px auto;
+    background: #dad3b1;
+    -webkit-box-shadow: 0px -2px 8px 0px rgba(92, 82, 73, 0.31);
+    box-shadow: 2px -5px 3px -3px rgba(92, 82, 73, 0.31);
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
 }
 .valueLabel {
-    color: #fff;
-    font-size: 11px;
+    color: #333;
+    font-size: 12px;
     font-weight: bold;
     margin-top: 5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+
 }
 .valueLabel span {
     display: block;
