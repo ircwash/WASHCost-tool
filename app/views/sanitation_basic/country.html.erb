@@ -3,9 +3,9 @@
 <h1 class="basic_tool_header_item"><%= t 'form.sanitation_basic.country.question' %></h1>
 
 <%= form_tag({controller: "sanitation_basic", action: "country"}, class: "main_content", id: "waterBasicForm") do %>
-
+    <img src="/assets/world8.png" alt="Which country are we">
     <div class="choices countryChoices">
-      <img src="/assets/world8.png" alt="Which country are we">
+
       <%= select_tag "country",
                      options_for_select(get_countries, flash[:country_code]),
                      :include_blank=>(t 'form.advanced.shared.country.placeholder'),
