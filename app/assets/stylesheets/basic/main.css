@@ -239,7 +239,6 @@ ul.navigation li.section a.active {
     padding: 14px 30px;
     color: #fff;
     font-weight: bold;
-    text-transform:uppercase;
 }
 
 .navigation li li a.active {
