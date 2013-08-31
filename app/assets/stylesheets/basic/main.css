@@ -385,9 +385,11 @@ footer h2 span {
 }
 .mainContent h1 span {
     display: block;
-    font-size: 11px;
-    color: rgb(78, 59, 36);
+    font-size: 12px;
+    color: #333;
     margin-top: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 form li {
     position: relative;
