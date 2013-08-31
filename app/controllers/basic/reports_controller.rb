@@ -43,6 +43,7 @@ class Basic::ReportsController < ApplicationController
     end
   end
 
+  # this action import the specific report regarding the selection of user in dashboard
   def load
     puts params
     questionnaire = current_user.basic_questionnaires.find(params[:id_questionnaire])
