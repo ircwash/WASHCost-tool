@@ -6,18 +6,17 @@
 
       <div class="choices washCostSlider">
         <div class="value">
-            <div class="valueOutput"><span id="capitalValue">0</span></div>
-            <div class="valueLabel">Per person US$</div>
+          <div class="valueLabel">Per person US$</div>
+          <div class="valueOutput"><span id="capitalValue">0</span></div>
+
         </div>
         <div id="capitalSlider" data-slider_value=<%=@capital[:value]%>>
         </div>
         <ul class="labelScale">
           <li class="first">
-            <span class="estimate">Below</span>
             <span class="numRounding"><%=@capital[:below_value]%></span>
           </li>
           <li class="last">
-            <span class="estimate">Above</span>
             <span class="numRounding"><%=@capital[:above_value]%></span>
           </li>
         </ul>
