@@ -2,6 +2,9 @@
 .button-landing-page {
   @include button(0, #f37540, true, false, false, false);
 }
+.button-landing-page-size{
+  @include button-size(0,100px,false);
+}
 
 //*** popup-style
 // notification popup
@@ -181,7 +184,8 @@ footer{
       position: relative;
       width: 203px;
       float: left;
-      margin-right: 10px;
+      margin-right: 20px;
+      margin-left: 20px;
       color: transparent;
     }
     label{
@@ -207,13 +211,13 @@ footer{
         }
       }
       &.toolAdvanced{
-        background-position: -211px -131px;
+        background-position: -211px -273px;
         &.ticked{
           background-position: -211px 0;
         }
       }
       &.toolBasic{
-        background-position: 0 -131px;
+        background-position: 0 -273px;
         &.ticked{
           background-position: 0 0;
         }
@@ -240,5 +244,11 @@ footer{
       }
     }
   }
+  .tool-selection-submit{
+    display: table;
+    margin: 0 auto;
+    width: 444px;
+  }
 }
+
 

@@ -1,24 +1,3 @@
-
--#.toc-1 WASHCost
--#- if user_signed_in?
--#  = "Welcome #{current_user.first_name}"
--#  = link_to 'Sign Out', destroy_user_session_path, method: :delete
--#- else
--#  = link_to 'Sign In', new_user_session_path
--#  = link_to 'Register', new_user_registration_path
--#
--#%a{:name => "Screens"}
--#.toc-2 Screens
--#.toc-3 Basic
--#.toc-item
--#  %a.toc-link{:href => "./water_basic"} Water
--#.toc-item
--#  %a.toc-link{:href => "./sanitation_basic"} Sanitation
--#.toc-3 Advanced
--#.toc-item
--#  %a.toc-link{:href => "./select_advanced/"} Water
--#.toc-item
--#  %a.toc-link{:href => "./select_advanced/"} Sanitation
 .row.text-center
   %h3 Do the math and make it last
 .row.text-center
@@ -49,11 +28,12 @@
         %li
           = label_tag("type", nil, class: "tickCheckBox toolAdvanced tool_type", "data-target" => "selection_tool_type") do
             = radio_button_tag("type", '1', false, id: "advanced_tool")
-.row
-  .large-8.large-offset-2
+.row.tool-selector-container
+  .large-8.large-offset-2.columns
     = simple_form_for Selection::ToolSelection.new, url: "/home/calculator", as: :selection  do |f|
       = f.input :tool_name, :as => :hidden, :input_html => { :value => "0" }
       = f.input :tool_type, :as => :hidden, :input_html => { :value => "0" }
-      = f.button :submit, t('buttons.start'), class: 'large button expand button-landing-page'
+      .tool-selection-submit.text-center
+        = f.button :submit, t('buttons.start'), class: 'medium button expand button-landing-page button-landing-page-size'
 
 
