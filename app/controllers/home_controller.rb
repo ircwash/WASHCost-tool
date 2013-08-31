@@ -20,4 +20,9 @@ class HomeController < ApplicationController
         redirect_to root_path, flash: { popup_class_name: '.notification.subscriber' }
     end
   end
+
+  def sign_in
+    session[:user_return_to] = request.referer
+    redirect_to new_user_session_path
+  end
 end

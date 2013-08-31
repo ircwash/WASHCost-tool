@@ -14,6 +14,8 @@
           %a{:href => "?lang=fr"} Français
     %li
       - if user_signed_in?
-        %a.sign{:href => destroy_user_session_path, 'data-method' => :delete }= t 'nav.utility.sign_out'
+        = link_to "Hi #{current_user.name}", dashboard_index_path, class: 'sign'
         |
-        = link_to 'Dashboard', dashboard_index_path, class: 'sign'
+        %a.sign{:href => destroy_user_session_path, 'data-method' => :delete }= t 'nav.utility.sign_out'
+      - else
+        = link_to "Sign In", home_sign_in_path, class: 'sign'

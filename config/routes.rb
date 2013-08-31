@@ -44,6 +44,7 @@ WashCostApp::Application.routes.draw do
 
   match '/dashboard' => 'dashboard#index'
   match '/home/calculator' => 'home#calculator'
+  match '/home/sign_in' => 'home#sign_in'
 
   match '/cal/water_basic' => 'water_basic#country'
   match '/cal/water_basic/(:action)' => 'water_basic#(:action)', :via => [:get, :post]
