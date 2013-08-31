@@ -54,6 +54,6 @@ class Basic::ReportsController < ApplicationController
     end
     session["#{tool_name}_basic_complete".to_sym] = questionnaire.form["pages_completed"]
     session["#{tool_name}_basic_form".to_sym][:saved_form_id] = params[:id_questionnaire]
-    redirect_to "/#{tool_name}_basic/report"
+    redirect_to "/cal/#{tool_name}_basic/report"
   end
 end

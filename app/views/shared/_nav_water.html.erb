@@ -3,20 +3,20 @@
   <div class="navWrapper">
     <ul class="navigation">
       <li class="section context">
-        <a href="/water_basic/country/" class="<%= get_main_nav_cssClass(:context, params[:action]) %>"><%= t 'nav.main.context.title' %></a>
+        <a href="/cal/water_basic/country/" class="<%= get_main_nav_cssClass(:context, params[:action]) %>"><%= t 'nav.main.context.title' %></a>
       </li>
       <li  class="section cost">
-        <a href="/water_basic/capital" class="<%= get_main_nav_cssClass(:cost, params[:action]) %>"><%= t 'nav.main.cost.title' %></a>
+        <a href="/cal/water_basic/capital" class="<%= get_main_nav_cssClass(:cost, params[:action]) %>"><%= t 'nav.main.cost.title' %></a>
       </li>
       <li class="section service">
-        <a href="/water_basic/quantity" class="<%= get_main_nav_cssClass(:service, params[:action]) %>"><%= t 'nav.main.service.title' %></a>
+        <a href="/cal/water_basic/quantity" class="<%= get_main_nav_cssClass(:service, params[:action]) %>"><%= t 'nav.main.service.title' %></a>
       </li>
       <li id="subnavigation">
         <ul id="navSled" style="left:<%= get_nav_offset %>px">
           <% get_nav_items[:context][:items].each do |key, value| %>
               <% active = get_class_for_section(:water_basic_form, key) %>
               <li>
-                <a class="<%= active %>" href="/water_basic/<%= key %>">
+                <a class="<%= active %>" href="/cal/water_basic/<%= key %>">
                   <%= get_nav_items[:context][:items][key] %>
                 </a>
               </li>
@@ -24,7 +24,7 @@
           <% get_nav_items[:cost][:items].each do |key, value| %>
               <% active = get_class_for_section(:water_basic_form, key) %>
               <li>
-                <a class="<%= active %>" href="/water_basic/<%= key %>">
+                <a class="<%= active %>" href="/cal/water_basic/<%= key %>">
                   <%= get_nav_items[:cost][:items][key] %>
                 </a>
               </li>
@@ -32,7 +32,7 @@
           <% get_nav_items[:service][:items].each do |key, value| %>
               <% active = get_class_for_section(:water_basic_form, key) %>
               <li>
-                <a class="<%= active %>" href="/water_basic/<%= key %>">
+                <a class="<%= active %>" href="/cal/water_basic/<%= key %>">
                   <%= get_nav_items[:service][:items][key] %>
                 </a>
               </li>

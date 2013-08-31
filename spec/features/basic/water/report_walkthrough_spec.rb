@@ -12,15 +12,15 @@ describe "Basic Tool Walkthrough" do
       visit water_basic_path
       select 'COLOMBIA', from: 'country'
       click_button t('buttons.next')
-      current_path.should == '/water_basic/water'
+      current_path.should == '/cal/water_basic/water'
       basic_water[:country].should == "CO"
     end
 
     it 'selects the main water supply technology' do
-      visit '/water_basic/water'
+      visit '/cal/water_basic/water'
       choose 'mixedPipe'
       click_button t('buttons.next')
-      current_path.should == '/water_basic/population'
+      current_path.should == '/cal/water_basic/population'
       ap session
       basic_water[:water].should == 1
     end

@@ -39,7 +39,7 @@ $(document).ready(function()
             // Change the info box regarding to item selected
             console.log(target_select);
             $.ajax({
-                url : "/water_basic/data_info_box",
+                url : "/cal/water_basic/data_info_box",
                 data : "trigger="+target_select+"&index="+$(this).find('input').val(),
                 type : "POST",
             });

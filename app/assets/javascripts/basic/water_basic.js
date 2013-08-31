@@ -5,7 +5,7 @@ $(document).ready(function(){
     // setting the default or initial value in info box
     target_select = $('input[name="target-select"]').data("target");
      $.ajax({
-                url : "/water_basic/data_info_box",
+                url : "/cal/water_basic/data_info_box",
                 data : "trigger="+target_select+"&index="+option_cheched.val(),
                 type : "POST",
             });
