@@ -229,7 +229,7 @@ ul.navigation li.section a.active {
 .navigation li li a.done {
     display: block;
     color: #fff;
-    background:transparent url('/assets/spriteArrow8.png') no-repeat 100% -384px;
+    /*background:transparent url('/assets/spriteArrow8.png') no-repeat 100% -384px;*/
 }
 
 .navigation li li a {
