@@ -357,14 +357,13 @@ footer h2 span {
     clear: both;
     display: block;
     font-size: 16px;
-    font-weight: bold;
-    height: 54px;
+    font-weight: bolder;
+    height: 41px;
     border: 0px;
-    color: #d6d6d6;
-    padding: 20px 94px 39px;
-    margin: 20px auto 10px;
-    background-color: #363636;
-    text-transform: uppercase;
+    color: #fff;
+    padding: 12px 18px 31px;
+    margin: 10px auto 10px;
+    background-color: #f37540;
     text-align: center;
 
     -webkit-border-radius: 5px;

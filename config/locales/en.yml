@@ -41,7 +41,7 @@ en:
       cost: "Cost"
       service: "Service"
   buttons:
-    next: "Next"
+    next: "Next Question"
     start: "Start the calculator"
     save: "Save"
     view_report: "View Report"
