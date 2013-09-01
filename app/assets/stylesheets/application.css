@@ -14,5 +14,5 @@
  *= require foundation
  *= require ./foundation_and_overrides
  *= require_tree ./anew
- *
+ *= require_tree ./common
 */

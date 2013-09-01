@@ -44,7 +44,7 @@
             %td{valign: :middle}
               .row
                 .large-5.columns
-                  %img{:src => "holder.js/40x20"}
+                  = image_tag 'flags/blank.gif', class: "flag flag-#{basic_questionnaire.form["country"].downcase}"
                 .large-7.columns
                   .country= basic_questionnaire.form["country"].present? ? Country.new(basic_questionnaire.form["country"]).name.upcase : "NN"
             %td

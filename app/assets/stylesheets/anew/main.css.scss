@@ -245,9 +245,12 @@ body{
         font-size: 12px;
         border: #000000 solid 1px;
         margin:10px;
+        .flag{
+          margin-top: 5px;
+        }
         .country{
-          margin-top: 3px;
-          margin-left: 5px;
+          margin-top: 5px;
+          margin-left: 2px;
           margin-right: 5px;
           color: #aaaaaa;
         }
