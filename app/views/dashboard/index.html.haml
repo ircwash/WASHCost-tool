@@ -27,36 +27,35 @@
     %br
     %br
   .row
-    .reports-tag MY REPORTS
-  .row
     .reports
       %table
-        %tr.text-left
-          %th{width: 100} TITLE
-          %th{width: 200} LOCATION
-          %th{width: 200} CALCULATOR TYPE
-          %th{width: 200} SERVICE
+        %tr.text-left.head
+          %th{width: 150} LOCATION
+          %th{width: 200} DATE
+          %th{width: 300} CALCULATOR TYPE
+          %th{width: 100} SERVICE
           %th{width: 200} FINAL REPORT
 
         - current_user.basic_questionnaires.each do |basic_questionnaire|
-          %tr
-            %td= basic_questionnaire.title.upcase
+          %tr.divisor
             %td
+              = basic_questionnaire.title.upcase
+          %tr
+            %td{valign: :middle}
               .row
                 .large-5.columns
-                  %img{:src => "holder.js/90x50"}
+                  %img{:src => "holder.js/40x20"}
                 .large-7.columns
-                  %h5= basic_questionnaire.form["country"].present? ? Country.new(basic_questionnaire.form["country"]).name.upcase : "NN"
+                  .country= basic_questionnaire.form["country"].present? ? Country.new(basic_questionnaire.form["country"]).name.upcase : "NN"
+            %td
+              .date
+                = basic_questionnaire.created_at
             %td
               .row
-                .large-6.columns.text-left
-                  %h5= basic_questionnaire.tool_name.upcase
-                  BASIC
-                .large-6.columns.text-center
-                  %br
-                  %p= "#{basic_questionnaire.percent_completed} % DONE"
-
+                .large-12.columns.text-left
+                  .tool_name=  "#{basic_questionnaire.tool_name.upcase} | "
+                  .percent= " BASIC TOOL (#{basic_questionnaire.percent_completed}%)"
             %td
-              %h4 INSTALLED
-            %td= link_to 'FINAL REPORT', load_basic_reports_path(id_questionnaire: basic_questionnaire.id), "data-method" => "post"
+              .service INSTALLED
+            %td= link_to 'VIEW REPORT', load_basic_reports_path(id_questionnaire: basic_questionnaire.id), "data-method" => "post", class: 'view_report'
 

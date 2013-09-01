@@ -207,15 +207,66 @@ body{
        font-size: 18px;
    }
   .reports{
-    margin-left: 40px;
     text-align: center;
     table{
-      border-top: #c0c0c0 solid 4px;
+      color: #58595b;
+      border-collapse: collapse;
+      border: none;
+      width: 100%;
+      background-color: transparent;
+      tr{
+        &:nth-of-type(even){
+          background-color: #333333;
+        }
+        &.head{
+          background-color: transparent;
+        }
+        &.divisor{
+          background-color: transparent;
+          height: 30px;
+          width: 100%;
+          td{
+            background-color: transparent;
+            border: none;
+            color: #746b4e;
+            text-align: left;
+            font-size: 10px;
+          }
+        }
+        height: 10px;
+        margin-bottom: 10px;
+        background-color: #333333;
+      }
       th{
         font-size: 12px;
-        padding-top: 40px;
-        color: #58595b;
-        border-bottom: #dfdfdf solid 3px;
+        color: #222222;
+      }
+      td{
+        font-size: 12px;
+        border: #000000 solid 1px;
+        margin:10px;
+        .country{
+          margin-top: 3px;
+          margin-left: 5px;
+          margin-right: 5px;
+          color: #aaaaaa;
+        }
+        .date{
+          color:#5d5d5d;
+        }
+        .tool_name{
+          float: left;
+          color: #aaaaaa;
+        }
+        .percent{
+          color:#5d5d5d;
+        }
+        .service{
+          color: #aaaaaa;
+        }
+        .view_report{
+          color: #aaaaaa;
+        }
       }
       h4{
         color: #58595b;
@@ -223,7 +274,6 @@ body{
       h5{
         color: #58595b;
       }
-      color: #58595b;
     }
   }
 }
