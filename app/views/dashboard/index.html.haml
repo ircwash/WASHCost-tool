@@ -1,28 +1,29 @@
 .dashboard
   .row.section
     .large-2.columns
-      %img{:src => "holder.js/120x90"}
-    .large-3.columns
-      %h5
-        = current_user.name.upcase
+      %img{:src => "holder.js/140x140"}
+      = link_to edit_user_registration_path do
+        = image_tag 'setting-icon.png', class: 'setting-button'
+    .large-4.columns
+      .name
+        = current_user.name.titleize
       %p
         COMPANY:
         %strong= current_user.company.upcase
       %p
         COUNTRY:
-        %strong=  Country.new(current_user.country).data.present? ? Country.new(current_user.country).name.upcase : "NO SPECIFIED"
-    .large-3.columns
+        %strong=  Country.new(current_user.country).data.present? ? Country.new(current_user.country).name.capitalize : "NO SPECIFIED"
       %p
-        PREFERED LANGUAGE:
+        Prefered Language:
         %strong= current_user.prefered_language.upcase
       %p
-        CONTACT MAIL:
+        Contact Mail:
         %strong= current_user.email.upcase
-      = link_to 'ACCOUNT SETTINGS', edit_user_registration_path, class: 'tiny button secondary radius'
+
     .large-4.columns
       .link-container
-        = link_to 'START A BASIC CALCULATOR', root_path, class: 'tiny button secondary expand radius'
-        = link_to 'START AN ADVANCED CALCULATOR (COMING SOON)', '#', class: 'tiny button secondary expand radius'
+        = link_to 'START A BASIC CALCULATOR', root_path, class: 'large button expand button-landing-page button-landing-page-size radius centered'
+        = link_to 'START AN ADVANCED CALCULATOR (COMING SOON)', '#', class: 'large button expand button-landing-page button-landing-page-size radius'
   .row
     %br
     %br
