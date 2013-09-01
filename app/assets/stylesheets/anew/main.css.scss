@@ -92,6 +92,26 @@ body{
   margin-top: 40px;
   margin-left: 200px;
   margin-right: 200px;
+
+  .error_caption{
+    h2{
+      font-size: 14px;
+      color: #f37540;
+    }
+    ul, li{
+      list-style-type: none;
+      color: #aaaaaa;
+      font-size: 14px;
+    }
+  }
+  span.error{
+    visibility: hidden;
+    display: none;
+  }
+  .margin-offset{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
   h5{
     margin-top: 30px;
     margin-bottom: 30px;
@@ -219,14 +239,19 @@ footer{
 
 // chosen select flat style
 .select-container-simple{
+  .chosen-container{
+    border: #333 solid 1px !important;
+  }
   .chosen-container-single{
     .chosen-single{
       height: 31px;
-      border-radius: 0;
-      background: #fff;
-      border-color: #C2C2C2;
-      margin-bottom: 17px;
+      border-radius: 4px;
+      background: #484848;
+      border: none;
+      color: #aaaaaa;
+      margin-bottom: 13px;
       padding-top: 3px;
+      text-decoration: none;
     }
   }
 }
