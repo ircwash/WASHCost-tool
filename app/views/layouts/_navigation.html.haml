@@ -16,11 +16,11 @@
             %h5
               %a{:href => "#"} « Back
           %li
-            %a{:href => "http://patterntap.com"} English
+            %a{:href => "#"} English
           %li
-            %a{:href => "http://www.zurb.com/word"} French
+            %a{:href => "#"} French
           %li
-            %a{:href => "http://www.zurb.com/responsive"} Spanish
+            %a{:href => "#"} Spanish
       %li
         - if user_signed_in? && current_user
           = link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'topbar-sign'
