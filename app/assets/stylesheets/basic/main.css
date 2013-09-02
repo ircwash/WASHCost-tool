@@ -997,6 +997,12 @@ section .sectionWrapper a.editAnchor img {
    text-decoration: none;
 }
 
+.report .sectionHeading.generalTitle .link_action_report.disabled:hover{
+    background-color: #eeedcb;
+    text-decoration: none;
+    cursor: default;
+}
+
 .report .sectionHeading.generalTitle .save_report{
     width: 148px;
     background: #edeccb url('/assets/report/save.png') no-repeat 10px 10px;
@@ -1004,7 +1010,7 @@ section .sectionWrapper a.editAnchor img {
 
 .report .sectionHeading.generalTitle .share_report{
     width: 73px;
-    background: #edeccb url('/assets/report/share.png') no-repeat 10px 15px;
+    background: #eeedcb url('/assets/report/share.png') no-repeat 10px 15px;
 }
 .report .general {
     background-image: none;
