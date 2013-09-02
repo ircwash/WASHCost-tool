@@ -31,8 +31,8 @@
     .reports
       %table
         %tr.text-left.head
-          %th{width: 150} LOCATION
-          %th{width: 200} DATE
+          %th{width: 200} LOCATION
+          %th{width: 150} DATE
           %th{width: 300} CALCULATOR TYPE
           %th{width: 100} SERVICE
           %th{width: 200} FINAL REPORT
@@ -44,16 +44,22 @@
           %tr
             %td{valign: :middle}
               .row
-                .large-5.columns
-                  .flag{class: "flag-#{basic_questionnaire.form["country"].downcase}"}
-                .large-7.columns
-                  .country= basic_questionnaire.form["country"].present? ? Country.new(basic_questionnaire.form["country"]).name.truncate(13).upcase : "NN"
+                - if basic_questionnaire.form["country"].present?
+                  .large-3.columns
+                    .flag{class: "flag-#{basic_questionnaire.form["country"].downcase}"}
+                  .large-9.columns
+                    .country= Country.new(basic_questionnaire.form["country"]).name.truncate(13).upcase
+                -else
+                  .large-3.columns
+                    .flag
+                  .large-9.columns
+                    .country NN
             %td
               .date
                 = basic_questionnaire.created_at
             %td
-              .row
-                .large-12.columns.text-left
+              .row.text-center
+                .large-12.columns
                   .tool_name=  "#{basic_questionnaire.tool_name.upcase} | "
                   .percent= " BASIC TOOL (#{basic_questionnaire.percent_completed}%)"
             %td
