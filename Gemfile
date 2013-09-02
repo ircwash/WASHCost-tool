@@ -14,6 +14,7 @@ gem 'quiet_assets'
 gem 'thin'
 gem 'active_attr'
 #gem 'zurb-foundation'
+gem 'high_voltage'
 
 group :development, :test do
   gem 'ruby-prof'
