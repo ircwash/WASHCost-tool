@@ -12,7 +12,7 @@
         %strong= current_user.company.upcase
       %p
         COUNTRY:
-        %strong=  Country.new(current_user.country).data.present? ? Country.new(current_user.country).name.capitalize : "NO SPECIFIED"
+        %strong=  Country.new(current_user.country).data.present? ? Country.new(current_user.country).name.capitalize : "NOT SPECIFIED"
       %p
         Prefered Language:
         %strong= current_user.prefered_language.upcase

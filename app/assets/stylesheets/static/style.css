@@ -95,9 +95,11 @@ a:link, a:visited {
 		    -moz-border-radius: 2px;
 		    border-radius: 2px;	   	
 		  	margin-top: 20px;
+            cursor: pointer;
 		}
 		#learnmore {
 			margin-right: 10px;
+            padding: 10px 40px;
 		}
 		#learnmore:hover, #c-trybutton:hover {
 			background-color: #839842;

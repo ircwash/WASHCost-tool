@@ -16,15 +16,15 @@
     #video
       %img#placeholder-image{:src => "#{asset_path('static/video.png')}"}
     #button-wrapper
-      %a{:href => url_for("/infographic")}
+      %a{:href => cal_path}
       #learnmore
-        Learn more about the WASHCost Project
-      %a{:href => "#"}
+        = link_to 'Try the WASHCost Calculator Beta', cal_path
       #c-trybutton
-        About the life-cycle costs approach
+        = link_to 'Learn more about the life-cycle costs approach', infographic_path
+
   #footer
     #links-wrapper
-      %a{:href => ""} About the WASHCost Project
+      %a{:href => infographic_path} About the life-cycle costs approach
       %br/
       %br/
       %a{:href => "http://blog.washcost.org/washcost-calculator/"} WASHCost Blog
