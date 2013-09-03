@@ -1,0 +1,52 @@
+#wrapper
+  #header
+    #wc-logo
+      %a{:href => "/"}
+        %img{:alt => "Smashing", :src => "http://blog.washcost.org/wp-content/themes/washcost/images/logo.png"}
+    #h-trybutton
+      #tryb
+        = link_to 'Try the WASHCost Calculator Beta', cal_path
+  #content
+    #title
+      %h1 WASHCost Calculator
+      %p
+        Try the WASHCost Calculator Beta to plan
+        %br/
+        sustainable, long-lasting WASH services.
+    #video
+      %img#placeholder-image{:src => "#{asset_path('static/video.png')}"}
+    #button-wrapper
+      %a{:href => url_for("/infographic")}
+      #learnmore
+        Learn more about the WASHCost Project
+      %a{:href => "#"}
+      #c-trybutton
+        About the life-cycle costs approach
+  #footer
+    #links-wrapper
+      %a{:href => ""} About the WASHCost Project
+      %br/
+      %br/
+      %a{:href => "http://blog.washcost.org/washcost-calculator/"} WASHCost Blog
+      %br/
+      %br/
+      %a{:href => "http://www.washcost.info/"} washcost.info
+      %br/
+      %br/
+    #social-buttons
+      %a{:href => "https://www.facebook.com/ircwash"}/
+      #facebook
+        %img#eff{:src => asset_path("static/facebook.png")}/
+      %a{:href => "http://www.twitter.com/washcostcal"}/
+      #twitter
+        %img#tweet{:src => asset_path("static/twitter.png")}/
+      %a{:href => ""}/
+      #google
+        %img#plex{:src => asset_path("static/google.png")}/
+    #irc-wrapper
+      #ircdiv
+        %img#ircimg{:src => asset_path("static/irc.png")}/
+      %br/
+      %a{:href => ""} Privacy Statement
+      %br/
+      %p © IRC. All Rights Reserved

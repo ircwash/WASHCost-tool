@@ -1,25 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>	
-	<!--Modernizr -->
-	<link rel="stylesheet" href=<%=asset_path "static/normalize.css"%> type="text/css">
-	<script type="text/javascript" src="http://modernizr.com/downloads/modernizr-latest.js"></script>
- 	<!-- Fonts -->
-	<link href='http://fonts.googleapis.com/css?family=Merriweather:400,700italic,300italic' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Lato:100,300' rel='stylesheet' type='text/css'>
-	<!-- CSS -->
-	<link rel="stylesheet" href=<%=asset_path "static/styleSF.css"%> type="text/css">
-
-	<!-- JS asset loading screen and gif -->
-	<script type="text/javascript">
-	document.write('<div id="loader" style="display:table; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10000; background-color: #b1a172; background: url(<%=asset_path "static/loadbg.jpg"%>) no-repeat center center fixed; -webkit-background-size: cover;	-moz-background-size: cover; -o-background-size: cover;	background-size: cover;">'
-    	+ '<div style="display:table-cell; vertical-align:middle; text-align: center;">'
-    	+ '<img style="margin-bottom:20px;" src=<%=asset_path "static/WClong.png"%> /><br>'
-    	+ '<img src=<%asset_path "static/loader.gif"%> />'
-    	+ '</div></div>');
-	</script>
-	
-</head>
 <body>
 <div id='content' style='display:none'>
 	<a name='sec1'></a>
@@ -393,7 +371,4 @@
 	<!-- IE shims and input placeholder shim for IE9 and below -->
   	<!--[if lte IE 8]><script src=<%=asset_path "static/ie-shims.js"%>></script><![endif]-->
 	<script src=<%=asset_path "static/placeholder.js"%>></script>
-
-
 </body>
-</html>

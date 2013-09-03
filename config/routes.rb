@@ -45,6 +45,10 @@ WashCostApp::Application.routes.draw do
   match '/dashboard' => 'dashboard#index'
   match '/home/calculator' => 'home#calculator'
   match '/home/sign_in' => 'home#sign_in'
+  match '/cal' => 'home#index'
+
+  match '/infographic' => 'infographic#index'
+  match '/mobile' => 'mobile#index'
 
   match '/cal/water_basic' => 'water_basic#country'
   match '/cal/water_basic/(:action)' => 'water_basic#(:action)', :via => [:get, :post]
@@ -62,7 +66,6 @@ WashCostApp::Application.routes.draw do
   post "/path" => "controller#post_action"
 
   match '/clean_session', :controller => 'application', :action => 'clean_session'
-  get 'pages/:id' => 'high_voltage/pages#show', :as => :static, :via => :get
 
-  root :to => "home#index"
+  root :to => "marketing#marketing_info"
 end
