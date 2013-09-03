@@ -19,8 +19,9 @@ class Basic::ReportsController < ApplicationController
         puts 'updating...'
         Rails.logger.debug "Updating report saved with id: #{saved_form_id}"
         current_user.basic_questionnaires.find(saved_form_id).update_attribute(:form, form)
-        @response[:partial] = 'save_confirmation'
-        @response[:action] = 'updated'
+        flash[:alert] = "Your report was updated successfully"
+        @path_to = dashboard_index_path
+        render 'redirect'
       else
         @questionnaire = Basic::Questionnaire.new
         @response[:partial] = 'save_form'
@@ -33,8 +34,9 @@ class Basic::ReportsController < ApplicationController
         current_user.basic_questionnaires << @questionnaire
         session["#{tool_name}_basic_form".to_sym][:saved_form_id] = @questionnaire.id
         Rails.logger.debug "Report saved with id: #{session["#{tool_name}_basic_form".to_sym][:saved_form_id]}"
-        @response[:partial] = 'save_confirmation'
-        @response[:action] = 'created'
+        flash[:alert] = "Your report was created successfully"
+        @path_to = dashboard_index_path
+        render 'redirect'
       else
         Rails.logger.debug "Report saved invalid, no title specified"
         @response[:partial] = 'save_form'
