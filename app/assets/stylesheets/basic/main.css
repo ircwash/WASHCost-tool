@@ -6,6 +6,43 @@ Author: Brilliant Basics
 --------------------------------------------*/
 
 /* reset */
+.tool-report .ui-dialog {
+    background-color: #333;
+}
+
+.tool-report .ui-dialog .ui-dialog-titlebar{
+    background: transparent;
+    color: transparent;
+    border: none;
+}
+
+.tool-report .ui-dialog .ui-dialog-titlebar .ui-button{
+    background: transparent;
+    border: none;
+}
+
+.tool-report .save_report_modal_content .error{
+     color: #afafaf;
+}
+
+.tool-report .save_report_modal_content .title{
+    text-align: center;
+    color: #dfdfdf;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: -10px;
+}
+
+.tool-report .save_report_modal_content .btn-submit{
+    background-color: #f37540;
+    border: none;
+    padding: 5px 15px;
+    color: #f0f0f0;
+    float: right;
+    margin-top: 10px;
+}
+
+
 
 .chzn-results li{
     height: 10px;
