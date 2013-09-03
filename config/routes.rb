@@ -1,4 +1,5 @@
 WashCostApp::Application.routes.draw do
+
   namespace :advanced do
     namespace :water do
       resources :question_option_groups
@@ -12,8 +13,7 @@ WashCostApp::Application.routes.draw do
     end
   end
 
-
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations" }
 
   namespace :advanced do
     namespace :water do
