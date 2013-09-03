@@ -62,6 +62,7 @@ WashCostApp::Application.routes.draw do
   post "/path" => "controller#post_action"
 
   match '/clean_session', :controller => 'application', :action => 'clean_session'
+  get 'pages/:id' => 'high_voltage/pages#show', :as => :static, :via => :get
 
   root :to => "home#index"
 end

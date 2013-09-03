@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>	
+	<!--Modernizr -->
+	<link rel="stylesheet" href=<%=asset_path "static/normalize.css"%> type="text/css">
+	<script type="text/javascript" src="http://modernizr.com/downloads/modernizr-latest.js"></script>
+ 	<!-- Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Merriweather:400,700italic,300italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Lato:100,300' rel='stylesheet' type='text/css'>
+	<!-- CSS -->
+	<link rel="stylesheet" href=<%=asset_path "static/styleSF.css"%> type="text/css">
+
+	<!-- JS asset loading screen and gif -->
+	<script type="text/javascript">
+	document.write('<div id="loader" style="display:table; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10000; background-color: #b1a172; background: url(<%=asset_path "static/loadbg.jpg"%>) no-repeat center center fixed; -webkit-background-size: cover;	-moz-background-size: cover; -o-background-size: cover;	background-size: cover;">'
+    	+ '<div style="display:table-cell; vertical-align:middle; text-align: center;">'
+    	+ '<img style="margin-bottom:20px;" src=<%=asset_path "static/WClong.png"%> /><br>'
+    	+ '<img src=<%asset_path "static/loader.gif"%> />'
+    	+ '</div></div>');
+	</script>
+	
+</head>
+<body>
+<div id='content' style='display:none'>
+	<a name='sec1'></a>
+	<div id='play-wrapper'>
+		<div id='autoplay-wrapper' style='display:none'>
+			<div id='playbutton'><img src=<%=asset_path "static/pngs/play.png"%>></div><div class='autotxt'>autoplay</div>
+		</div>
+		<div id='pause-wrapper' style='display:none'>
+			<div id='playbutton'><img src=<%=asset_path "static/pngs/pause.png"%>></div><div class='autotxt'>pause</div>
+		</div>
+	</div>
+	<div id="navbar">
+		<ul>
+			<li id='problemnav' class='active'><span>THE PROBLEM</span></li>
+			<li id='lifecyclenav' class='inactive'><span>LIFE-CYCLE APPROACH</span></li>
+			<li id='calculatornav' class='inactive'><span>WASHCOST CALCULATOR</span></li>
+			<li id='breaknav' class='inactive'><span>BREAK THE CYCLE</span></li>
+		</ul>
+	</div>
+	<!-- Background image -->
+	<div id="BG" class="bgdiv">
+		<img id='small' src=<%=asset_path "static/small.jpg"%>>
+		<img id='medium' src=<%=asset_path "static/medium.jpg"%>>
+		<img id='large' src=<%=asset_path "static/large.jpg"%>>
+	</div>
+	<div id='learnmore'>
+			<div>Learn More</div>
+			<img src=<%=asset_path "static/pngs/downarrow.png"%>>
+	</div>	
+	<!-- Problem section -->		
+		<div id="inadequate-access" class="">
+			Inadequate access to <br>
+			water and sanitation <br>
+			affects millions.<br>							
+		</div>				
+		<div class='spacer'></div>
+		<div id="drinking-water">
+		<span>	
+			783 million people</span><br>
+			lack access to an <br>
+			improved source of<br>
+			drinking water 
+		</div>		
+ 		<div id="peopleRows">				
+				<img src=<%=asset_path "static/pngs/seveneighty.png"%>>
+				</div>
+		<div class='spacer'></div>
+		<div id="sanitation" class="">
+		<span>	
+			2.5 billion people</span><br>
+			lack access to an <br>
+			improved form of<br>
+			sanitation 
+		</div>		
+		<div id="peopleRows2" class="">
+				<img src=<%=asset_path "static/pngs/twofive.png"%>>
+		</div> 
+		<div class='spacer'></div>
+		<div id='tackle-wrapper'>
+			<div id="tackle">
+				<span class='tinytext'>	
+				To tackle these problems,</span><br>
+				<span class='lrgitalic'>
+				8 billion dollars</span><br>
+				went into<br>
+				development for<br>
+				WASH in 2012
+			</div>
+			<div id='dollars' class="">
+				<img src=<%=asset_path "static/pngs/dollar.png"%> ><img src=<%=asset_path "static/pngs/dollar.png"%> ><br>
+				<img src=<%=asset_path "static/pngs/dollar.png"%> ><img src=<%=asset_path "static/pngs/dollar.png"%> ><br>
+				<img src=<%=asset_path "static/pngs/dollar.png"%> ><img src=<%=asset_path "static/pngs/dollar.png"%> ><br>
+				<img src=<%=asset_path "static/pngs/dollar.png"%> ><img src=<%=asset_path "static/pngs/dollar.png"%> ><br>
+			</div>
+		</div>
+		<div class='spacer'></div>
+		<div class='spacer'></div>
+		<div class='spacer'></div>
+		<div id="tenpercent" class="">
+			<div id='tentext'><span>However,</span><br>
+				very little money is<br>
+				 budgeted for long-<br>
+				 term maintenance and<br>
+				 financing
+			</div><img id='halfdollar' src=<%=asset_path "static/pngs/halfdollar.png"%>>
+		</div>
+		<div class='spacer'></div>
+		<div class='spacer'></div>
+		<div class='spacer'></div>
+		<div class='spacer'></div>
+		<div id='droplets'>
+			<img id='dirtydroplet' src=<%=asset_path "static/pngs/dirtydroplet.png"%>>
+			<img src=<%=asset_path "static/pngs/droplet.png"%>>
+		</div>
+		<div id='failure' class=''>
+			Therefore, projects<br>
+			are prone to failure
+		</div>
+		<div class='spacer'></div>
+		<div class='spacer'></div>
+		<div id='example' class=''>
+			<span>For example,</span><br>
+			1 in 3 handpumps<br>are non-functional in Africa<br>
+		</div>
+		<div class='spacer'></div>
+		<div class='spacer'></div>
+		<div id='example2' class=''>
+			1 in 6 latrines in India are soon <br>abandoned after construction
+		</div>
+		<div class='spacer'></div>
+		<div class='spacer'></div>
+		<div id='unsafe' class="">
+			Exposing people to unsafe water<br>
+			sources and open
+			defecation<br>
+			<span class='tinytext'>and the cycle of inequality within the WASH sector remains</span>
+		</div>
+		<div class="spacer"></div>
+		<div class='spacer'></div>		
+		<div class="spacer"></div>
+		<div class="spacer"></div>
+		<div class="spacer"></div>
+		<div class="spacer"></div>
+	<!-- Lifecycle section -->
+	<div id="lifecycle">
+		<a name="sec2"></a>
+		<div id="approach" class="">
+			A life-cycle costs approach<br>
+			<span class='tinytext'>shifts thinking</span>
+		</div>
+		</div>
+		<div id='circles'>
+			<div id="circle">
+				<div id='circle2'></div>
+			</div>
+		</div>
+		<div id='circtext' class='tinytext'>from building isolated projects</div>
+		<div id='line-container'>
+			<div id='line'></div>
+		</div>
+		<div id='delivery-container'>
+			<div id='delivery'>
+				to delivering <br>
+				long-term<br>
+				services
+			</div>
+		</div>
+		<div id='circle3-container'>
+			<div id='circle3'></div>
+		</div>
+		<div id='pie-text'>
+			<div id='t1'>Interest payments </div><br>
+			<div id='t2'>Policy making and regulation </div>
+			<div id='t3'>District monitoring and re-training </div>
+			<div id='t4'><span id='major'>Major repairs and rehabilitation</span> Construction and initial training</div>
+			<div id='t5'>Daily operations </div>
+		</div>
+		<div id='pie-wrapper'>
+		<div id='pie'>
+			<img id='pie1' src=<%=asset_path "static/pngs/pie1.png"%>>
+			<img id='pie2' src=<%=asset_path "static/pngs/pie2.png"%>>
+			<img id='pie3' src=<%=asset_path "static/pngs/pie3.png"%>>
+			<img id='pie4' src=<%=asset_path "static/pngs/pie4.png"%>>
+			<img id='pie5' src=<%=asset_path "static/pngs/pie5.png"%>>
+			<img id='pie6' src=<%=asset_path "static/pngs/pie6.png"%>>
+		</div>
+		</div>
+		<div id='aspects'>
+			ALL ASPECTS OF A SERVICE ARE <br>
+			TAKEN INTO ACCOUNT
+			<div class='tinytext'>from initial construction to ongoing maintenance<br>
+				and eventual replacement.
+			</div>
+			<span class='tinytext'></span>
+		</div>
+		<div class="spacer"></div>
+		<div class="spacer"></div>
+		<div class='spacer'></div>
+		
+		<div id='line2-container'>
+			<div id='line2'></div>
+		</div>
+		<!-- WASHCost Calculator Section -->
+		<div class="spacer"></div>
+		<div class="spacer"></div>
+		<div class="spacer"></div>
+		<div class="spacer"></div>
+		<div id='calculator-container'>
+			<div id='calculator'>
+			<span>
+				The WASHCost <br>
+		        Calculator </span><br>
+				is an easy to use <br>
+				tool for applying the<br>
+				life-cycle costs<br>
+				approach to WASH<br>
+				programs
+			</div>
+		</div><a name="sec3"></a>
+		<div id='bauble-container'>
+			<img id="bauble" src=<%=asset_path "static/pngs/bauble.png"%>><br>
+			<img id="logo" src=<%=asset_path "static/pngs/logo.png"%>>
+		</div>		
+		<div id='users-container'>
+		<div id="users">
+			Users enter <br>
+			data for<br>
+			their water<br>
+			or<br>
+			sanitation<br>
+			services
+		</div>
+		</div>
+		<div id='tool-container'>
+		<div id="tool">
+			The tool allows users to
+		</div>
+		</div>
+		<div id='sustain-container'>
+		<div id="sustain">
+			perform	financial<br>
+			sustainabilty<br>
+			checks
+		</div>
+		</div>
+		<div id='money-container'>
+		<div id="money">
+			calculate<br>
+			service levels<br>
+			and<br>
+			value-for-<br>
+			money
+		</div>
+		</div>
+		<div id='projects-container'>
+		<div id="projects">
+			evaluate services<br>
+			using life-cycle<br>
+			costs
+		</div>
+		</div>
+		<div id="database-wrapper">
+			<div id="user-sprites">				
+				<div id='u1-wrapper' class='uwrap'>
+					<img id='c1' class='check' src=<%=asset_path "static/pngs/checkbox.png"%>><br>
+					<img class='greyuser' src=<%asset_path "static/pngs/user.png"%>>
+				</div>
+				<div id='u2-wrapper' class='uwrap'>
+					<img id='c2' class='check' src=<%=asset_path "static/pngs/checkbox.png"%>><br>
+					<img class='greyuser' src=<%=asset_path "static/pngs/user.png"%>>
+				</div>				
+				<div id='u3-wrapper' class='uwrap'>
+					<img id='theone' src=<%=asset_path "static/pngs/user.png"%>>
+				</div>				
+				<div id='u4-wrapper' class='uwrap'>
+					<img id='c3' class='check' src=<%=asset_path "static/pngs/checkbox.png"%>><br>
+					<img class='greyuser' src=<%=asset_path "static/pngs/user.png"%>>
+				</div>				
+				<div id='u5-wrapper' class='uwrap'>
+					<img id='c4' class='check' src=<%=asset_path "static/pngs/checkbox.png"%>><br>
+					<img class='greyuser' src=<%=asset_path "static/pngs/user.png"%>>
+				</div>
+			</div>			
+			<div id="compare-text">
+				Users can compare costs with  others<br>
+				</div>
+		<div id='clock-wrapper'>
+			<div id='bobnclock'>
+				<img src=<%=asset_path "static/pngs/rbauble.png"%>><br>
+				<img id='clock' src=<%=asset_path "static/pngs/clock.png"%>>
+			</div>
+			<div id='update-text'>
+				The database is dynamically <br>
+				updated as users enter data<br>
+				<div>Growing smarter with each additional project</div>
+			</div>
+		</div>	
+	<!-- end database wrapper -->
+	</div>		
+	
+	<div id='report-wrapper'>
+		<div id='sheet'>
+			<div id='costs-box'>
+				<div id='costs' class='txt'>
+					Costs
+				</div>
+				<img id='l1' src=<%=asset_path "static/pngs/line1.png"%>>
+				<img id='l2' src=<%=asset_path "static/pngs/line2.png"%>>
+				<img id='l3' src=<%=asset_path "static/pngs/line3.png"%>>
+				<img id='l4' src=<%=asset_path "static/pngs/line5.png"%>>
+			</div>
+			<div id='sustainability-box'>
+				<div id='level' class='txt'>
+					Service<br>
+					Level
+				</div>
+				<div id="bargraph">
+					<div id='bar1' class='bar'></div>
+					<div id='bar2' class='bar'></div>
+					<div id='bar3' class='bar'></div>
+					<div id='bar4' class='bar'></div>
+					<div id='bar5' class='bar'></div>
+				</div>
+			</div>
+			<div id='risks-box'>
+				<div id='expenditure' class='txt'>
+					Expenditure
+				</div>
+				<img id='w1' src=<%=asset_path "static/pngs/warning.png"%>>
+				<img id='w2' src=<%=asset_path "static/pngs/warning.png"%>>
+				<img id='w3' src=<%=asset_path "static/pngs/warning.png"%>>
+			</div>
+		</div>
+		<div id='report-description-wrapper'>
+			<div id='gathers'>The calculator gathers this data in a</div>
+			<div id='creport'>comprehensive<br>report</div>
+			<div id='allowing'>allowing users to identify<br>financing shortfalls<br>and budgeting needs.</div>
+			<br><br>
+		</div>
+	<!-- report wrapper end -->
+	</div>
+	<div class="spacer"></div>
+	<div id="math-wrapper">
+		<div id='left-wrapper'>
+			<div id='bigending'>Do the math, make it last</div>
+			<div id='useit'>Use the WASHCost Calculator to plan sustainable,
+						<br>long-lasting WASH services.
+						<br>
+						<br>Using the WASHCost Calculator, donors, governments, and
+						<br>service providers can work together to build and maintain
+						<br>water and sanitation services for life.
+			</div><br><br><br><br>
+			<a href=<%=url_for "cal/"%>>
+				<div id='usebutton'>Use the WASHCost Calculator</div>
+			</a>
+		</div>
+		<div id='right-wrapper'>
+			<div id='contactbuttons'>
+				<a href="">
+					<div id='twitter'><img id='tweet'src=<%=asset_path "static/twitter.png"%>></div>
+				</a><br>
+				<a href="">
+					<div id='facebook'><img id='eff' src=<%=asset_path "static/facebook.png"%>></div>
+				</a><br>
+				<a href="">
+					<div id='google'><img id='plex' src=<%=asset_path "static/google.png"%>></div>
+				</a>
+			</div>
+		</div>
+		<div id='signup-wrapper'>
+			<div id='signup'>
+				<a href="http://www.washcost.info">
+					<div id='interested'>
+						<img src=<%=asset_path "static/WClong.png"%>>
+					</div>
+				</a>
+			</div>
+			<div id="inputs"><input id='name' placeholder='Name'><input placeholder='Email' id='email'><div id='learnbutton'>Learn More</div>
+			</div>
+		</div>
+	</div>
+	<!-- end sections wrapper -->
+	</div>
+<!--end #content wrapper  -->
+</div>
+	<script type="text/javascript" src=<%=asset_path "static/TweenMax.js"%>></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  	<script>window.jQuery || document.write('<script src=<%=asset_path "static/jquery-1.9.1.min.js"%>><\/script>')</script>
+  	<script src=<%=asset_path "static/jquery.superscrollorama.js"%>></script>
+	<script src=<%=asset_path "static/washcost.bp.js"%>></script>
+	<!-- IE shims and input placeholder shim for IE9 and below -->
+  	<!--[if lte IE 8]><script src=<%=asset_path "static/ie-shims.js"%>></script><![endif]-->
+	<script src=<%=asset_path "static/placeholder.js"%>></script>
+
+
+</body>
+</html>
