@@ -21,7 +21,9 @@ class HomeController < ApplicationController
         session[:sanitation_basic_complete] = {}
         redirect_to cal_sanitation_basic_path
       else
-        redirect_to cal_path, flash: { popup_class_name: '.notification.subscriber' }
+        flash[:alert] = 'We will publish the advanced Calculator very soon. Please your email and we will let you know when the tool is ready.'
+        #redirect_to cal_path, flash: { popup_class_name: '.notification.subscriber' }
+        redirect_to new_user_registration_path
     end
   end
 
