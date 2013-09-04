@@ -6,6 +6,16 @@
   @include button-size(0,100px,false);
 }
 
+//*** accordion session style
+.section-auto-sample-custom {
+  @include section-container(accordion);
+  & > section { @include section(accordion, ".title-sample", ".content-sample", $title-padding: 10px 10px, $title-color:#aaa, $title-bg:#333, $title-bg-hover:darken(#333,1%), $title-bg-active: #333, $title-color-active: darken(#aaa,10%), $content-bg: #333, $section-border-color: #333); }
+  border: none;
+  section{
+    border: none;
+  }
+}
+
 //*** popup-style
 // notification popup
 .washcost-popup{
