@@ -48,6 +48,7 @@ WashCostApp::Application.routes.draw do
   match '/cal' => 'home#index'
 
   match '/infographic' => 'infographic#index'
+  match '/infographic/mobile' => 'mobile#infographic'
   match '/mobile' => 'mobile#index'
 
   match '/cal/water_basic' => 'water_basic#country'

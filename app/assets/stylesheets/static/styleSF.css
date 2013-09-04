@@ -4,6 +4,7 @@ html {
     filter: dropshadow(color=#3b2929, offx=0, offy=0);
 }
 img {
+
 	}
 body {
 	background-color: black;	
@@ -813,8 +814,22 @@ a {
 						background-color: #ed9171;
 					}
 
-
 #filler	{
 	padding-top: 4em;
 	opacity: 0;
 }
+.sorry {
+	width: 410px;
+	height: 330px;
+	text-align: left;
+	font-family: 'Lato';
+	font-size: 2em;
+	position: fixed;
+	top:50%;
+	left: 50%;
+	margin-left: -205px;
+	margin-top: -165px;
+	}
+	.sorry img {
+		
+	}

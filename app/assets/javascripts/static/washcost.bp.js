@@ -1,4 +1,4 @@
-	
+
 	//Fade out Loader when assets loaded, scroll one pixel to reposition background	
 	$(window).load(function(){
 	    $('#loader').fadeOut(1500);
@@ -42,7 +42,7 @@ $(function(){
 	navhover('#problemnav','8em');
 	navhover('#lifecyclenav','11em');
 	navhover('#calculatornav','12.5em');
-	navhover('#breaknav','9em');
+	navhover('#breaknav','10em');
 	//Scroll to anchor when clicked
 	navscroll('#problemnav','8em','sec1');
 	navscroll('#lifecyclenav','11em','sec2');
@@ -55,7 +55,7 @@ $(function(){
 			$('#navbar li').css('width', '.8em');
 			$('#navbar li').css('padding-right', '0em');
 			$(this).css('padding-right', '2em');
-			$(this).css('width', '9em');
+			$(this).css('width', '10em');
 			$('span', this).show();
 			$(this).removeClass('inactive');
 			$(this).addClass('active');			
@@ -780,7 +780,7 @@ $(function(){
 					onUnpin: function(){
 						$('#play-wrapper').hide();
 						if ($(window).scrollTop() > 74770) {
-							pinAnimate('#breaknav','9em');	
+							pinAnimate('#breaknav','10em');	
 							}
 
 					}
