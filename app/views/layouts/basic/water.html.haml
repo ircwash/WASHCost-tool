@@ -1,0 +1,14 @@
+- content_for :content do
+  #outer_container.bgGradient
+    = show_app_version
+    -#= render "shared/header"
+    = render "shared/nav_water"
+    .mainContent
+      = yield
+
+- content_for :footer do
+  = render 'layouts/basic/footer'
+:javascript
+  window.I18n = #{I18n.backend.send(:translations).to_json.html_safe}
+
+= render template: "layouts/application"

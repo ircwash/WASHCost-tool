@@ -1,0 +1,13 @@
+%footer
+  .footerWrapper
+    %a{:href => "./report"} Go to report page
+    .progressBarWrapper
+      %h2
+        = t 'footer.footer_layout'
+        %span= t 'footer.final_report'
+      .progressBar
+        .outerBar
+          .innerBar{:style => "width:30%"}
+          %p
+            = flash[:percent_complete]
+            #{t 'footer.complete'}
