@@ -1,3 +1,82 @@
 .basic_tool{
+  .question{
+    margin-top: 40px;
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    line-height: 35px;
+  }
+  .choices-section{
+    &.country{
+      .icon{
+        width: 50%;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
 
+      }
+      .form-country{
+        .choices-select{
+          width:350px;
+          margin: 0 auto;
+          .chosen-container{
+            border: none;
+            .chosen-single{
+              background: #ddd8bc;
+              height: 45px;
+              color: #333;
+              font-size: 18px;
+              padding-top: 12px;
+              text-align: left;
+              border: none;
+              box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+              span{
+                margin-left: 15px;
+              }
+              div{
+                width: 26px;
+                left: 320px;
+                top: 6px;
+                b{
+                  background: transparent url('/assets/spriteArrow8.png') no-repeat 85% -187px;
+                }
+              }
+            }
+
+          }
+          .chosen-container-active.chosen-with-drop{
+            div{
+              b{
+                background-position: 0 -237px;
+              }
+            }
+            .chosen-drop{
+              background: #333;
+              font-size: 15px;
+              text-align: left;
+              color: #fff;
+              .chosen-results{
+                .active-result{
+                  padding-top: 10px;
+                  &.highlighted{
+                    background: #5d5d5d;
+                  }
+                }
+
+              }
+            }
+          }
+        }
+        .action{
+          margin-top: 40px;
+          margin-bottom: 40px;
+          text-align: center;
+          .button{
+            font-weight: bolder;
+          }
+        }
+      }
+    }
+  }
 }
