@@ -1,9 +1,9 @@
 - content_for :content do
-  #outer_container.bgGradient
+  .basic_tool
     = show_app_version
     -#= render "shared/header"
-    = render "shared/nav_water"
-    .mainContent
+    = render 'layouts/basic/navigation'
+    .main_content
       = yield
 
 - content_for :footer do
