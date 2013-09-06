@@ -25,7 +25,7 @@
         .row
           .large-12.columns
             = render 'layouts/messages'
-        = yield
+        = content_for?(:content) ? yield(:content) : yield
         .washcost-popup
           .reveal-modal.notification.subscriber
             = render 'popups/subscriber'
@@ -33,9 +33,5 @@
     #delta-resize
     .row
       .large-12.columns
-    %footer
-      = render 'layouts/footer'
-
-.row
-  .large-8.large-offset-2.columns
+    %footer= content_for?(:footer) ? yield(:footer) : render('layouts/footer')
 
