@@ -1,15 +1,15 @@
 require 'spec_helper'
 
 describe "Basic Tool Walkthrough" do
-  context 'when a guest user uses the calculator', :focus do
+  context 'when a guest user uses the calculator' do
 
     it 'starts the calculator' do
       start_calculator :water, :basic
-      current_path.should == water_basic_path
+      current_path.should == cal_water_basic_path
     end
 
     it 'selects the country' do
-      visit water_basic_path
+      visit cal_water_basic_path
       select 'COLOMBIA', from: 'country'
       click_button t('buttons.next')
       current_path.should == '/cal/water_basic/water'
