@@ -2,6 +2,9 @@
 .button-landing-page {
   @include button(0, #f37540, true, false, false, false);
 }
+.button-basic-questionnaire {
+  @include button(0.9em, #f37540, true, false, false, false);
+}
 .button-landing-page-size{
   @include button-size(0,100px,false);
 }
