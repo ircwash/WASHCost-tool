@@ -28,6 +28,7 @@ describe "Basic Tool Walkthrough" do
       visit '/cal/water_basic/population'
 
       slider_handle = page.find('.ui-slider-handle')
+      # test_cursor is located into the half of slider
       test_cursor = page.find('.slider-container .test-cursor')
       slider_handle.drag_to(test_cursor)
 
@@ -48,6 +49,7 @@ describe "Basic Tool Walkthrough" do
       page.find('.labelScale .last span').text.should == above_value
 
       slider_handle = page.find('.ui-slider-handle')
+      # test_cursor is located into the half of slider
       test_cursor = page.find('.slider-container .test-cursor')
       slider_handle.drag_to(test_cursor)
 
@@ -68,12 +70,26 @@ describe "Basic Tool Walkthrough" do
       page.find('.labelScale .last span').text.should == above_value
 
       slider_handle = page.find('.ui-slider-handle')
+      # test_cursor is located into the half of slider
       test_cursor = page.find('.slider-container .test-cursor')
       slider_handle.drag_to(test_cursor)
 
       click_button t('buttons.next')
       current_path.should == '/cal/water_basic/time'
       basic_water[:recurrent].should == 50
+    end
+
+    it 'selects the access time to collect water per day ', :js do
+      visit '/cal/water_basic/time'
+
+      slider_handle = page.find('.ui-slider-handle')
+      # test_cursor is located into the half of slider
+      test_cursor = page.find('.slider-container .test-cursor')
+      slider_handle.drag_to(test_cursor)
+
+      click_button t('buttons.next')
+      current_path.should == '/cal/water_basic/quantity'
+      basic_water[:time].should == 1
     end
 
     # a more semantic approach to naming the session
