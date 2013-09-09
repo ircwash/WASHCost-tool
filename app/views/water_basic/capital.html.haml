@@ -1,0 +1,20 @@
+- @title = "4 of 9 (Capital Expenditure)"
+%h1.basic_tool_header_item= t 'form.shared.capital.question'
+= form_tag({controller: "water_basic", action: "capital"}, class: "main_content sanitation", id: "waterBasicForm") do
+  .choices.washCostSlider
+    .value
+      .valueLabel Per person US$
+      .valueOutput
+        %span#capitalValue 0
+    #capitalSlider{'data-slider_value' => @capital[:value]}
+  %ul.labelScale
+    %li.first
+      %span.numRounding= @capital[:below_value]
+    %li.last
+      %span.numRounding= @capital[:above_value]
+  = hidden_field_tag 'capital', 'data-min-value' => @capital[:min_value], 'data-max-value' => @capital[:max_value], 'data-below-value' => @capital[:below_value], 'data-above-value' => @capital[:above_value]
+  = submit_tag (t 'buttons.next'), class: "next_button"
+  .infoTab
+    %a.tab{:href => "#"} infoTab
+    .tabContent
+      %p= t 'form.shared.capital.info'
