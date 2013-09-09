@@ -29,12 +29,12 @@ describe "Basic Tool Walkthrough" do
       visit '/cal/water_basic/population'
 
       slider_handle = page.find('.ui-slider-handle')
-      info_tab = page.find('.tab')
-      slider_handle.drag_to(info_tab)
+      test_cursor = page.find('.slider-container .test-cursor')
+      slider_handle.drag_to(test_cursor)
 
       click_button t('buttons.next')
       current_path.should == '/cal/water_basic/capital'
-      basic_water[:population].should == 1000000
+      basic_water[:population].should == 10000
     end
 
     # a more semantic approach to naming the session

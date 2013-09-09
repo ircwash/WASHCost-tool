@@ -5,7 +5,8 @@
     .value
       .valueLabel= t 'form.water_basic.population.value_label'
       #populationValue.valueOutput 500
-    #populationSlider{'data-slider_value' => @population[:value].present? ? @population[:value] : 0}
+    #populationSlider.slider-container{'data-slider_value' => @population[:value].present? ? @population[:value] : 0}
+      .test-cursor
   %input{:name => "population", :type => "hidden"}
   = submit_tag((t 'buttons.next'), class: "next_button")
   .infoTab
