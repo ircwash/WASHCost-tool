@@ -108,6 +108,14 @@ describe "Basic Tool Walkthrough" do
       basic_water[:quality].should == 1
     end
 
+    it 'selects how reliable is the water service' do
+      visit '/cal/water_basic/reliability'
+      choose 'worksMostly'
+      click_button 'Complete'
+      current_path.should == '/cal/water_basic/report'
+      basic_water[:reliability].should == 1
+    end
+
     # a more semantic approach to naming the session
     # could be named "report" too
     def basic_water
