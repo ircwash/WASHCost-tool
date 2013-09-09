@@ -6,7 +6,8 @@
       .valueLabel Per person US$
       .valueOutput
         %span#capitalValue 0
-    #capitalSlider{'data-slider_value' => @capital[:value]}
+    #capitalSlider.slider-container{'data-slider_value' => @capital[:value]}
+      .test-cursor
   %ul.labelScale
     %li.first
       %span.numRounding= @capital[:below_value]

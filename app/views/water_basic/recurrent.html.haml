@@ -8,7 +8,8 @@
         = t 'form.water_basic.recurrent.value_label'
       .valueOutput
         %span#recurrentValue 3
-    #recurrentSlider{'data-slider_value' => @recurrent[:value]}
+    #recurrentSlider.slider-container{'data-slider_value' => @recurrent[:value]}
+      .test-cursor
   %ul.labelScale
     %li.first
       %span.numRounding= @recurrent[:below_value]

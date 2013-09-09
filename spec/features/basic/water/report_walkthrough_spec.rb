@@ -21,7 +21,6 @@ describe "Basic Tool Walkthrough" do
       choose 'mixedPipe'
       click_button t('buttons.next')
       current_path.should == '/cal/water_basic/population'
-      ap session
       basic_water[:water].should == 4
     end
 
@@ -35,6 +34,46 @@ describe "Basic Tool Walkthrough" do
       click_button t('buttons.next')
       current_path.should == '/cal/water_basic/capital'
       basic_water[:population].should == 10000
+    end
+
+    it 'selects the capital expenditure', :js do
+      visit '/cal/water_basic/capital'
+
+      # verifying the labels above and below of capital slider
+      # below value when water is borehole
+      below_value = '20'
+      page.find('.labelScale .first span').text.should == below_value
+      # above value when water is borehole
+      above_value = '61'
+      page.find('.labelScale .last span').text.should == above_value
+
+      slider_handle = page.find('.ui-slider-handle')
+      test_cursor = page.find('.slider-container .test-cursor')
+      slider_handle.drag_to(test_cursor)
+
+      click_button t('buttons.next')
+      current_path.should == '/cal/water_basic/recurrent'
+      basic_water[:capital].should == 50
+    end
+
+    it 'selects the recurrent expenditure', :js do
+      visit '/cal/water_basic/recurrent'
+
+      # verifying the labels above and below of capital slider
+      # below value when water is borehole
+      below_value = '3'
+      page.find('.labelScale .first span').text.should == below_value
+      # above value when water is borehole
+      above_value = '6'
+      page.find('.labelScale .last span').text.should == above_value
+
+      slider_handle = page.find('.ui-slider-handle')
+      test_cursor = page.find('.slider-container .test-cursor')
+      slider_handle.drag_to(test_cursor)
+
+      click_button t('buttons.next')
+      current_path.should == '/cal/water_basic/time'
+      basic_water[:recurrent].should == 50
     end
 
     # a more semantic approach to naming the session
