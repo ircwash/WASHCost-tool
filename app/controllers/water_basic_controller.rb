@@ -34,11 +34,13 @@ class WaterBasicController < ApplicationController
       water_index= params[:water]
       if water_index && water_index.to_i > -1 && water_index.to_i <= 4
         # if a water index is not selected then the to_i method put 0 into this
-        add_to_session_form(:water_basic_form, :water_basic_complete, "water", water_index.to_i)
-        redirect_to :action => "population"
+        add_to_session_form(:water_basic_form, :water_basic_complete, 'water', water_index.to_i)
+        redirect_to :action => 'population'
       end
     end
-    @water = retrieve_previous_answer_for("water")
+    @water = {}
+    @water[:value] = retrieve_previous_answer_for('water')
+    @water[:choices] = %w(boreHold mechanised singleTown multiTown mixedPipe)
   end
 
   def population
