@@ -1,0 +1,22 @@
+- @title = "5 of 9 (Recurrent Expenditure)"
+%h1.basic_tool_header_item
+  = t 'form.shared.recurrent.question'
+= form_tag({controller: "water_basic", action: "recurrent"}, class: "main_content", id: "waterBasicForm") do
+  .choices.washCostSlider
+    .value
+      .valueLabel
+        = t 'form.water_basic.recurrent.value_label'
+      .valueOutput
+        %span#recurrentValue 3
+    #recurrentSlider{'data-slider_value' => @recurrent[:value]}
+  %ul.labelScale
+    %li.first
+      %span.numRounding= @recurrent[:below_value]
+    %li.last
+      %span.numRounding= @recurrent[:above_value]
+  = hidden_field_tag 'recurrent', 'data-min-value' => @recurrent[:min_value], 'data-max-value' => @recurrent[:max_value], 'data-below-value' => @recurrent[:below_value], 'data-above-value' => @recurrent[:above_value]
+  = submit_tag (t 'buttons.next'), class: "next_button"
+  .infoTab
+    %a.tab{:href => "#"} infoTab
+    .tabContent
+      %p= t 'form.shared.recurrent.info'
