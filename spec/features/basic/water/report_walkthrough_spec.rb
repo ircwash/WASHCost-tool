@@ -22,18 +22,18 @@ describe "Basic Tool Walkthrough" do
       click_button t('buttons.next')
       current_path.should == '/cal/water_basic/population'
       ap session
-      basic_water[:water].should == 1
+      basic_water[:water].should == 4
     end
 
     it 'selects the population', :js  do
-      visit '/water_basic/population'
+      visit '/cal/water_basic/population'
 
       slider_handle = page.find('.ui-slider-handle')
       info_tab = page.find('.tab')
       slider_handle.drag_to(info_tab)
 
       click_button t('buttons.next')
-      current_path.should == '/water_basic/capital'
+      current_path.should == '/cal/water_basic/capital'
       basic_water[:population].should == 1000000
     end
 
