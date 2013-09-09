@@ -7,7 +7,7 @@
       .valueLabel= t 'form.water_basic.time.value_label'
       .choiceTime
         %img{:alt => "house", :src => "/assets/waterBasicTimeHouse8.png"}
-        #timeValue.valueOutput{'data-slider_value' => @time} #{t 'form.water_basic.time.answers.a0'}
+        #timeValue.valueOutput{'data-slider_value' => @time.present? ? @time : 0} #{t 'form.water_basic.time.answers.a0'}
       %img.imgTime{:alt => "house", :src => "/assets/waterBasicTimeWaterDrop8.png"}
   #timeSlider
   %input{:name => "time", :type => "hidden"}
