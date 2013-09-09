@@ -13,6 +13,9 @@
  *= require_self
  *= require foundation
  *= require ./foundation_and_overrides
+ *= require jquery.ui.core
+ *= require jquery.ui.theme
+ *= require jquery.ui.slider
  *= require_tree ./anew
  *= require_tree ./common
 */

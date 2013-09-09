@@ -15,5 +15,7 @@
 //= require common/index
 //= require anew/index
 //= require foundation
+//= require jquery.ui.core
+//= require jquery.ui.slider
 
 $(function(){ $(document).foundation(); });
