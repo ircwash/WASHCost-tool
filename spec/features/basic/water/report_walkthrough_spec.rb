@@ -92,12 +92,20 @@ describe "Basic Tool Walkthrough" do
       basic_water[:time].should == 1
     end
 
-    it 'selects the quantity water used in litres per person per day', :focus do
+    it 'selects the water quantity used in litres per person per day' do
       visit '/cal/water_basic/quantity'
       choose 'waterFromTwenty'
       click_button t('buttons.next')
       current_path.should == '/cal/water_basic/quality'
       basic_water[:quantity].should == 2
+    end
+
+    it 'selects the test type of quality water' do
+      visit '/cal/water_basic/quality'
+      choose 'occasional'
+      click_button t('buttons.next')
+      current_path.should == '/cal/water_basic/reliability'
+      basic_water[:quality].should == 1
     end
 
     # a more semantic approach to naming the session
