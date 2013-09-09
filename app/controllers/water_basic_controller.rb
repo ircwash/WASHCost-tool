@@ -39,7 +39,7 @@ class WaterBasicController < ApplicationController
       end
     end
     @water = {}
-    @water[:value] = retrieve_previous_answer_for('water')
+    @water[:value] = retrieve_previous_answer_for('water') || 0
     @water[:choices] = %w(boreHold mechanised singleTown multiTown mixedPipe)
   end
 
