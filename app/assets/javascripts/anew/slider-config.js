@@ -94,4 +94,25 @@ $(document).ready(function(){
         recurrentSlider.slider({value: slider_value});
     }
 
+    // Time & Distance Slider
+    timeSlider = $('#timeSlider');
+    if(timeSlider.length > 0){
+
+        //default
+        $('input[name="time"]').val(0);
+        slider_display = function(event, ui) {
+            $('input[name="time"]').val(ui.value);
+            $('#timeValue').html(I18n["en"]["form"]["water_basic"]["time"]['answers']['a'+ui.value]);
+        }
+        timeSlider.slider({
+            min: 0,
+            max: 3,
+            step: 1,
+            change: slider_display,
+            slide: slider_display
+        });
+        slider_value = $('#timeValue').attr("data-slider_value");
+        timeSlider.slider({value: slider_value});
+    }
+
 });
