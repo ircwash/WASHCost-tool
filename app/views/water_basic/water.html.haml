@@ -3,22 +3,21 @@
   = t 'form.water_basic.water.question'
 = form_tag({controller: "water_basic", action: "water"}, class: "main_content", id: "waterBasicForm") do
   = label_tag("boreHold", nil, class: "") do
-    = radio_button_tag("r_water", 0, 0 == @water, id: "boreHold")
+    = radio_button_tag("water", 0, 0 == @water, id: "boreHold")
     %span= t 'form.water_basic.water.answers.a0'
   = label_tag("mechanised", nil, class: "") do
-    = radio_button_tag("r_water", 1, 1 == @water, id: "mechanised")
+    = radio_button_tag("water", 1, 1 == @water, id: "mechanised")
     %span= t 'form.water_basic.water.answers.a1'
   = label_tag("singleTown", nil, class: "") do
-    = radio_button_tag("r_water", 2, 2 == @water, id: "singleTown")
+    = radio_button_tag("water", 2, 2 == @water, id: "singleTown")
     %span= t 'form.water_basic.water.answers.a2'
   = label_tag("multiTown", nil, class: "") do
-    = radio_button_tag("r_water", 3, 3 == @water, id: "multiTown")
+    = radio_button_tag("water", 3, 3 == @water, id: "multiTown")
     %span= t 'form.water_basic.water.answers.a3'
   = label_tag("mixedPipe", nil, class: "") do
-    = radio_button_tag("r_water", 4, 4 == @water, id: "mixedPipe")
+    = radio_button_tag("water", 4, 4 == @water, id: "mixedPipe")
     %span= t 'form.water_basic.water.answers.a4'
   %input{"data-target" => "water", :name => "target-select", :type => "hidden"}
-  %input{:name => "water", :type => "hidden"}
   = submit_tag((t 'buttons.next'), class: "next_button")
   .infoTab
     %a.tab{:href => "#"} infoTab
