@@ -59,4 +59,39 @@ $(document).ready(function(){
         capitalSlider.slider({value: slider_value});
     }
 
+    // Recurrent Slider
+    recurrentSlider = $("#recurrentSlider");
+    if(recurrentSlider.length > 0){
+        inputRecurrent = $('input[name="recurrent"]');
+        //default
+        inputRecurrent.val(3);
+        offset_cursor = 4;
+        bar_slider_lenght = 850.0;
+        slider_lenght = inputRecurrent.data('max-value') - inputRecurrent.data('min-value');
+        above_value = inputRecurrent.data('above-value');
+        below_value = inputRecurrent.data('below-value');
+        step_slider = bar_slider_lenght/slider_lenght;
+        css_above_value = above_value * step_slider + offset_cursor;
+        css_below_value = below_value * step_slider + offset_cursor;
+        //labels
+        label_first = $('.labelScale li.first span');
+        label_first.css('margin-left',css_below_value-offset_cursor+"px");
+        label_last = $('.labelScale li.last span');
+        label_last.css('margin-left',css_above_value-(bar_slider_lenght/2)-offset_cursor+"px");
+
+        recurrentSlider.css('backgroundPosition', css_above_value+"px 1px, "+css_below_value+"px 0px, 1px 0px");
+        slider_display = function( event, ui ) {
+            inputRecurrent.val(ui.value);
+            $('#recurrentValue').html(ui.value);
+        };
+        recurrentSlider.slider({
+            min: inputRecurrent.data('min-value'),
+            max: inputRecurrent.data('max-value'),
+            change: slider_display,
+            slide: slider_display
+        });
+        slider_value = recurrentSlider.attr("data-slider_value");
+        recurrentSlider.slider({value: slider_value});
+    }
+
 });
