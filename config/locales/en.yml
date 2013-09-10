@@ -116,10 +116,10 @@ en:
       quality:
         question: "Is water quality testing done?"
         answers:
-          a0: "Regular and meets standards"
-          a1: "Occational and meets standards"
-          a2: "One-off after construction"
-          a3: "No testing"
+          a3: "Regular and meets standards"
+          a2: "Occational and meets standards"
+          a1: "One-off after construction"
+          a0: "No testing"
       reliability:
         question: "How reliable is the water service?"
         answers:

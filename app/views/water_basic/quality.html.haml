@@ -1,27 +1,21 @@
 - @title = "8 of 9 (Quality)"
-%h1.basic_tool_header_item
-  = t 'form.water_basic.quality.question'
-= form_tag({controller: "water_basic", action: "quality"}, class: "main_content", id: "waterBasicForm") do
-  %ul.waterQuality
-    %li
-      = label_tag("noTest", nil, class: "") do
-        %span= t 'form.water_basic.quality.answers.a3'
-        = radio_button_tag("quality", 3, 3 == flash[:quality], id: "noTest")
-    %li
-      = label_tag("test", nil, class: "") do
-        %span= t 'form.water_basic.quality.answers.a2'
-        = radio_button_tag("quality", 2, 2 == flash[:quality], id: "test")
-    %li
-      = label_tag("occasional", nil, class: "") do
-        %span= t 'form.water_basic.quality.answers.a1'
-        = radio_button_tag("quality", 1, 1 == flash[:quality], id: "occasional")
-    %li
-      = label_tag("regular", nil, class: "") do
-        %span= t 'form.water_basic.quality.answers.a0'
-        = radio_button_tag("quality", 0, 0 == flash[:quality], id: "regular")
-  = submit_tag((t 'buttons.next'), class: "next_button")
-  .infoTab
-    %a.tab{:href => "#"} infoTab
-    .tabContent
-      %h3 Lorem ipsum dolor sit amet
-      %p Maecenas elementum tristique nunc sed vehicula. Mauris dignissim erat ut lectus rutrum elementum. Etiam pharetra ac massa sit amet mattis. Nam blandit, nibh sed mattis accumsan, nisi risus vulputate eros, in aliquam leo tellus et est. Vivamus pretium ultrices dui, vitae lobortis tellus malesuada id. Ut quis convallis odio. Duis egestas dolor quis mi tempor laoreet.
+.row
+  .large-12.columns
+    .question= t 'form.water_basic.quality.question'
+.row
+  .large-12.columns
+    .choices-section
+      = form_tag({controller: "water_basic", action: "quality"}, class: "main_content", id: "waterBasicForm") do
+        .select-container
+          - @quality[:choices].each_with_index do |choice, index|
+            - index_inverted = 3 - index # is necessary to invert due the business rules
+            = label_tag(choice, nil, class: '') do
+              = radio_button_tag('quality', index_inverted, index_inverted == @quality[:value], id: choice)
+              %span= t "form.water_basic.quality.answers.a#{index}"
+        .action
+          = submit_tag((t 'buttons.next'), class: "button button-basic-questionnaire")
+.infoTab
+  %a.tab{:href => "#"} infoTab
+  .tabContent
+    %h3 Lorem ipsum dolor sit amet
+    %p Maecenas elementum tristique nunc sed vehicula. Mauris dignissim erat ut lectus rutrum elementum. Etiam pharetra ac massa sit amet mattis. Nam blandit, nibh sed mattis accumsan, nisi risus vulputate eros, in aliquam leo tellus et est. Vivamus pretium ultrices dui, vitae lobortis tellus malesuada id. Ut quis convallis odio. Duis egestas dolor quis mi tempor laoreet.

@@ -19,12 +19,12 @@ class WaterBasicController < ApplicationController
   def country
     if request.post?
       country_code= params[:country]
-      if(is_valid_country_code(country_code))
-        add_to_session_form(:water_basic_form, :water_basic_complete, "country", country_code)
-        redirect_to :action => "water"
+      if is_valid_country_code(country_code)
+        add_to_session_form(:water_basic_form, :water_basic_complete, 'country', country_code)
+        redirect_to :action => 'water'
       end
     end
-    flash[:country_code] = retrieve_previous_answer_for("country")
+    flash[:country_code] = retrieve_previous_answer_for('country')
     flash[:pages_complete] = session[:water_basic_complete]
   end
 
@@ -136,11 +136,13 @@ class WaterBasicController < ApplicationController
     if request.post?
       reliability_index= params[:reliability]
       if reliability_index && reliability_index.to_i > -1 && reliability_index.to_i <= 3
-        add_to_session_form(:water_basic_form, :water_basic_complete, "reliability", reliability_index.to_i)
-        redirect_to :action =>"report"
+        add_to_session_form(:water_basic_form, :water_basic_complete, 'reliability', reliability_index.to_i)
+        redirect_to :action => 'report'
       end
     end
-   flash[:reliability] = retrieve_previous_answer_for("reliability")
+    @reliability = {}
+    @reliability[:value] = retrieve_previous_answer_for('reliability') || 0
+    @reliability[:choices] = %w(worksAll worksMostly breakDown notWorking)
   end
 
   def report
