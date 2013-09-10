@@ -1,1 +1,37 @@
-NAVIGATION BAR
+-#.contain-to-grid
+-#  %nav.top-bar
+-#    %ul.title-area
+-#      %li.name
+-#        %h1
+-#          %a{:href => "#"} Title
+-#      %li.toggle-topbar.menu-icon
+-#        %a{:href => "#"}
+-#          %span Menu
+-#    %section.top-bar-section
+-#      %ul.left
+-#        %li
+-#          %a{:href => "#"} Link
+-#        %li
+-#          %a{:href => "#"} Link
+-#        %li
+-#          %a{:href => "#"} Link
+-#      %ul.right
+-#        %li.has-dropdown
+-#          %a{:href => "#"} Link
+-#          %ul.dropdown
+-#            %li.title.back.js-generated{:style => ""}
+-#              %h5
+-#                %a{:href => "#"} Link
+-#            %li
+-#              %a{:href => "#"} Dropdown Link
+-#            %li
+-#              %a{:href => "#"} Dropdown Link
+-#            %li
+-#              %a{:href => "#"} Dropdown Link
+.navigation-basic-tool
+  %ul
+    - 10.times.each do |index|
+      %li
+        %a{:href => "#"}= "hola #{index}"
+      %li.divisor
+
