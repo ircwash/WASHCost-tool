@@ -31,7 +31,7 @@ $(document).ready(function(){
         //default
         inputCapital.val(0);
         offset_cursor = 10;
-        bar_slider_lenght = 850.0;
+        bar_slider_lenght = capitalSlider.width()*1.00;
         slider_lenght = inputCapital.data('max-value') - inputCapital.data('min-value');
         above_value = inputCapital.data('above-value');
         below_value = inputCapital.data('below-value');
@@ -45,6 +45,7 @@ $(document).ready(function(){
         label_last.css('margin-left',css_above_value-(bar_slider_lenght/2)-offset_cursor+"px");
 
         capitalSlider.css('backgroundPosition', css_above_value+"px 1px, "+css_below_value+"px 0px, 1px 0px");
+        capitalSlider.css('text-transform','uppercase');
         slider_display = function(event,ui) {
             inputCapital.val(ui.value);
             $('#capitalValue').html(ui.value);
