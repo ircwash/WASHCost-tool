@@ -1,23 +1,28 @@
-- @title = "5 of 9 (Recurrent Expenditure)"
-%h1.basic_tool_header_item
-  = t 'form.shared.recurrent.question'
-= form_tag({controller: "water_basic", action: "recurrent"}, class: "main_content", id: "waterBasicForm") do
-  .choices.washCostSlider
-    .value
-      .valueLabel
-        = t 'form.water_basic.recurrent.value_label'
-      .valueOutput
-        %span#recurrentValue 3
-    #recurrentSlider.slider-container{'data-slider_value' => @recurrent[:value]}
-      .test-cursor
-  %ul.labelScale
-    %li.first
-      %span.numRounding= @recurrent[:below_value]
-    %li.last
-      %span.numRounding= @recurrent[:above_value]
-  = hidden_field_tag 'recurrent', 'data-min-value' => @recurrent[:min_value], 'data-max-value' => @recurrent[:max_value], 'data-below-value' => @recurrent[:below_value], 'data-above-value' => @recurrent[:above_value]
-  = submit_tag (t 'buttons.next'), class: "next_button"
-  .infoTab
-    %a.tab{:href => "#"} infoTab
-    .tabContent
-      %p= t 'form.shared.recurrent.info'
+- @title = '5 of 9 (Recurrent Expenditure)'
+.row
+  .large-12.columns
+    .question= t 'form.shared.recurrent.question'
+.row
+  .large-12.columns
+    .choices-section
+      = form_tag({controller: 'water_basic', action: 'recurrent'}, class: 'main_content', id: 'waterBasicForm') do
+        .choices.slider-section
+          .value
+            .valueLabel.caption
+              = t 'form.water_basic.recurrent.value_label'
+            .valueOutput.slider-output
+              %span#recurrentValue 3
+          #recurrentSlider.slider-container.threshold-marks{'data-slider_value' => @recurrent[:value]}
+            .test-cursor
+          %ul.labelScale
+            %li.first
+              %span= "US$ #{@recurrent[:below_value]}"
+            %li.last
+              %span= "US$ #{@recurrent[:above_value]}"
+        = hidden_field_tag 'recurrent', nil, data: {min_value: @recurrent[:min_value], max_value: @recurrent[:max_value], below_value: @recurrent[:below_value], above_value: @recurrent[:above_value]}
+        .action
+          = submit_tag (t 'buttons.next'), class: 'button button-basic-questionnaire'
+.infoTab
+  %a.tab{:href => "#"} infoTab
+  .tabContent
+    %p= t 'form.shared.recurrent.info'
