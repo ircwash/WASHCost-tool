@@ -133,6 +133,17 @@
         -moz-border-radius: 3px;
         border-radius: 3px;
       }
+      .labelScale{
+        position: relative;
+        top: -60px;
+        list-style-type: none;
+        text-align: left;
+        li{
+          display: inline-block;
+          position: relative;
+        }
+
+      }
       .slider-container{
         background: none;
         background-color: #fff;
@@ -148,6 +159,9 @@
           background-repeat: no-repeat, no-repeat, no-repeat;
           background-position-y: 1px, 0, 0px;
           background-position-x: 800px, 20px, 1px;
+          a.ui-slider-handle{
+            top: -5px;
+          }
         }
         a.ui-slider-handle{
           border: none;
