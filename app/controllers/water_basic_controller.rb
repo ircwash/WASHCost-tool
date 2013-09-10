@@ -110,11 +110,13 @@ class WaterBasicController < ApplicationController
     if request.post?
       quantity_index= params[:quantity]
       if quantity_index && quantity_index.to_i > -1 && quantity_index.to_i <= 3
-        add_to_session_form(:water_basic_form, :water_basic_complete, "quantity", quantity_index.to_i)
-        redirect_to :action => "quality"
+        add_to_session_form(:water_basic_form, :water_basic_complete, 'quantity', quantity_index.to_i)
+        redirect_to :action => 'quality'
       end
     end
-    flash[:quantity] = retrieve_previous_answer_for("quantity")
+    @quantity = {}
+    @quantity[:value] = retrieve_previous_answer_for("quantity") || 0
+    @quantity[:choices] = %w(waterLessThan waterFromFive waterFromTwenty waterMoreThan)
   end
 
   def quality
