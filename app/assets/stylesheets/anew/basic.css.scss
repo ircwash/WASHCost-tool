@@ -141,6 +141,10 @@
         li{
           display: inline-block;
           position: relative;
+          span{
+            font-weight: bolder;
+            font-size: 14px;
+          }
         }
 
       }
