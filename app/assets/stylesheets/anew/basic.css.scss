@@ -133,6 +133,9 @@
         -moz-border-radius: 3px;
         border-radius: 3px;
       }
+      .labeling-images{
+        text-align: left;
+      }
       .labelScale{
         position: relative;
         top: -60px;
@@ -175,6 +178,20 @@
           height: 42px;
           background: transparent url('/assets/sliderScroll24.png') no-repeat 0 0;
           top: -17px;
+        }
+      }
+      &.time{
+        .labeling-images{
+          .imgHouse{
+            position: relative;
+            left: 269px;
+            top: -47px;
+          }
+          .imgTime{
+            position: relative;
+            left: 598px;
+            top: -51px;
+          }
         }
       }
     }
