@@ -122,12 +122,14 @@ class WaterBasicController < ApplicationController
   def quality
     if request.post?
       quality_index= params[:quality]
-      if(quality_index && quality_index.to_i > -1 && quality_index.to_i <= 3)
-        add_to_session_form(:water_basic_form, :water_basic_complete, "quality", quality_index.to_i)
-        redirect_to :action => "reliability"
+      if quality_index && quality_index.to_i > -1 && quality_index.to_i <= 3
+        add_to_session_form(:water_basic_form, :water_basic_complete, 'quality', quality_index.to_i)
+        redirect_to :action => 'reliability'
       end
     end
-    flash[:quality] = retrieve_previous_answer_for("quality")
+    @quality = {}
+    @quality[:value] = retrieve_previous_answer_for("quality") || 0
+    @quality[:choices] = %w(noTest test occasional regular)
   end
 
   def reliability
