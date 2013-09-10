@@ -89,7 +89,7 @@ describe "Basic Tool Walkthrough" do
 
       click_button t('buttons.next')
       current_path.should == '/cal/water_basic/quantity'
-      basic_water[:time].should == 1
+      basic_water[:time].should == 2
     end
 
     it 'selects the water quantity used in litres per person per day' do
