@@ -4,14 +4,16 @@
     .question= t 'form.water_basic.water.question'
 .row
   .large-12.columns
-    .choices-section.select-container
+    .choices-section
       = form_tag({controller: 'water_basic', action: 'water'}, class: 'main_content', id: 'waterBasicForm') do
-        - @water[:choices].each_with_index do |choice, index|
-          = label_tag(choice, nil, class: '') do
-            = radio_button_tag('water', index, index == @water[:value], id: choice)
-            %span= t "form.water_basic.water.answers.a#{index}"
+        .select-container
+          - @water[:choices].each_with_index do |choice, index|
+            = label_tag(choice, nil, class: '') do
+              = radio_button_tag('water', index, index == @water[:value], id: choice)
+              %span= t "form.water_basic.water.answers.a#{index}"
         %input{'data-target' => 'water', :name => 'target-select', :type => 'hidden'}
-        = submit_tag((t 'buttons.next'), class: 'next_button')
+        .action
+          = submit_tag((t 'buttons.next'), class: 'button button-basic-questionnaire')
         .infoTab
           %a.tab{:href => '#'} infoTab
           .tabContent
