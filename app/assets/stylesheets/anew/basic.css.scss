@@ -143,6 +143,7 @@
         margin-bottom: 70px;
         &.threshold-marks{
           background-color: transparent;
+          height: 30px;
           background-image: url(/assets/slider/sliderCursorRight.png), url(/assets/slider/sliderCursorLeft.png), url(/assets/slider/sliderGrayLine.png);
           background-repeat: no-repeat, no-repeat, no-repeat;
           background-position-y: 1px, 0, 0px;
