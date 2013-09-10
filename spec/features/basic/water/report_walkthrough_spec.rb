@@ -43,10 +43,10 @@ describe "Basic Tool Walkthrough" do
       # verifying the labels above and below of capital slider
       # below value when water is borehole
       below_value = '20'
-      page.find('.labelScale .first span').text.should == below_value
+      page.find('.labelScale .first span').text.should == "US$ #{below_value}"
       # above value when water is borehole
       above_value = '61'
-      page.find('.labelScale .last span').text.should == above_value
+      page.find('.labelScale .last span').text.should == "US$ #{above_value}"
 
       slider_handle = page.find('.ui-slider-handle')
       # test_cursor is located into the half of slider
@@ -55,7 +55,7 @@ describe "Basic Tool Walkthrough" do
 
       click_button t('buttons.next')
       current_path.should == '/cal/water_basic/recurrent'
-      basic_water[:capital].should == 50
+      basic_water[:capital].should == 150
     end
 
     it 'selects the recurrent expenditure', :js do
@@ -64,10 +64,10 @@ describe "Basic Tool Walkthrough" do
       # verifying the labels above and below of capital slider
       # below value when water is borehole
       below_value = '3'
-      page.find('.labelScale .first span').text.should == below_value
+      page.find('.labelScale .first span').text.should == "US$ #{below_value}"
       # above value when water is borehole
       above_value = '6'
-      page.find('.labelScale .last span').text.should == above_value
+      page.find('.labelScale .last span').text.should == "US$ #{above_value}"
 
       slider_handle = page.find('.ui-slider-handle')
       # test_cursor is located into the half of slider
@@ -76,7 +76,7 @@ describe "Basic Tool Walkthrough" do
 
       click_button t('buttons.next')
       current_path.should == '/cal/water_basic/time'
-      basic_water[:recurrent].should == 50
+      basic_water[:recurrent].should == 15
     end
 
     it 'selects the access time to collect water per day ', :js do
