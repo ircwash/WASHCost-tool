@@ -1,11 +1,11 @@
-- @title = "4 of 9 (Capital Expenditure)"
+- @title = '4 of 9 (Capital Expenditure)'
 .row
   .large-12.columns
     .question= t 'form.shared.capital.question'
 .row
   .large-12.columns
     .choices-section
-      = form_tag({controller: "water_basic", action: "capital"}, class: "main_content sanitation", id: "waterBasicForm") do
+      = form_tag({controller: 'water_basic', action: 'capital'}, class: 'main_content sanitation', id: 'waterBasicForm') do
         .choices.washCostSlider.slider-section
           .value
             .valueLabel.caption Per person US$
@@ -13,14 +13,14 @@
               %span#capitalValue 0
           #capitalSlider.slider-container.threshold-marks{'data-slider_value' => @capital[:value]}
             .test-cursor
-        %ul.labelScale
-          %li.first
-            %span.numRounding= @capital[:below_value]
-          %li.last
-            %span.numRounding= @capital[:above_value]
-        = hidden_field_tag 'capital', 'data-min-value' => @capital[:min_value], 'data-max-value' => @capital[:max_value], 'data-below-value' => @capital[:below_value], 'data-above-value' => @capital[:above_value]
+          %ul.labelScale
+            %li.first
+              %span.numRounding= "US$ #{@capital[:below_value]}"
+            %li.last
+              %span.numRounding= "US$ #{@capital[:above_value]}"
+        = hidden_field_tag 'capital', nil, data: {:min_value => @capital[:min_value], :max_value => @capital[:max_value], :below_value => @capital[:below_value], :above_value => @capital[:above_value]}
         .action
-          = submit_tag (t 'buttons.next'), class: "button button-basic-questionnaire"
+          = submit_tag (t 'buttons.next'), class: 'button button-basic-questionnaire'
 .infoTab
   %a.tab{:href => "#"} infoTab
   .tabContent
