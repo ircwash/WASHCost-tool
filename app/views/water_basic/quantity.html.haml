@@ -1,23 +1,17 @@
 - @title = "7 of 9 (Water Source)"
 %h1.basic_tool_header_item
-  = t 'form.water_basic.quantity.question'
-  %span= t 'form.water_basic.quantity.value_label'
-= form_tag({controller: "water_basic", action: "quantity"}, class: "main_content", id: "waterBasicForm") do
-  %ul.waterSource
-    %li
-      = label_tag("waterLessThan", nil, class: "") do
-        = radio_button_tag("quantity", 0, 0 == flash[:quantity], id: "waterLessThan")
-        %span= t 'form.water_basic.quantity.answers.a0'
-    %li
-      = label_tag("waterFromFive", nil, class: "") do
-        = radio_button_tag("quantity", 1, 1 == flash[:quantity], id: "waterFromFive")
-        %span= t 'form.water_basic.quantity.answers.a1'
-    %li
-      = label_tag("waterFromTwenty", nil, class: "") do
-        = radio_button_tag("quantity", 2, 2 == flash[:quantity], id: "waterFromTwenty")
-        %span= t 'form.water_basic.quantity.answers.a2'
-    %li
-      = label_tag("waterMoreThan", nil, class: "") do
-        = radio_button_tag("quantity", 3, 3 == flash[:quantity], id: "waterMoreThan")
-        %span= t 'form.water_basic.quantity.answers.a3'
-  = submit_tag((t 'buttons.next'), class: "next_button")
+.row
+  .large-12.columns
+    .question= t 'form.water_basic.quantity.question'
+    .caption= t 'form.water_basic.quantity.value_label'
+.row
+  .large-12.columns
+    .choices-section
+      = form_tag({controller: "water_basic", action: "quantity"}, class: "main_content", id: "waterBasicForm") do
+        .select-container
+          - @quantity[:choices].each_with_index do |choice, index|
+            = label_tag(choice, nil, class: '') do
+              = radio_button_tag('quantity', index, index == @quantity[:value], id: choice)
+              %span= t "form.water_basic.quantity.answers.a#{index}"
+        .action
+          = submit_tag((t 'buttons.next'), class: "button button-basic-questionnaire")
