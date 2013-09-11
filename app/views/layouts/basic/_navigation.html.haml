@@ -28,17 +28,18 @@
 -#              %a{:href => "#"} Dropdown Link
 -#            %li
 -#              %a{:href => "#"} Dropdown Link
-.row
-  .large-4.large-offset-4.columns
-    .headernav-basic-tool
-      %ul
-        - questionnaire_sections.each do |item|
-          %li{class: item[:class]}
-            %a{:href => item[:link]}= item[:name]
-.navigation-basic-tool
-  %ul
-    - questionnaire_items.each do |item|
-      %li{class: item[:class]}
-        %a{:href => item[:link]}= item[:name]
-      %li.divisor
+.nav-basic-container
+  .row
+    .large-4.large-offset-4.columns
+      .headernav-basic-tool
+        %ul
+          - questionnaire_sections.each do |item|
+            %li{class: item[:class]}
+              %a{:href => item[:link]}= item[:name]
+  .navigation-basic-tool
+    %ul
+      - questionnaire_items.each do |item|
+        %li{class: item[:class]}
+          %a{:href => item[:link]}= item[:name]
+        %li.divisor
 
