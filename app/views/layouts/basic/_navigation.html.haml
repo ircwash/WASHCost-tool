@@ -30,8 +30,8 @@
 -#              %a{:href => "#"} Dropdown Link
 .navigation-basic-tool
   %ul
-    - 10.times.each do |index|
-      %li
-        %a{:href => "#"}= "hola #{index}"
+    - questionnaire_items.each do |item|
+      %li{class: item[:class]}
+        %a{:href => item[:link]}= item[:name]
       %li.divisor
 
