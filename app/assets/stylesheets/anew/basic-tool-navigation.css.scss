@@ -57,3 +57,25 @@
     }
   }
 }
+.headernav-basic-tool{
+  ul{
+    li{
+      display: inline-block;
+      text-align: center;
+      height: 20px;
+      width: 32%;
+      list-style-type: none;
+      &.active{
+        a{
+          color: rgba(0,0,0,0.8);
+        }
+      }
+      a{
+        text-align: center;
+        font-weight: bolder;
+        color: rgba(3,3,3,0.2);
+
+      }
+    }
+  }
+}
