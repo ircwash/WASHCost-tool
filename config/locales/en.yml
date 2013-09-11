@@ -45,6 +45,7 @@ en:
     start: "Start the calculator"
     save: "Save"
     view_report: "View Report"
+    save_report: "Save Report"
     complete: "Complete"
   inputs:
     choose_a_country: "Choose a country"
@@ -652,5 +653,7 @@ en:
     footer_layout: "Basic"
     final_report: " | Final Reports"
     complete: "Complete"
+    water_basic: "Basic Water Report"
+    sanitation: "Basic Sanitation Report"
     footer_layout_sanitation: "Sanitation"
   register_if_acces_to_cuesstinaire_view: "You must be registered if you want access to basic tool"

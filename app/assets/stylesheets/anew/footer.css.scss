@@ -1,16 +1,60 @@
-footer.basic-tool{
-  .view-report{
+@import "foundation/variables";
+@import "foundation/components/global";
+@import "foundation/components/progress-bars";
 
-  }
-  .progress{
-    .header{
-
+footer{
+  .basic-tool{
+    height: 40px;
+    background-color: #333;
+    a{
+      position: relative;
+      top: 15px;
+      color: #bbbbbb;
+      font-weight: 400;
+      font-size: 12px;
+      text-transform: uppercase;
     }
-    .bar{
-
+    .view-report{
+      background-color: inherit;
+      height: inherit;
+      border: #000000 solid 1px;
+      border-right: none;
+      text-align: center;
     }
-  }
-  .save-report{
-
+    .progress-report{
+      background-color: inherit;
+      border: #000000 solid 1px;
+      height: inherit;
+      .header{
+        text-align: center;
+        a{
+          font-size: 11px;
+          top: 3px;
+        }
+      }
+      .bar{
+        margin-top: 8px;
+        margin-left: 50px;
+        margin-right: 50px;
+        .washcost-bar {
+          @include progress-container;
+          @include radius(6px);
+          border: none;
+          background-color: #3a3a3a;
+          height: 7px;
+          & > span {
+            @include progress-meter(#f06738);
+            @include radius(5px);
+          }
+        }
+      }
+    }
+    .save-report{
+      background-color: inherit;
+      height: inherit;
+      border: #000000 solid 1px;
+      border-left: none;
+      text-align: center;
+    }
   }
 }
