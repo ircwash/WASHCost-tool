@@ -1,36 +1,58 @@
 .navigation-basic-tool{
+  margin-right: 10px;
+  margin-left: 10px;
   height: 40px;
   overflow: hidden;
   white-space: nowrap;
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255,255,255,0.3);
   border-radius: 5px;
   ul{
     position: relative;
     left: 0px;
     li{
       //float: left;
+      position: relative;
+      top: -6px;
       display: inline-block;
       text-align: center;
       height: 40px;
-      width: 150px;
+      width: 160px;
       list-style-type: none;
       border-radius: 5px;
       &.divisor{
         top: 10px;
         position: relative;
-        margin-left: -5px;
+        margin-left: -4px;
         margin-right: -5px;
         width: 1px;
         height: 20px;
         border: none;
+        background-color: #b2a889;
+      }
+      &.active{
+        position: relative;
+        top: -6px;
         background-color: #fff;
+        color: #a9985e;
+      }
+      &.resolved{
+        position: relative;
+        top: -6px;
+        a{
+          color: #fff;
+        }
       }
       &:hover{
-        background-color: #fff;
+        position: relative;
+        top: -6px;
+        background-color: rgba(255,255,255,0.3);
       }
       a{
+        font-weight: bold;
+        font-size: 13px;
+        color: rgba(3,3,3,0.2);
         position: relative;
-        top: 7px;
+        top: 10px;
       }
     }
   }
