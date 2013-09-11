@@ -1,11 +1,9 @@
 module Basic::NavigationHelper
   # return just the items of each section in an specific questionnaire
   # @return [Hash Set], each element contains Hash with attr used in the navigation (name, link and css class)
-  def questionnaire_items
+  def questionnaire_items_list
     current_path = navigation_context[:path]
-    items = navigation_context.map{|k,v| v.is_a?(Hash) ? v[:items] : nil}.compact.reduce do |a, b|
-      a.merge(b) { |k, v1, v2| v1 == v2 ? v1 : [v1, v2].flatten }
-    end
+    items = questionnaire_items
     items.map do |k,v|
       {
           name: v,
@@ -29,7 +27,23 @@ module Basic::NavigationHelper
     end
   end
 
+  # return an array with the items associated to each section
+  # @return [Array]
+  def index_questionnaire_item_active
+    items = questionnaire_items
+    items.each_with_index do |item|
+    end
+  end
+
   private
+
+  # return just the items of each section in an specific questionnaire
+  # @return [Hash Set], each element contains Hash with attr used in the navigation (name, link and css class)
+  def questionnaire_items
+    navigation_context.map{|k,v| v.is_a?(Hash) ? v[:items] : nil}.compact.reduce do |a, b|
+      a.merge(b) { |k, v1, v2| v1 == v2 ? v1 : [v1, v2].flatten }
+    end
+  end
 
   # return the css class associated with specific state of item (.active, .resolved or nothing)
   # @return [String]
@@ -98,7 +112,7 @@ module Basic::NavigationHelper
           },
           service: {
               offset: '-210',
-              first_action: :providing,
+              first_action: :time,
               name: I18n.t('nav.main.service.title'),
               items: {
                   time: I18n.t('nav.main.service.items.time'),
