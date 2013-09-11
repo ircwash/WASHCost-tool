@@ -14,24 +14,25 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body.main
-    .popup_trigger
-      = render 'layouts/popup_trigger'
-    .row
-      .large-12.columns
-    %header
-      = render 'layouts/navigation'
-    .row.main-container
-      .large-12.columns
-        .row
-          .large-12.columns
-            = render 'layouts/messages'
-        = content_for?(:content) ? yield(:content) : yield
-        .washcost-popup
-          .reveal-modal.notification.subscriber
-            = render 'popups/subscriber'
-            %a.close-reveal-modal.close ×
-    #delta-resize
-    .row
-      .large-12.columns
-    %footer= content_for?(:footer) ? yield(:footer) : render('layouts/footer')
+    .main-container
+      .popup_trigger
+        = render 'layouts/popup_trigger'
+      .row
+        .large-12.columns
+      %header
+        = render 'layouts/navigation'
+      .row
+        .large-12.columns
+          .row
+            .large-12.columns
+              = render 'layouts/messages'
+          = content_for?(:content) ? yield(:content) : yield
+          .washcost-popup
+            .reveal-modal.notification.subscriber
+              = render 'popups/subscriber'
+              %a.close-reveal-modal.close ×
+      #delta-resize
+      .row
+        .large-12.columns
+      %footer= content_for?(:footer) ? yield(:footer) : render('layouts/footer')
 

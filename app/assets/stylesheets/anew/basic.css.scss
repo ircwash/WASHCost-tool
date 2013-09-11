@@ -27,6 +27,7 @@
         margin: 0 auto;
         margin-top: 20px;
         margin-bottom: 20px;
+        height: 71px;
 
       }
       .form-country{
@@ -110,7 +111,7 @@
     // Action CSS
     .action{
       margin-top: 40px;
-      margin-bottom: 40px;
+      //margin-bottom: 40px;
       text-align: center;
       .button{
         font-weight: bolder;
@@ -189,11 +190,13 @@
             position: relative;
             left: 269px;
             top: -47px;
+            height: 45px;
           }
           .imgTime{
             position: relative;
             left: 598px;
             top: -51px;
+            height: 45px;
           }
         }
       }

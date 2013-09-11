@@ -31,8 +31,13 @@ $(document).ready(function(){
 
 
     // ---------> Resize the window according to spatial use
-    if ($(window).height()>$("body").height()){
-        $('#delta-resize').css('height',($(window).height()-$("body").height())+"px")
+    console.log($(document).height() +" "+$("body .main-container").height());
+    if ($(window).height()>$("body .main-container").height()){
+        offsetHeight = 0;
+        if($('.basic-tool').length > 0){
+            offsetHeight = 0;
+        }
+        $('#delta-resize').css('height',($(window).height()-$("body .main-container").height()- offsetHeight)+"px")
     }
 
     // ---------> Section in user editing form
