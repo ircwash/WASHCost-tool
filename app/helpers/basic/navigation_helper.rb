@@ -28,7 +28,7 @@ module Basic::NavigationHelper
       }
     end
   end
-  
+
   private
 
   # return the css class associated with specific state of item (.active, .resolved or nothing)
