@@ -1,6 +1,6 @@
 module Basic::NavigationHelper
   # return just the items of each section in an specific questionnaire
-  # @return [Array], each element contains Hash with attr used in the navigation (name, link and css class)
+  # @return [Hash Set], each element contains Hash with attr used in the navigation (name, link and css class)
   def questionnaire_items
     current_path = navigation_context[:path]
     items = navigation_context.map{|k,v| v.is_a?(Hash) ? v[:items] : nil}.compact.reduce do |a, b|
@@ -14,6 +14,22 @@ module Basic::NavigationHelper
       }
     end
   end
+
+  # return a Hash Set with the attributtes of each nav section (name, link and css class)
+  # @return [Hash Set]
+  def questionnaire_sections
+    current_path = navigation_context[:path]
+    sections = navigation_context.select{|k,v| v.is_a?(Hash)}.keys
+    sections.map do |section|
+      {
+          name: navigation_context[section][:name],
+          link: "#{current_path}/#{navigation_context[section][:first_action]}",
+          class: navigation_context[section.to_sym][:items].has_key?(controller.action_name.to_sym) ? "active" : "",
+      }
+    end
+  end
+  
+  private
 
   # return the css class associated with specific state of item (.active, .resolved or nothing)
   # @return [String]
@@ -63,6 +79,8 @@ module Basic::NavigationHelper
           path: cal_water_basic_path,
           context: {
               offset: '0',
+              name: I18n.t('nav.main.context.title'),
+              first_action: :country,
               items: {
                   country: I18n.t('nav.main.context.items.country'),
                   water: I18n.t('nav.main.context.items.water'),
@@ -71,6 +89,8 @@ module Basic::NavigationHelper
           },
           cost: {
               offset: '-210',
+              first_action: :capital,
+              name: I18n.t('nav.main.cost.title'),
               items: {
                   capital: I18n.t('nav.main.cost.items.capital'),
                   recurrent: I18n.t('nav.main.cost.items.recurrent')
@@ -78,6 +98,8 @@ module Basic::NavigationHelper
           },
           service: {
               offset: '-210',
+              first_action: :providing,
+              name: I18n.t('nav.main.service.title'),
               items: {
                   time: I18n.t('nav.main.service.items.time'),
                   quantity: I18n.t('nav.main.service.items.quantity'),
