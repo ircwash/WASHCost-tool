@@ -140,25 +140,25 @@ class SanitationBasicController < ApplicationController
     end
     @usage = {}
     @usage[:value] = retrieve_previous_answer_for('usage') || 0
-    @usage[:choices] = %w(safe reusable pollution)
+    @usage[:choices] = %w(all some none)
     @usage[:class] = 'usage-item'
   end
 
   def reliability
     if request.post?
-      put_index_in_session(:reliability, -1, 3, "report")
+      put_index_in_session(:reliability, -1, 3, 'report')
     end
-    flash[:reliability] = retrieve_previous_answer_for("reliability")
+    @reliability = {}
+    @reliability[:value] = retrieve_previous_answer_for('reliability') || 0
+    @reliability[:choices] = %w(reliYes unreliable relyNot)
+    @reliability[:class] = 'reliability-item'
   end
 
   def put_index_in_session(key, min, max, redirect)
     radio_index= params[key]
-
-    if(radio_index && radio_index.to_i > min && radio_index.to_i < max)
-
+    if radio_index && radio_index.to_i > min && radio_index.to_i < max
       add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete, key.to_s,  radio_index.to_i)
       #increase_pages_complete
-
       redirect_to :action => redirect
     end
   end

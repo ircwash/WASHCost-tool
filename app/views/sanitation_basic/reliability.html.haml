@@ -1,0 +1,15 @@
+- @title = "11 of 11 (Reliability)"
+.row
+  .large-12.columns
+    .question= t 'form.sanitation_basic.reliability.question'
+.row
+  .large-12.columns
+    .choices-section
+      = form_tag({controller: 'sanitation_basic', action: 'reliability'}, class: 'main_content', id: 'sanitationBasicForm') do
+        .select-container.reliability
+          - @reliability[:choices].each_with_index do |choice, index|
+            = label_tag(choice, nil, class: "#{@reliability[:class]}-#{index}") do
+              = radio_button_tag('reliability', index, index == @reliability[:value], id: choice)
+              %span= t "form.sanitation_basic.reliability.answers.a#{index}"
+        .action
+          = submit_tag((t 'buttons.next'), class: 'button button-basic-questionnaire')
