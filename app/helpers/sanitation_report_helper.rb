@@ -80,7 +80,7 @@ module SanitationReportHelper
   end
 
   def cost_avaliable?(capital, recurrent)
-    capital > 0 && recurrent > 0
+    capital.present? && recurrent.present? && capital > 0 && recurrent > 0
   end
 
   def get_country(country_code)
