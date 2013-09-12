@@ -54,16 +54,16 @@ class SanitationBasicController < ApplicationController
     if request.post?
       capital_amount = params[:capital]
       if capital_amount && is_number(capital_amount) && capital_amount.to_i > -1
-        add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete, "capital", capital_amount.to_i)
-        redirect_to :action => "recurrent"
+        add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete, 'capital', capital_amount.to_i)
+        redirect_to :action => 'recurrent'
       end
     end
     @capital = {}
-    latrine_sources_index = retrieve_previous_answer_for("latrine") || 0
+    latrine_sources_index = retrieve_previous_answer_for('latrine') || 0
     range = capital_range_latrine_based latrine_sources_index
     @capital[:min_value] = range[:min_value]
     @capital[:max_value] = range[:max_value]
-    @capital[:value] = retrieve_previous_answer_for("capital") || @capital[:min_value]
+    @capital[:value] = retrieve_previous_answer_for('capital') || @capital[:min_value]
     #@capital[:below_value] = ((@capital[:max_value]-@capital[:min_value]).to_f*0.2).round+@capital[:min_value]
     #@capital[:above_value] = ((@capital[:max_value]-@capital[:min_value]).to_f*0.8).round+@capital[:min_value]
     @capital[:below_value] = range[:below_value]
