@@ -1,0 +1,35 @@
+.select-container{
+  &.water{
+    label{
+      background: transparent url('/assets/spriteQ2basicWater24.png') no-repeat -15 -146px;
+      &.ticked{
+        background-position: -15 0;
+      }
+      &.water-item-1 {
+          background-position: -175px -146px;
+      }
+      &.water-item-1.ticked {
+          background-position: -175px 0;
+      }
+      &.water-item-2 {
+          background-position: -335px -146px;
+      }
+      &.water-item-2.ticked {
+          background-position: -335px 0;
+      }
+      &.water-item-3 {
+          background-position: -495px -146px;
+      }
+      &.water-item-3.ticked {
+          background-position: -495px 0;
+      }
+      &.water-item-4 {
+          background-position: -655px -146px;
+      }
+      &.water-item-4.ticked {
+          background-position: -655px 0;
+      }
+    }
+  }
+
+}

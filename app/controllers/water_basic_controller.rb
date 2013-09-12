@@ -41,6 +41,7 @@ class WaterBasicController < ApplicationController
     @water = {}
     @water[:value] = retrieve_previous_answer_for('water') || 0
     @water[:choices] = %w(boreHold mechanised singleTown multiTown mixedPipe)
+    @water[:class] = 'water-item'
   end
 
   def population

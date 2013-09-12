@@ -53,7 +53,7 @@ $(document).ready(function(){
 
     // logic in selectors
     $('.select-container label').click(function(){
-        $('.select-container label').removeClass();
+        $('.select-container label').removeClass('ticked');
         $(this).addClass('ticked');
     });
     $('.select-container label input:checked').parent().addClass('ticked');
