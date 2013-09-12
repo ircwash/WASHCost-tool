@@ -414,6 +414,13 @@ en:
 
 
   report:
+    water_final_report: "basic water | final report"
+    cross_to_sanitation: "Cross to sanitation"
+    cross_to_water: "Cross to water"
+    summmary: "Summary"
+    total_cost: "total cost"
+    level_of_service: "level of service"
+    caption_total_cost: "for a population of %{population} people"
     complete: "Report Complete"
     benchmark_below: "Below Benchmarks"
     benchmark_within: "Expenditure is within of WashCost benchmarks. Read the review below for more information."
@@ -649,6 +656,7 @@ en:
       b344:	The capital expenditure entered is within WASHCost benchmarks and these facilities have a cement or impermeable slab providing adequate separation between users and faeces within the compound. The by-products from the facilities are also being re-used safely. A very good level of service is being achieved or the context may be exceptional and requires more expensive infrastructure. Another possibility is that cost efficiency can be improved.
 
 
+    substandard: "Sub-Standard"
   footer:
     footer_layout: "Basic"
     final_report: " | Final Reports"

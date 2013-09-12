@@ -1,0 +1,30 @@
+.report
+  .primary-section
+    .row
+      .large-4.large-offset-4.columns.header
+        = t('report.water_final_report')
+      .large-4.columns.cross
+        = ">> #{t('report.cross_to_sanitation')}"
+    .row
+      .large-12.columns.title
+        = t('report.summmary')
+    .row
+      .large-3.large-offset-3.columns.total_cost
+        .title
+          = t('report.total_cost')
+        .value
+          ="US$ #{number_with_delimiter(flash[:results][:total], :delimiter=>',')}"
+        .caption
+          = t('report.caption_total_cost', population: flash[:results][:population])
+      .large-3.columns.level_of_service
+        .title
+          = t('report.level_of_service')
+        .rating{class: "level-start-#{flash[:results][:service_rating] + 1}"}
+        .caption
+          = t('report.substandard')
+      .large-3.columns
+
+
+
+
+
