@@ -50,28 +50,28 @@ class WaterBasicController < ApplicationController
       # default value is the min value of population slider
       population= params[:population]
       if population && is_number(population) && population.to_i > -1 && population.to_i <= 1000000
-        add_to_session_form(:water_basic_form, :water_basic_complete, "population", population.to_i)
-        redirect_to :action => "capital"
+        add_to_session_form(:water_basic_form, :water_basic_complete, 'population', population.to_i)
+        redirect_to :action => 'capital'
       end
     end
-    @population[:value] = retrieve_previous_answer_for("population")
-    @population[:question_label] =  retrieve_previous_answer_for("water").present? ? t('form.water_basic.population.question', technology: @@water_values[retrieve_previous_answer_for("water").to_i][:label]) : t('form.water_basic.population.default_question')
+    @population[:value] = retrieve_previous_answer_for('population')
+    @population[:question_label] =  retrieve_previous_answer_for('water').present? ? t('form.water_basic.population.question', technology: @@water_values[retrieve_previous_answer_for('water').to_i][:label]) : t('form.water_basic.population.default_question')
   end
 
   def capital
     if request.post?
       capital_amount = params[:capital]
       if capital_amount && is_number(capital_amount) && capital_amount.to_i > -1
-        add_to_session_form(:water_basic_form, :water_basic_complete, "capital", capital_amount.to_i)
-        redirect_to :action => "recurrent"
+        add_to_session_form(:water_basic_form, :water_basic_complete, 'capital', capital_amount.to_i)
+        redirect_to :action => 'recurrent'
       end
     end
     @capital = {}
-    water_sources_index = retrieve_previous_answer_for("water") || 0
+    water_sources_index = retrieve_previous_answer_for('water') || 0
     range = capital_range_water_based water_sources_index
     @capital[:min_value] = range[:min_value]
     @capital[:max_value] = range[:max_value]
-    @capital[:value] = retrieve_previous_answer_for("capital") || @capital[:min_value]
+    @capital[:value] = retrieve_previous_answer_for('capital') || @capital[:min_value]
     #@capital[:below_value] = ((@capital[:max_value]-@capital[:min_value]).to_f*0.2).round+@capital[:min_value]
     #@capital[:above_value] = ((@capital[:max_value]-@capital[:min_value]).to_f*0.8).round+@capital[:min_value]
     @capital[:below_value] = range[:below_value]
@@ -82,16 +82,16 @@ class WaterBasicController < ApplicationController
     if request.post?
       recurrent_amount = params[:recurrent]
       if recurrent_amount && is_number(recurrent_amount) && recurrent_amount.to_i > -1
-        add_to_session_form(:water_basic_form, :water_basic_complete, "recurrent", recurrent_amount.to_i)
-        redirect_to :action => "time"
+        add_to_session_form(:water_basic_form, :water_basic_complete, 'recurrent', recurrent_amount.to_i)
+        redirect_to :action => 'time'
       end
     end
     @recurrent = {}
-    water_sources_index = retrieve_previous_answer_for("water") || 0
+    water_sources_index = retrieve_previous_answer_for('water') || 0
     range = recurrent_range_water_based water_sources_index
     @recurrent[:min_value] = range[:min_value]
     @recurrent[:max_value] = range[:max_value]
-    @recurrent[:value] = retrieve_previous_answer_for("recurrent") || @recurrent[:min_value]
+    @recurrent[:value] = retrieve_previous_answer_for('recurrent') || @recurrent[:min_value]
     @recurrent[:above_value] = range[:above_value]
     @recurrent[:below_value] = range[:below_value]
   end
@@ -100,11 +100,11 @@ class WaterBasicController < ApplicationController
     if request.post?
       time_index= params[:time]
       if time_index && is_number(time_index) && time_index.to_i > -1 && time_index.to_i < 4
-        add_to_session_form(:water_basic_form, :water_basic_complete, "time", time_index.to_i)
-        redirect_to :action => "quantity"
+        add_to_session_form(:water_basic_form, :water_basic_complete, 'time', time_index.to_i)
+        redirect_to :action => 'quantity'
       end
     end
-    @time = retrieve_previous_answer_for("time")
+    @time = retrieve_previous_answer_for('time')
   end
 
   def quantity
@@ -116,7 +116,7 @@ class WaterBasicController < ApplicationController
       end
     end
     @quantity = {}
-    @quantity[:value] = retrieve_previous_answer_for("quantity") || 0
+    @quantity[:value] = retrieve_previous_answer_for('quantity') || 0
     @quantity[:choices] = %w(waterLessThan waterFromFive waterFromTwenty waterMoreThan)
     @quantity[:class] = 'quantity-item'
   end
@@ -130,7 +130,7 @@ class WaterBasicController < ApplicationController
       end
     end
     @quality = {}
-    @quality[:value] = retrieve_previous_answer_for("quality") || 0
+    @quality[:value] = retrieve_previous_answer_for('quality') || 0
     @quality[:choices] = %w(noTest test occasional regular)
     @quality[:class] = 'quality-item'
   end
@@ -158,7 +158,7 @@ class WaterBasicController < ApplicationController
   def data_info_box
     trigger=params[:trigger]
     index= params[:index]
-    @info_box = {header: I18n.t("form.water_basic.#{trigger}.answers.a#{index}", :default => "Info"), content: I18n.t("form.water_basic.#{params[:trigger]}.info.i#{index}", :default => "No Info")}
+    @info_box = {header: I18n.t("form.water_basic.#{trigger}.answers.a#{index}", :default => "Info"), content: I18n.t("form.water_basic.#{params[:trigger]}.info.i#{index}", :default => 'No Info')}
     respond_to do |format|
       format.js
     end
