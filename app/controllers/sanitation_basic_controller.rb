@@ -119,16 +119,15 @@ class SanitationBasicController < ApplicationController
   def environment
     if request.post?
       environment_index= params[:environment]
-
-      if(environment_index && environment_index.to_i > -1 && environment_index.to_i < 3)
-
-        add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete, "environment",  environment_index.to_i)
-
-        redirect_to :action =>"usage"
+      if environment_index && environment_index.to_i > -1 && environment_index.to_i < 3
+        add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete, 'environment',  environment_index.to_i)
+        redirect_to :action =>'usage'
       end
     end
-
-    flash[:environment] = retrieve_previous_answer_for("environment")
+    @environment = {}
+    @environment[:value] = retrieve_previous_answer_for('environment') || 0
+    @environment[:choices] = %w(safe reusable pollution)
+    @environment[:class] = 'environment-item'
   end
 
   def usage

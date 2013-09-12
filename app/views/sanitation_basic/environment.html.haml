@@ -1,0 +1,15 @@
+- @title = "8 of 11 (Environment)"
+.row
+  .large-12.columns
+    .question= t 'form.sanitation_basic.environment.question'
+.row
+  .large-12.columns
+    .choices-section
+      = form_tag({controller: 'sanitation_basic', action: 'environment'}, class: 'main_content', id: 'sanitationBasicForm') do
+        .select-container.environment
+          - @environment[:choices].each_with_index do |choice, index|
+            = label_tag(choice, nil, class: "#{@environment[:class]}-#{index}") do
+              = radio_button_tag('environment', index, index == @environment[:value], id: choice)
+              %span= t "form.sanitation_basic.environment.answers.a#{index}"
+        .action
+          = submit_tag((t 'buttons.next'), class: 'button button-basic-questionnaire')
