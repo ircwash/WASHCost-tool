@@ -1,0 +1,22 @@
+- @title = '3 of 9 (Population)'
+.row
+  .large-12.columns
+    .question= t 'form.sanitation_basic.population.question'
+.row
+  .large-12.columns
+    .choices-section
+      = form_tag({controller: 'sanitation_basic', action: 'population'}, class: 'main_content', id: 'sanitationBasicForm') do
+        .slider-section
+          .value
+            .valueLabel.caption= t 'form.sanitation_basic.population.value_label'
+            #populationValue.valueOutput.slider-output 500
+          #populationSlider.slider-container{'data-slider_value' => @population.present? ? @population : 0}
+            .test-cursor
+        %input{:name => 'population', :type => 'hidden'}
+        .action
+          = submit_tag((t 'buttons.next'), class: 'button button-basic-questionnaire')
+.infoTab
+  %a.tab{:href => '#'} infoTab
+  .tabContent
+    %p= t 'form.sanitation_basic.population.info'
+
