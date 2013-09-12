@@ -177,4 +177,34 @@
       }
     }
   }
+  //&.{
+  //  label{
+  //    &.ticked{
+  //
+  //    }
+  //  }
+  //}
+  &.environment{
+    label{
+      span{
+        top: 145px !important;
+      }
+      background: transparent url('/assets/spriteQ8basicEnviroment24.png') no-repeat -30px -246px;
+      &.ticked{
+        background-position: -30px -16px;
+      }
+      &.environment-item-1 {
+        background-position: -263px -246px;
+      }
+      &.environment-item-2 {
+        background-position:  -487px -246px;
+      }
+      &.environment-item-1.ticked {
+        background-position: -263px -16px;
+      }
+      &.environment-item-2.ticked {
+        background-position:  -487px -16px;
+      }
+    }
+  }
 }
