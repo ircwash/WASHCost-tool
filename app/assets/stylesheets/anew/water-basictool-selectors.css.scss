@@ -148,4 +148,19 @@
 
     }
   }
+  &.providing{
+    label{
+      width: 220px !important;
+      background: transparent url('/assets/spriteQ6basicProviding24.png') no-repeat -11px -133px;
+      &.ticked{
+        background-position: -12px 0px;
+      }
+      &.providing-item-1 {
+        background-position: -275px -133px
+      }
+      &.providing-item-1.ticked {
+        background-position: -276px 0;
+      }
+    }
+  }
 }
