@@ -1,0 +1,12 @@
+- content_for :content do
+  .basic_tool
+    = show_app_version
+    .main_content
+      = yield
+
+- content_for :footer do
+  = render 'layouts/basic/report/footer'
+:javascript
+  window.I18n = #{I18n.backend.send(:translations).to_json.html_safe}
+
+= render template: 'layouts/application'
