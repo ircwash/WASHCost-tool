@@ -654,6 +654,6 @@ en:
     final_report: " | Final Reports"
     complete: "Complete"
     water_basic: "Basic Water Report"
-    sanitation: "Basic Sanitation Report"
+    sanitation_basic: "Basic Sanitation Report"
     footer_layout_sanitation: "Sanitation"
   register_if_acces_to_cuesstinaire_view: "You must be registered if you want access to basic tool"
