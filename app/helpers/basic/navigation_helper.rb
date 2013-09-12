@@ -64,6 +64,8 @@ module Basic::NavigationHelper
           path: cal_sanitation_basic_path,
           context: {
               offset: '0',
+              name: I18n.t('nav.main.context.title'),
+              first_action: :country,
               items: {
                   country: I18n.t('nav.main.context.items.country'),
                   population: I18n.t('nav.main.context.items.population'),
@@ -72,6 +74,8 @@ module Basic::NavigationHelper
           },
           cost: {
               offset: '-280',
+              first_action: :capital,
+              name: I18n.t('nav.main.cost.title'),
               items: {
                   capital: I18n.t('nav.main.cost.items.capital'),
                   recurrent: I18n.t('nav.main.cost.items.recurrent')
@@ -79,6 +83,8 @@ module Basic::NavigationHelper
           },
           service: {
               offset:'-430',
+              first_action: :providing,
+              name: I18n.t('nav.main.service.title'),
               items: {
                   providing: I18n.t('nav.main.service.items.providing'),
                   impermeability: I18n.t('nav.main.service.items.impermeability'),
