@@ -40,11 +40,14 @@ class SanitationBasicController < ApplicationController
     if request.post?
       latrine_index= params[:latrine]
       if latrine_index && latrine_index.to_i > -1 && latrine_index.to_i < 6
-        add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete, "latrine", latrine_index.to_i)
-        redirect_to :action =>"capital"
+        add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete, 'latrine', latrine_index.to_i)
+        redirect_to :action => 'capital'
       end
     end
-    @latrine = retrieve_previous_answer_for("latrine")
+    @latrine = {}
+    @latrine[:value] = retrieve_previous_answer_for('latrine')
+    @latrine[:choices] = %w(traditional improved slab vip flush septik)
+    @latrine[:class] = 'latrine-item'
   end
 
   def capital
