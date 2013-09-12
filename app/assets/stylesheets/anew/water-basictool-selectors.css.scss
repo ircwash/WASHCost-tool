@@ -57,5 +57,31 @@
       }
     }
   }
+  &.quality{
+    label{
+      background: transparent url('/assets/spriteQ8basicWater24.png') no-repeat -14 -148px;
+      &.ticked {
+        background-position: -14 0;
+      }
+      &.quality-item-1 {
+          background-position:  -174px -148px;
+      }
+      &.quality-item-2 {
+          background-position: -334px -148px;
+      }
+      &.quality-item-3 {
+          background-position: -494px -148px;
+      }
+      &.quality-item-1.ticked {
+          background-position:  -174px 0;
+      }
+      &.quality-item-2.ticked {
+          background-position: -334px 0;
+      }
+      &.quality-item-3.ticked {
+          background-position: -494px 0;
+      }
+    }
+  }
 
 }

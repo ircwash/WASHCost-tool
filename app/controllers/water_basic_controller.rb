@@ -132,6 +132,7 @@ class WaterBasicController < ApplicationController
     @quality = {}
     @quality[:value] = retrieve_previous_answer_for("quality") || 0
     @quality[:choices] = %w(noTest test occasional regular)
+    @quality[:class] = 'quality-item'
   end
 
   def reliability
