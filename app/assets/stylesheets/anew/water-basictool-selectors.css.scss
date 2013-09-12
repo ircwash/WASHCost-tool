@@ -109,5 +109,43 @@
       }
     }
   }
+  &.latrine{
+    label{
+      background: transparent url('/assets/spriteQ3basicLatrine24.png') no-repeat -9px -172px;
+      &.ticked {
+        background-position: -9px 0;
+      }
+      &.latrine-item-1 {
+        background-position: -157px -172px;
+      }
+      &.latrine-item-2 {
+        background-position: -306px -172px;
+      }
+      &.latrine-item-3 {
+        background-position: -455px -172px;
+      }
+      &.latrine-item-4 {
+        background-position: -455px -172px;
+      }
+      &.latrine-item-5 {
+        background-position: -604px -172px;
+      }
+      &.latrine-item-1.ticked {
+        background-position: -158px 0;
+      }
+      &.latrine-item-2.ticked {
+        background-position: -306px 0;
+      }
+      &.latrine-item-3.ticked {
+        background-position: -455px 0;
+      }
+      &.latrine-item-4.ticked {
+        background-position: -455px 0;
+      }
+      &.latrine-item-5.ticked {
+        background-position: -604px 0;
+      }
 
+    }
+  }
 }

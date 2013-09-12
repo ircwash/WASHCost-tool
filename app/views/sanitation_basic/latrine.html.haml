@@ -6,7 +6,7 @@
   .large-12.columns
     .choices-section
       = form_tag({controller: 'sanitation_basic', action: 'latrine'}, class: 'main_content', id: 'sanitationBasicForm') do
-        .select-container.sanitation
+        .select-container.latrine
           - @latrine[:choices].each_with_index do |choice, index|
             = label_tag(choice, nil, class: "#{@latrine[:class]}-#{index}") do
               = radio_button_tag('latrine', index, index == @latrine[:value], id: choice)
