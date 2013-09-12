@@ -133,15 +133,15 @@ class SanitationBasicController < ApplicationController
   def usage
     if request.post?
       usage_index= params[:usage]
-
-      if(usage_index && usage_index.to_i > -1 && usage_index.to_i < 3)
-
-        add_to_session_form(:sanitation_basic_form,:sanitation_basic_complete, "usage",  usage_index.to_i)
-
-        redirect_to :action =>"reliability"
+      if usage_index && usage_index.to_i > -1 && usage_index.to_i < 3
+        add_to_session_form(:sanitation_basic_form,:sanitation_basic_complete, 'usage',  usage_index.to_i)
+        redirect_to :action =>'reliability'
       end
     end
-    flash[:usage] = retrieve_previous_answer_for("usage")
+    @usage = {}
+    @usage[:value] = retrieve_previous_answer_for('usage') || 0
+    @usage[:choices] = %w(safe reusable pollution)
+    @usage[:class] = 'usage-item'
   end
 
   def reliability
