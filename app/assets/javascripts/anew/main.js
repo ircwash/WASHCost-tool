@@ -51,6 +51,12 @@ $(document).ready(function(){
         $(this).find('section').removeClass('active');
     });
 
+    // logic in selectors
+    $('.select-container label').click(function(){
+        $('.select-container label').removeClass();
+        $(this).addClass('ticked');
+    });
+    $('.select-container label input:checked').parent().addClass('ticked');
 });
 
 
