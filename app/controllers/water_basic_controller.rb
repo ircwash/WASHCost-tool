@@ -146,6 +146,7 @@ class WaterBasicController < ApplicationController
     @reliability = {}
     @reliability[:value] = retrieve_previous_answer_for('reliability') || 0
     @reliability[:choices] = %w(worksAll worksMostly breakDown notWorking)
+    @reliability[:class] = 'reliability-item'
   end
 
   def report

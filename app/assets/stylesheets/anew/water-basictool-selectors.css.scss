@@ -83,5 +83,31 @@
       }
     }
   }
+  &.reliability{
+    label{
+      background: transparent url('/assets/spriteQ9basicWater24.png') no-repeat -13 -196px;
+      &.ticked {
+        background-position: -13 0;
+      }
+      &.reliability-item-1 {
+        background-position: -172px -196px;
+      }
+      &.reliability-item-2 {
+        background-position: -332px -196px;
+      }
+      &.reliability-item-3 {
+        background-position: -492px -196px;
+      }
+      &.reliability-item-1.ticked {
+        background-position: -172px 0;
+      }
+      &.reliability-item-2.ticked {
+        background-position: -332px 0;
+      }
+      &.reliability-item-3.ticked {
+        background-position: -492px 0;
+      }
+    }
+  }
 
 }
