@@ -74,34 +74,32 @@ class SanitationBasicController < ApplicationController
     if request.post?
       recurrent_amount = params[:recurrent]
       if recurrent_amount && recurrent_amount.to_i > -1
-        add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete, "recurrent", recurrent_amount.to_i)
-        redirect_to :action => "providing"
+        add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete, 'recurrent', recurrent_amount.to_i)
+        redirect_to :action => 'providing'
       end
     end
     @recurrent = {}
-    latrine_sources_index = retrieve_previous_answer_for("latrine") || 0
+    latrine_sources_index = retrieve_previous_answer_for('latrine') || 0
     range = recurrent_range_latrine_based latrine_sources_index
     @recurrent[:min_value] = range[:min_value]
     @recurrent[:max_value] = range[:max_value]
-    @recurrent[:value] = retrieve_previous_answer_for("recurrent") || @recurrent[:min_value]
+    @recurrent[:value] = retrieve_previous_answer_for('recurrent') || @recurrent[:min_value]
     @recurrent[:below_value] = range[:below_value]
     @recurrent[:above_value] = range[:above_value]
   end
 
   def providing
-
     if request.post?
       providing_index= params[:providing]
-
-      if(providing_index && providing_index.to_i > -1 && providing_index.to_i < 2)
-
-        add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete, "providing", providing_index.to_i)
-
-        redirect_to :action =>"impermeability"
+      if providing_index && providing_index.to_i > -1 && providing_index.to_i < 2
+        add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete, 'providing', providing_index.to_i)
+        redirect_to :action => 'impermeability'
       end
     end
-
-    flash[:providing] = retrieve_previous_answer_for("providing")
+    @providing = {}
+    @providing[:value] = retrieve_previous_answer_for('providing')
+    @providing[:choices] = %w(capitalYes capitalNo)
+    @providing[:class] = 'providing-item'
   end
 
   def impermeability
