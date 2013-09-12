@@ -3,7 +3,7 @@ class SanitationBasicController < ApplicationController
   before_filter :set_percent_complete
   include SanitationBasicHelper
   authorize_resource class: WaterBasicController
-  layout "sanitation_basic_layout"
+  layout 'basic/tool'
 
   def init_vars
     @@pages= 11
@@ -15,19 +15,14 @@ class SanitationBasicController < ApplicationController
   end
 
   def country
-
     if request.post?
-      country_code= params[:country]
-
-      if(is_valid_country_code(country_code))
-        add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete, "country", country_code)
-
-        redirect_to :action => "population"
+      country_code = params[:country]
+      if is_valid_country_code(country_code)
+        add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete, 'country', country_code)
+        redirect_to :action => 'population'
       end
     end
-
-    flash[:country_code] = retrieve_previous_answer_for("country")
-
+    flash[:country_code] = retrieve_previous_answer_for('country')
   end
 
   def population
