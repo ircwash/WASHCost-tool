@@ -97,7 +97,7 @@ class SanitationBasicController < ApplicationController
       end
     end
     @providing = {}
-    @providing[:value] = retrieve_previous_answer_for('providing')
+    @providing[:value] = retrieve_previous_answer_for('providing') || 0
     @providing[:choices] = %w(capitalYes capitalNo)
     @providing[:class] = 'providing-item'
   end
@@ -105,15 +105,15 @@ class SanitationBasicController < ApplicationController
   def impermeability
     if request.post?
       impermeability_index= params[:impermeability]
-
-      if(impermeability_index && impermeability_index.to_i > -1 && impermeability_index.to_i < 2)
-
-        add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete,"impermeability",  impermeability_index.to_i)
-        redirect_to :action =>"environment"
+      if impermeability_index && impermeability_index.to_i > -1 && impermeability_index.to_i < 2
+        add_to_session_form(:sanitation_basic_form, :sanitation_basic_complete,'impermeability',  impermeability_index.to_i)
+        redirect_to :action => 'environment'
       end
     end
-
-    flash[:impermeability] = retrieve_previous_answer_for("impermeability")
+    @impermeability = {}
+    @impermeability[:value] = retrieve_previous_answer_for('impermeability') || 0
+    @impermeability[:choices] = %w(capitalYes capitalNo)
+    @impermeability[:class] = 'impermeability-item'
   end
 
   def environment

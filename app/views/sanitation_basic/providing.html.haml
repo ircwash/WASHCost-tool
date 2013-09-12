@@ -5,11 +5,11 @@
 .row
   .large-12.columns
     .choices-section
-      = form_tag({controller: "sanitation_basic", action: 'providing'}, class: "main_content", id: "sanitationBasicForm") do
+      = form_tag({controller: 'sanitation_basic', action: 'providing'}, class: 'main_content', id: 'sanitationBasicForm') do
         .select-container.providing
           - @providing[:choices].each_with_index do |choice, index|
             = label_tag(choice, nil, class: "#{@providing[:class]}-#{index}") do
               = radio_button_tag('providing', index, index == @providing[:value], id: choice)
               %span= t "form.sanitation_basic.providing.answers.a#{index}"
         .action
-          = submit_tag((t 'buttons.next'), class: "button button-basic-questionnaire")
+          = submit_tag((t 'buttons.next'), class: 'button button-basic-questionnaire')
