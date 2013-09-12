@@ -31,5 +31,31 @@
       }
     }
   }
+  &.quantity{
+    label{
+      background: transparent url('/assets/spriteQ7basicWater24.png') no-repeat -11 -142px;
+      &.ticked {
+        background-position: -11 0;
+      }
+      &.quantity-item-1 {
+        background-position: -170px -142px;
+      }
+      &.quantity-item-2 {
+        background-position: -330px -142px;
+      }
+      &.quantity-item-3 {
+        background-position: -490px -142px;
+      }
+      &.quantity-item-1.ticked {
+        background-position: -170px 0;
+      }
+      &.quantity-item-2.ticked {
+        background-position: -330px 0;
+      }
+      &.quantity-item-3.ticked {
+        background-position: -490px 0;
+      }
+    }
+  }
 
 }

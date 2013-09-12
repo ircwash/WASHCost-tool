@@ -118,6 +118,7 @@ class WaterBasicController < ApplicationController
     @quantity = {}
     @quantity[:value] = retrieve_previous_answer_for("quantity") || 0
     @quantity[:choices] = %w(waterLessThan waterFromFive waterFromTwenty waterMoreThan)
+    @quantity[:class] = 'quantity-item'
   end
 
   def quality
