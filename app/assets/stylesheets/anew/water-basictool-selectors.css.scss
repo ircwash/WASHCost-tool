@@ -163,4 +163,18 @@
       }
     }
   }
+  &.impermeability{
+    label{
+      background: transparent url('/assets/spriteQ7basicImpermeability24.png') no-repeat -22 -211px;
+      &.ticked{
+        background-position: -22px -17;
+      }
+      &.impermeability-item-1 {
+        background-position: -189px -211px;
+      }
+      &.impermeability-item-1.ticked {
+        background-position: -189px -17;
+      }
+    }
+  }
 }
