@@ -177,13 +177,6 @@
       }
     }
   }
-  //&.{
-  //  label{
-  //    &.ticked{
-  //
-  //    }
-  //  }
-  //}
   &.environment{
     label{
       span{
@@ -204,6 +197,30 @@
       }
       &.environment-item-2.ticked {
         background-position:  -487px -16px;
+      }
+    }
+  }
+  &.usage{
+    label{
+      span{
+        top: 148px !important;
+      }
+      width: 220px !important;
+      background: transparent url('/assets/spriteQ8basicUsage24.png') no-repeat -6px -156px;
+      &.ticked{
+        background-position: -6px 14px;
+      }
+      &.usage-item-1 {
+        background-position: -256px -156px;
+      }
+      &.usage-item-2 {
+        background-position: -520px -156px;
+      }
+      &.usage-item-1.ticked {
+        background-position: -256px 14px;
+      }
+      &.usage-item-2.ticked {
+        background-position: -520px 14px
       }
     }
   }
