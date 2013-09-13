@@ -138,8 +138,15 @@
     background: -ms-linear-gradient(right,  rgb(221, 214, 153) 0%, rgb(235, 232, 202) 50%, rgb(221, 214, 153) 100%); /* IE10+ */
     background: linear-gradient(to right,  rgb(221, 214, 153) 0%, rgb(235, 232, 202) 50%, rgb(221, 214, 153) 100%); /* W3C */
     border-top : #fff solid 5px;
+    background-color: rgb(173,203,84);
+    color: #333;
+    text-align: center;
     .title{
-
+      margin-top: 20px;
+      text-transform: uppercase;
+      font-size: 24px;
+      font-weight: 500;
+      text-spacing: 2px;
     }
     .subtitle{
 
