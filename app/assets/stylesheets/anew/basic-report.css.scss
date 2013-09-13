@@ -1,3 +1,4 @@
+@import 'foundation_and_overrides';
 .report{
   .primary-section{
     background-color: rgb(173,203,84);
@@ -78,8 +79,74 @@
         text-transform: none;
       }
     }
+    .result{
+      .icon{
+        text-align: center;
+        margin: 0 auto;
+        width: 26px;
+        height: 25px;
+        text-indent: 20px;
+        background: transparent url('/assets/benchBackground.png') no-repeat 0 -68px;
+        &.bench-icon-1{
+          background: transparent url('/assets/benchBackground.png') no-repeat 0 0;
+        }
+      }
+      .caption{
+        text-transform: none;
+        margin-top: 10px;
+        font-size: 14px;
+        font-weight: 500;
+        padding-bottom:  15px;
+        border-bottom: #fff solid 1px;
+      }
+      .review{
+        //*** accordion review style
+        .section-review {
+          @include section-container(accordion);
+          & > section { @include section(accordion, ".title-review", ".content-review", $title-padding: 10px 10px, $title-color:#fff, $title-bg:rgb(173,203,84), $title-bg-hover:darken(rgb(173,203,84),1%), $title-bg-active: rgb(173,203,84), $title-color-active: darken(#fff,90%), $content-bg: rgb(173,203,84), $section-border-color: rgb(173,203,84)); }
+          border: none;
+          section{
+            border: none;
+            .title-review{
+              a{
+                font-size: 12px;
+                font-weight: 500;
+                text-align: center;
+                text-transform: none;
+              }
+            }
+            .content-review{
+              padding: 0 5px 0px 5px;
+              p{
+                color: #fff;
+                font-size: 12px !important;
+                text-align: justify;
+                font-weight: lighter;
+                text-transform: none;
+              }
+            }
+          }
+        }
+      }
+    }
   }
   .content-section{
+    background: -moz-linear-gradient(right,  rgb(221, 214, 153) 0%, rgb(235, 232, 202) 50%, rgb(221, 214, 153) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, right, left , color-stop(0%, rgb(221, 214, 153)), color-stop(50%, rgb(235, 232, 202)), color-stop(100%, rgb(221, 214, 153)));/* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(right,  rgb(221, 214, 153) 0%, rgb(235, 232, 202) 50%, rgb(221, 214, 153)100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(right,  rgb(221, 214, 153) 0%, rgb(235, 232, 202) 50%, rgb(221, 214, 153) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(right,  rgb(221, 214, 153) 0%, rgb(235, 232, 202) 50%, rgb(221, 214, 153) 100%); /* IE10+ */
+    background: linear-gradient(to right,  rgb(221, 214, 153) 0%, rgb(235, 232, 202) 50%, rgb(221, 214, 153) 100%); /* W3C */
+    border-top : #fff solid 5px;
+    .title{
 
+    }
+    .subtitle{
+
+    }
+
+    &.context{
+
+    }
   }
 }

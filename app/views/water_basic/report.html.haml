@@ -23,6 +23,24 @@
         .caption
           = t('report.substandard')
       .large-3.columns
+    .row
+      .large-6.large-offset-3.columns.result
+        .icon{:class => "bench-icon-#{flash[:results][:cost_rating]}"}
+        .caption
+          = flash[:results][:cost_rating_label].html_safe
+        .review
+          .section-container.section-review{"data-section" => "accordion"}
+            %section
+              %p.title.title-review{"data-section-title" => ""}
+                %a{:href => "#section-review"}= "#{t('report.full_review')} >>"
+              .content.content-review{"data-section-content" => "", "data-slug" => "section-review"}
+                %p= simple_format flash[:results][:service_level]
+  .content-section.context
+    .row
+      .large-12.columns
+        .title
+
+
 
 
 
