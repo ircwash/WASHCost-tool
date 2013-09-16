@@ -34,7 +34,9 @@ module WaterReportHelper
     return form
   end
 
-  def get_water_basic_report
+  # return the hash with all information about the basic water report
+  # @return [Hash]
+  def water_basic_report
     form = get_session_form
     form_ready = is_form_ready?(form)
 
@@ -46,7 +48,8 @@ module WaterReportHelper
     service_level = get_level_of_service(form[:water],form[:capital], form[:recurrent], form[:time], form[:quantity], form[:quality], form[:reliability])
     service_label = get_service_rating_label(service_rating)
 
-    results = {
+    # Hash that will be returned
+    {
       :form_ready => form_ready,
       :cost_rating=> cost_rating,
       :cost_rating_label=> cost_rating_label,
@@ -69,9 +72,6 @@ module WaterReportHelper
       :reliability_index => get_index(form[:reliability]),
       :is_cost_avaliable => cost_avaliable?(form[:capital], form[:recurrent])
     }
-
-    return results
-
   end
 
   def cost_avaliable?(capital, recurrent)

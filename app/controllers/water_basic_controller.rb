@@ -150,8 +150,7 @@ class WaterBasicController < ApplicationController
   end
 
   def report
-    results = get_water_basic_report
-    flash[:results] = results
+    flash[:results] = water_basic_report
     render layout: 'basic/report/main'
   end
 
