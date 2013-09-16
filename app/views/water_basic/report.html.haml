@@ -53,6 +53,15 @@
               .edit
                 = link_to box[:link] do
                   = image_tag 'iconEdit24.png', class: ''
+  .content-section.cost
+    .row
+      .large-12.columns
+        .title
+          = t('report.cost');
+    .row
+      .large-12.columns
+        #graph
+          #graphContent
   .content-section.service_level
     .row
       .large-12.columns
@@ -71,6 +80,73 @@
               .edit
                 = link_to box[:link] do
                   = image_tag 'iconEdit24.png', class: ''
+
+/Script to google chart
+%script{:src => "http://www.google.com/jsapi", :type => "text/javascript"}
+:javascript
+  google.load('visualization', '1', {packages: ['corechart']});
+:javascript
+  function expenditureGraph() {
+
+      var _C= #{(flash[:results][:capital]|| 0)};
+      var _R= #{(flash[:results][:recurrent]|| 0)};
+      var _P= #{(flash[:results][:population]|| 0)};
+      var graphContainer = $('#graphContent')
+
+      if(_C && _R){
+
+          var data = new google.visualization.DataTable();
+
+          data.addColumn('string', 'Year');
+          data.addColumn('number', 'Expenditure');
+          data.addColumn({type:'string', role:'annotation'}); // annotation role col.
+          data.addColumn({type:'string', role:'annotationText'}); // annotationText col
+          data.addColumn({type:'string', role:'tooltip'}); // tooltip role col
+
+          capExpByPopulation = _C*_P;
+          recExpByPopulation = _R*_P;
+          accounting.settings = {
+              currency: {
+                  symbol : "US$",   // default currency symbol is '$'
+                  format: "%s %v", // controls output: %s = symbol, %v = value/number (can be object: see below)
+                  decimal : ".",  // decimal point separator
+                  thousand: ",",  // thousands separator
+                  precision : 0  // decimal places
+              },
+              number: {
+                  precision : 0,  // default precision on numbers is 0
+                  thousand: ",",
+                  decimal : "."
+              }
+          }
+
+          graphDataRows=[['Setup', capExpByPopulation, accounting.formatMoney(capExpByPopulation), 'You spent '+accounting.formatMoney(capExpByPopulation)+' to setup the service', 'setup\nExpenditure: '+accounting.formatMoney(capExpByPopulation)],
+              ['1',  recExpByPopulation, accounting.formatMoney(recExpByPopulation), accounting.formatMoney(recExpByPopulation)+' is your annual expenditure', '1\nExpenditure: '+accounting.formatMoney(recExpByPopulation)],
+          ];
+          for(i=2;i<=10;i++){
+            graphDataRows.push([i+'',recExpByPopulation, null, null, i+'\nExpenditure: '+accounting.formatMoney(recExpByPopulation)])
+          }
+          data.addRows(graphDataRows);
+
+          // Create and draw the visualization.
+          new google.visualization.LineChart(document.getElementById('graphContent')).
+                  draw(data, {curveType: "none",
+                      axisTitlesPosition: "out",
+                      legend: { position: "none" },
+                      width: graphContainer.width(), height: Math.round(graphContainer.width()*0.25),
+                      hAxis: { title: 'Year', titleTextStyle: { color: '#a6955f' }, textStyle: { color: '#a6955f' }, basline: 1, baselineColor: '#a6955f', gridlines: {color: '#fff'}, maxTextLines: 1, maxAlternation: 1 },
+                      vAxis: { title: 'Expenditure', titleTextStyle: { color: '#a6955f' }, textStyle: { color: '#a6955f' },baselineColor: '#a6955f', gridlines: {color: '#a6955f'}, maxValue: 10,  format:'US$ ###,###.##' },
+                      backgroundColor: "transparent",
+                      lineWidth: 4,
+                      colors: ['#ffffff'],
+                      //annotations: { style: 'line'},
+                      'chartArea': { 'width': '75%', 'height': '70%'}
+                  }
+          );
+      }
+  }
+
+  google.setOnLoadCallback(expenditureGraph);
 
 
 
