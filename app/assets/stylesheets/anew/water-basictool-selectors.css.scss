@@ -1,226 +1,58 @@
+@import 'sprite-set-basictool.css.scss';
 .select-container{
+  &.country{
+    label{
+      @extend %country-sprite-selector;
+    }
+  }
   &.water{
     label{
-      background: transparent url('/assets/spriteQ2basicWater24.png') no-repeat -15 -146px;
-      &.ticked{
-        background-position: -15 0;
-      }
-      &.water-item-1 {
-          background-position: -175px -146px;
-      }
-      &.water-item-1.ticked {
-          background-position: -175px 0;
-      }
-      &.water-item-2 {
-          background-position: -335px -146px;
-      }
-      &.water-item-2.ticked {
-          background-position: -335px 0;
-      }
-      &.water-item-3 {
-          background-position: -495px -146px;
-      }
-      &.water-item-3.ticked {
-          background-position: -495px 0;
-      }
-      &.water-item-4 {
-          background-position: -655px -146px;
-      }
-      &.water-item-4.ticked {
-          background-position: -655px 0;
-      }
+      @extend %water-sprite-selector;
     }
   }
   &.quantity{
     label{
-      background: transparent url('/assets/spriteQ7basicWater24.png') no-repeat -11 -142px;
-      &.ticked {
-        background-position: -11 0;
-      }
-      &.quantity-item-1 {
-        background-position: -170px -142px;
-      }
-      &.quantity-item-2 {
-        background-position: -330px -142px;
-      }
-      &.quantity-item-3 {
-        background-position: -490px -142px;
-      }
-      &.quantity-item-1.ticked {
-        background-position: -170px 0;
-      }
-      &.quantity-item-2.ticked {
-        background-position: -330px 0;
-      }
-      &.quantity-item-3.ticked {
-        background-position: -490px 0;
-      }
+      @extend %quantity-sprite-selector;
     }
   }
   &.quality{
     label{
-      background: transparent url('/assets/spriteQ8basicWater24.png') no-repeat -14 -148px;
-      &.ticked {
-        background-position: -14 0;
-      }
-      &.quality-item-1 {
-          background-position:  -174px -148px;
-      }
-      &.quality-item-2 {
-          background-position: -334px -148px;
-      }
-      &.quality-item-3 {
-          background-position: -494px -148px;
-      }
-      &.quality-item-1.ticked {
-          background-position:  -174px 0;
-      }
-      &.quality-item-2.ticked {
-          background-position: -334px 0;
-      }
-      &.quality-item-3.ticked {
-          background-position: -494px 0;
-      }
+      @extend %quality-sprite-selector;
     }
   }
   &.reliability{
     label{
-      background: transparent url('/assets/spriteQ9basicWater24.png') no-repeat -13 -196px;
-      &.ticked {
-        background-position: -13 0;
-      }
-      &.reliability-item-1 {
-        background-position: -172px -196px;
-      }
-      &.reliability-item-2 {
-        background-position: -332px -196px;
-      }
-      &.reliability-item-3 {
-        background-position: -492px -196px;
-      }
-      &.reliability-item-1.ticked {
-        background-position: -172px 0;
-      }
-      &.reliability-item-2.ticked {
-        background-position: -332px 0;
-      }
-      &.reliability-item-3.ticked {
-        background-position: -492px 0;
-      }
+      @extend %reliability-sprite-selector;
     }
   }
   &.latrine{
     label{
-      background: transparent url('/assets/spriteQ3basicLatrine24.png') no-repeat -9px -172px;
-      &.ticked {
-        background-position: -9px 0;
-      }
-      &.latrine-item-1 {
-        background-position: -157px -172px;
-      }
-      &.latrine-item-2 {
-        background-position: -306px -172px;
-      }
-      &.latrine-item-3 {
-        background-position: -455px -172px;
-      }
-      &.latrine-item-4 {
-        background-position: -455px -172px;
-      }
-      &.latrine-item-5 {
-        background-position: -604px -172px;
-      }
-      &.latrine-item-1.ticked {
-        background-position: -158px 0;
-      }
-      &.latrine-item-2.ticked {
-        background-position: -306px 0;
-      }
-      &.latrine-item-3.ticked {
-        background-position: -455px 0;
-      }
-      &.latrine-item-4.ticked {
-        background-position: -455px 0;
-      }
-      &.latrine-item-5.ticked {
-        background-position: -604px 0;
-      }
-
+      @extend %latrine-sprite-selector;
     }
   }
   &.providing{
     label{
-      width: 220px !important;
-      background: transparent url('/assets/spriteQ6basicProviding24.png') no-repeat -11px -133px;
-      &.ticked{
-        background-position: -12px 0px;
-      }
-      &.providing-item-1 {
-        background-position: -275px -133px
-      }
-      &.providing-item-1.ticked {
-        background-position: -276px 0;
-      }
+      @extend %providing-sprite-selector;
     }
   }
   &.impermeability{
     label{
-      background: transparent url('/assets/spriteQ7basicImpermeability24.png') no-repeat -22 -211px;
-      &.ticked{
-        background-position: -22px -17;
-      }
-      &.impermeability-item-1 {
-        background-position: -189px -211px;
-      }
-      &.impermeability-item-1.ticked {
-        background-position: -189px -17;
-      }
+      @extend %impermeability-sprite-selector;
     }
   }
   &.environment{
     label{
+      @extend %environment-sprite-selector;
       span{
         top: 145px !important;
-      }
-      background: transparent url('/assets/spriteQ8basicEnviroment24.png') no-repeat -30px -246px;
-      &.ticked{
-        background-position: -30px -16px;
-      }
-      &.environment-item-1 {
-        background-position: -263px -246px;
-      }
-      &.environment-item-2 {
-        background-position:  -487px -246px;
-      }
-      &.environment-item-1.ticked {
-        background-position: -263px -16px;
-      }
-      &.environment-item-2.ticked {
-        background-position:  -487px -16px;
       }
     }
   }
   &.usage{
     label{
+      @extend  %usage-sprite-selector;
       span{
         top: 148px !important;
-      }
-      width: 220px !important;
-      background: transparent url('/assets/spriteQ8basicUsage24.png') no-repeat -6px -156px;
-      &.ticked{
-        background-position: -6px 14px;
-      }
-      &.usage-item-1 {
-        background-position: -256px -156px;
-      }
-      &.usage-item-2 {
-        background-position: -520px -156px;
-      }
-      &.usage-item-1.ticked {
-        background-position: -256px 14px;
-      }
-      &.usage-item-2.ticked {
-        background-position: -520px 14px
       }
     }
   }
