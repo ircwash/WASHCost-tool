@@ -33,7 +33,7 @@ class SanitationBasicController < ApplicationController
         redirect_to :action => "latrine"
       end
     end
-    @population = retrieve_previous_answer_for("population")
+    @population = retrieve_previous_answer_for("population") || 0
   end
 
   def latrine
@@ -45,7 +45,7 @@ class SanitationBasicController < ApplicationController
       end
     end
     @latrine = {}
-    @latrine[:value] = retrieve_previous_answer_for('latrine')
+    @latrine[:value] = retrieve_previous_answer_for('latrine') || 0
     @latrine[:choices] = %w(traditional improved slab vip flush septik)
     @latrine[:class] = 'latrine-item'
   end
