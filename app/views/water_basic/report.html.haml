@@ -40,7 +40,25 @@
       .large-12.columns
         .title
           = t('report.context');
-    - flash[:results][:report_context].each_slice(3) do |box_by_row|
+    - flash[:results][:context_report].each_slice(3) do |box_by_row|
+      .row
+        - box_by_row.each do |box|
+          .large-4.columns
+            .box-report
+              .title
+                = box[:title]
+              .icon{class: box[:css_icon]}
+              .caption
+                = box[:caption]
+              .edit
+                = link_to box[:link] do
+                  = image_tag 'iconEdit24.png', class: ''
+  .content-section.service_level
+    .row
+      .large-12.columns
+        .title
+          = t('report.service');
+    - flash[:results][:service_report].each_slice(3) do |box_by_row|
       .row
         - box_by_row.each do |box|
           .large-4.columns

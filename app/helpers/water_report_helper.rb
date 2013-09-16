@@ -59,12 +59,13 @@ module WaterReportHelper
       :capital => get_capital(form[:capital]),
       :recurrent => get_recurrent(form[:recurrent]),
       :total => get_total(form[:capital], form[:recurrent], form[:population]),
-      :time => get_time(form[:time]),
-      :quantity => get_quantity(form[:quantity]),
+      :service_report => service_report(form[:quantity], form[:quality], form[:reliability]),
+      :time => time_label(form[:time]),
+      :quantity => quantity_label(form[:quantity]),
       :quantity_index => get_index(form[:quantity]),
-      :quality => get_quality(form[:quality]),
+      :quality => quality_label(form[:quality]),
       :quality_index => get_index(form[:quality]),
-      :reliability => get_reliability(form[:reliability]),
+      :reliability => reliability_label(form[:reliability]),
       :reliability_index => get_index(form[:reliability]),
       :is_cost_avaliable => cost_avaliable?(form[:capital], form[:recurrent])
     }
@@ -86,6 +87,17 @@ module WaterReportHelper
         {name: :country, caption: country_name(country_code)},
         {name: :water, index: water_index, title: 'water source', caption: water_label(water_index)},
         {name: :population, caption: I18n.t('report.population_caption', population: population_value)}
+    ]
+    box_data_container_by_section data
+  end
+
+  # group the items that belongs to service level section in a report's boxes
+  # @return [Hash]
+  def service_report(quantity_index, quality_index, reliability_index)
+    data = [
+        {name: :quantity, index: quantity_index,caption: quantity_label(quantity_index)},
+        {name: :water, index: quality_index, caption: quality_label(quality_index)},
+        {name: :reliability, index: reliability_index, caption: reliability_label(reliability_index)}
     ]
     box_data_container_by_section data
   end
@@ -142,7 +154,7 @@ module WaterReportHelper
     input.present? && input >= @@population_ranges[:min] ? input : @@population_ranges[:min]
   end
 
-  def get_time(index)
+  def time_label(index)
     time= t 'form.value_not_set'
     if index && @@time_values[index].present?
       time= @@time_values[index][:label]
@@ -150,7 +162,7 @@ module WaterReportHelper
     return time
   end
 
-  def get_quantity(index)
+  def quantity_label(index)
     quantity= t 'form.value_not_set'
     if index && @@quantity_values[index].present?
       quantity= @@quantity_values[index][:label]
@@ -158,7 +170,7 @@ module WaterReportHelper
     return quantity
   end
 
-  def get_quality(index)
+  def quality_label(index)
     quality= t 'form.value_not_set'
     if index && @@quality_values[index].present?
       quality= @@quality_values[index][:label]
@@ -166,7 +178,7 @@ module WaterReportHelper
     return quality
   end
 
-  def get_reliability(index)
+  def reliability_label(index)
     reliability = t 'form.value_not_set'
     if index && @@reliability_values[index].present?
       reliability = @@reliability_values[index][:label]

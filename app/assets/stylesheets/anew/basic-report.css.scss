@@ -182,6 +182,15 @@
       &.population{
         @extend %population-sprite-selector;
       }
+      &.quantity{
+        @extend %quantity-sprite-selector;
+      }
+      &.quality{
+        @extend %quality-sprite-selector;
+      }
+      &.reliability{
+        @extend %reliability-sprite-selector;
+      }
       background-color: rgba(3,3,3,0.1);
       text-align: center;
       margin: 0 auto;
