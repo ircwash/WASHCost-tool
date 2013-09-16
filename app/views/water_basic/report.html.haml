@@ -44,10 +44,10 @@
       .large-4.columns
         .box-report
           .title
-            title
-          .icon
+            = flash[:results][:context][:country][:title]
+          .icon{class: 'country'}
           .caption
-            caption
+            = flash[:results][:context][:country][:caption]
           .edit
             = link_to './country' do
               = image_tag 'iconEdit24.png', class: ''

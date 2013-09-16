@@ -39,14 +39,12 @@ module WaterReportHelper
   def water_basic_report
     form = get_session_form
     form_ready = is_form_ready?(form)
-
     cost_rating = get_cost_rating(form[:water], form[:capital], form[:recurrent])
     cost_rating_label = get_cost_rating_label(cost_rating)
-
     service_rating = get_rating(form[:time], form[:quantity], form[:quality], form[:reliability])
-
     service_level = get_level_of_service(form[:water],form[:capital], form[:recurrent], form[:time], form[:quantity], form[:quality], form[:reliability])
     service_label = get_service_rating_label(service_rating)
+
 
     # Hash that will be returned
     {
@@ -56,8 +54,9 @@ module WaterReportHelper
       :service_rating => service_rating,
       :service_label => service_label,
       :service_level => service_level,
-      :country => get_country(form[:country]),
-      :water => get_water(form[:water]),
+      :context => report_context(form[:country], form[:water], form[:population]),
+      :country => country_name(form[:country]),
+      :water => water_label(form[:water]),
       :water_index => form[:water],
       :population => get_population(form[:population]),
       :capital => get_capital(form[:capital]),
@@ -83,17 +82,23 @@ module WaterReportHelper
      form[:quality], form[:quantity], form[:reliability]].all?
   end
 
-  def get_country(country_code)
-    country = t 'form.value_not_set'
-    if country_code
-      country_object = Country.new(country_code)
-      if(country_object.data == nil)
-        country = nil
-      else
-        country= country_object.name
-      end
+  # group the items that belongs to context section in a report's boxes
+  # @return [Hash]
+  def report_context(country_code, water_index, population_value)
+    data = [
+        {name: :country, caption: country_name(country_code)},
+        {name: :water, title: 'water source', caption: water_label(water_index)},
+        {name: :population, caption: I18n.t('report.population_caption', population: population_value)}
+    ]
+    box_data_container_by_section data
+  end
+
+  def country_name(country_code)
+    if country_code && Country.new(country_code).data
+      Country.new(country_code).name
+    else
+      t 'form.value_not_set'
     end
-    return country
   end
 
   def get_index(index)
@@ -101,7 +106,7 @@ module WaterReportHelper
   end
 
   # @return [String], return the label of technology selected in the step 1
-  def get_water(index)
+  def water_label(index)
     index = index || 0
     if index && @@water_values[index].present?
       @@water_values[index][:label]
@@ -378,4 +383,21 @@ module WaterReportHelper
       { :label =>  ( I18n.t 'form.water_basic.reliability.answers.a2') },
       { :label =>  ( I18n.t 'form.water_basic.reliability.answers.a3') }
   ]
+
+  private
+
+  # convert data to array of hashes with all info necessary  generated a complete element box in the report
+  # @return [Hash]
+  def box_data_container_by_section(data)
+    data.map do |item|
+      {
+          item[:name] => {
+              title: item[:title].present? ? item[:title] : item[:name],
+              css_icon: item[:name].to_s,
+              caption: item[:caption],
+              link: "./#{item[:name]}"
+          }
+      }
+    end
+  end
 end

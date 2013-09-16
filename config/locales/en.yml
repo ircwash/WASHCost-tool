@@ -421,6 +421,7 @@ en:
     total_cost: "total cost"
     level_of_service: "level of service"
     caption_total_cost: "for a population of %{population} people"
+    population_caption: "%{population} people"
     full_review: "read full review"
     context: "context"
     cost: "cost data"

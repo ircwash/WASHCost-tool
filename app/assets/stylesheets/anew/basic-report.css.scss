@@ -1,4 +1,5 @@
 @import 'foundation_and_overrides';
+@import 'sprite-set-basictool.css.scss';
 .report{
   .primary-section{
     background-color: rgb(173,203,84);
@@ -172,6 +173,9 @@
       font-size: 16px;
     }
     .icon{
+      &.country{
+        @extend %country-sprite-selector;
+      }
       background-color: rgba(3,3,3,0.1);
       text-align: center;
       margin: 0 auto;
