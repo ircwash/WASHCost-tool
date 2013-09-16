@@ -54,7 +54,7 @@ module WaterReportHelper
       :service_rating => service_rating,
       :service_label => service_label,
       :service_level => service_level,
-      :report_context => report_context(form[:country], form[:water], form[:population]),
+      :context_report => context_report(form[:country], form[:water], form[:population]),
       :population => get_population(form[:population]),
       :capital => get_capital(form[:capital]),
       :recurrent => get_recurrent(form[:recurrent]),
@@ -81,7 +81,7 @@ module WaterReportHelper
 
   # group the items that belongs to context section in a report's boxes
   # @return [Hash]
-  def report_context(country_code, water_index, population_value)
+  def context_report(country_code, water_index, population_value)
     data = [
         {name: :country, caption: country_name(country_code)},
         {name: :water, index: water_index, title: 'water source', caption: water_label(water_index)},
