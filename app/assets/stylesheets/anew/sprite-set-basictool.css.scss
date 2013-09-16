@@ -1,9 +1,6 @@
 
 %country-sprite-selector{
-  background: transparent url('/assets/spriteQ2basicWater24.png') no-repeat -15 -146px;
-  &.country-item-1 {
-    background-position: -175px -146px;
-  }
+  background: transparent url('/assets/world8.png') no-repeat 33px 31px;
 }
 %water-sprite-selector{
   background: transparent url('/assets/spriteQ2basicWater24.png') no-repeat -15 -146px;
@@ -34,6 +31,9 @@
   &.water-item-4.ticked {
     background-position: -655px 0;
   }
+}
+%population-sprite-selector{
+  background: transparent url('/assets/population.png') no-repeat 22px 24px;
 }
 %quantity-sprite-selector{
   background: transparent url('/assets/spriteQ7basicWater24.png') no-repeat -11 -142px;

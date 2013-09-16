@@ -54,10 +54,7 @@ module WaterReportHelper
       :service_rating => service_rating,
       :service_label => service_label,
       :service_level => service_level,
-      :context => report_context(form[:country], form[:water], form[:population]),
-      :country => country_name(form[:country]),
-      :water => water_label(form[:water]),
-      :water_index => form[:water],
+      :report_context => report_context(form[:country], form[:water], form[:population]),
       :population => get_population(form[:population]),
       :capital => get_capital(form[:capital]),
       :recurrent => get_recurrent(form[:recurrent]),
@@ -87,7 +84,7 @@ module WaterReportHelper
   def report_context(country_code, water_index, population_value)
     data = [
         {name: :country, caption: country_name(country_code)},
-        {name: :water, title: 'water source', caption: water_label(water_index)},
+        {name: :water, index: water_index, title: 'water source', caption: water_label(water_index)},
         {name: :population, caption: I18n.t('report.population_caption', population: population_value)}
     ]
     box_data_container_by_section data
@@ -391,12 +388,10 @@ module WaterReportHelper
   def box_data_container_by_section(data)
     data.map do |item|
       {
-          item[:name] => {
-              title: item[:title].present? ? item[:title] : item[:name],
-              css_icon: item[:name].to_s,
-              caption: item[:caption],
-              link: "./#{item[:name]}"
-          }
+        title: item[:title].present? ? item[:title] : item[:name],
+        css_icon: "#{item[:name].to_s} #{item[:index].present? ? "#{item[:name].to_s}-item-#{item[:index]}" : ''}",
+        caption: item[:caption],
+        link: "./#{item[:name]}"
       }
     end
   end

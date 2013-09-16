@@ -162,7 +162,7 @@
     margin: 20px auto;
     width: 280px;
     height: 280px;
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(175,175,175,0.1);
     box-shadow: 0px 2px 0px 0px rgba(3,3,3,0.2);
     border-radius: 7px;
     position: relative;
@@ -175,6 +175,12 @@
     .icon{
       &.country{
         @extend %country-sprite-selector;
+      }
+      &.water{
+        @extend %water-sprite-selector;
+      }
+      &.population{
+        @extend %population-sprite-selector;
       }
       background-color: rgba(3,3,3,0.1);
       text-align: center;
