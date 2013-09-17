@@ -66,7 +66,7 @@
           #graphContent
     .row
       - flash[:results][:cost_report].each do |cost_box|
-        .large-3.columns
+        .large-3.columns{class: cost_box[:name]}
           .title-cost-box
             = cost_box[:title]
           .cost-box-report
@@ -75,7 +75,7 @@
             .edit
               = link_to cost_box[:link] do
                 = image_tag 'iconEdit24.png', class: ''
-      .large-6.columns
+      .large-6.columns.total-container
         .title-cost-box
           = t('report.total')
         .total
