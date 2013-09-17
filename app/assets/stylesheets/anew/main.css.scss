@@ -21,12 +21,15 @@
 
 //*** popup-style
 // notification popup
+%popup-style{
+  @include reveal-modal-style(#333333, 10, true, solid, 1px, #333333, true, 30);
+  .close{
+    @include reveal-close(#fff);
+  }
+}
 .washcost-popup{
   .notification {
-    @include reveal-modal-style(#333333, 10, true, solid, 1px, #333333, true, 30);
-    .close{
-      @include reveal-close(#fff);
-    }
+    @extend %popup-style;
     &.subscriber{
       .title{
         font-weight: 400;
@@ -61,6 +64,23 @@
       }
       .btn{
         float: left;
+      }
+    }
+  }
+  .report {
+    @extend %popup-style;
+    &.save{
+      .title{
+        font-weight: 400;
+        text-align: center;
+        font-size: 19;
+        color: white;
+      }
+    }
+    form{
+      .error-notification{
+        margin: 10px 10px 10px 13px;
+        color: #ff5e3d;
       }
     }
   }

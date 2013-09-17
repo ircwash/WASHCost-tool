@@ -23,8 +23,10 @@ class Basic::ReportsController < ApplicationController
         @path_to = dashboard_index_path
         render 'redirect'
       else
+        puts 'open saving popup...'
         @questionnaire = Basic::Questionnaire.new
         @response[:partial] = 'save_form'
+        @response[:div_container] = '.reveal-modal.report.save'
       end
     else
       puts 'saving...'
@@ -40,8 +42,8 @@ class Basic::ReportsController < ApplicationController
       else
         Rails.logger.debug "Report saved invalid, no title specified"
         @response[:partial] = 'save_form'
+        @response[:div_container] = '.reveal-modal.report.save'
       end
-
     end
   end
 

@@ -31,6 +31,12 @@
             .reveal-modal.notification.subscriber
               = render 'popups/subscriber'
               %a.close-reveal-modal.close ×
+            .reveal-modal.report.save
+              = render 'popups/basic/report/save_form'
+              %a.close-reveal-modal.close ×
+            .reveal-modal.report.confirmation
+              = render 'popups/basic/report/save_confirmation'
+              %a.close-reveal-modal.close ×
       #delta-resize
       .row
         .large-12.columns

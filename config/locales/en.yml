@@ -672,6 +672,8 @@ en:
       minutes: "min"
     less_than: "Less than"
     no_specifed: "No specified"
+    save_your_report: "Save Your Report"
+    report_saved: "Your report was %{action} successfully"
   footer:
     footer_layout: "Basic"
     final_report: " | Final Reports"
