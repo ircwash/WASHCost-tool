@@ -85,6 +85,31 @@
       .large-12.columns
         .title
           = t('report.service');
+        .subtitle
+          = t('report.distance')
+    .row
+      .large-12.columns
+        .distance-container
+          .house
+            = image_tag 'report/house-distance.png'
+          .line-to-right
+            .canvas
+          .value
+            .header
+              less than
+            .amount
+              60
+            .caption
+              = t('report.time.minutes')
+          .water
+            = image_tag 'report/water-distance.png'
+          .line-to-left
+            .canvas
+    .row
+      .large-12.columns
+        .edit-distance
+          = link_to './time' do
+            = image_tag 'iconEdit24.png', class: ''
     - flash[:results][:service_report].each_slice(3) do |box_by_row|
       .row
         - box_by_row.each do |box|

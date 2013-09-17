@@ -183,6 +183,97 @@
         font-weight: 600;
       }
     }
+    &.service_level{
+      .distance-container{
+        width: 70%;
+        margin: 0 auto;
+        margin-top: 20px;
+        padding-top: 20px;
+        .house{
+          width: 61px;
+          height: 51px;
+          float: left;
+        }
+        .line-to-right{
+          float: left;
+          height: 51px;
+          /* Firefox */
+          width: -moz-calc((100% - 222px)/2);
+          /* WebKit */
+          width: -webkit-calc((100% - 222px)/2);
+          /* Opera */
+          width: -o-calc((100% - 222px)/2);
+          /* Standard */
+          width: calc((100% - 222px)/2);
+          /* curved line */
+          //margin:0 auto;
+          .canvas{
+            margin-top: 10px;
+            width: 100%;
+            height: 41px;
+            border-top: 2px solid rgb(199, 182, 139);
+            border-top-left-radius: 63%;
+          }
+        }
+        .value{
+          margin-top: -20px;
+          width: 100px;
+          float: left;
+          text-align: center;
+          .header{
+            text-transform: none;
+            font-size: 14px;
+          }
+          .amount{
+            font-size: 50px;
+            font-weight: 300;
+          }
+          .caption{
+            text-transform: none;
+            margin-top: 7px;
+            font-size: 14px;
+          }
+        }
+        .line-to-left{
+          float: right;
+          height: 51px;
+          /* Firefox */
+          width: -moz-calc((100% - 222px)/2);
+          /* WebKit */
+          width: -webkit-calc((100% - 222px)/2);
+          /* Opera */
+          width: -o-calc((100% - 222px)/2);
+          /* Standard */
+          width: calc((100% - 222px)/2);
+          .canvas{
+            margin-top: 10px;
+            width: 100%;
+            height: 41px;
+            border-top: 2px solid rgb(199, 182, 139);
+            border-top-right-radius: 63%;
+          }
+        }
+        .water{
+          float: right;
+          width: 61px;
+          height: 51px;
+        }
+      }
+      .edit-distance{
+        background-color: rgba(100,100,70,0.1);
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        margin: 0 auto;
+        img{
+          position: relative;
+          width: 17px;
+          height: 17px;
+          top: 11px;
+          left: 1px;
+        }
+      }
+    }
   }
   .box-report{
     margin: 20px auto;

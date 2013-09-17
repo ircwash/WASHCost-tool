@@ -666,6 +666,9 @@ en:
 
 
     substandard: "Sub-Standard"
+    distance: "Distance"
+    time:
+      minutes: "min"
   footer:
     footer_layout: "Basic"
     final_report: " | Final Reports"
