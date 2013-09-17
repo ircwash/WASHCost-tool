@@ -3,6 +3,9 @@
 
 puts 'Seeding...'
 
+puts 'create a test user'
+User.first_or_create(first_name: 'allan', last_name: 'britto', email: 'test@test.com', password: '12345678')
+
 puts 'Add Advanced::Water::Questions...'
 Advanced::Water::Question.first_or_create(text: "Country?", section: "context", questionnaire_field: "country")
 Advanced::Water::Question.find_or_create_by(text: "Region?", section: "context", questionnaire_field: "region")
