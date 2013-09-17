@@ -669,6 +669,8 @@ en:
     distance: "Distance"
     time:
       minutes: "min"
+    less_than: "Less than"
+    no_specifed: "No specified"
   footer:
     footer_layout: "Basic"
     final_report: " | Final Reports"

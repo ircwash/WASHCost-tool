@@ -164,12 +164,32 @@ module WaterReportHelper
     input.present? && input >= @@population_ranges[:min] ? input : @@population_ranges[:min]
   end
 
+  # return a hash (header and amount) with the information about of distance in service level section
+  # @return [Hash]
   def time_label(index)
-    time= t 'form.value_not_set'
-    if index && @@time_values[index].present?
-      time= @@time_values[index][:label]
+    answer = time_answer(index).split(' ')
+    label = {}
+    if answer[0] != 'no'
+      if answer[0] == 'Between'
+        label[:header] = t('report.less_than')
+        label[:amount] = answer.last
+      else
+        label[:header] = "#{answer[0]} #{answer[1]}"
+        label[:amount] = answer.last
+      end
+    else
+      label[:header] = t('report.no_specifed')
+      label[:amount] = ''
     end
-    return time
+    label
+  end
+
+  def time_answer(index)
+    if index && @@time_values[index].present?
+      @@time_values[index][:label]
+    else
+      t 'form.value_not_set'
+    end
   end
 
   def quantity_label(index)

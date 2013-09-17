@@ -96,9 +96,9 @@
             .canvas
           .value
             .header
-              less than
+              = flash[:results][:time][:header]
             .amount
-              60
+              = flash[:results][:time][:amount]
             .caption
               = t('report.time.minutes')
           .water
