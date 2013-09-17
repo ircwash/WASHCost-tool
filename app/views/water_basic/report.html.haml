@@ -75,11 +75,11 @@
             .edit
               = link_to cost_box[:link] do
                 = image_tag 'iconEdit24.png', class: ''
-      .large-4.large-offset-2.columns
+      .large-6.columns
         .title-cost-box
           = t('report.total')
         .total
-          US $#{flash[:results][:total]}
+          US #{number_to_currency(flash[:results][:total], precision: 2)}
   .content-section.service_level
     .row
       .large-12.columns
@@ -165,6 +165,8 @@
   }
 
   google.setOnLoadCallback(expenditureGraph);
+
+
 
 
 
