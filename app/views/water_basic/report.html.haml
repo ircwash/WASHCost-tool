@@ -58,10 +58,28 @@
       .large-12.columns
         .title
           = t('report.cost');
+        .subtitle
+          = t('report.cost_subtitle', population: flash[:results][:population])
     .row
       .large-12.columns
-        #graph
+        .graph
           #graphContent
+    .row
+      - flash[:results][:cost_report].each do |cost_box|
+        .large-3.columns
+          .title-cost-box
+            = cost_box[:title]
+          .cost-box-report
+            .value
+              = cost_box[:value]
+            .edit
+              = link_to cost_box[:link] do
+                = image_tag 'iconEdit24.png', class: ''
+      .large-4.large-offset-2.columns
+        .title-cost-box
+          = t('report.total')
+        .total
+          US $#{flash[:results][:total]}
   .content-section.service_level
     .row
       .large-12.columns
@@ -82,7 +100,7 @@
                   = image_tag 'iconEdit24.png', class: ''
 
 /Script to google chart
-%script{:src => "http://www.google.com/jsapi", :type => "text/javascript"}
+%script{:src => 'http://www.google.com/jsapi', :type => 'text/javascript'}
 :javascript
   google.load('visualization', '1', {packages: ['corechart']});
 :javascript

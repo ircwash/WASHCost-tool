@@ -56,6 +56,7 @@ module WaterReportHelper
       :service_level => service_level,
       :context_report => context_report(form[:country], form[:water], form[:population]),
       :population => get_population(form[:population]),
+      :cost_report => cost_report(form[:capital], form[:recurrent]),
       :capital => get_capital(form[:capital]),
       :recurrent => get_recurrent(form[:recurrent]),
       :total => get_total(form[:capital], form[:recurrent], form[:population]),
@@ -92,7 +93,7 @@ module WaterReportHelper
   end
 
   # group the items that belongs to service level section in a report's boxes
-  # @return [Hash]
+  # @return [Array]
   def service_report(quantity_index, quality_index, reliability_index)
     data = [
         {name: :quantity, index: quantity_index,caption: quantity_label(quantity_index)},
@@ -100,6 +101,15 @@ module WaterReportHelper
         {name: :reliability, index: reliability_index, caption: reliability_label(reliability_index)}
     ]
     box_data_container_by_section data
+  end
+
+  # group the items that belongs to cost level section in a report's cost boxes
+  # @return [Array]
+  def cost_report(capital_value, recurrent_value)
+    [
+        {title: I18n.t('report.capital_expenditure_title'), value: "US $#{capital_value}", link: './capital'},
+        {title: I18n.t('report.recurrent_expenditure_title'), value: "US $#{recurrent_value}", link: './recurrent'}
+    ]
   end
 
   def country_name(country_code)
