@@ -1,6 +1,6 @@
 .basic-tool
   .view-report.large-2.columns
-    %a= 'Report!'
+    = link_to t('buttons.close_report'), dashboard_index_path
   .progress-report.large-8.columns
     .header
       %a= "#{t("footer.#{controller_name}")} (#{flash[:percent_complete]}%)"

@@ -47,6 +47,7 @@ en:
     view_report: "View Report"
     save_report: "Save Report"
     complete: "Complete"
+    close_report: "Close Report"
   inputs:
     choose_a_country: "Choose a country"
   form:
