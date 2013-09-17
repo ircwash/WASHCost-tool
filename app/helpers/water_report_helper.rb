@@ -97,7 +97,7 @@ module WaterReportHelper
   def service_report(quantity_index, quality_index, reliability_index)
     data = [
         {name: :quantity, index: quantity_index,caption: quantity_label(quantity_index)},
-        {name: :water, index: quality_index, caption: quality_label(quality_index)},
+        {name: :quality, index: quality_index, caption: quality_label(quality_index)},
         {name: :reliability, index: reliability_index, caption: reliability_label(reliability_index)}
     ]
     box_data_container_by_section data
@@ -107,8 +107,8 @@ module WaterReportHelper
   # @return [Array]
   def cost_report(capital_value, recurrent_value)
     [
-        {title: I18n.t('report.capital_expenditure_title'), value: "US $#{capital_value}", link: './capital'},
-        {title: I18n.t('report.recurrent_expenditure_title'), value: "US $#{recurrent_value}", link: './recurrent'}
+        {name: 'capital-exp', title: I18n.t('report.capital_expenditure_title'), value: "US $#{capital_value}", link: './capital'},
+        {name: 'recurrent-exp', title: I18n.t('report.recurrent_expenditure_title'), value: "US $#{recurrent_value}", link: './recurrent'}
     ]
   end
 

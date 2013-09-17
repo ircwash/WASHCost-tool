@@ -5,7 +5,9 @@ describe "Water Basic Report Saving" do
     it 'save a new report' do
       basic_water = basic_water_questionnaire_completed
       visit '/cal/water_basic/report'
-      
+      # analizing if all image and backgrouns are properly configured
+      # country
+      page.should have_css('bodyr')
     end
 
     # a more semantic approach to naming the session
