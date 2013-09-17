@@ -14,6 +14,7 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body.main
+    = show_debugger
     .main-container
       .popup_trigger
         = render 'layouts/popup_trigger'
@@ -37,6 +38,10 @@
             .reveal-modal.report.confirmation
               = render 'popups/basic/report/save_confirmation'
               %a.close-reveal-modal.close ×
+            - if Rails.env == 'development'
+              .reveal-modal.debugger
+                = render 'popups/debugger'
+                %a.close-reveal-modal.close ×
       #delta-resize
       .row
         .large-12.columns

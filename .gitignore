@@ -30,3 +30,7 @@ log/
 target/
 
 *.out
+
+# debugger file
+app/views/popups/_debugger.html.haml
+

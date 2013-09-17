@@ -264,6 +264,10 @@ module ApplicationHelper
     end
   end
 
+  def show_debugger
+    link_to 'debugger', '#',class: 'debug-trigger-button'
+  end
+
   def resource_name
     :user
   end
