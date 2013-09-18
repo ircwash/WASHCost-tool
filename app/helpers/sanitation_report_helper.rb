@@ -88,7 +88,7 @@ module SanitationReportHelper
   def context_report(country_code, latrine_index, population_value)
     data = [
         {name: :country, caption: country_name(country_code)},
-        {name: :latrine, index: latrine_index, title: 'Latrine Technology', caption: water_label(latrine_index)},
+        {name: :latrine, index: latrine_index, title: 'Latrine Technology', caption: get_indexed(@@latrine_values, latrine_index)},
         {name: :population, caption: I18n.t('report.population_caption', population: population_value)}
     ]
     box_data_container_by_section data
@@ -117,7 +117,7 @@ module SanitationReportHelper
   # @return [Array] form[:providing], form[:impermeability], form[:environment], form[:usage], form[:reliability]
   def service_report(providing_index, impermeability_index, environment_index, usage_index, reliability_index)
     data = [
-        {name: :providing, index: providing_index,caption: get_indexed(@@providing_values_values, providing_index)},
+        {name: :providing, index: providing_index,caption: get_indexed(@@providing_values, providing_index)},
         {name: :impermeability, index: impermeability_index, caption: get_indexed(@@impermeability_values, impermeability_index)},
         {name: :environment, index: environment_index, caption: get_indexed(@@environment_values, environment_index)},
         {name: :usage, index: usage_index, caption: get_indexed(@@usage_values, usage_index)},
