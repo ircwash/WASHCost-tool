@@ -25,6 +25,7 @@ module SanitationReportHelper
         :capital => get_capital(form[:capital]),
         :recurrent => get_recurrent(form[:recurrent]),
         :total => get_total(form[:capital], form[:recurrent], form[:population]),
+        :service_report => service_report(form[:providing], form[:impermeability], form[:environment], form[:usage], form[:reliability]),
         :providing => get_indexed(@@providing_values, form[:providing]),
         :providing_index => form[:providing],
         :usage => get_indexed(@@usage_values, form[:usage]),
@@ -110,6 +111,19 @@ module SanitationReportHelper
         {name: 'capital-exp', title: I18n.t('report.capital_expenditure_title'), value: "US $#{capital_value}", link: './capital'},
         {name: 'recurrent-exp', title: I18n.t('report.recurrent_expenditure_title'), value: "US $#{recurrent_value}", link: './recurrent'}
     ]
+  end
+
+  # group the items that belongs to service level section in a report's boxes
+  # @return [Array] form[:providing], form[:impermeability], form[:environment], form[:usage], form[:reliability]
+  def service_report(providing_index, impermeability_index, environment_index, usage_index, reliability_index)
+    data = [
+        {name: :providing, index: providing_index,caption: get_indexed(@@providing_values_values, providing_index)},
+        {name: :impermeability, index: impermeability_index, caption: get_indexed(@@impermeability_values, impermeability_index)},
+        {name: :environment, index: environment_index, caption: get_indexed(@@environment_values, environment_index)},
+        {name: :usage, index: usage_index, caption: get_indexed(@@usage_values, usage_index)},
+        {name: :reliability, index: reliability_index, caption: get_indexed(@@reliability_values, reliability_index)}
+    ]
+    box_data_container_by_section data
   end
 
   # @return [Integer], return the population value take into account the rules of range
