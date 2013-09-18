@@ -62,12 +62,6 @@ module WaterReportHelper
       :total => get_total(form[:capital], form[:recurrent], form[:population]),
       :service_report => service_report(form[:quantity], form[:quality], form[:reliability]),
       :time => time_label(form[:time]),
-      :quantity => quantity_label(form[:quantity]),
-      :quantity_index => get_index(form[:quantity]),
-      :quality => quality_label(form[:quality]),
-      :quality_index => get_index(form[:quality]),
-      :reliability => reliability_label(form[:reliability]),
-      :reliability_index => get_index(form[:reliability]),
       :is_cost_avaliable => cost_avaliable?(form[:capital], form[:recurrent])
     }
   end
@@ -169,7 +163,7 @@ module WaterReportHelper
   def time_label(index)
     answer = time_answer(index).split(' ')
     label = {}
-    if answer[0] != 'no'
+    if answer[0] != 'No'
       if answer[0] == 'Between'
         label[:header] = t('report.less_than')
         label[:amount] = answer.last
