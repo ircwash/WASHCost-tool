@@ -23,9 +23,16 @@ describe "Water Basic Report Saving" do
       #expect{ click_button 'Save' }.to change{current_path}.to(dashboard_index_path)
       expect(current_path).to eq(dashboard_index_path)
       #-- Cheking if the new report is showed in a properly way into the dashboard page
+      #- cheking the notice message
+      page.find('.alert-box').should have_content(t('report.created_successsfully'))
       #- cheking the report name
       page.find('.dashboard .reports table .divisor').should have_content(report_name.upcase)
-      ap page.find('body').text
+      #- checking the country name and flag
+      page.find('.dashboard .reports table .content-report .country-flag').should have_selector('.flag-co')
+      page.find('.dashboard .reports table .content-report .country-name').should have_content('COLOMBIA')
+      #- checking the tool name and percent completed
+      page.find('.dashboard .reports table .tool_name').should have_content('WATER |')
+      page.find('.dashboard .reports table .percent').should have_content('BASIC TOOL (100%)')
       #Warden.test_reset!
     end
 
@@ -34,7 +41,7 @@ describe "Water Basic Report Saving" do
       # the notation used in the backend is string instead the symbols, for this reason, the session form is created in
       # this way
       basic_water_session({
-                            'country' => 'BI',
+                            'country' => 'CO',
                             'water' =>  1,
                             'population' =>  1200,
                             'capital' =>  59,
