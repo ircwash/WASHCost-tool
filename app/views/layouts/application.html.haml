@@ -38,7 +38,7 @@
             .reveal-modal.report.confirmation
               = render 'popups/basic/report/save_confirmation'
               %a.close-reveal-modal.close ×
-            - if Rails.env == 'development'
+            - if Rails.env == 'development'&& File.exists?('app/views/popups/_debugger.html.haml')
               .reveal-modal.debugger
                 = render 'popups/debugger'
                 %a.close-reveal-modal.close ×
