@@ -8,9 +8,16 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |exception|
     flash[:error] = t(:register_if_acces_to_cuesstinaire_view)
     current_ability.can? exception.action.to_sym, exception.subject.new
-    @path_to = current_ability.permission_denied[:url]
+    @path_to = current_ability.permission_denied[:location]
     session[:user_return_to] = request.referer
-    current_ability.permission_denied[:http_request]=='xhr' ? render('basic/reports/redirect') : redirect_to(@path_to)
+    case current_ability.permission_denied[:output_from]
+      when 'xhr'
+        render 'basic/reports/redirect'
+      when 'http'
+        redirect_to @path_to
+      when 'popup'
+        render 'basic/reports/open_popup'
+    end
   end
 
 
