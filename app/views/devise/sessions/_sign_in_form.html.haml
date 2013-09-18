@@ -1,28 +1,6 @@
 .session{style: 'margin-botton: 10px;'}
   .row
     .large-10.large-offset-1
-      - popup |= false
-      - unless popup
-        %h5.text-center LOGIN TO YOUR ACCOUNT
-      = simple_form_for resource, :as => resource_name, :url => session_path(resource_name), html: {} do |f|
-        %div{class: "#{'container-popup' if popup}"}
-          .special-textfiled
-            = f.input :email, :required => false, :autofocus => true, label: false, input_html: { class: 'special_input_session' }, placeholder: 'Email'
-          .special-textfiled
-            = f.input :password, :required => false, label: false, input_html: { class: 'special_input_session' }, placeholder: 'Password'
-          .row
-            .large-12.columns.remember_me
-              .check_box
-                = f.input :remember_me, label: false, input_html: { id: 'remember_me_input' }, :as => :boolean if devise_mapping.rememberable?
-              .caption
-                remember me
-          .row
-            .large-6.columns
-              .login-button
-                = f.button :submit, "Log in", class: 'medium button button-landing-page button-landing-page-size'
-            .large-6.columns
-              .login-links.text-right
-                = render "devise/shared/links"
-
+      = render 'devise/sessions/sign_in_raw_form'
 %br
 %br

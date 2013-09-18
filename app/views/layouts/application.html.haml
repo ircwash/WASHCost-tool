@@ -38,6 +38,10 @@
             .reveal-modal.report.confirmation
               = render 'popups/basic/report/save_confirmation'
               %a.close-reveal-modal.close ×
+            .reveal-modal.session-container.sign_in
+              .session{style: 'margin-botton: 10px;'}
+                = render 'devise/sessions/sign_in_raw_form'
+              %a.close-reveal-modal.close ×
             - if Rails.env == 'development'&& File.exists?('app/views/popups/_debugger.html.haml')
               .reveal-modal.debugger
                 = render 'popups/debugger'

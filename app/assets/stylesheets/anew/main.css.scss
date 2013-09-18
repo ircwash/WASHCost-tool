@@ -84,6 +84,13 @@
       }
     }
   }
+  .session-container{
+    @extend %popup-style;
+    .session{
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+  }
 }
 
 .link-footer-min{
@@ -119,9 +126,12 @@
 .session{
   background-color: #333333;
   margin-top: 40px;
-  margin-left: 200px;
-  margin-right: 200px;
+  margin-left: 1%;
+  margin-right: 1%;
 
+  form{
+    margin: 10px;
+  }
   .error_caption{
     h2{
       font-size: 14px;
