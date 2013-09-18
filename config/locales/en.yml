@@ -675,6 +675,8 @@ en:
     save_your_report: "Save Your Report"
     report_saved: "Your report was %{action} successfully"
     sanitation_final_report: "basic water | final report"
+    created_successsfully: "Your report was created successfully"
+    updated_successsfully: "Your report was updated successfully"
   footer:
     footer_layout: "Basic"
     final_report: " | Final Reports"

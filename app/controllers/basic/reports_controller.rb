@@ -19,7 +19,7 @@ class Basic::ReportsController < ApplicationController
         puts 'updating...'
         Rails.logger.debug "Updating report saved with id: #{saved_form_id}"
         current_user.basic_questionnaires.find(saved_form_id).update_attribute(:form, form)
-        flash[:alert] = "Your report was updated successfully"
+        flash[:alert] = t('report.updated_successsfully')
         @path_to = dashboard_index_path
         render 'redirect'
       else
@@ -36,7 +36,7 @@ class Basic::ReportsController < ApplicationController
         current_user.basic_questionnaires << @questionnaire
         session["#{tool_name}_basic_form".to_sym][:saved_form_id] = @questionnaire.id
         Rails.logger.debug "Report saved with id: #{session["#{tool_name}_basic_form".to_sym][:saved_form_id]}"
-        flash[:alert] = "Your report was created successfully"
+        flash[:alert] = t('report.created_successsfully')
         @path_to = dashboard_index_path
         render 'redirect'
       else
