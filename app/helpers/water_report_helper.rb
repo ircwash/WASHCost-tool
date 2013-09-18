@@ -106,6 +106,8 @@ module WaterReportHelper
     ]
   end
 
+  # return the name of country unless this doesn't exists
+  # @return [String]
   def country_name(country_code)
     if country_code && Country.new(country_code).data
       Country.new(country_code).name
