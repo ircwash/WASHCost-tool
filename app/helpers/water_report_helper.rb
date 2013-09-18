@@ -274,7 +274,7 @@ module WaterReportHelper
 
   def get_rating(accesibility, quantity, quality, reliability)
     Rails.logger.debug "Service ratings are :accessibility => #{accesibility}, :quantity => #{quantity}, :quality => #{quality}, :reliability => #{reliability}"
-    return nil unless [accesibility, quantity, quality, reliability].all?
+    return -1 unless [accesibility, quantity, quality, reliability].all?
     rating_for_combined_service_levels(accesibility, quantity, quality, reliability)
   end
 
