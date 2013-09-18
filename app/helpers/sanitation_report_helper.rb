@@ -19,6 +19,7 @@ module SanitationReportHelper
         :service_rating => service_rating,
         :service_level => service_level,
         :service_label => service_label,
+        :context_report => context_report(form[:country], form[:latrine], form[:population]),
         :country => get_country(form[:country]),
         :population=> get_population(form[:population]),
         :latrine_index => form[:latrine],
@@ -81,6 +82,17 @@ module SanitationReportHelper
 
   def cost_avaliable?(capital, recurrent)
     capital.present? && recurrent.present? && capital > 0 && recurrent > 0
+  end
+
+  # group the items that belongs to context section in a report's boxes
+  # @return [Hash]
+  def context_report(country_code, latrine_index, population_value)
+    data = [
+        {name: :country, caption: country_name(country_code)},
+        {name: :latrine, index: latrine_index, title: 'Latrine Technology', caption: water_label(latrine_index)},
+        {name: :population, caption: I18n.t('report.population_caption', population: population_value)}
+    ]
+    box_data_container_by_section data
   end
 
   def get_country(country_code)
@@ -364,5 +376,20 @@ module SanitationReportHelper
 
   def is_form_ready?(form)
     [form[:latrine], form[:capital], form[:recurrent], form[:reliability]].all?
+  end
+
+  private
+
+  # convert data to array of hashes with all info necessary  generated a complete element box in the report
+  # @return [Hash]
+  def box_data_container_by_section(data)
+    data.map do |item|
+      {
+          title: item[:title].present? ? item[:title] : item[:name],
+          css_icon: "#{item[:name].to_s} #{item[:index].present? ? "#{item[:name].to_s}-item-#{item[:index]}" : ''}",
+          caption: item[:caption],
+          link: "./#{item[:name]}"
+      }
+    end
   end
 end
