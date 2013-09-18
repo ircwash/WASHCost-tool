@@ -164,9 +164,8 @@ class SanitationBasicController < ApplicationController
   end
 
   def report
-    results = get_sanitation_basic_report
-    flash[:results] = results
-    render layout: "sanitation_basic_report"
+    flash[:results] = sanitation_basic_report
+    render layout: 'basic/report/main'
   end
 
   private
