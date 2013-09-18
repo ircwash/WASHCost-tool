@@ -674,6 +674,7 @@ en:
     no_specifed: "No specified"
     save_your_report: "Save Your Report"
     report_saved: "Your report was %{action} successfully"
+    sanitation_final_report: "basic water | final report"
   footer:
     footer_layout: "Basic"
     final_report: " | Final Reports"
