@@ -1,7 +1,7 @@
 module SanitationReportHelper
   include ReportHelper
 
-  def get_sanitation_basic_report
+  def sanitation_basic_report
     form = get_session_form
     form_ready = is_form_ready?(form)
 
