@@ -308,6 +308,21 @@
       &.reliability{
         @extend %reliability-sprite-selector;
       }
+      &.latrine{
+        @extend %latrine-sprite-selector;
+      }
+      &.providing{
+        @extend %providing-sprite-selector;
+      }
+      &.impermeability{
+        @extend %impermeability-sprite-selector;
+      }
+      &.environment{
+        @extend %environment-sprite-selector;
+      }
+      &.usage{
+        @extend %usage-sprite-selector;
+      }
       background-color: rgba(3,3,3,0.1);
       text-align: center;
       margin: 0 auto;
