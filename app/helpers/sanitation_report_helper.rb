@@ -257,7 +257,7 @@ module SanitationReportHelper
 
   def get_rating(providing, impermeability, environment, usage, reliability)
     Rails.logger.debug "Service ratings are: providing: #{providing} impermeability: #{impermeability} environment: #{environment} usage: #{usage} reliability: #{reliability}"
-    return nil unless [providing, impermeability, environment, usage, reliability].all?
+    return -1 unless [providing, impermeability, environment, usage, reliability].all?
     rating_for_combined_service_levels(providing, impermeability, environment, usage, reliability)
   end
 
