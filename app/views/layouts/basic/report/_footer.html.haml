@@ -8,4 +8,4 @@
       .washcost-bar
         %span.meter{:style => "width: #{flash[:percent_complete]}%"}
   .save-report.large-2.columns
-    = link_to t('buttons.save_report'), save_basic_reports_path(querier: 'link', tool_name: 'water'), :remote => true, :class => "save_report link_action_report", method: :post
+    = link_to t('buttons.save_report'), save_basic_reports_path(querier: 'link', tool_name: controller_name.split('_')[0]), :remote => true, :class => "save_report link_action_report", method: :post
