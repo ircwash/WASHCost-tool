@@ -20,10 +20,8 @@ module SanitationReportHelper
         :service_level => service_level,
         :service_label => service_label,
         :context_report => context_report(form[:country], form[:latrine], form[:population]),
-        :country => get_country(form[:country]),
         :population=> get_population(form[:population]),
-        :latrine_index => form[:latrine],
-        :latrine => get_indexed(@@latrine_values, form[:latrine]),
+        :cost_report => cost_report(form[:capital], form[:recurrent]),
         :capital => get_capital(form[:capital]),
         :recurrent => get_recurrent(form[:recurrent]),
         :total => get_total(form[:capital], form[:recurrent], form[:population]),
@@ -95,9 +93,23 @@ module SanitationReportHelper
     box_data_container_by_section data
   end
 
-  def get_country(country_code)
-    country = Country.new(country_code) || nil
-    country.present? && country.data.present? && country.name.present? ? country.name : t('form.value_not_set')
+  # return the name of country unless this doesn't exists
+  # @return [String]
+  def country_name(country_code)
+    if country_code && Country.new(country_code).data
+      Country.new(country_code).name
+    else
+      t 'form.value_not_set'
+    end
+  end
+
+  # group the items that belongs to cost level section in a report's cost boxes
+  # @return [Array]
+  def cost_report(capital_value, recurrent_value)
+    [
+        {name: 'capital-exp', title: I18n.t('report.capital_expenditure_title'), value: "US $#{capital_value}", link: './capital'},
+        {name: 'recurrent-exp', title: I18n.t('report.recurrent_expenditure_title'), value: "US $#{recurrent_value}", link: './recurrent'}
+    ]
   end
 
   # @return [Integer], return the population value take into account the rules of range
