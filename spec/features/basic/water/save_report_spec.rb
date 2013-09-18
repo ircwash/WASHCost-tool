@@ -3,7 +3,7 @@ require 'spec_helper'
 include Warden::Test::Helpers
 
 describe "Water Basic Report Saving" do
-  context 'when a signed user saves the water basic report' do
+  context 'when a signed user saves a water basic report' do
     it 'save a new report', :js do
       #Warden.test_mode!
       import_report_data
@@ -36,11 +36,37 @@ describe "Water Basic Report Saving" do
       #Warden.test_reset!
     end
 
-    # a more semantic approach to naming the session
-    def import_report_data
-      # the notation used in the backend is string instead the symbols, for this reason, the session form is created in
-      # this way
-      basic_water_session({
+
+  end
+
+  context 'when a user not signed saves a water basic report' do
+    it 'sign in from basic tool before save the report', :js do
+      import_report_data
+      visit '/cal/water_basic/report'
+      #-- loggin the test user
+      User.find_or_create_by(first_name: 'allan', last_name: 'britto', email: 'test@test.com', password: '12345678')
+      #-- clicking save button
+      click_link t('buttons.save_report')
+      #-- Checking if the session popup exists
+      page.should have_css('.washcost-popup .reveal-modal.session-container.sign_in.open')
+      #-- sign in
+      within('.washcost-popup .reveal-modal.session-container.sign_in.open') do
+        fill_in 'user[email]', :with => 'test@test.com'
+        fill_in 'user[password]', :with => '12345678'
+      end
+      click_button 'Log in'
+      #-- clicking save button
+      click_link t('buttons.save_report')
+      #-- checking if the save popup is open
+      page.should have_css('.washcost-popup .reveal-modal.report.save.open')
+    end
+  end
+
+  # import the data necessary to build the report
+  def import_report_data
+    # the notation used in the backend is string instead the symbols, for this reason, the session form is created in
+    # this way
+    basic_water_session({
                             'country' => 'CO',
                             'water' =>  1,
                             'population' =>  1200,
@@ -50,8 +76,7 @@ describe "Water Basic Report Saving" do
                             'quantity' =>  2,
                             'quality' =>  2,
                             'reliability' =>  2,
-                         })
-      basic_water_percent_completed(9)
-    end
+                        })
+    basic_water_percent_completed(9)
   end
 end
