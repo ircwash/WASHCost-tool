@@ -13,7 +13,7 @@ module SanitationReportHelper
     service_label = get_service_rating_label(service_rating)
 
     results = {
-        :form_ready => form_ready,
+        :is_form_ready => form_ready,
         :cost_rating=> cost_rating,
         :cost_rating_label=> cost_rating_label,
         :service_rating => service_rating,
@@ -36,7 +36,7 @@ module SanitationReportHelper
         :impermeability_index => form[:impermeability],
         :reliability => get_reliability(form[:reliability]),
         :reliability_index => form[:reliability],
-        :is_cost_avaliable => cost_avaliable?(form[:capital], form[:recurrent])
+        :is_cost_avaliable => is_cost_avaliable?(form[:capital], form[:recurrent])
     }
 
     return results
@@ -79,7 +79,9 @@ module SanitationReportHelper
     return form
   end
 
-  def cost_avaliable?(capital, recurrent)
+  # Check if the answers are enough to build the cost final report
+  # @return [Boolean]
+  def is_cost_avaliable?(capital, recurrent)
     capital.present? && recurrent.present? && capital > 0 && recurrent > 0
   end
 
@@ -400,6 +402,8 @@ module SanitationReportHelper
     end
   end
 
+  # Check if the form have the minimum answers to build the final report
+  # @return [Boolean]
   def is_form_ready?(form)
     [form[:latrine], form[:capital], form[:recurrent], form[:reliability]].all?
   end
