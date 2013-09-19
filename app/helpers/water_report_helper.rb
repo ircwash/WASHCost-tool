@@ -38,7 +38,7 @@ module WaterReportHelper
   # @return [Hash]
   def water_basic_report
     form = get_session_form
-    form_ready = is_form_ready?(form)
+    form_ready = form_ready?(form)
     cost_rating = get_cost_rating(form[:water], form[:capital], form[:recurrent])
     cost_rating_label = get_cost_rating_label(cost_rating)
     service_rating = get_rating(form[:time], form[:quantity], form[:quality], form[:reliability])
@@ -48,7 +48,7 @@ module WaterReportHelper
 
     # Hash that will be returned
     {
-      :form_ready => form_ready,
+      :is_form_ready => form_ready,
       :cost_rating=> cost_rating,
       :cost_rating_label=> cost_rating_label,
       :service_rating => service_rating,
@@ -70,7 +70,7 @@ module WaterReportHelper
     capital.present? && recurrent.present? && capital > 0 && recurrent > 0
   end
 
-  def is_form_ready?(form)
+  def form_ready?(form)
     [form[:water], form[:capital], form[:recurrent], form[:time],
      form[:quality], form[:quantity], form[:reliability]].all?
   end

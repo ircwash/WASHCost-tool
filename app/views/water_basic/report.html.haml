@@ -8,33 +8,40 @@
     .row
       .large-12.columns.title
         = t('report.summmary')
-    .row
-      .large-3.large-offset-3.columns.total_cost
-        .title
-          = t('report.total_cost')
-        .value
-          ="US$ #{number_with_delimiter(flash[:results][:total], :delimiter=>',')}"
-        .caption
-          = t('report.caption_total_cost', population: flash[:results][:population])
-      .large-3.columns.level_of_service
-        .title
-          = t('report.level_of_service')
-        .rating{class: "level-start-#{flash[:results][:service_rating] + 1}"}
-        .caption
-          = t('report.substandard')
-      .large-3.columns
-    .row
-      .large-6.large-offset-3.columns.result
-        .icon{:class => "bench-icon-#{flash[:results][:cost_rating]}"}
-        .caption
-          = flash[:results][:cost_rating_label].html_safe
-        .review
-          .section-container.section-review{"data-section" => "accordion"}
-            %section
-              %p.title.title-review{"data-section-title" => ""}
-                %a{:href => "#section-review"}= "#{t('report.full_review')} >>"
-              .content.content-review{"data-section-content" => "", "data-slug" => "section-review"}
-                %p= simple_format flash[:results][:service_level]
+    - if flash[:results][:is_form_ready]
+      .row
+        .large-3.large-offset-3.columns.total_cost
+          .title
+            = t('report.total_cost')
+          .value
+            ="US$ #{number_with_delimiter(flash[:results][:total], :delimiter=>',')}"
+          .caption
+            = t('report.caption_total_cost', population: flash[:results][:population])
+        .large-3.columns.level_of_service
+          .title
+            = t('report.level_of_service')
+          .rating{class: "level-start-#{flash[:results][:service_rating] + 1}"}
+          .caption
+            = t('report.substandard')
+        .large-3.columns
+      .row
+        .large-6.large-offset-3.columns.result
+          .icon{:class => "bench-icon-#{flash[:results][:cost_rating]}"}
+          .caption
+            = flash[:results][:cost_rating_label].html_safe
+          .review
+            .section-container.section-review{"data-section" => "accordion"}
+              %section
+                %p.title.title-review{"data-section-title" => ""}
+                  %a{:href => "#section-review"}= "#{t('report.full_review')} >>"
+                .content.content-review{"data-section-content" => "", "data-slug" => "section-review"}
+                  %p= simple_format flash[:results][:service_level]
+    - else
+      .row
+        .large-12.columns
+          .box-no-value
+            .caption
+              = t('report.report_box_no_value')
   .content-section.context
     .row
       .large-12.columns
@@ -60,10 +67,17 @@
           = t('report.cost');
         .subtitle
           = t('report.cost_subtitle', population: flash[:results][:population])
-    .row
-      .large-12.columns
-        .graph
-          #graphContent
+    - if flash[:results][:is_cost_avaliable]
+      .row
+        .large-12.columns
+          .graph
+            #graphContent
+    - else
+      .row
+        .large-12.columns
+          .box-no-value
+            .caption
+              = t('report.cost_box_no_value')
     .row
       - flash[:results][:cost_report].each do |cost_box|
         .large-3.columns{class: cost_box[:name]}

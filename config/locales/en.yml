@@ -677,6 +677,8 @@ en:
     sanitation_final_report: "basic water | final report"
     created_successsfully: "Your report was created successfully"
     updated_successsfully: "Your report was updated successfully"
+    cost_box_no_value: "Looks like you need answer more cost questions to get a final cost report. Go back and add more answer about your cost service delivery"
+    report_box_no_value: "Looks like you need answer more questions to get a final report. Go back and add more answer about your service delivery"
   footer:
     footer_layout: "Basic"
     final_report: " | Final Reports"
