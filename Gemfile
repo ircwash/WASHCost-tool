@@ -23,10 +23,7 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'meta_request' #uncomment for use with rails pannel
   gem 'awesome_print'
-  gem 'pry'
-  gem 'pry-doc'
-  gem 'pry-nav'
-  gem 'debugger'
+  gem 'jazz_hands'
   gem 'haml-rails'
 end
 
