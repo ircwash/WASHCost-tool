@@ -393,7 +393,7 @@ footer{
     margin: 0 auto;
     overflow: hidden;
     &.height-tool-type{
-      height: 160px;
+      height: 20px;
     }
   }
 
@@ -405,9 +405,11 @@ footer{
     li{
       position: relative;
       width: 203px;
-      float: left;
-      margin-right: 20px;
-      margin-left: 20px;
+      //float: left;
+      margin: 0 auto;
+      text-align: center;
+      //margin-right: 20px;
+      //margin-left: 20px;
       color: transparent;
     }
     label{
@@ -474,7 +476,8 @@ footer{
   .tool-selection-submit{
     display: table;
     margin: 0 auto;
-    width: 444px;
+    margin-top: 20px;
+    width: 100%;
   }
 }
 
