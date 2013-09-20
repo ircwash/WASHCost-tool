@@ -21,7 +21,8 @@
         = hidden_field_tag 'capital', nil, data: {:min_value => @capital[:min_value], :max_value => @capital[:max_value], :below_value => @capital[:below_value], :above_value => @capital[:above_value]}
         .action
           = submit_tag (t 'buttons.next'), class: 'button button-basic-questionnaire'
-.infoTab
+.info-tab
   %a.tab{:href => '#'} infoTab
-  .tabContent
+  .tab-content
+    %h3
     %p= t 'form.shared.capital.info'

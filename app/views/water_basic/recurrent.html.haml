@@ -22,7 +22,8 @@
         = hidden_field_tag 'recurrent', nil, data: {min_value: @recurrent[:min_value], max_value: @recurrent[:max_value], below_value: @recurrent[:below_value], above_value: @recurrent[:above_value]}
         .action
           = submit_tag (t 'buttons.next'), class: 'button button-basic-questionnaire'
-.infoTab
-  %a.tab{:href => "#"} infoTab
-  .tabContent
+.info-tab
+  %a.tab{:href => '#'} infoTab
+  .tab-content
+    %h3
     %p= t 'form.shared.recurrent.info'
