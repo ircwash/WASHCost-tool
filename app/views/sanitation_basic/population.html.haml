@@ -15,8 +15,9 @@
         %input{:name => 'population', :type => 'hidden'}
         .action
           = submit_tag((t 'buttons.next'), class: 'button button-basic-questionnaire')
-.infoTab
+.info-tab
   %a.tab{:href => '#'} infoTab
-  .tabContent
+  .tab-content
+    %h3
     %p= t 'form.sanitation_basic.population.info'
 
