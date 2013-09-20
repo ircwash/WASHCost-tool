@@ -31,9 +31,11 @@ $(document).ready(function(){
 
 
     // ---------> Resize the window according to spatial use
-    if ($(window).height()>$("body .main-container").height()){
-        $('#delta-resize').css('height',($(window).height()-$("body .main-container").height())+"px")
-    }
+    function footerPositioning(){
+        if ($(window).height()>$("body .main-container").height()){
+            $('#delta-resize').css('height',($(window).height()-$("body .main-container").height())+"px")
+        }
+    } footerPositioning();
 
     // ---------> Section in user editing form
     var sectionContainer = $('.edit_user .section-container section .title');
@@ -57,6 +59,10 @@ $(document).ready(function(){
         $(this).addClass('ticked');
     });
     $('.select-container label input:checked').parent().addClass('ticked');
+
+    $(window).resize(function(){
+        footerPositioning();
+    });
 });
 
 
