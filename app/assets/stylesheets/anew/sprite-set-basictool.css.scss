@@ -3,9 +3,9 @@
   background: transparent url('/assets/world8.png') no-repeat 33px 31px;
 }
 %water-sprite-selector{
-  background: transparent url('/assets/spriteQ2basicWater24.png') no-repeat -15 -146px;
+  background: transparent url('/assets/spriteQ2basicWater24.png') no-repeat -15px -146px;
   &.ticked{
-    background-position: -15 0;
+    background-position: -15px 0;
   }
   &.water-item-1 {
     background-position: -175px -146px;
@@ -36,9 +36,9 @@
   background: transparent url('/assets/population.png') no-repeat 22px 24px;
 }
 %quantity-sprite-selector{
-  background: transparent url('/assets/spriteQ7basicWater24.png') no-repeat -11 -142px;
+  background: transparent url('/assets/spriteQ7basicWater24.png') no-repeat -11px -142px;
   &.ticked {
-    background-position: -11 0;
+    background-position: -11px 0;
   }
   &.quantity-item-1 {
     background-position: -170px -142px;
@@ -60,9 +60,9 @@
   }
 }
 %quality-sprite-selector{
-  background: transparent url('/assets/spriteQ8basicWater24.png') no-repeat -14 -148px;
+  background: transparent url('/assets/spriteQ8basicWater24.png') no-repeat -14px -148px;
   &.ticked {
-    background-position: -14 0;
+    background-position: -14px 0;
   }
   &.quality-item-1 {
     background-position:  -174px -148px;
@@ -84,9 +84,9 @@
   }
 }
 %reliability-sprite-selector{
-  background: transparent url('/assets/spriteQ9basicWater24.png') no-repeat -13 -196px;
+  background: transparent url('/assets/spriteQ9basicWater24.png') no-repeat -13px -196px;
   &.ticked {
-    background-position: -13 0;
+    background-position: -13px 0;
   }
   &.reliability-item-1 {
     background-position: -172px -196px;
@@ -157,7 +157,7 @@
   }
 }
 %impermeability-sprite-selector{
-  background: transparent url('/assets/spriteQ7basicImpermeability24.png') no-repeat -22 -211px;
+  background: transparent url('/assets/spriteQ7basicImpermeability24.png') no-repeat -22px -211px;
   &.ticked{
     background-position: -22px -17;
   }
