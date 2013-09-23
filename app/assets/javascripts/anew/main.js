@@ -25,15 +25,17 @@ $(document).ready(function(){
 
         } radioInputTick();
         // Option buttons that are checked should be highlighted.
-        option_cheched = $( "[checked='checked']" );
+        var option_cheched = $( "[checked='checked']" );
         option_cheched.parent().addClass('ticked');
     }
 
 
     // ---------> Resize the window according to spatial use
     function footerPositioning(){
-        if ($(window).height()>$("body .main-container").height()){
-            $('#delta-resize').css('height',($(window).height()-$("body .main-container").height())+"px")
+        var mainContainer = $('body .main-container');
+        if ($(document).height()>mainContainer.height()){
+            console.log('--> delta resize');
+            $('#delta-resize').css('height',($(document).height()-mainContainer.height())+"px")
         }
     } footerPositioning();
 
