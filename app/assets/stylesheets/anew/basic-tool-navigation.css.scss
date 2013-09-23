@@ -83,5 +83,19 @@
     }
   }
 }
+@-moz-document url-prefix() {
+  .nav-basic-container{
+    .navigation-basic-tool{
+      ul{
+        li.active{
+          position: relative;
+          background-color: #fff;
+          color: #a9985e;
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+}
 
 
