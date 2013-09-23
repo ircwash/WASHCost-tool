@@ -9,6 +9,8 @@ body{
   position: absolute;
   width: 301;
   top: 240px;
+  max-height: 300px;
+  overflow-y: auto;
   .tab {
     display: block;
     float: left;
@@ -18,6 +20,7 @@ body{
     background: #ff6633 url('/assets/iconInfoTab8.png') no-repeat 6px 4px;
   }
   .tab-content {
+    overflow-y: auto;
     float: left;
     text-align: left;
     width: 250px;

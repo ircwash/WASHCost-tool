@@ -9,11 +9,12 @@ $(document).ready(function(){
             infoTab.css('left',headerWidth-$('.info-tab .tab').width()-contentContainerMarginLeft+'px');
             infoTab.on('click', function(e){
                 var offset = $('header').width() - parseInt($('.row.content-container').css('margin-left').replace('px','')) - $('.info-tab .tab').width();
+                var offsetByBrowser = 20;
                 e.preventDefault();
                 console.log('info-tab');
                 var panel = $(this);
                 panel.animate({
-                    left: parseInt(panel.css('left'),10) == offset ? offset - $('.info-tab .tab-content').width() : offset
+                    left: parseInt(panel.css('left'),10) == offset ? offset - $('.info-tab .tab-content').width() - offsetByBrowser : offset
                 }, 0);
             });
         }
