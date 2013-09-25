@@ -10,11 +10,24 @@ $(document).ready(function(){
             infoTab.on('click', function(e){
                 var offset = $('header').width() - parseInt($('.row.content-container').css('margin-left').replace('px','')) - $('.info-tab .tab').width();
                 var offsetByBrowser = 20;
+                var tabContent = $('.info-tab .tab-content');
+                var tab = $('.info-tab .tab');
+                var left = 0;
+                var tabContentWidth = parseInt(tabContent.css('width').replace('px',''));
                 e.preventDefault();
                 console.log('info-tab');
                 var panel = $(this);
+                if(parseInt(panel.css('left'),10) == offset){
+                    left = offset - tabContent.width() - offsetByBrowser;
+                    panel.width(tab.width() + tabContentWidth);
+                    tabContent.css('display','inherit');
+                }else{
+                    panel.width(panel.width() - tabContentWidth)
+                    tabContent.css('display','none');
+                    left = offset;
+                }
                 panel.animate({
-                    left: parseInt(panel.css('left'),10) == offset ? offset - $('.info-tab .tab-content').width() - offsetByBrowser : offset
+                    left: left
                 }, 0);
             });
         }

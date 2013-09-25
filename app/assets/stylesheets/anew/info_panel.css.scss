@@ -1,5 +1,6 @@
 body{
   overflow-x: hidden;
+  overflow-y: visible;
 }
 .info-tab{
   //display: none;
@@ -7,7 +8,7 @@ body{
   clear: both;
   overflow: hidden;
   position: absolute;
-  width: 301;
+  width: 51px;
   top: 240px;
   max-height: 300px;
   overflow-y: auto;
@@ -20,6 +21,7 @@ body{
     background: #ff6633 url('/assets/iconInfoTab8.png') no-repeat 6px 4px;
   }
   .tab-content {
+    display: none;
     overflow-y: auto;
     float: left;
     text-align: left;
