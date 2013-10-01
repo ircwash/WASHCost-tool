@@ -79,17 +79,22 @@ describe "Basic Tool Walkthrough" do
       basic_water[:recurrent].should == 15
     end
 
-    it 'selects the access time to collect water per day ', :js do
+    it 'selects the access time to collect water per day' do
       visit '/cal/water_basic/time'
 
-      slider_handle = page.find('.ui-slider-handle')
-      # test_cursor is located into the half of slider
-      test_cursor = page.find('.slider-container .test-cursor')
-      slider_handle.drag_to(test_cursor)
+      #slider_handle = page.find('.ui-slider-handle')
+      ## test_cursor is located into the half of slider
+      #test_cursor = page.find('.slider-container .test-cursor')
+      #slider_handle.drag_to(test_cursor)
+      #
+      #click_button t('buttons.next')
+      #current_path.should == '/cal/water_basic/quantity'
+      #basic_water[:time].should == 2
 
+      choose 'lessThanTen'
       click_button t('buttons.next')
       current_path.should == '/cal/water_basic/quantity'
-      basic_water[:time].should == 2
+      basic_water[:time].should == 3
     end
 
     it 'selects the water quantity used in litres per person per day' do
