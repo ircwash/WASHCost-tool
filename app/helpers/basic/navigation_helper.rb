@@ -1,6 +1,6 @@
 module Basic::NavigationHelper
   # return just the items of each section in an specific questionnaire
-  # @return [Hash Set], each element contains Hash with attr used in the navigation (name, link and css class)
+  # @return [Array], each element contains Hash with attr used in the navigation (name, link and css class)
   def questionnaire_items_list
     current_path = navigation_context[:path]
     items = questionnaire_items
@@ -14,14 +14,15 @@ module Basic::NavigationHelper
   end
 
   # return a Hash Set with the attributtes of each nav section (name, link and css class)
-  # @return [Hash Set]
+  # @return [Array]
   def questionnaire_sections
     current_path = navigation_context[:path]
     sections = navigation_context.select{|k,v| v.is_a?(Hash)}.keys
     sections.map do |section|
       {
           name: navigation_context[section][:name],
-          link: "#{current_path}/#{navigation_context[section][:first_action]}",
+          redirect_to: navigation_context[section][:first_action],
+          number_of_items: navigation_context[section][:items].length,
           class: navigation_context[section.to_sym][:items].has_key?(controller.action_name.to_sym) ? "active" : "",
       }
     end

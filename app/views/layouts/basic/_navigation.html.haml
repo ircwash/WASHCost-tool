@@ -32,12 +32,12 @@
   .row
     .large-4.large-offset-4.columns
       .headernav-basic-tool
-        %ul
+        %ul{'data-number-of-items' => @navigation_header.present? ? @navigation_header[:number_of_items] : -1}
           - questionnaire_sections.each do |item|
             %li{class: item[:class]}
-              %a{:href => item[:link]}= item[:name]
+              = link_to item[:name], cal_water_basic_header_navigation_path(number_of_items: item[:number_of_items], redirect_to: item[:redirect_to])
   .navigation-basic-tool
-    %ul{'data-offset' => ''}
+    %ul
       - questionnaire_items_list.each do |item|
         %li{class: item[:class]}
           %a{:href => item[:link]}= item[:name]

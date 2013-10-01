@@ -26,6 +26,8 @@ class WaterBasicController < ApplicationController
     end
     flash[:country_code] = retrieve_previous_answer_for('country')
     flash[:pages_complete] = session[:water_basic_complete]
+    @navigation_header = {}
+    @navigation_header[:number_of_items] = params[:number_of_items] || -1
   end
 
   def water
@@ -76,6 +78,8 @@ class WaterBasicController < ApplicationController
     #@capital[:above_value] = ((@capital[:max_value]-@capital[:min_value]).to_f*0.8).round+@capital[:min_value]
     @capital[:below_value] = range[:below_value]
     @capital[:above_value] = range[:above_value]
+    @navigation_header = {}
+    @navigation_header[:number_of_items] = params[:number_of_items] || -1
   end
 
   def recurrent
@@ -105,6 +109,8 @@ class WaterBasicController < ApplicationController
       end
     end
     @time = retrieve_previous_answer_for('time')
+    @navigation_header = {}
+    @navigation_header[:number_of_items] = params[:number_of_items] || -1
   end
 
   def quantity
@@ -147,6 +153,10 @@ class WaterBasicController < ApplicationController
     @reliability[:value] = retrieve_previous_answer_for('reliability') || 0
     @reliability[:choices] = %w(worksAll worksMostly breakDown notWorking)
     @reliability[:class] = 'reliability-item'
+  end
+
+  def header_navigation
+    redirect_to :action => params[:redirect_to], number_of_items: params[:number_of_items]
   end
 
   def report
