@@ -35,7 +35,11 @@
         %ul{'data-number-of-items' => @navigation_header.present? ? @navigation_header[:number_of_items] : -1}
           - questionnaire_sections.each do |item|
             %li{class: item[:class]}
-              = link_to item[:name], cal_water_basic_header_navigation_path(number_of_items: item[:number_of_items], redirect_to: item[:redirect_to])
+              - if controller_name == 'water_basic'
+                = link_to item[:name], cal_water_basic_header_navigation_path(number_of_items: item[:number_of_items], redirect_to: item[:redirect_to])
+              - else
+                = link_to item[:name], cal_sanitation_basic_header_navigation_path(number_of_items: item[:number_of_items], redirect_to: item[:redirect_to])
+
   .navigation-basic-tool
     %ul
       - questionnaire_items_list.each do |item|

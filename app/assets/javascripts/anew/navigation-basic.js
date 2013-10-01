@@ -19,6 +19,7 @@ $(document).ready(function(){
         // - Check if the number of items constraint exists in header navigation
         var numberOfItemsBySection = parseInt($('.nav-basic-container .headernav-basic-tool ul').data('number-of-items'));
         var offsetInNumber;
+        // - aplying the offset according to number of items in section of navigation header (only when it exists)
         if(numberOfItemsBySection > 0){
             if(numberOfItemsBySection >= numberItemsLimit){
                 offsetInNumber = activeItemIndex - 1;

@@ -43,6 +43,7 @@ WashCostApp::Application.routes.draw do
   resources :subscribers
 
   get '/cal/water_basic/header_navigation', to: 'water_basic#header_navigation'
+  get '/cal/sanitation_basic/header_navigation', to: 'sanitation_basic#header_navigation'
 
   match '/dashboard' => 'dashboard#index'
   match '/home/calculator' => 'home#calculator'

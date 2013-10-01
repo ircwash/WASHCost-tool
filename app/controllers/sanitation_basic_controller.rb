@@ -23,6 +23,8 @@ class SanitationBasicController < ApplicationController
       end
     end
     flash[:country_code] = retrieve_previous_answer_for('country')
+    @navigation_header = {}
+    @navigation_header[:number_of_items] = params[:number_of_items] || -1
   end
 
   def population
@@ -68,6 +70,8 @@ class SanitationBasicController < ApplicationController
     #@capital[:above_value] = ((@capital[:max_value]-@capital[:min_value]).to_f*0.8).round+@capital[:min_value]
     @capital[:below_value] = range[:below_value]
     @capital[:above_value] = range[:above_value]
+    @navigation_header = {}
+    @navigation_header[:number_of_items] = params[:number_of_items] || -1
   end
 
   def recurrent
@@ -100,6 +104,8 @@ class SanitationBasicController < ApplicationController
     @providing[:value] = retrieve_previous_answer_for('providing') || 0
     @providing[:choices] = %w(capitalYes capitalNo)
     @providing[:class] = 'providing-item'
+    @navigation_header = {}
+    @navigation_header[:number_of_items] = params[:number_of_items] || -1
   end
 
   def impermeability
@@ -161,6 +167,10 @@ class SanitationBasicController < ApplicationController
       #increase_pages_complete
       redirect_to :action => redirect
     end
+  end
+
+  def header_navigation
+    redirect_to :action => params[:redirect_to], number_of_items: params[:number_of_items]
   end
 
   def report
