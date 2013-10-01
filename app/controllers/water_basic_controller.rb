@@ -108,7 +108,10 @@ class WaterBasicController < ApplicationController
         redirect_to :action => 'quantity'
       end
     end
-    @time = retrieve_previous_answer_for('time')
+    @time = {}
+    @time[:value] = retrieve_previous_answer_for('time') || 0
+    @time[:choices] = %w(LessThanTen BetweenTenAndTirthy BetweenTirthyAndSixty MoreThanSixty)
+    @time[:class] = 'quantity-item'
     @navigation_header = {}
     @navigation_header[:number_of_items] = params[:number_of_items] || -1
   end
