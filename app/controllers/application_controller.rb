@@ -11,8 +11,8 @@ class ApplicationController < ActionController::Base
     @path_to = current_ability.permission_denied[:location]
     session[:user_return_to] = request.referer
     case current_ability.permission_denied[:output_from]
-      when 'xhr'
-        render 'basic/reports/redirect'
+    when 'xhr'
+      render 'basic/reports/redirect'
       when 'http'
         redirect_to @path_to
       when 'popup'
@@ -20,7 +20,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
-
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+  end
 
   def select_advanced
     if request.post?
@@ -41,14 +43,14 @@ class ApplicationController < ActionController::Base
   def init_vars
   end
 
-  def set_locale
-    I18n.locale = session[:lang] if session[:lang].present?
-    I18n.locale = params[:lang] if params[:lang].present?
-
-    if(params[:lang].present?)
-      session[:lang]= params[:lang]
-    end
-  end
+  #def set_locale
+  #  I18n.locale = session[:lang] if session[:lang].present?
+  #  I18n.locale = params[:lang] if params[:lang].present?
+  #
+  #  if(params[:lang].present?)
+  #    session[:lang]= params[:lang]
+  #  end
+  #end
 
   def is_valid_country_code(country_code)
     valid= false
@@ -93,5 +95,12 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     session[:user_return_to] ||= new_user_session_url
     session[:user_return_to] == new_user_session_url ? dashboard_index_path : session[:user_return_to]
+  end
+
+  protect_from_forgery
+
+  def default_url_options(options={})
+    logger.debug "default_url_options is passed options: #{options.inspect}\n"
+    { :locale => I18n.locale }
   end
 end

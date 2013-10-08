@@ -1,6 +1,4 @@
-
-
-ef:
+fr:
   global:
     yes: "f-Yes"
     no: "f-No"
@@ -10,13 +8,16 @@ ef:
       help: "f-help"
       contact: "f-Contact"
       sign_in: "f-Sign In"
+      sign_out: "f-Sign Out"
     main:
-      content:
+      context:
         title: "f-Context"
         items:
           country: "f-Country"
-          water: "f-Water"
+          water: "f-Technology"
           population: "f-Population"
+          household: "f-Household"
+          latrine: "f-Latrine"
       cost:
         title: "f-Cost Data"
         items:
@@ -25,71 +26,90 @@ ef:
       service:
         title: "f-Service"
         items:
-          time: "f-Time"
+          time: "f-Access"
           quantity: "f-Quantity"
           quality: "f-Quality"
+          providing: "f-Household Latrine"
+          impermeability: "f-Impermeability"
+          environment: "f-Environment"
+          usage: "f-Usage"
           reliability: "f-Reliability"
     advanced:
       context: "f-Context"
       managing: "f-Managing"
       technology: "f-Technology"
       cost: "f-Cost"
-      serivce: "f-Service"
-
+      service: "f-Service"
   buttons:
-    next: "f-Next"
-    start: "f-OK! Start using the calculator"
+    next: "f-Next Question"
+    start: "f-Start the calculator"
     save: "f-Save"
     view_report: "f-View Report"
-
+    save_report: "f-Save Report"
+    complete: "f-Complete"
+    close_report: "f-Close Report"
   inputs:
     choose_a_country: "f-Choose a country"
-
   form:
-    value_not_set: "f-Value Not Set"
+    not_ready:
+      summary: "f-You must complete the form before we can provide summary analysis"
+      cost: "f-You must complete the form before we can provide cost analysis"
+    value_not_set: "f-No answer provided"
     skip: "f-skip this question"
     shared:
       country:
-        question: "f-In which country does your programme (intervention) take place?"
+        question: "f-In which country does your water service take place?"
+        placeholder: "f-Select a country"
       capital:
-        question: "f-How much has been/will be spent constructing the water service (per person)?"
+        question: "f-How much has been/will be spent setting up the water service including construction (per person)?"
+        info: "f-Capital Expediture (hardware): Capital invested in constructing or purchasing fixed assets such as concrete structures, pumps and pipes. Capital Expenditure (software): The costs of one-off work with stakeholders prior to construction or implementation, extension, enhancement and augmentation (including costs of one-off capacity building activities). See: http://akvopedia.org/wiki/Capital_Expenditure_(CapEx)"
       recurrent:
         question: "f-How much is being spent/will be spent to operate, maintain and support the delivery of water services (per person per year)?"
+        info: "f-Operating and minor maintenance expenditure: typically comprises regular expenditure such as labour, fuel, chemicals, materials, and purchases of any bulk water. See: http://akvopedia.org/wiki/Operational_and_Minor_Maintenance_Expenditure_(OpEx) Capital maintenance expenditure: Asset renewal and replacement cost: occasional and ‘lumpy’ costs that seek to restore the functionality of a system, such as replacing pump rods or foot valves in handpumps, or a diesel generator in motorised systems. See: http://akvopedia.org/wiki/Capital_Maintenance_Expenditure_(CapManEx) Expediture of direct support: Direct support is structured support to service providers and users or user groups related to the operation and management of a WASH service; direct support costs are the costs of such support. They cover monitoring, technical advice and administrative, organisational or legal support.  The costs of support before and during the capital construction of a project are not included; they are considered to be capital software. Direct support is often used synonymously with “post-construction support”. See: http://akvopedia.org/wiki/Expenditure_Direct_Support_(ExpDS) Expenditure of indirect support: Indirect support costs cover expenditure on this macro-level support, including planning and policy making, and support to decentralised service authorities or local government. Indirect support includes capacity building for professionals and technicians and capacity support to local government as service authorities, for example to adhere to national norms, standards and guidelines. See: http://akvopedia.org/wiki/Expenditure_Indirect_Support_(ExpIDS)"
         value_label: "f-Per person<br/> per year"
       values:
         v0: "f-No service"
         v1: "f-Sub-standard service"
         v2: "f-Basic service"
         v3: "f-High service"
+        info: "f-A water service level characterises the benefits that users receive, measured by a combination of four criteria; quantity of water, quality of water, accessibility, and reliability. See: http://www.washcost.info/page/2454"
       select_an_option: "f-Select an Option"
     water_basic:
       water:
-        question: "f-What is the main water source use to provide water?"
+        question: "f-What is the main water supply technology used?"
         answers:
           a0: "f-Borehole & handpump"
           a1: "f-Mechanised borehole"
           a2: "f-Single-town scheme"
           a3: "f-Multi-town scheme"
           a4: "f-Mixed-pipe supply"
+        info:
+          i0: "f-Reticulated supply with pumping, storage and distribution through public stand posts with provision for house connections."
+          i1: "f-Water is supplied through a small distribution network and connected public stand posts. Water storage is limited, typically to an overhead storage tank  directly connected to the pump.  Household connections are rare."
+          i2: "f-Maecenas elementum tristique nunc sed vehicula. Mauris dignissim erat ut lectus rutrum elementum. Etiam pharetra ac massa sit amet mattis. Nam blandit, nibh sed mattis accumsan, nisi risus vulputate eros, in ar laoreet."
+          i3: "f-Reticulated supply with pumping, storage and distribution supplied to a number of interconnected towns or villages. Each village with its own storage and distribution network."
+          i4: "f-Water is supplied through a combination of separate, often overlapping, service delivery systems."
       population:
-        question: "f-How many people live in the area of intervention?"
+        default_question: "f-How many people in this area are receiving this water service?"
+        question: "f-How many people are served by a %{technology}?"
         value_label: "f-People"
         answers:
           a0: "f-Less than 500"
           a1: "f-501 - 5,000"
           a2: "f-5,001 - 15,000"
           a3: "f-More than 15,000"
+        info: "f-Please indicate the total number of people that are meant to be using the service in the area. A water system will typically have a design population, sometimes defined by local regulations, for how many people it is meant to serve. The total number of people would be the design population of the system times the number of systems in the area. For example, if a handpump is meant to serve 300 people and there are 100 handpumps in the area, the number of people that are meant to be using the service is 30,000 people (300 people x 100 handpumps)."
       time:
-        question: "f-How long does water collection take per day from the formal sources?"
+        question: "f-How long does it take to collect water per day from these services?"
         value_label: "f-Minutes per day"
         answers:
-          a0:  "Less than 10"
+          a0: "f-Less than 10"
           a1: "f-Between 10 and 30"
           a2: "f-Between 30 and 60"
           a3: "f-More than 60"
       quantity:
-        question: "f-What is the actual use of water from formal sources?"
-        value_label: "f-(Litres per person per day)"
+        question: "f-How much water is used from the water service?"
+        value_label: "f-Litres per person per day"
         answers:
           a0: "f-Less than 5L"
           a1: "f-5 - 19L"
@@ -98,31 +118,42 @@ ef:
       quality:
         question: "f-Is water quality testing done?"
         answers:
-          a0: "f-No testing"
-          a1: "f-One-off test after construction"
-          a2: "f-Occasional and meets standards"
           a3: "f-Regular and meets standards"
+          a2: "f-Occational and meets standards"
+          a1: "f-One-off after construction"
+          a0: "f-No testing"
       reliability:
-        question: "f-How reliable is the service? How many days per year is the water system not working?"
+        question: "f-How reliable is the water service?"
         answers:
           a0: "f-Works all the time"
-          a1: "f-Works most of the time"
-          a2: "f-Many break-downs slow repairs"
-          a3: "f-Not working"
+          a1: "f-Not working less than 12 days a year"
+          a2: "f-Not working more than 12 days a year"
+          a3: "f-Not working all of the time"
+      recurrent:
+        value_label: "f-US$ Per person per Year"
     sanitation_basic:
+      country:
+        question: "f-In which country does your sanitation service take place?"
+      recurrent:
+        question: "f-How much is being spent/will be spent to operate, maintain and support the delivery of sanitation services (per person per year)?"
+        info: "f-Operating and minor maintenance expenditure: typically comprises regular expenditure such as labour, fuel, chemicals, materials, and purchases of any bulk water. See: http://akvopedia.org/wiki/Operational_and_Minor_Maintenance_Expenditure_(OpEx) Capital maintenance expenditure: Asset renewal and replacement cost: occasional and ‘lumpy’ costs that seek to restore the functionality of a system, such as replacing pump rods or foot valves in handpumps, or a diesel generator in motorised systems. See: http://akvopedia.org/wiki/Capital_Maintenance_Expenditure_(CapManEx) Expediture of direct support: Direct support is structured support to service providers and users or user groups related to the operation and management of a WASH service; direct support costs are the costs of such support. They cover monitoring, technical advice and administrative, organisational or legal support.  The costs of support before and during the capital construction of a project are not included; they are considered to be capital software. Direct support is often used synonymously with “post-construction support”. See: http://akvopedia.org/wiki/Expenditure_Direct_Support_(ExpDS) Expenditure of indirect support: Indirect support costs cover expenditure on this macro-level support, including planning and policy making, and support to decentralised service authorities or local government. Indirect support includes capacity building for professionals and technicians and capacity support to local government as service authorities, for example to adhere to national norms, standards and guidelines. See: http://akvopedia.org/wiki/Expenditure_Indirect_Support_(ExpIDS)"
+        value_label: "f-Per person<br/> per year"
       household:
         question: "f-What is the typical household size?"
       latrine:
-        question: "f-What type of latrine is being used?"
+        question: "f-What type of latrine technology is being used?"
         answers:
           a0: "f-Traditional pit latrine"
-          a1: "f-Trad. improved pit latrine"
-          a2: "f-Slab latrine"
-          a3: "f-Vip latrine"
-          a4: "f-Pour Flush Latrine"
+          a1: "f-Slab latrine"
+          a2: "f-Vip latrine"
+          a3: "f-Pour Flush Latrine"
+          a4: "f-Twin Pit Pour Flush Latrine"
           a5: "f-Latrine with septic tank"
+      population:
+        question: "f-How many people in this area are receiving this sanitation service?"
+        value_label: "f-People"
       providing:
-        question: "f-Does the delivery model provide latrines at the household level?"
+        question: "f-Does the service provide latrines at the household level?"
         answers:
           a0: "f-Yes"
           a1: "f-No"
@@ -131,8 +162,9 @@ ef:
         answers:
           a0: "f-Impermeable slab"
           a1: "f-No impermeable slab"
+        info: "f-This can be a traditional pit latrine with an impermeable slab (made from local materials, a pit latrine with a concrete impermeable slab, or a pour-flush or septic tank latrines, often with a concrete or bricked lines pit/tank with sealed impermeable slab."
       environment:
-        question: "f-What is the environmental impact of the delivery model?"
+        question: "f-What is the environmental impact of the service?"
         answers:
           a0: "f-Non problematic + safe disposal + re-use of bi-products "
           a1: "f-Non problematic +safe disposal"
@@ -149,6 +181,9 @@ ef:
           a0: "f-Yes"
           a1: "f-Not consistently"
           a2: "f-No"
+      recurrent:
+        question: "f-How much is being spent/will be spent to operate, maintain and support the delivery of sanitation services (per person per year)?"
+        value_label: "f-US$ Per person per Year"
     advanced:
       shared:
         location:
@@ -161,10 +196,10 @@ ef:
           question: "f-Area Type"
           placeholder: "f-Select an area type"
           answers:
-            a0: "f-rural"
-            a1: "f-small town"
-            a2: "f-peri-urban"
-            a3: "f-urban"
+            a0: "f-Rural"
+            a1: "f-Small Town"
+            a2: "f-Peri-Urban"
+            a3: "f-Urban"
         density:
           question: "f-What is the population density of the service area?"
           placeholder: "f-Select a density"
@@ -173,11 +208,13 @@ ef:
             a1: "f-150-299 pp/km2"
             a2: "f->150 pp/km2"
             a3: "f-Don't know"
+          info: "f-There is no international standard typology that adequately defines rural and urban areas and definitions vary greatly between nations. Knowing the population density of an area helps to better understand the the demographics of the service areas. The population density classifications provided are roughly in line with rural/small town/urban definitions. A density of less that 150 inhabitants per km2 defined as rural  and a population density of >=300 inhabitants per km2 (and a minimum population of 5,000) classed as urban (OECD, 2010). Anything community laying between these values can be considered as a small town. See: OECD, (2010). Chapter 15: A revised rural-urban typology - EuroStat regional yearbook 2010. Retrieved from: http://epp.eurostat.ec.europa.eu/cache/ITY_OFFPUB/KS-HA-10-001-15/EN/KS-HA-10-001-15-EN.PDF"
         existing:
           question: "f-Does this service exist already or is it planned?"
           answer:
             a0: "f-Existing"
             a1: "f-Planned"
+          info: "f-If the sanitation service already exists and you are using mostly past real expenditure information to answer these questions, then please select already existing. If you are making an estimate for an existing or new service, please select planned."
         service_area:
           question: "f-What is the population density of the service area?"
           answers:
@@ -188,16 +225,21 @@ ef:
         management:
           shared:
             answers:
-              a0: "f-External donor"
-              a1: "f-community-based"
-              a2: "f-organisation"
-              a3: "f-public sector (local)"
-              a4: "f-public sector (national)"
-              a5: "f-utility"
-              a6: "f-household"
-              a7: "f-Don't know"
+              a0: "f-External Donor"
+              a1: "f-Community Based Organisation"
+              a2: "f-Public sector (local)"
+              a3: "f-Public sector (national)"
+              a4: "f-Utility"
+              a5: "f-Household"
+              a6: "f-Don't Know"
+            info:
+              i0: "f-Small-scale systems directly managed and operated by water committees. Larger and more complex systems managed by water committees with individual operational functions out-sourced to private individuals or small companies. Larger and more complex systems managed by water committees with all O&M out-sourced to private sector operators.  Associations of water committees providing economies of scale for certain O&M functions."
+              i1: "f-Municipal water company providing management services to rural communities. Associations of municipal companies providing management services to rural communities. Local public utilities providing management services to rural communities, including maintenance contracts."
+              i2: "f-National public utilities providing management services to rural communities, including maintenance contracts."
+              i3: "f-Individual households or clusters of or neighbouring households"
           how_managed:
             question: "f-Which of these options best describe how the water service is managed?"
+            info: "f-See: Lockwood, H. and Smits, S. 2011. Supporting rural water supply: moving towards a service delivery approach. The Hague: IRC International Water and Sanitation Centre, Wivenhoe: Aguaconsult and London: Practical Action Publishing - Table 8 pag. 86 Available at: http://www.waterservicesthatlast.org/publications/multi_country_synthesis"
           who_finances:
             question: "f-Who finances the construction of the water system?"
           who_owns:
@@ -210,17 +252,20 @@ ef:
             question: "f-Who covers the cost of rehabilitation when larger repairs are needed?"
         annual_income:
           question: "f-What is the average annual household income in the service area?"
-          placeholder: "f-Numeric US$"
+          placeholder: "f-Number 0 to 10000 (US$)"
         cost:
           shared:
             answers:
               a0: "f-Don't know"
               a1: "f-Not applicable"
-            placeholder: "f-Numeric (US$ per person)"
+            placeholder: "f-US$ per person"
+            placeholder_1: "f-US$ per person"
           hardware:
-            question: "f-What is the total capital expenditure for hardware?"
+            question: "f-What is the total capital expenditure hardware?"
+            info: "f-Capital invested in constructing or purchasing fixed assets such as concrete structures, pumps and pipes. See: http://akvopedia.org/wiki/Capital_Expenditure_(CapEx)"
           software:
-            question: "f-What is the total capital expenditure for software?"
+            question: "f-What is the total capital expenditure software?"
+            info: "f-The costs of one-off work with stakeholders prior to construction or implementation, extension, enhancement and augmentation (including costs of one-off capacity building activities).See: http://akvopedia.org/wiki/Capital_Expenditure_(CapEx)"
           maintenance:
             question: "f-What is the minor operation and maintenance expenditure?"
           direct:
@@ -231,10 +276,10 @@ ef:
            question: "f-What is the cost servicing any loans taken to fund the service?"
           payback:
             question: "f-What is the payback period on this loan?"
-            placeholder: "f-Years"
+            placeholder: "f-Number 0 to 1000 (Years)"
       water:
         supply_system:
-          question: "f-What supply system(s) are used to deliver water services?*"
+          question: "f-What supply system(s) are used to deliver water services?"
           answers:
             a0: "f-borehole and handpump"
             a1: "f-mechanised borehole"
@@ -244,7 +289,7 @@ ef:
             a5: "f-protected well"
             a6: "f-rural gravity fed system"
         inauguration:
-          question: "f-In what year was the supply system inaugurated?**"
+          question: "f-In what year was the supply system inaugurated?"
         water_sources:
           question: "f-Water sources?"
           answers:
@@ -298,6 +343,7 @@ ef:
             a4: "f-generator"
         transmission:
           question: "f-Length of transmission line (Km)?"
+          placeholder: "f-Number 0 to 10000 (Km)"
         piped:
           question: "f-For piped supplies: Percentage population served by household connections and/or stand post?"
       sanitation:
@@ -334,6 +380,7 @@ ef:
         pit_count:
           question: "f-Number of pits"
           numeric: "f-Numeric"
+          placeholder: "f-Number 0 to 10000"
         pit_location:
           question: "f-Location of pit(s)"
           answers:
@@ -361,16 +408,46 @@ ef:
             a2: "f-composting, other"
         service_area:
           question: "f-How many people in the service area are targeted by the sanitation service"
+          placeholder: "f-Number 0 to 1000000"
         latrine_count:
           question: "f-How many latrines are there in the service area?"
-
+          placeholder: "f-Number 0 to 10000"
 
 
   report:
+    water_final_report: "f-basic water | final report"
+    cross_to_sanitation: "f-Cross to sanitation"
+    cross_to_water: "f-Cross to water"
+    summmary: "f-Summary"
+    total: "f-Total"
+    total_cost: "f-total cost"
+    level_of_service: "f-level of service"
+    caption_total_cost: "f-for a population of %{population} people"
+    population_caption: "f-%{population} people"
+    full_review: "f-read full review"
+    context: "f-context"
+    cost: "f-cost data"
+    cost_subtitle: "f-10 year cost for %{population} people"
+    service: "f-service level"
+    capital_expenditure_title: "f-Capital Expenditure per Person"
+    recurrent_expenditure_title: "f-Recurrent Expenditure per Person"
     complete: "f-Report Complete"
     benchmark_below: "f-Below Benchmarks"
-    benchmark_with: "f-Within the Benchmarks"
+    benchmark_within: "f-Expenditure is within of WashCost benchmarks. Read the review below for more information."
     benchmark_above: "f-above the Benchmarks"
+    benchmark_outside: "f-Expenditure is outside of WashCost benchmarks. Read the review below for more information."
+    access: "f-Access"
+    sustainability:
+      water:
+        one_star: "f-No service"
+        two_stars: "f-Sub-standard service"
+        three_stars: "f-Basic service"
+        four_stars: "f-High standard of service"
+      sanitation:
+        one_star: "f-No service"
+        two_stars: "f- Limited service"
+        three_stars: "f-Basic service"
+        four_stars: "f-Improved service"
     water_basic:
       a111:	"This service is not delivering a desired minimum quantity perhaps due to low capital expenditure and the sources are not within 60 minutes roundtrip from the household. Or factors other than costs are influencing service delivery"
       a112:	"This service is not delivering a desired minimum quantity perhaps due to low capital expenditure and the sources are between 30 and 60 minutes roundtrip from the household. Or factors other than costs are influencing service delivery"
@@ -398,12 +475,12 @@ ef:
       a224:	"This service is not delivering a desired minimum quantity and the sources are within 10 minutes roundtrip from the household. Capital expenditure values are within found WASHCost ranges so factors other than costs are influencing service delivery or the context requires more expensive infrastructure."
       a231:	"This service is delivering a basic quantity - however a lack of sufficient formal sources means people may have to travel, or queue, for more than 60 minutes round trip from the household. Capital expenditure values are within found WASHCost ranges so factors other than costs are influencing service delivery or the context requires more expensive infrastructure."
       a232:	"This service is delivering a basic quantity - however a lack of sufficient formal sources means people may have to travel, or queue, between 30 and 60 minutes round trip from the household. Capital expenditure values are within found WASHCost ranges so factors other than costs are influencing service delivery or the context requires more expensive infrastructure."
-      a233:	"The capital expenditure entered is within the ranges found by WASHCost and this service is delivering a basic quantity and formal sources are within 30 minutes round trip from the household. Well done!"
-      a234:	"The capital expenditure entered is within the ranges found by WASHCost and this service is delivering a basic quantity and formal sources are within 10 minutes round trip from the household. Well done!"
+      a233:	"The capital expenditure entered is within the ranges found by WASHCost and this service is delivering a basic quantity and formal sources are within 30 minutes round trip from the household."
+      a234:	"The capital expenditure entered is within the ranges found by WASHCost and this service is delivering a basic quantity and formal sources are within 10 minutes round trip from the household."
       a241:	"This service is delivering more than a basic quantity - however a lack of sufficient formal sources means people may have to travel, or queue, for more than 60 minutes round trip from the household. Capital expenditure values are within found WASHCost ranges so factors other than costs are influencing service delivery or the context requires more expensive infrastructure."
       a242:	"This service is delivering more than a basic quantity - however a lack of sufficient formal sources means people may have to travel, or queue, between 30 and 60 minutes round trip from the household. Capital expenditure values are within found WASHCost ranges so factors other than costs are influencing service delivery or the context requires more expensive infrastructure."
-      a243:	"The capital expenditure entered is within the ranges found by WASHCost and this service is delivering more than a basic quantity and formal sources are within 30 minutes round trip from the household. Well done!"
-      a244:	"The capital expenditure entered is within the ranges found by WASHCost and this service is delivering more than a basic quantity and formal sources are within 10 minutes round trip from the household. Well done!"
+      a243:	"The capital expenditure entered is within the ranges found by WASHCost and this service is delivering more than a basic quantity and formal sources are within 30 minutes round trip from the household."
+      a244:	"The capital expenditure entered is within the ranges found by WASHCost and this service is delivering more than a basic quantity and formal sources are within 10 minutes round trip from the household."
       a311:	"This service is not delivering a desired minimum quantity and the sources are not within 60 minutes roundtrip from the household. Capital expenditure values are higher than found WASHCost ranges. There are two possibilities: the context is exceptional and requires more expensive infrastructure and/or factors other than costs are having a significant impact on service delivery. "
       a312:	"This service is not delivering a desired minimum quantity and the sources are between 30 and 60 minutes roundtrip from the household. Capital expenditure values are higher than found WASHCost ranges. There are two possibilities: the context is exceptional and requires more expensive infrastructure and/or factors other than costs are having a significant impact on service delivery. "
       a313:	"This service is not delivering a desired minimum quantity and the sources are within 30 minutes roundtrip from the household. Capital expenditure values are higher than found WASHCost ranges so factors other than costs are influencing the quantity being delivered and/or the context is exceptional and requires more expensive infrastructure."
@@ -420,6 +497,70 @@ ef:
       a342:	"This service is delivering more than a basic quantity - however a lack of sufficient formal sources means people may have to travel, or queue, between 30 and 60 minutes round trip from the household. Capital expenditure values are higher than found WASHCost ranges so the context may require greater capital investment to improve access."
       a343:	"The capital expenditure entered is higher than the ranges found by WASHCost and this service is delivering more than a basic quantity and formal sources are within 30 minutes round trip from the household.  So the context may require more expensive infrastructure, or cost efficiency can be improved.  "
       a344:	"The capital expenditure entered is higher than the ranges found by WASHCost and this service is delivering more than a basic quantity and formal sources are within 10 minutes round trip from the household.  A very good level of service is being achieved, and as a consequence it may require more expensive infrastructure. Another possibility may be that cost efficiency can be improved."
+      b011:	"Water quality is unacceptable, lives may be at risk. Further the service provided suffers unacceptable periods of down time. Barely any money is being spent on recurrent annual expenditure and as a result the service has failed. "
+      b012:	"Water quality is unacceptable, lives may be at risk. Further the service provided suffers prolonged periods of down time. Barely any money is being spent on recurrent annual expenditure and as a result the service has failed. "
+      b013:	"Even though the service is reliable, water quality is unacceptable and lives may be at risk. Barely any money is being spent on recurrent annual expenditure, specifically on guaranteeing acceptable water quality. "
+      b014:	"Even though the service is very reliable, water quality is unacceptable and lives may be at risk. Barely any money is being spent on recurrent annual expenditure, specifically on guaranteeing acceptable water quality. "
+      b021:	"Water quality is problematic, lives may be at risk. Further the service provided suffers unacceptable periods of down time. Barely any money is being spent on recurrent annual expenditure and as a result the service has failed. "
+      b022:	"Water quality is problematic, lives may be at risk. Further the service provided suffers prolonged periods of down time. Barely any money is being spent on recurrent annual expenditure and as a result the service is failing. "
+      b023:	"Even though the service is reliable, water quality is problematic and lives may be at risk. Barely any money is being spent on recurrent annual expenditure, specifically on guaranteeing acceptable water quality. "
+      b024:	"Even though the service is very reliable, water quality is problematic and lives may be at risk. Barely any money is being spent on recurrent annual expenditure, specifically on guaranteeing acceptable water quality. "
+      b031:	"Water quality is acceptable, however, the service provided suffers unacceptable periods of down time. Barely any money is being spent on recurrent annual expenditure for improving reliability. "
+      b032:	"Water quality is acceptable, however, the service provided suffers prolonged periods of down time. Barely any money is being spent on recurrent annual expenditure for improving reliability. "
+      b033:	"Water quality is acceptable and the service is reasonably reliable. The total recurrent annual expenditure is much lower than WASHCost benchmarks. There might be context specific reasons for this, but consider validating the data inputted. "
+      b034:	"Water quality is acceptable and the service is very reliable. The total recurrent annual expenditure is much lower than WASHCost benchmarks. There might be context specific reasons for this, but consider validating the data inputted. "
+      b041:	"Water quality is good, however, the service provided suffers unacceptable periods of down time. Barely any money is being spent on recurrent annual expenditure for improving reliability. "
+      b042:	"Water quality is good, however, the service provided suffers prolonged periods of down time. Barely any money is being spent on recurrent annual expenditure for improving reliability. "
+      b043:	"Water quality is good and the service is reasonably reliable. The total recurrent annual expenditure is much lower than WASHCost benchmarks. There might be context specific reasons for this, but consider validating the data inputted. "
+      b044:	"Water quality is good and the service is very reliable. The total recurrent annual expenditure is much lower than WASHCost benchmarks. There might be context specific reasons for this, but consider validating the data inputted. "
+      b111:	"Water quality is unacceptable, lives may be at risk. Further the service provided suffers unacceptable periods of down time. Not enough money is being spent on recurrent annual expenditure and as a result the service has failed. "
+      b112:	"Water quality is unacceptable, lives may be at risk. Further the service provided suffers prolonged periods of down time. Not enough money is being spent on recurrent annual expenditure and as a result the service has failed. "
+      b113:	"Even though the service is reliable, water quality is unacceptable and lives may be at risk. Not enough money is being spent on recurrent annual expenditure, specifically on guaranteeing acceptable water quality. "
+      b114:	"Even though the service is very reliable, water quality is unacceptable and lives may be at risk. Not enough money is being spent on recurrent annual expenditure, specifically on guaranteeing acceptable water quality. "
+      b121:	"Water quality is problematic, lives may be at risk. Further the service provided suffers unacceptable periods of down time. Not enough money is being spent on recurrent annual expenditure and as a result the service has failed. "
+      b122:	"Water quality is problematic, lives may be at risk. Further the service provided suffers prolonged periods of down time. Not enough money is being spent on recurrent annual expenditure and as a result the service is failing. "
+      b123:	"Even though the service is reliable, water quality is problematic and lives may be at risk. Not enough money is being spent on recurrent annual expenditure, specifically on guaranteeing acceptable water quality. "
+      b124:	"Even though the service is very reliable, water quality is problematic and lives may be at risk. Not enough money is being spent on recurrent annual expenditure, specifically on guaranteeing acceptable water quality. "
+      b131:	"Water quality is acceptable, however, the service provided suffers unacceptable periods of down time. Not enough money is being spent on recurrent annual expenditure for improving reliability. "
+      b132:	"Water quality is acceptable, however, the service provided suffers prolonged periods of down time. Not enough money is being spent on recurrent annual expenditure for improving reliability. "
+      b133:	"Water quality is acceptable and the service is reasonably reliable. The total recurrent annual expenditure is lower than WASHCost benchmarks. There might be context specific reasons for this, but consider validating the data inputted. "
+      b134:	"Water quality is acceptable and the service is very reliable. The total recurrent annual expenditure is lower than WASHCost benchmarks. There might be context specific reasons for this, but consider validating the data inputted. "
+      b141:	"Water quality is good, however, the service provided suffers unacceptable periods of down time. Not enough money is being spent on recurrent annual expenditure for improving reliability. "
+      b142:	"Water quality is good, however, the service provided suffers prolonged periods of down time. Not enough money is being spent on recurrent annual expenditure for improving reliability. "
+      b143:	"Water quality is good and the service is reasonably reliable. The total recurrent annual expenditure is lower than WASHCost benchmarks. There might be context specific reasons for this, but consider validating the data inputted. "
+      b144:	"Water quality is good and the service is very reliable. The total recurrent annual expenditure is lower than WASHCost benchmarks. There might be context specific reasons for this, but consider validating the data inputted. "
+      b211:	"Water quality is unacceptable, lives may be at risk. Further the service provided suffers unacceptable periods of down time. Recurrent expenditure values are within found WASHCost ranges so factors other than recurrent costs are influencing the maintenance of the service. Another option is that the context requires more to maintain the infrastructure. "
+      b212:	"Water quality is unacceptable, lives may be at risk. Further the service provided suffers prolonged periods of down time. Recurrent expenditure values are within found WASHCost ranges so factors other than recurrent costs are influencing the maintenance of the service. Another option is that the context requires more to maintain the infrastructure. "
+      b213:	"Even though the service is reliable, water quality is unacceptable and lives may be at risk. Recurrent expenditure values are within found WASHCost ranges but there may be other factors influencing water quality which need to be addressed either through greater recurrent expenditure or other actions. "
+      b214:	"Even though the service is very reliable, water quality is unacceptable and lives may be at risk. Recurrent expenditure values are within found WASHCost ranges but there may be other factors influencing water quality which need to be addressed either through greater recurrent expenditure or other actions. "
+      b221:	"Water quality is problematic, lives may be at risk. Further the service provided suffers unacceptable periods of down time. Recurrent expenditure values are within found WASHCost ranges so factors other than recurrent costs are influencing the maintenance of the service. Another option is that the context requires more to maintain the infrastructure. "
+      b222:	"Water quality is problematic, lives may be at risk. Further the service provided suffers prolonged periods of down time. Recurrent expenditure values are within found WASHCost ranges so factors other than recurrent costs are influencing the maintenance of the service. Another option is that the context requires more to maintain the infrastructure. "
+      b223:	"Even though the service is reliable, water quality is problematic and lives may be at risk. Recurrent expenditure values are within found WASHCost ranges but there may be other factors influencing water quality which need to be addressed either through greater recurrent expenditure or other actions. "
+      b224:	"Even though the service is very reliable, water quality is problematic and lives may be at risk. Recurrent expenditure values are within found WASHCost ranges but there may be other factors influencing water quality which need to be addressed either through greater recurrent expenditure or other actions. "
+      b231:	"Water quality is acceptable, however, the service provided suffers unacceptable periods of down time. Recurrent expenditure values are within found WASHCost ranges so factors other than recurrent costs are influencing the maintenance of the service. Another option is that the context requires more to maintain the infrastructure. "
+      b232:	"Water quality is acceptable, however, the service provided suffers prolonged periods of down time. Recurrent expenditure values are within found WASHCost ranges so factors other than recurrent costs are influencing the maintenance of the service. Another option is that the context requires more to maintain the infrastructure."
+      b233:	"Water quality is acceptable and the service is reasonably reliable. The total recurrent annual expenditure is within WASHCost benchmarks."
+      b234:	"Water quality is acceptable and the service is very reliable. The total recurrent annual expenditure is within WASHCost benchmarks."
+      b241:	"Water quality is good, however, the service provided suffers unacceptable periods of down time. Recurrent expenditure values are within found WASHCost ranges so factors other than recurrent costs are influencing the maintenance of the service. Another option is that the context requires more to maintain the infrastructure. "
+      b242:	"Water quality is good, however, the service provided suffers prolonged periods of down time. Recurrent expenditure values are within found WASHCost ranges so factors other than recurrent costs are influencing the maintenance of the service. Another option is that the context requires more to maintain the infrastructure. "
+      b243:	"Water quality is good and the service is reasonably reliable. The total recurrent annual expenditure is within WASHCost benchmarks."
+      b244:	"Water quality is good and the service is very reliable. The total recurrent annual expenditure is within WASHCost benchmarks."
+      b311:	"Water quality is unacceptable, lives may be at risk. Further the service provided suffers unacceptable periods of down time. Recurrent expenditure values are higher than found WASHCost ranges. There are two possibilities: the context is exceptional and requires specific measures to address water quality and reliability and/or factors other than costs are having a significant impact on service delivery. "
+      b312:	"Water quality is unacceptable, lives may be at risk. Further the service provided suffers prolonged periods of down time. Recurrent expenditure values are higher than found WASHCost ranges. There are two possibilities: the context is exceptional and requires specific measures to address water quality and reliability and/or factors other than costs are having a significant impact on service delivery. "
+      b313:	"Even though the service is reliable, water quality is unacceptable and lives may be at risk. Recurrent expenditure values are higher than found WASHCost ranges. There are two possibilities: the context is exceptional and requires specific measures to address water quality and/or factors other than costs are having a significant impact on service delivery. "
+      b314:	"Even though the service is very reliable, water quality is unacceptable and lives may be at risk. Recurrent expenditure values are higher than found WASHCost ranges. There are two possibilities: the context is exceptional and requires specific measures to address water quality and/or factors other than costs are having a significant impact on service delivery. "
+      b321:	"Water quality is problematic, lives may be at risk. Further the service provided suffers unacceptable periods of down time. Recurrent expenditure values are higher than found WASHCost ranges. There are two possibilities: the context is exceptional and requires specific measures to address water quality and reliability and/or factors other than costs are having a significant impact on service delivery. "
+      b322:	"Water quality is problematic, lives may be at risk. Further the service provided suffers prolonged periods of down time. Recurrent expenditure values are higher than found WASHCost ranges. There are two possibilities: the context is exceptional and requires specific measures to address water quality and reliability and/or factors other than costs are having a significant impact on service delivery. "
+      b323:	"Even though the service is reliable, water quality is problematic and lives may be at risk. Recurrent expenditure values are higher than found WASHCost ranges. There are two possibilities: the context is exceptional and requires specific measures to address water quality and/or factors other than costs are having a significant impact on service delivery. "
+      b324:	"Even though the service is very reliable, water quality is problematic and lives may be at risk.  Recurrent expenditure values are higher than found WASHCost ranges. There are two possibilities: the context is exceptional and requires specific measures to address water quality and/or factors other than costs are having a significant impact on service delivery. "
+      b331:	"Water quality is acceptable, however, the service provided suffers unacceptable periods of down time. Recurrent expenditure values are higher than found WASHCost ranges. There are two possibilities: the context is exceptional and requires specific measures to address reliability and/or factors other than costs are having a significant impact on service delivery. "
+      b332:	"Water quality is acceptable, however, the service provided suffers prolonged periods of down time. Recurrent expenditure values are higher than found WASHCost ranges. There are two possibilities: the context is exceptional and requires specific measures to address reliability and/or factors other than costs are having a significant impact on service delivery. "
+      b333:	"Water quality is acceptable and the service is reasonably reliable. The total recurrent annual expenditure is higher than WASHCost benchmarks. The context may require more expensive maintenance and support, or the service could be run more efficiently."
+      b334:	"Water quality is acceptable and the service is very reliable. The total recurrent annual expenditure is higher than WASHCost benchmarks perhaps resulting in higher levels of service. Alternatively, the context may require more expensive maintenance and support, or the service could be run more efficiently."
+      b341:	"Water quality is good, however, the service provided suffers unacceptable periods of down time. Recurrent expenditure values are higher than found WASHCost ranges. There are two possibilities: the context is exceptional and requires specific measures to address reliability and/or factors other than costs are having a significant impact on service delivery. "
+      b342:	"Water quality is good, however, the service provided suffers prolonged periods of down time. Recurrent expenditure values are higher than found WASHCost ranges. There are two possibilities: the context is exceptional and requires specific measures to address reliability and/or factors other than costs are having a significant impact on service delivery. "
+      b343: "f-Water quality is good and the service is reasonably reliable. The total recurrent annual expenditure is higher than WASHCost benchmarks. The context may require more expensive maintenance and support, or the service could be run more efficiently."
+      b344: "f-Water quality is good and the service is very reliable. The total recurrent annual expenditure is higher than WASHCost benchmarks perhaps contributing to the very high levels of service. Alternatively, the context may require more expensive maintenance and support, or the service could be run more efficiently."
     water_advanced:
       general:
         title: "f-GENERAL FEEDBACK"
@@ -468,11 +609,81 @@ ef:
         payback:
           title: "f-Payback period on this loan"
           unit: "f-Years"
+    sanitation_basic:
+      a111:	"There is a high incidence of open defecation as latrines are not being used. Additionally, if there are latrines, these are not being cleaned or emptied. Barely any money is being spent on recurrent annual expenditure  and as a result the service has failed and live may be at risk!"
+      a113:	"Although existing latrines are reasonably clean, there is a high incidence of open defecation as latrines are not being used. Barely any money is being spent on recurrent annual expenditure, specifically on maintaining or improving behaviour change for latrine use. Lives may be at risk!"
+      a114:	"Although existing latrines are routinely cleaned, there is a high incidence of open defecation as latrines are not being used. Barely any money is being spent on recurrent annual expenditure, specifically on maintaining or improving behaviour change for latrine use. Lives may be at risk!"
+      a131:	"The facilities are being used by some household members. However, latrines are not being cleaned or emptied and may pose a health risk.  Barely any money is being spent on recurrent annual expenditure  to ensure basic maintenance of the latrine."
+      a133:	"Existing latrines are reasonably clean and facilities are being used by some household members. The total recurrent annual expenditure is lower than WASHCost benchmarks there might be context specific reasons for this but consider validating the data inputted. "
+      a134:	"Existing latrines are routinely cleaned and emptied. Facilities are being used by some household members. The total recurrent annual expenditure is lower than WASHCost benchmarks there might be context specific reasons for this but consider validating the data inputted. "
+      a141:	"The facilities are being used by all household members. However, latrines are not being cleaned or emptied and may pose a health risk.  Barely any money is being spent on recurrent annual expenditure  to ensure basic maintenance of the latrine."
+      a143:	"Existing latrines are reasonably clean and facilities are being used by all household members. The total recurrent annual expenditure is lower than WASHCost benchmarks there might be context specific reasons for this but consider validating the data inputted. "
+      a144:	"Existing latrines are routinely cleaned and emptied. Facilities are being used by all household members. The total recurrent annual expenditure is lower than WASHCost benchmarks there might be context specific reasons for this but consider validating the data inputted. "
+      a211:	"There is a high incidence of open defecation as latrines are not being used. Additionally, if there are latrines, these are not being cleaned or emptied.  Recurrent annual expenditure is within WASHCost benchmarks so factors other than recurrent costs are influencing the service. Another possibility is that the context requires more recurrent expenditure to promote latrine use and maintenance."
+      a213:	"Although existing latrines are reasonably clean, there is a high incidence of open defecation as latrines are not being used. Recurrent annual expenditure is within WASHCost benchmarks so factors other than recurrent costs are influencing the service. Another possibility is that the context requires more recurrent expenditure to promote latrine use."
+      a214:	"Although existing latrines are routinely cleaned, there is a high incidence of open defecation as latrines are not being used. Recurrent annual expenditure is within WASHCost benchmarks so factors other than recurrent costs are influencing the service. Another possibility is that the context requires more recurrent expenditure to promote latrine use."
+      a231:	"The facilities are being used by some household members. However, latrines are not being cleaned or emptied and may pose a health risk.  Recurrent annual expenditure is within WASHCost benchmarks so factors other than recurrent costs are influencing the service. Another possibility is that the context requires more recurrent expenditure to promote latrine maintenance."
+      a233:	"Existing latrines are reasonably clean and facilities are being used by some household members. Recurrent annual expenditure is within WASHCost benchmarks."
+      a234:	"Existing latrines are routinely cleaned and emptied. Facilities are being used by some household members. Recurrent annual expenditure is within WASHCost benchmarks."
+      a241:	"The facilities are being used by all household members. However, latrines are not being cleaned or emptied and may pose a health risk.  Recurrent annual expenditure is within WASHCost benchmarks so factors other than recurrent costs are influencing the service. Another possibility is that the context requires more recurrent expenditure to promote latrine maintenance."
+      a243:	"Existing latrines are reasonably clean and facilities are being used by all household members. Recurrent annual expenditure is within WASHCost benchmarks."
+      a244:	"Existing latrines are routinely cleaned and emptied. Facilities are being used by all household members. Recurrent annual expenditure is within WASHCost benchmarks."
+      a311:	"There is a high incidence of open defecation as latrines are not being used. Additionally, if there are latrines, these are not being cleaned or emptied.  Recurrent annual expenditure is higher than WASHCost benchmarks so factors other than recurrent costs are influencing the service.  There are two possibilities, the context is exceptional and requires specific measure to address latrine use and maintenance and/or factors other than costs are having a significant impact on service delivery."
+      a313:	"Although existing latrines are reasonably clean, there is a high incidence of open defecation as latrines are not being used. Recurrent annual expenditure is higher than WASHCost benchmarks so factors other than recurrent costs are influencing the service.  There are two possibilities, the context is exceptional and requires specific measure to address latrine use and/or factors other than costs are having a significant impact on service delivery."
+      a314:	"Although existing latrines are routinely cleaned, there is a high incidence of open defecation as latrines are not being used. Recurrent annual expenditure is higher than WASHCost benchmarks so factors other than recurrent costs are influencing the service.  There are two possibilities, the context is exceptional and requires specific measure to address latrine use and/or factors other than costs are having a significant impact on service delivery."
+      a331:	"The facilities are being used by some household members. However, latrines are not being cleaned or emptied and may pose a health risk.  Recurrent annual expenditure is higher than WASHCost benchmarks so factors other than recurrent costs are influencing the service.  There are two possibilities, the context is exceptional and requires specific measure to address latrine maintenance and/or factors other than costs are having a significant impact on service delivery."
+      a333:	"Existing latrines are reasonably clean and facilities are being used by some household members. Recurrent annual expenditure is higher than WASHCost benchmarks. The context may require high levels of mobilisation for latrine use and maintenance or the service could be run more efficiently."
+      a334:	"Existing latrines are routinely cleaned and emptied. Facilities are being used by some household members. Recurrent annual expenditure is higher than WASHCost benchmarks perhaps resulting in higher levels of service. Alternatively the context may require high levels of mobilisation for latrine use and maintenance or the service could be run more efficiently."
+      a341:	"The facilities are being used by all household members. However, latrines are not being cleaned or emptied and may pose a health risk. Recurrent annual expenditure is higher than WASHCost benchmarks so factors other than recurrent costs are influencing the service.  There are two possibilities, the context is exceptional and requires specific measure to address latrine maintenance and/or factors other than costs are having a significant impact on service delivery."
+      a343:	"Existing latrines are reasonably clean and facilities are being used by all household members. Recurrent annual expenditure is higher than WASHCost benchmarks. The context may require high levels of mobilisation for latrine use and maintenance or the service could be run more efficiently."
+      a344:	"Existing latrines are routinely cleaned and emptied. Facilities are being used by all household members. Recurrent annual expenditure is higher than WASHCost benchmarks perhaps resulting in higher levels of service. Alternatively the context may require high levels of mobilisation for latrine use and maintenance or the service could be run more efficiently."
+      b111:	"These facilities do not provide adequate separation between users and faeces and it is causing significant environmental pollution, live may be at risk! This may be due to insufficient capital expenditure, which is well below WASHCost benchmarks or other factors other than costs are influencing service delivery."
+      b113:	These facilities do not provide adequate separation between users and faeces. However due to context, there is no problematic environmental impact, and therefore faeces are disposed of safely. This may be due to insufficient capital expenditure, which is well below WASHCost benchmarks or other factors other than costs are influencing service delivery.
+      b114:	These facilities do not provide adequate separation between users and faeces. However due to context, there is no problematic environmental impact, and faeces are being re-used safely. This may be due to insufficient capital expenditure, which is well below WASHCost benchmarks or other factors other than costs are influencing service delivery.
+      b131:	These facilities have a cement or impermeable slab providing adequate separation between users and faeces, however it is causing significant environmental pollution and lives may be at risk! This may be due to insufficient capital expenditure  which is well below WASHCost benchmarks or other factors other than costs are influencing service delivery.
+      b133:	The capital expenditure entered is lower than WASHCost benchmarks yet these facilities have a cement or impermeable slab providing adequate separation between users and faeces and there is no problematic environmental impact. Are there any reasons for this?
+      b134:	The capital expenditure entered is lower than WASHCost benchmarks yet these facilities have a cement or impermeable slab providing adequate separation between users and faeces. The by-products from the facilities are also being re-used safely. Are there any reasons for this?
+      b141:	These facilities have a cement or impermeable slab providing adequate separation between users and faeces within the compound, however it is causing significant environmental pollution and lives may be at risk! This may be due to insufficient capital expenditure  which is well below WASHCost benchmarks or other factors other than costs are influencing service delivery.
+      b143:	The capital expenditure entered is lower than WASHCost benchmarks yet these facilities have a cement or impermeable slab providing adequate separation between users within the compound and faeces and there is no problematic environmental impact. Are there any reasons for this?
+      b144:	The capital expenditure entered is lower than WASHCost benchmarks yet these facilities have a cement or impermeable slab providing adequate separation between users and faeces within the compound. The by-products from the facilities are also being re-used safely. Are there any reasons for this?
+      b211:	These facilities do not provide adequate separation between users and faeces and it is causing significant environmental pollution, live may be at risk! Capital expenditure is within WASHCost benchmarks, factors other than costs are influencing service delivery or the context requires more expensive infrastructure.
+      b213:	These facilities do not provide adequate separation between users and faeces. However due to context, there is no problematic environmental impact, and therefore faeces are disposed of safely. Capital expenditure is within WASHCost benchmarks, factors other than costs are influencing access to adequate facilities or the context requires more expensive infrastructure.
+      b214:	These facilities do not provide adequate separation between users and faeces. However due to context, there is no problematic environmental impact, and faeces are being re-used safely. Capital expenditure is within WASHCost benchmarks, factors other than costs are influencing access to adequate facilities or the context requires more expensive infrastructure.
+      b231:	These facilities have a cement or impermeable slab providing adequate separation between users and faeces, however it is causing significant environmental pollution and lives may be at risk! Capital expenditure is within WASHCost benchmarks, factors other than costs are influencing environmental safety or the context requires more expensive infrastructure.
+      b233:	The capital expenditure entered is within WASHCost benchmarks and these facilities have a cement or impermeable slab providing adequate separation between users and faeces and there is no problematic environmental impact.
+      b234:	The capital expenditure entered is within WASHCost benchmarks and these facilities have a cement or impermeable slab providing adequate separation between users and faeces. The by-products from the facilities are also being re-used safely.
+      b241:	These facilities have a cement or impermeable slab providing adequate separation between users and faeces within the compound, however it is causing significant environmental pollution and lives may be at risk! Capital expenditure is within WASHCost benchmarks, factors other than costs are influencing environmental safety or the context requires more expensive infrastructure.
+      b243:	The capital expenditure entered is within WASHCost benchmarks and these facilities have a cement or impermeable slab providing adequate separation between users within the compound and faeces and there is no problematic environmental impact.
+      b244:	The capital expenditure entered is within WASHCost benchmarks and these facilities have a cement or impermeable slab providing adequate separation between users and faeces within the compound. The by-products from the facilities are also being re-used safely.
+      b311:	These facilities do not provide adequate separation between users and faeces and it is causing significant environmental pollution, live may be at risk! Capital expenditure is higher than WASHCost benchmarks, factors other than costs are influencing service delivery and/or the context is exceptional and requires more expensive infrastructure.
+      b313:	These facilities do not provide adequate separation between users and faeces. However due to context, there is no problematic environmental impact, and therefore faeces are disposed of safely. Capital expenditure is higher than WASHCost benchmarks, factors other than costs are influencing access to adequate facilities and/or the context is exceptional and requires more expensive infrastructure.
+      b314:	These facilities do not provide adequate separation between users and faeces. However due to context, there is no problematic environmental impact, and faeces are being re-used safely. Capital expenditure is higher than WASHCost benchmarks, factors other than costs are influencing access to adequate facilities and/or the context is exceptional and requires more expensive infrastructure.
+      b331:	These facilities have a cement or impermeable slab providing adequate separation between users and faeces, however it is causing significant environmental pollution and lives may be at risk! Capital expenditure is higher than WASHCost benchmarks, factors other than costs are influencing environmental safety or the context is exceptional and requires more expensive infrastructure.
+      b333:	The capital expenditure entered is higher than WASHCost benchmarks and these facilities have a cement or impermeable slab providing adequate separation between users and faeces and there is no problematic environmental impact. The context may be exceptional and requires more expensive infrastructure or cost efficiency can be improved.
+      b334:	The capital expenditure entered is higher than WASHCost benchmarks and these facilities have a cement or impermeable slab providing adequate separation between users and faeces. The by-products from the facilities are also being re-used safely. A higher level of service is being achieved or the context may be exceptional and requires more expensive infrastructure. Another possibility is that cost efficiency can be improved.
+      b341:	These facilities have a cement or impermeable slab providing adequate separation between users and faeces within the compound, however it is causing significant environmental pollution and lives may be at risk! Capital expenditure is higher than WASHCost benchmarks, factors other than costs are influencing environmental safety or the context is exceptional and requires more expensive infrastructure.
+      b343:	The capital expenditure entered is higher than WASHCost benchmarks and these facilities have a cement or impermeable slab providing adequate separation between users within the compound and faeces and there is no problematic environmental impact. The context may be exceptional and requires more expensive infrastructure or cost efficiency can be improved.
+      b344:	The capital expenditure entered is within WASHCost benchmarks and these facilities have a cement or impermeable slab providing adequate separation between users and faeces within the compound. The by-products from the facilities are also being re-used safely. A very good level of service is being achieved or the context may be exceptional and requires more expensive infrastructure. Another possibility is that cost efficiency can be improved.
 
 
-    cross_to_water: "cross to water"
+    substandard: "f-Sub-Standard"
+    distance: "f-Distance"
+    time:
+      minutes: "f-min"
+    less_than: "f-Less than"
+    no_specifed: "f-No specified"
+    save_your_report: "f-Save Your Report"
+    report_saved: "f-Your report was %{action} successfully"
+    sanitation_final_report: "f-basic water | final report"
+    created_successsfully: "f-Your report was created successfully"
+    updated_successsfully: "f-Your report was updated successfully"
+    cost_box_no_value: "f-Looks like you need answer more cost questions to get a final cost report. Go back and add more answer about your cost service delivery"
+    report_box_no_value: "f-Looks like you need answer more questions to get a final report. Go back and add more answer about your service delivery"
   footer:
     footer_layout: "f-Basic"
-    final_report: "f- | Final Reports"
+    final_report: " | f-Final Reports"
     complete: "f-Complete"
-
+    water_basic: "f-Basic Water Report"
+    sanitation_basic: "f-Basic Sanitation Report"
+    footer_layout_sanitation: "f-Sanitation"
+  register_if_acces_to_cuesstinaire_view: "f-You must be registered if you want access to basic tool"

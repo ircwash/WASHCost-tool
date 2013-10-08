@@ -11,6 +11,7 @@ class HomeController < ApplicationController
 
   def calculator
     @selection = Selection::ToolSelection.new(params[:selection])
+    I18n.locale =  @selection.lang
     case @selection.index
       when 0
         session[:water_basic_form] = {}

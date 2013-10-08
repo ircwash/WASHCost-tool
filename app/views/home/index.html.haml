@@ -35,9 +35,11 @@
                   = radio_button_tag('type', '1', false, id: 'advanced_tool')
   .row.tool-selector-container
     .large-6.large-offset-3.medium-6.medium-offset-3.small-6.small-offset-3.columns
-      = simple_form_for Selection::ToolSelection.new, url: '/home/calculator', as: :selection  do |f|
+      = simple_form_for Selection::ToolSelection.new, url: '/home/calculator', as: :selection do |f|
         = f.input :tool_name, :as => :hidden, :input_html => { :value => '0' }
         = f.input :tool_type, :as => :hidden, :input_html => { :value => '0' }
+        = f.input :lang, :as => :hidden, :input_html => { :value => locale }
+
         .tool-selection-submit.text-center
           = f.button :submit, t('buttons.start'), class: 'medium button expand button-landing-page button-landing-page-size'
 
