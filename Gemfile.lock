@@ -86,6 +86,9 @@ GEM
       warden (~> 1.2.1)
     diff-lcs (1.2.4)
     diffy (3.0.1)
+    ember-rails (0.4.0)
+      execjs (>= 1.2)
+      railties (~> 3.1)
     erubis (2.7.0)
     eventmachine (1.0.1)
     execjs (1.4.0)
@@ -297,6 +300,7 @@ DEPENDENCIES
   countries
   database_cleaner
   devise
+  ember-rails
   factory_girl_rails
   faker
   haml
