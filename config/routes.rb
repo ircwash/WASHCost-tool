@@ -21,6 +21,12 @@ WashCostApp::Application.routes.draw do
     end
   end
 
+  namespace :advanced do
+    namespace :questionnaire do
+      resources :questions
+    end
+  end
+
   namespace :basic do
     resource :reports do
       member do
