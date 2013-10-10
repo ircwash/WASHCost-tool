@@ -1,3 +1,5 @@
 class Scheme
-  # To change this template use File | Settings | File Templates.
+  field :name, type: String
+
+  embedded_in :schemeable, polymorphic: true
 end

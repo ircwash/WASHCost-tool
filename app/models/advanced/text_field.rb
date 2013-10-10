@@ -1,3 +1,10 @@
-class TextField
-  # To change this template use File | Settings | File Templates.
+class Advanced::TextField < Advanced::Scheme
+
+  include Mongoid::Document
+
+  field :placeholder,         type: String
+  field :enable_dont_know,    type: Boolean
+
+  embedded_in :schemeable, polymorphic: true
+
 end
