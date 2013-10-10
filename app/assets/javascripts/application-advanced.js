@@ -12,15 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require ./advanced/vendor/handlebars
 //= require ./advanced/vendor/ember
+//= require ./advanced/vendor/ember-data
+//= require_self
+//= require ./advanced/app/app
 //= require_tree ./advanced/lib
-//= require advanced/app/app
-//= require_tree ./advanced/app/models
-//= require_tree ./advanced/app/controllers
-//= require_tree ./advanced/app/views
-//= require_tree ./advanced/app/helpers
-//= require_tree ./advanced/app/templates
 //= require foundation
 //= require common/index
 
+App = Ember.Application.create();
 $(function(){ $(document).foundation(); });
+
+
+
