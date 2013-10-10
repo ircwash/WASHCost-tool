@@ -1,4 +1,4 @@
-class Advanced::Select < Advanced::Scheme
+class Advanced::Questionnaire::Schemes::Select < Advanced::Questionnaire::Schemes::Base
 
   include Mongoid::Document
 
@@ -6,7 +6,5 @@ class Advanced::Select < Advanced::Scheme
   field :options,             type: Array
   field :enable_dont_know,    type: Boolean
   field :enable_blankm,       type: Boolean
-
-  embedded_in :schemeable, polymorphic: true
 
 end
