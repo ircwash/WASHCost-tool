@@ -16,7 +16,7 @@ gem 'active_attr'
 #gem 'zurb-foundation'
 gem 'high_voltage'
 gem 'money'
-gem 'ember-rails'
+#gem 'ember-rails'
 
 group :development, :test do
   gem 'ruby-prof'
@@ -52,6 +52,10 @@ group :assets do
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 
   gem 'uglifier', '>= 1.0.3'
+
+  gem 'ember-rails', github: 'emberjs/ember-rails'
+  gem 'ember-source'
+  gem 'handlebars-source'
 end
 
 gem 'jquery-ui-sass-rails'

@@ -1,4 +1,6 @@
-App.IndexRoute = Ember.Route.extend(model: ->
-  store = @get("store")
-  store.find "question"
+App.QuestionsRoute = Ember.Route.extend(model: ->
+
+  # request all contacts from adapter
+  App.Question.find()
+
 )

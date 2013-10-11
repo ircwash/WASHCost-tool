@@ -12,16 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require ./advanced/vendor/handlebars
-//= require ./advanced/vendor/ember
-//= require ./advanced/vendor/ember-data
+//= require handlebars
+//= require ember
+//= require ember-data
 //= require_self
 //= require ./advanced/app/app
 //= require_tree ./advanced/lib
 //= require foundation
 //= require common/index
 
-App = Ember.Application.create();
+App = Em.Application.create({LOG_TRANSITIONS: true});
 $(function(){ $(document).foundation(); });
 
 

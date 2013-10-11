@@ -8,20 +8,20 @@ User.find_or_create_by(first_name: 'allan', last_name: 'britto', email: 'test@te
 
 puts 'Add Advanced::Questionnaire::Questions...'
 q = Advanced::Questionnaire::Question.find_or_create_by(caption: 'Country?', section: 'context', numeric_reference: 1)
-q.scheme = Advanced::Questionnaire::Schemes::TextField.new(placeholder: 'placeholder 1', enable_dont_know: true)
-q.save
+#q.scheme = Advanced::Questionnaire::Schemes::TextField.new(placeholder: 'placeholder 1', enable_dont_know: true)
+#q.save
 q = Advanced::Questionnaire::Question.find_or_create_by(caption: 'Region?', section: 'context', numeric_reference: 2)
-q.scheme = Advanced::Questionnaire::Schemes::TextField.new(placeholder: 'placeholder 2', enable_dont_know: true)
-q.save
+#q.scheme = Advanced::Questionnaire::Schemes::TextField.new(placeholder: 'placeholder 2', enable_dont_know: true)
+#q.save
 q = Advanced::Questionnaire::Question.find_or_create_by(caption: 'City/town name?', section: 'context', numeric_reference: 3)
-q.scheme = Advanced::Questionnaire::Schemes::TextField.new(placeholder: 'placeholder 3', enable_dont_know: true)
-q.save
+#q.scheme = Advanced::Questionnaire::Schemes::TextField.new(placeholder: 'placeholder 3', enable_dont_know: true)
+#q.save
 q = Advanced::Questionnaire::Question.find_or_create_by(caption: 'How many people is the water system(s) expected to serve?', section: 'context', numeric_reference: 4)
-q.scheme = Advanced::Questionnaire::Schemes::TextField.new(placeholder: 'placeholder 4', enable_dont_know: true)
-q.save
+#q.scheme = Advanced::Questionnaire::Schemes::TextField.new(placeholder: 'placeholder 4', enable_dont_know: true)
+#q.save
 q = Advanced::Questionnaire::Question.find_or_create_by(caption: 'How many people are actually being served by the water system(s)?', section: 'context', numeric_reference: 5)
-q.scheme = Advanced::Questionnaire::Schemes::TextField.new(placeholder: 'placeholder 5', enable_dont_know: true)
-q.save
+#q.scheme = Advanced::Questionnaire::Schemes::TextField.new(placeholder: 'placeholder 5', enable_dont_know: true)
+#q.save
 #q = Advanced::Questionnaire::Question.find_or_create_by(caption: 'Description of area type?', section: 'context', numeric_reference: 6)
 #q = Advanced::Questionnaire::Question.find_or_create_by(caption: 'What is the population density of the service area?', section: 'context', numeric_reference: 7)
 #q = Advanced::Questionnaire::Question.find_or_create_by(caption: 'Which of these options best describes how the water service is managed?', section: 'system management', numeric_reference: 8)

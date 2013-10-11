@@ -1,3 +1,3 @@
-App.QuestionsController = Ember.ArrayController.extend(
-  sortProperties: ["numeric_reference"]
+App.QuestionsController = Em.ArrayController.extend(
+  sortProperties: ["caption"]
 )
