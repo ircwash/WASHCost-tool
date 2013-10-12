@@ -17,6 +17,7 @@ gem 'active_attr'
 gem 'high_voltage'
 gem 'money'
 #gem 'ember-rails'
+gem 'active_model_serializers'
 
 group :development, :test do
   gem 'ruby-prof'

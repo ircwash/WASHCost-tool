@@ -1,3 +1,3 @@
 App.QuestionsController = Em.ArrayController.extend(
-  sortProperties: ["caption"]
+  sortProperties: ['numeric_reference']
 )

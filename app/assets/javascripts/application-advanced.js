@@ -15,13 +15,12 @@
 //= require handlebars
 //= require ember
 //= require ember-data
-//= require_self
-//= require ./advanced/app/app
 //= require_tree ./advanced/lib
+//= require app-ember
 //= require foundation
 //= require common/index
+//= require_self
 
-App = Em.Application.create({LOG_TRANSITIONS: true});
 $(function(){ $(document).foundation(); });
 
 
