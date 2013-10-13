@@ -1,6 +1,7 @@
 class Advanced::Questionnaire::QuestionSerializer < ActiveModel::Serializer
 
-  attributes :caption,
+  attributes :id,
+             :caption,
              :information,
              :numeric_reference,
              :section
