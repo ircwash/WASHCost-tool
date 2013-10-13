@@ -18,7 +18,6 @@
 //= require_tree ./advanced/lib
 //= require ./ember-app/app
 //= require foundation
-//= require common/index
 //= require_self
 
 $(function(){ $(document).foundation(); });
