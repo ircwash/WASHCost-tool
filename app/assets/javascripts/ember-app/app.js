@@ -9,9 +9,17 @@
 //= require_tree ./routes
 
 
-App = Em.Application.create({
+window.App = Em.Application.create({
     LOG_TRANSITIONS: true,
     LOG_TRANSITIONS_INTERNAL: true,
     LOG_ACTIVE_GENERATION: true,
-    LOG_VIEW_LOOKUPS: true
+    LOG_VIEW_LOOKUPS: true,
+    name: "app",
+    Resolver: Ember.DefaultResolver.extend({
+    resolveTemplate: function(parsedName) {
+      parsedName.fullNameWithoutType = "ember-app/" + parsedName.fullNameWithoutType;
+      return this._super(parsedName);
+    }
+  })
 });
+

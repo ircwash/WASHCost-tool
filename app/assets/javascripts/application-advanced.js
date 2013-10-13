@@ -16,7 +16,7 @@
 //= require ember
 //= require ember-data
 //= require_tree ./advanced/lib
-//= require app-ember
+//= require ./ember-app/app
 //= require foundation
 //= require common/index
 //= require_self
