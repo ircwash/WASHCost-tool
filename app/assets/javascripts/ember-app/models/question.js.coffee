@@ -3,4 +3,5 @@ App.Question = DS.Model.extend(
   information: DS.attr("string")
   numeric_reference: DS.attr("number")
   section: DS.belongsTo('App.Section')
+  scheme: DS.attr("string")
 )

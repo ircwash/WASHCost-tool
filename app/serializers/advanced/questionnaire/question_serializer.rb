@@ -5,4 +5,6 @@ class Advanced::Questionnaire::QuestionSerializer < ActiveModel::Serializer
              :information,
              :numeric_reference
 
+  has_one :scheme, polymorphic: true
+
 end

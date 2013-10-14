@@ -6,8 +6,9 @@
     {{#if questions.length}}
         <dt>Questions:</dt>
         <dd>
-            {{#each phoneNumber in questions}}
-                <div>{{phoneNumber.caption}}</div>
+            {{#each question in questions}}
+                <div>{{question.caption}}</div>
+                <div>{{question.scheme}}</div>
             {{/each}}
         </dd>
     {{/if}}

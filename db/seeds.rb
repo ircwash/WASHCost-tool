@@ -16,28 +16,32 @@ module Advanced
     puts 'Add Questions...'
     q = Question.find_or_create_by(caption: 'Country?', numeric_reference: 1)
     context_section.questions << q
-    #q.scheme = Schemes::TextField.new(placeholder: 'placeholder 1', enable_dont_know: true)
-    #q.save
+    q.scheme = Schemes::TextField.new(placeholder: 'placeholder 1', enable_dont_know: true)
+    q.save
     q = Question.find_or_create_by(caption: 'Region?', numeric_reference: 2)
     context_section.questions << q
-    #q.scheme = Schemes::TextField.new(placeholder: 'placeholder 2', enable_dont_know: true)
-    #q.save
+    q.scheme = Schemes::TextField.new(placeholder: 'placeholder 2', enable_dont_know: true)
+    q.save
     q = Question.find_or_create_by(caption: 'City/town name?', numeric_reference: 3)
     context_section.questions << q
-    #q.scheme = Schemes::TextField.new(placeholder: 'placeholder 3', enable_dont_know: true)
-    #q.save
+    q.scheme = Schemes::TextField.new(placeholder: 'placeholder 3', enable_dont_know: true)
+    q.save
     q = Question.find_or_create_by(caption: 'How many people is the water system(s) expected to serve?', numeric_reference: 4)
     context_section.questions << q
-    #q.scheme = Schemes::TextField.new(placeholder: 'placeholder 4', enable_dont_know: true)
-    #q.save
+    q.scheme = Schemes::TextField.new(placeholder: 'placeholder 4', enable_dont_know: true)
+    q.save
     q = Question.find_or_create_by(caption: 'How many people are actually being served by the water system(s)?', numeric_reference: 5)
     context_section.questions << q
-    #q.scheme = Schemes::TextField.new(placeholder: 'placeholder 5', enable_dont_know: true)
-    #q.save
+    q.scheme = Schemes::TextField.new(placeholder: 'placeholder 5', enable_dont_know: true)
+    q.save
     q = Question.find_or_create_by(caption: 'Description of area type?', numeric_reference: 6)
     context_section.questions << q
+    q.scheme = Schemes::TextField.new(placeholder: 'placeholder 6', enable_dont_know: true)
+    q.save
     q = Question.find_or_create_by(caption: 'What is the population density of the service area?', numeric_reference: 7)
     context_section.questions << q
+    q.scheme = Schemes::TextField.new(placeholder: 'placeholder 7', enable_dont_know: true)
+    q.save
     q = Question.find_or_create_by(caption: 'Which of these options best describes how the water service is managed?', numeric_reference: 8)
     system_management_section.questions << q
     q = Question.find_or_create_by(caption: 'Who finances the construction of the water system?', numeric_reference: 9)

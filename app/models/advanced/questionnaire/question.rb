@@ -9,6 +9,6 @@ class Advanced::Questionnaire::Question
 
   # Inverted polymorphic asociation, this points to Base class which is the parent class the another classes that
   # represent the real polymorphic relation (TextField, Select, etc) in their associated namespaces
-  #embeds_one :scheme, as: :schemeable, class_name: 'Advanced::Questionnaire::Schemes::Base'
+  embeds_one :scheme, as: :schemeable, class_name: 'Advanced::Questionnaire::Schemes::Base'
 
 end
