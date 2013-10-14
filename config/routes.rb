@@ -24,6 +24,7 @@ WashCostApp::Application.routes.draw do
   namespace :advanced do
     namespace :questionnaire do
       resources :questions
+      resources :sections
     end
   end
 
