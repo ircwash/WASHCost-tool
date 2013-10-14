@@ -3,6 +3,14 @@
         <dt>name:</dt>
         <dd>{{name}}</dd>
     {{/if}}
+    {{#if questions.length}}
+        <dt>Questions:</dt>
+        <dd>
+            {{#each phoneNumber in questions}}
+                <div>{{phoneNumber.caption}}</div>
+            {{/each}}
+        </dd>
+    {{/if}}
 </dl>
 
 
