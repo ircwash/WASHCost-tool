@@ -3,10 +3,7 @@
         <ul class="nav nav-list">
             <li class="nav-header">All contacts</li>
             {{#each question in controller}}
-                {{question.numeric_reference}}
-                {{question.caption}}
-                {{question.section}}
-                {{view App.QuestionView}}
+                {{view App.QuestionInListView contentBinding="question"}}
             {{/each}}
         </ul>
     </div>

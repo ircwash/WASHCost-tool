@@ -1,4 +1,4 @@
-# For more information see: http://emberjs.com/guides/routing/
-
-App.Router.map ()->
+App.Router.map ->
   @resource "questions", ->
+    @resource "question",
+      path: ":question_id"
