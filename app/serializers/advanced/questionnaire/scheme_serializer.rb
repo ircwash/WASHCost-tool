@@ -1,6 +1,6 @@
 class Advanced::Questionnaire::Scheme < ActiveModel::Serializer
 
-  attributes :id,
-             :type
+  embed :id
+  attributes :id
 
 end

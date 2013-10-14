@@ -1,4 +1,3 @@
-App.Scheme = DS.Model.extend(
-  type: DS.attr("string")
-  question: DS.belongsTo('App.Question')
-)
+#App.Scheme = DS.Model.extend(
+#  question: DS.belongsTo('App.Question')
+#)
