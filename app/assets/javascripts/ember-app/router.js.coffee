@@ -1,4 +1,4 @@
 App.Router.map ->
-  @resource "questions", ->
-    @resource "question",
-      path: ":question_id"
+  @resource "sections", ->
+    @resource "section",
+      path: ":section_id"

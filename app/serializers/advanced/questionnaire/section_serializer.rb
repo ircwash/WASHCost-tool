@@ -1,6 +1,7 @@
 class Advanced::Questionnaire::SectionSerializer < ActiveModel::Serializer
 
-  attributes :name
+  attributes :id,
+             :name
 
   has_many :questions, embed: :objects
 
