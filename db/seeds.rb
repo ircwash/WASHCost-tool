@@ -44,20 +44,36 @@ module Advanced
     q.save
     q = Question.find_or_create_by(caption: 'Which of these options best describes how the water service is managed?', numeric_reference: 8)
     system_management_section.questions << q
+    q.scheme = Schemes::TextField.new(placeholder: 'placeholder 7', enable_dont_know: true)
+    q.save
     q = Question.find_or_create_by(caption: 'Who finances the construction of the water system?', numeric_reference: 9)
     system_management_section.questions << q
+    q.scheme = Schemes::TextField.new(placeholder: 'placeholder 7', enable_dont_know: true)
+    q.save
     q = Question.find_or_create_by(caption: 'Who legally owns the water infrastructure?', numeric_reference: 10)
     system_management_section.questions << q
+    q.scheme = Schemes::TextField.new(placeholder: 'placeholder 7', enable_dont_know: true)
+    q.save
     q = Question.find_or_create_by(caption: 'Who safeguards the operation and maintenance of the infrastructure?', numeric_reference: 11)
     system_management_section.questions << q
+    q.scheme = Schemes::TextField.new(placeholder: 'placeholder 7', enable_dont_know: true)
+    q.save
     q = Question.find_or_create_by(caption: 'Who has/will have responsibility for checking and enforcing the standard of water services? ', numeric_reference: 12)
     system_management_section.questions << q
+    q.scheme = Schemes::TextField.new(placeholder: 'placeholder 7', enable_dont_know: true)
+    q.save
     q = Question.find_or_create_by(caption: 'Who covers the cost of rehabilitation when larger repairs are needed?', numeric_reference: 13)
     system_management_section.questions << q
+    q.scheme = Schemes::TextField.new(placeholder: 'placeholder 7', enable_dont_know: true)
+    q.save
     q = Question.find_or_create_by(caption: 'What is the average annual household income in the service area', numeric_reference: 14)
     system_management_section.questions << q
+    q.scheme = Schemes::TextField.new(placeholder: 'placeholder 7', enable_dont_know: true)
+    q.save
     q = Question.find_or_create_by(caption: 'What supply system(s) are used to deliver water services? ', numeric_reference: 15)
     system_characteristics_section.questions << q
+    q.scheme = Schemes::TextField.new(placeholder: 'placeholder 7', enable_dont_know: true)
+    q.save
   end
 end
 
