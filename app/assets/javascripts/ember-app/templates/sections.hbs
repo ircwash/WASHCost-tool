@@ -1,12 +1,12 @@
-<div class="span3">
-    <div class="well sidebar-nav">
-        <ul class="nav nav-list">
-            {{#each section in controller}}
-                {{view App.SectionInListView contentBinding="section"}}
-            {{/each}}
-        </ul>
-    </div>
+
+<div class="section-navbar">
+    <ul>
+        {{#each section in controller}}
+            {{view App.SectionInListView contentBinding="section"}}
+        {{/each}}
+    </ul>
 </div>
-<div class="span9">
+
+<div class="section-contanier">
     {{outlet}}
 </div>
