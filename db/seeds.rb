@@ -13,6 +13,8 @@ module Advanced
     context_section = Section.find_or_create_by(name: 'context')
     system_management_section =  Section.find_or_create_by(name: 'system management')
     system_characteristics_section = Section.find_or_create_by(name: 'system characteristics')
+    cost = Section.find_or_create_by(name: 'cost')
+    service_level = Section.find_or_create_by(name: 'service')
     puts 'Add Questions...'
     q = Question.find_or_create_by(caption: 'Country?', numeric_reference: 1)
     context_section.questions << q
