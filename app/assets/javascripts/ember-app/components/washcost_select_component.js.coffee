@@ -1,3 +1,4 @@
-App.WashcostTextfieldComponent = Ember.Component.extend(
-  tagName: "span"
+App.WashcostSelectComponent = Ember.Component.extend(
+  tagName: "div"
+  classNames: ['question select']
 )

@@ -21,6 +21,21 @@
             box-shadow: 0px 0px 5px #888888;
           }
         }
+        &.select{
+          padding: 10px;
+          .caption{
+            font-weight: bolder;
+            font-size: 16px;
+            color: rgb(88,88,88);
+            border-bottom: rgb(219,219,219) solid 3px;
+            margin-bottom: 20px;
+          }
+          .select-container{
+            margin-right: 10%;
+            margin-left: 10%;
+            width: 80%;
+          }
+        }
       }
     }
   }
