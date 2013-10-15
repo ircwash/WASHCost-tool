@@ -1,12 +1,13 @@
-<div class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container-fluid">
-      <div class="brand">{{#linkTo "sections"}}Ember Questions{{/linkTo}}</div>
+<div class="advanced-tool water">
+    <div class="row main-bar">
+        <div class="large-12 columns">
+            <div class="brand">{{#linkTo "sections"}}Advanced Questionnaire{{/linkTo}}</div>
+        </div>
     </div>
-  </div>
+    <div class="row">
+        <div class="large-12 columns">
+            {{outlet}}
+        </div>
+    </div>
 </div>
-<div class="container-fluid" id="main">
-  <div class="row-fluid">
-    {{outlet}}
-  </div>
-</div>
+
