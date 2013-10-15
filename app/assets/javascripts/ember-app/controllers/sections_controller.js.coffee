@@ -1,3 +1,1 @@
-App.SectionsController = Em.ArrayController.extend(
-  sortProperties: ['name']
-)
+App.SectionsController = Em.ArrayController.extend({})
