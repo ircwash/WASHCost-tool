@@ -16,7 +16,7 @@ module Advanced
     puts 'Add Questions...'
     q = Question.find_or_create_by(caption: 'Country?', numeric_reference: 1)
     context_section.questions << q
-    q.scheme = Schemes::TextField.new(placeholder: 'placeholder 1', enable_dont_know: true)
+    q.scheme = Schemes::Select.new(placeholder: 'placeholder 1', enable_dont_know: true, options: ['test', 'test1', 'test2', 'test3'])
     q.save
     q = Question.find_or_create_by(caption: 'Region?', numeric_reference: 2)
     context_section.questions << q
@@ -44,27 +44,27 @@ module Advanced
     q.save
     q = Question.find_or_create_by(caption: 'Which of these options best describes how the water service is managed?', numeric_reference: 8)
     system_management_section.questions << q
-    q.scheme = Schemes::TextField.new(placeholder: 'placeholder 7', enable_dont_know: true)
+    q.scheme = Schemes::Select.new(placeholder: 'placeholder 1', enable_dont_know: true, options: ["External donor", "Community-based management", "Public sector (local)", "Public sector (national)", "Private sector", "Utility management", "Household management", "Other"])
     q.save
     q = Question.find_or_create_by(caption: 'Who finances the construction of the water system?', numeric_reference: 9)
     system_management_section.questions << q
-    q.scheme = Schemes::TextField.new(placeholder: 'placeholder 7', enable_dont_know: true)
+    q.scheme = Schemes::Select.new(placeholder: 'placeholder 1', enable_dont_know: true, options: ["External donor", "Community-based management", "Public sector (local)", "Public sector (national)", "Private sector", "Utility management", "Household management", "Other"])
     q.save
     q = Question.find_or_create_by(caption: 'Who legally owns the water infrastructure?', numeric_reference: 10)
     system_management_section.questions << q
-    q.scheme = Schemes::TextField.new(placeholder: 'placeholder 7', enable_dont_know: true)
+    q.scheme = Schemes::Select.new(placeholder: 'placeholder 1', enable_dont_know: true, options: ["External donor", "Community-based management", "Public sector (local)", "Public sector (national)", "Private sector", "Utility management", "Household management", "Other"])
     q.save
     q = Question.find_or_create_by(caption: 'Who safeguards the operation and maintenance of the infrastructure?', numeric_reference: 11)
     system_management_section.questions << q
-    q.scheme = Schemes::TextField.new(placeholder: 'placeholder 7', enable_dont_know: true)
+    q.scheme = Schemes::Select.new(placeholder: 'placeholder 1', enable_dont_know: true, options: ["External donor", "Community-based management", "Public sector (local)", "Public sector (national)", "Private sector", "Utility management", "Household management", "Other"])
     q.save
     q = Question.find_or_create_by(caption: 'Who has/will have responsibility for checking and enforcing the standard of water services? ', numeric_reference: 12)
     system_management_section.questions << q
-    q.scheme = Schemes::TextField.new(placeholder: 'placeholder 7', enable_dont_know: true)
+    q.scheme = Schemes::Select.new(placeholder: 'placeholder 1', enable_dont_know: true, options: ["External donor", "Community-based management", "Public sector (local)", "Public sector (national)", "Private sector", "Utility management", "Household management", "Other"])
     q.save
     q = Question.find_or_create_by(caption: 'Who covers the cost of rehabilitation when larger repairs are needed?', numeric_reference: 13)
     system_management_section.questions << q
-    q.scheme = Schemes::TextField.new(placeholder: 'placeholder 7', enable_dont_know: true)
+    q.scheme = Schemes::Select.new(placeholder: 'placeholder 1', enable_dont_know: true, options: ["External donor", "Community-based management", "Public sector (local)", "Public sector (national)", "Private sector", "Utility management", "Household management", "Other"])
     q.save
     q = Question.find_or_create_by(caption: 'What is the average annual household income in the service area', numeric_reference: 14)
     system_management_section.questions << q
