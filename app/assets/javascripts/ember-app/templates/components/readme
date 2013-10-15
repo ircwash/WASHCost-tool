@@ -1,0 +1,8 @@
+##
+## Components Readme
+##
+## The components are indexed in views/advanced/water.html.erb, due the namespace of ember-app the ember core doesn't
+## recognized the location of components in this directory. Then , the solution consists in build the components over
+## here, but indexing this components through via <script> tags, and the component subclass is located in /components
+## directory
+##

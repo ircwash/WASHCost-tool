@@ -8,8 +8,8 @@
         <dd>
             {{#each question in questions}}
                 <div>{{question.caption}}</div>
-                <div>{{question.properties.placeholder}}</div>
                 <div>{{question.type}}</div>
+                {{washcost-test foo=question.properties.placeholder}}
             {{/each}}
         </dd>
     {{/if}}
