@@ -9,7 +9,9 @@
             {{#each question in questions}}
                 <div>{{question.caption}}</div>
                 <div>{{question.type}}</div>
-                {{washcost-test foo=question.properties.placeholder}}
+                {{#if question.isTextField}}
+                    {{washcost-textfield placeholder=question.properties.placeholder}}
+                {{/if}}
             {{/each}}
         </dd>
     {{/if}}

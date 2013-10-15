@@ -10,6 +10,14 @@ App.Question = DS.Model.extend(
   ).property("scheme")
   type: (->
     scheme = @get("scheme")
-    scheme.type
+    scheme.type.toString()
   ).property("scheme")
+  isTextField:(->
+    type = @get("type")
+    type is 'text_field'
+  ).property("type")
+  isSelect:(->
+    type = @get("type")
+    type is 'select'
+  ).property("type")
 )
