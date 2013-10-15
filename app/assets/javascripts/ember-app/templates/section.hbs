@@ -7,10 +7,8 @@
         <dt>Questions:</dt>
         <dd>
             {{#each question in questions}}
-                <div>{{question.caption}}</div>
-                <div>{{question.type}}</div>
                 {{#if question.isTextField}}
-                    {{washcost-textfield placeholder=question.properties.placeholder}}
+                    {{washcost-textfield number=question.numeric_reference caption=question.caption placeholder=question.properties.placeholder}}
                 {{/if}}
             {{/each}}
         </dd>
