@@ -1,14 +1,13 @@
 <dl class="dl-horizontal">
-    {{#if name}}
-        <dt>name:</dt>
-        <dd>{{name}}</dd>
-    {{/if}}
     {{#if questions.length}}
         <dt>Questions:</dt>
         <dd>
             {{#each question in questions}}
                 {{#if question.isTextField}}
-                    {{washcost-textfield number=question.numeric_reference caption=question.caption placeholder=question.properties.placeholder}}
+                    {{washcost-textfield question=question}}
+                {{/if}}
+                {{#if question.isSelect}}
+                    {{washcost-select question=question}}
                 {{/if}}
             {{/each}}
         </dd>
