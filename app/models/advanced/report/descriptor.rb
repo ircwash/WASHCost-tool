@@ -34,9 +34,9 @@ class Advanced::Report::Descriptor
   attribute :technologies
 
   def technologies_attributes=(_technologies)
-    technologies = []
-    technologies.keys.each do |index|
-      technologies << Advanced::Report::Technology.new(_technologies[index])
+    self.technologies = []
+    _technologies.keys.each do |index|
+      self.technologies << Advanced::Report::Technology.new(_technologies[index])
     end
   end
 
