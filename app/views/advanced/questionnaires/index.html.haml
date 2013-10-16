@@ -5,7 +5,7 @@
       Just for check the calculation process
     = simple_form_for @descriptor, url: save_advanced_reports_path do |f|
       = f.input :title
-      = f.input :sanitation_service_type
+      = f.input :sanitation_service_type, collection: ['Instsalled', 'Pre-existing', 'Don\'t Know'], include_blank: false
       = f.input :country
       = f.input :region
       = f.input :city
