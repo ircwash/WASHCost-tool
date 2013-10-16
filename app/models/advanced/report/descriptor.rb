@@ -32,11 +32,20 @@ class Advanced::Report::Descriptor
   attribute :average_household_size
   # Has many technologies
   attribute :technologies
+  # Service levels
+  attribute :service_levels
 
   def technologies_attributes=(_technologies)
     self.technologies = []
     _technologies.keys.each do |index|
       self.technologies << Advanced::Report::Technology.new(_technologies[index])
+    end
+  end
+
+  def service_levels_attributes=(_service_levels)
+    self.service_levels = []
+    _service_levels.keys.each do |index|
+      self.service_levels << Advanced::Report::ServiceLevel.new(_service_levels[index])
     end
   end
 

@@ -57,4 +57,18 @@
           = rc.input :loan_time
         = c.input :direct_support_spent
         = c.input :indirect_support_spent
+  .service_level
+    %h1 Service Levels
+    = f.fields_for :service_levels do |s|
+      %h3 Service Level
+      = s.input :accesibility_distance
+      = s.input :accesibility_queues
+      = s.input :accesibility_norms
+      = s.input :quantity_use
+      = s.input :quantity_norms
+      = s.input :quality_testing
+      = s.input :quality_norms
+      = s.input :reliability
+      = s.input :reliability_norms
+      = s.input :percentage_using
   = f.submit 'save', name: 'commit'

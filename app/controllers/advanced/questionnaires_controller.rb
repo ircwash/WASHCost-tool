@@ -10,6 +10,12 @@ class Advanced::QuestionnairesController < ApplicationController
       technology.costs.recurrent = Advanced::Report::RecurrentCost.new
       technologies << technology
     end
+    service_levels = []
+    3.times.each do ||
+      service_level = Advanced::Report::ServiceLevel.new
+      service_levels << service_level
+    end
     @descriptor.technologies = technologies
+    @descriptor.service_levels = service_levels
   end
 end
