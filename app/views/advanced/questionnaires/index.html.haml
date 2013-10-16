@@ -1,0 +1,26 @@
+= simple_form_for @descriptor, url: save_advanced_reports_path do |f|
+
+  = f.input :title
+  = f.input :sanitation_service_type
+  = f.input :country
+  = f.input :region
+  = f.input :city
+  = f.input :area_type
+  = f.input :population_density
+  = f.input :service_management
+  = f.input :service_financing
+  = f.input :service_maintenance
+  = f.input :service_standarization
+  = f.input :service_costing
+  = f.input :average_household_income
+  = f.input :average_household_size
+  .technology
+    = f.fields_for :technologies do |t|
+      .caption
+        %p Tecnology
+      = t.input :source_type
+      = t.input :number_of_systems
+      = t.input :expected_number_of_people
+      = t.input :server_number_of_people
+
+  = f.submit 'save', name: 'commit'
