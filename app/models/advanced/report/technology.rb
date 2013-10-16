@@ -10,10 +10,14 @@ class Advanced::Report::Technology
   attribute :server_number_of_people
   # Technology type
   attribute :water_source
+  # Costs
+  attribute :costs
 
   def water_source_attributes=(attributes)
     self.water_source = Advanced::Report::WaterSource.new(attributes)
   end
 
-
+  def costs_attributes=(attributes)
+    self.costs = Advanced::Report::Cost.new(attributes)
+  end
 end

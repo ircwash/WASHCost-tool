@@ -17,10 +17,44 @@
   .technology
     = f.fields_for :technologies do |t|
       .caption
-        %p Tecnology
-      = t.input :source_type
+        %h1 Tecnology
       = t.input :number_of_systems
       = t.input :expected_number_of_people
       = t.input :server_number_of_people
-
+      = t.fields_for :water_source do |w|
+        %h3 Water Source
+        = w.input :source
+        = w.input :primary_source
+        = w.input :common_pump
+        = w.input :storing
+        = w.input :treating
+        = w.input :supply
+        = w.input :length
+      = t.fields_for :costs do |c|
+        %h3 Costs
+        = c.fields_for :capital do |cc|
+          %h4 Capital Costs
+          = cc.input :hardware_total
+          = cc.input :source
+          = cc.input :pumping_facilities
+          = cc.input :transmission
+          = cc.input :distribution
+          = cc.input :storage
+          = cc.input :treatment
+          = cc.input :other
+          = cc.input :software_total
+        = c.fields_for :recurrent do |rc|
+          %h4 Recurrent Costs
+          = rc.input :total
+          = rc.input :salaries
+          = rc.input :electricity
+          = rc.input :material
+          = rc.input :administration
+          = rc.input :treatment
+          = rc.input :other
+          = rc.input :capital_maintenance_expenditure
+          = rc.input :loan_cost
+          = rc.input :loan_time
+        = c.input :direct_support_spent
+        = c.input :indirect_support_spent
   = f.submit 'save', name: 'commit'
