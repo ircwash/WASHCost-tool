@@ -1,4 +1,4 @@
-class Advanced::Report::Cost
+class Advanced::Tool::Cost
 
   include ActiveAttr::Model
 
@@ -12,11 +12,11 @@ class Advanced::Report::Cost
   attribute :indirect_support_spent
 
   def capital_attributes=(attributes)
-    self.capital = Advanced::Report::CapitalCost.new(attributes)
+    self.capital = Advanced::Tool::CapitalCost.new(attributes)
   end
 
   def recurrent_attributes=(attributes)
-    self.recurrent = Advanced::Report::RecurrentCost.new(attributes)
+    self.recurrent = Advanced::Tool::RecurrentCost.new(attributes)
   end
 
 end

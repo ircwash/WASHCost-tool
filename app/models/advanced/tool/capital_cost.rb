@@ -1,4 +1,4 @@
-class Advanced::Report::CapitalCost
+class Advanced::Tool::CapitalCost
 
   include ActiveAttr::Model
 

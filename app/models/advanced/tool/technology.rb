@@ -1,4 +1,4 @@
-class Advanced::Report::Technology
+class Advanced::Tool::Technology
 
   include ActiveAttr::Model
 
@@ -16,10 +16,10 @@ class Advanced::Report::Technology
   attribute :costs
 
   def water_source_attributes=(attributes)
-    self.water_source = Advanced::Report::WaterSource.new(attributes)
+    self.water_source = Advanced::Tool::WaterSource.new(attributes)
   end
 
   def costs_attributes=(attributes)
-    self.costs = Advanced::Report::Cost.new(attributes)
+    self.costs = Advanced::Tool::Cost.new(attributes)
   end
 end

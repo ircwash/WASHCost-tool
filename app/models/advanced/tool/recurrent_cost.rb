@@ -1,4 +1,4 @@
-class Advanced::Report::RecurrentCost
+class Advanced::Tool::RecurrentCost
 
   include ActiveAttr::Model
 

@@ -1,4 +1,4 @@
-class Advanced::Report::WaterSource
+class Advanced::Tool::WaterSource
 
   include ActiveAttr::Model
 

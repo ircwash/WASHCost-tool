@@ -1,4 +1,4 @@
-class Advanced::Report::ServiceLevel
+class Advanced::Tool::ServiceLevel
 
   include ActiveAttr::Model
 

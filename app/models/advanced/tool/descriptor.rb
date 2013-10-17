@@ -1,4 +1,4 @@
-class Advanced::Report::Descriptor
+class Advanced::Tool::Descriptor
 
   include ActiveAttr::Model
 
@@ -38,14 +38,14 @@ class Advanced::Report::Descriptor
   def technologies_attributes=(_technologies)
     self.technologies = []
     _technologies.keys.each do |index|
-      self.technologies << Advanced::Report::Technology.new(_technologies[index])
+      self.technologies << Advanced::Tool::Technology.new(_technologies[index])
     end
   end
 
   def service_levels_attributes=(_service_levels)
     self.service_levels = []
     _service_levels.keys.each do |index|
-      self.service_levels << Advanced::Report::ServiceLevel.new(_service_levels[index])
+      self.service_levels << Advanced::Tool::ServiceLevel.new(_service_levels[index])
     end
   end
 
