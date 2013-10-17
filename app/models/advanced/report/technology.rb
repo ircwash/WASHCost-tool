@@ -40,7 +40,7 @@ class Advanced::Report::Technology
   def capital_cost_by_design_population(total_design_population_served)
     total_capital_expenditure/(total_design_population_served || 1)
   end
-  
+
   def capital_cost_by_actual_population(total_actual_population_served)
     total_capital_expenditure/(total_actual_population_served || 1)
   end
