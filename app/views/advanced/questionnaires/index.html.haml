@@ -9,13 +9,13 @@
       = f.input :country
       = f.input :region
       = f.input :city
-      = f.input :area_type
-      = f.input :population_density
-      = f.input :service_management
-      = f.input :service_financing
-      = f.input :service_maintenance
-      = f.input :service_standarization
-      = f.input :service_costing
+      = f.input :area_type, collection: ['Rural', 'Small Town', 'Peri-Urban', 'Urban', 'Don\'t Know']
+      = f.input :population_density, collection: ['less than 150 inhabitants/km2', '>=300 inhabitants/km2']
+      = f.input :service_management, collection: ['External donor', 'Community-based management', 'Public sector (local)', 'Public sector (national)', 'Private sector', 'Utility management', 'Household management', 'Other'], as: :check_boxes
+      = f.input :service_financing, collection: ['External donor', 'Community-based management', 'Public sector (local)', 'Public sector (national)', 'Private sector', 'Utility management', 'Household management', 'Other'], as: :check_boxes
+      = f.input :service_maintenance, collection: ['External donor', 'Community-based management', 'Public sector (local)', 'Public sector (national)', 'Private sector', 'Utility management', 'Household management', 'Other'], as: :check_boxes
+      = f.input :service_standarization, collection: ['External donor', 'Community-based management', 'Public sector (local)', 'Public sector (national)', 'Private sector', 'Utility management', 'Household management', 'Other'], as: :check_boxes
+      = f.input :service_costing, collection: ['External donor', 'Community-based management', 'Public sector (local)', 'Public sector (national)', 'Private sector', 'Utility management', 'Household management', 'Other'], as: :check_boxes
       = f.input :average_household_income
       = f.input :average_household_size
       .technologies
