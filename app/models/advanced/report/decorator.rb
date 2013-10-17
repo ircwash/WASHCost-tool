@@ -1,4 +1,4 @@
-class Advanced::Report
+class Advanced::Report::Decorator
 
   include ActiveAttr::Model
 

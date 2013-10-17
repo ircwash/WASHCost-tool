@@ -1,4 +1,4 @@
-class Advanced::Calculator
+class Advanced::Report::Calculator
 
   include ActiveAttr::Model
 
