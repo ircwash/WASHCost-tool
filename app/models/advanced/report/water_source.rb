@@ -13,7 +13,7 @@ class Advanced::Report::WaterSource
   # How is the water tipically treated
   attribute :treating
   # Type os power supply
-  attribute :supply
+  attribute :power_supply
   # Length of distribution line (Km)
   attribute :length
 end

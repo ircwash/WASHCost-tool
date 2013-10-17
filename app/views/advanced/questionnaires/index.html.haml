@@ -24,17 +24,18 @@
           = f.fields_for :technologies do |t|
             .caption
               %h3 Tecnology
+            = t.input :type, collection: ['Borehole and Handpump', 'Mechanised Borehole', 'Single Town System', 'Multi-Town System', 'Small Scale Rain Fedsystem', 'Protected Well', 'Rural Gravity Fed System', 'Mixed Piped System']
             = t.input :number_of_systems
             = t.input :expected_number_of_people
             = t.input :server_number_of_people
             = t.fields_for :water_source do |w|
               %h3 Water Source
-              = w.input :source
-              = w.input :primary_source
-              = w.input :common_pump
-              = w.input :storing
-              = w.input :treating
-              = w.input :supply
+              = w.input :source, collection: ['Ground Water', 'Surface Water', 'Rain Water', 'Don\'t Know']
+              -#= w.input :primary_source
+              -#= w.input :common_pump
+              = w.input :storing, collection: ['Elevated Steel Reservoir','Dont\'t Know'], as: :check_boxes
+              = w.input :treating, collection: ['No Treatment', 'Boiling', 'Household Filter', 'Household Chlorination', 'Chlorination In Pipied System', 'Water Treatment Works', 'Not Aplicable'], as: :check_boxes
+              = w.input :power_supply, collection: ['No Power', 'Mains Electricity', 'Windmills', 'Solar Power System', 'Generator', 'Not Aplicable'], as: :check_boxes
               = w.input :length
             .costs
               = t.fields_for :costs do |c|
