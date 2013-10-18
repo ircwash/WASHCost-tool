@@ -12,16 +12,13 @@ class Advanced::Report::Calculator
     #descriptor.technologies.inject do |acumulator,technology|
     #  acumulator + technology.expected_number_of_people.to_i
     #end
-    259
+    descriptor.technologies.map {|technology| technology.expected_number_of_people}.sum
   end
 
   # This represents the actual or effective number of users and is the default value to be taken calculate costs per person
   # @return [Long]
   def total_actual_population_served
-    #descriptor.technologies.inject do |acumulator,technology|
-    #  acumulator + technology.server_number_of_people.to_i
-    #end
-    259
+    descriptor.technologies.map {|technology| technology.server_number_of_people}.sum
   end
 
   def presenter
