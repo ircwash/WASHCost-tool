@@ -103,5 +103,15 @@
           Total Cost per actual population:
           = technology.costs.total_recurrent_cost_per_year[:per_actual_population]
 
-
-
+  .service-level-section
+    - @presenter.service_levels.each_with_index do |service_level, index|
+      %h4 Service Level #{index}
+      %p
+        Combined service level (WASHCost standards):
+        = service_level.washcost_standard_caption
+      %p
+        Combined service level (National norms):
+        = service_level.national_norm_caption
+      %p
+        Percentage population served:
+        = service_level.percentage_population_served
