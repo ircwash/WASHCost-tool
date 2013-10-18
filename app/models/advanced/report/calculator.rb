@@ -22,6 +22,23 @@ class Advanced::Report::Calculator
     descriptor.technologies.map {|technology| technology.server_number_of_people}.sum
   end
 
+  def service_level_summary(service_levels)
+    high_service = service_levels.reject {|service_level| service_level.washcost_standard!=4 }.map{|service_level| service_level.percentage_population_served}.sum
+    basic_service = service_levels.reject {|service_level| service_level.washcost_standard!=3 }.map{|service_level| service_level.percentage_population_served}.sum
+    sub_standard_service = service_levels.reject {|service_level| service_level.washcost_standard!=2 }.map{|service_level| service_level.percentage_population_served}.sum
+    no_service = service_levels.reject {|service_level| service_level.washcost_standard!=1 }.map{|service_level| service_level.percentage_population_served}.sum
+    meet_norms = service_levels.reject {|service_level| service_level.national_norm!=2 }.map{|service_level| service_level.percentage_population_served}.sum
+    not_meet_norms = service_levels.reject {|service_level| service_level.national_norm!=1 }.map{|service_level| service_level.percentage_population_served}.sum
+    {
+        high_service: "#{high_service}% of the service area recieve a high level of service",
+        basic_service: "#{basic_service}% of the service area recieve a basic level of service",
+        sub_standard_service: "#{sub_standard_service}% of the service area recieve a substandard level of service",
+        no_service: "#{no_service}% of the service area recieve no service",
+        meet_norms: "#{meet_norms}% of the service area recieve a service that meets national norm",
+        not_meet_norms: "#{not_meet_norms}% of the service area recieve a service that does not meets national norm"
+    }
+  end
+
   def presenter
     presenter = Advanced::Report::Presenter.new
     presenter.title = descriptor.title
@@ -66,6 +83,7 @@ class Advanced::Report::Calculator
       service_level_.percentage_population_served = service_level.percentage_population_served(_service_level)
       presenter.service_levels << service_level_
     end
+    presenter.service_level_summary = service_level_summary(presenter.service_levels)
     presenter
   end
 

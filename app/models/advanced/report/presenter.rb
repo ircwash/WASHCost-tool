@@ -17,5 +17,6 @@ class Advanced::Report::Presenter
   attribute :total_actual_population_served
   attribute :technologies
   attribute :service_levels
+  attribute :service_level_summary
 
 end

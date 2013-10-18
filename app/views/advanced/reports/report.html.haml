@@ -122,3 +122,10 @@
       %p
         Percentage population served:
         = service_level.percentage_population_served
+    %h5 Service Level Summary
+    %p= @presenter.service_level_summary[:high_service]
+    %p= @presenter.service_level_summary[:basic_service]
+    %p= @presenter.service_level_summary[:sub_standard_service]
+    %p= @presenter.service_level_summary[:no_service]
+    %p= @presenter.service_level_summary[:meet_norms]
+    %p= @presenter.service_level_summary[:not_meet_norms]
