@@ -69,15 +69,15 @@
         %h1 Service Levels
         = f.fields_for :service_levels do |s|
           %h3 Service Level
-          = s.input :accesibility_distance, collection: [[1, 'More than 60 min'], [2, 'Between 30 and 60 min'], [3, 'Between 10 and 30 min'], [4, 'Less than 10 min']], label_method: :last, value_method: :first, input_html: { class: 'chzn-select'}
-          = s.input :accesibility_queues, collection: [[4, 'Yes'], [1, 'No']], label_method: :last, value_method: :first, input_html: { class: 'chzn-select'}
-          = s.input :accesibility_norms, collection: [[2, 'Yes'], [1, 'No']], label_method: :last, value_method: :first, input_html: { class: 'chzn-select'}
-          = s.input :quantity_use, collection: [[1, 'Less than 5 liters'], [2, 'Between 5 and 19 liters'], [3, 'Between 20 and 60 liters'], [4, 'More than 60 liters']], label_method: :last, value_method: :first, input_html: { class: 'chzn-select'}
-          = s.input :quantity_norms, collection: [[2, 'Yes'], [1, 'No']], label_method: :last, value_method: :first, input_html: { class: 'chzn-select'}
-          = s.input :quality_testing, collection: [[1, 'No Testing'], [2, 'One-off testing after construction that meet standards'], [3, 'Ocassional that meets standards'], [4, 'Regular and meets standards']], label_method: :last, value_method: :first, input_html: { class: 'chzn-select'}
-          = s.input :quality_norms, collection: [[2, 'Yes'], [1, 'No']], label_method: :last, value_method: :first, input_html: { class: 'chzn-select'}
-          = s.input :reliability, collection: [[1, 'Unreliable/insecure'], [2, 'Problematic'], [3, 'Reliable/secure'], [4, 'Very reliable']], label_method: :last, value_method: :first, input_html: { class: 'chzn-select'}
-          = s.input :reliability_norms, collection: [[2, 'Yes'], [1, 'No']], label_method: :last, value_method: :first, input_html: { class: 'chzn-select'}
+          = s.input :accesibility_distance, collection: [[1, 'More than 60 min'], [2, 'Between 30 and 60 min'], [3, 'Between 10 and 30 min'], [4, 'Less than 10 min']], label_method: :last, value_method: :first, input_html: { class: 'chzn-select'}, include_blank: false
+          = s.input :accesibility_queues, collection: [[4, 'Yes'], [1, 'No']], label_method: :last, value_method: :first, input_html: { class: 'chzn-select'}, include_blank: false
+          = s.input :accesibility_norms, collection: [[2, 'Yes'], [1, 'No']], label_method: :last, value_method: :first, input_html: { class: 'chzn-select'}, include_blank: false
+          = s.input :quantity_use, collection: [[1, 'Less than 5 liters'], [2, 'Between 5 and 19 liters'], [3, 'Between 20 and 60 liters'], [4, 'More than 60 liters']], label_method: :last, value_method: :first, input_html: { class: 'chzn-select'}, include_blank: false
+          = s.input :quantity_norms, collection: [[2, 'Yes'], [1, 'No']], label_method: :last, value_method: :first, input_html: { class: 'chzn-select'}, include_blank: false
+          = s.input :quality_testing, collection: [[1, 'No Testing'], [2, 'One-off testing after construction that meet standards'], [3, 'Ocassional that meets standards'], [4, 'Regular and meets standards']], label_method: :last, value_method: :first, input_html: { class: 'chzn-select'}, include_blank: false
+          = s.input :quality_norms, collection: [[2, 'Yes'], [1, 'No']], label_method: :last, value_method: :first, input_html: { class: 'chzn-select'}, include_blank: false
+          = s.input :reliability, collection: [[1, 'Unreliable/insecure'], [2, 'Problematic'], [3, 'Reliable/secure'], [4, 'Very reliable']], label_method: :last, value_method: :first, input_html: { class: 'chzn-select'}, include_blank: false
+          = s.input :reliability_norms, collection: [[2, 'Yes'], [1, 'No']], label_method: :last, value_method: :first, input_html: { class: 'chzn-select'}, include_blank: false
           = s.input :percentage_using
       .submit
         = f.submit 'save', name: 'commit', class: 'button primary'

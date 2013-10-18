@@ -3,7 +3,7 @@ class Advanced::Tool::Descriptor
   include ActiveAttr::Model
 
   # Report Name
-  attribute :title
+  attribute :title, :default => 'test'
   # Does the sanitation service already exist or is it planned?
   attribute :sanitation_service_type
   # Country
@@ -27,9 +27,9 @@ class Advanced::Tool::Descriptor
   # Who covers the cost of rehabilitation when larger repairs are needed (pit/tank emptying)?
   attribute :service_costing
   # What is the average annual household income in the service area
-  attribute :average_household_income, :type => Float
+  attribute :average_household_income, :type => Float, :default => 1.0
   # Average household size
-  attribute :average_household_size, :type => Float
+  attribute :average_household_size, :type => Float, :default => 1.0
   # Has many technologies
   attribute :technologies
   # Service levels

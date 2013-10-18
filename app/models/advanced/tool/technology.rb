@@ -5,11 +5,11 @@ class Advanced::Tool::Technology
   # Technology type
   attribute :type
   # Number of systems?
-  attribute :number_of_systems, :type => Float
+  attribute :number_of_systems, :type => Float, :default => 380
   # How many people do the sanitation system(s) serve?
-  attribute :expected_number_of_people, :type => Float
+  attribute :expected_number_of_people, :type => Float, :default => 110700
   # How many people do the sanitation system(s) actually serve?
-  attribute :server_number_of_people, :type => Float
+  attribute :server_number_of_people, :type => Float, :default => 58000
   # Water Source
   attribute :water_source
   # Costs

@@ -5,6 +5,7 @@ class Advanced::Report::Calculator
   attribute :descriptor
 
   attribute :technology
+  attribute :service_level
 
   # This represents the design number of users and this value can be chosen by the user to calculate costs per person design
   # @return [Long]
@@ -43,6 +44,16 @@ class Advanced::Report::Calculator
       technology_.costs.total_capital_cost_per_year = technology_.costs.capital.expenditures
       technology_.costs.total_recurrent_cost_per_year = technology.costs.total_recurrent_cost_per_year(technology_.costs.recurrent.operational_expenditure_per_year, technology_.costs.recurrent.maintenance_expenditure_per_year, technology_.costs.recurrent.direct_support_per_year, technology_.costs.recurrent.indirect_support_per_year, technology_.costs.recurrent.loan_per_year)
       presenter.technologies << technology_
+    end
+    presenter.service_levels = []
+    descriptor.service_levels.each do |_service_level|
+      service_level_ = Advanced::Report::Presenters::ServiceLevel.new
+      service_level_.washcost_standard = service_level.washcost_standard(_service_level)
+      service_level_.national_norm = service_level.national_norm(_service_level)
+      service_level_.washcost_standard_caption = service_level.washcost_standard_caption(service_level_.washcost_standard)
+      service_level_.national_norm_caption = service_level.national_norm_caption(service_level_.national_norm)
+      service_level_.percentage_population_served = service_level.percentage_population_served(_service_level)
+      presenter.service_levels << service_level_
     end
     presenter
   end

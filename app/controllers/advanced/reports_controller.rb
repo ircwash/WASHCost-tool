@@ -8,6 +8,7 @@ class Advanced::ReportsController < ApplicationController
     calculator.technology.costs = Advanced::Report::Cost.new
     calculator.technology.costs.capital = Advanced::Report::CapitalCost.new
     calculator.technology.costs.recurrent = Advanced::Report::RecurrentCost.new
+    calculator.service_level = Advanced::Report::ServiceLevel.new
 
     @presenter = calculator.presenter
 

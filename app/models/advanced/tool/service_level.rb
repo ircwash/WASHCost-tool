@@ -21,6 +21,6 @@ class Advanced::Tool::ServiceLevel
   # Does the service reliability meet the national norms?
   attribute :reliability_norms, :type => Integer
   # What percentage of people in the service area receive this service?
-  attribute :percentage_using, :type => Float
+  attribute :percentage_using, :type => Float, :default => 33.3333
 
 end
