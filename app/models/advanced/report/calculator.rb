@@ -29,7 +29,7 @@ class Advanced::Report::Calculator
     descriptor.technologies.each do |_technology|
       technology_ = Advanced::Report::Presenters::Technology.new
       technology_.total_percentage_served_design = technology.total_percentage_served_design(_technology, presenter.total_design_population_served)
-      technology_.total_percentage_served_actual = technology.total_percentage_served_actual(_technology, presenter.total_design_population_served)
+      technology_.total_percentage_served_actual = technology.total_percentage_served_actual(_technology, presenter.total_actual_population_served)
       technology_.average_system_size = technology.average_system_size(presenter.total_design_population_served, technology_.total_percentage_served_design, _technology.number_of_systems)
       technology_.costs = Advanced::Report::Presenters::Cost.new
       technology_.costs.capital = Advanced::Report::Presenters::CapitalCost.new

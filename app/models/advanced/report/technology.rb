@@ -5,11 +5,11 @@ class Advanced::Report::Technology
   attribute :costs
 
   def total_percentage_served_design(technology, total_design_population_served)
-    total_design_population_served/(technology.expected_number_of_people || 1)
+    technology.expected_number_of_people/total_design_population_served
   end
 
-  def total_percentage_served_actual(technology, total_design_population_served)
-    total_design_population_served/(technology.server_number_of_people || 1)
+  def total_percentage_served_actual(technology, total_actual_population_served)
+    technology.server_number_of_people/total_actual_population_served
   end
 
   # Calculate the average system size for each technology
