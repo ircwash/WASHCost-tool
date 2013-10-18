@@ -25,7 +25,7 @@ WashCostApp::Application.routes.draw do
     resources :questionnaires
     resource :reports do
       member do
-        post :save
+        post :report
       end
     end
     namespace :questionnaire do
