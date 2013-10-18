@@ -3,7 +3,6 @@ class Advanced::Report::RecurrentCost
   include ActiveAttr::Model
 
   def operational_expenditure_per_year(recurrent, number_of_systems, total_design_population_served, total_actual_population_served)
-    total = 0
     if recurrent.total && recurrent.total > 0
       total = recurrent.total
     else

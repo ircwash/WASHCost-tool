@@ -27,9 +27,9 @@ class Advanced::Tool::Descriptor
   # Who covers the cost of rehabilitation when larger repairs are needed (pit/tank emptying)?
   attribute :service_costing
   # What is the average annual household income in the service area
-  attribute :average_household_income
+  attribute :average_household_income, :type => Integer
   # Average household size
-  attribute :average_household_size
+  attribute :average_household_size, :type => Integer
   # Has many technologies
   attribute :technologies
   # Service levels

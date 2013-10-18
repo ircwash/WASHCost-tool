@@ -14,16 +14,23 @@ class Advanced::Report::Cost
     capital.total_capital_expenditure capital, number_of_systems, total_design_population_served, total_actual_population_served
   end
 
-  def total_recurrent_cost_per_year(_recurrent, number_of_systems, total_design_population_served, total_percentage_served_design, total_actual_population_served, average_system_size)
-        operational_expenditure_per_year = recurrent.operational_expenditure_per_year(_recurrent, number_of_systems, total_design_population_served, total_actual_population_served)
-        maintenance_expenditure_per_year = recurrent.maintenance_expenditure_per_year(_recurrent, number_of_systems, total_design_population_served, total_actual_population_served)
-        direct_support_per_year = recurrent.direct_support_per_year(_recurrent.direct_support, total_design_population_served, total_percentage_served_design, average_system_size)
-        indirect_support_per_year = recurrent.indirect_support_per_year(_recurrent.indirect_support, total_design_population_served, total_percentage_served_design, average_system_size)
-        loan_per_year = recurrent.loan_per_year(_recurrent)
-        recurrent_hash [operational_expenditure_per_year[:total], maintenance_expenditure_per_year[:total], direct_support_per_year[:total], indirect_support_per_year[:total], loan_per_year[:total]].sum,
-                       [operational_expenditure_per_year[:per_system], maintenance_expenditure_per_year[:per_system], direct_support_per_year[:per_system], indirect_support_per_year[:per_system], loan_per_year[:per_system]].sum,
-                       [operational_expenditure_per_year[:per_design_population], maintenance_expenditure_per_year[:per_design_population], direct_support_per_year[:per_design_population], indirect_support_per_year[:per_design_population], loan_per_year[:per_design_population]].sum,
-                       [operational_expenditure_per_year[:per_actual_population], maintenance_expenditure_per_year[:per_actual_population], direct_support_per_year[:per_actual_population], indirect_support_per_year[:per_actual_population], loan_per_year[:per_actual_population]].sum
+  #def total_recurrent_cost_per_year(_recurrent, number_of_systems, total_design_population_served, total_percentage_served_design, total_actual_population_served, average_system_size)
+  #      operational_expenditure_per_year = recurrent.operational_expenditure_per_year(_recurrent, number_of_systems, total_design_population_served, total_actual_population_served)
+  #      maintenance_expenditure_per_year = recurrent.maintenance_expenditure_per_year(_recurrent, number_of_systems, total_design_population_served, total_actual_population_served)
+  #      direct_support_per_year = recurrent.direct_support_per_year(_recurrent.direct_support, total_design_population_served, total_percentage_served_design, average_system_size)
+  #      indirect_support_per_year = recurrent.indirect_support_per_year(_recurrent.indirect_support, total_design_population_served, total_percentage_served_design, average_system_size)
+  #      loan_per_year = recurrent.loan_per_year(_recurrent)
+  #      recurrent_hash [operational_expenditure_per_year[:total], maintenance_expenditure_per_year[:total], direct_support_per_year[:total], indirect_support_per_year[:total], loan_per_year[:total]].sum,
+  #                     [operational_expenditure_per_year[:per_system], maintenance_expenditure_per_year[:per_system], direct_support_per_year[:per_system], indirect_support_per_year[:per_system], loan_per_year[:per_system]].sum,
+  #                     [operational_expenditure_per_year[:per_design_population], maintenance_expenditure_per_year[:per_design_population], direct_support_per_year[:per_design_population], indirect_support_per_year[:per_design_population], loan_per_year[:per_design_population]].sum,
+  #                     [operational_expenditure_per_year[:per_actual_population], maintenance_expenditure_per_year[:per_actual_population], direct_support_per_year[:per_actual_population], indirect_support_per_year[:per_actual_population], loan_per_year[:per_actual_population]].sum
+  #end
+
+  def total_recurrent_cost_per_year(operational_expenditure_per_year, maintenance_expenditure_per_year, direct_support_per_year, indirect_support_per_year, loan_per_year)
+    recurrent_hash [operational_expenditure_per_year[:total], maintenance_expenditure_per_year[:total], direct_support_per_year[:total], indirect_support_per_year[:total], loan_per_year[:total]].sum,
+                   [operational_expenditure_per_year[:per_system], maintenance_expenditure_per_year[:per_system], direct_support_per_year[:per_system], indirect_support_per_year[:per_system], loan_per_year[:per_system]].sum,
+                   [operational_expenditure_per_year[:per_design_population], maintenance_expenditure_per_year[:per_design_population], direct_support_per_year[:per_design_population], indirect_support_per_year[:per_design_population], loan_per_year[:per_design_population]].sum,
+                   [operational_expenditure_per_year[:per_actual_population], maintenance_expenditure_per_year[:per_actual_population], direct_support_per_year[:per_actual_population], indirect_support_per_year[:per_actual_population], loan_per_year[:per_actual_population]].sum
   end
 
   private
