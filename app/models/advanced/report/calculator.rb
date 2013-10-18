@@ -24,6 +24,17 @@ class Advanced::Report::Calculator
 
   def presenter
     presenter = Advanced::Report::Presenter.new
+    presenter.title = descriptor.title
+    presenter.sanitation_service_type = descriptor.sanitation_service_type
+    presenter.country = descriptor.country
+    presenter.population_density = descriptor.population_density
+    presenter.service_management = descriptor.service_management
+    presenter.service_financing = descriptor.service_financing
+    presenter.service_maintenance = descriptor.service_maintenance
+    presenter.service_standarization = descriptor.service_standarization
+    presenter.service_costing = descriptor.service_costing
+    presenter.average_household_income = descriptor.average_household_income
+    presenter.average_household_size = descriptor.average_household_size
     presenter.total_design_population_served = total_design_population_served
     presenter.total_actual_population_served = total_actual_population_served
     presenter.technologies = []

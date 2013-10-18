@@ -6,16 +6,16 @@
     = simple_form_for @descriptor, url: report_advanced_reports_path do |f|
       = f.input :title
       = f.input :sanitation_service_type, collection: ['Instsalled', 'Pre-existing', 'Don\'t Know'], include_blank: false, input_html: { class: 'chzn-select'}
-      = f.input :country, input_html: { class: 'chzn-select'}
+      = f.input :country, input_html: { class: 'chzn-select'}, include_blank: false
       = f.input :region
       = f.input :city
-      = f.input :area_type, collection: ['Rural', 'Small Town', 'Peri-Urban', 'Urban', 'Don\'t Know'], input_html: { class: 'chzn-select'}
-      = f.input :population_density, collection: ['less than 150 inhabitants/km2', '>=300 inhabitants/km2'], input_html: { class: 'chzn-select'}
-      = f.input :service_management, collection: ['External donor', 'Community-based management', 'Public sector (local)', 'Public sector (national)', 'Private sector', 'Utility management', 'Household management', 'Other'], as: :check_boxes
-      = f.input :service_financing, collection: ['External donor', 'Community-based management', 'Public sector (local)', 'Public sector (national)', 'Private sector', 'Utility management', 'Household management', 'Other'], as: :check_boxes
-      = f.input :service_maintenance, collection: ['External donor', 'Community-based management', 'Public sector (local)', 'Public sector (national)', 'Private sector', 'Utility management', 'Household management', 'Other'], as: :check_boxes
-      = f.input :service_standarization, collection: ['External donor', 'Community-based management', 'Public sector (local)', 'Public sector (national)', 'Private sector', 'Utility management', 'Household management', 'Other'], as: :check_boxes
-      = f.input :service_costing, collection: ['External donor', 'Community-based management', 'Public sector (local)', 'Public sector (national)', 'Private sector', 'Utility management', 'Household management', 'Other'], as: :check_boxes
+      = f.input :area_type, collection: ['Rural', 'Small Town', 'Peri-Urban', 'Urban', 'Don\'t Know'], input_html: { class: 'chzn-select'}, include_blank: false
+      = f.input :population_density, collection: ['less than 150 inhabitants/km2', '>=300 inhabitants/km2'], input_html: { class: 'chzn-select'}, include_blank: false
+      = f.input :service_management, collection: ['External donor', 'Community-based management', 'Public sector (local)', 'Public sector (national)', 'Private sector', 'Utility management', 'Household management', 'Other'], as: :check_boxes, include_blank: false
+      = f.input :service_financing, collection: ['External donor', 'Community-based management', 'Public sector (local)', 'Public sector (national)', 'Private sector', 'Utility management', 'Household management', 'Other'], as: :check_boxes, include_blank: false
+      = f.input :service_maintenance, collection: ['External donor', 'Community-based management', 'Public sector (local)', 'Public sector (national)', 'Private sector', 'Utility management', 'Household management', 'Other'], as: :check_boxes, include_blank: false
+      = f.input :service_standarization, collection: ['External donor', 'Community-based management', 'Public sector (local)', 'Public sector (national)', 'Private sector', 'Utility management', 'Household management', 'Other'], as: :check_boxes, include_blank: false
+      = f.input :service_costing, collection: ['External donor', 'Community-based management', 'Public sector (local)', 'Public sector (national)', 'Private sector', 'Utility management', 'Household management', 'Other'], as: :check_boxes, include_blank: false
       = f.input :average_household_income
       = f.input :average_household_size
       .technologies

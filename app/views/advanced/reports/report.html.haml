@@ -3,6 +3,13 @@
   .caption
     just for checking calculation process
   %br
+  .context-section
+    %p
+      Title:
+      = @presenter.title
+    %p
+      Country:
+      = @presenter.country
   .cost-section
     - @presenter.technologies.each_with_index do |technology, index|
       %h4 Technology #{index}
