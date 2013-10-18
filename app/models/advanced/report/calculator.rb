@@ -21,4 +21,8 @@ class Advanced::Report::Calculator
     end
   end
 
+  def total_capexp
+    technologies
+  end
+
 end
