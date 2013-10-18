@@ -23,6 +23,10 @@ class Advanced::Tool::RecurrentCost
   # --
   # What has benn/will be spent on capital maintenance expenditure?
   attribute :capital_maintenance_expenditure
+  # What has been/will be spent on expenditure on direct support?
+  attribute :direct_support_spent
+  # What has been/will be the expenditure on indirect support?
+  attribute :indirect_support_spent
   # What is the cost servicing any loans taken to found the service?
   attribute :loan_cost
   # What is the payback period on this loan?

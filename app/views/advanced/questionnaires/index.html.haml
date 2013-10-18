@@ -61,10 +61,10 @@
                   = rc.input :treatment
                   = rc.input :other
                   = rc.input :capital_maintenance_expenditure
+                  = rc.input :direct_support_spent
+                  = rc.input :indirect_support_spent
                   = rc.input :loan_cost
                   = rc.input :loan_time
-                = c.input :direct_support_spent
-                = c.input :indirect_support_spent
       .service_level
         %h1 Service Levels
         = f.fields_for :service_levels do |s|
