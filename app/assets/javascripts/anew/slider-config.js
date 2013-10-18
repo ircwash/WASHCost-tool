@@ -2,7 +2,26 @@ $(document).ready(function(){
 
     //---> Basic tool sliders
 
-    // Water Slider
+    // Text Field Slider Configurator
+    $('.container-value #text_field').keypress(function(event){
+        if(event.keyCode == 13){
+            $(this).val($(this).val().replace(',',''));
+            var slider = $('#'+$(this).data('target'));
+            console.log(parseInt($(this).val()));
+            if($(this).data('logaritmic')){
+                slider.slider({value: LOG_SLIDER.logposition(parseInt($(this).val()))});
+            }else{
+                slider.slider({value: $(this).val()});
+            }
+            event.preventDefault();
+        }
+    });
+    $('.container-value #text_field').click(function(event){
+        $(this).val($(this).val().replace(',',''));
+    });
+
+
+    // Population Slider
     populationSlider = $('#populationSlider');
     if( populationSlider.length > 0){
         console.log('hey hey!');
@@ -12,7 +31,8 @@ $(document).ready(function(){
             var value = Math.round(Number(LOG_SLIDER.expon(ui.value)/100)) * 100;
             $('input[name="population"]').val(value);
             stringValue= value.toLocaleString();
-            $('#populationValue').html(stringValue);
+            //$('#populationValue').html(stringValue);
+            $('.container-value #text_field').val(stringValue);
         };
         populationSlider.slider({
             min: LOG_SLIDER.gMinPrice,
@@ -49,7 +69,8 @@ $(document).ready(function(){
         $('.slider-container.threshold-marks').css('backgroundPosition', css_above_value+"px 1px, "+css_below_value+"px 0px, 1px 0px");
         slider_display = function(event,ui) {
             inputCapital.val(ui.value);
-            $('#capitalValue').html(ui.value);
+            //$('#capitalValue').html(ui.value);
+            $('.container-value #text_field').val(ui.value);
         };
         capitalSlider.slider({
             min: inputCapital.data('min-value'),
@@ -85,7 +106,8 @@ $(document).ready(function(){
         recurrentSlider.css('backgroundPosition', css_above_value+"px 1px, "+css_below_value+"px 0px, 1px 0px");
         slider_display = function( event, ui ) {
             inputRecurrent.val(ui.value);
-            $('#recurrentValue').html(ui.value);
+            //$('#recurrentValue').html(ui.value);
+            $('.container-value #text_field').val(ui.value);
         };
         recurrentSlider.slider({
             min: inputRecurrent.data('min-value'),

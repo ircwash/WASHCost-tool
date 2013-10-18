@@ -129,12 +129,13 @@
       .slider-output{
         display: inline-block;
         text-align: center;
-        min-width: 150px;
+        //min-width: 150px;
+        width: 200px;
         height: 42px;
         font-size: 30px;
         color: #fff;
         padding: 6px 25px 10px;
-        margin: 0 17px auto;
+        //margin: 0 17px auto;
         background: #dad3b1;
         -webkit-box-shadow: 0px -2px 8px 0px rgba(92, 82, 73, 0.31);
         box-shadow: 2px -5px 3px -3px rgba(92, 82, 73, 0.31);

@@ -9,8 +9,10 @@
         .choices.slider-section
           .value
             .valueLabel.caption Per person US$
-            .valueOutput.slider-output
-              %span#capitalValue 0
+            -#.valueOutput.slider-output
+              -#%span#capitalValue 0
+            .container-value
+              = text_field_tag :text_field, 0, 'data-target' => 'capitalSlider', class: 'slider-output'
           #capitalSlider.slider-container.threshold-marks{'data-slider_value' => @capital[:value]}
             .test-cursor
           %ul.labelScale

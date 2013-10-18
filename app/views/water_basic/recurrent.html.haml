@@ -10,8 +10,10 @@
           .value
             .valueLabel.caption
               = t 'form.water_basic.recurrent.value_label'
-            .valueOutput.slider-output
-              %span#recurrentValue 3
+            -#.valueOutput.slider-output
+            -#  %span#recurrentValue 3
+            .container-value
+              = text_field_tag :text_field, 0, 'data-target' => 'recurrentSlider', class: 'slider-output'
           #recurrentSlider.slider-container.threshold-marks{'data-slider_value' => @recurrent[:value]}
             .test-cursor
           %ul.labelScale

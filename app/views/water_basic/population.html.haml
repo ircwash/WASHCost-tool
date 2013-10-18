@@ -9,7 +9,9 @@
         .slider-section
           .value
             .valueLabel.caption= t 'form.water_basic.population.value_label'
-            #populationValue.valueOutput.slider-output 500
+            -##populationValue.valueOutput.slider-output 500
+            .container-value
+              = text_field_tag :text_field, 0, 'data-target' => 'populationSlider', 'data-logaritmic' => true, class: 'slider-output'
           #populationSlider.slider-container{'data-slider_value' => @population[:value].present? ? @population[:value] : 0}
             .test-cursor
         %input{:name => 'population', :type => 'hidden'}
