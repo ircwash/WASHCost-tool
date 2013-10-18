@@ -5,6 +5,8 @@ class Advanced::Tool::RecurrentCost
   # What has been/will be the minor operation and maintenance expenditure? Either put "total" values in this row - or
   # detail dissagreagated expenditure below
   attribute :total
+  attribute :lifespan
+
   # --> fine tune
   # salaries
   attribute :salaries
