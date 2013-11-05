@@ -16,7 +16,8 @@ Zurb Foundation version: 4.3.1
 
 ### Ruby
 Ruby version: 1.9.3
-Rails version: 3.12.13
+
+Rails version: 3.2.13
 
 ### Debugging
 jazz-hands version: 0.5.1
