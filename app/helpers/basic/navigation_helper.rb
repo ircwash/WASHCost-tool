@@ -7,7 +7,7 @@ module Basic::NavigationHelper
     items.map do |k,v|
       {
           name: v,
-          link: "#{current_path}/#{k.to_s}",
+          link: k.to_s,
           class: item_class_by_action(k),
       }
     end

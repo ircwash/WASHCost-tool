@@ -44,6 +44,9 @@
     %ul
       - questionnaire_items_list.each do |item|
         %li{class: item[:class]}
-          %a{:href => item[:link]}= item[:name]
+          - if controller_name == 'water_basic'
+            %a{:href => cal_water_basic_redirect_to_action_path(redirect_to_action: item[:link])}= item[:name]
+          - else
+            %a{:href => cal_sanitation_basic_redirect_to_action_path(redirect_to_action: item[:link])}= item[:name]
         %li.divisor
 

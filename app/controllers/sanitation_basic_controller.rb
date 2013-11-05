@@ -14,6 +14,11 @@ class SanitationBasicController < ApplicationController
     flash[:percent_complete]= get_percent_complete(:sanitation_basic_complete)
   end
 
+  def redirect_to_action
+    action = params[:redirect_to_action]
+    redirect_to :action => action
+  end
+
   def country
     if request.post?
       country_code = params[:country]

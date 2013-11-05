@@ -55,6 +55,9 @@ WashCostApp::Application.routes.draw do
 
   resources :subscribers
 
+  get '/cal/water_basic/redirect_to_action', to: 'water_basic#redirect_to_action'
+  get '/cal/sanitation_basic/redirect_to_action', to: 'sanitation_basic#redirect_to_action'
+
   get '/cal/water_basic/header_navigation', to: 'water_basic#header_navigation'
   get '/cal/sanitation_basic/header_navigation', to: 'sanitation_basic#header_navigation'
 
