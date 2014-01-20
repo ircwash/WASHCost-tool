@@ -34,3 +34,4 @@ target/
 # debugger file
 app/views/popups/_debugger.html.haml
 
+.vagrant
