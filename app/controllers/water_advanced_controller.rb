@@ -1,7 +1,6 @@
-# encoding: utf-8
 class WaterAdvancedController < ApplicationController
 
-  layout "water_advanced_questionnaire"
+  layout "advanced/tool"
 
   def index
     if session[:water_advanced]
@@ -13,6 +12,11 @@ class WaterAdvancedController < ApplicationController
         redirect_to :controller => "application", :action => "select_advanced"
       end
     end
+  end
+
+
+  def questionnaire
+
   end
 
 

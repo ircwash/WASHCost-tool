@@ -1,0 +1,34 @@
+%header.header
+  .page_content
+    .header--content
+
+      = link_to root_path, class: 'header--logo' do
+        = image_tag 'logoWashCost8.png', class: 'header--logo--image'
+
+      %ul.header--links
+
+        %li.header--links--item
+          %a{ :href => "#", :class => "header--links--link" } About
+
+        %li.header--links--item
+          %a{ :href => "#", :class => "header--links--link" } Contact
+
+        %li.header--links--item.has-dropdown.not-click
+          %a{ :href => "#", :class => "header--links--link" } Language
+          %ul.header--links--item--dropdown
+            %li.header--links--item--dropdown--item
+              %h5
+                %a{ :href => "#", :class => "header--links--item--dropdown--link" } « Back
+            %li.header--links--item--dropdown--item
+              = link_to 'English', :locale=>'en', :class => 'header--links--item--dropdown--link'
+            %li.header--links--item--dropdown--item
+              = link_to 'Français', :locale=>'fr', :class => 'header--links--item--dropdown--link'
+            %li.header--links--item--dropdown--item
+              %a{ :href => "#", :class => "header--links--link" } Spanish
+
+        %li.header--links--item
+          - if user_signed_in? && current_user
+            = link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'header--links--link header--links--link-special'
+          - else
+            = link_to 'Sign In', new_user_session_path, class: 'header--links--link header--links--link-special'
+

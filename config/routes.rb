@@ -76,8 +76,8 @@ WashCostApp::Application.routes.draw do
   match '/cal/sanitation_basic' => 'sanitation_basic#country'
   match '/cal/sanitation_basic/(:action)' => 'sanitation_basic#(:action)', :via => [:get, :post]
 
-  match '/cal/water_advanced' => 'advanced#water'
-  match '/cal/water_advanced/(:action)' => 'advanced#(:action)', :via=> [:get,:post]
+  match '/cal/water_advanced' => 'water_advanced#questionnaire'
+  match '/cal/water_advanced/(:action)' => 'water_advanced#(:action)', :via=> [:get,:post]
 
   match '/cal/sanitation_advanced' => 'advanced#sanitation'
   match '/cal/sanitation_advanced/(:action)' => 'advanced#(:action)', :via=> [:get,:post]

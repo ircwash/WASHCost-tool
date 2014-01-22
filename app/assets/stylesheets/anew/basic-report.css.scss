@@ -1,4 +1,4 @@
-@import 'foundation_and_overrides';
+//@import 'foundation';
 @import 'sprite-set-basictool.css.scss';
 .report{
   .primary-section{
@@ -103,8 +103,8 @@
       .review{
         //*** accordion review style
         .section-review {
-          @include section-container(accordion);
-          & > section { @include section(accordion, ".title-review", ".content-review", $title-padding: 10px 10px, $title-color:#fff, $title-bg:rgb(173,203,84), $title-bg-hover:darken(rgb(173,203,84),1%), $title-bg-active: rgb(173,203,84), $title-color-active: darken(#fff,90%), $content-bg: rgb(173,203,84), $section-border-color: rgb(173,203,84)); }
+//          @include section-container(accordion);
+//          & > section { @include section(accordion, ".title-review", ".content-review", $title-padding: 10px 10px, $title-color:#fff, $title-bg:rgb(173,203,84), $title-bg-hover:darken(rgb(173,203,84),1%), $title-bg-active: rgb(173,203,84), $title-color-active: darken(#fff,90%), $content-bg: rgb(173,203,84), $section-border-color: rgb(173,203,84)); }
           border: none;
           section{
             border: none;

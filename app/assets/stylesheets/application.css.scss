@@ -1,5 +1,5 @@
 /*
- * application-advanced.css
+ * application.css
  *
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -10,9 +10,21 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require jquery.ui.core
+ *= require jquery.ui.theme
+ *= require jquery.ui.slider
+ *= require_tree ./anew
  *= require_self
- *= require foundation
- *= require ./foundation_and_overrides
- *= require_tree ./advanced
- *= require_tree ./common
 */
+
+@import "compass/reset";
+@import "compass/css3";
+@import "compass/utilities/general/clearfix";
+@import "variables";
+@import "typography";
+@import "shared";
+@import "masthead";
+@import "widgets";
+@import "tool/navigation";
+@import "tool/footer";
+@import "tool/questions";

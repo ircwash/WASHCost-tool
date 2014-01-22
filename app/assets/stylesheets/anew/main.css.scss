@@ -1,18 +1,18 @@
-@import 'foundation_and_overrides';
+//@import 'foundation';
 .button-landing-page {
-  @include button(0, #f37540, true, false, false, false);
+//  @include button(0, #f37540, true, false, false, false);
 }
 .button-basic-questionnaire {
-  @include button(0.9em, #f37540, true, false, false, false);
+//  @include button(0.9em, #f37540, true, false, false, false);
 }
 .button-landing-page-size{
-  @include button-size(0.9em,100px,false);
+//  @include button-size(0.9em,100px,false);
 }
 
 //*** accordion session style
 .section-auto-sample-custom {
-  @include section-container(accordion);
-  & > section { @include section(accordion, ".title-sample", ".content-sample", $title-padding: 10px 10px, $title-color:#aaa, $title-bg:#333, $title-bg-hover:darken(#333,1%), $title-bg-active: #333, $title-color-active: darken(#aaa,10%), $content-bg: #333, $section-border-color: #333); }
+//  @include section-container(accordion);
+//  & > section { @include section(accordion, ".title-sample", ".content-sample", $title-padding: 10px 10px, $title-color:#aaa, $title-bg:#333, $title-bg-hover:darken(#333,1%), $title-bg-active: #333, $title-color-active: darken(#aaa,10%), $content-bg: #333, $section-border-color: #333); }
   border: none;
   section{
     border: none;
@@ -22,9 +22,9 @@
 //*** popup-style
 // notification popup
 %popup-style{
-  @include reveal-modal-style(#333333, 10, true, solid, 1px, #333333, true, 30);
+//  @include reveal-modal-style(#333333, 10, true, solid, 1px, #333333, true, 30);
   .close{
-    @include reveal-close(#fff);
+//    @include reveal-close(#fff);
   }
 }
 .washcost-popup{

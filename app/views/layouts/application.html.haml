@@ -1,47 +1,43 @@
 !!! 5
-!!!
 %html
   %head
-    %title Wash Cost
+    %title
+      Wash Cost
+      = content_for?( :title ) ? ' - ' : ''
+      = yield :title
+
     %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }
+
     = stylesheet_link_tag    "application", :media => :all
     = javascript_include_tag "vendor/custom.modernizr"
     = javascript_include_tag "application"
-    = csrf_meta_tags
-  %body.main
-    .main-container
-      .popup_trigger
-        = render 'layouts/popup_trigger'
-      .row
-        .large-12.columns
-      %header
-        = render 'layouts/navigation'
-      .row.content-container
-        .large-12.columns
-          .row
-            .large-12.columns
-              = render 'layouts/messages'
-          = content_for?(:content) ? yield(:content) : yield
-          .washcost-popup
-            .reveal-modal.notification.subscriber
-              = render 'popups/subscriber'
-              %a.close-reveal-modal.close ×
-            .reveal-modal.report.save
-              = render 'popups/basic/report/save_form'
-              %a.close-reveal-modal.close ×
-            .reveal-modal.report.confirmation
-              = render 'popups/basic/report/save_confirmation'
-              %a.close-reveal-modal.close ×
-            .reveal-modal.session-container.sign_in
-              .session{style: 'margin-botton: 10px;'}
-                = render 'devise/sessions/sign_in_raw_form'
-              %a.close-reveal-modal.close ×
-            - if Rails.env == 'development'&& File.exists?('app/views/popups/_debugger.html.haml')
-              .reveal-modal.debugger
-                = render 'popups/debugger'
-                %a.close-reveal-modal.close ×
-      #delta-resize
-      .row
-        .large-12.columns
-      %footer= content_for?(:footer) ? yield(:footer) : render('layouts/footer')
 
+    = csrf_meta_tags
+
+  %body
+
+    = render 'shared/masthead'
+
+    = render 'layouts/messages'
+
+    = yield :content
+
+    -#
+      .washcost-popup
+        .reveal-modal.notification.subscriber
+          = render 'popups/subscriber'
+          %a.close-reveal-modal.close ×
+        .reveal-modal.report.save
+          = render 'popups/basic/report/save_form'
+          %a.close-reveal-modal.close ×
+        .reveal-modal.report.confirmation
+          = render 'popups/basic/report/save_confirmation'
+          %a.close-reveal-modal.close ×
+        .reveal-modal.session-container.sign_in
+          .session{style: 'margin-botton: 10px;'}
+            = render 'devise/sessions/sign_in_raw_form'
+          %a.close-reveal-modal.close ×
+        - if Rails.env == 'development'&& File.exists?('app/views/popups/_debugger.html.haml')
+          .reveal-modal.debugger
+            = render 'popups/debugger'
+            %a.close-reveal-modal.close ×

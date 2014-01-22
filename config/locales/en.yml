@@ -34,6 +34,14 @@ en:
           environment: "Environment"
           usage: "Usage"
           reliability: "Reliability"
+      advanced:
+        title: Advanced
+        items:
+          context: Context
+          system_management: System Management
+          system_characteristics: System Characteristics
+          cost: Cost
+          service: Service
     advanced:
       context: "Context"
       managing: "Managing"
@@ -685,5 +693,6 @@ en:
     complete: "Complete"
     water_basic: "Basic Water Report"
     sanitation_basic: "Basic Sanitation Report"
+    water_advanced: "Advanced Water Report"
     footer_layout_sanitation: "Sanitation"
   register_if_acces_to_cuesstinaire_view: "You must be registered if you want access to basic tool"

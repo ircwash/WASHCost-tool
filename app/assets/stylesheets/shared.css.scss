@@ -1,0 +1,34 @@
+html, body {
+  height:100%;
+}
+
+.page_content {
+  max-width:$max_page_width;
+  margin:0 auto;
+  padding:0 20px;
+}
+
+.boxed_container {
+  height:100%;
+  padding:$masthead_height + 20px 0 $footer_height + 20px;
+  background-color:$dark_grey;
+
+  @include box-sizing(border-box);
+}
+
+.boxed_content {
+  height:100%;
+  padding:20px;
+
+  @include box-sizing(border-box);
+  @include box-shadow(0 0 4px rgba(0,0,0,0.25));
+  @include background-image(linear-gradient(top right, #a08d62, #b1a37a 50%, #a08d62));
+}
+
+.application_version {
+  position:fixed;
+  top:5px;
+  left:5px;
+  font-size:10px;
+  color:#fff;
+}

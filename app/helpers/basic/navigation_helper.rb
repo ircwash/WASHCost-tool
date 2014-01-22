@@ -95,7 +95,7 @@ module Basic::NavigationHelper
               }
           }
       }
-    else
+    elsif controller.controller_name == "water_basic"
       {
           path: cal_water_basic_path,
           context: {
@@ -126,6 +126,22 @@ module Basic::NavigationHelper
                   quantity: I18n.t('nav.main.service.items.quantity'),
                   quality: I18n.t('nav.main.service.items.quality'),
                   reliability: I18n.t('nav.main.service.items.reliability')
+              }
+          }
+      }
+    else
+      {
+          path: cal_water_advanced_path,
+          advanced: {
+              offset: '0',
+              name: I18n.t('nav.main.advanced.title'),
+              first_action: :advanced,
+              items: {
+                  context: I18n.t('nav.main.advanced.items.context'),
+                  system_management: I18n.t('nav.main.advanced.items.system_management'),
+                  system_characteristics: I18n.t('nav.main.advanced.items.system_characteristics'),
+                  cost: I18n.t('nav.main.advanced.items.cost'),
+                  services: I18n.t('nav.main.advanced.items.service')
               }
           }
       }

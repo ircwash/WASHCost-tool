@@ -1,0 +1,15 @@
+.question {
+  text-align:center;
+}
+
+.question--title {
+  margin-bottom:30px;
+  font-size:30px;
+  font-weight:normal;
+  color:#fff;
+  -webkit-font-smoothing:antialiased;
+}
+
+.question--image + * {
+  margin-top:20px;
+}

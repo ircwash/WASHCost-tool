@@ -1,7 +1,0 @@
-- flash.each do |name, msg|
-  - if msg.is_a?(String) && name.to_s=='popup_class_name'
-    :javascript
-      $(document).ready(function(){
-          $(".washcost-popup #{msg}").foundation('reveal', 'open');
-      });
-      $('.popup_trigger').remove()

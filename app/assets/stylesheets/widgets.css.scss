@@ -1,0 +1,89 @@
+// BUTTONS
+.button {
+  display:inline-block;
+  padding:14px 24px 13px;
+  border:1px solid $brand_dark_orange;
+  font-family:inherit;
+  font-size:12px;
+  font-weight:bold;
+  color:#fff;
+  text-align:center;
+  text-shadow:0 -1px 0 rgba(0,0,0,0.25);
+  line-height:1;
+  background-color:$brand_light_orange;
+  text-decoration:none;
+  cursor:pointer;
+  -webkit-font-smoothing:antialiased;
+
+  @include border-radius(3px);
+  @include box-shadow(0 1px 0 rgba(255,255,255,0.5) inset);
+  @include transition(background-color 0.3s);
+}
+
+.button:hover {
+  background-color:scale-lightness($brand_light_orange, 10);
+}
+
+.button:active {
+  @include box-shadow(0 1px 0 rgba(0,0,0,0.15) inset);
+}
+
+
+// CHOSEN DROPDOWN WIDGET
+.chosen-container, .chosen-container-active.chosen-with-drop {
+  border:none;
+
+  .chosen-single {
+    background:#ddd8bc;
+    height:45px;
+    color:#333;
+    font-size:18px;
+    padding-top:12px;
+    text-align:left;
+    border:none;
+    box-shadow:0 0 5px rgba(0, 0, 0, 0.3);
+
+    @include box-sizing(border-box);
+
+    span {
+      margin-left:15px;
+    }
+
+    div {
+      width:26px;
+      right:7px;
+      top:6px;
+
+      b {
+        background:transparent image-url('spriteArrow8.png') no-repeat 0 -187px;
+      }
+    }
+  }
+}
+
+.chosen-container-active.chosen-with-drop {
+  .chosen-single {
+    div{
+      b{
+        background-position:0 -237px;
+      }
+    }
+  }
+
+  .chosen-drop {
+    background:#333;
+    font-size:15px;
+    text-align:left;
+    color:#fff;
+
+    .chosen-results {
+      .active-result {
+        padding-top:10px;
+        &.highlighted {
+          background:#5d5d5d;
+        }
+      }
+
+    }
+  }
+}

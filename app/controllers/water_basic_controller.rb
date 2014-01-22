@@ -5,7 +5,7 @@ class WaterBasicController < ApplicationController
   authorize_resource class: WaterBasicController
 
   before_filter :set_percent_complete
-  layout "basic/tool"
+  layout "tool"
 
   def init_vars
     @@pages= 9

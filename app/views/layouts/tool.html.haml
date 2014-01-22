@@ -1,0 +1,15 @@
+= render template: "layouts/application"
+
+.boxed_container
+  .page_content.boxed_content
+
+    = render 'tool/navigation'
+
+    = yield
+
+= render 'tool/footer'
+
+= show_app_version
+
+:javascript
+  - window.I18n = #{I18n.backend.send(:translations).to_json.html_safe}
