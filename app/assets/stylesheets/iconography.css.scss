@@ -80,3 +80,30 @@
 .icon--tool-notWorking::before{
 	background-position:50% -3055px;
 }
+
+
+[class^="icon--star-"],
+[class*=" icon--star-"] {
+	display:block;
+}
+
+[class^="icon--star-"],
+[class*=" icon--star-"]::before {
+	content:"";
+  display:inline-block;
+  width:30px;
+  height:30px;
+  background-image:image-url('sprite-star_icons.png');
+  background-repeat:no-repeat;
+}
+
+.icon--star-full::before {
+	background-position:50% 0;
+}
+
+.icon--star-empty::before {
+	background-position:50% -30px;
+}
+
+
+

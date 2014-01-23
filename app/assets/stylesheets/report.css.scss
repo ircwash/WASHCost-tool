@@ -31,3 +31,103 @@
   color:#fff;
   text-transform:uppercase;
 }
+
+.report--summary {
+  margin-bottom:10px;
+  text-align:center;
+
+  @include clearfix;
+}
+
+.report--summary--item {
+  display:inline-block;
+  width:25%;
+  vertical-align:top;
+}
+
+.report--summary--item--title {
+  margin-bottom:10px;
+  font-size:16px;
+  font-weight:bold;
+  text-transform:uppercase;
+}
+
+.report--summary--item--value {
+  height:30px;
+  margin-bottom:14px;
+  font-size:30px;
+  color:#fff;
+}
+
+.report--summary--item--rating {
+  height:30px;
+  margin-bottom:14px;
+
+  @include clearfix;
+}
+
+.report--summary--item--caption {
+  font-size:12px;
+}
+
+.report--rating_icon {
+  display:inline-block;
+  width:30px;
+  height:30px;
+}
+
+.report--summary--description {
+  width:50%;
+  margin:0 auto;
+}
+
+.report--summary--description--icon {
+  width:25px;
+  height:25px;
+  margin:0 auto 10px;
+}
+
+.report--summary--description--caption {
+  margin-bottom:30px;
+  padding-bottom:20px;
+  border-bottom:1px solid #fff;
+  font-size:14px;
+  font-weight:bold;
+}
+
+.report--review {
+  width:50%;
+  margin:0 auto;
+}
+
+.report--review--link {
+  font-size:13px;
+  font-weight:bold;
+  color:#fff;
+  text-decoration:none;
+  -webkit-font-smoothing:antialiased;
+}
+
+.report--review--link:hover {
+  text-decoration:underline;
+}
+
+.report--review--content {
+  height:0;
+  overflow:hidden;
+}
+
+.report--review--content-visible {
+  height:auto;
+}
+
+.report--review--content--text {
+  padding-top:30px;
+  font-size:12px;
+  color:#fff;
+  text-align:justify;
+  line-height:1.5;
+}
+
+
+

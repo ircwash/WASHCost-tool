@@ -29,6 +29,13 @@
   text-transform:uppercase;
   white-space:nowrap;
   text-decoration:none;
+  -webkit-font-smoothing:antialiased;
+
+  @include transition(color 0.3s);
+}
+
+.navigation--category--link:not(.navigation--category--link-active):hover {
+  color:rgba(255,255,255,0.5);
 }
 
 .navigation--category--link-active {
@@ -78,13 +85,14 @@
   background-color:rgba(255,255,255,0.3);
 }
 
-.navigation--subcategory--link-active{
+.navigation--subcategory--link-active {
   color:#a9985e;
   background-color:#fff;
 }
 
-.navigation--subcategory--link-resolved{
+.navigation--subcategory--link-resolved {
   color:#fff;
+  text-shadow:0 -1px 0 $medium_brown;
 }
 
 
