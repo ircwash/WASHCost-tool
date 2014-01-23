@@ -43,7 +43,8 @@
   margin:0 auto;
   white-space:nowrap;
   background-color:rgba(255,255,255,0.3);
-  border-radius:5px;
+
+  @include border-radius(5px);
 }
 
 .navigation--subcategory--list {
@@ -55,7 +56,6 @@
 .navigation--subcategory--item {
   float:left;
   list-style-type:none;
-  border-radius:5px;
 }
 
 .navigation--subcategory--link {
@@ -69,6 +69,7 @@
   text-decoration:none;
   -webkit-font-smoothing:antialiased;
 
+  @include border-radius(5px);
   @include box-sizing(border-box);
   @include transition(background-color 0.3s, color 0.3s);
 }

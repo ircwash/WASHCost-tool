@@ -6,10 +6,11 @@
 
   .question--answer
 
+    .question--answer--title Per person US$
+
     = form_tag( { controller: 'water_basic', action: 'capital' }, id: 'waterBasicForm' ) do
 
       .slider
-        .slider--label Per person US$
         %input.slider--value{ 'data-target' => 'capitalSlider', :value => @capital[:value] }
         .slider--widget.threshold-marks
         %input{ :type => 'hidden', :name => 'capital', 'data-slider-input' => 'true', 'data-slider-min' => @capital[:min_value], 'data-slider-max' => @capital[:max_value], 'data-slider-below' => @capital[:below_value], 'data-slider-above' => @capital[:above_value] }

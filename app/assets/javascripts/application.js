@@ -15,7 +15,7 @@
 //= require jquery.ui.core
 //= require jquery.ui.slider
 //= require jquery.chosen
-//= require common/index
-//= require anew/index
+//= require_tree ./common
+//= require_tree ./anew
 //= require_tree ./washcost
 

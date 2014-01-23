@@ -11,6 +11,13 @@
   -webkit-font-smoothing:antialiased;
 }
 
+.question--answer--title {
+  font-size:14px;
+  font-weight:bold;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
 .question--image {
   height:90px;
   overflow:hidden;

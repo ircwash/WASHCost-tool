@@ -6,10 +6,11 @@
 
   .question--answer
 
+    .question--answer--title= t 'form.water_basic.recurrent.value_label'
+
     = form_tag( { controller: 'water_basic', action: 'recurrent' }, id: 'waterBasicForm' ) do
 
       .slider
-        .slider--label= t 'form.water_basic.recurrent.value_label'
         %input.slider--value{ 'data-target' => 'recurrentSlider', :value => @recurrent[:value] }
         .slider--widget.threshold-marks
         %input{ :type => 'hidden', :name => 'recurrent', 'data-slider-input' => 'true', 'data-slider-min' => @recurrent[:min_value], 'data-slider-max' => @recurrent[:max_value], 'data-slider-below' => @recurrent[:below_value], 'data-slider-above' => @recurrent[:above_value] }

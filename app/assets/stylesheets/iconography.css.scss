@@ -33,6 +33,18 @@
 	background-position:50% -815px;
 }
 
-.icon--tool-lessThanTen::before{
-	background-position:50% -2095px;
+.icon--tool-waterLessThan::before{
+	background-position:50% -1295px;
+}
+
+.icon--tool-waterFromFive::before{
+	background-position:50% -1455px;
+}
+
+.icon--tool-waterFromTwenty::before{
+	background-position:50% -1615px;
+}
+
+.icon--tool-waterMoreThan::before{
+	background-position:50% -1775px;
 }

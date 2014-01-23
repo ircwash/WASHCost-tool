@@ -6,10 +6,11 @@
 
   .question--answer
 
+    .question--answer--title= t 'form.water_basic.population.value_label'
+
     = form_tag( { controller: 'water_basic', action: 'population' }, id: 'waterBasicForm' ) do
 
       .slider
-        .slider--label= t 'form.water_basic.population.value_label'
         %input.slider--value{ :type => 'text', :value => @population[:value].present? ? number_with_precision( @population[:value], :precision => 0, :locale => I18n.locale ) : 0 }
         .slider--widget
         %input{ :name => 'population', :type => 'hidden', :value => @population[:value].present? ? @population[:value] : 0, 'data-slider-input' => 'true', 'data-logarithmic' => 'true', 'data-slider-min' => 100, 'data-slider-max' => 1000000 }
