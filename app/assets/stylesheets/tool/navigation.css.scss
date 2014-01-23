@@ -37,12 +37,19 @@
 
 .navigation--subcategory {
   display:inline-block;
+  max-width:100%;
   height:40px;
   overflow:hidden;
   margin:0 auto;
   white-space:nowrap;
   background-color:rgba(255,255,255,0.3);
   border-radius:5px;
+}
+
+.navigation--subcategory--list {
+  display:block;
+
+  @include clearfix;
 }
 
 .navigation--subcategory--item {
