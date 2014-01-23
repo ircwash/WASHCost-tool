@@ -1,30 +1,33 @@
-- @title = '4 of 9 (Capital Expenditure)'
-.row
-  .large-12.columns
-    .question= t 'form.shared.capital.question'
-.row
-  .large-12.columns
-    .choices-section
-      = form_tag({controller: 'water_basic', action: 'capital'}, class: 'main_content sanitation', id: 'waterBasicForm') do
-        .choices.slider-section
-          .value
-            .valueLabel.caption Per person US$
-            -#.valueOutput.slider-output
-              -#%span#capitalValue 0
-            .container-value
-              = text_field_tag :text_field, 0, 'data-target' => 'capitalSlider', class: 'slider-output'
-          #capitalSlider.slider-container.threshold-marks{'data-slider_value' => @capital[:value]}
-            .test-cursor
-          %ul.labelScale
-            %li.first
-              %span= "US$ #{@capital[:below_value]}"
-            %li.last
-              %span= "US$ #{@capital[:above_value]}"
-        = hidden_field_tag 'capital', nil, data: {:min_value => @capital[:min_value], :max_value => @capital[:max_value], :below_value => @capital[:below_value], :above_value => @capital[:above_value]}
-        .action
-          = submit_tag (t 'buttons.next'), class: 'button button-basic-questionnaire'
-.info-tab
-  %a.tab{:href => '#'} infoTab
-  .tab-content
-    %h3
-    %p= t 'form.shared.capital.info'
+= content_for :title do
+  4 of 9 (Capital Expenditure)
+
+.question
+  %h1.question--title= t 'form.shared.capital.question'
+
+  .question--answer
+
+    = form_tag( { controller: 'water_basic', action: 'capital' }, id: 'waterBasicForm' ) do
+      = hidden_field_tag 'capital', nil, data: {:min_value => @capital[:min_value], :max_value => @capital[:max_value], :below_value => @capital[:below_value], :above_value => @capital[:above_value]}
+
+      .slider-section
+        .value
+          .valueLabel.caption Per person US$
+          .container-value
+            = text_field_tag :text_field, 0, 'data-target' => 'capitalSlider', class: 'slider-output'
+
+        #capitalSlider.slider-container.threshold-marks{'data-slider_value' => @capital[:value]}
+          .test-cursor
+
+        %ul.labelScale
+          %li.first
+            %span= "US$ #{@capital[:below_value]}"
+          %li.last
+            %span= "US$ #{@capital[:above_value]}"
+
+      .question--buttons
+        = submit_tag (t 'buttons.next'), class: 'button'
+
+.info_tab
+  .info_tab--icon infoTab
+  .info_tab--content
+    %p.info_tab--content--text= t 'form.shared.capital.info'

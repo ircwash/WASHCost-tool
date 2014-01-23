@@ -34,7 +34,7 @@ $(document).ready(function(){
     function footerPositioning(){
         var mainContainer = $('body .main-container');
         if ($(document).height()>mainContainer.height()){
-            console.log('--> delta resize');
+
             $('#delta-resize').css('height',($(document).height()-mainContainer.height())+"px")
         }
     } footerPositioning();

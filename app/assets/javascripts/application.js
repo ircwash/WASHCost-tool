@@ -14,8 +14,7 @@
 //= require jquery_ujs
 //= require common/index
 //= require anew/index
-//=# require foundation
 //= require jquery.ui.core
 //= require jquery.ui.slider
+//= require_tree ./washcost
 
-$(function(){ $(document).foundation(); });

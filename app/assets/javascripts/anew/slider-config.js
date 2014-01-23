@@ -7,7 +7,6 @@ $(document).ready(function(){
         if(event.keyCode == 13){
             $(this).val($(this).val().replace(',',''));
             var slider = $('#'+$(this).data('target'));
-            console.log(parseInt($(this).val()));
             if($(this).data('logaritmic')){
                 slider.slider({value: LOG_SLIDER.logposition(parseInt($(this).val()))});
             }else{
@@ -22,27 +21,7 @@ $(document).ready(function(){
 
 
     // Population Slider
-    populationSlider = $('#populationSlider');
-    if( populationSlider.length > 0){
-        console.log('hey hey!');
-        //default
-        $('input[name="population"]').val(0);
-        slider_display = function( event, ui ) {
-            var value = Math.round(Number(LOG_SLIDER.expon(ui.value)/100)) * 100;
-            $('input[name="population"]').val(value);
-            stringValue= value.toLocaleString();
-            //$('#populationValue').html(stringValue);
-            $('.container-value #text_field').val(stringValue);
-        };
-        populationSlider.slider({
-            min: LOG_SLIDER.gMinPrice,
-            max: LOG_SLIDER.gMaxPrice,
-            change: slider_display,
-            slide: slider_display
-        });
-        var slider_value = Number(populationSlider.attr('data-slider_value'));
-        populationSlider.slider({value: LOG_SLIDER.logposition(slider_value)});
-    }
+
 
     // Capital slider
     capitalSlider = $( "#capitalSlider" );

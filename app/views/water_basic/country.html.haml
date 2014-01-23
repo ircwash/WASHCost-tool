@@ -8,10 +8,10 @@
 
     .question--image.icon--tool-globe
 
-    = form_tag( { controller: "water_basic", action: "country" }, class: "form-country", id: "waterBasicForm" ) do
+    = form_tag( { controller: "water_basic", action: "country" }, id: "waterBasicForm" ) do
 
       .choices-select.text-center
         = select_tag "country", options_for_select( get_countries, flash[:country_code]), :include_blank=>(t 'form.shared.country.placeholder'), :class=>"chzn-select", :tabindex => 1
 
       .question--buttons
-        = submit_tag((t 'buttons.next'), class: "button button-basic-questionnaire")
+        = submit_tag((t 'buttons.next'), class: "button")
