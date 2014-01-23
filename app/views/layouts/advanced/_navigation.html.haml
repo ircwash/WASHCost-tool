@@ -1,9 +1,0 @@
-.nav-basic-container
-
-  .navigation-basic-tool
-    %ul
-      - questionnaire_items_list.each do |item|
-        %li{class: item[:class]}
-          %a{ :href => '#' + item[ :link ] }= item[:name]
-        %li.divisor
-

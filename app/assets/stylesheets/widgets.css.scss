@@ -1,10 +1,10 @@
 // BUTTONS
 .button {
   display:inline-block;
-  padding:14px 24px 13px;
+  padding:11px 24px 10px;
   border:1px solid $brand_dark_orange;
   font-family:inherit;
-  font-size:12px;
+  font-size:14px;
   font-weight:bold;
   color:#fff;
   text-align:center;
@@ -36,8 +36,9 @@
   .chosen-single {
     background:#ddd8bc;
     height:45px;
-    color:#333;
+    color:$dark_brown;
     font-size:18px;
+    font-weight:bold;
     padding-top:12px;
     text-align:left;
     border:none;
@@ -47,6 +48,7 @@
 
     span {
       margin-left:15px;
+      text-align:center;
     }
 
     div {
