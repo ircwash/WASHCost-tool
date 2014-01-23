@@ -7,22 +7,16 @@
   .question--answer
 
     = form_tag( { controller: 'water_basic', action: 'capital' }, id: 'waterBasicForm' ) do
-      = hidden_field_tag 'capital', nil, data: {:min_value => @capital[:min_value], :max_value => @capital[:max_value], :below_value => @capital[:below_value], :above_value => @capital[:above_value]}
 
-      .slider-section
-        .value
-          .valueLabel.caption Per person US$
-          .container-value
-            = text_field_tag :text_field, 0, 'data-target' => 'capitalSlider', class: 'slider-output'
+      .slider
+        .slider--label Per person US$
+        %input.slider--value{ 'data-target' => 'capitalSlider', :value => @capital[:value] }
+        .slider--widget.threshold-marks
+        %input{ :type => 'hidden', :name => 'capital', 'data-slider-input' => 'true', 'data-slider-min' => @capital[:min_value], 'data-slider-max' => @capital[:max_value], 'data-slider-below' => @capital[:below_value], 'data-slider-above' => @capital[:above_value] }
 
-        #capitalSlider.slider-container.threshold-marks{'data-slider_value' => @capital[:value]}
-          .test-cursor
-
-        %ul.labelScale
-          %li.first
-            %span= "US$ #{@capital[:below_value]}"
-          %li.last
-            %span= "US$ #{@capital[:above_value]}"
+        .slider--scale
+          .slider--scale--point.slider--scale--point-min= "US$ #{@capital[:below_value]}"
+          .slider--scale--point.slider--scale--point-max= "US$ #{@capital[:above_value]}"
 
       .question--buttons
         = submit_tag (t 'buttons.next'), class: 'button'

@@ -12,12 +12,13 @@ $(document).ready(function(){
     // Capital slider
     capitalSlider = $( "#capitalSlider" );
     if(capitalSlider.length > 0){
-        inputCapital = $('input[name="capital"]');
+//        inputCapital = $('input[name="capital"]');
         //default
-        inputCapital.val(0);
+//        inputCapital.val(0);
         offset_cursor = 4;
         offset_label_currency= 14;
         bar_slider_lenght = capitalSlider.width()*1.00;
+
         slider_lenght = inputCapital.data('max-value') - inputCapital.data('min-value');
         above_value = inputCapital.data('above-value');
         below_value = inputCapital.data('below-value');
@@ -31,7 +32,7 @@ $(document).ready(function(){
         label_last.css('left',css_above_value-label_last.width()-offset_cursor-offset_label_currency+"px");
         //Modifying bag position in X axis
         capitalSlider.css('backgroundPosition', css_above_value+"px 1px, "+css_below_value+"px 0px, 1px 0px");
-        $('.slider-container.threshold-marks').css('backgroundPosition', css_above_value+"px 1px, "+css_below_value+"px 0px, 1px 0px");
+/*        $('.slider-container.threshold-marks').css('backgroundPosition', css_above_value+"px 1px, "+css_below_value+"px 0px, 1px 0px");
         slider_display = function(event,ui) {
             inputCapital.val(ui.value);
             //$('#capitalValue').html(ui.value);
@@ -44,7 +45,7 @@ $(document).ready(function(){
             slide: slider_display
         });
         slider_value = capitalSlider.attr('data-slider_value');
-        capitalSlider.slider({value: slider_value});
+        capitalSlider.slider({value: slider_value});*/
     }
 
     // Recurrent Slider

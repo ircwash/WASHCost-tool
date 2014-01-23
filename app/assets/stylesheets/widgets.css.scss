@@ -155,32 +155,21 @@
   top:-5px;
 }
 
+.slider--scale {
+  margin-top:-60px;
+  text-align:left;
+}
+
+.slider--scale--point {
+  position:relative;
+  display:inline-block;
+  font-weight:bold;
+  font-size:14px;
+  color:#333;
+}
 
 
 /*
-.labeling-images {
-  text-align:left;
-}
-
-.labelScale {
-  position:relative;
-  top:-60px;
-  list-style-type:none;
-  text-align:left;
-
-  li{
-    display:inline-block;
-    position:relative;
-
-    span{
-      font-weight:bolder;
-      font-size:14px;
-      color:#333;
-    }
-  }
-}
-
-
 .slider-section.time {
   .labeling-images {
     .imgHouse {
@@ -197,4 +186,5 @@
       height:45px;
     }
   }
-}*/
+}
+*/

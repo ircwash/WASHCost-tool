@@ -1,0 +1,45 @@
+.info_tab {
+  clear:both;
+  position:absolute;
+  top:140px;
+  right:0;
+  z-index:100;
+  width:51px;
+  max-height:300px;
+  overflow:hidden;
+  cursor:pointer;
+}
+
+.info_tab--icon {
+  display:block;
+  float:left;
+  width:51px;
+  height:51px;
+  text-indent:-1000000px;
+  background:#ff6633 image-url('iconInfoTab8.png') no-repeat 6px 4px;
+}
+
+.info_tab--content {
+  display:none;
+  overflow-y:auto;
+  float:left;
+  text-align:left;
+  width:250px;
+  padding:5px 10px 10px;
+  border-left:2px solid #ff6633;
+  background:transparent image-url('bgInfoTab8.png') repeat 0 0;
+
+  -webkit-border-radius:0 0 0 5px;
+  -moz-border-radius:0 0 0 5px;
+  border-radius:0 0 0 5px;
+}
+
+.info_tab--content--title {
+  color:#d5d7cf;
+}
+
+.info_tab--content--text {
+  color:#d5d7cf;
+  font-size:12px;
+  text-align:justify;
+}
