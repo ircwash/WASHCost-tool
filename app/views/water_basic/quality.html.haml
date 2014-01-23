@@ -1,21 +1,26 @@
-- @title = "8 of 9 (Quality)"
-.row
-  .large-12.columns
-    .question= t 'form.water_basic.quality.question'
-.row
-  .large-12.columns
-    .choices-section
-      = form_tag({controller: "water_basic", action: "quality"}, class: "main_content", id: "waterBasicForm") do
-        .select-container.quality
-          - @quality[:choices].each_with_index do |choice, index|
-            - index_inverted = 3 - index # is necessary to invert due the business rules
-            = label_tag(choice, nil, class: "#{@quality[:class]}-#{index_inverted}") do
-              = radio_button_tag('quality', index_inverted, index_inverted == @quality[:value], id: choice)
-              %span= t "form.water_basic.quality.answers.a#{index}"
-        .action
-          = submit_tag((t 'buttons.next'), class: "button button-basic-questionnaire")
-.info-tab
-  %a.tab{:href => '#'} infoTab
-  .tab-content
-    %h3
-    %p Maecenas elementum tristique nunc sed vehicula. Mauris dignissim erat ut lectus rutrum elementum. Etiam pharetra ac massa sit amet mattis. Nam blandit, nibh sed mattis accumsan, nisi risus vulputate eros, in aliquam leo tellus et est. Vivamus pretium ultrices dui, vitae lobortis tellus malesuada id. Ut quis convallis odio. Duis egestas dolor quis mi tempor laoreet.
+= content_for :title do
+  8 of 9 (Quality)
+
+.question
+  %h1.question--title= t 'form.water_basic.quality.question'
+
+  .question--answer
+
+    = form_tag( { controller: "water_basic", action: "quality" }, id: "waterBasicForm" ) do
+
+      .question--radios
+        - @quality[:choices].each_with_index do |choice, index|
+          - index_inverted = 3 - index # is necessary to invert due the business rules
+          = label_tag( choice, nil, class: "question--radios--label" ) do
+            = radio_button_tag( 'quality', index_inverted, index_inverted == @quality[:value], id: choice, :class => 'question--radios--radio' )
+            %span.question--checked_icon
+            %span{ :class => "question--radios--icon icon--tool-#{choice}" }
+            %span.question--radios--text= t "form.water_basic.quality.answers.a#{index}"
+
+      .question--buttons
+        = submit_tag((t 'buttons.next'), class: 'button')
+
+.info_tab
+  .info_tab--icon infoTab
+  .info_tab--content
+    %p.info_tab--content--text Maecenas elementum tristique nunc sed vehicula. Mauris dignissim erat ut lectus rutrum elementum. Etiam pharetra ac massa sit amet mattis. Nam blandit, nibh sed mattis accumsan, nisi risus vulputate eros, in aliquam leo tellus et est. Vivamus pretium ultrices dui, vitae lobortis tellus malesuada id. Ut quis convallis odio. Duis egestas dolor quis mi tempor laoreet.
