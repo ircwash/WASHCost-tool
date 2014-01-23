@@ -3,21 +3,7 @@ $(document).ready(function(){
     //---> Basic tool sliders
 
     // Text Field Slider Configurator
-    $('.container-value #text_field').keypress(function(event){
-        if(event.keyCode == 13){
-            $(this).val($(this).val().replace(',',''));
-            var slider = $('#'+$(this).data('target'));
-            if($(this).data('logaritmic')){
-                slider.slider({value: LOG_SLIDER.logposition(parseInt($(this).val()))});
-            }else{
-                slider.slider({value: $(this).val()});
-            }
-            event.preventDefault();
-        }
-    });
-    $('.container-value #text_field').click(function(event){
-        $(this).val($(this).val().replace(',',''));
-    });
+
 
 
     // Population Slider

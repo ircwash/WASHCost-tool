@@ -11,7 +11,7 @@ $( document ).ready( function()
     {
       var slider = $( this ),
           label  = slider.siblings( '.slider--value' ),
-          input  = slider.siblings( 'input' ),
+          input  = slider.siblings( '[data-slider-input]' ),
           value  = input.val();
 
       // initialise slider widget
@@ -19,26 +19,71 @@ $( document ).ready( function()
       {
         min:_logslider.gMinPrice,
         max:_logslider.gMaxPrice,
-        change:slider_display,
-        slide:slider_display,
+        slide:update_value,
       } );
 
       // force update of value
       slider.slider( { value:_logslider.logposition( value ) } );
+
+      // bind events
+      label.on( 'keydown', validate_slider );
+      label.on( 'keyup', update_slider );
+      label.on( 'focus', unformat_label );
+      label.on( 'blur',  reformat_label );
     } );
   }
 
 
-  function slider_display( event, ui )
+  function update_value( event, ui )
   {
     var slider = $( this ),
         label  = slider.siblings( '.slider--value' ),
-        input  = slider.siblings( 'input' ),
+        input  = slider.siblings( '[data-slider-input]' ),
         value  = Math.round( Number( _logslider.expon( ui.value ) / 100 ) ) * 100;
 
     // update values
-    label.text( value.toLocaleString() );
+    label.val( value.toLocaleString() );
     input.val( value );
+  }
+
+
+  function validate_slider( event )
+  {
+    if ( !( ( event.keyCode >= 48 && event.keyCode <= 57 ) || ( event.keyCode >= 96 && event.keyCode <= 105 ) || ( event.keyCode >= 37 && event.keyCode <= 40 ) || event.keyCode === 13 || event.keyCode === 8 || event.keyCode === 46 || event.keyCode === 9 || event.metaKey ) )
+    {
+      event.preventDefault();
+    }
+  }
+
+
+  function update_slider( event )
+  {
+    var label       = $( this ),
+        input       = label.siblings( '[data-slider-input]' ),
+        slider      = label.siblings( '.slider--widget' ),
+        logarithmic = label.data( 'logarithmic' ),
+        value       = logarithmic ? _logslider.logposition( parseInt( label.val(), 10 ) ) : parseInt( label.val(), 10 );
+
+    // update input
+    input.val( value );
+
+    // update slider
+    slider.slider( { value:value } );
+  }
+
+  function unformat_label( event )
+  {
+    var label = $( this );
+
+    label.val( label.val().replace( ',', '' ) );
+  }
+
+
+  function reformat_label( event )
+  {
+    var label = $( this );
+
+    label.val( parseInt( label.val(), 10 ).toLocaleString() );
   }
 
 

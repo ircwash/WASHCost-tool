@@ -12,9 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require common/index
-//= require anew/index
 //= require jquery.ui.core
 //= require jquery.ui.slider
+//= require jquery.chosen
+//= require common/index
+//= require anew/index
 //= require_tree ./washcost
 

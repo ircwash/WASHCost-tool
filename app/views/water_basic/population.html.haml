@@ -10,9 +10,9 @@
 
       .slider
         .slider--label= t 'form.water_basic.population.value_label'
-        .slider--value{ 'data-logaritmic' => 'true' }= @population[:value].present? ? number_with_precision( @population[:value], :precision => 0, :locale => I18n.locale ) : 0
+        %input.slider--value{ :type => 'text', 'data-logarithmic' => 'true', :value => @population[:value].present? ? number_with_precision( @population[:value], :precision => 0, :locale => I18n.locale ) : 0 }
         .slider--widget
-        %input{ :name => 'population', :type => 'hidden', :value => @population[:value].present? ? @population[:value] : 0 }
+        %input{ :name => 'population', :type => 'hidden', :value => @population[:value].present? ? @population[:value] : 0, 'data-slider-input' => 'true' }
 
       .question--buttons
         = submit_tag((t 'buttons.next'), class: 'button')
