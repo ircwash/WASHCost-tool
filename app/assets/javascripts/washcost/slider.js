@@ -9,10 +9,11 @@ $( document ).ready( function()
   {
     _slider.each( function()
     {
-      var slider = $( this ),
-          label  = slider.siblings( '.slider--value' ),
-          input  = slider.siblings( '[data-slider-input]' ),
-          value  = input.val();
+      var slider      = $( this ),
+          label       = slider.siblings( '.slider--value' ),
+          input       = slider.siblings( '[data-slider-input]' ),
+          logarithmic = label.data( 'logarithmic' ),
+          value       = logarithmic ? _logslider.logposition( parseInt( label.val(), 10 ) ) : parseInt( label.val(), 10 );
 
       // initialise slider widget
       slider.slider(
@@ -20,10 +21,11 @@ $( document ).ready( function()
         min:_logslider.gMinPrice,
         max:_logslider.gMaxPrice,
         slide:update_value,
+        value:value
       } );
 
-      // force update of value
-      slider.slider( { value:_logslider.logposition( value ) } );
+      // force label value to locale string
+      label.val( parseInt( label.val() ).toLocaleString() );
 
       // bind events
       label.on( 'keydown', validate_slider );
