@@ -10,7 +10,7 @@ html, body {
 
 .boxed_container {
   height:100%;
-  padding:$masthead_height + 20px 0 $footer_height + 20px;
+  padding:$masthead_height + 0 0 $footer_height + 0;
   background-color:$dark_grey;
 
   @include box-sizing(border-box);
