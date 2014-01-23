@@ -15,7 +15,8 @@
 //= require jquery.ui.core
 //= require jquery.ui.slider
 //= require jquery.chosen
-//= require_tree ./common
+//= require money
+//= require accounting
 //= require_tree ./anew
 //= require_tree ./washcost
 
