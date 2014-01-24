@@ -10,7 +10,6 @@
     .report--header--quicklink= ">> #{t('report.cross_to_sanitation')}"
 
     - if flash[:results][:is_form_ready]
-
       .report--summary
         .report--summary--item
           .report--summary--item--title= t('report.total_cost')
@@ -37,7 +36,6 @@
           .report--review--content--text= simple_format flash[:results][:service_level]
 
     - else
-
       .report--summary--description
         .report--summary--description--caption= t('report.report_box_no_value')
 
@@ -88,29 +86,12 @@
     .report--section--title= t('report.service');
     .report--section--subtitle= t('report.distance')
 
-    .row
-      .large-12.columns
-        .distance-container
-          .house
-            = image_tag 'report/house-distance.png'
-          .line-to-right
-            .canvas
-          .value
-
-            = flash[:results][:time][:header]
-          .amount
-            = flash[:results][:time][:amount]
-          .caption
-            = t('report.time.minutes')
-          .water
-            = image_tag 'report/water-distance.png'
-          .line-to-left
-            .canvas
-    .row
-      .large-12.columns
-        .edit-distance
-          = link_to './time' do
-            = image_tag 'iconEdit24.png', class: ''
+    .report-service_level
+      .report-service_level--value
+        .report-service_level--prefix= flash[:results][:time][:header]
+        .report-service_level--amount= flash[:results][:time][:amount]
+        .report-service_level--suffix= t('report.time.minutes')
+      = link_to 'Edit', './time', :class => 'report-service_level--edit'
 
     .report--option_grid
       - flash[:results][:service_report].each_slice(3) do |box_by_row|

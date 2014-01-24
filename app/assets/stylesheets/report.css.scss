@@ -181,8 +181,10 @@
 }
 
 .report--section--subtitle {
-  margin-top:-10px;
+  margin-top:-14px;
   font-size:12px;
+  font-weight:bold;
+  color:$faded_brown;
   text-align:center;
   text-transform:none;
 }
@@ -283,11 +285,62 @@
   color:$brand_green;
 }
 
+.report-service_level {
+  position:relative;
+  margin:30px 0;
+  background:transparent image-url('image-report-service_level.png') no-repeat 50% 50%
+}
 
+.report-service_level::before {
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  margin-top:-65px;
+  margin-left:-264px - 80px - 40px;
+  width:160px;
+  height:130px;
+  background-image:image-url('sprite-question_icons.png');
+  background-repeat:no-repeat;
+  background-position:50% -975px;
+}
 
+.report-service_level::after {
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  margin-top:-65px;
+  margin-left:264px - 80px + 40px;
+  width:160px;
+  height:130px;
+  background-image:image-url('sprite-question_icons.png');
+  background-repeat:no-repeat;
+  background-position:50% -1135px;
+}
 
+.report-service_level--prefix {
+  margin-bottom:10px;
+  font-size:14px;
+}
 
+.report-service_level--amount {
+  font-size:50px;
+  color:$faded_brown;
+}
 
+.report-service_level--suffix {
+  margin-top:5px;
+  font-size:14px;
+}
+
+.report-service_level--edit {
+  @include report-edit-button;
+
+  position:static;
+  display:inline-block;
+  margin-top:20px;
+}
 
 
 
