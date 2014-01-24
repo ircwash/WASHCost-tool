@@ -22,11 +22,25 @@
   width:52px;
   height:52px;
   text-indent:-1000000px;
-  background:#ff6633 image-url('iconInfoTab8.png') no-repeat 6px 4px;
+  background-color:#ff6633;
   cursor:pointer;
 
   @include border-radius(5px 0 0 5px);
   @include box-shadow(0 0 5px rgba(0,0,0,0.15));
+}
+
+.info_tab--icon::after {
+  content:"";
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:16px;
+  height:16px;
+  margin:-10px;
+  border:2px solid #fff;
+  background:transparent image-url('icon-info.png') no-repeat 50% 50%;
+
+  @include border-radius(100px);
 }
 
 .info_tab--container {
