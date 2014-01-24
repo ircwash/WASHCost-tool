@@ -36,8 +36,7 @@
           .report--review--content--text= simple_format flash[:results][:service_level]
 
     - else
-      .report--summary--description
-        .report--summary--description--caption= t('report.report_box_no_value')
+      .report--no_data= t('report.report_box_no_value')
 
 
   %section.report--section
@@ -62,25 +61,20 @@
 
     - if flash[:results][:is_cost_avaliable]
       .report--chart
+
+      .report--costs
+        - flash[:results][:cost_report].each do |cost_box|
+          .report--costs--column.report--costs--column-small
+            .report--costs--title= cost_box[:title]
+            .report--costs--detail
+              .report--costs--detail--value= cost_box[:value]
+              = link_to 'Edit', cost_box[:link], :class => 'report--costs--detail--edit'
+
+        .report--costs--column.report--costs--column-big
+          .report--costs--title= t('report.total')
+          .report--costs--bigvalue US #{number_to_currency(flash[:results][:total], precision: 2)}
     - else
-      .row
-        .large-12.columns
-          .box-no-value
-            .caption
-              = t('report.cost_box_no_value')
-
-    .report--costs
-      - flash[:results][:cost_report].each do |cost_box|
-        .report--costs--column.report--costs--column-small
-          .report--costs--title= cost_box[:title]
-          .report--costs--detail
-            .report--costs--detail--value= cost_box[:value]
-            = link_to 'Edit', cost_box[:link], :class => 'report--costs--detail--edit'
-
-      .report--costs--column.report--costs--column-big
-        .report--costs--title= t('report.total')
-        .report--costs--bigvalue US #{number_to_currency(flash[:results][:total], precision: 2)}
-
+      .report--no_data= t('report.cost_box_no_value')
 
   %section.report--section
     .report--section--title= t('report.service');

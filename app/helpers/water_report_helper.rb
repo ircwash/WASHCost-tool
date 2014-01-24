@@ -81,7 +81,7 @@ module WaterReportHelper
     data = [
         {name: :country, caption: country_name(country_code)},
         {name: :water, index: water_index, title: 'water source', caption: water_label(water_index)},
-        {name: :population, caption: I18n.t('report.population_caption', population: population_value)}
+        {name: :population, caption: population_label(population_value)}
     ]
     box_data_container_by_section data
   end
@@ -122,9 +122,18 @@ module WaterReportHelper
 
   # @return [String], return the label of technology selected in the step 1
   def water_label(index)
-    index = index || 0
+    #index = index || 0
     if index && @@water_values[index].present?
       @@water_values[index][:label]
+    else
+      t 'form.value_not_set'
+    end
+  end
+
+  # @return [String], return the label of technology selected in the step 1
+  def population_label(value)
+    if value != nil
+      t( 'report.population_caption', population: value )
     else
       t 'form.value_not_set'
     end

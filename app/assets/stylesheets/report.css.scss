@@ -160,7 +160,7 @@
 }
 
 .report--section {
-  padding:30px 0;
+  padding:30px;
   color:#333;
   text-align:center;
   background-color:rgb(173,203,84);
@@ -194,7 +194,7 @@
 }
 
 .report--option_grid--row {
-  margin:0 15px;
+  margin:0 -15px;
 
   @include pie-clearfix;
 }
@@ -234,7 +234,7 @@
 }
 
 .report--costs {
-  margin:0 15px;
+  margin:0 -15px;
 
   @include pie-clearfix;
 }
@@ -342,10 +342,15 @@
   margin-top:20px;
 }
 
+.report--no_data {
+  margin:30px 0;
+  padding:30px;
+  font-size:14px;
+  background-color:rgba(255,255,255,0.25);
 
+  @include  border-radius(5px);
+}
 
-
-
-
-
-
+.report--no_data:last-child {
+  margin-bottom:0;
+}
