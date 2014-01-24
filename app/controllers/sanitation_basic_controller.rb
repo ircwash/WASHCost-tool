@@ -1,9 +1,10 @@
 class SanitationBasicController < ApplicationController
+  include SanitationBasicHelper
+
+  authorize_resource class: WaterBasicController
 
   before_filter :set_percent_complete
-  include SanitationBasicHelper
-  authorize_resource class: WaterBasicController
-  layout 'basic/tool'
+  layout 'tool'
 
   def init_vars
     @@pages= 11
@@ -180,7 +181,7 @@ class SanitationBasicController < ApplicationController
 
   def report
     flash[:results] = sanitation_basic_report
-    render layout: 'basic/report/main'
+    render layout: 'report'
   end
 
   private
