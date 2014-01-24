@@ -13,8 +13,7 @@
  *= require jquery.ui.core
  *= require jquery.ui.theme
  *= require jquery.ui.slider
- *= require_tree ./anew
- *= require_self
+  *= require_self
 */
 
 @import "compass/reset";

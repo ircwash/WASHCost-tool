@@ -1,12 +1,9 @@
 class HomeController < ApplicationController
 
+  layout "general"
+
   def index
-  end
 
-  def marketing
-  end
-
-  def selection
   end
 
   def calculator
@@ -32,4 +29,5 @@ class HomeController < ApplicationController
     session[:user_return_to] = request.referer
     redirect_to new_user_session_path
   end
+
 end
