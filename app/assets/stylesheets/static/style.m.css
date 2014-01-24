@@ -1,0 +1,139 @@
+html,
+body {   
+   padding:0;
+   height:100%;
+   
+   float: left; 
+   font-family: Helvetica, Arial, sans-serif;
+   color: white;
+   background: #b1a172;
+   background: url(/assets/static/marketingbg.png) no-repeat center center fixed;  	
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+   
+}
+a {
+	text-decoration: none;
+	color: white;
+}
+img {
+	border-style: none;
+}
+
+#wrapper {
+	width: 100%;	
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+	}
+
+	#header {
+		margin-top: 0;
+		background-color: #333;
+		height: 90px;
+		width: 100%;
+		white-space: nowrap;	
+		text-align: center;
+		
+		z-index: 99;	
+	}
+	#wc-logo {
+		margin-top: 1.5%;
+		display: inline-block;	
+				
+		}
+		#wc-logo img {
+
+		}
+	#h-trybutton {
+		background-color:#ff6633;
+		display: inline-block;		
+		-webkit-border-radius: 2px;
+	    -moz-border-radius: 2px;
+	    border-radius: 2px;	   	
+	  	margin-top: 1.8%;
+	  	position: absolute;
+	  	margin-left: 2%;	  	
+		}
+		#h-trybutton:hover {
+			background-color: #f2662e;
+		}
+		#tryb {
+			font-size: 2.5em;
+			padding: 20px 20px;			
+		}
+	#content {
+		width: 100%;
+		margin-top: 0%;		
+		/*text shadows*/	
+		text-shadow: 0px 0px 10px rgba(59, 41, 41, 0.25);
+		position: relative;
+    	}
+    	h1 {
+    		padding-left: 2%;
+			font-size: 2em;
+			margin-bottom: -10px;
+		}
+		#content p {
+			padding-left: 2%;
+			font-size: 1em;
+			line-height: 1.5em;
+		}
+		#title {
+			text-align: left;
+			margin: 0 auto;
+		}
+	#video {
+		position: relative;
+		padding-bottom: 56.25%; /* 16:9 */
+		padding-top: 25px;
+		height: 0;
+	}
+	#video iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+	#button-wrapper {
+		text-align: center;
+		white-space: nowrap;
+		z-index: -1;
+		width: 100%;
+		margin-bottom: 20px;
+		}
+		#learnmore, #c-trybutton {
+			width: 100%;
+			display: block;
+			background-color: #8faa3c;
+			padding: 40px 0px;
+			font-size: 1em;
+			-webkit-border-radius: 2px;
+		    -moz-border-radius: 2px;
+		    border-radius: 2px;	   	
+		  	margin-top: 10px;
+		}
+		#learnmore {
+			margin-right: 10px;
+		}
+		#c-trybutton {
+			background-color: #ff6633;
+		}
+		#learnmore:hover {
+			background-color: #839842;
+		}
+		#c-trybutton:hover {
+			background-color: #f2662e;
+		}
+	#footer {
+		padding-top: 1%;
+		padding-bottom: 1%;
+	}
+
