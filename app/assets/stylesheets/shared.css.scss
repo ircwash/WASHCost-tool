@@ -9,11 +9,14 @@ html, body {
 }
 
 .boxed_container {
-  height:100%;
   padding:$masthead_height + 0 0 $footer_height + 0;
   background-color:$dark_grey;
 
   @include box-sizing(border-box);
+}
+
+.boxed_container-full_height {
+  height:100%;
 }
 
 .boxed_content {

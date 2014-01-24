@@ -5,6 +5,7 @@
 .report--header {
   position:relative;
   padding:30px;
+  border-bottom:#fff solid 5px;
   text-align:center;
   background-color:$brand_green;
 }
@@ -128,6 +129,88 @@
   text-align:justify;
   line-height:1.5;
 }
+
+.report--section {
+  padding:30px 0;
+  color:#333;
+  text-align:center;
+  background-color:rgb(173,203,84);
+
+  @include background-image(linear-gradient(to right,  rgb(221, 214, 153) 0%, rgb(235, 232, 202) 50%, rgb(221, 214, 153) 100%));
+}
+
+.report--section + .report--section {
+  border-top:#fff solid 5px;
+}
+
+.report--section--title {
+  margin-bottom:20px;
+  font-size:24px;
+  font-weight:bold;
+  text-transform:uppercase;
+}
+
+.report--section--subtitle {
+  margin-top:-10px;
+  font-size:12px;
+  text-align:center;
+  text-transform:none;
+}
+
+.report--option_grid {
+
+}
+
+.report--option_grid--row {
+  margin:0 15px;
+
+  @include pie-clearfix;
+}
+
+.report--option_grid--item {
+  float:left;
+  width:33.33%;
+  padding:0 15px;
+
+  @include box-sizing(border-box);
+}
+
+.report--option_grid--item--content {
+  position:relative;
+  padding:30px;
+  background-color:rgba(175,175,175,0.1);
+
+  @include box-shadow(0 2px 0 rgba(3,3,3,0.2));
+  @include border-radius(7px);
+}
+
+.report--option_grid--item--title {
+  font-size:15px;
+  font-weight:bold;
+  text-transform:uppercase;
+}
+
+.report--option_grid--item--caption {
+  font-size:12px;
+}
+
+.report--option_grid--item--edit {
+  position:absolute;
+  bottom:14px;
+  left:14px;
+  width:32px;
+  height:32px;
+  background:rgba(166,149,95,0.2) image-url('icon-edit.png') no-repeat 50% 50%;
+
+  @include border-radius(5px);
+  @include transition(background-color 0.3s);
+}
+
+.report--option_grid--item--edit:hover {
+  background-color:rgba(166,149,95,0.5);
+}
+
+
 
 
 

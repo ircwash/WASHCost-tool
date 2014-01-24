@@ -38,36 +38,30 @@
 
     - else
 
-      .row
-        .large-12.columns
-          .box-no-value
-            .caption= t('report.report_box_no_value')
+      .report--summary--description
+        .report--summary--description--caption= t('report.report_box_no_value')
 
-  .content-section.context
-    .row
-      .large-12.columns
-        .title
-          = t('report.context');
-    - flash[:results][:context_report].each_slice(3) do |box_by_row|
-      .row
-        - box_by_row.each do |box|
-          .large-4.columns
-            .box-report
-              .title
-                = box[:title]
-              .icon{class: box[:css_icon]}
-              .caption
-                = box[:caption]
-              .edit
-                = link_to box[:link] do
-                  = image_tag 'iconEdit24.png', class: ''
-  .content-section.cost
-    .row
-      .large-12.columns
-        .title
-          = t('report.cost');
-        .subtitle
-          = t('report.cost_subtitle', population: flash[:results][:population])
+
+  %section.report--section
+    .report--section--title= t('report.context');
+
+    .report--option_grid
+      - flash[:results][:context_report].each_slice(3) do |box_by_row|
+        .report--option_grid--row
+
+          - box_by_row.each do |box|
+            .report--option_grid--item
+              .report--option_grid--item--content
+                .report--option_grid--item--title= box[:title]
+                %div{ :class => "icon--tool-#{box[:css_icon]}" }
+                .report--option_grid--item--caption= box[:caption]
+                = link_to '', box[:link], :class => 'report--option_grid--item--edit'
+
+
+  %section.report--section
+    .report--section--title= t('report.cost');
+    .report--section--subtitle= t('report.cost_subtitle', population: flash[:results][:population])
+
     - if flash[:results][:is_cost_avaliable]
       .row
         .large-12.columns
@@ -95,13 +89,12 @@
           = t('report.total')
         .total
           US #{number_to_currency(flash[:results][:total], precision: 2)}
-  .content-section.service_level
-    .row
-      .large-12.columns
-        .title
-          = t('report.service');
-        .subtitle
-          = t('report.distance')
+
+
+  %section.report--section
+    .report--section--title= t('report.service');
+    .report--section--subtitle= t('report.distance')
+
     .row
       .large-12.columns
         .distance-container
@@ -125,19 +118,20 @@
         .edit-distance
           = link_to './time' do
             = image_tag 'iconEdit24.png', class: ''
-    - flash[:results][:service_report].each_slice(3) do |box_by_row|
-      .row
-        - box_by_row.each do |box|
-          .large-4.columns
-            .box-report
-              .title
-                = box[:title]
-              .icon{class: box[:css_icon]}
-              .caption
-                = box[:caption]
-              .edit
-                = link_to box[:link] do
-                  = image_tag 'iconEdit24.png', class: ''
+
+    .report--option_grid
+      - flash[:results][:service_report].each_slice(3) do |box_by_row|
+        .report--option_grid--row
+
+          - box_by_row.each do |box|
+            .report--option_grid--item
+              .report--option_grid--item--content
+                .report--option_grid--item--title= box[:title]
+                %div{ :class => "icon--tool-#{box[:css_icon]}" }
+                .report--option_grid--item--caption= box[:caption]
+                = link_to '', box[:link], :class => 'report--option_grid--item--edit'
+
+
 
 /Script to google chart
 %script{:src => 'http://www.google.com/jsapi', :type => 'text/javascript'}

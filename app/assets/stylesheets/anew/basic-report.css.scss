@@ -131,25 +131,7 @@
       }
     }
   }
-  .content-section{
-    background: -moz-linear-gradient(right,  rgb(221, 214, 153) 0%, rgb(235, 232, 202) 50%, rgb(221, 214, 153) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, right, left , color-stop(0%, rgb(221, 214, 153)), color-stop(50%, rgb(235, 232, 202)), color-stop(100%, rgb(221, 214, 153)));/* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(right,  rgb(221, 214, 153) 0%, rgb(235, 232, 202) 50%, rgb(221, 214, 153)100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(right,  rgb(221, 214, 153) 0%, rgb(235, 232, 202) 50%, rgb(221, 214, 153) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(right,  rgb(221, 214, 153) 0%, rgb(235, 232, 202) 50%, rgb(221, 214, 153) 100%); /* IE10+ */
-    background: linear-gradient(to right,  rgb(221, 214, 153) 0%, rgb(235, 232, 202) 50%, rgb(221, 214, 153) 100%); /* W3C */
-    border-top : #fff solid 5px;
-    background-color: rgb(173,203,84);
-    color: #333;
-    text-align: center;
-    padding-bottom: 20px;
-    .title{
-      margin-top: 20px;
-      text-transform: uppercase;
-      font-size: 24px;
-      font-weight: 500;
-      text-spacing: 2px;
-    }
+
     .subtitle{
       margin-top: 10px;
       font-size: 12px;
@@ -400,4 +382,4 @@
     }
   }
 
-}
+

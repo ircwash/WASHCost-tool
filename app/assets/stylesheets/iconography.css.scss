@@ -3,7 +3,7 @@
 	display:block;
 }
 
-[class^="icon--tool-"],
+[class^="icon--tool-"]::before,
 [class*=" icon--tool-"]::before {
 	content:"";
   display:inline-block;
@@ -13,10 +13,16 @@
   background-repeat:no-repeat;
 }
 
+.icon--tool-globe::before,
+.icon--tool-country::before {
+	background-position:50% -15px;
+}
+
 .icon--tool-boreHold::before{
 	background-position:50% -175px;
 }
 
+.icon--tool-water::before,
 .icon--tool-mechanised::before{
 	background-position:50% -335px;
 }
@@ -41,6 +47,7 @@
 	background-position:50% -1455px;
 }
 
+.icon--tool-quantity::before,
 .icon--tool-waterFromTwenty::before{
 	background-position:50% -1615px;
 }
@@ -53,6 +60,7 @@
 	background-position:50% -1935px;
 }
 
+.icon--tool-quality::before,
 .icon--tool-test::before{
 	background-position:50% -2095px;
 }
@@ -73,6 +81,7 @@
 	background-position:50% -2735px;
 }
 
+.icon--tool-reliability::before,
 .icon--tool-breakDown::before{
 	background-position:50% -2895px;
 }
