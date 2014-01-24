@@ -17,6 +17,5 @@
 //= require jquery.chosen
 //= require money
 //= require accounting
-//= require_tree ./anew
 //= require_tree ./washcost
 
