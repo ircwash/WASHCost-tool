@@ -1,38 +1,6 @@
 WashCostApp::Application.routes.draw do
 
-  namespace :advanced do
-    namespace :water do
-      resources :question_option_groups
-    end
-  end
-
-
-  namespace :advanced do
-    namespace :water do
-      resources :question_options
-    end
-  end
-
   devise_for :users, :controllers => { :registrations => "registrations" }
-
-  namespace :advanced do
-    namespace :water do
-      resources :questionnaires
-    end
-  end
-
-  namespace :advanced do
-    resources :questionnaires
-    resource :reports do
-      member do
-        post :report
-      end
-    end
-    namespace :questionnaire do
-      resources :questions
-      resources :sections
-    end
-  end
 
   namespace :basic do
     resource :reports do
@@ -44,15 +12,6 @@ WashCostApp::Application.routes.draw do
   end
 
   resources :dashboard
-
-  #resource :home do
-  #  get :marketing
-  #  get :selection
-  #
-  #  post :calculator
-  #
-  #end
-
   resources :subscribers
 
   get '/cal/water_basic/redirect_to_action', to: 'water_basic#redirect_to_action'
@@ -68,7 +27,7 @@ WashCostApp::Application.routes.draw do
 
   match '/infographic' => 'infographic#index'
   match '/infographic/mobile' => 'mobile#infographic'
-  match '/mobile' => 'mobile#index'
+#  match '/mobile' => 'mobile#index'
 
   match '/cal/water_basic' => 'water_basic#country'
   match '/cal/water_basic/(:action)' => 'water_basic#(:action)', :via => [:get, :post]
@@ -82,8 +41,8 @@ WashCostApp::Application.routes.draw do
   match '/cal/sanitation_advanced' => 'advanced#sanitation'
   match '/cal/sanitation_advanced/(:action)' => 'advanced#(:action)', :via=> [:get,:post]
 
-  get '/path' => 'controller#get_action'
-  post '/path' => 'controller#post_action'
+#  get '/path' => 'controller#get_action'
+#  post '/path' => 'controller#post_action'
 
   match '/clean_session', :controller => 'application', :action => 'clean_session'
 
