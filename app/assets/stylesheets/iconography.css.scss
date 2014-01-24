@@ -90,13 +90,17 @@
 	background-position:50% -3055px;
 }
 
+.icon--tool-population::before{
+	background-position:50% -3215px;
+}
+
 
 [class^="icon--star-"],
 [class*=" icon--star-"] {
 	display:block;
 }
 
-[class^="icon--star-"],
+[class^="icon--star-"]::before,
 [class*=" icon--star-"]::before {
 	content:"";
   display:inline-block;
@@ -115,4 +119,39 @@
 }
 
 
+[class^="icon--status-"],
+[class*=" icon--status-"] {
+	display:block;
+	width:21px;
+	height:21px;
+	border:3px solid #fff;
+
+	@include border-radius(100px);
+}
+
+[class^="icon--status-"]::before,
+[class*=" icon--status-"]::before {
+	content:"";
+  display:inline-block;
+  width:21px;
+  height:21px;
+  background-image:image-url('sprite-status_icons.png');
+  background-repeat:no-repeat;
+}
+
+.icon--status-good {
+	background-color:$brand_green;
+}
+
+.icon--status-bad {
+	background-color:$warning_red;
+}
+
+.icon--status-good::before {
+	background-position:-4px -5px;
+}
+
+.icon--status-bad::before {
+	background-position:-4px -35px;
+}
 

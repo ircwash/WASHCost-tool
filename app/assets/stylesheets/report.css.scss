@@ -1,3 +1,34 @@
+// MIXINS
+
+@mixin report-box($padding) {
+  position:relative;
+  padding:$padding $padding $padding - 2 $padding;
+  background-color:rgba(175,175,175,0.1);
+
+  @include box-shadow(0 2px 0 rgba(3,3,3,0.2));
+  @include border-radius(7px);
+}
+
+@mixin report-edit-button {
+  position:absolute;
+  width:32px;
+  height:32px;
+  overflow:hidden;
+  text-indent:-1000px;
+  background:rgba(166,149,95,0.2) image-url('icon-edit.png') no-repeat 50% 50%;
+
+  @include border-radius(5px);
+  @include transition(background-color 0.3s);
+
+
+  &:hover {
+    background-color:rgba(166,149,95,0.5);
+  }
+}
+
+
+// STYLESHEET
+
 .report {
 
 }
@@ -83,8 +114,6 @@
 }
 
 .report--summary--description--icon {
-  width:25px;
-  height:25px;
   margin:0 auto 10px;
 }
 
@@ -145,8 +174,9 @@
 
 .report--section--title {
   margin-bottom:20px;
-  font-size:24px;
+  font-size:18px;
   font-weight:bold;
+  color:$faded_brown;
   text-transform:uppercase;
 }
 
@@ -176,12 +206,7 @@
 }
 
 .report--option_grid--item--content {
-  position:relative;
-  padding:30px;
-  background-color:rgba(175,175,175,0.1);
-
-  @include box-shadow(0 2px 0 rgba(3,3,3,0.2));
-  @include border-radius(7px);
+  @include report-box(30px);
 }
 
 .report--option_grid--item--title {
@@ -195,20 +220,77 @@
 }
 
 .report--option_grid--item--edit {
-  position:absolute;
   bottom:14px;
   left:14px;
-  width:32px;
-  height:32px;
-  background:rgba(166,149,95,0.2) image-url('icon-edit.png') no-repeat 50% 50%;
 
-  @include border-radius(5px);
-  @include transition(background-color 0.3s);
+  @include report-edit-button;
 }
 
-.report--option_grid--item--edit:hover {
-  background-color:rgba(166,149,95,0.5);
+.report--chart {
+  height:256px;
+  margin-bottom:30px;
 }
+
+.report--costs {
+  margin:0 15px;
+
+  @include pie-clearfix;
+}
+
+.report--costs--column {
+  float:left;
+  width:33.33%;
+  padding:0 15px;
+
+  @include box-sizing(border-box);
+}
+
+.report--costs--column-small {
+  width:25%;
+}
+
+.report--costs--column-big {
+  width:50%;
+}
+
+.report--costs--title {
+  margin-bottom:14px;
+  font-size:12px;
+  font-weight:bold;
+  color:$faded_brown;
+}
+
+.report--costs--detail {
+  @include report-box(20px);
+}
+
+.report--costs--detail--value {
+  font-size:16px;
+  text-align:left;
+  line-height:1;
+}
+
+.report--costs--detail--edit {
+  top:10px;
+  right:10px;
+
+  @include report-edit-button;
+}
+
+.report--costs--bigvalue {
+  padding-top:8px;
+  font-size:36px;
+  color:$brand_green;
+}
+
+
+
+
+
+
+
+
+
 
 
 

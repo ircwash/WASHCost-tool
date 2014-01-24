@@ -28,7 +28,7 @@
 
 
       .report--summary--description
-        .report--summary--description--icon{ :class => "bench-icon-#{flash[:results][:cost_rating]}" }
+        .report--summary--description--icon{ :class => flash[:results][:cost_rating] == 1 ? "icon--status-good" : "icon--status-bad" }
         .report--summary--description--caption= flash[:results][:cost_rating_label].html_safe
 
       %section.report--review{ "data-togglecontent" => "true" }
@@ -55,7 +55,7 @@
                 .report--option_grid--item--title= box[:title]
                 %div{ :class => "icon--tool-#{box[:css_icon]}" }
                 .report--option_grid--item--caption= box[:caption]
-                = link_to '', box[:link], :class => 'report--option_grid--item--edit'
+                = link_to 'Edit', box[:link], :class => 'report--option_grid--item--edit'
 
 
   %section.report--section
@@ -63,32 +63,25 @@
     .report--section--subtitle= t('report.cost_subtitle', population: flash[:results][:population])
 
     - if flash[:results][:is_cost_avaliable]
-      .row
-        .large-12.columns
-          .graph
-            #graphContent
+      .report--chart
     - else
       .row
         .large-12.columns
           .box-no-value
             .caption
               = t('report.cost_box_no_value')
-    .row
+
+    .report--costs
       - flash[:results][:cost_report].each do |cost_box|
-        .large-3.columns{class: cost_box[:name]}
-          .title-cost-box
-            = cost_box[:title]
-          .cost-box-report
-            .value
-              = cost_box[:value]
-            .edit
-              = link_to cost_box[:link] do
-                = image_tag 'iconEdit24.png', class: ''
-      .large-6.columns.total-container
-        .title-cost-box
-          = t('report.total')
-        .total
-          US #{number_to_currency(flash[:results][:total], precision: 2)}
+        .report--costs--column.report--costs--column-small
+          .report--costs--title= cost_box[:title]
+          .report--costs--detail
+            .report--costs--detail--value= cost_box[:value]
+            = link_to 'Edit', cost_box[:link], :class => 'report--costs--detail--edit'
+
+      .report--costs--column.report--costs--column-big
+        .report--costs--title= t('report.total')
+        .report--costs--bigvalue US #{number_to_currency(flash[:results][:total], precision: 2)}
 
 
   %section.report--section
@@ -143,7 +136,7 @@
       var _C= #{(flash[:results][:capital]|| 0)};
       var _R= #{(flash[:results][:recurrent]|| 0)};
       var _P= #{(flash[:results][:population]|| 0)};
-      var graphContainer = $('#graphContent')
+      var graphContainer = $('.report--chart')
 
       if(_C && _R){
 
@@ -172,22 +165,47 @@
               }
           }
 
-          graphDataRows=[['Setup', capExpByPopulation, accounting.formatMoney(capExpByPopulation), 'You spent '+accounting.formatMoney(capExpByPopulation)+' to setup the service', 'setup\nExpenditure: '+accounting.formatMoney(capExpByPopulation)],
-              ['1',  recExpByPopulation, accounting.formatMoney(recExpByPopulation), accounting.formatMoney(recExpByPopulation)+' is your annual expenditure', '1\nExpenditure: '+accounting.formatMoney(recExpByPopulation)],
+          graphDataRows=
+          [
+            [
+              'Setup',
+              capExpByPopulation,
+              accounting.formatMoney(capExpByPopulation),
+              'You spent '+accounting.formatMoney(capExpByPopulation)+' to setup the service',
+              'setup\nExpenditure: '+accounting.formatMoney(capExpByPopulation)
+            ],
+            [
+              '1',
+              recExpByPopulation,
+              accounting.formatMoney(recExpByPopulation),
+              accounting.formatMoney(recExpByPopulation)+' is your annual expenditure',
+              '1\nExpenditure: '+accounting.formatMoney(recExpByPopulation)
+            ],
           ];
-          for(i=2;i<=10;i++){
-            graphDataRows.push([i+'',recExpByPopulation, null, null, i+'\nExpenditure: '+accounting.formatMoney(recExpByPopulation)])
+
+          for(i=2;i<=10;i++)
+          {
+            graphDataRows.push(
+              [
+                i+'',
+                recExpByPopulation,
+                null,
+                null,
+                i+'\nExpenditure: '+accounting.formatMoney(recExpByPopulation)
+              ]
+            );
           }
+
           data.addRows(graphDataRows);
 
           // Create and draw the visualization.
-          new google.visualization.LineChart(document.getElementById('graphContent')).
+          new google.visualization.LineChart(graphContainer[0]).
                   draw(data, {curveType: "none",
                       axisTitlesPosition: "out",
                       legend: { position: "none" },
                       width: graphContainer.width(), height: Math.round(graphContainer.width()*0.25),
-                      hAxis: { title: 'Year', titleTextStyle: { color: '#a6955f' }, textStyle: { color: '#a6955f' }, basline: 1, baselineColor: '#a6955f', gridlines: {color: '#fff'}, maxTextLines: 1, maxAlternation: 1 },
-                      vAxis: { title: 'Expenditure', titleTextStyle: { color: '#a6955f' }, textStyle: { color: '#a6955f' },baselineColor: '#a6955f', gridlines: {color: '#a6955f'}, maxValue: 10,  format:'US$ ###,###.##' },
+                      hAxis: { titleTextStyle: { color: '#a6955f' }, textStyle: { color: '#a6955f' }, basline: 1, baselineColor: '#a6955f', gridlines: {color: '#fff', count:4}, maxTextLines: 1, maxAlternation: 1 },
+                      vAxis: { titleTextStyle: { color: '#a6955f' }, textStyle: { color: '#a6955f' }, textPosition:'none', baselineColor: '#a6955f', gridlines: null, maxValue: 10,  format:'US$ ###,###.##' },
                       backgroundColor: "transparent",
                       lineWidth: 4,
                       colors: ['#ffffff'],
