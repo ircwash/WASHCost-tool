@@ -17,6 +17,7 @@ $( document ).ready( function()
           logarithmic = input.data( 'logarithmic' ),
           min         = input.data( 'slider-min' ),
           max         = input.data( 'slider-max' ),
+          values      = input.data( 'slider-values' ),
           below       = input.data( 'slider-below' ),
           above       = input.data( 'slider-above' ),
           value       = logarithmic ? _logslider.logposition( parseInt( label.val(), 10 ), min, max ) : parseInt( label.val(), 10 ),
@@ -24,14 +25,14 @@ $( document ).ready( function()
           step_slider, below_offset, above_offset;
 
       // set up options
-      if ( min ) options.min = min;
-      if ( max ) options.max = max;
+      if ( min )  options.min  = min;
+      if ( max )  options.max  = max;
 
       // initialise slider widget
       slider.slider( options );
 
       // force label value to locale string
-      label.val( parseInt( label.val(), 10 ).toLocaleString() );
+      label.val( values ? values[ parseInt( label.val(), 10 ) ] : parseInt( label.val(), 10 ).toLocaleString() );
 
       // if there are above/below options specified, render this in the ui
       if ( above && below )
@@ -43,7 +44,7 @@ $( document ).ready( function()
         below_label.css( { left:below_offset - below_label.width() / 2 } );
         above_label.css( { left:above_offset - below_label.width() - above_label.width() / 2 } );
 
-        slider.css('backgroundPosition', above_offset + "px 1px, " + below_offset + "px 0px, 1px 0px");
+        slider.css( 'backgroundPosition', above_offset + 'px 1px, ' + below_offset + 'px 0px, 1px 0px' );
       }
 
       // bind events
@@ -63,10 +64,11 @@ $( document ).ready( function()
         logarithmic = input.data( 'logarithmic' ),
         min         = input.data( 'slider-min' ),
         max         = input.data( 'slider-max' ),
+        values      = input.data( 'slider-values' ),
         value       = logarithmic ? Math.round( Number( _logslider.expon( ui.value, min, max ) / 100 ) ) * 100 : ui.value;
 
     // update values
-    label.val( value.toLocaleString() );
+    label.val( values ? values[ value ] : value.toLocaleString() );
     input.val( value );
   }
 
