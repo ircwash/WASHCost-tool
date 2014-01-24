@@ -4,44 +4,38 @@
     .calculator_selection
       %h1.calculator_selection--title Do the math and make it last
       .calculator_selection--subtitle Do a sustainability check and get the personal report based on your service delivery model.
-      .calculator_selection--subtitle Before you start, please anwser these two question:
+      .calculator_selection--subtitle Before you start, please answer these two question:
 
-      .row.tool-selector-container
-        %section.calculatorSwitch
-          %ul
-            .large-6.large-offset-3.columns
-              .row
-                .large-6.columns
-                  %li
-                    = label_tag('name', 'name', class: 'tickCheckBox toolWater tool_name', 'data-target' => 'selection_tool_name') do
-                      %span Water
-                      = radio_button_tag('name', '0', true, id: 'water_tool')
-                .large-6.columns
-                  %li
-                    = label_tag('name', 'name', class: 'tickCheckBox toolSanitation tool_name', 'data-target' => 'selection_tool_name') do
-                      %span Sanitation
-                      = radio_button_tag('name', '1', false, id: 'sanitation_tool')
-      .row.tool-selector-container
-        %section.calculatorSwitch
-          %ul
-            .large-6.large-offset-3.columns
-              .row
-                .large-6.columns
-                  %li
-                    = label_tag('type', nil, class: 'tickCheckBox toolBasic tool_type', 'data-target' => 'selection_tool_type') do
-                      = radio_button_tag('type', '0', true, id: 'basic_tool')
-                .large-6.columns
-                  %li
-                    = label_tag('type', nil, class: 'tickCheckBox toolAdvanced tool_type', 'data-target' => 'selection_tool_type') do
-                      = radio_button_tag('type', '1', false, id: 'advanced_tool')
 
-      .row.tool-selector-container
-        .large-6.large-offset-3.medium-6.medium-offset-3.small-6.small-offset-3.columns
-          = simple_form_for Selection::ToolSelection.new, url: '/home/calculator', as: :selection do |f|
-            = f.input :tool_name, :as => :hidden, :input_html => { :value => '0' }
-            = f.input :tool_type, :as => :hidden, :input_html => { :value => '0' }
-            = f.input :lang, :as => :hidden, :input_html => { :value => locale }
 
-            .tool-selection-submit.text-center
-              = f.button :submit, t('buttons.start'), class: 'medium button expand button-landing-page button-landing-page-size'
+      = form_tag '/home/calculator', :method => 'post', class: 'calculator_selection--selector' do
+        = hidden_field_tag 'selection[lang]', I18n.locale
+
+        .calculator_selection--selector--container.calculator_selection--selector--container-type
+          = label_tag( 'water_tool', 'name', :class => 'calculator_selection--selector--item' ) do
+            = radio_button_tag( 'selection[tool_name]', '0', true, id: 'water_tool', :class => 'calculator_selection--selector--radio' )
+            %span.calculator_selection--selector--checked_icon
+            %span.calculator_selection--selector--icon.icon--tool-water_calculator
+            %span.calculator_selection--selector--text Water
+
+
+          = label_tag( 'sanitation_tool', 'name', :class => 'calculator_selection--selector--item' ) do
+            = radio_button_tag( 'selection[tool_name]', '1', false, id: 'sanitation_tool', :class => 'calculator_selection--selector--radio' )
+            %span.calculator_selection--selector--checked_icon
+            %span.calculator_selection--selector--icon.icon--tool-water_calculator
+            %span.calculator_selection--selector--text Sanitation
+
+        .calculator_selection--selector--container.calculator_selection--selector--container-version
+          = label_tag( 'basic_tool', nil, :class => 'calculator_selection--selector--item' ) do
+            = radio_button_tag( 'selection[tool_type]', '0', true, id: 'basic_tool', :class => 'calculator_selection--selector--radio' )
+            %span.calculator_selection--selector--checked_icon
+            %span.calculator_selection--selector--icon.calculator_selection--selector--text Basic Tool
+
+          = label_tag( 'advanced_tool', nil, :class => 'calculator_selection--selector--item' ) do
+            = radio_button_tag( 'selection[tool_type]', '1', false, id: 'advanced_tool', :class => 'calculator_selection--selector--radio' )
+            %span.calculator_selection--selector--checked_icon
+            %span.calculator_selection--selector--icon.calculator_selection--selector--text Advanced Tool
+
+        .calculator_selection--buttons
+          = submit_tag t('buttons.start'), :class => 'button'
 
