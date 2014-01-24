@@ -20,8 +20,17 @@
   @include transition(background-color 0.3s);
 }
 
+.button-secondary {
+  border:1px solid $brand_dark_green;
+  background-color:$brand_dark_green;
+}
+
 .button:hover {
   background-color:scale-lightness($brand_light_orange, 10);
+}
+
+.button-secondary:hover {
+  background-color:scale-lightness($brand_dark_green, 10);
 }
 
 .button:active {

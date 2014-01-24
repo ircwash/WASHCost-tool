@@ -1,6 +1,9 @@
 class MarketingController < ApplicationController
-  layout 'marketing_layout'
-  def marketing_info
+
+  layout 'layouts/pre_application'
+
+  def index
 
   end
+
 end

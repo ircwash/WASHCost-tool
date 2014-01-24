@@ -1,4 +1,4 @@
-module Basic::NavigationHelper
+module NavigationHelper
   # return just the items of each section in an specific questionnaire
   # @return [Array], each element contains Hash with attr used in the navigation (name, link and css class)
   def questionnaire_items_list

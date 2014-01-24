@@ -1,0 +1,42 @@
+.homepage {
+  padding:20px 0;
+  color:#fff;
+  text-shadow:0px 0px 10px rgba(59,41,41,0.25);
+}
+
+.homepage--title {
+  margin-bottom:14px;
+  font-size:56px;
+  font-weight:bold;
+}
+
+.homepage--subtitle {
+  font-size:21px;
+  line-height:1.2;
+}
+
+.homepage--video {
+  margin:20px 0;
+  cursor:pointer;
+}
+
+.homepage--buttons {
+  margin:0 -10px;
+
+  @include clearfix;
+}
+
+.homepage--buttons--item {
+  float:left;
+  width:50%;
+  padding:0 10px;
+
+  @include box-sizing(border-box);
+}
+
+.homepage--button {
+  display:block;
+  width:100%;
+
+  @include box-sizing(border-box);
+}

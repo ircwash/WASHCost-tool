@@ -1,3 +1,0 @@
-module QuestionnaireHelper
-
-end

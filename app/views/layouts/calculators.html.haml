@@ -1,0 +1,16 @@
+= content_for :content do
+
+  = render 'shared/masthead'
+
+  = render 'layouts/messages'
+
+  = yield :inner_content
+
+  = render 'tool/footer'
+
+  = show_app_version
+
+  :javascript
+    window.I18n = #{I18n.backend.send(:translations).to_json.html_safe}
+
+= render template: "layouts/application"

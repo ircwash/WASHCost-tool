@@ -1,13 +1,7 @@
-= render template: "layouts/application"
+= content_for :inner_content do
+  .boxed_container
+    .page_content
 
-.boxed_container
-  .page_content
+      = yield
 
-    = yield
-
-= render 'tool/footer'
-
-= show_app_version
-
-:javascript
-  window.I18n = #{I18n.backend.send(:translations).to_json.html_safe}
+= render template: "layouts/calculators"

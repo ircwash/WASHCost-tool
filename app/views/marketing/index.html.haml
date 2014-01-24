@@ -1,0 +1,20 @@
+= content_for :title do
+  The WASHCost Calculator
+
+.homepage
+
+  %h1.homepage--title WASHCost Calculator
+  %p.homepage--subtitle
+    Try the WASHCost Calculator Beta to plan
+    %br/
+    sustainable, long-lasting WASH services.
+
+  .homepage--video
+    %img.homage--video--placeholder{ :src => "#{asset_path('static/video.png')}" }
+
+  .homepage--buttons
+    .homepage--buttons--item
+      = link_to 'Try the WASHCost Calculator Beta', cal_path, :class => 'homepage--button button button-secondary'
+    .homepage--buttons--item
+      = link_to 'Learn more about the life-cycle costs approach', infographic_path, :class => 'homepage--button button button-secondary'
+

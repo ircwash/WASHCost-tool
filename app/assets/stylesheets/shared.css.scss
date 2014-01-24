@@ -8,6 +8,10 @@ html, body {
   padding:0 20px;
 }
 
+.page_content-narrow {
+  max-width:$max_page_width_narrow;
+}
+
 .boxed_container {
   padding:$masthead_height + 0 0 $footer_height + 0;
   background-color:$dark_grey;
@@ -37,3 +41,99 @@ html, body {
   color:#fff;
 }
 
+.preapplication_footer {
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background-color:$faded_green;
+}
+
+.preapplication_footer--content {
+  padding:20px 0;
+
+  @include clearfix;
+}
+
+.preapplication_footer--links {
+  float:left;
+  width:33%;
+}
+
+.preapplication_footer--link {
+  display:block;
+  color:#fff;
+  text-decoration:none;
+}
+
+.preapplication_footer--link + .preapplication_footer--link {
+  margin-top:20px;
+}
+
+.preapplication_footer--link:hover {
+  text-decoration:underline;
+}
+
+.preapplication_footer--social {
+  float:left;
+  width:33%;
+  text-align:center;
+}
+
+.preapplication_footer--social--item {
+  display:inline-block;
+  width:80px;
+  height:80px;
+  border:1px solid #fff;
+  background-repeat:no-repeat;
+  background-position:50% 50%;
+
+  @include border-radius(100px);
+  @include transition(background-color 0.3s);
+}
+
+.preapplication_footer--social--item:hover {
+  background-color:rgba(255,255,255,0.25);
+}
+
+.preapplication_footer--social--item + .preapplication_footer--social--item {
+  margin-left:14px;
+}
+
+.preapplication_footer--social--item-facebook {
+  background-image:image-url('image-logo_facebook.png');
+}
+
+.preapplication_footer--social--item-twitter {
+  background-image:image-url('image-logo_twitter.png');
+}
+
+.preapplication_footer--social--item-google {
+  background-image:image-url('image-logo_google.png');
+}
+
+.preapplication_footer--important {
+  float:left;
+  width:33%;
+  text-align:right;
+}
+
+.preapplication_footer--logo {
+  display:inline-block;
+  margin-bottom:10px;
+}
+
+.preapplication_footer--important--link {
+  display:block;
+  font-size:14px;
+  color:#fff;
+  text-decoration:none;
+}
+
+.preapplication_footer--important--link:hover {
+  text-decoration:underline;
+}
+
+.preapplication_footer--important--link + .preapplication_footer--important--link {
+  margin-top:10px;
+}
