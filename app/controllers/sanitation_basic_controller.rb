@@ -162,7 +162,7 @@ class SanitationBasicController < ApplicationController
     end
     @reliability = {}
     @reliability[:value] = retrieve_previous_answer_for('reliability') || 0
-    @reliability[:choices] = %w(reliYes unreliable relyNot)
+    @reliability[:choices] = %w(worksAll worksMostly notWorking)
     @reliability[:class] = 'reliability-item'
   end
 
