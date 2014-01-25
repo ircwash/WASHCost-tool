@@ -41,8 +41,16 @@
   cursor:pointer;
 }
 
+.question--radios--label-narrow {
+  width:140px;
+}
+
 .question--radios--label + .question--radios--label {
   margin-left:30px;
+}
+
+.question--radios--label-narrow + .question--radios--label-narrow {
+  margin-left:16px;
 }
 
 .question--radios--radio {
@@ -63,6 +71,10 @@
 
   @include border-radius(100px);
   @include transition(opacity 0.75s);
+}
+
+.question--radios--icon-narrow::before {
+  margin-left:-10px;
 }
 
 .question--radios--radio:checked + .question--checked_icon {

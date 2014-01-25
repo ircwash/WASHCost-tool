@@ -1,16 +1,20 @@
-- @title = '2 of 9 (sanitation Source)'
-.row
-  .large-12.columns
-    .question= t 'form.sanitation_basic.latrine.question'
-.row
-  .large-12.columns
-    .choices-section
-      = form_tag({controller: 'sanitation_basic', action: 'latrine'}, class: 'main_content', id: 'sanitationBasicForm') do
-        .select-container.latrine
-          - @latrine[:choices].each_with_index do |choice, index|
-            = label_tag(choice, nil, class: "#{@latrine[:class]}-#{index}") do
-              = radio_button_tag('latrine', index, index == @latrine[:value], id: choice)
-              %span= t "form.sanitation_basic.latrine.answers.a#{index}"
-        %input{'data-target' => 'sanitation', :name => 'target-select', :type => 'hidden'}
-        .action
-          = submit_tag((t 'buttons.next'), class: 'button button-basic-questionnaire')
+= content_for :title do
+  3 of 9 (sanitation Source)
+
+.question
+  %h1.question--title= t 'form.sanitation_basic.latrine.question'
+
+  .question--answer
+
+    = form_tag( { controller: 'sanitation_basic', action: 'latrine' }, id: 'sanitationBasicForm') do
+
+      .question--radios
+        - @latrine[:choices].each_with_index do |choice, index|
+          = label_tag( choice, nil, class: "question--radios--label question--radios--label-narrow" ) do
+            = radio_button_tag( 'latrine', index, index == @latrine[:value], id: choice, :class => 'question--radios--radio' )
+            %span.question--checked_icon
+            %span{ :class => "question--radios--icon question--radios--icon-narrow icon--tool-#{choice}" }
+            %span.question--radios--text= t "form.sanitation_basic.latrine.answers.a#{index}"
+
+      .question--buttons
+        = submit_tag((t 'buttons.next'), class: 'button')
