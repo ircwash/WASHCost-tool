@@ -124,7 +124,7 @@ class SanitationBasicController < ApplicationController
     end
     @impermeability = {}
     @impermeability[:value] = retrieve_previous_answer_for('impermeability') || 0
-    @impermeability[:choices] = %w(capitalYes capitalNo)
+    @impermeability[:choices] = %w(impermeabilityYes impermeabilityNo)
     @impermeability[:class] = 'impermeability-item'
   end
 
