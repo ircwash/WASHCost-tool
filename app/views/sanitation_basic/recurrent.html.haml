@@ -1,32 +1,30 @@
-- @title = '5 of 9 (Recurrent Expenditure)'
-.row
-  .large-12.columns
-    .question= t 'form.shared.recurrent.question'
-.row
-  .large-12.columns
-    .choices-section
-      = form_tag({controller: 'sanitation_basic', action: 'recurrent'}, class: 'main_content', id: 'sanitationBasicForm') do
-        .choices.slider-section
-          .value
-            .valueLabel.caption
-              = t 'form.sanitation_basic.recurrent.value_label'
-            -#.valueOutput.slider-output
-            -#  %span#recurrentValue 3
-            .container-value
-              = text_field_tag :text_field, 0, 'data-target' => 'recurrentSlider', class: 'slider-output'
-          #recurrentSlider.slider-container.threshold-marks{'data-slider_value' => @recurrent[:value]}
-            .test-cursor
-          %ul.labelScale
-            %li.first
-              %span= "US$ #{@recurrent[:below_value]}"
-            %li.last
-              %span= "US$ #{@recurrent[:above_value]}"
-        = hidden_field_tag 'recurrent', nil, data: {min_value: @recurrent[:min_value], max_value: @recurrent[:max_value], below_value: @recurrent[:below_value], above_value: @recurrent[:above_value]}
-        .action
-          = submit_tag (t 'buttons.next'), class: 'button button-basic-questionnaire'
-.info-tab
-  %a.tab{:href => '#'} infoTab
-  .tab-content
-    %h3
-    %p= t 'form.shared.recurrent.info'
+= content_for :title do
+  5 of 9 (Recurrent Expenditure)
+
+.question
+  %h1.question--title= t 'form.shared.recurrent.question'
+
+  .question--answer
+
+    .question--answer--title= t 'form.sanitation_basic.recurrent.value_label'
+
+    = form_tag({controller: 'sanitation_basic', action: 'recurrent'}, class: 'main_content', id: 'sanitationBasicForm') do
+
+      .slider
+        %input.slider--value{ 'data-target' => 'recurrentSlider', :value => @recurrent[:value] }
+        .slider--widget.threshold-marks
+        %input{ :type => 'hidden', :name => 'recurrent', 'data-slider-input' => 'true', 'data-slider-min' => @recurrent[:min_value], 'data-slider-max' => @recurrent[:max_value], 'data-slider-below' => @recurrent[:below_value], 'data-slider-above' => @recurrent[:above_value] }
+
+        .slider--scale
+          .slider--scale--point.slider--scale--point-min= "US$ #{@recurrent[:below_value]}"
+          .slider--scale--point.slider--scale--point-max= "US$ #{@recurrent[:above_value]}"
+
+      .question--buttons
+        = submit_tag (t 'buttons.next'), class: 'button'
+
+.info_tab
+  .info_tab--icon infoTab
+  .info_tab--container
+    .info_tab--content
+      %p.info_tab--content--text= t 'form.shared.recurrent.info'
 
