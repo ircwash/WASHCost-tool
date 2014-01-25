@@ -1,11 +1,11 @@
 [class^="icon--tool-"],
 [class*=" icon--tool-"] {
-	display:block;
+  display:block;
 }
 
 [class^="icon--tool-"]::before,
 [class*=" icon--tool-"]::before {
-	content:"";
+  content:"";
   display:inline-block;
   width:160px;
   height:130px;
@@ -15,159 +15,169 @@
 
 .icon--tool-globe::before,
 .icon--tool-country::before {
-	background-position:50% -15px;
+  background-position:50% -15px;
 }
 
-.icon--tool-boreHold::before{
-	background-position:50% -175px;
+.icon--tool-boreHold::before {
+  background-position:50% -175px;
 }
 
 .icon--tool-water::before,
-.icon--tool-mechanised::before{
-	background-position:50% -335px;
+.icon--tool-mechanised::before {
+  background-position:50% -335px;
 }
 
-.icon--tool-singleTown::before{
-	background-position:50% -495px;
+.icon--tool-singleTown::before {
+  background-position:50% -495px;
 }
 
-.icon--tool-multiTown::before{
-	background-position:50% -655px;
+.icon--tool-multiTown::before {
+  background-position:50% -655px;
 }
 
-.icon--tool-mixedPipe::before{
-	background-position:50% -815px;
+.icon--tool-mixedPipe::before {
+  background-position:50% -815px;
 }
 
-.icon--tool-waterLessThan::before{
-	background-position:50% -1295px;
+.icon--tool-waterLessThan::before {
+  background-position:50% -1295px;
 }
 
-.icon--tool-waterFromFive::before{
-	background-position:50% -1455px;
+.icon--tool-waterFromFive::before {
+  background-position:50% -1455px;
 }
 
 .icon--tool-quantity::before,
-.icon--tool-waterFromTwenty::before{
-	background-position:50% -1615px;
+.icon--tool-waterFromTwenty::before {
+  background-position:50% -1615px;
 }
 
-.icon--tool-waterMoreThan::before{
-	background-position:50% -1775px;
+.icon--tool-waterMoreThan::before {
+  background-position:50% -1775px;
 }
 
-.icon--tool-noTest::before{
-	background-position:50% -1935px;
+.icon--tool-noTest::before {
+  background-position:50% -1935px;
 }
 
 .icon--tool-quality::before,
-.icon--tool-test::before{
-	background-position:50% -2095px;
+.icon--tool-test::before {
+  background-position:50% -2095px;
 }
 
-.icon--tool-occasional::before{
-	background-position:50% -2255px;
+.icon--tool-occasional::before {
+  background-position:50% -2255px;
 }
 
-.icon--tool-regular::before{
-	background-position:50% -2415px;
+.icon--tool-regular::before {
+  background-position:50% -2415px;
 }
 
-.icon--tool-worksAll::before{
-	background-position:50% -2575px;
+.icon--tool-worksAll::before {
+  background-position:50% -2575px;
 }
 
-.icon--tool-worksMostly::before{
-	background-position:50% -2735px;
+.icon--tool-worksMostly::before {
+  background-position:50% -2735px;
 }
 
 .icon--tool-reliability::before,
-.icon--tool-breakDown::before{
-	background-position:50% -2895px;
+.icon--tool-breakDown::before {
+  background-position:50% -2895px;
 }
 
-.icon--tool-notWorking::before{
-	background-position:50% -3055px;
+.icon--tool-notWorking::before {
+  background-position:50% -3055px;
 }
 
-.icon--tool-population::before{
-	background-position:50% -3215px;
+.icon--tool-water_calculator::before {
+  height:180px;
+  background-position:50% -3345px;
 }
 
-.icon--tool-traditional::before{
-	background-position:50% -3695px;
+.icon--tool-sanitation_calculator::before {
+  height:180px;
+  background-position:50% -3505px;
 }
 
-.icon--tool-improved::before{
-	background-position:50% -3855px;
+.icon--tool-population::before {
+  background-position:50% -3215px;
 }
 
-.icon--tool-slab::before{
-	background-position:50% -4015px;
+.icon--tool-traditional::before {
+  background-position:50% -3695px;
 }
 
-.icon--tool-vip::before{
-	background-position:50% -4175px;
+.icon--tool-improved::before {
+  background-position:50% -3855px;
 }
 
-.icon--tool-flush::before{
-	background-position:50% -4335px;
+.icon--tool-slab::before {
+  background-position:50% -4015px;
 }
 
-.icon--tool-septik::before{
-	background-position:50% -4495px;
+.icon--tool-vip::before {
+  background-position:50% -4175px;
 }
 
-.icon--tool-capitalYes::before{
-	background-position:50% -4655px;
+.icon--tool-flush::before {
+  background-position:50% -4335px;
 }
 
-.icon--tool-capitalNo::before{
-	background-position:50% -4815px;
+.icon--tool-septik::before {
+  background-position:50% -4495px;
 }
 
-.icon--tool-impermeabilityYes::before{
-	background-position:50% -4975px;
+.icon--tool-capitalYes::before {
+  background-position:50% -4655px;
 }
 
-.icon--tool-impermeabilityNo::before{
-	background-position:50% -5135px;
+.icon--tool-capitalNo::before {
+  background-position:50% -4815px;
 }
 
-.icon--tool-safe::before{
-	background-position:50% -5295px;
+.icon--tool-impermeabilityYes::before {
+  background-position:50% -4975px;
 }
 
-.icon--tool-reusable::before{
-	background-position:50% -5455px;
+.icon--tool-impermeabilityNo::before {
+  background-position:50% -5135px;
 }
 
-.icon--tool-pollution::before{
-	background-position:50% -5615px;
+.icon--tool-safe::before {
+  background-position:50% -5295px;
 }
 
-.icon--tool-all::before{
-	background-position:50% -5775px;
+.icon--tool-reusable::before {
+  background-position:50% -5455px;
 }
 
-.icon--tool-some::before{
-	background-position:50% -5935px;
+.icon--tool-pollution::before {
+  background-position:50% -5615px;
 }
 
-.icon--tool-none::before{
-	background-position:50% -6095px;
+.icon--tool-all::before {
+  background-position:50% -5775px;
+}
+
+.icon--tool-some::before {
+  background-position:50% -5935px;
+}
+
+.icon--tool-none::before {
+  background-position:50% -6095px;
 }
 
 
 
 [class^="icon--star-"],
 [class*=" icon--star-"] {
-	display:block;
+  display:block;
 }
 
 [class^="icon--star-"]::before,
 [class*=" icon--star-"]::before {
-	content:"";
+  content:"";
   display:inline-block;
   width:30px;
   height:30px;
@@ -176,27 +186,27 @@
 }
 
 .icon--star-full::before {
-	background-position:50% 0;
+  background-position:50% 0;
 }
 
 .icon--star-empty::before {
-	background-position:50% -30px;
+  background-position:50% -30px;
 }
 
 
 [class^="icon--status-"],
 [class*=" icon--status-"] {
-	display:block;
-	width:21px;
-	height:21px;
-	border:3px solid #fff;
+  display:block;
+  width:21px;
+  height:21px;
+  border:3px solid #fff;
 
-	@include border-radius(100px);
+  @include border-radius(100px);
 }
 
 [class^="icon--status-"]::before,
 [class*=" icon--status-"]::before {
-	content:"";
+  content:"";
   display:inline-block;
   width:21px;
   height:21px;
@@ -205,18 +215,18 @@
 }
 
 .icon--status-good {
-	background-color:$brand_green;
+  background-color:$brand_green;
 }
 
 .icon--status-bad {
-	background-color:$warning_red;
+  background-color:$warning_red;
 }
 
 .icon--status-good::before {
-	background-position:-4px -5px;
+  background-position:-4px -5px;
 }
 
 .icon--status-bad::before {
-	background-position:-4px -35px;
+  background-position:-4px -35px;
 }
 
