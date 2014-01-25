@@ -25,7 +25,6 @@
               .report--rating_icon.icon--star-empty
           .report--summary--item--caption= t('report.substandard')
 
-
       .report--summary--description
         .report--summary--description--icon{ :class => flash[:results][:cost_rating] == 1 ? "icon--status-good" : "icon--status-bad" }
         .report--summary--description--caption= flash[:results][:cost_rating_label].html_safe

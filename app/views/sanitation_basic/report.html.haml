@@ -1,194 +1,92 @@
+= content_for :title do
+  Basic Report
+
 .report
-  .primary-section
-    .row
-      .large-4.large-offset-4.columns.header
-        = t('report.sanitation_final_report')
-      .large-4.columns.cross
-        = ">> #{t('report.cross_to_water')}"
-    .row
-      .large-12.columns.title
-        = t('report.summmary')
+
+  .report--header
+
+    .report--header--pretitle= t('report.sanitation_final_report')
+    %h1.report--header--title= t('report.summmary')
+    .report--header--quicklink=  ">> #{t('report.cross_to_water')}"
+
     - if flash[:results][:is_form_ready]
-      .row
-        .large-3.large-offset-3.columns.total_cost
-          .title
-            = t('report.total_cost')
-          .value
-            ="US$ #{number_with_delimiter(flash[:results][:total], :delimiter=>',')}"
-          .caption
-            = t('report.caption_total_cost', population: flash[:results][:population])
-        .large-3.columns.level_of_service
-          .title
-            = t('report.level_of_service')
-          .rating{class: "level-start-#{flash[:results][:service_rating] + 1}"}
-          .caption
-            = t('report.substandard')
-        .large-3.columns
-      .row
-        .large-6.large-offset-3.columns.result
-          .icon{:class => "bench-icon-#{flash[:results][:cost_rating]}"}
-          .caption
-            = flash[:results][:cost_rating_label].html_safe
-          .review
-            .section-container.section-review{"data-section" => "accordion"}
-              %section
-                %p.title.title-review{"data-section-title" => ""}
-                  %a{:href => "#section-review"}= "#{t('report.full_review')} >>"
-                .content.content-review{"data-section-content" => "", "data-slug" => "section-review"}
-                  %p= simple_format flash[:results][:service_level]
+      .report--summary
+        .report--summary--item
+          .report--summary--item--title= t('report.total_cost')
+          .report--summary--item--value="US$ #{number_with_delimiter(flash[:results][:total], :delimiter=>',')}"
+          .report--summary--item--caption= t('report.caption_total_cost', population: flash[:results][:population])
+
+        .report--summary--item
+          .report--summary--item--title= t('report.level_of_service')
+          .report--summary--item--rating
+            - ( flash[:results][:service_rating] + 1 ).times do
+              .report--rating_icon.icon--star-full
+            - ( 3 - flash[:results][:service_rating] ).times do
+              .report--rating_icon.icon--star-empty
+          .report--summary--item--caption= t('report.substandard')
+
+      .report--summary--description
+        .report--summary--description--icon{ :class => flash[:results][:cost_rating] == 1 ? "icon--status-good" : "icon--status-bad" }
+        .report--summary--description--caption= flash[:results][:cost_rating_label].html_safe
+
+      %section.report--review{ "data-togglecontent" => "true" }
+        %a.report--review--link{ :href => '#', "data-togglecontent-link" => "true" }= "#{t('report.full_review')} >>"
+        .report--review--content{ "data-togglecontent-content" => "true" }
+          .report--review--content--text= simple_format flash[:results][:service_level]
+
     - else
-      .row
-        .large-12.columns
-          .box-no-value
-            .caption
-              = t('report.report_box_no_value')
-  .content-section.context
-    .row
-      .large-12.columns
-        .title
-          = t('report.context');
-    - flash[:results][:context_report].each_slice(3) do |box_by_row|
-      .row
-        - box_by_row.each do |box|
-          .large-4.columns
-            .box-report
-              .title
-                = box[:title]
-              .icon{class: box[:css_icon]}
-              .caption
-                = box[:caption]
-              .edit
-                = link_to box[:link] do
-                  = image_tag 'iconEdit24.png', class: ''
-  .content-section.cost
-    .row
-      .large-12.columns
-        .title
-          = t('report.cost');
-        .subtitle
-          = t('report.cost_subtitle', population: flash[:results][:population])
+      .report--no_data= t('report.report_box_no_value')
+
+  %section.report--section
+    .report--section--title= t('report.context');
+
+    .report--option_grid
+      - flash[:results][:context_report].each_slice(3) do |box_by_row|
+        .report--option_grid--row
+
+          - box_by_row.each do |box|
+            .report--option_grid--item
+              .report--option_grid--item--content
+                .report--option_grid--item--title= box[:title]
+                %div{ :class => "icon--tool-#{box[:css_icon]}" }
+                .report--option_grid--item--caption= box[:caption]
+                = link_to 'Edit', box[:link], :class => 'report--option_grid--item--edit'
+
+
+  %section.report--section
+    .report--section--title= t('report.cost');
+    .report--section--subtitle= t('report.cost_subtitle', population: flash[:results][:population])
+
     - if flash[:results][:is_cost_avaliable]
-      .row
-        .large-12.columns
-          .graph
-            #graphContent
+      .report--chart{ 'data-chart-capital' => flash[:results][:capital] || 0, 'data-chart-recurrent' => flash[:results][:recurrent] || 0, 'data-chart-population' => flash[:results][:population] || 0 }
+
+      .report--costs
+        - flash[:results][:cost_report].each do |cost_box|
+          .report--costs--column.report--costs--column-small
+            .report--costs--title= cost_box[:title]
+            .report--costs--detail
+              .report--costs--detail--value= cost_box[:value]
+              = link_to 'Edit', cost_box[:link], :class => 'report--costs--detail--edit'
+
+        .report--costs--column.report--costs--column-big
+          .report--costs--title= t('report.total')
+          .report--costs--bigvalue US #{number_to_currency(flash[:results][:total], precision: 2)}
+
     - else
-      .row
-        .large-12.columns
-          .box-no-value
-            .caption
-              = t('report.cost_box_no_value')
-    .row
-      - flash[:results][:cost_report].each do |cost_box|
-        .large-3.columns{class: cost_box[:name]}
-          .title-cost-box
-            = cost_box[:title]
-          .cost-box-report
-            .value
-              = cost_box[:value]
-            .edit
-              = link_to cost_box[:link] do
-                = image_tag 'iconEdit24.png', class: ''
-      .large-6.columns.total-container
-        .title-cost-box
-          = t('report.total')
-        .total
-          US #{number_to_currency(flash[:results][:total], precision: 2)}
-  .content-section.service_level
-    .row
-      .large-12.columns
-        .title
-          = t('report.service');
-        .subtitle
-          = t('report.distance')
-    - flash[:results][:service_report].each_slice(3) do |box_by_row|
-      .row
-        - box_by_row.each do |box|
-          .large-4.columns
-            .box-report
-              .title
-                = box[:title]
-              .icon{class: box[:css_icon]}
-              .caption
-                = box[:caption]
-              .edit
-                = link_to box[:link] do
-                  = image_tag 'iconEdit24.png', class: ''
+      .report--no_data= t('report.cost_box_no_value')
 
-/Script to google chart
-%script{:src => 'http://www.google.com/jsapi', :type => 'text/javascript'}
-:javascript
-  google.load('visualization', '1', {packages: ['corechart']});
-:javascript
-  function expenditureGraph() {
+  %section.report--section
+    .report--section--title= t('report.service');
+    .report--section--subtitle= t('report.distance')
 
-      var _C= #{(flash[:results][:capital]|| 0)};
-      var _R= #{(flash[:results][:recurrent]|| 0)};
-      var _P= #{(flash[:results][:population]|| 0)};
-      var graphContainer = $('#graphContent')
+    .report--option_grid
+      - flash[:results][:service_report].each_slice(3) do |box_by_row|
+        .report--option_grid--row
 
-      if(_C && _R){
-
-          var data = new google.visualization.DataTable();
-
-          data.addColumn('string', 'Year');
-          data.addColumn('number', 'Expenditure');
-          data.addColumn({type:'string', role:'annotation'}); // annotation role col.
-          data.addColumn({type:'string', role:'annotationText'}); // annotationText col
-          data.addColumn({type:'string', role:'tooltip'}); // tooltip role col
-
-          capExpByPopulation = _C*_P;
-          recExpByPopulation = _R*_P;
-          accounting.settings = {
-              currency: {
-                  symbol : "US$",   // default currency symbol is '$'
-                  format: "%s %v", // controls output: %s = symbol, %v = value/number (can be object: see below)
-                  decimal : ".",  // decimal point separator
-                  thousand: ",",  // thousands separator
-                  precision : 0  // decimal places
-              },
-              number: {
-                  precision : 0,  // default precision on numbers is 0
-                  thousand: ",",
-                  decimal : "."
-              }
-          }
-
-          graphDataRows=[['Setup', capExpByPopulation, accounting.formatMoney(capExpByPopulation), 'You spent '+accounting.formatMoney(capExpByPopulation)+' to setup the service', 'setup\nExpenditure: '+accounting.formatMoney(capExpByPopulation)],
-              ['1',  recExpByPopulation, accounting.formatMoney(recExpByPopulation), accounting.formatMoney(recExpByPopulation)+' is your annual expenditure', '1\nExpenditure: '+accounting.formatMoney(recExpByPopulation)],
-          ];
-          for(i=2;i<=10;i++){
-            graphDataRows.push([i+'',recExpByPopulation, null, null, i+'\nExpenditure: '+accounting.formatMoney(recExpByPopulation)])
-          }
-          data.addRows(graphDataRows);
-
-          // Create and draw the visualization.
-          new google.visualization.LineChart(document.getElementById('graphContent')).
-                  draw(data, {curveType: "none",
-                      axisTitlesPosition: "out",
-                      legend: { position: "none" },
-                      width: graphContainer.width(), height: Math.round(graphContainer.width()*0.25),
-                      hAxis: { title: 'Year', titleTextStyle: { color: '#a6955f' }, textStyle: { color: '#a6955f' }, basline: 1, baselineColor: '#a6955f', gridlines: {color: '#fff'}, maxTextLines: 1, maxAlternation: 1 },
-                      vAxis: { title: 'Expenditure', titleTextStyle: { color: '#a6955f' }, textStyle: { color: '#a6955f' },baselineColor: '#a6955f', gridlines: {color: '#a6955f'}, maxValue: 10,  format:'US$ ###,###.##' },
-                      backgroundColor: "transparent",
-                      lineWidth: 4,
-                      colors: ['#ffffff'],
-                      //annotations: { style: 'line'},
-                      'chartArea': { 'width': '75%', 'height': '70%'}
-                  }
-          );
-      }
-  }
-
-  google.setOnLoadCallback(expenditureGraph);
-
-
-
-
-
-
-
-
-
-
-
+          - box_by_row.each do |box|
+            .report--option_grid--item
+              .report--option_grid--item--content
+                .report--option_grid--item--title= box[:title]
+                %div{ :class => "icon--tool-#{box[:css_icon]}" }
+                .report--option_grid--item--caption= box[:caption]
+                = link_to '', box[:link], :class => 'report--option_grid--item--edit'
