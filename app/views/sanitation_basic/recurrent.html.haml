@@ -8,7 +8,7 @@
 
     .question--answer--title= t 'form.sanitation_basic.recurrent.value_label'
 
-    = form_tag({controller: 'sanitation_basic', action: 'recurrent'}, class: 'main_content', id: 'sanitationBasicForm') do
+    = form_tag( { controller: 'sanitation_basic', action: 'recurrent' }, id: 'sanitationBasicForm' ) do
 
       .slider
         %input.slider--value{ 'data-target' => 'recurrentSlider', :value => @recurrent[:value] }
