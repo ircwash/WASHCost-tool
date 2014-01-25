@@ -1,25 +1,25 @@
-- @title = '3 of 9 (Population)'
-.row
-  .large-12.columns
-    .question= t 'form.sanitation_basic.population.question'
-.row
-  .large-12.columns
-    .choices-section
-      = form_tag({controller: 'sanitation_basic', action: 'population'}, class: 'main_content', id: 'sanitationBasicForm') do
-        .slider-section
-          .value
-            .valueLabel.caption= t 'form.sanitation_basic.population.value_label'
-            -##populationValue.valueOutput.slider-output 500
-            .container-value
-              = text_field_tag :text_field, 0, 'data-target' => 'populationSlider', 'data-logaritmic' => true, class: 'slider-output'
-          #populationSlider.slider-container{'data-slider_value' => @population.present? ? @population : 0}
-            .test-cursor
-        %input{:name => 'population', :type => 'hidden'}
-        .action
-          = submit_tag((t 'buttons.next'), class: 'button button-basic-questionnaire')
-.info-tab
-  %a.tab{:href => '#'} infoTab
-  .tab-content
-    %h3
-    %p= t 'form.sanitation_basic.population.info'
+= content_for :title do
+  2 of 9 (Population)
 
+.question
+  %h1.question--title= t 'form.sanitation_basic.population.question'
+
+  .question--answer
+
+    .question--answer--title= t 'form.sanitation_basic.population.value_label'
+
+    = form_tag( { controller: 'sanitation_basic', action: 'population' }, id: 'sanitationBasicForm' ) do
+
+      .slider
+        %input.slider--value{ :type => 'text', :value => @population.present? ? number_with_precision( @population, :precision => 0, :locale => I18n.locale ) : 100 }
+        .slider--widget
+        %input{ :name => 'population', :type => 'hidden', :value => @population.present? ? @population : 100, 'data-slider-input' => 'true', 'data-logarithmic' => 'true', 'data-slider-min' => 100, 'data-slider-max' => 1000000 }
+
+      .question--buttons
+        = submit_tag((t 'buttons.next'), class: 'button')
+
+.info_tab
+  .info_tab--icon infoTab
+  .info_tab--container
+    .info_tab--content
+      %p.info_tab--content--text= t 'form.sanitation_basic.population.info'

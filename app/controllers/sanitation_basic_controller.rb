@@ -41,7 +41,7 @@ class SanitationBasicController < ApplicationController
         redirect_to :action => "latrine"
       end
     end
-    @population = retrieve_previous_answer_for("population") || 0
+    @population = retrieve_previous_answer_for("population")
   end
 
   def latrine
