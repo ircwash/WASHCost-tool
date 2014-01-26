@@ -31,7 +31,7 @@
 
       %section.report--review{ "data-togglecontent" => "true" }
         %a.report--review--link{ :href => '#', "data-togglecontent-link" => "true" }= "#{t('report.full_review')} >>"
-        .report--review--content{ "data-togglecontent-content" => "true" }
+        .report--review--content{ "data-togglecontent-content" => "report--review--content-visible" }
           .report--review--content--text= simple_format flash[:results][:service_level]
 
     - else

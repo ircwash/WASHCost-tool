@@ -1,5 +1,8 @@
 class RegistrationsController < Devise::RegistrationsController
+
   include Rails.application.routes.url_helpers
+
+  layout "general"
 
   def update
     @user = User.find(current_user.id)
@@ -21,6 +24,7 @@ class RegistrationsController < Devise::RegistrationsController
     else
       render "edit"
     end
+
   end
 
   private
@@ -34,7 +38,9 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   protected
+
   def after_update_path_for(resource)
     dashboard_index_path
   end
+
 end

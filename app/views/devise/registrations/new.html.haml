@@ -1,31 +1,30 @@
-.session{style: 'margin-botton: 10px;'}
-  .row
-    .large-10.large-offset-1
-      - popup |= false
-      - unless popup
-        %h5.text-center LOGIN TO YOUR ACCOUNT
-      = simple_form_for resource, :as => resource_name, :url => registration_path(resource_name), html: {} do |f|
-        .error_caption
-          = devise_error_messages!
-        %div{class: "#{'container-popup' if popup}"}
-          .special-textfiled
-            = f.input :email, :required => false, :autofocus => true, label: false, input_html: { class: 'special_input_session' }, placeholder: 'Email'
-          .special-textfiled
-            = f.input :password, :required => false, label: false, input_html: { class: 'special_input_session' }, placeholder: 'Password'
-          .special-textfiled
-            = f.input :password_confirmation, :required => false, label: false, input_html: { class: 'special_input_session' }, placeholder: 'Repeat your password'
-          .row
-            .large-6.columns
-              .login-button
-                = f.button :submit, "Register", class: 'medium button button-landing-page button-landing-page-size'
-            .large-6.columns
-              .login-links.text-right
-                = render "devise/shared/links"
-  .row
-    %p.text-center.link-footer-min
-      please visit the
-      = link_to 'WASHCost Blog', 'http://blog.washcost.org/'
-      to learn more about the Advanced Calculator
+.boxed_container.boxed_container-full_height
+  .boxed_content
+    .page_content
 
-%br
-%br
+      = simple_form_for resource, :as => resource_name, :url => registration_path(resource_name), html: { :class => 'standalone_form' } do |f|
+
+        %h1.standalone_form--heading Create your account
+
+        = render "devise/shared/messages"
+
+        .standalone_form--field.standalone_form--field-text
+          = f.input :email, :required => false, label: false, input_html: { class: 'standalone_form--field--input standalone_form--field--input-text' }, placeholder: 'Email'
+
+        .standalone_form--field.standalone_form--field-text
+          = f.input :password, :required => false, label: false, input_html: { class: 'standalone_form--field--input standalone_form--field--input-text' }, placeholder: 'Password'
+
+        .standalone_form--field.standalone_form--field-text
+          = f.input :password_confirmation, :required => false, label: false, input_html: { class: 'standalone_form--field--input standalone_form--field--input-text' }, placeholder: 'Repeat your password'
+
+        .standalone_form--footer
+          .standalone_form--buttons
+            = f.button :submit, "Register", class: 'button'
+
+          .standalone_form--links
+            = render "devise/shared/links"
+
+        .standalone_form--promo
+          Please visit the
+          = link_to 'WASHCost Blog', 'http://blog.washcost.org/', :class => 'standalone_form--promo--link'
+          to learn more about the Advanced Calculator

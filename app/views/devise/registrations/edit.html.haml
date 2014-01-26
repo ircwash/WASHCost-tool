@@ -1,44 +1,49 @@
-.session.pad-session.edit_user
-  .row
-    %h5.text-center
-      EDIT YOUR ACCOUNT
-    = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
-      .error_caption
-        = devise_error_messages!
-      .large-6.columns.margin-offset
-        .special-textfiled
-          = f.input :first_name, :required => false, :autofocus => true, label: false, input_html: { class: 'special_input_session' }, placeholder: 'Your first name'
-        .special-textfiled
-          = f.input :company, :required => false, :autofocus => true, label: false, input_html: { class: 'special_input_session' }, placeholder: 'Your company'
-        .special-textfiled
-          = f.input :email, :required => false, :autofocus => true, label: false, input_html: { class: 'special_input_session' }, placeholder: 'Your email'
-      .large-6.large.columns.margin-offset
-        .special-textfiled
-          = f.input :last_name, :required => false, :autofocus => true, label: false, input_html: { class: 'special_input_session' }, placeholder: 'Your last name'
-        .select-container-simple.special-textfiled
-          = f.input :country, :required => false, :autofocus => true, label: false, input_html: { class: 'special_input_session chzn-select' }, placeholder: 'Your country'
-        .select-container-simple.special-textfiled
-          = f.input :prefered_language, collection: ['English','Spanish','French'], label: false, include_blank: false, input_html: {class: "chzn-select"}
-      .row
-        .large-12.large.columns.margin-offset
-          .section-container.section-auto-sample-custom{"data-section" => "accordion"}
-            %section
-              %p.title.title-sample{"data-section-title" => ""}
-                %a{:href => "#password-section"} Change your password
-              .content.content-sample{"data-section-content" => "", "data-slug" => "password-section"}
-                .special-textfiled
-                  = f.input :password, :required => false, :autofocus => true, label: false, input_html: { class: 'special_input_session' }, placeholder: 'Your password', disabled: true
-                .special-textfiled
-                  = f.input :password_confirmation, :required => false, :autofocus => true, label: false, input_html: { class: 'special_input_session' }, placeholder: 'Repeat your password', disabled: true
-                .special-textfiled
-                  = f.input :current_password, :required => false, :autofocus => true, label: false, input_html: { class: 'special_input_session' }, placeholder: 'Your current password', disabled: true
-      .row
-        .large-12.columns.margin-offset
-          .login-button.right
-            = f.button :submit, "Edit", class: 'medium button button-landing-page button-landing-page-size'
-            %br
-            %br
-            = link_to 'back', :back, class:'right'
+.boxed_container.boxed_container
+  .boxed_content
+    .page_content
 
-%br
-%br
+      = simple_form_for resource, :as => resource_name, :url => registration_path(resource_name), html: { :class => 'standalone_form' } do |f|
+
+        %h1.standalone_form--heading Edit your account
+
+        = render "devise/shared/messages"
+
+        .standalone_form--field.standalone_form--field-text
+          = f.input :first_name, :required => false, :autofocus => true, label: false, input_html: { class: 'standalone_form--field--input standalone_form--field--input-text' }, placeholder: 'Your first name'
+
+        .standalone_form--field.standalone_form--field-text
+          = f.input :last_name, :required => false, :autofocus => true, label: false, input_html: { class: 'standalone_form--field--input standalone_form--field--input-text' }, placeholder: 'Your last name'
+
+        .standalone_form--field.standalone_form--field-text
+          = f.input :email, :required => false, :autofocus => true, label: false, input_html: { class: 'standalone_form--field--input standalone_form--field--input-text' }, placeholder: 'Your email'
+
+        .standalone_form--field.standalone_form--field-text
+          = f.input :company, :required => false, :autofocus => true, label: false, input_html: { class: 'standalone_form--field--input standalone_form--field--input-text' }, placeholder: 'Your company'
+
+        .standalone_form--field.standalone_form--field-dropdown
+          = f.input :country, :required => false, :autofocus => true, label: false, input_html: { class: 'standalone_form--field--input standalone_form--field--input-text chzn-select' }, placeholder: 'Your country'
+
+        .standalone_form--field.standalone_form--field-dropdown
+          = f.input :prefered_language, collection: ['English','Spanish','French'], label: false, include_blank: false, input_html: { class: "standalone_form--field--input standalone_form--field--input-text chzn-select" }
+
+        .standalone_form--field{ "data-togglecontent" => "true" }
+          %a.standalone_form--interstitial_link.standalone_form--promo--link{ :href => "#password-section", "data-togglecontent-link" => "true" } Change your password
+
+          .standalone_form--hidden_content{ "data-togglecontent-content" => "true" }
+            .standalone_form--field.standalone_form--field-text
+              = f.input :password, :required => false, :autofocus => true, label: false, input_html: { class: 'standalone_form--field--input standalone_form--field--input-text' }, placeholder: 'Your password', disabled: true
+
+            .standalone_form--field.standalone_form--field-text
+              = f.input :password_confirmation, :required => false, :autofocus => true, label: false, input_html: { class: 'standalone_form--field--input standalone_form--field--input-text' }, placeholder: 'Repeat your password', disabled: true
+
+            .standalone_form--field.standalone_form--field-text
+              = f.input :current_password, :required => false, :autofocus => true, label: false, input_html: { class: 'standalone_form--field--input standalone_form--field--input-text' }, placeholder: 'Your current password', disabled: true
+
+
+        .standalone_form--footer
+          .standalone_form--buttons
+            = f.button :submit, "Update", class: 'button'
+
+          .standalone_form--links
+            = link_to 'Back', :back, :class => 'standalone_form--link'
+

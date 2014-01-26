@@ -33,7 +33,7 @@
 }
 
 .standalone_form--field {
-  @include clearfix;
+  @include pie-clearfix;
 }
 
 .standalone_form--field + .standalone_form--field {
@@ -42,6 +42,10 @@
 
 .standalone_form--field + .standalone_form--field-box {
   margin-top:15px;
+}
+
+.standalone_form--field + .standalone_form--field-dropdown {
+  margin-top:10px;
 }
 
 .standalone_form--field--input-text {
@@ -115,3 +119,27 @@
 .standalone_form--message + :not(.standalone_form--message) {
   margin-top:20px;
 }
+
+.standalone_form--promo {
+  margin-top:20px;
+  font-size:14px;
+  line-height:1.4;
+}
+
+.standalone_form--promo--link {
+  color:#fff;
+}
+
+.standalone_form--hidden_content {
+  display:none;
+}
+
+.standalone_form--hidden_content-visible {
+  display:block;
+}
+
+.standalone_form--interstitial_link {
+  display:block;
+  margin:20px 0 10px;
+}
+

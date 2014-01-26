@@ -15,7 +15,7 @@ $( document ).ready( function()
         event.preventDefault();
 
         // animate tab
-        content.toggleClass( 'report--review--content-visible' );
+        content.toggleClass( content.data( 'togglecontent-content' ) );
       } );
     } );
   }

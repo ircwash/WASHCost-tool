@@ -14,10 +14,10 @@ class User
   field :last_name,          type: String
   field :country,            type: String, default: "GB"
   field :prefered_language,  type: String, default: "English"
-  field :company,            type: String, default: "No Specified"
+  field :company,            type: String, default: ""
   field :email,              type: String, default: ""
   field :encrypted_password, type: String, default: ""
-  
+
   ## Recoverable
   field :reset_password_token,   :type => String
   field :reset_password_sent_at, :type => Time
