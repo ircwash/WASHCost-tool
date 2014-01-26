@@ -1,0 +1,15 @@
+.boxed_container.boxed_container-full_height
+  .boxed_content
+    .page_content
+
+      = simple_form_for @questionnaire, url: save_basic_reports_path, :html => { :class => 'standalone_form' } do |f|
+        = f.input :tool_name, as: :hidden, input_html: {value: @tool_name}
+
+        %h1.standalone_form--heading= t 'report.save_your_report'
+
+        .standalone_form--field.standalone_form--field-text
+          = f.input :title, input_html: { size: 35, class: 'standalone_form--field--input standalone_form--field--input-text' }, label: false, placeholder: 'Name'
+
+        .standalone_form--footer
+          .standalone_form--buttons
+            = f.submit "Save", :class => 'button'

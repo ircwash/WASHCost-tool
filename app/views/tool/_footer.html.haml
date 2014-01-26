@@ -9,4 +9,4 @@
         .footer--progress--bar
           .footer--progress--bar--fill{ :style => "width: #{flash[:percent_complete]}%" }
 
-      = link_to t( 'buttons.save_report') , save_basic_reports_path( querier: 'link', tool_name: 'water' ), :remote => true, :class => "footer--link footer--link-save", method: :post
+      = link_to t( 'buttons.save_report') , questionnaire_basic_reports_path( tool_name: 'water' ), :class => "footer--link footer--link-save"

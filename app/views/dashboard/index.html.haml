@@ -1,69 +1,72 @@
-.dashboard
-  .row.section
-    .large-2.columns
-      -#%img{:src => "holder.js/140x140"}
-      = image_tag 'user.jpg', style: 'width: 140px'
-      = link_to edit_user_registration_path do
-        = image_tag 'setting-icon.png', class: 'setting-button'
-    .large-4.columns
-      .name
-        = current_user.name.titleize
-      %p
-        COMPANY:
-        %strong= current_user.company.upcase
-      %p
-        COUNTRY:
-        %strong=  Country.new(current_user.country).data.present? ? Country.new(current_user.country).name.capitalize : "NOT SPECIFIED"
-      %p
-        Prefered Language:
-        %strong= current_user.prefered_language.upcase
-      %p
-        Contact Mail:
-        %strong= current_user.email.upcase
+.boxed_container
+  .boxed_content.page_content
 
-    .large-4.columns
-      .link-container
-        = link_to 'START A BASIC CALCULATOR', cal_path, class: 'large button expand button-landing-page button-landing-page-size radius centered'
-        = link_to 'START AN ADVANCED CALCULATOR (COMING SOON)', 'http://blog.washcost.org/', class: 'large button expand button-landing-page button-landing-page-size radius'
-  .row
-    %br
-    %br
-  .row
-    .reports
-      %table
-        %tr.text-left.head
-          %th{width: 200} LOCATION
-          %th{width: 150} DATE
-          %th{width: 300} CALCULATOR TYPE
-          %th{width: 100} SERVICE
-          %th{width: 200} FINAL REPORT
+    .dashboard
+      .row.section
+        .large-2.columns
+          -#%img{:src => "holder.js/140x140"}
+          = image_tag 'user.jpg', style: 'width: 140px'
+          = link_to edit_user_registration_path do
+            = image_tag 'setting-icon.png', class: 'setting-button'
+        .large-4.columns
+          .name
+            = current_user.name.titleize
+          %p
+            COMPANY:
+            %strong= current_user.company.upcase
+          %p
+            COUNTRY:
+            %strong=  Country.new(current_user.country).data.present? ? Country.new(current_user.country).name.capitalize : "NOT SPECIFIED"
+          %p
+            Prefered Language:
+            %strong= current_user.prefered_language.upcase
+          %p
+            Contact Mail:
+            %strong= current_user.email.upcase
 
-        - current_user.basic_questionnaires.each do |basic_questionnaire|
-          %tr.divisor
-            %td
-              = basic_questionnaire.title.upcase
-          %tr.content-report
-            %td{valign: :middle}
-              .row
-                - if basic_questionnaire.form["country"].present?
-                  .large-3.columns.country-flag
-                    .flag{class: "flag-#{basic_questionnaire.form["country"].downcase}"}
-                  .large-9.columns.country-name
-                    .country= Country.new(basic_questionnaire.form["country"]).name.truncate(13).upcase
-                -else
-                  .large-3.columns
-                    .flag
-                  .large-9.columns
-                    .country NN
-            %td
-              .date
-                = basic_questionnaire.created_at
-            %td
-              .row.text-center
-                .large-12.columns
-                  .tool_name=  "#{basic_questionnaire.tool_name.upcase} | "
-                  .percent= " BASIC TOOL (#{basic_questionnaire.percent_completed}%)"
-            %td
-              .service INSTALLED
-            %td= link_to 'VIEW REPORT', load_basic_reports_path(id_questionnaire: basic_questionnaire.id), "data-method" => "post", class: 'view_report'
+        .large-4.columns
+          .link-container
+            = link_to 'START A BASIC CALCULATOR', cal_path, class: 'large button expand button-landing-page button-landing-page-size radius centered'
+            = link_to 'START AN ADVANCED CALCULATOR (COMING SOON)', 'http://blog.washcost.org/', class: 'large button expand button-landing-page button-landing-page-size radius'
+      .row
+        %br
+        %br
+      .row
+        .reports
+          %table
+            %tr.text-left.head
+              %th{width: 200} LOCATION
+              %th{width: 150} DATE
+              %th{width: 300} CALCULATOR TYPE
+              %th{width: 100} SERVICE
+              %th{width: 200} FINAL REPORT
+
+            - current_user.basic_questionnaires.each do |basic_questionnaire|
+              %tr.divisor
+                %td
+                  = basic_questionnaire.title.upcase
+              %tr.content-report
+                %td{valign: :middle}
+                  .row
+                    - if basic_questionnaire.form["country"].present?
+                      .large-3.columns.country-flag
+                        .flag{class: "flag-#{basic_questionnaire.form["country"].downcase}"}
+                      .large-9.columns.country-name
+                        .country= Country.new(basic_questionnaire.form["country"]).name.truncate(13).upcase
+                    -else
+                      .large-3.columns
+                        .flag
+                      .large-9.columns
+                        .country NN
+                %td
+                  .date
+                    = basic_questionnaire.created_at
+                %td
+                  .row.text-center
+                    .large-12.columns
+                      .tool_name=  "#{basic_questionnaire.tool_name.upcase} | "
+                      .percent= " BASIC TOOL (#{basic_questionnaire.percent_completed}%)"
+                %td
+                  .service INSTALLED
+                %td= link_to 'VIEW REPORT', load_basic_reports_path(id_questionnaire: basic_questionnaire.id), "data-method" => "post", class: 'view_report'
 

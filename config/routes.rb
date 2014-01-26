@@ -5,6 +5,7 @@ WashCostApp::Application.routes.draw do
   namespace :basic do
     resource :reports do
       member do
+        get :questionnaire
         post :save
         post :load
       end
