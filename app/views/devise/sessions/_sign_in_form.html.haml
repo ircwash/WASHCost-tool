@@ -1,6 +1,26 @@
-.session{style: 'margin-botton: 10px;'}
-  .row
-    .large-10.large-offset-1
-      = render 'devise/sessions/sign_in_raw_form'
-%br
-%br
+.boxed_container.boxed_container-full_height
+  .boxed_content
+    .page_content
+
+      = form_for @user, :url => user_session_path, :html => { :class => 'standalone_form' } do |f|
+
+        %h1.standalone_form--heading Login to your account
+
+        = render "devise/shared/messages"
+
+        .standalone_form--field.standalone_form--field-text
+          = f.text_field :email, :class => 'standalone_form--field--input standalone_form--field--input-text', :required => false, :autofocus => true, placeholder: 'Email'
+
+        .standalone_form--field.standalone_form--field-text
+          = f.password_field :password, :class => 'standalone_form--field--input standalone_form--field--input-text', :required => false, placeholder: 'Password'
+
+        .standalone_form--field.standalone_form--field-box
+          = f.check_box :remember_me, label: false, :id => 'remember_me_input', :class => 'standalone_form--field--input standalone_form--field--input-box', :as => :boolean if devise_mapping.rememberable?
+          %label.standalone_form--label.standalone_form--label-for_box{ :for => 'remember_me_input' } remember me
+
+        .standalone_form--footer
+          .standalone_form--buttons
+            = f.submit "Log in", :class => 'button'
+
+          .standalone_form--links
+            = render "devise/shared/links"

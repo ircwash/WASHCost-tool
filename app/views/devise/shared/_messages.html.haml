@@ -1,0 +1,5 @@
+- flash.each do |name, msg|
+
+  - if msg.is_a?( String ) && name.to_s == 'alert'
+
+    .standalone_form--message= msg

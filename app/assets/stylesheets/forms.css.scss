@@ -1,0 +1,117 @@
+@mixin placeholder() {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+.standalone_form {
+  width:$form_width;
+  margin:30px auto;
+  padding:30px;
+  color:#fff;
+  background-color:$dark_grey;
+}
+
+.standalone_form--heading {
+  margin-bottom:20px;
+  font-size:16px;
+  font-weight:bold;
+  text-align:center;
+  text-transform:uppercase;
+}
+
+.standalone_form--field {
+  @include clearfix;
+}
+
+.standalone_form--field + .standalone_form--field {
+  margin-top:7px;
+}
+
+.standalone_form--field + .standalone_form--field-box {
+  margin-top:15px;
+}
+
+.standalone_form--field--input-text {
+  width:100%;
+  padding:10px 15px;
+  border:none;
+  font-size:14px;
+  color:#fff;
+  background-color:rgba(255,255,255,0.1);
+
+  @include border-radius(3px);
+  @include box-sizing(border-box);
+  @include placeholder {
+    color:rgba(255,255,255,0.25);
+
+    @include transition(color 0.1s);
+  }
+}
+
+.standalone_form--field--input-text:focus {
+  @include placeholder {
+    color:rgba(255,255,255,0);
+  }
+}
+
+.standalone_form--field--input-box {
+  float:left;
+  width:20px;
+  height:20px;
+}
+
+.standalone_form--label-for_box {
+  float:left;
+  padding-top:3px;
+}
+
+.standalone_form--footer {
+  margin-top:15px;
+
+  @include clearfix;
+}
+
+.standalone_form--buttons {
+  float:left;
+}
+
+.standalone_form--links {
+  float:right;
+  text-align:right;
+}
+
+.standalone_form--link {
+  display:block;
+  font-size:12px;
+  color:#fff;
+  text-decoration:none;
+}
+
+.standalone_form--link + .standalone_form--link {
+  margin-top:5px;
+}
+
+.standalone_form--link:hover {
+  text-decoration:underline;
+}
+
+.standalone_form--message {
+  font-size:12px;
+}
+
+.standalone_form--message + :not(.standalone_form--message) {
+  margin-top:20px;
+}

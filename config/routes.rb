@@ -1,6 +1,6 @@
 WashCostApp::Application.routes.draw do
 
-  devise_for :users, :controllers => { :registrations => "registrations" }
+  devise_for :users, :controllers => { :sessions => 'sessions', :registrations => 'registrations' }
 
   namespace :basic do
     resource :reports do
@@ -21,9 +21,11 @@ WashCostApp::Application.routes.draw do
   get '/cal/sanitation_basic/header_navigation', to: 'sanitation_basic#header_navigation'
 
   match '/dashboard' => 'dashboard#index'
-  match '/home/calculator' => 'home#calculator'
+
   match '/home/sign_in' => 'home#sign_in'
+
   match '/cal' => 'home#index'
+  match '/home/calculator' => 'home#calculator'
 
   match '/infographic' => 'infographic#index'
   match '/infographic/mobile' => 'mobile#infographic'
