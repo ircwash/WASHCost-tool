@@ -1,0 +1,17 @@
+.boxed_container.boxed_container-full_height
+  .boxed_content
+    .page_content
+
+      = form_for resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :class => 'standalone_form' } do |f|
+
+        %h1.standalone_form--heading Forgot your password?
+
+        = render "devise/shared/messages"
+
+        .standalone_form--field.standalone_form--field-text
+          = f.email_field :email, :placeholder => 'Email', :class => 'standalone_form--field--input standalone_form--field--input-text'
+
+        .standalone_form--footer
+          .standalone_form--buttons
+            = f.submit "Send me reset password instructions", :class => 'button'
+

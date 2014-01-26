@@ -1,6 +1,6 @@
 WashCostApp::Application.routes.draw do
 
-  devise_for :users, :controllers => { :sessions => 'sessions', :registrations => 'registrations' }
+  devise_for :users, :controllers => { :sessions => 'sessions', :registrations => 'registrations', :passwords => 'passwords' }
 
   namespace :basic do
     resource :reports do
