@@ -9,11 +9,11 @@ class Ability
     #can :manage, [WaterBasicController, SanitationBasicController] if user.present?
     if user.new_record?
       can :manage, [WaterBasicController, SanitationBasicController]
-      cannot :save, Basic::ReportsController do |kontroller|
+      cannot :questionnaire, Basic::ReportsController do |kontroller|
         @permission_denied = {}
-        @permission_denied[:location] = '.washcost-popup .reveal-modal.session-container.sign_in'
+        @permission_denied[:location] = new_user_session_path
         @permission_denied[:message] = 'test message'
-        @permission_denied[:output_from] = 'popup'
+        @permission_denied[:output_from] = 'http'
         true
       end
       cannot :manage, DashboardController do |kontroller|
