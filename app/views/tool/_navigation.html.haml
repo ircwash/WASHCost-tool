@@ -1,12 +1,13 @@
 %nav.navigation
 
-  %ul.navigation--category{ 'data-number-of-items' => @navigation_header.present? ? @navigation_header[:number_of_items] : -1 }
-    - questionnaire_sections.each do |item|
-      %li{ :class => 'navigation--category--item' }
-        - if controller_path == 'basic/water'
-          = link_to item[:name], basic_water_action_path( I18n.locale, item[:redirect_to] ), :class => "navigation--category--link navigation--category--link-#{item[:class]}"
-        - else
-          = link_to item[:name], basic_sanitation_action_path( I18n.locale, item[:redirect_to] ), :class => "navigation--category--link navigation--category--link-#{item[:class]}"
+  - if questionnaire_sections.count > 1
+    %ul.navigation--category{ 'data-number-of-items' => @navigation_header.present? ? @navigation_header[:number_of_items] : -1 }
+      - questionnaire_sections.each do |item|
+        %li{ :class => 'navigation--category--item' }
+          - if controller_path == 'basic/water'
+            = link_to item[:name], basic_water_action_path( I18n.locale, item[:redirect_to] ), :class => "navigation--category--link navigation--category--link-#{item[:class]}"
+          - else
+            = link_to item[:name], basic_sanitation_action_path( I18n.locale, item[:redirect_to] ), :class => "navigation--category--link navigation--category--link-#{item[:class]}"
 
   .navigation--subcategory
     %ul.navigation--subcategory--list

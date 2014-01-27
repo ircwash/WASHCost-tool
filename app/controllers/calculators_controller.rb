@@ -25,7 +25,7 @@ class CalculatorsController < ApplicationController
       when 'advanced'
         case params[ :tool_name ]
           when 'water'
-
+            redirect_to advanced_water_path( I18n.locale )
           when 'sanitation'
 
         end

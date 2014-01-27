@@ -37,6 +37,15 @@ WashCostApp::Application.routes.draw do
 
       end
 
+      namespace :advanced do
+
+        scope '/water' do
+          match '/:action' => 'water#(:action)', :via => [ :get, :post ], :as => 'water_action'
+          root :to => redirect( '/%{locale}/calculators/advanced/water/context' ), :as => 'water'
+        end
+
+      end
+
       root :to => 'calculators#index', :as => 'calculators'
 
     end

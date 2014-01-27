@@ -8,7 +8,7 @@ class Ability
     user ||= User.new
 
     if user.new_record?
-      can :manage, [Basic::WaterController, Basic::SanitationController]
+      can :manage, [Basic::WaterController, Basic::SanitationController, Advanced::WaterController]
 
       cannot :questionnaire, Basic::ReportsController do |kontroller|
         @permission_denied = {}
