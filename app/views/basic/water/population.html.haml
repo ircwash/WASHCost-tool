@@ -1,0 +1,25 @@
+= content_for :title do
+  3 of 9 (Population)
+
+.question
+  %h1.question--title= @population[:question_label]
+
+  .question--answer
+
+    .question--answer--title= t 'form.water_basic.population.value_label'
+
+    = form_tag basic_water_action_url( I18n.locale, 'population' ), id: 'waterBasicForm' do
+
+      .slider
+        %input.slider--value{ :type => 'text', :value => @population[:value].present? ? number_with_precision( @population[:value], :precision => 0, :locale => I18n.locale ) : 0 }
+        .slider--widget
+        %input{ :name => 'population', :type => 'hidden', :value => @population[:value].present? ? @population[:value] : 0, 'data-slider-input' => 'true', 'data-logarithmic' => 'true', 'data-slider-min' => 100, 'data-slider-max' => 1000000 }
+
+      .question--buttons
+        = submit_tag((t 'buttons.next'), class: 'button')
+
+.info_tab
+  .info_tab--icon infoTab
+  .info_tab--container
+    .info_tab--content
+      %p.info_tab--content--text= t 'form.water_basic.population.info'

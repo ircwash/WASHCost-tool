@@ -6,19 +6,20 @@ class Ability
 
   def initialize(user)
     user ||= User.new
-    #can :manage, [WaterBasicController, SanitationBasicController] if user.present?
+
     if user.new_record?
-      can :manage, [WaterBasicController, SanitationBasicController]
+      can :manage, [Basic::WaterController, Basic::SanitationController]
+
       cannot :questionnaire, Basic::ReportsController do |kontroller|
         @permission_denied = {}
-        @permission_denied[:location] = new_user_session_path
+        @permission_denied[:location] = new_user_session_path( I18n.locale )
         @permission_denied[:message] = 'test message'
         @permission_denied[:output_from] = 'http'
         true
       end
       cannot :manage, DashboardController do |kontroller|
         @permission_denied = {}
-        @permission_denied[:location] = new_user_session_path
+        @permission_denied[:location] = new_user_session_path( I18n.locale )
         @permission_denied[:message] = 'test message'
         @permission_denied[:output_from] = 'http'
         true

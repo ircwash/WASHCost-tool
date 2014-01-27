@@ -1,53 +1,52 @@
 WashCostApp::Application.routes.draw do
 
-  devise_for :users, :controllers => { :sessions => 'sessions', :registrations => 'registrations', :passwords => 'passwords' }
-
-  namespace :basic do
-    resource :reports do
-      member do
-        get :questionnaire
-        post :save
-        post :load
-      end
-    end
-  end
-
-  resources :dashboard
-  resources :subscribers
-
-  get '/cal/water_basic/redirect_to_action', to: 'water_basic#redirect_to_action'
-  get '/cal/sanitation_basic/redirect_to_action', to: 'sanitation_basic#redirect_to_action'
-
-  get '/cal/water_basic/header_navigation', to: 'water_basic#header_navigation'
-  get '/cal/sanitation_basic/header_navigation', to: 'sanitation_basic#header_navigation'
-
-  match '/dashboard' => 'dashboard#index'
-
-  match '/home/sign_in' => 'home#sign_in'
-
-  match '/cal' => 'home#index'
-  match '/home/calculator' => 'home#calculator'
-
   match '/infographic' => 'infographic#index'
   match '/infographic/mobile' => 'mobile#infographic'
-#  match '/mobile' => 'mobile#index'
 
-  match '/cal/water_basic' => 'water_basic#country'
-  match '/cal/water_basic/(:action)' => 'water_basic#(:action)', :via => [:get, :post]
+  scope '/:locale', locale: /en|fr/ do
 
-  match '/cal/sanitation_basic' => 'sanitation_basic#country'
-  match '/cal/sanitation_basic/(:action)' => 'sanitation_basic#(:action)', :via => [:get, :post]
+    devise_for :users, :controllers => { :sessions => 'sessions', :registrations => 'registrations', :passwords => 'passwords' }
 
-  match '/cal/water_advanced' => 'water_advanced#questionnaire'
-  match '/cal/water_advanced/(:action)' => 'water_advanced#(:action)', :via=> [:get,:post]
+    resources :dashboard
 
-  match '/cal/sanitation_advanced' => 'advanced#sanitation'
-  match '/cal/sanitation_advanced/(:action)' => 'advanced#(:action)', :via=> [:get,:post]
+    resources :subscribers
 
-#  get '/path' => 'controller#get_action'
-#  post '/path' => 'controller#post_action'
+    scope '/calculators' do
 
-  match '/clean_session', :controller => 'application', :action => 'clean_session'
+      post '/selection' => 'calculators#selection'
 
-  root :to => "marketing#index"
+      namespace :basic do
+
+        scope '/report' do
+          get  '/questionnaire', :to => 'reports#questionnaire', :as => 'report_questionnaire'
+          post '/save', :to => 'reports#save', :as => 'report_save'
+          post '/load', :to => 'reports#load', :as => 'report_load'
+        end
+
+        scope '/water' do
+          get   '/report', :to => 'water#report', :as => 'water_report'
+          match '/:action' => 'water#(:action)', :via => [ :get, :post ], :as => 'water_action'
+          root :to => redirect( '/%{locale}/calculators/basic/water/country' ), :as => 'water'
+        end
+
+        scope '/sanitation' do
+          get   '/report', :to => 'sanitation#report', :as => 'sanitation_report'
+          match '/:action' => 'sanitation#(:action)', :via => [ :get, :post ], :as => 'sanitation_action'
+          root :to => redirect( '/%{locale}/calculators/basic/sanitation/country' ), :as => 'sanitation'
+        end
+
+      end
+
+      root :to => 'calculators#index', :as => 'calculators'
+
+    end
+
+    match '/dashboard' => 'dashboard#index', :as => 'dashboard'
+
+    root :to => 'landing#index', :as => 'localised_root'
+
+  end
+
+  root :to => redirect( "/#{I18n.default_locale}/" )
+
 end

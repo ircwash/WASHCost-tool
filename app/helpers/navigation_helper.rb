@@ -49,7 +49,7 @@ module NavigationHelper
   # return the css class associated with specific state of item (.active, .resolved or nothing)
   # @return [String]
   def item_class_by_action(action)
-    form = "#{controller.controller_name}_form".to_sym
+    form = "#{controller.controller_name}_basic_form".to_sym
     if action.to_s == controller.action_name
       "active"
     elsif session[form].present? && session[form].has_key?(action.to_s)
@@ -60,9 +60,9 @@ module NavigationHelper
   # return the data associated with all navigation about the basic tool specified
   # @return [Hash]
   def navigation_context
-    if controller.controller_name == "sanitation_basic"
+    if controller_path == "basic/sanitation"
       {
-          path: cal_sanitation_basic_path,
+          path: basic_sanitation_path,
           context: {
               offset: '0',
               name: I18n.t('nav.main.context.title'),
@@ -95,9 +95,9 @@ module NavigationHelper
               }
           }
       }
-    elsif controller.controller_name == "water_basic"
+    elsif controller_path == "basic/water"
       {
-          path: cal_water_basic_path,
+          path: basic_water_path,
           context: {
               offset: '0',
               name: I18n.t('nav.main.context.title'),
@@ -131,7 +131,7 @@ module NavigationHelper
       }
     else
       {
-          path: cal_water_advanced_path,
+          path: water_advanced_path,
           advanced: {
               offset: '0',
               name: I18n.t('nav.main.advanced.title'),

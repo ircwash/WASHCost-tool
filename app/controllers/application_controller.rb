@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
 
+  protect_from_forgery
+
   before_filter :set_locale
   before_filter :init_vars
 
@@ -87,17 +89,10 @@ class ApplicationController < ActionController::Base
     return percent_complete
   end
 
-  def clean_session
-    reset_session
-    render :text => 'Session cleaned'
-  end
-
   def after_sign_in_path_for(resource)
     session[:user_return_to] ||= new_user_session_url
     session[:user_return_to] == new_user_session_url ? dashboard_index_path : session[:user_return_to]
   end
-
-  protect_from_forgery
 
   def default_url_options(options={})
     logger.debug "default_url_options is passed options: #{options.inspect}\n"

@@ -1,0 +1,30 @@
+= content_for :title do
+  5 of 9 (Recurrent Expenditure)
+
+.question
+  %h1.question--title= t 'form.shared.recurrent.question'
+
+  .question--answer
+
+    .question--answer--title= t 'form.sanitation_basic.recurrent.value_label'
+
+    = form_tag basic_sanitation_action_url( I18n.locale, 'recurrent' ), id: 'sanitationBasicForm' do
+
+      .slider
+        %input.slider--value{ 'data-target' => 'recurrentSlider', :value => @recurrent[:value] }
+        .slider--widget.threshold-marks
+        %input{ :type => 'hidden', :name => 'recurrent', 'data-slider-input' => 'true', 'data-slider-min' => @recurrent[:min_value], 'data-slider-max' => @recurrent[:max_value], 'data-slider-below' => @recurrent[:below_value], 'data-slider-above' => @recurrent[:above_value] }
+
+        .slider--scale
+          .slider--scale--point.slider--scale--point-min= "US$ #{@recurrent[:below_value]}"
+          .slider--scale--point.slider--scale--point-max= "US$ #{@recurrent[:above_value]}"
+
+      .question--buttons
+        = submit_tag (t 'buttons.next'), class: 'button'
+
+.info_tab
+  .info_tab--icon infoTab
+  .info_tab--container
+    .info_tab--content
+      %p.info_tab--content--text= t 'form.shared.recurrent.info'
+

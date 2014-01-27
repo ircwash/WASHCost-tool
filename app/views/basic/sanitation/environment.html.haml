@@ -1,0 +1,22 @@
+= content_for :title do
+  8 of 11 (Environment)
+
+.question
+  %h1.question--title= t 'form.sanitation_basic.environment.question'
+
+  .question--answer
+
+    = form_tag basic_sanitation_action_url( I18n.locale, 'environment' ), id: 'sanitationBasicForm' do
+
+      .question--radios
+        - @environment[:choices].each_with_index do |choice, index|
+          = label_tag( choice, nil, class: "question--radios--label question--radios--label-wide" ) do
+            = radio_button_tag( 'environment', index, index == @environment[:value], id: choice, :class => 'question--radios--radio' )
+            %span.question--checked_icon
+            %span{ :class => "question--radios--icon icon--tool-#{choice}" }
+            %span.question--radios--text= t "form.sanitation_basic.environment.answers.a#{index}"
+
+
+      .question--buttons
+        = submit_tag((t 'buttons.next'), class: 'button')
+

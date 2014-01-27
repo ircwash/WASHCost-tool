@@ -1,0 +1,20 @@
+= content_for :title do
+  9 of 9 (Reliability)
+
+.question
+  %h1.question--title= t 'form.water_basic.reliability.question'
+
+  .question--answer
+
+    = form_tag basic_water_action_url( I18n.locale, 'reliability' ), id: 'waterBasicForm' do
+
+      .question--radios
+        - @reliability[:choices].each_with_index do |choice, index|
+          = label_tag( choice, nil, class: "question--radios--label" ) do
+            = radio_button_tag( 'reliability', index, index == @reliability[:value], id: choice, :class => 'question--radios--radio' )
+            %span.question--checked_icon
+            %span{ :class => "question--radios--icon icon--tool-#{choice}" }
+            %span.question--radios--text= t "form.water_basic.reliability.answers.a#{index}"
+
+      .question--buttons
+        = submit_tag((t 'buttons.next'), class: 'button')

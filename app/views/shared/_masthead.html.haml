@@ -2,7 +2,7 @@
   .page_content
     .header--content
 
-      = link_to root_path, class: 'header--logo' do
+      = link_to localised_root_path( I18n.locale ), class: 'header--logo' do
         = image_tag 'image-logo.png', class: 'header--logo--image', :alt => 'WASHCost powered by IRC', :width => 200, :height => 38
 
       %ul.header--links
@@ -20,15 +20,15 @@
               %h5
                 %a{ :href => "#", :class => "header--links--item--dropdown--link" } « Back
             %li.header--links--item--dropdown--item
-              = link_to 'English', :locale=>'en', :class => 'header--links--item--dropdown--link'
+              = link_to 'English', localised_root_path( 'en' ), :class => 'header--links--item--dropdown--link'
             %li.header--links--item--dropdown--item
-              = link_to 'Français', :locale=>'fr', :class => 'header--links--item--dropdown--link'
+              = link_to 'Français', localised_root_path( 'fr' ), :class => 'header--links--item--dropdown--link'
             %li.header--links--item--dropdown--item
               %a{ :href => "#", :class => "header--links--link" } Spanish
 
         %li.header--links--item
           - if user_signed_in? && current_user
-            = link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'header--links--link header--links--link-special'
+            = link_to 'Sign Out', destroy_user_session_path( I18n.locale ), method: :delete, class: 'header--links--link header--links--link-special'
           - else
-            = link_to 'Sign In', new_user_session_path, class: 'header--links--link header--links--link-special'
+            = link_to 'Sign In', new_user_session_path( I18n.locale ), class: 'header--links--link header--links--link-special'
 

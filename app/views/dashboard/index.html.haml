@@ -26,7 +26,7 @@
 
         .large-4.columns
           .link-container
-            = link_to 'START A BASIC CALCULATOR', cal_path, class: 'large button expand button-landing-page button-landing-page-size radius centered'
+            = link_to 'START A BASIC CALCULATOR', calculators_path, class: 'large button expand button-landing-page button-landing-page-size radius centered'
             = link_to 'START AN ADVANCED CALCULATOR (COMING SOON)', 'http://blog.washcost.org/', class: 'large button expand button-landing-page button-landing-page-size radius'
       .row
         %br
@@ -68,5 +68,5 @@
                       .percent= " BASIC TOOL (#{basic_questionnaire.percent_completed}%)"
                 %td
                   .service INSTALLED
-                %td= link_to 'VIEW REPORT', load_basic_reports_path(id_questionnaire: basic_questionnaire.id), "data-method" => "post", class: 'view_report'
+                %td= link_to 'VIEW REPORT', basic_report_load_path(id_questionnaire: basic_questionnaire.id), "data-method" => "post", class: 'view_report'
 
