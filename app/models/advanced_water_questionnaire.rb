@@ -53,6 +53,15 @@ class AdvancedWaterQuestionnaire
   end
 
 
+  def update_attributes( attributes )
+    # TO DO: MAKE SURE ATTRIBUTE IS IN ATTR_ACCESSOR
+    attributes.each do |name, value|
+      send( "#{name}=", value )
+    end
+
+    archive
+  end
+
 
   def persisted?
     false
