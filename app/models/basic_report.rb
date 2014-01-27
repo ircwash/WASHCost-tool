@@ -1,4 +1,4 @@
-class Basic::Questionnaire
+class BasicReport
   include Mongoid::Document
   include Mongoid::Timestamps
 
@@ -15,7 +15,6 @@ class Basic::Questionnaire
   def percent_completed
     pages_number = (tool_name=='water' ? 9 : 11)
     pages_completed = form["pages_completed"] || 0
-    puts form, self, pages_number, pages_completed, title, '---------------------------'
     ((pages_completed.to_f/pages_number.to_f) * 100).to_i
   end
 

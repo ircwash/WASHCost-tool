@@ -5,7 +5,7 @@ class Basic::ReportsController < ApplicationController
   layout "general"
 
   def questionnaire
-    @tool_name = params[:tool_name] || params[:basic_questionnaire][:tool_name]
+    @tool_name = params[:tool_name] || params[:basic_report][:tool_name]
     form = session["#{@tool_name}_basic_form".to_sym] || Hash.new(0)
     form[:pages_completed] = session["#{@tool_name}_basic_complete".to_sym] || 0
     saved_form_id = form[:saved_form_id]
@@ -18,20 +18,19 @@ class Basic::ReportsController < ApplicationController
 
       redirect_to dashboard_index_path
     else
-      puts 'open saving popup...'
-      @questionnaire = Basic::Questionnaire.new
+      @questionnaire = BasicReport.new
     end
   end
 
   # this action saves the report associated with basic tool, also, this action verifies if a report session saved
   # is already exists
   def save
-    @tool_name = params[:tool_name] || params[:basic_questionnaire][:tool_name]
+    @tool_name = params[:tool_name] || params[:basic_report][:tool_name]
     form = session["#{@tool_name}_basic_form".to_sym] || Hash.new(0)
     form[:pages_completed] = session["#{@tool_name}_basic_complete".to_sym] || 0
     saved_form_id = form[:saved_form_id]
-    params[:basic_questionnaire][:form] = form
-    @questionnaire = Basic::Questionnaire.new(params[:basic_questionnaire])
+    params[:basic_report][:form] = form
+    @questionnaire = BasicReport.new(params[:basic_report])
 
     if @questionnaire.valid?
       current_user.basic_questionnaires << @questionnaire
