@@ -5,7 +5,7 @@ WashCostApp::Application.routes.draw do
 
   scope '/:locale', locale: /en|fr/ do
 
-    devise_for :users, :controllers => { :sessions => 'sessions', :registrations => 'registrations', :passwords => 'passwords' }
+    devise_for :users, :controllers => { :sessions => 'authentication/sessions', :registrations => 'authentication/registrations', :passwords => 'authentication/passwords' }
 
     resources :dashboard
 

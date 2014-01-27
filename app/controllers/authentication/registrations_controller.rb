@@ -1,4 +1,4 @@
-class RegistrationsController < Devise::RegistrationsController
+class Authentication::RegistrationsController < Devise::RegistrationsController
 
   include Rails.application.routes.url_helpers
 
