@@ -13,9 +13,7 @@ gem 'simple_form'
 gem 'quiet_assets'
 gem 'thin'
 gem 'active_attr'
-gem 'high_voltage'
 gem 'money'
-gem 'active_model_serializers'
 
 group :development, :test do
   gem 'ruby-prof'
