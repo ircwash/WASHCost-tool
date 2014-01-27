@@ -133,7 +133,6 @@ GEM
       haml (>= 3.1, < 4.1)
       railties (>= 3.1, < 4.1)
     handlebars-source (1.0.12)
-    high_voltage (1.2.4)
     hike (1.2.3)
     hirb (0.7.1)
     i18n (0.6.1)
@@ -181,6 +180,8 @@ GEM
     money (5.0.0)
       i18n (~> 0.4)
       json
+    mongo_session_store-rails3 (4.1.1)
+      actionpack (>= 3.1)
     mongoid (3.1.5)
       activemodel (~> 3.2)
       moped (~> 1.4)
@@ -309,7 +310,6 @@ PLATFORMS
 
 DEPENDENCIES
   active_attr
-  active_model_serializers
   awesome_print
   better_errors
   binding_of_caller
@@ -328,7 +328,6 @@ DEPENDENCIES
   haml
   haml-rails
   handlebars-source
-  high_voltage
   jazz_hands
   jquery-rails
   jquery-ui-rails
@@ -336,6 +335,7 @@ DEPENDENCIES
   launchy
   meta_request
   money
+  mongo_session_store-rails3
   mongoid
   quiet_assets
   rack_session_access

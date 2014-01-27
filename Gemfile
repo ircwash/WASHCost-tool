@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 gem 'mongoid'
+gem 'mongo_session_store-rails3'
 gem 'therubyracer'
 gem 'devise'
 gem 'bson_ext'
