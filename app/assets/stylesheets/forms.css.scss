@@ -143,3 +143,72 @@
   margin:20px 0 10px;
 }
 
+.dual_column_form {
+  width:90%;
+  margin:0 auto;
+}
+
+.dual_column_form--row {
+  margin:0 -15px;
+
+  @include pie-clearfix;
+}
+
+.dual_column_form--row + .dual_column_form--row {
+  margin-top:30px;
+}
+
+.dual_column_form--column {
+  float:left;
+  width:50%;
+  padding:0 15px;
+
+  @include box-sizing(border-box);
+}
+
+.dual_column--field--label {
+  display:block;
+  margin-bottom:10px;
+  font-size:14px;
+  font-weight:bold;
+  color:#fff;
+  text-shadow:0 -1px 0 rgba(0,0,0,0.25);
+  -webkit-font-smoothing:antialiased;
+}
+
+.dual_column_form--field--text_input {
+  width:100%;
+  margin:0;
+  padding:14px 15px 14px;
+  border:none;
+  font-size:16px;
+  font-weight:bold;
+  color:$dark_grey;
+  background-color:#ddd8bc;
+  -webkit-font-smoothing:antialiased;
+
+  @include border-radius(5px);
+  @include box-shadow(0 0 5px rgba(0,0,0,0.3));
+  @include box-sizing(border-box);
+  @include transition(background-color 0.2s);
+  @include placeholder {
+    color:scale-lightness(#ddd8bc, -25);
+  }
+}
+
+.dual_column_form--field--text_input:focus {
+  background-color:#fff;
+
+  @include placeholder {
+    color:rgba(255,255,255,0);
+  }
+}
+
+.dual_column_form--field--dropdown {
+  width:100%;
+}
+
+.dual_column_form--field-dropdown .chosen-container .chosen-single span,
+.dual_column_form--field-dropdown .chosen-container-active.chosen-with-drop .chosen-single span {
+  text-align:left;
+}

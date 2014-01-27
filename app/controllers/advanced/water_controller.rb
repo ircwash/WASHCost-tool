@@ -6,7 +6,7 @@ class Advanced::WaterController < ApplicationController
 
 
   def context
-
+    @questionnaire = AdvancedWaterQuestionnaire.new( session )
   end
 
 end
