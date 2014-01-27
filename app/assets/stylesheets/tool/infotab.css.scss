@@ -72,3 +72,11 @@
   text-align:justify;
   line-height:1.5;
 }
+
+@media screen and ( max-width: $mobile_breakpoint ) {
+
+  // .info_tab {
+  //   top:70px;
+  // }
+
+}

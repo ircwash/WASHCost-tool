@@ -66,3 +66,19 @@
   height:100%;
   background-color:$brand_orange;
 }
+
+@media screen and ( max-width: $mobile_breakpoint ) {
+
+  .footer {
+    height:125px;
+  }
+
+  .footer--link,
+  .footer--progress {
+    float:none;
+    display:block;
+    width:100%;
+    border-bottom: 2px solid #000;
+  }
+
+}

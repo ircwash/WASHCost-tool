@@ -60,3 +60,12 @@
 .header--primary_button {
   float:right;
 }
+
+@media screen and ( max-width: $mobile_breakpoint ) {
+
+  .header--content {
+    padding-left:10px;
+    padding-right:10px;
+  }
+
+}

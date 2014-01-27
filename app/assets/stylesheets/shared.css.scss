@@ -139,3 +139,19 @@ html, body {
 .preapplication_footer--important--link + .preapplication_footer--important--link {
   margin-top:10px;
 }
+
+@media screen and ( max-width: $mobile_breakpoint ) {
+
+  .boxed-container {
+    height:auto;
+  }
+
+  .boxed_content {
+    height:auto;
+  }
+
+  .page_content {
+    padding: 0 0 140px;
+  }
+
+}

@@ -91,4 +91,16 @@
   margin-top:30px;
 }
 
+@media screen and ( max-width: $mobile_breakpoint ) {
 
+  .calculator_selection--selector--item {
+    display:block;
+    margin:0 auto;
+  }
+
+  .calculator_selection--selector--item + .calculator_selection--selector--item {
+    margin-top:15px;
+    margin-left:auto;
+  }
+
+}

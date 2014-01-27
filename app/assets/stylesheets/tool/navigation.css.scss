@@ -95,5 +95,14 @@
   text-shadow:0 -1px 0 $medium_brown;
 }
 
+@media screen and ( max-width: $mobile_breakpoint ) {
 
+  // .navigation--subcategory--item {
+  //   width: 33.333333333%;
+  // }
 
+  // .navigation--subcategory--link {
+  //   width: 100%;
+  // }
+
+}

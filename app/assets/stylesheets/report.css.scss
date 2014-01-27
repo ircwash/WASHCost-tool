@@ -358,3 +358,36 @@
 .report--no_data:last-child {
   margin-bottom:0;
 }
+
+@media screen and ( max-width: $mobile_breakpoint ) {
+
+  .report--header--title {
+    margin-top:60px;
+    margin-bottom:10px;
+  }
+
+  .report--header--quicklink {
+    top:80px;
+  }
+
+  .report--summary--item {
+    display:block;
+    width:auto;
+    margint-top:40px;
+  }
+
+  .report--option_grid--item,
+  .report--costs--column-small,
+  .report--costs--column-big {
+    float:none;
+    width:80%;
+    margin-top:20px;
+    margin-right:auto;
+    margin-left:auto;
+  }
+
+  .report--costs--column-small {
+    width:60%;
+  }
+
+}
