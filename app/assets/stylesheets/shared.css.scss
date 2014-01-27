@@ -142,6 +142,24 @@ html, body {
 
 @media screen and ( max-width: $mobile_breakpoint ) {
 
+  .preapplication_footer--links,
+  .preapplication_footer--social {
+    position:absolute !important;
+    clip:rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip:rect(1px, 1px, 1px, 1px);
+    padding:0 !important;
+    border:0 !important;
+    height:1px !important;
+    width:1px !important;
+    overflow:hidden;
+  }
+
+  .preapplication_footer--important {
+    width:100%;
+    text-align:center;
+  }
+
+
   .boxed-container {
     height:auto;
   }
@@ -152,6 +170,12 @@ html, body {
 
   .page_content {
     padding: 0 0 140px;
+  }
+
+  .preapplication_footer {
+    .page_content {
+      padding: 0;
+    }
   }
 
 }

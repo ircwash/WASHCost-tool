@@ -40,3 +40,25 @@
 
   @include box-sizing(border-box);
 }
+
+@media screen and ( max-width: $mobile_breakpoint ) {
+
+  .homepage {
+    padding-bottom:0;
+  }
+
+  .homepage--buttons {
+    margin:0 -30px;
+  }
+
+  .homepage--buttons--item {
+    float:none;
+    width:100%;
+    margin:20px 0;
+  }
+
+  .homepage--button {
+      padding:20px;
+  }
+
+}
