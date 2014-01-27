@@ -114,6 +114,10 @@
 
 @media screen and ( max-width: $mobile_breakpoint ) {
 
+  .question {
+    padding-bottom:160px;
+  }
+
   .question--radios {
     text-align: center;
   }

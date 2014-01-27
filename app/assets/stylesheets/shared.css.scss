@@ -160,19 +160,18 @@ html, body {
   }
 
 
-  .boxed-container {
+  .boxed_container {
     height:auto;
+    padding-bottom:0;
   }
 
   .boxed_content {
     height:auto;
   }
 
-  .page_content {
-    padding: 0 0 140px;
-  }
-
   .preapplication_footer {
+    position:static;
+
     .page_content {
       padding: 0;
     }
