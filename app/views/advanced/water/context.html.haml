@@ -69,7 +69,7 @@
         - options_for_service_management.each_with_index do |option,i|
 
           .dual_column_form--field.dual_column_form--field-box
-            = check_box_tag 'advanced_water_questionnaire[service_management][]', option[1], @questionnaire.service_management.include?( option[1].to_s ), :id => "advanced_water_questionnaire_service_management_#{i}", :class => 'dual_column_form--field--checkbox', 'data-checkbox_toggle-checkbox' => 'population_density'
+            = check_box_tag 'advanced_water_questionnaire[service_management][]', option[1], @questionnaire.service_management.include?( option[1].to_s ), :id => "advanced_water_questionnaire_service_management_#{i}", :class => 'dual_column_form--field--checkbox'
             = f.label "service_management_#{i}", :class => 'dual_column--field--label dual_column--field--label-box' do
               .dual_column_form--field--styled_checkbox
               %span.dual_column--field--label-box--content= option[0]
@@ -83,7 +83,7 @@
         - options_for_construction_financier.each_with_index do |option,i|
 
           .dual_column_form--field.dual_column_form--field-box
-            = check_box_tag 'advanced_water_questionnaire[construction_financier][]', option[1], @questionnaire.construction_financier.include?( option[1].to_s ), :id => "advanced_water_questionnaire_construction_financier_#{i}", :class => 'dual_column_form--field--checkbox', 'data-checkbox_toggle-checkbox' => 'population_density'
+            = check_box_tag 'advanced_water_questionnaire[construction_financier][]', option[1], @questionnaire.construction_financier.include?( option[1].to_s ), :id => "advanced_water_questionnaire_construction_financier_#{i}", :class => 'dual_column_form--field--checkbox'
             = f.label "construction_financier_#{i}", :class => 'dual_column--field--label dual_column--field--label-box' do
               .dual_column_form--field--styled_checkbox
               %span.dual_column--field--label-box--content= option[0]
@@ -99,7 +99,7 @@
         - options_for_infrastructure_operator.each_with_index do |option,i|
 
           .dual_column_form--field.dual_column_form--field-box
-            = check_box_tag 'advanced_water_questionnaire[infrastructure_operator][]', option[1], @questionnaire.infrastructure_operator.include?( option[1].to_s ), :id => "advanced_water_questionnaire_infrastructure_operator_#{i}", :class => 'dual_column_form--field--checkbox', 'data-checkbox_toggle-checkbox' => 'population_density'
+            = check_box_tag 'advanced_water_questionnaire[infrastructure_operator][]', option[1], @questionnaire.infrastructure_operator.include?( option[1].to_s ), :id => "advanced_water_questionnaire_infrastructure_operator_#{i}", :class => 'dual_column_form--field--checkbox'
             = f.label "infrastructure_operator_#{i}", :class => 'dual_column--field--label dual_column--field--label-box' do
               .dual_column_form--field--styled_checkbox
               %span.dual_column--field--label-box--content= option[0]
@@ -113,7 +113,7 @@
         - options_for_service_responsbility.each_with_index do |option,i|
 
           .dual_column_form--field.dual_column_form--field-box
-            = check_box_tag 'advanced_water_questionnaire[service_responsbility][]', option[1], @questionnaire.service_responsbility.include?( option[1].to_s ), :id => "advanced_water_questionnaire_service_responsbility_#{i}", :class => 'dual_column_form--field--checkbox', 'data-checkbox_toggle-checkbox' => 'population_density'
+            = check_box_tag 'advanced_water_questionnaire[service_responsbility][]', option[1], @questionnaire.service_responsbility.include?( option[1].to_s ), :id => "advanced_water_questionnaire_service_responsbility_#{i}", :class => 'dual_column_form--field--checkbox'
             = f.label "service_responsbility_#{i}", :class => 'dual_column--field--label dual_column--field--label-box' do
               .dual_column_form--field--styled_checkbox
               %span.dual_column--field--label-box--content= option[0]
@@ -129,7 +129,7 @@
         - options_for_standard_enforcer.each_with_index do |option,i|
 
           .dual_column_form--field.dual_column_form--field-box
-            = check_box_tag 'advanced_water_questionnaire[standard_enforcer][]', option[1], @questionnaire.standard_enforcer.include?( option[1].to_s ), :id => "advanced_water_questionnaire_standard_enforcer_#{i}", :class => 'dual_column_form--field--checkbox', 'data-checkbox_toggle-checkbox' => 'population_density'
+            = check_box_tag 'advanced_water_questionnaire[standard_enforcer][]', option[1], @questionnaire.standard_enforcer.include?( option[1].to_s ), :id => "advanced_water_questionnaire_standard_enforcer_#{i}", :class => 'dual_column_form--field--checkbox'
             = f.label "standard_enforcer_#{i}", :class => 'dual_column--field--label dual_column--field--label-box' do
               .dual_column_form--field--styled_checkbox
               %span.dual_column--field--label-box--content= option[0]
@@ -143,7 +143,7 @@
         - options_for_rehabilitation_cost_owner.each_with_index do |option,i|
 
           .dual_column_form--field.dual_column_form--field-box
-            = check_box_tag 'advanced_water_questionnaire[rehabilitation_cost_owner][]', option[1], @questionnaire.rehabilitation_cost_owner.include?( option[1].to_s ), :id => "advanced_water_questionnaire_rehabilitation_cost_owner_#{i}", :class => 'dual_column_form--field--checkbox', 'data-checkbox_toggle-checkbox' => 'population_density'
+            = check_box_tag 'advanced_water_questionnaire[rehabilitation_cost_owner][]', option[1], @questionnaire.rehabilitation_cost_owner.include?( option[1].to_s ), :id => "advanced_water_questionnaire_rehabilitation_cost_owner_#{i}", :class => 'dual_column_form--field--checkbox'
             = f.label "rehabilitation_cost_owner_#{i}", :class => 'dual_column--field--label dual_column--field--label-box' do
               .dual_column_form--field--styled_checkbox
               %span.dual_column--field--label-box--content= option[0]

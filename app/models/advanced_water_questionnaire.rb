@@ -1,8 +1,4 @@
-class AdvancedWaterQuestionnaire
-
-  include ActiveModel::Validations
-  include ActiveModel::Conversion
-  extend ActiveModel::Naming
+class AdvancedWaterQuestionnaire < Session
 
   attr_accessor :water_system_exists,
                 :country,
@@ -44,7 +40,6 @@ class AdvancedWaterQuestionnaire
 
 
   def initialize( session )
-    @session = session
 
     # system characteristics
     @water_system_exists              = nil
@@ -85,44 +80,28 @@ class AdvancedWaterQuestionnaire
     @national_quality_norms           = nil
     @national_reliability_norms       = nil
 
-    if ( session[ :advanced_water ] )
-      unarchive
-    end
+    super
+
   end
 
 
-  def update_attributes( attributes )
+  def complete
+    attributes_with_values = -3 # subtract the unknown property counterparts as they always have a value
 
-    attributes.each do |name, value|
-      if respond_to?( "#{name}=" )
-        send( "#{name}=", value )
+    attributes.each do |attribute|
+      value = send( "#{attribute}" )
+
+      if value != nil && value.kind_of?( Array ) && value & [''] == value
+        value = nil
+      end
+
+      if value != nil
+        attributes_with_values = attributes_with_values + 1
       end
     end
 
-    archive
+    100 * attributes_with_values / self.attributes.count
   end
 
-
-  def persisted?
-    false
-  end
-
-  private
-
-
-  def archive
-    data = {}
-
-    instance_variables.map { |ivar| data[ ivar.to_s.gsub( /@/, '' ) ] = instance_variable_get ivar unless ivar == :@session }
-
-    @session[ :advanced_water ] = data
-  end
-
-
-  def unarchive
-    @session[ :advanced_water ].each do |name, value|
-      send( "#{name}=", value )
-    end
-  end
 
 end

@@ -45,12 +45,13 @@
   .chosen-single {
     background:#ddd8bc;
     height:45px;
-    color:$dark_brown;
-    font-size:18px;
+    color:$dark_grey;
+    font-size:16px;
     font-weight:bold;
     padding-top:12px;
     text-align:left;
     border:none;
+    -webkit-font-smoothing:antialiased;
 
     @include box-shadow(none);
     @include box-sizing(border-box);
