@@ -196,7 +196,7 @@ en:
       shared:
         country:
           label: Country
-          placeholder: Select an option
+          placeholder: Select a country
         region:
           label: Region
           placeholder: Calabria
@@ -207,6 +207,12 @@ en:
         water_system_exists:
           label: Does the water system already exist or is it planned?
           placeholder: Select an option
+        area_type:
+          label: Description of area type
+          placeholder: Select an area type
+        population_density:
+          label: What is the population density of the service area?
+          placeholder: 2000
       sanitation:
 
 

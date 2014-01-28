@@ -5,7 +5,7 @@ $( document ).ready( function()
 
   function init()
   {
-    $('.chzn-select').chosen();
+    $('.chzn-select').chosen( { allow_single_deselect:true } );
   }
 
 

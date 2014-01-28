@@ -10,12 +10,12 @@
       .dual_column_form--column
         .dual_column_form--field.dual_column_form--field-dropdown
           = f.label :water_system_exists, t( 'form.advanced.water.water_system_exists.label' ), :class => 'dual_column--field--label'
-          = f.select :water_system_exists, options_for_select( options_for_water_system_exists, @questionnaire.water_system_exists ), { :include_blank=> t( 'form.advanced.water.water_system_exists.placeholder' ) }, { :class => 'dual_column_form--field--dropdown chzn-select' }
+          = f.select :water_system_exists, options_for_select( options_for_water_system_exists, @questionnaire.water_system_exists ), { :include_blank=> '' }, { :class => 'dual_column_form--field--dropdown chzn-select', 'data-placeholder' => t( 'form.advanced.water.water_system_exists.placeholder' ) }
 
       .dual_column_form--column
         .dual_column_form--field.dual_column_form--field-dropdown
           = f.label :country, t( 'form.advanced.shared.country.label' ), :class => 'dual_column--field--label'
-          = f.select :country, options_for_select( get_countries, @questionnaire.country ), { :include_blank=> t( 'form.advanced.shared.country.placeholder' ) }, { :class => 'dual_column_form--field--dropdown chzn-select' }
+          = f.select :country, options_for_select( get_countries, @questionnaire.country ), { :include_blank=> ''  }, { :class => 'dual_column_form--field--dropdown chzn-select', 'data-placeholder' => t( 'form.advanced.shared.country.placeholder' ) }
 
     .dual_column_form--row
 
@@ -28,6 +28,18 @@
         .dual_column_form--field.dual_column_form--field-dropdown
           = f.label :town, t( 'form.advanced.shared.town.label' ), :class => 'dual_column--field--label'
           = f.text_field :town, :class => 'dual_column_form--field--text_input', :placeholder => t( 'form.advanced.shared.town.placeholder' )
+
+    .dual_column_form--row
+
+      .dual_column_form--column
+        .dual_column_form--field.dual_column_form--field-dropdown
+          = f.label :area_type, t( 'form.advanced.water.area_type.label' ), :class => 'dual_column--field--label'
+          = f.select :area_type, options_for_select( options_for_area_type, @questionnaire.area_type ), { :include_blank=> '' }, { :class => 'dual_column_form--field--dropdown chzn-select', 'data-placeholder' => t( 'form.advanced.water.area_type.placeholder' ) }
+
+      .dual_column_form--column
+        .dual_column_form--field.dual_column_form--field-dropdown
+          = f.label :population_density, t( 'form.advanced.water.population_density.label' ), :class => 'dual_column--field--label'
+          = f.text_field :population_density, :class => 'dual_column_form--field--text_input', :placeholder => t( 'form.advanced.water.population_density.placeholder' )
 
     .question--buttons
       = submit_tag((t 'buttons.next'), class: 'button')

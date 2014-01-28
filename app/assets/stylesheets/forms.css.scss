@@ -188,11 +188,10 @@
   -webkit-font-smoothing:antialiased;
 
   @include border-radius(5px);
-  @include box-shadow(0 0 5px rgba(0,0,0,0.3));
   @include box-sizing(border-box);
   @include transition(background-color 0.2s);
   @include placeholder {
-    color:scale-lightness(#ddd8bc, -25);
+    color:rgba(51,51,51,0.25);
   }
 }
 
