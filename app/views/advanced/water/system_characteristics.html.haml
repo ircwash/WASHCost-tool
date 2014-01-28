@@ -1,0 +1,17 @@
+= content_for :title do
+  Start
+
+.questionnaire
+
+  = form_for @questionnaire, :url => advanced_water_update_url( I18n.locale, 'system_characteristics' ), :class => 'dual_column_form' do |f|
+
+    .dual_column_form--row
+
+      .dual_column_form--column.dual_column_form--column-33 a
+
+      .dual_column_form--column.dual_column_form--column-33 b
+
+      .dual_column_form--column.dual_column_form--column-33 c
+
+    .question--buttons
+      = submit_tag((t 'buttons.next'), class: 'button')

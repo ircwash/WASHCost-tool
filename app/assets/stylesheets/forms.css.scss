@@ -160,10 +160,17 @@
 
 .dual_column_form--column {
   float:left;
-  width:50%;
   padding:0 15px;
 
   @include box-sizing(border-box);
+}
+
+.dual_column_form--column-50 {
+  width:50%;
+}
+
+.dual_column_form--column-33 {
+  width:33.333%;
 }
 
 .dual_column--field--label {

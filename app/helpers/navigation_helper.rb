@@ -5,10 +5,19 @@ module NavigationHelper
     current_path = navigation_context[:path]
     items = questionnaire_items
 
+    case controller_path
+      when "basic/water"
+        path_helper = "basic_water_action"
+      when "basic/sanitation"
+        path_helper = "basic_sanitation_action"
+      when "advanced/water"
+        path_helper = "advanced_water_action"
+    end
+
     items.map do |k,v|
       {
           name: v,
-          link: k.to_s,
+          link: send( "#{path_helper}_path", I18n.locale, k.to_s ),
           class: item_class_by_action(k),
       }
     end
