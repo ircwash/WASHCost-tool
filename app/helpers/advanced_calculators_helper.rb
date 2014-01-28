@@ -18,4 +18,13 @@ module AdvancedCalculatorsHelper
     ]
   end
 
+  def options_for_service_management
+    [
+      [ 'Utility management', 0 ],
+      [ 'Household management', 1 ],
+      [ 'Other (define)', 2 ],
+      [ 'Don\'t know', 3 ]
+    ]
+  end
+
 end

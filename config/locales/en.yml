@@ -214,6 +214,8 @@ en:
         population_density:
           label: What is the population density of the service area?
           placeholder: 2000
+        service_management:
+          label: Which of these options best describes how the water service is managed?
       sanitation:
 
 

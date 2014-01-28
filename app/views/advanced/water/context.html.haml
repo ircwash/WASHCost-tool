@@ -60,5 +60,23 @@
             .dual_column_form--field--styled_checkbox
             %span.dual_column--field--label-box--content= t( 'form.advanced.shared.dont_know' )
 
+    .dual_column_form--row
+
+      .dual_column_form--column
+
+        .dual_column--field--label= t( 'form.advanced.water.service_management.label' )
+
+        - options_for_service_management.each_with_index do |option,i|
+
+          .dual_column_form--field.dual_column_form--field-box
+            = check_box_tag 'advanced_water_questionnaire[service_management][]', option[1], @questionnaire.service_management.include?( option[1].to_s ), :id => "advanced_water_questionnaire_service_management_#{i}", :class => 'dual_column_form--field--checkbox', 'data-checkbox_toggle-checkbox' => 'population_density'
+            = f.label "service_management_#{i}", :class => 'dual_column--field--label dual_column--field--label-box' do
+              .dual_column_form--field--styled_checkbox
+              %span.dual_column--field--label-box--content= option[0]
+
+        = hidden_field_tag 'advanced_water_questionnaire[service_management][]', ''
+
+    .dual_column_form--row
+
     .question--buttons
       = submit_tag((t 'buttons.next'), class: 'button')

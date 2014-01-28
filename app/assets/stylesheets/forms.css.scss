@@ -168,10 +168,11 @@
 
 .dual_column--field--label {
   display:block;
-  margin-bottom:10px;
+  margin-bottom:8px;
   font-size:14px;
   font-weight:bold;
   color:#fff;
+  line-height:1.2;
   text-shadow:0 -1px 0 rgba(0,0,0,0.25);
   -webkit-font-smoothing:antialiased;
 }
@@ -250,3 +251,6 @@
   padding-top:5px;
 }
 
+.dual_column--field--label + .dual_column_form--field.dual_column_form--field-box {
+  margin-top:15px;
+}

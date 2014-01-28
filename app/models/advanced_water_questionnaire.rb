@@ -52,7 +52,7 @@ class AdvancedWaterQuestionnaire
     @town                             = nil
     @area_type                        = nil
     @population_density               = nil
-    @service_management               = nil
+    @service_management               = []
     @construction_financier           = nil
     @infrastructure_operator          = nil
     @service_responsbility            = nil
