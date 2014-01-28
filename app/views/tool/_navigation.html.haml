@@ -8,7 +8,7 @@
         - else
           = link_to item[:name], cal_sanitation_basic_header_navigation_path(number_of_items: item[:number_of_items], redirect_to: item[:redirect_to]), :class => "navigation--category--link navigation--category--link-#{item[:class]}"
 
-  .navigation--subcategory
+  .navigation--subcategory.navigation--subcategory-mobile
     %ul.navigation--subcategory--list
       - questionnaire_items_list.each do |item|
         %li{ :class => 'navigation--subcategory--item' }

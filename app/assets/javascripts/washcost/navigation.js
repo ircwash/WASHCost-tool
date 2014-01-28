@@ -20,6 +20,13 @@ $( document ).ready( function()
       _active_index = _items.index( _active_item );
       _navigation[0].scrollLeft = _active_index * _items.width() - _navigation.width() / 2;
     }
+
+    var nav = responsiveNav(".navigation--subcategory-mobile", {
+      label: "Sections Menu",
+      navClass: "navigation--subcategory-mobile",
+      transition: 400
+    });
+
   }
 
 

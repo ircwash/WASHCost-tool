@@ -140,7 +140,7 @@ html, body {
   margin-top:10px;
 }
 
-@media screen and ( max-width: $mobile_breakpoint ) {
+@media screen and ( max-device-width: $mobile_breakpoint ) {
 
   .preapplication_footer--links,
   .preapplication_footer--social {
