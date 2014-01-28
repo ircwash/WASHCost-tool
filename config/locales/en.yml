@@ -216,6 +216,22 @@ en:
           placeholder: 2000
         service_management:
           label: Which of these options best describes how the water service is managed?
+        construction_financier:
+          label: Who finances the construction of the water system?
+        infrastructure_operator:
+          label: Who legally owns the water infrastructure?
+        service_responsbility:
+          label: Who safeguards the operation and maintenance of the infrastructure?
+        standard_enforcer:
+          label: Who has/will have responsibility for checking and enforcing the standard of water services?
+        rehabilitation_cost_owner:
+          label: Who covers the cost of rehabilitation when larger repairs are needed?
+        annual_household_income:
+          label: What is the average annual household income in the service area?
+          placeholder: 600
+        household_size:
+          label: Average household size
+          placeholder: 6
       sanitation:
 
 

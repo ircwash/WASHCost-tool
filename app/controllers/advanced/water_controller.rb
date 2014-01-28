@@ -1,6 +1,6 @@
 class Advanced::WaterController < ApplicationController
 
-  layout "tool"
+  layout "tool_advanced"
 
   authorize_resource :class => Advanced::WaterController
 

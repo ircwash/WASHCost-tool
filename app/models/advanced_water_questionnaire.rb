@@ -14,6 +14,7 @@ class AdvancedWaterQuestionnaire
                 :construction_financier,
                 :infrastructure_operator,
                 :service_responsbility,
+                :standard_enforcer,
                 :rehabilitation_cost_owner,
                 :annual_household_income,
                 :household_size,
@@ -53,10 +54,11 @@ class AdvancedWaterQuestionnaire
     @area_type                        = nil
     @population_density               = nil
     @service_management               = []
-    @construction_financier           = nil
-    @infrastructure_operator          = nil
-    @service_responsbility            = nil
-    @rehabilitation_cost_owner        = nil
+    @construction_financier           = []
+    @infrastructure_operator          = []
+    @service_responsbility            = []
+    @standard_enforcer                = []
+    @rehabilitation_cost_owner        = []
     @annual_household_income          = nil
     @household_size                   = nil
 

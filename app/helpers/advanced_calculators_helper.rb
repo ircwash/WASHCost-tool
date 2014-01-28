@@ -27,4 +27,69 @@ module AdvancedCalculatorsHelper
     ]
   end
 
+  def options_for_construction_financier
+    [
+      [ 'Utility management', 0 ],
+      [ 'Household management', 1 ],
+      [ 'Other (define)', 2 ],
+      [ 'Don\'t know', 3 ]
+    ]
+  end
+
+  def options_for_infrastructure_operator
+    [
+      [ 'External donor', 0 ],
+      [ 'Community-based management', 1 ],
+      [ 'Public sector (local)', 2 ],
+      [ 'Public sector (national)', 3 ],
+      [ 'Private sector', 4 ],
+      [ 'Utility management', 5 ],
+      [ 'Household management', 6 ],
+      [ 'Other', 7 ],
+      [ 'Don\'t know', 8 ]
+    ]
+  end
+
+  def options_for_service_responsbility
+    [
+      [ 'External donor', 0 ],
+      [ 'Community-based management', 1 ],
+      [ 'Public sector (local)', 2 ],
+      [ 'Public sector (national)', 3 ],
+      [ 'Private sector', 4 ],
+      [ 'Utility management', 5 ],
+      [ 'Household management', 6 ],
+      [ 'Other', 7 ],
+      [ 'Don\'t know', 8 ]
+    ]
+  end
+
+  def options_for_standard_enforcer
+    [
+      [ 'External donor', 0 ],
+      [ 'Community-based management', 1 ],
+      [ 'Public sector (local)', 2 ],
+      [ 'Public sector (national)', 3 ],
+      [ 'Private sector', 4 ],
+      [ 'Utility management', 5 ],
+      [ 'Household management', 6 ],
+      [ 'Other', 7 ],
+      [ 'Don\'t know', 8 ]
+    ]
+  end
+
+  def options_for_rehabilitation_cost_owner
+    [
+      [ 'External donor', 0 ],
+      [ 'Community-based management', 1 ],
+      [ 'Public sector (local)', 2 ],
+      [ 'Public sector (national)', 3 ],
+      [ 'Private sector', 4 ],
+      [ 'Utility management', 5 ],
+      [ 'Household management', 6 ],
+      [ 'Other', 7 ],
+      [ 'Don\'t know', 8 ]
+    ]
+  end
+
 end
