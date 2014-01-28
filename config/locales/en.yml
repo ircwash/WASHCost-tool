@@ -194,6 +194,7 @@ en:
         value_label: "US$ Per person per Year"
     advanced:
       shared:
+        dont_know: Don't know
         country:
           label: Country
           placeholder: Select a country

@@ -176,6 +176,14 @@
   -webkit-font-smoothing:antialiased;
 }
 
+.dual_column_form--field + .dual_column_form--field {
+  margin-top:10px;
+}
+
+.dual_column_form--field-box {
+  @include pie-clearfix;
+}
+
 .dual_column_form--field--text_input {
   width:100%;
   margin:0;
@@ -211,3 +219,34 @@
 .dual_column_form--field-dropdown .chosen-container-active.chosen-with-drop .chosen-single span {
   text-align:left;
 }
+
+.dual_column_form--field--checkbox {
+  display:none;
+}
+
+.dual_column_form--field--styled_checkbox {
+  float:left;
+  width:24px;
+  height:24px;
+  background-color:rgba(255,255,255,0.25);
+  cursor:pointer;
+
+  @include border-radius(3px);
+}
+
+.dual_column_form--field--checkbox:checked + .dual_column--field--label-box .dual_column_form--field--styled_checkbox {
+  background-image:image-url('sprite-dropdowns.png');
+  background-position:50% -113px
+}
+
+.dual_column--field--label-box {
+  float:left;
+  margin:0;
+}
+
+.dual_column--field--label-box--content {
+  float:left;
+  margin-left:10px;
+  padding-top:5px;
+}
+

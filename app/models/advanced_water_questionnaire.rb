@@ -4,7 +4,43 @@ class AdvancedWaterQuestionnaire
   include ActiveModel::Conversion
   extend ActiveModel::Naming
 
-  attr_accessor :water_system_exists, :country, :region, :town, :area_type, :population_density, :service_management, :construction_financier, :infrastructure_operator, :service_responsbility, :rehabilitation_cost_owner, :annual_household_income, :household_size, :supply_systems_used, :systems_number, :system_population_design, :system_population_actual, :actual_hardware_expenditure, :system_lifespan_expectancy, :actual_software_expenditure, :unpaid_labour, :minor_operation_expenditure, :capital_maintenance_expenditure, :loan_payback_period, :direct_support_expenditure, :indirect_support_expenditure, :service_level_name, :service_level_share, :national_accessibility_norms, :national_quantity_norms, :national_quality_norms, :national_reliability_norms
+  attr_accessor :water_system_exists,
+                :country,
+                :region,
+                :town,
+                :area_type,
+                :population_density,
+                :service_management,
+                :construction_financier,
+                :infrastructure_operator,
+                :service_responsbility,
+                :rehabilitation_cost_owner,
+                :annual_household_income,
+                :household_size,
+                :supply_systems_used,
+                :systems_number,
+                :system_population_design,
+                :system_population_actual,
+                :actual_hardware_expenditure,
+                :system_lifespan_expectancy,
+                :actual_software_expenditure,
+                :unpaid_labour,
+                :minor_operation_expenditure,
+                :capital_maintenance_expenditure,
+                :loan_payback_period,
+                :direct_support_expenditure,
+                :indirect_support_expenditure,
+                :service_level_name,
+                :service_level_share,
+                :national_accessibility_norms,
+                :national_quantity_norms,
+                :national_quality_norms,
+                :national_reliability_norms,
+
+                :region_unknown,
+                :town_unknown,
+                :population_density_unknown
+
 
   def initialize( session )
     @session = session
