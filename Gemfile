@@ -8,13 +8,14 @@ gem 'devise'
 gem 'bson_ext'
 gem 'haml'
 gem 'jquery-rails'
-gem 'jquery-ui-rails'
+gem 'jquery-ui-sass-rails'
 gem 'cancan'
 gem 'simple_form'
 gem 'quiet_assets'
 gem 'thin'
 gem 'active_attr'
 gem 'money'
+gem 'countries'
 
 group :development, :test do
   gem 'ruby-prof'
@@ -46,16 +47,8 @@ end
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'compass-rails'
-
   gem 'uglifier', '>= 1.0.3'
-
-  gem 'ember-rails', github: 'emberjs/ember-rails'
-  gem 'ember-source'
-  gem 'handlebars-source'
 end
 
-gem 'jquery-ui-sass-rails'
-
-gem 'countries'
 
 
