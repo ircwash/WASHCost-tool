@@ -32,9 +32,9 @@ class AdvancedWaterQuestionnaire < Session
                 :unpaid_labour,
                 :minor_operation_expenditure,
                 :capital_maintenance_expenditure,
+                :loan_cost,
                 :loan_payback_period,
-                :direct_support_expenditure,
-                :indirect_support_expenditure,
+
                 :service_level_name,
                 :service_level_share,
                 :national_accessibility_norms,
@@ -75,15 +75,14 @@ class AdvancedWaterQuestionnaire < Session
     @distribution_line_length         = []
 
     # cost
-    @actual_hardware_expenditure      = nil
-    @system_lifespan_expectancy       = nil
-    @actual_software_expenditure      = nil
-    @unpaid_labour                    = nil
-    @minor_operation_expenditure      = nil
-    @capital_maintenance_expenditure  = nil
-    @loan_payback_period              = nil
-    @direct_support_expenditure       = nil
-    @indirect_support_expenditure     = nil
+    @actual_hardware_expenditure      = []
+    @system_lifespan_expectancy       = []
+    @actual_software_expenditure      = []
+    @unpaid_labour                    = []
+    @minor_operation_expenditure      = []
+    @capital_maintenance_expenditure  = []
+    @loan_cost                        = []
+    @loan_payback_period              = []
 
     # service level
     @service_level_name               = nil

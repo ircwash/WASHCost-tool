@@ -204,6 +204,7 @@ en:
         town:
           label: City/Town
           placeholder: Catanzaro
+        technology_choice_required: A choice of at least one technology is required
       water:
         water_system_exists:
           label: Does the water system already exist or is it planned?
@@ -259,6 +260,35 @@ en:
         distribution_line_length:
           label: Length of distribution linke (km)
           placeholder: 200
+        capital_costs:
+          capital_costs: Capital Costs
+          recurring_costs: Recurring Costs
+        aggregate_actual_hardware_expenditure:
+          label: What has been/will be the actual expenditure on capital expenditure (hardware) and how long is/was the system expected to last at the time of construction (the useful lifespan) or detail disaggregated below?
+        actual_hardware_expenditure:
+          label: Cost
+          placeholder: 5000
+        system_lifespan_expectancy:
+          label: Useful lifespan (years)
+          placeholder: 30
+        actual_software_expenditure:
+          label: What has been/will be the actual expenditure on capital expenditure (software) ?
+          placeholder: 3000
+        unpaid_labour:
+          label: Has there been any volunteer or unpaid labour been by the household or community?
+          placeholder: Select an option
+        minor_operation_expenditure:
+          label: What has been/will be the minor operation expenditure?
+          placeholder: 1000
+        capital_maintenance_expenditure:
+          label: What has been/will be spent on capital maintenance expenditure?
+          placeholder: 400
+        loan_cost:
+          label: What is the cost servicing any loans taken to fund the service ?
+          placeholder: 6000
+        loan_payback_period:
+          label: What is the payback period on this loan?
+          placeholder: 20
       sanitation:
 
 

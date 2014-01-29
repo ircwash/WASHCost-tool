@@ -96,20 +96,20 @@ module AdvancedCalculatorsHelper
     [
       [ 'Borehole and handpump', 0 ],
       [ 'Mechanised borehole', 1 ],
-      [ 'Mechanised piped system (< 5,000 people)', 3 ],
-      [ 'Mechanised piped system (5000 - 1000 people)', 4 ],
-      [ 'Mechanised piped system (1000 - 20000 people)', 5 ],
-      [ 'Mechanised piped system (> 20000 people)', 6 ],
-      [ 'Multi-town system (< 5000 people)', 7 ],
-      [ 'Multi-town system (5000 - 10000 people)', 8 ],
-      [ 'Multi-town system (10000 - 2000 people)', 9 ],
-      [ 'Multi-town system (> 2000 people)', 10 ],
-      [ 'Gravity fed system (< 5000 people)', 11 ],
-      [ 'Gravity fed system (5000 - 10000 people)', 12 ],
-      [ 'Gravity fed system (10000 - 20000 people)', 13 ],
-      [ 'Gravity fed system (>20000 people)', 14 ],
-      [ 'Small scale rain fed system', 15 ],
-      [ 'Protected well', 16 ]
+      [ 'Mechanised piped system (< 5,000 people)', 2 ],
+      [ 'Mechanised piped system (5000 - 1000 people)', 3 ],
+      [ 'Mechanised piped system (1000 - 20000 people)', 4 ],
+      [ 'Mechanised piped system (> 20000 people)', 5 ],
+      [ 'Multi-town system (< 5000 people)', 6 ],
+      [ 'Multi-town system (5000 - 10000 people)', 7 ],
+      [ 'Multi-town system (10000 - 2000 people)', 8 ],
+      [ 'Multi-town system (> 2000 people)', 9 ],
+      [ 'Gravity fed system (< 5000 people)', 10 ],
+      [ 'Gravity fed system (5000 - 10000 people)', 11 ],
+      [ 'Gravity fed system (10000 - 20000 people)', 12 ],
+      [ 'Gravity fed system (>20000 people)', 13 ],
+      [ 'Small scale rain fed system', 14 ],
+      [ 'Protected well', 15 ]
     ]
   end
 
@@ -152,6 +152,14 @@ module AdvancedCalculatorsHelper
       [ 'Solar power systems', 3 ],
       [ 'Generator', 4 ],
       [ 'Not applicable', 5 ]
+    ]
+  end
+
+  def options_for_unpaid_labour
+    [
+      [ 'Yes', 0 ],
+      [ 'No', 1 ],
+      [ 'Don\'t know', 2 ]
     ]
   end
 

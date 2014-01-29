@@ -22,6 +22,9 @@ class Session
 
       if value == ''
         value = nil
+      elsif value.kind_of?(Array)
+        value.reject! { |v| v.empty? }
+
       end
 
       if respond_to?( "#{name}=" )
@@ -59,9 +62,6 @@ class Session
 
     super
   end
-
-
-
 
 
   def archive

@@ -20,7 +20,7 @@
     .dual_column_form--row
 
       .dual_column_form--column.dual_column_form--column-50
-        .dual_column_form--field.dual_column_form--field-dropdown
+        .dual_column_form--field.dual_column_form--field-text_input
           = f.label :region, t( 'form.advanced.shared.region.label' ), :class => 'dual_column--field--label'
           = text_field_tag 'advanced_water_questionnaire[region]', @questionnaire.region != t( 'form.advanced.shared.dont_know' ) ? @questionnaire.region : '', :class => 'dual_column_form--field--text_input', :placeholder => t( 'form.advanced.shared.region.placeholder' ), 'data-checkbox_toggle-field' => 'region'
 
@@ -32,7 +32,7 @@
 
 
       .dual_column_form--column.dual_column_form--column-50
-        .dual_column_form--field.dual_column_form--field-dropdown
+        .dual_column_form--field.dual_column_form--field-text_input
           = f.label :town, t( 'form.advanced.shared.town.label' ), :class => 'dual_column--field--label'
           = text_field_tag 'advanced_water_questionnaire[town]', @questionnaire.town != t( 'form.advanced.shared.dont_know' ) ? @questionnaire.town : '', :class => 'dual_column_form--field--text_input', :placeholder => t( 'form.advanced.shared.town.placeholder' ), 'data-checkbox_toggle-field' => 'town'
 
@@ -50,7 +50,7 @@
           = f.select :area_type, options_for_select( options_for_area_type, @questionnaire.area_type ), { :include_blank=> '' }, { :class => 'dual_column_form--field--dropdown chzn-select', 'data-placeholder' => t( 'form.advanced.water.area_type.placeholder' ) }
 
       .dual_column_form--column.dual_column_form--column-50
-        .dual_column_form--field.dual_column_form--field-dropdown
+        .dual_column_form--field.dual_column_form--field-text_input
           = f.label :population_density, t( 'form.advanced.water.population_density.label' ), :class => 'dual_column--field--label'
           = text_field_tag 'advanced_water_questionnaire[population_density]', @questionnaire.population_density != t( 'form.advanced.shared.dont_know' ) ? @questionnaire.population_density : '', :class => 'dual_column_form--field--text_input', :placeholder => t( 'form.advanced.water.population_density.placeholder' ), 'data-checkbox_toggle-field' => 'population_density'
 
