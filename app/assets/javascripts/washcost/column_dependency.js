@@ -13,7 +13,7 @@ $( document ).ready( function()
   {
     var associated = $( this ).data( 'column_dependency' ),
         dependents = $( '[data-column_dependency-dependent="' + associated + '"]' );
-console.warn('dgdfgdfg')
+
     if ( this.value === '' )
     {
       dependents.find( 'input:not([type="checkbox"],[type="radio"])' ).val( '' ).attr( { disabled:'disabled' } );
