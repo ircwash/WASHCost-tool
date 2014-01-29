@@ -17,6 +17,10 @@ class Advanced::WaterController < ApplicationController
     @questionnaire = AdvancedWaterQuestionnaire.new( session )
   end
 
+  def cost
+    @questionnaire = AdvancedWaterQuestionnaire.new( session )
+  end
+
   def update
     @questionnaire = AdvancedWaterQuestionnaire.new( session )
 

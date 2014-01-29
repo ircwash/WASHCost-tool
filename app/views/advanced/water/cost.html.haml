@@ -1,0 +1,26 @@
+= content_for :title do
+  Start
+
+.questionnaire
+
+  = form_for @questionnaire, :url => advanced_water_update_url( I18n.locale, 'cost' ), :class => 'dual_column_form' do |f|
+
+    .dual_column_form--row
+
+      .dual_column--field--label= t( 'form.advanced.water.supply_system_technologies.label' )
+
+      .dual_column_form--column.dual_column_form--column-33
+        .dual_column_form--field.dual_column_form--field-dropdown
+          = select_tag 'advanced_water_questionnaire[supply_system_technologies][]', options_for_select( options_for_supply_system_technologies, @questionnaire.supply_system_technologies[0] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_water_questionnaire_supply_system_technologies_1', 'data-placeholder' => t( 'form.advanced.water.supply_system_technologies.placeholder' ), 'data-column_dependency' => 'technology-1' }
+
+      .dual_column_form--column.dual_column_form--column-33
+        .dual_column_form--field.dual_column_form--field-dropdown
+          = select_tag 'advanced_water_questionnaire[supply_system_technologies][]', options_for_select( options_for_supply_system_technologies, @questionnaire.supply_system_technologies[1] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_water_questionnaire_supply_system_technologies_2', 'data-placeholder' => t( 'form.advanced.water.supply_system_technologies.placeholder' ), 'data-column_dependency' => 'technology-2' }
+
+      .dual_column_form--column.dual_column_form--column-33
+        .dual_column_form--field.dual_column_form--field-dropdown
+          = select_tag 'advanced_water_questionnaire[supply_system_technologies][]', options_for_select( options_for_supply_system_technologies, @questionnaire.supply_system_technologies[2] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_water_questionnaire_supply_system_technologies_3', 'data-placeholder' => t( 'form.advanced.water.supply_system_technologies.placeholder' ), 'data-column_dependency' => 'technology-3' }
+
+
+    .question--buttons
+      = submit_tag((t 'buttons.next'), class: 'button')

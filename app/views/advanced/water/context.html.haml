@@ -22,10 +22,10 @@
       .dual_column_form--column.dual_column_form--column-50
         .dual_column_form--field.dual_column_form--field-dropdown
           = f.label :region, t( 'form.advanced.shared.region.label' ), :class => 'dual_column--field--label'
-          = f.text_field :region, :class => 'dual_column_form--field--text_input', :placeholder => t( 'form.advanced.shared.region.placeholder' ), 'data-checkbox_toggle-field' => 'region'
+          = text_field_tag 'advanced_water_questionnaire[region]', @questionnaire.region != t( 'form.advanced.shared.dont_know' ) ? @questionnaire.region : '', :class => 'dual_column_form--field--text_input', :placeholder => t( 'form.advanced.shared.region.placeholder' ), 'data-checkbox_toggle-field' => 'region'
 
         .dual_column_form--field.dual_column_form--field-box
-          = f.check_box :region_unknown, { :class => 'dual_column_form--field--checkbox', 'data-checkbox_toggle-checkbox' => 'region' }, 'yes', 'no'
+          = check_box_tag 'advanced_water_questionnaire[region_unknown]', t( 'form.advanced.shared.dont_know' ), @questionnaire.region == t( 'form.advanced.shared.dont_know' ), { :class => 'dual_column_form--field--checkbox', 'data-checkbox_toggle-checkbox' => 'region' }
           = f.label :region_unknown, :class => 'dual_column--field--label dual_column--field--label-box' do
             .dual_column_form--field--styled_checkbox
             %span.dual_column--field--label-box--content= t( 'form.advanced.shared.dont_know' )
@@ -34,10 +34,10 @@
       .dual_column_form--column.dual_column_form--column-50
         .dual_column_form--field.dual_column_form--field-dropdown
           = f.label :town, t( 'form.advanced.shared.town.label' ), :class => 'dual_column--field--label'
-          = f.text_field :town, :class => 'dual_column_form--field--text_input', :placeholder => t( 'form.advanced.shared.town.placeholder' ), 'data-checkbox_toggle-field' => 'town'
+          = text_field_tag 'advanced_water_questionnaire[town]', @questionnaire.town != t( 'form.advanced.shared.dont_know' ) ? @questionnaire.town : '', :class => 'dual_column_form--field--text_input', :placeholder => t( 'form.advanced.shared.town.placeholder' ), 'data-checkbox_toggle-field' => 'town'
 
         .dual_column_form--field.dual_column_form--field-box
-          = f.check_box :town_unknown, { :class => 'dual_column_form--field--checkbox', 'data-checkbox_toggle-checkbox' => 'town' }, 'yes', 'no'
+          = check_box_tag 'advanced_water_questionnaire[town_unknown]', t( 'form.advanced.shared.dont_know' ), @questionnaire.town == t( 'form.advanced.shared.dont_know' ), { :class => 'dual_column_form--field--checkbox', 'data-checkbox_toggle-checkbox' => 'town' }
           = f.label :town_unknown, :class => 'dual_column--field--label dual_column--field--label-box' do
             .dual_column_form--field--styled_checkbox
             %span.dual_column--field--label-box--content= t( 'form.advanced.shared.dont_know' )
@@ -52,10 +52,10 @@
       .dual_column_form--column.dual_column_form--column-50
         .dual_column_form--field.dual_column_form--field-dropdown
           = f.label :population_density, t( 'form.advanced.water.population_density.label' ), :class => 'dual_column--field--label'
-          = f.text_field :population_density, :class => 'dual_column_form--field--text_input', :placeholder => t( 'form.advanced.water.population_density.placeholder' ), 'data-checkbox_toggle-field' => 'population_density'
+          = text_field_tag 'advanced_water_questionnaire[population_density]', @questionnaire.population_density != t( 'form.advanced.shared.dont_know' ) ? @questionnaire.population_density : '', :class => 'dual_column_form--field--text_input', :placeholder => t( 'form.advanced.water.population_density.placeholder' ), 'data-checkbox_toggle-field' => 'population_density'
 
         .dual_column_form--field.dual_column_form--field-box
-          = f.check_box :population_density_unknown, { :class => 'dual_column_form--field--checkbox', 'data-checkbox_toggle-checkbox' => 'population_density' }, 'yes', 'no'
+          = check_box_tag 'advanced_water_questionnaire[population_density_unknown]', t( 'form.advanced.shared.dont_know' ), @questionnaire.population_density == t( 'form.advanced.shared.dont_know' ), { :class => 'dual_column_form--field--checkbox', 'data-checkbox_toggle-checkbox' => 'population_density' }
           = f.label :population_density_unknown, :class => 'dual_column--field--label dual_column--field--label-box' do
             .dual_column_form--field--styled_checkbox
             %span.dual_column--field--label-box--content= t( 'form.advanced.shared.dont_know' )
