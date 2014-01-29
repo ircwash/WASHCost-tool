@@ -17,7 +17,7 @@
 }
 
 .standalone_form {
-  width:$form_width;
+  max-width:$form_width;
   margin:30px auto;
   padding:30px;
   color:#fff;
