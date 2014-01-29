@@ -42,6 +42,8 @@
 .chosen-container, .chosen-container-active.chosen-with-drop {
   border:none;
 
+  @include transition(opacity 0.35s);
+
   .chosen-single {
     background:#ddd8bc;
     height:45px;
@@ -129,6 +131,10 @@
 
     }
   }
+}
+
+.chosen-disabled {
+  opacity:0.25 !important;
 }
 
 
