@@ -10,7 +10,7 @@ $( document ).ready( function()
     _slider.each( function()
     {
       var slider      = $( this ),
-          label       = slider.siblings( '.slider--value' ),
+          label       = slider.siblings( '.slider--value,[data-slider-value]' ),
           input       = slider.siblings( '[data-slider-input]' ),
           below_label = slider.parent().find( '.slider--scale--point-min' ),
           above_label = slider.parent().find( '.slider--scale--point-max' ),
@@ -27,7 +27,7 @@ $( document ).ready( function()
       // set up options
       if ( min )  options.min  = min;
       if ( max )  options.max  = max;
-
+console.warn( options )
       // initialise slider widget
       slider.slider( options );
 
@@ -59,7 +59,7 @@ $( document ).ready( function()
   function update_value( event, ui )
   {
     var slider      = $( this ),
-        label       = slider.siblings( '.slider--value' ),
+        label       = slider.siblings( '.slider--value,[data-slider-value]' ),
         input       = slider.siblings( '[data-slider-input]' ),
         logarithmic = input.data( 'logarithmic' ),
         min         = input.data( 'slider-min' ),

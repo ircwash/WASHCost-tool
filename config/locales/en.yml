@@ -232,6 +232,33 @@ en:
         household_size:
           label: Average household size
           placeholder: 6
+        supply_system_technologies:
+          label: What supply system(s) are used to deliver water services?
+          placeholder: Choose a technology
+        systems_number:
+          label: How many systems are there?
+          placeholder: 5
+        system_population_design:
+          label: How many people is the system(s) designed to serve?
+          placeholder: 20
+        system_population_actual:
+          label: How many people does the system(s) actually serve?
+          placeholder: 30
+        water_source:
+          label: What is the water source?
+          placeholder: Select a water source
+        surface_water_primary_source:
+          label: If surface water, define the primary source
+          placeholder: Select a primary source
+        water_treatment:
+          label: How is water typically treated?
+        water_treatment:
+          label: How is water typically treated?
+        power_supply:
+          label: Type of power supply
+        distribution_line_length:
+          label: Length of distribution linke (km)
+          placeholder: 200
       sanitation:
 
 

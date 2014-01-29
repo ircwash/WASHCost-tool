@@ -184,6 +184,11 @@
   -webkit-font-smoothing:antialiased;
 }
 
+.dual_column_form--row  > .dual_column--field--label {
+  margin-left:15px;
+  margin-right:15px;
+}
+
 .dual_column_form--field + .dual_column_form--field {
   margin-top:10px;
 }

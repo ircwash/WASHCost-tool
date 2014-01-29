@@ -48,7 +48,7 @@
     color:$dark_grey;
     font-size:16px;
     font-weight:bold;
-    padding-top:12px;
+    padding:12px 15px;
     text-align:left;
     border:none;
     -webkit-font-smoothing:antialiased;
@@ -57,7 +57,7 @@
     @include box-sizing(border-box);
 
     span {
-      margin-left:10px;
+      margin-right:52px;
       text-align:center;
     }
 
@@ -161,6 +161,10 @@
   margin:70px 0;
   border:none;
   background:#fff none;
+}
+
+.slider-widget-low_profile {
+  margin:30px 0;
 }
 
 .slider--widget.threshold-marks {

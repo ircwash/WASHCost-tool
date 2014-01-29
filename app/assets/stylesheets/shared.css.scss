@@ -34,6 +34,12 @@ html, body {
   @include background-image(radial-gradient(center bottom, circle, #e6e3be, #a08d62));
 }
 
+.boxed_content-higher_contrast {
+  background-attachment:fixed;
+
+  @include background-image(radial-gradient(center bottom, circle, #c6bb93, #a08d62));
+}
+
 .application_version {
   position:fixed;
   top:5px;

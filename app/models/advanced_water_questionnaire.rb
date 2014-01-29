@@ -6,6 +6,7 @@ class AdvancedWaterQuestionnaire < Session
                 :town,
                 :area_type,
                 :population_density,
+
                 :service_management,
                 :construction_financier,
                 :infrastructure_operator,
@@ -14,10 +15,17 @@ class AdvancedWaterQuestionnaire < Session
                 :rehabilitation_cost_owner,
                 :annual_household_income,
                 :household_size,
-                :supply_systems_used,
+
+                :supply_system_technologies,
                 :systems_number,
                 :system_population_design,
                 :system_population_actual,
+                :water_source,
+                :surface_water_primary_source,
+                :water_treatment,
+                :power_supply,
+                :distribution_line_length,
+
                 :actual_hardware_expenditure,
                 :system_lifespan_expectancy,
                 :actual_software_expenditure,
@@ -41,13 +49,15 @@ class AdvancedWaterQuestionnaire < Session
 
   def initialize( session )
 
-    # system characteristics
+    # context
     @water_system_exists              = nil
     @country                          = nil
     @region                           = nil
     @town                             = nil
     @area_type                        = nil
     @population_density               = nil
+
+    # system management
     @service_management               = []
     @construction_financier           = []
     @infrastructure_operator          = []
@@ -57,11 +67,18 @@ class AdvancedWaterQuestionnaire < Session
     @annual_household_income          = nil
     @household_size                   = nil
 
-    # technology
-    @supply_systems_used              = nil
-    @systems_number                   = nil
-    @system_population_design         = nil
-    @system_population_actual         = nil
+    # system characteristics
+    @supply_system_technologies       = []
+    @systems_number                   = []
+    @system_population_design         = []
+    @system_population_actual         = []
+    @water_source                     = []
+    @surface_water_primary_source     = []
+    @water_treatment                  = []
+    @power_supply                     = []
+    @distribution_line_length         = []
+
+    # cost
     @actual_hardware_expenditure      = nil
     @system_lifespan_expectancy       = nil
     @actual_software_expenditure      = nil
@@ -79,6 +96,40 @@ class AdvancedWaterQuestionnaire < Session
     @national_quantity_norms          = nil
     @national_quality_norms           = nil
     @national_reliability_norms       = nil
+
+    super
+
+  end
+
+
+  def update_attributes( attributes )
+
+    @water_treatment = []
+    @power_supply    = []
+
+    if attributes[ :water_treatment_0 ] != nil
+      @water_treatment.push attributes[ :water_treatment_0 ]
+    end
+
+    if attributes[ :water_treatment_1 ] != nil
+      @water_treatment.push attributes[ :water_treatment_1 ]
+    end
+
+    if attributes[ :water_treatment_2 ] != nil
+      @water_treatment.push attributes[ :water_treatment_2 ]
+    end
+
+    if attributes[ :power_supply_0 ] != nil
+      @power_supply.push attributes[ :power_supply_0 ]
+    end
+
+    if attributes[ :power_supply_1 ] != nil
+      @power_supply.push attributes[ :power_supply_1 ]
+    end
+
+    if attributes[ :power_supply_2 ] != nil
+      @power_supply.push attributes[ :power_supply_2 ]
+    end
 
     super
 
