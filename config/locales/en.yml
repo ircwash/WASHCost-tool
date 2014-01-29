@@ -289,6 +289,26 @@ en:
         loan_payback_period:
           label: What is the payback period on this loan?
           placeholder: 20
+        service_levels:
+          label: Please define upto four service levels for users of the water system
+        service_level_name:
+          label: Name the service level
+          placeholder: Service level name
+        service_level_share:
+          label: Service level share
+          placeholder: 25%
+        national_accessibility_norms:
+          label: Does the service accessibility meet the national norms?
+          placeholder: Select an option
+        national_quantity_norms:
+          label: Does the service quantity meet the national norms?
+          placeholder: Select an option
+        national_quality_norms:
+          label: Does the service quality meet the national norms?
+          placeholder: Select an option
+        national_reliability_norms:
+          label: Does the service reliability meet the national norms?
+          placeholder: Select an option
       sanitation:
 
 

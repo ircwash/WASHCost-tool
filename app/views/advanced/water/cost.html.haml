@@ -3,7 +3,7 @@
 
 .questionnaire
 
-  = form_for @questionnaire, :url => advanced_water_update_url( I18n.locale, 'cost' ), :class => 'dual_column_form' do |f|
+  = form_for @questionnaire, :url => advanced_water_update_url( I18n.locale, 'service' ), :class => 'dual_column_form' do |f|
 
     - if @questionnaire.supply_system_technologies.count > 0
 

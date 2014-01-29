@@ -21,6 +21,10 @@ class Advanced::WaterController < ApplicationController
     @questionnaire = AdvancedWaterQuestionnaire.new( session )
   end
 
+  def service
+    @questionnaire = AdvancedWaterQuestionnaire.new( session )
+  end
+
   def update
     @questionnaire = AdvancedWaterQuestionnaire.new( session )
 

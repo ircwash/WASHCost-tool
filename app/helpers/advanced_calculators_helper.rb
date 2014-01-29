@@ -163,4 +163,36 @@ module AdvancedCalculatorsHelper
     ]
   end
 
+  def options_for_national_accessibility_norms
+    [
+      [ 'Yes', 0 ],
+      [ 'No', 1 ],
+      [ 'Don\'t know', 2 ]
+    ]
+  end
+
+  def options_for_national_quantity_norms
+    [
+      [ 'Yes', 0 ],
+      [ 'No', 1 ],
+      [ 'Don\'t know', 2 ]
+    ]
+  end
+
+  def options_for_national_quality_norms
+    [
+      [ 'Yes', 0 ],
+      [ 'No', 1 ],
+      [ 'Don\'t know', 2 ]
+    ]
+  end
+
+  def options_for_national_reliability_norms
+    [
+      [ 'Yes', 0 ],
+      [ 'No', 1 ],
+      [ 'Don\'t know', 2 ]
+    ]
+  end
+
 end

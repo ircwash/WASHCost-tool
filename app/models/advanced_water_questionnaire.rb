@@ -85,12 +85,12 @@ class AdvancedWaterQuestionnaire < Session
     @loan_payback_period              = []
 
     # service level
-    @service_level_name               = nil
-    @service_level_share              = nil
-    @national_accessibility_norms     = nil
-    @national_quantity_norms          = nil
-    @national_quality_norms           = nil
-    @national_reliability_norms       = nil
+    @service_level_name               = []
+    @service_level_share              = []
+    @national_accessibility_norms     = []
+    @national_quantity_norms          = []
+    @national_quality_norms           = []
+    @national_reliability_norms       = []
 
     super
 
