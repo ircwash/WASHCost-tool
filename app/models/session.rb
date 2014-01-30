@@ -75,7 +75,7 @@ class Session
 
   def unarchive
     @session[ :advanced_water ].each do |name, value|
-      send( "#{name}=", value )
+      send( "#{name}=", value ) unless !self.respond_to? name
     end
   end
 

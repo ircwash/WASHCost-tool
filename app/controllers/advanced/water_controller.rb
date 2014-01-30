@@ -5,24 +5,17 @@ class Advanced::WaterController < ApplicationController
   authorize_resource :class => Advanced::WaterController
 
 
-  def context
+  def begin
     @questionnaire = AdvancedWaterQuestionnaire.new( session )
+    @questionnaire.reset
+
+    redirect_to advanced_water_action_path( :context )
   end
 
-  def system_management
+  def questionnaire
     @questionnaire = AdvancedWaterQuestionnaire.new( session )
-  end
 
-  def system_characteristics
-    @questionnaire = AdvancedWaterQuestionnaire.new( session )
-  end
-
-  def cost
-    @questionnaire = AdvancedWaterQuestionnaire.new( session )
-  end
-
-  def service
-    @questionnaire = AdvancedWaterQuestionnaire.new( session )
+    render params[ :section ]
   end
 
   def update
@@ -32,6 +25,10 @@ class Advanced::WaterController < ApplicationController
     @questionnaire.update_attributes( params[ :advanced_water_questionnaire ] )
 
     redirect_to advanced_water_action_path( I18n.locale, params[ :section ] )
+  end
+
+  def report
+
   end
 
 end

@@ -61,7 +61,7 @@ module NavigationHelper
   # @return [String]
   def item_class_by_action(action)
     form = "#{controller.controller_name}_basic_form".to_sym
-    if action.to_s == controller.action_name
+    if action.to_s == controller.action_name || action.to_s == params[ :section ]
       "active"
     elsif session[form].present? && session[form].has_key?(action.to_s)
       "resolved"

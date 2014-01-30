@@ -43,56 +43,11 @@ class AdvancedWaterQuestionnaire < Session
                 :national_reliability_norms
 
 
-  def initialize( session )
+  def reset
 
-    # context
-    @water_system_exists              = nil
-    @country                          = nil
-    @region                           = nil
-    @town                             = nil
-    @area_type                        = nil
-    @population_density               = nil
+    set_properties
 
-    # system management
-    @service_management               = []
-    @construction_financier           = []
-    @infrastructure_operator          = []
-    @service_responsbility            = []
-    @standard_enforcer                = []
-    @rehabilitation_cost_owner        = []
-    @annual_household_income          = nil
-    @household_size                   = nil
-
-    # system characteristics
-    @supply_system_technologies       = []
-    @systems_number                   = []
-    @system_population_design         = []
-    @system_population_actual         = []
-    @water_source                     = []
-    @surface_water_primary_source     = []
-    @water_treatment                  = []
-    @power_supply                     = []
-    @distribution_line_length         = []
-
-    # cost
-    @actual_hardware_expenditure      = []
-    @system_lifespan_expectancy       = []
-    @actual_software_expenditure      = []
-    @unpaid_labour                    = []
-    @minor_operation_expenditure      = []
-    @capital_maintenance_expenditure  = []
-    @loan_cost                        = []
-    @loan_payback_period              = []
-
-    # service level
-    @service_level_name               = []
-    @service_level_share              = []
-    @national_accessibility_norms     = []
-    @national_quantity_norms          = []
-    @national_quality_norms           = []
-    @national_reliability_norms       = []
-
-    super
+    archive
 
   end
 
@@ -172,5 +127,59 @@ class AdvancedWaterQuestionnaire < Session
     100 * attributes_with_values / self.attributes.count
   end
 
+
+  private
+
+
+  def set_properties
+
+    # context
+    @water_system_exists              = nil
+    @country                          = nil
+    @region                           = nil
+    @town                             = nil
+    @area_type                        = nil
+    @population_density               = nil
+
+    # system management
+    @service_management               = []
+    @construction_financier           = []
+    @infrastructure_operator          = []
+    @service_responsbility            = []
+    @standard_enforcer                = []
+    @rehabilitation_cost_owner        = []
+    @annual_household_income          = nil
+    @household_size                   = nil
+
+    # system characteristics
+    @supply_system_technologies       = []
+    @systems_number                   = []
+    @system_population_design         = []
+    @system_population_actual         = []
+    @water_source                     = []
+    @surface_water_primary_source     = []
+    @water_treatment                  = []
+    @power_supply                     = []
+    @distribution_line_length         = []
+
+    # cost
+    @actual_hardware_expenditure      = []
+    @system_lifespan_expectancy       = []
+    @actual_software_expenditure      = []
+    @unpaid_labour                    = []
+    @minor_operation_expenditure      = []
+    @capital_maintenance_expenditure  = []
+    @loan_cost                        = []
+    @loan_payback_period              = []
+
+    # service level
+    @service_level_name               = []
+    @service_level_share              = []
+    @national_accessibility_norms     = []
+    @national_quantity_norms          = []
+    @national_quality_norms           = []
+    @national_reliability_norms       = []
+
+  end
 
 end
