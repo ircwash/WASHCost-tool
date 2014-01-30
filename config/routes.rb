@@ -43,6 +43,7 @@ WashCostApp::Application.routes.draw do
           get '/begin' => 'water#begin', :as => 'water_begin'
           get  '/:section' => 'water#questionnaire', :as => 'water_action'
           post '/update/:section' => 'water#update', :as => 'water_update'
+          post '/dynamic_update' => 'water#dynamic_update', :as => 'water_dynamic_update'
           root :to => redirect( '/%{locale}/calculators/advanced/water/context' ), :as => 'water'
         end
 

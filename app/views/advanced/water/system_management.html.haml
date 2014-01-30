@@ -3,7 +3,7 @@
 
 .questionnaire
 
-  = form_for @questionnaire, :url => advanced_water_update_url( I18n.locale, 'system_characteristics' ), :class => 'dual_column_form' do |f|
+  = form_for @questionnaire, :url => advanced_water_update_url( I18n.locale, 'system_characteristics' ), :html => { :class => 'dual_column_form', 'data-dynamic_form' => advanced_water_dynamic_update_url( I18n.locale ) } do |f|
 
     .dual_column_form--row
 

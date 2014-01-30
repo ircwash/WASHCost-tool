@@ -27,6 +27,15 @@ class Advanced::WaterController < ApplicationController
     redirect_to advanced_water_action_path( I18n.locale, params[ :section ] )
   end
 
+  def dynamic_update
+    @questionnaire = AdvancedWaterQuestionnaire.new( session )
+
+    # save updated questionnaire
+    @questionnaire.update_attributes( params[ :advanced_water_questionnaire ] )
+
+    render json: { :progress => @questionnaire.complete }
+  end
+
   def report
 
   end

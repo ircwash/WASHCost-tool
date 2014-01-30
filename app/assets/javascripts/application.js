@@ -15,6 +15,7 @@
 //= require jquery.ui.core
 //= require jquery.ui.slider
 //= require jquery.chosen
+//= require jquery.form
 //= require d3
 //= require money
 //= require accounting
