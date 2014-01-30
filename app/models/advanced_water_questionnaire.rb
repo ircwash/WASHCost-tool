@@ -142,6 +142,8 @@ class AdvancedWaterQuestionnaire < Session
     years * ( supply_system_technologies.each_with_index.map{ |s,i| actual_hardware_expenditure[i].to_f + actual_software_expenditure[i].to_f }.inject(:+) + ( expected_operation_expenditure_per_person_per_year + expected_capital_maintenance_expenditure_per_person_per_year + expected_direct_support_cost_per_person_per_year ) * total_population + direct_support_cost.to_f + indirect_support_cost.to_f )
   end
 
+  # expenditure
+
   def operation_expenditure_per_person_per_year
     supply_system_technologies.each_with_index.map{ |s,i| minor_operation_expenditure[i].to_f / system_population_actual[i].to_f }.inject(:+)
   end
@@ -182,6 +184,8 @@ class AdvancedWaterQuestionnaire < Session
     expected_operation_expenditure_per_person_per_year + expected_capital_maintenance_expenditure_per_person_per_year + cost_of_capital_per_person_per_year + expected_direct_support_cost_per_person_per_year + indirect_support_cost_per_person_per_year
   end
 
+  # affordability
+
   def annual_household_income_per_person
     annual_household_income.to_f / household_size.to_f
   end
@@ -197,6 +201,8 @@ class AdvancedWaterQuestionnaire < Session
   def total_designed_users
     system_population_design.map{ |spa| spa.to_f }.inject(:+)
   end
+
+  # affordability inputted actual users
 
   def annual_operational_expenditure_for_actual_users
     minor_operation_expenditure.each.map{ |moe| moe.to_f }.inject(:+) / total_actual_users
@@ -222,6 +228,8 @@ class AdvancedWaterQuestionnaire < Session
     100 * total_annual_expenditure_for_actual_users / annual_household_income.to_f
   end
 
+  # affordability inputted designed users
+
   def annual_operational_expenditure_for_designed_users
     minor_operation_expenditure.each.map{ |moe| moe.to_f }.inject(:+) / total_designed_users
   end
@@ -244,6 +252,32 @@ class AdvancedWaterQuestionnaire < Session
 
   def total_annual_expenditure_for_designed_users_as_percentage_of_household_income
     100 * total_annual_expenditure_for_designed_users / annual_household_income.to_f
+  end
+
+  # affordability expected actual users
+
+  def expected_annual_operational_expenditure_for_actual_users
+    benchmark_minor_operation_expenditure / total_actual_users
+  end
+
+  def expected_annual_operational_expenditure_for_actual_users_as_percentage_of_household_income
+    100 * expected_annual_operational_expenditure_for_actual_users / annual_household_income.to_f
+  end
+
+  def expected_annual_capital_maintenance_expenditure_for_actual_users
+    benchmark_capital_maintenance_expenditure / total_actual_users
+  end
+
+  def expected_annual_capital_maintenance_expenditure_for_actual_users_as_percentage_of_household_income
+    100 * expected_annual_capital_maintenance_expenditure_for_actual_users / annual_household_income.to_f
+  end
+
+  def total_expected_annual_expenditure_for_actual_users
+    expected_annual_operational_expenditure_for_actual_users + expected_annual_capital_maintenance_expenditure_for_actual_users
+  end
+
+  def total_expected_annual_expenditure_for_actual_users_as_percentage_of_household_income
+    100 * total_expected_annual_expenditure_for_actual_users / annual_household_income.to_f
   end
 
 
