@@ -190,6 +190,62 @@ class AdvancedWaterQuestionnaire < Session
     service_level_name.each_with_index.map{ |sl,i| ( national_accessibility_norms[i].to_i == 0 || national_quantity_norms[i].to_i == 0 || national_quality_norms[i].to_i == 0 || national_reliability_norms[i].to_i == 0 ) ? service_level_share[i].to_i : 0 }.inject(:+)
   end
 
+  def total_actual_users
+    system_population_actual.map{ |spd| spd.to_f }.inject(:+)
+  end
+
+  def total_designed_users
+    system_population_design.map{ |spa| spa.to_f }.inject(:+)
+  end
+
+  def annual_operational_expenditure_for_actual_users
+    minor_operation_expenditure.each.map{ |moe| moe.to_f }.inject(:+) / total_actual_users
+  end
+
+  def annual_operational_expenditure_for_actual_users_as_percentage_of_household_income
+    100 * annual_operational_expenditure_for_actual_users / annual_household_income.to_f
+  end
+
+  def annual_capital_maintenance_expenditure_for_actual_users
+    capital_maintenance_expenditure.each.map{ |cme| cme.to_f }.inject(:+) / total_actual_users
+  end
+
+  def annual_capital_maintenance_expenditure_for_actual_users_as_percentage_of_household_income
+    100 * annual_capital_maintenance_expenditure_for_actual_users / annual_household_income.to_f
+  end
+
+  def total_annual_expenditure_for_actual_users
+    annual_operational_expenditure_for_actual_users + annual_capital_maintenance_expenditure_for_actual_users
+  end
+
+  def total_annual_expenditure_for_actual_users_as_percentage_of_household_income
+    100 * total_annual_expenditure_for_actual_users / annual_household_income.to_f
+  end
+
+  def annual_operational_expenditure_for_designed_users
+    minor_operation_expenditure.each.map{ |moe| moe.to_f }.inject(:+) / total_designed_users
+  end
+
+  def annual_operational_expenditure_for_designed_users_as_percentage_of_household_income
+    100 * annual_operational_expenditure_for_designed_users / annual_household_income.to_f
+  end
+
+  def annual_capital_maintenance_expenditure_for_designed_users
+    capital_maintenance_expenditure.each.map{ |cme| cme.to_f }.inject(:+) / total_designed_users
+  end
+
+  def annual_capital_maintenance_expenditure_for_designed_users_as_percentage_of_household_income
+    100 * annual_capital_maintenance_expenditure_for_designed_users / annual_household_income.to_f
+  end
+
+  def total_annual_expenditure_for_designed_users
+    annual_operational_expenditure_for_designed_users + annual_capital_maintenance_expenditure_for_designed_users
+  end
+
+  def total_annual_expenditure_for_designed_users_as_percentage_of_household_income
+    100 * total_annual_expenditure_for_designed_users / annual_household_income.to_f
+  end
+
 
   # BENCHMARK VALUES
 

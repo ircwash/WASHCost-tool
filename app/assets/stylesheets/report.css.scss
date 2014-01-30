@@ -419,8 +419,16 @@
   @include box-sizing(border-box);
 }
 
+.report--outputs--item-50 {
+  width:50%;
+}
+
 .report--outputs--item-33 {
   width:33.333%;
+}
+
+.report--outputs--item-25 {
+  width:25%;
 }
 
 .report--outputs--item-20 {
@@ -428,14 +436,13 @@
 }
 
 .report--outputs--title {
-  height:2em;
   margin-bottom:10px;
   font-size:12px;
   font-weight:bold;
 }
 
-.report--outputs--title-total {
-  height:auto;
+.report--outputs--title-double {
+  height:2em;
 }
 
 .report--outputs--subtitle {
