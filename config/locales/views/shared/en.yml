@@ -69,6 +69,7 @@ en:
       minutes: "min"
     less_than: "Less than"
     no_specifed: "No specified"
+    per_person_per_year: (Per person per year)
     save_your_report: "Save Your Report"
     report_saved: "Your report was %{action} successfully"
     created_successsfully: "Your report was created successfully"
@@ -95,3 +96,27 @@ en:
     benchmark_above: "above the Benchmarks"
     benchmark_outside: "Expenditure is outside of WashCost benchmarks. Read the review below for more information."
     access: "Access"
+    expenditure_summary: Expenditure Summary
+    service_level_summary: Service Level Summary
+    comparison_width_others: Comparison With Other's
+    notice: Notice
+    total_expenditure_for_thirty_years: Total expenditure for 30 years
+    number_of_people: "%{people} people"
+    current_recurrent_expenditure: Current recurrent expenditure
+    operational_expenditure: Operation expenditure
+    capital_maintenance_expenditure: Capital Maintenance Expenditure
+    cost_of_capital: Cost of capital
+    expenditure_of_direct_support: Expenditure of direct support
+    expenditure_of_indirect_support: Expenditure of indirect support
+    cost_of_sustaining_the_service: Cost of sustaining the service
+    inputted_expenditure: Inputted Expenditure
+    expected_expenditure: Expected Expenditure
+    expenditure_surplus_shortfall: Expenditure Surplus/Shortfall
+
+
+
+
+
+
+
+

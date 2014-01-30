@@ -9,8 +9,8 @@
 
       .dual_column_form--column.dual_column_form--column-50
         .dual_column_form--field.dual_column_form--field-dropdown
-          = f.label :water_system_exists, t( 'advanced.water.water_system_exists.label' ), :class => 'dual_column--field--label'
-          = f.select :water_system_exists, options_for_select( options_for_water_system_exists, @questionnaire.water_system_exists ), { :include_blank=> '' }, { :class => 'dual_column_form--field--dropdown chzn-select', 'data-placeholder' => t( 'advanced.water.water_system_exists.placeholder' ) }
+          = f.label :water_system_exists, t( 'advanced.water.questionnaire.water_system_exists.label' ), :class => 'dual_column--field--label'
+          = f.select :water_system_exists, options_for_select( options_for_water_system_exists, @questionnaire.water_system_exists ), { :include_blank=> '' }, { :class => 'dual_column_form--field--dropdown chzn-select', 'data-placeholder' => t( 'advanced.water.questionnaire.water_system_exists.placeholder' ) }
 
       .dual_column_form--column.dual_column_form--column-50
         .dual_column_form--field.dual_column_form--field-dropdown
@@ -46,13 +46,13 @@
 
       .dual_column_form--column.dual_column_form--column-50
         .dual_column_form--field.dual_column_form--field-dropdown
-          = f.label :area_type, t( 'advanced.water.area_type.label' ), :class => 'dual_column--field--label'
-          = f.select :area_type, options_for_select( options_for_area_type, @questionnaire.area_type ), { :include_blank=> '' }, { :class => 'dual_column_form--field--dropdown chzn-select', 'data-placeholder' => t( 'advanced.water.area_type.placeholder' ) }
+          = f.label :area_type, t( 'advanced.water.questionnaire.area_type.label' ), :class => 'dual_column--field--label'
+          = f.select :area_type, options_for_select( options_for_area_type, @questionnaire.area_type ), { :include_blank=> '' }, { :class => 'dual_column_form--field--dropdown chzn-select', 'data-placeholder' => t( 'advanced.water.questionnaire.area_type.placeholder' ) }
 
       .dual_column_form--column.dual_column_form--column-50
         .dual_column_form--field.dual_column_form--field-text_input
-          = f.label :population_density, t( 'advanced.water.population_density.label' ), :class => 'dual_column--field--label'
-          = text_field_tag 'advanced_water_questionnaire[population_density]', @questionnaire.population_density != t( 'advanced.shared.dont_know' ) ? @questionnaire.population_density : '', :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.population_density.placeholder' ), 'data-checkbox_toggle-field' => 'population_density'
+          = f.label :population_density, t( 'advanced.water.questionnaire.population_density.label' ), :class => 'dual_column--field--label'
+          = text_field_tag 'advanced_water_questionnaire[population_density]', @questionnaire.population_density != t( 'advanced.shared.dont_know' ) ? @questionnaire.population_density : '', :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.questionnaire.population_density.placeholder' ), 'data-checkbox_toggle-field' => 'population_density'
 
         .dual_column_form--field.dual_column_form--field-box
           = check_box_tag 'advanced_water_questionnaire[population_density_unknown]', t( 'advanced.shared.dont_know' ), @questionnaire.population_density == t( 'advanced.shared.dont_know' ), { :class => 'dual_column_form--field--checkbox', 'data-checkbox_toggle-checkbox' => 'population_density' }

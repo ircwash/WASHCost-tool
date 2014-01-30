@@ -36,6 +36,8 @@ class AdvancedWaterQuestionnaire < Session
                 :capital_maintenance_expenditure,
                 :loan_cost,
                 :loan_payback_period,
+                :direct_support_cost,
+                :indirect_support_cost,
 
                 :service_level_name,
                 :service_level_share,
@@ -130,6 +132,72 @@ class AdvancedWaterQuestionnaire < Session
   end
 
 
+  # CALCULATIONS
+
+  def total_population
+    supply_system_technologies.each_with_index.map{ |s,i| system_population_actual[i].to_f }.inject(:+)
+  end
+
+  def total_expenditure_for_years( years )
+    years * ( supply_system_technologies.each_with_index.map{ |s,i| actual_hardware_expenditure[i].to_f + actual_software_expenditure[i].to_f }.inject(:+) + ( expected_operation_expenditure_per_person_per_year + expected_capital_maintenance_expenditure_per_person_per_year + expected_direct_support_cost_per_person_per_year ) * total_population + direct_support_cost.to_f + indirect_support_cost.to_f )
+  end
+
+  def operation_expenditure_per_person_per_year
+    supply_system_technologies.each_with_index.map{ |s,i| minor_operation_expenditure[i].to_f / system_population_actual[i].to_f }.inject(:+)
+  end
+
+  def capital_maintenance_expenditure_per_person_per_year
+    supply_system_technologies.each_with_index.map{ |s,i| capital_maintenance_expenditure[i].to_f / system_population_actual[i].to_f }.inject(:+)
+  end
+
+  def cost_of_capital_per_person_per_year
+    supply_system_technologies.each_with_index.map{ |s,i| ( loan_cost[i].to_f * [ loan_payback_period[i].to_i, 30 ].min / 30) / system_population_actual[i].to_f }.inject(:+)
+  end
+
+  def direct_support_cost_per_person_per_year
+    direct_support_cost.to_f / total_population
+  end
+
+  def indirect_support_cost_per_person_per_year
+    indirect_support_cost.to_f / total_population
+  end
+
+  def total_inputted_expenditure_per_person_per_year
+    operation_expenditure_per_person_per_year + capital_maintenance_expenditure_per_person_per_year + cost_of_capital_per_person_per_year + direct_support_cost_per_person_per_year + indirect_support_cost_per_person_per_year
+  end
+
+  def expected_operation_expenditure_per_person_per_year
+    benchmark_minor_operation_expenditure.to_f / total_population
+  end
+
+  def expected_capital_maintenance_expenditure_per_person_per_year
+    benchmark_capital_maintenance_expenditure.to_f / total_population
+  end
+
+  def expected_direct_support_cost_per_person_per_year
+    benchmark_direct_support_cost.to_f / total_population
+  end
+
+  def total_expected_expenditure_per_person_per_year
+    expected_operation_expenditure_per_person_per_year + expected_capital_maintenance_expenditure_per_person_per_year + cost_of_capital_per_person_per_year + expected_direct_support_cost_per_person_per_year + indirect_support_cost_per_person_per_year
+  end
+
+
+  # BENCHMARK VALUES
+
+  def benchmark_minor_operation_expenditure
+    11
+  end
+
+  def benchmark_capital_maintenance_expenditure
+    13
+  end
+
+  def benchmark_direct_support_cost
+    40
+  end
+
+
   private
 
 
@@ -173,6 +241,8 @@ class AdvancedWaterQuestionnaire < Session
     @capital_maintenance_expenditure  = []
     @loan_cost                        = []
     @loan_payback_period              = []
+    @direct_support_cost              = nil
+    @indirect_support_cost            = nil
 
     # service level
     @service_level_name               = []
