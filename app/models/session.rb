@@ -4,12 +4,13 @@ class Session
   include ActiveModel::Conversion
   extend ActiveModel::Naming
 
+  @@identifier = ''
 
   def initialize( session )
 
     @session = session
 
-    if ( session[ :advanced_water ] )
+    if ( session[ @@identifier ] )
       unarchive
     end
 
@@ -67,14 +68,16 @@ class Session
   def archive
     data = {}
 
-    instance_variables.map { |ivar| data[ ivar.to_s.gsub( /@/, '' ) ] = instance_variable_get ivar unless ivar == :@session || ivar == :@attributes }
+    attributes.each do |a|
+      data[ a ] = send( a )
+    end
 
-    @session[ :advanced_water ] = data
+    @session[ @@identifier ] = data
   end
 
 
   def unarchive
-    @session[ :advanced_water ].each do |name, value|
+    @session[ @@identifier ].each do |name, value|
       send( "#{name}=", value ) unless !self.respond_to? name
     end
   end

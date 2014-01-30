@@ -1,5 +1,7 @@
 class AdvancedWaterQuestionnaire < Session
 
+  @@identifier = 'advanced_water'
+
   attr_accessor :water_system_exists,
                 :country,
                 :region,
