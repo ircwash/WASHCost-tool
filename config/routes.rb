@@ -41,6 +41,7 @@ WashCostApp::Application.routes.draw do
 
         scope '/water' do
           get '/begin' => 'water#begin', :as => 'water_begin'
+          get '/report' => 'water#report', :as => 'water_report'
           get  '/:section' => 'water#questionnaire', :as => 'water_action'
           post '/update/:section' => 'water#update', :as => 'water_update'
           post '/dynamic_update' => 'water#dynamic_update', :as => 'water_dynamic_update'

@@ -37,7 +37,7 @@ class Advanced::WaterController < ApplicationController
   end
 
   def report
-
+    @questionnaire = AdvancedWaterQuestionnaire.new( session )
   end
 
 end

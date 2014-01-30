@@ -578,11 +578,12 @@ en:
     cost_box_no_value: "Looks like you need answer more cost questions to get a final cost report. Go back and add more answer about your cost service delivery"
     report_box_no_value: "Looks like you need answer more questions to get a final report. Go back and add more answer about your service delivery"
   footer:
-    footer_layout: "Basic"
     final_report: " | Final Reports"
     complete: "Complete"
-    water_basic: "Basic Water Report"
-    sanitation_basic: "Basic Sanitation Report"
-    water_advanced: "Advanced Water Report"
-    footer_layout_sanitation: "Sanitation"
+    basic:
+      water: Basic Water Report
+      sanitation: Basic Sanitation Report
+    advanced:
+      water: Advanced Water Report
+      sanitation: Advanced Sanitation Report
   register_if_acces_to_cuesstinaire_view: "You must be registered if you want access to basic tool"

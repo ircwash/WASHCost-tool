@@ -2,11 +2,11 @@
   .page_content
     .footer--content
 
-      = link_to t( 'buttons.view_report' ), controller_path == 'basic/water' ? basic_water_report_path( I18n.locale ) : basic_sanitation_report_path( I18n.locale ), :class => 'footer--link footer--link-report'
+      = link_to t( 'buttons.view_report' ), footer_report_url, :class => 'footer--link footer--link-report'
 
       .footer--progress
         .footer--progress--percentage
-          = "#{t( controller_path == 'basic/water' ? "footer.water_basic" : "footer.sanitation_basic" )}"
+          = t( "footer.#{controller_path.match( /basic/ ) ? 'basic' : 'advanced'}.#{controller_path.match( /water/ ) ? 'water' : 'advanced'}" )
           %span{ 'data-progress-label' => true }= "(#{@questionnaire ? @questionnaire.complete : flash[:percent_complete]}%)"
         .footer--progress--bar
           .footer--progress--bar--fill{ :style => "width: #{@questionnaire ? @questionnaire.complete : flash[:percent_complete]}%", 'data-progress-bar' => true }
