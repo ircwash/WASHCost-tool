@@ -1,0 +1,14 @@
+en:
+  advanced:
+    shared:
+      dont_know: Don't know
+      country:
+        label: Country
+        placeholder: Select a country
+      region:
+        label: Region
+        placeholder: Calabria
+      town:
+        label: City/Town
+        placeholder: Catanzaro
+      technology_choice_required: A choice of at least one technology is required

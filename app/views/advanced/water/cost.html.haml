@@ -7,7 +7,7 @@
 
     - if @questionnaire.supply_system_technologies.count > 0
 
-      .dual_column--heading= t( 'form.advanced.water.cost.capital_costs' )
+      .dual_column--heading= t( 'advanced.water.cost.capital_costs' )
 
       .dual_column_form--row
 
@@ -18,41 +18,41 @@
 
       .dual_column_form--row
 
-        .dual_column--field--label= t( 'form.advanced.water.aggregate_actual_hardware_expenditure.label' )
+        .dual_column--field--label= t( 'advanced.water.aggregate_actual_hardware_expenditure.label' )
 
         - @questionnaire.supply_system_technologies.each_with_index do |technology,i|
           .dual_column_form--column.dual_column_form--column-33
             .dual_column_form--field.dual_column_form--field-text_input
-              = label_tag "advanced_water_questionnaire_actual_hardware_expenditure_#{i}", t( 'form.advanced.water.actual_hardware_expenditure.label' ), :class => 'dual_column--field--label'
-              = text_field_tag 'advanced_water_questionnaire[actual_hardware_expenditure][]', @questionnaire.actual_hardware_expenditure[i], :id => "advanced_water_questionnaire_actual_hardware_expenditure_#{i}", :class => 'dual_column_form--field--text_input', :placeholder => t( 'form.advanced.water.actual_hardware_expenditure.placeholder' )
+              = label_tag "advanced_water_questionnaire_actual_hardware_expenditure_#{i}", t( 'advanced.water.actual_hardware_expenditure.label' ), :class => 'dual_column--field--label'
+              = text_field_tag 'advanced_water_questionnaire[actual_hardware_expenditure][]', @questionnaire.actual_hardware_expenditure[i], :id => "advanced_water_questionnaire_actual_hardware_expenditure_#{i}", :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.actual_hardware_expenditure.placeholder' )
 
       .dual_column_form--row
 
         - @questionnaire.supply_system_technologies.each_with_index do |technology,i|
           .dual_column_form--column.dual_column_form--column-33
             .dual_column_form--field.dual_column_form--field-text_input
-              = label_tag "advanced_water_questionnaire_system_lifespan_expectancy_#{i}", t( 'form.advanced.water.system_lifespan_expectancy.label' ), :class => 'dual_column--field--label'
-              = text_field_tag 'advanced_water_questionnaire[system_lifespan_expectancy][]', @questionnaire.system_lifespan_expectancy[i], :id => "advanced_water_questionnaire_system_lifespan_expectancy_#{i}", :class => 'dual_column_form--field--text_input', :placeholder => t( 'form.advanced.water.system_lifespan_expectancy.placeholder' )
+              = label_tag "advanced_water_questionnaire_system_lifespan_expectancy_#{i}", t( 'advanced.water.system_lifespan_expectancy.label' ), :class => 'dual_column--field--label'
+              = text_field_tag 'advanced_water_questionnaire[system_lifespan_expectancy][]', @questionnaire.system_lifespan_expectancy[i], :id => "advanced_water_questionnaire_system_lifespan_expectancy_#{i}", :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.system_lifespan_expectancy.placeholder' )
 
       .dual_column_form--row
 
-        .dual_column--field--label= t( 'form.advanced.water.actual_software_expenditure.label' )
+        .dual_column--field--label= t( 'advanced.water.actual_software_expenditure.label' )
 
         - @questionnaire.supply_system_technologies.each_with_index do |technology,i|
           .dual_column_form--column.dual_column_form--column-33
             .dual_column_form--field.dual_column_form--field-text_input
-              = text_field_tag 'advanced_water_questionnaire[actual_software_expenditure][]', @questionnaire.actual_software_expenditure[i], :class => 'dual_column_form--field--text_input', :placeholder => t( 'form.advanced.water.actual_software_expenditure.placeholder' )
+              = text_field_tag 'advanced_water_questionnaire[actual_software_expenditure][]', @questionnaire.actual_software_expenditure[i], :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.actual_software_expenditure.placeholder' )
 
       .dual_column_form--row
 
-        .dual_column--field--label= t( 'form.advanced.water.unpaid_labour.label' )
+        .dual_column--field--label= t( 'advanced.water.unpaid_labour.label' )
 
         - @questionnaire.supply_system_technologies.each_with_index do |technology,i|
           .dual_column_form--column.dual_column_form--column-33
             .dual_column_form--field.dual_column_form--field-dropdown
-              = select_tag 'advanced_water_questionnaire[unpaid_labour][]', options_for_select( options_for_unpaid_labour, @questionnaire.unpaid_labour[i] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => "advanced_water_questionnaire_unpaid_labour_#{i}", 'data-placeholder' => t( 'form.advanced.water.unpaid_labour.placeholder' ) }
+              = select_tag 'advanced_water_questionnaire[unpaid_labour][]', options_for_select( options_for_unpaid_labour, @questionnaire.unpaid_labour[i] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => "advanced_water_questionnaire_unpaid_labour_#{i}", 'data-placeholder' => t( 'advanced.water.unpaid_labour.placeholder' ) }
 
-      .dual_column--heading= t( 'form.advanced.water.cost.recurring_costs' )
+      .dual_column--heading= t( 'advanced.water.cost.recurring_costs' )
 
       .dual_column_form--row
 
@@ -62,42 +62,42 @@
 
       .dual_column_form--row
 
-        .dual_column--field--label= t( 'form.advanced.water.minor_operation_expenditure.label' )
+        .dual_column--field--label= t( 'advanced.water.minor_operation_expenditure.label' )
 
         - @questionnaire.supply_system_technologies.each_with_index do |technology,i|
           .dual_column_form--column.dual_column_form--column-33
             .dual_column_form--field.dual_column_form--field-text_input
-              = text_field_tag 'advanced_water_questionnaire[minor_operation_expenditure][]', @questionnaire.minor_operation_expenditure[i], :class => 'dual_column_form--field--text_input', :placeholder => t( 'form.advanced.water.minor_operation_expenditure.placeholder' )
+              = text_field_tag 'advanced_water_questionnaire[minor_operation_expenditure][]', @questionnaire.minor_operation_expenditure[i], :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.minor_operation_expenditure.placeholder' )
 
       .dual_column_form--row
 
-        .dual_column--field--label= t( 'form.advanced.water.capital_maintenance_expenditure.label' )
+        .dual_column--field--label= t( 'advanced.water.capital_maintenance_expenditure.label' )
 
         - @questionnaire.supply_system_technologies.each_with_index do |technology,i|
           .dual_column_form--column.dual_column_form--column-33
             .dual_column_form--field.dual_column_form--field-text_input
-              = text_field_tag 'advanced_water_questionnaire[capital_maintenance_expenditure][]', @questionnaire.capital_maintenance_expenditure[i], :class => 'dual_column_form--field--text_input', :placeholder => t( 'form.advanced.water.capital_maintenance_expenditure.placeholder' )
+              = text_field_tag 'advanced_water_questionnaire[capital_maintenance_expenditure][]', @questionnaire.capital_maintenance_expenditure[i], :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.capital_maintenance_expenditure.placeholder' )
 
       .dual_column_form--row
 
-        .dual_column--field--label= t( 'form.advanced.water.loan_cost.label' )
+        .dual_column--field--label= t( 'advanced.water.loan_cost.label' )
 
         - @questionnaire.supply_system_technologies.each_with_index do |technology,i|
           .dual_column_form--column.dual_column_form--column-33
             .dual_column_form--field.dual_column_form--field-text_input
-              = text_field_tag 'advanced_water_questionnaire[loan_cost][]', @questionnaire.loan_cost[i], :class => 'dual_column_form--field--text_input', :placeholder => t( 'form.advanced.water.loan_cost.placeholder' )
+              = text_field_tag 'advanced_water_questionnaire[loan_cost][]', @questionnaire.loan_cost[i], :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.loan_cost.placeholder' )
 
       .dual_column_form--row
 
-        .dual_column--field--label= t( 'form.advanced.water.loan_payback_period.label' )
+        .dual_column--field--label= t( 'advanced.water.loan_payback_period.label' )
 
         - @questionnaire.supply_system_technologies.each_with_index do |technology,i|
           .dual_column_form--column.dual_column_form--column-33
             .dual_column_form--field.dual_column_form--field-text_input
-              = text_field_tag 'advanced_water_questionnaire[loan_payback_period][]', @questionnaire.loan_payback_period[i], :class => 'dual_column_form--field--text_input', :placeholder => t( 'form.advanced.water.loan_payback_period.placeholder' )
+              = text_field_tag 'advanced_water_questionnaire[loan_payback_period][]', @questionnaire.loan_payback_period[i], :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.loan_payback_period.placeholder' )
 
     - else
-      .dual_column--field--label= t( 'form.advanced.shared.technology_choice_required' )
+      .dual_column--field--label= t( 'advanced.shared.technology_choice_required' )
 
     .question--buttons
       = submit_tag((t 'buttons.next'), class: 'button')

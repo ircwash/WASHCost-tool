@@ -336,7 +336,7 @@ module WaterReportHelper
       reliability_code = normalise_best_level_to_be_3(reliability_index) + 1
       # the concatenation second group service join up the recExp, quality and reliability indicators
       concat_second_service_group = recurrent_expenditure_code.to_s + quality_code.to_s + reliability_code.to_s
-      "#{t ('report.water_basic.a' + concat_first_service_group)} \n #{t ('report.water_basic.b' + concat_second_service_group)}"
+      "#{t ('basic.water.report.summaries.a' + concat_first_service_group)} \n #{t ('basic.water.report.summaries.b' + concat_second_service_group)}"
     else
       'Please complete the form.'
     end
@@ -344,13 +344,13 @@ module WaterReportHelper
 
   def get_service_rating_label(rating)
     label = if rating == 0
-      t 'report.sustainability.water.one_star'
+      t 'basic.water.report.sustainability.water.one_star'
     elsif rating == 1
-      t 'report.sustainability.water.two_stars'
+      t 'basic.water.report.sustainability.water.two_stars'
     elsif rating == 2
-      t 'report.sustainability.water.three_stars'
+      t 'basic.water.report.sustainability.water.three_stars'
     elsif rating == 3
-      t 'report.sustainability.water.four_stars'
+      t 'basic.water.report.sustainability.water.four_stars'
     else
       t 'form.value_not_set'
     end

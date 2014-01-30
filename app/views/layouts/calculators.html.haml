@@ -10,7 +10,4 @@
 
   = show_app_version
 
-  :javascript
-    window.I18n = #{I18n.backend.send(:translations).to_json.html_safe}
-
 = render template: "layouts/application"

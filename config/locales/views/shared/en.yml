@@ -1,0 +1,97 @@
+en:
+  nav:
+    utility:
+      about: "About"
+      help: "help"
+      contact: "Contact"
+      sign_in: "Sign In"
+      sign_out: "Sign Out"
+    main:
+      context:
+        title: "Context"
+        items:
+          country: "Country"
+          water: "Technology"
+          population: "Population"
+          household: "Household"
+          latrine: "Latrine"
+      cost:
+        title: "Cost Data"
+        items:
+          capital: "Capital Expenditure"
+          recurrent: "Recurrent Expenditure"
+      service:
+        title: "Service"
+        items:
+          time: "Access"
+          quantity: "Quantity"
+          quality: "Quality"
+          providing: "Household Latrine"
+          impermeability: "Impermeability"
+          environment: "Environment"
+          usage: "Usage"
+          reliability: "Reliability"
+      advanced:
+        title: Advanced
+        items:
+          context: Context
+          system_management: System Management
+          system_characteristics: System Characteristics
+          cost: Cost
+          service: Service
+    advanced:
+      context: "Context"
+      managing: "Managing"
+      technology: "Technology"
+      cost: "Cost"
+      service: "Service"
+  footer:
+    final_report: " | Final Reports"
+    complete: "Complete"
+    basic:
+      water: Basic Water Report
+      sanitation: Basic Sanitation Report
+    advanced:
+      water: Advanced Water Report
+      sanitation: Advanced Sanitation Report
+  buttons:
+    next: "Next Question"
+    start: "Start the calculator"
+    save: "Save"
+    view_report: "View Report"
+    save_report: "Save Report"
+    complete: "Complete"
+    close_report: "Close Report"
+  report:
+    substandard: "Sub-Standard"
+    distance: "Distance"
+    time:
+      minutes: "min"
+    less_than: "Less than"
+    no_specifed: "No specified"
+    save_your_report: "Save Your Report"
+    report_saved: "Your report was %{action} successfully"
+    created_successsfully: "Your report was created successfully"
+    updated_successsfully: "Your report was updated successfully"
+    cost_box_no_value: "Looks like you need answer more cost questions to get a final cost report. Go back and add more answer about your cost service delivery"
+    cross_to_sanitation: "Cross to sanitation"
+    cross_to_water: "Cross to water"
+    summmary: "Summary"
+    total: "Total"
+    total_cost: "total cost"
+    level_of_service: "level of service"
+    caption_total_cost: "for a population of %{population} people"
+    population_caption: "%{population} people"
+    full_review: "read full review"
+    context: "context"
+    cost: "cost data"
+    cost_subtitle: "10 year cost for %{population} people"
+    service: "service level"
+    capital_expenditure_title: "Capital Expenditure per Person"
+    recurrent_expenditure_title: "Recurrent Expenditure per Person"
+    complete: "Report Complete"
+    benchmark_below: "Below Benchmarks"
+    benchmark_within: "Expenditure is within of WashCost benchmarks. Read the review below for more information."
+    benchmark_above: "above the Benchmarks"
+    benchmark_outside: "Expenditure is outside of WashCost benchmarks. Read the review below for more information."
+    access: "Access"

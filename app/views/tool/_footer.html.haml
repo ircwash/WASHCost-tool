@@ -6,7 +6,7 @@
 
       .footer--progress
         .footer--progress--percentage
-          = t( "footer.#{controller_path.match( /basic/ ) ? 'basic' : 'advanced'}.#{controller_path.match( /water/ ) ? 'water' : 'advanced'}" )
+          = t( "footer.#{controller_path.match( /basic/ ) ? 'basic' : 'advanced'}.#{controller_path.match( /water/ ) ? 'water' : 'sanitation'}" )
           %span{ 'data-progress-label' => true }= "(#{@questionnaire ? @questionnaire.complete : flash[:percent_complete]}%)"
         .footer--progress--bar
           .footer--progress--bar--fill{ :style => "width: #{@questionnaire ? @questionnaire.complete : flash[:percent_complete]}%", 'data-progress-bar' => true }

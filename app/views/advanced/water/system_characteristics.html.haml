@@ -7,77 +7,77 @@
 
     .dual_column_form--row
 
-      .dual_column--field--label= t( 'form.advanced.water.supply_system_technologies.label' )
+      .dual_column--field--label= t( 'advanced.water.supply_system_technologies.label' )
 
       .dual_column_form--column.dual_column_form--column-33
         .dual_column_form--field.dual_column_form--field-dropdown
-          = select_tag 'advanced_water_questionnaire[supply_system_technologies][]', options_for_select( options_for_supply_system_technologies, @questionnaire.supply_system_technologies[0] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_water_questionnaire_supply_system_technologies_1', 'data-placeholder' => t( 'form.advanced.water.supply_system_technologies.placeholder' ), 'data-column_dependency' => 'technology-1' }
+          = select_tag 'advanced_water_questionnaire[supply_system_technologies][]', options_for_select( options_for_supply_system_technologies, @questionnaire.supply_system_technologies[0] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_water_questionnaire_supply_system_technologies_1', 'data-placeholder' => t( 'advanced.water.supply_system_technologies.placeholder' ), 'data-column_dependency' => 'technology-1' }
 
       .dual_column_form--column.dual_column_form--column-33
         .dual_column_form--field.dual_column_form--field-dropdown
-          = select_tag 'advanced_water_questionnaire[supply_system_technologies][]', options_for_select( options_for_supply_system_technologies, @questionnaire.supply_system_technologies[1] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_water_questionnaire_supply_system_technologies_2', 'data-placeholder' => t( 'form.advanced.water.supply_system_technologies.placeholder' ), 'data-column_dependency' => 'technology-2' }
+          = select_tag 'advanced_water_questionnaire[supply_system_technologies][]', options_for_select( options_for_supply_system_technologies, @questionnaire.supply_system_technologies[1] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_water_questionnaire_supply_system_technologies_2', 'data-placeholder' => t( 'advanced.water.supply_system_technologies.placeholder' ), 'data-column_dependency' => 'technology-2' }
 
       .dual_column_form--column.dual_column_form--column-33
         .dual_column_form--field.dual_column_form--field-dropdown
-          = select_tag 'advanced_water_questionnaire[supply_system_technologies][]', options_for_select( options_for_supply_system_technologies, @questionnaire.supply_system_technologies[2] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_water_questionnaire_supply_system_technologies_3', 'data-placeholder' => t( 'form.advanced.water.supply_system_technologies.placeholder' ), 'data-column_dependency' => 'technology-3' }
+          = select_tag 'advanced_water_questionnaire[supply_system_technologies][]', options_for_select( options_for_supply_system_technologies, @questionnaire.supply_system_technologies[2] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_water_questionnaire_supply_system_technologies_3', 'data-placeholder' => t( 'advanced.water.supply_system_technologies.placeholder' ), 'data-column_dependency' => 'technology-3' }
 
     .dual_column_form--row
 
-      .dual_column--field--label= t( 'form.advanced.water.systems_number.label' )
+      .dual_column--field--label= t( 'advanced.water.systems_number.label' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-1' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[systems_number][]', @questionnaire.systems_number[0], :id => 'advanced_water_questionnaire_systems_number_1', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'form.advanced.water.systems_number.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[systems_number][]', @questionnaire.systems_number[0], :id => 'advanced_water_questionnaire_systems_number_1', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.systems_number.placeholder' )
           -# .slider--widget.slider-widget-low_profile
           -# = f.hidden_field :systems_number, :value => '100', 'data-slider-input' => 'true', 'data-logarithmic' => 'true', 'data-slider-min' => 100, 'data-slider-max' => 1000000
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-2' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[systems_number][]', @questionnaire.systems_number[1], :id => 'advanced_water_questionnaire_systems_number_2', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'form.advanced.water.systems_number.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[systems_number][]', @questionnaire.systems_number[1], :id => 'advanced_water_questionnaire_systems_number_2', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.systems_number.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-3' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[systems_number][]', @questionnaire.systems_number[2], :id => 'advanced_water_questionnaire_systems_number_3', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'form.advanced.water.systems_number.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[systems_number][]', @questionnaire.systems_number[2], :id => 'advanced_water_questionnaire_systems_number_3', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.systems_number.placeholder' )
 
     .dual_column_form--row
 
-      .dual_column--field--label= t( 'form.advanced.water.system_population_design.label' )
+      .dual_column--field--label= t( 'advanced.water.system_population_design.label' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-1' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[system_population_design][]', @questionnaire.system_population_design[0], :id => 'advanced_water_questionnaire_system_population_design_1', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'form.advanced.water.system_population_design.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[system_population_design][]', @questionnaire.system_population_design[0], :id => 'advanced_water_questionnaire_system_population_design_1', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.system_population_design.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-2' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[system_population_design][]', @questionnaire.system_population_design[1], :id => 'advanced_water_questionnaire_system_population_design_2', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'form.advanced.water.system_population_design.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[system_population_design][]', @questionnaire.system_population_design[1], :id => 'advanced_water_questionnaire_system_population_design_2', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.system_population_design.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-3' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[system_population_design][]', @questionnaire.system_population_design[2], :id => 'advanced_water_questionnaire_system_population_design_3', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'form.advanced.water.system_population_design.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[system_population_design][]', @questionnaire.system_population_design[2], :id => 'advanced_water_questionnaire_system_population_design_3', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.system_population_design.placeholder' )
 
     .dual_column_form--row
 
-      .dual_column--field--label= t( 'form.advanced.water.system_population_actual.label' )
+      .dual_column--field--label= t( 'advanced.water.system_population_actual.label' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-1' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[system_population_actual][]', @questionnaire.system_population_actual[0], :id => 'advanced_water_questionnaire_system_population_actual_1', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'form.advanced.water.system_population_actual.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[system_population_actual][]', @questionnaire.system_population_actual[0], :id => 'advanced_water_questionnaire_system_population_actual_1', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.system_population_actual.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-2' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[system_population_actual][]', @questionnaire.system_population_actual[1], :id => 'advanced_water_questionnaire_system_population_actual_2', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'form.advanced.water.system_population_actual.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[system_population_actual][]', @questionnaire.system_population_actual[1], :id => 'advanced_water_questionnaire_system_population_actual_2', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.system_population_actual.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-3' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[system_population_actual][]', @questionnaire.system_population_actual[2], :id => 'advanced_water_questionnaire_system_population_actual_3', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'form.advanced.water.system_population_actual.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[system_population_actual][]', @questionnaire.system_population_actual[2], :id => 'advanced_water_questionnaire_system_population_actual_3', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.system_population_actual.placeholder' )
 
     .dual_column_form--row
 
-      .dual_column--field--label= t( 'form.advanced.water.water_source.label' )
+      .dual_column--field--label= t( 'advanced.water.water_source.label' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-1' }
         .dual_column_form--field.dual_column_form--field-dropdown
-          = select_tag 'advanced_water_questionnaire[water_source][]', options_for_select( options_for_water_source, @questionnaire.water_source[0] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_water_questionnaire_water_source_1', 'data-placeholder' => t( 'form.advanced.water.water_source.placeholder' ) }
+          = select_tag 'advanced_water_questionnaire[water_source][]', options_for_select( options_for_water_source, @questionnaire.water_source[0] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_water_questionnaire_water_source_1', 'data-placeholder' => t( 'advanced.water.water_source.placeholder' ) }
         -#- options_for_water_source.each_with_index do |option,i|
           -#.dual_column_form--field.dual_column_form--field-box
             -#= radio_button_tag 'advanced_water_questionnaire[water_source_0]', option[1], @questionnaire.water_source[0] && @questionnaire.water_source[0].include?( option[1].to_s ), :id => "advanced_water_questionnaire_water_source_1_#{i}", :class => 'dual_column_form--field--checkbox'
@@ -87,31 +87,31 @@
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-2' }
         .dual_column_form--field.dual_column_form--field-dropdown
-          = select_tag 'advanced_water_questionnaire[water_source][]', options_for_select( options_for_water_source, @questionnaire.water_source[1] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_water_questionnaire_water_source_2', 'data-placeholder' => t( 'form.advanced.water.water_source.placeholder' ) }
+          = select_tag 'advanced_water_questionnaire[water_source][]', options_for_select( options_for_water_source, @questionnaire.water_source[1] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_water_questionnaire_water_source_2', 'data-placeholder' => t( 'advanced.water.water_source.placeholder' ) }
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-3' }
         .dual_column_form--field.dual_column_form--field-dropdown
-          = select_tag 'advanced_water_questionnaire[water_source][]', options_for_select( options_for_water_source, @questionnaire.water_source[2] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_water_questionnaire_water_source_3', 'data-placeholder' => t( 'form.advanced.water.water_source.placeholder' ) }
+          = select_tag 'advanced_water_questionnaire[water_source][]', options_for_select( options_for_water_source, @questionnaire.water_source[2] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_water_questionnaire_water_source_3', 'data-placeholder' => t( 'advanced.water.water_source.placeholder' ) }
 
     .dual_column_form--row
 
-      .dual_column--field--label= t( 'form.advanced.water.surface_water_primary_source.label' )
+      .dual_column--field--label= t( 'advanced.water.surface_water_primary_source.label' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-1' }
         .dual_column_form--field.dual_column_form--field-dropdown
-          = select_tag 'advanced_water_questionnaire[surface_water_primary_source][]', options_for_select( options_for_surface_water_primary_source, @questionnaire.surface_water_primary_source[0] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_water_questionnaire_surface_water_primary_source_1', 'data-placeholder' => t( 'form.advanced.water.surface_water_primary_source.placeholder' ) }
+          = select_tag 'advanced_water_questionnaire[surface_water_primary_source][]', options_for_select( options_for_surface_water_primary_source, @questionnaire.surface_water_primary_source[0] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_water_questionnaire_surface_water_primary_source_1', 'data-placeholder' => t( 'advanced.water.surface_water_primary_source.placeholder' ) }
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-2' }
         .dual_column_form--field.dual_column_form--field-dropdown
-          = select_tag 'advanced_water_questionnaire[surface_water_primary_source][]', options_for_select( options_for_surface_water_primary_source, @questionnaire.surface_water_primary_source[1] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_water_questionnaire_surface_water_primary_source_2', 'data-placeholder' => t( 'form.advanced.water.surface_water_primary_source.placeholder' ) }
+          = select_tag 'advanced_water_questionnaire[surface_water_primary_source][]', options_for_select( options_for_surface_water_primary_source, @questionnaire.surface_water_primary_source[1] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_water_questionnaire_surface_water_primary_source_2', 'data-placeholder' => t( 'advanced.water.surface_water_primary_source.placeholder' ) }
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-3' }
         .dual_column_form--field.dual_column_form--field-dropdown
-          = select_tag 'advanced_water_questionnaire[surface_water_primary_source][]', options_for_select( options_for_surface_water_primary_source, @questionnaire.surface_water_primary_source[2] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_water_questionnaire_surface_water_primary_source_3', 'data-placeholder' => t( 'form.advanced.water.surface_water_primary_source.placeholder' ) }
+          = select_tag 'advanced_water_questionnaire[surface_water_primary_source][]', options_for_select( options_for_surface_water_primary_source, @questionnaire.surface_water_primary_source[2] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_water_questionnaire_surface_water_primary_source_3', 'data-placeholder' => t( 'advanced.water.surface_water_primary_source.placeholder' ) }
 
     .dual_column_form--row
 
-      .dual_column--field--label= t( 'form.advanced.water.water_treatment.label' )
+      .dual_column--field--label= t( 'advanced.water.water_treatment.label' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-1' }
         - options_for_water_treatment.each_with_index do |option,i|
@@ -142,7 +142,7 @@
 
     .dual_column_form--row
 
-      .dual_column--field--label= t( 'form.advanced.water.power_supply.label' )
+      .dual_column--field--label= t( 'advanced.water.power_supply.label' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-1' }
         - options_for_power_supply.each_with_index do |option,i|
@@ -173,19 +173,19 @@
 
     .dual_column_form--row
 
-      .dual_column--field--label= t( 'form.advanced.water.distribution_line_length.label' )
+      .dual_column--field--label= t( 'advanced.water.distribution_line_length.label' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-1' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[distribution_line_length][]', @questionnaire.distribution_line_length[0], :id => 'advanced_water_questionnaire_distribution_line_length_1', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'form.advanced.water.distribution_line_length.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[distribution_line_length][]', @questionnaire.distribution_line_length[0], :id => 'advanced_water_questionnaire_distribution_line_length_1', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.distribution_line_length.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-2' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[distribution_line_length][]', @questionnaire.distribution_line_length[1], :id => 'advanced_water_questionnaire_distribution_line_length_2', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'form.advanced.water.distribution_line_length.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[distribution_line_length][]', @questionnaire.distribution_line_length[1], :id => 'advanced_water_questionnaire_distribution_line_length_2', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.distribution_line_length.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-3' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[distribution_line_length][]', @questionnaire.distribution_line_length[2], :id => 'advanced_water_questionnaire_distribution_line_length_3', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'form.advanced.water.distribution_line_length.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[distribution_line_length][]', @questionnaire.distribution_line_length[2], :id => 'advanced_water_questionnaire_distribution_line_length_3', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.distribution_line_length.placeholder' )
 
     .question--buttons
       = submit_tag((t 'buttons.next'), class: 'button')

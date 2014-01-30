@@ -380,7 +380,7 @@ module SanitationReportHelper
       concat_second_service_group = capital_expenditure_code.to_s + accessibility_code.to_s + evironment_code.to_s
       puts '----------------------', concat_second_service_group
       Rails.logger.debug 'Level of Service: #{concat_first_service_group}'
-      "#{t ('report.sanitation_basic.a' + concat_first_service_group)} \n #{t ('report.sanitation_basic.b' + concat_second_service_group)}"
+      "#{t ('basic.sanitation.report.summaries.a' + concat_first_service_group)} \n #{t ('basic.sanitation.report.summaries.b' + concat_second_service_group)}"
     else
       'Please complete the form.'
     end

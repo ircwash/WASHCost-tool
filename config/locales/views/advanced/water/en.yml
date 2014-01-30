@@ -1,0 +1,106 @@
+en:
+  advanced:
+    water:
+      water_system_exists:
+        label: Does the water system already exist or is it planned?
+        placeholder: Select an option
+      area_type:
+        label: Description of area type
+        placeholder: Select an area type
+      population_density:
+        label: What is the population density of the service area?
+        placeholder: 2000
+      service_management:
+        label: Which of these options best describes how the water service is managed?
+      construction_financier:
+        label: Who finances the construction of the water system?
+      infrastructure_operator:
+        label: Who legally owns the water infrastructure?
+      service_responsbility:
+        label: Who safeguards the operation and maintenance of the infrastructure?
+      standard_enforcer:
+        label: Who has/will have responsibility for checking and enforcing the standard of water services?
+      rehabilitation_cost_owner:
+        label: Who covers the cost of rehabilitation when larger repairs are needed?
+      annual_household_income:
+        label: What is the average annual household income in the service area?
+        placeholder: 600
+      household_size:
+        label: Average household size
+        placeholder: 6
+      supply_system_technologies:
+        label: What supply system(s) are used to deliver water services?
+        placeholder: Choose a technology
+      systems_number:
+        label: How many systems are there?
+        placeholder: 5
+      system_population_design:
+        label: How many people is the system(s) designed to serve?
+        placeholder: 20
+      system_population_actual:
+        label: How many people does the system(s) actually serve?
+        placeholder: 30
+      water_source:
+        label: What is the water source?
+        placeholder: Select a water source
+      surface_water_primary_source:
+        label: If surface water, define the primary source
+        placeholder: Select a primary source
+      water_treatment:
+        label: How is water typically treated?
+      water_treatment:
+        label: How is water typically treated?
+      power_supply:
+        label: Type of power supply
+      distribution_line_length:
+        label: Length of distribution linke (km)
+        placeholder: 200
+      capital_costs:
+        capital_costs: Capital Costs
+        recurring_costs: Recurring Costs
+      aggregate_actual_hardware_expenditure:
+        label: What has been/will be the actual expenditure on capital expenditure (hardware) and how long is/was the system expected to last at the time of construction (the useful lifespan) or detail disaggregated below?
+      actual_hardware_expenditure:
+        label: Cost
+        placeholder: 5000
+      system_lifespan_expectancy:
+        label: Useful lifespan (years)
+        placeholder: 30
+      actual_software_expenditure:
+        label: What has been/will be the actual expenditure on capital expenditure (software) ?
+        placeholder: 3000
+      unpaid_labour:
+        label: Has there been any volunteer or unpaid labour been by the household or community?
+        placeholder: Select an option
+      minor_operation_expenditure:
+        label: What has been/will be the minor operation expenditure?
+        placeholder: 1000
+      capital_maintenance_expenditure:
+        label: What has been/will be spent on capital maintenance expenditure?
+        placeholder: 400
+      loan_cost:
+        label: What is the cost servicing any loans taken to fund the service ?
+        placeholder: 6000
+      loan_payback_period:
+        label: What is the payback period on this loan?
+        placeholder: 20
+      service_levels:
+        label: Please define upto four service levels for users of the water system
+      service_level_name:
+        label: Name the service level
+        placeholder: Service level name
+      service_level_share:
+        label: Service level share
+        placeholder: 25%
+      national_accessibility_norms:
+        label: Does the service accessibility meet the national norms?
+        placeholder: Select an option
+      national_quantity_norms:
+        label: Does the service quantity meet the national norms?
+        placeholder: Select an option
+      national_quality_norms:
+        label: Does the service quality meet the national norms?
+        placeholder: Select an option
+      national_reliability_norms:
+        label: Does the service reliability meet the national norms?
+        placeholder: Select an option
