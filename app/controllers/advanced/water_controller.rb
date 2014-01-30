@@ -1,6 +1,6 @@
 class Advanced::WaterController < ApplicationController
 
-  layout "tool_advanced"
+  layout 'tool_advanced'
 
   authorize_resource :class => Advanced::WaterController
 
@@ -38,6 +38,8 @@ class Advanced::WaterController < ApplicationController
 
   def report
     @questionnaire = AdvancedWaterQuestionnaire.new( session )
+
+    render layout: 'report'
   end
 
 end
