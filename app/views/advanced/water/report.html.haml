@@ -30,6 +30,9 @@
       .report--summary--item.report--summary--item-floated
         .report--summary--item--title= t( 'report.service_level_summary' )
 
+        .report--summary--item--value= "#{@questionnaire.people_with_service_meeting_national_standard}%"
+        .report--summary--item--subtitle= t( 'report.number_of_people_with_service_meeting_national_standard' )
+
       .report--summary--item.report--summary--item-floated
         .report--summary--item--title= t( 'report.comparison_width_others' )
 
@@ -131,6 +134,24 @@
       .report--outputs--item.report--outputs--item-20
         .report--outputs--title.report--outputs--title-total= t( 'report.total' )
         .report--outputs--item--value= "US$ #{(@questionnaire.total_inputted_expenditure_per_person_per_year - @questionnaire.total_expected_expenditure_per_person_per_year).round(2)}"
+
+  %section.report--section
+    .report--section--title= t('report.affordability_check');
+
+    .report--outputs
+
+      .report--outputs--item.report--outputs--item-33
+        .report--outputs--title= t( 'report.annual_household_incom' )
+        .report--outputs--item--value= "US$ #{@questionnaire.annual_household_income.to_f.round(2)}"
+
+      .report--outputs--item.report--outputs--item-33
+        .report--outputs--title= t( 'report.household_size' )
+        .report--outputs--item--value= "#{@questionnaire.household_size.to_i}"
+
+      .report--outputs--item.report--outputs--item-33
+        .report--outputs--title= t( 'report.annual_household_income_per_person' )
+        .report--outputs--item--value= "US$ #{@questionnaire.annual_household_income_per_person.round(2)}"
+
 
 
 

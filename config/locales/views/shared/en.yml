@@ -112,7 +112,11 @@ en:
     inputted_expenditure: Inputted Expenditure
     expected_expenditure: Expected Expenditure
     expenditure_surplus_shortfall: Expenditure Surplus/Shortfall
-
+    affordability_check: Affordability Check
+    annual_household_incom: Annual household Income
+    household_size: Household Size
+    annual_household_income_per_person: Annual household income per person
+    number_of_people_with_service_meeting_national_standard: of people with a service that meets the national standard
 
 
 

@@ -182,6 +182,14 @@ class AdvancedWaterQuestionnaire < Session
     expected_operation_expenditure_per_person_per_year + expected_capital_maintenance_expenditure_per_person_per_year + cost_of_capital_per_person_per_year + expected_direct_support_cost_per_person_per_year + indirect_support_cost_per_person_per_year
   end
 
+  def annual_household_income_per_person
+    annual_household_income.to_f / household_size.to_f
+  end
+
+  def people_with_service_meeting_national_standard
+    service_level_name.each_with_index.map{ |sl,i| ( national_accessibility_norms[i].to_i == 0 || national_quantity_norms[i].to_i == 0 || national_quality_norms[i].to_i == 0 || national_reliability_norms[i].to_i == 0 ) ? service_level_share[i].to_i : 0 }.inject(:+)
+  end
+
 
   # BENCHMARK VALUES
 
