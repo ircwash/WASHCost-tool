@@ -9,7 +9,7 @@ class Advanced::WaterController < ApplicationController
     @questionnaire = AdvancedWaterQuestionnaire.new( session )
     @questionnaire.reset
 
-    redirect_to advanced_water_action_path( :context )
+    redirect_to advanced_water_action_path( :system_characteristics )
   end
 
   def questionnaire

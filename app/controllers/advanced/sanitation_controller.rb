@@ -9,7 +9,7 @@ class Advanced::SanitationController < ApplicationController
     @questionnaire = AdvancedSanitationQuestionnaire.new( session )
     @questionnaire.reset
 
-    redirect_to advanced_sanitation_action_path( :context )
+    redirect_to advanced_sanitation_action_path( :system_characteristics )
   end
 
   def questionnaire
