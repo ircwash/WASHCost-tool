@@ -124,4 +124,4 @@
           = select_tag 'advanced_sanitation_questionnaire[national_environmental_protection_norms][]', options_for_select( options_for_national_environmental_protection_norms, @questionnaire.national_environmental_protection_norms[3] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_sanitation_questionnaire_national_environmental_protection_norms_4', 'data-placeholder' => t( 'advanced.sanitation.questionnaire.national_environmental_protection_norms.placeholder' ) }
 
     .question--buttons
-      = submit_tag((t 'buttons.next'), class: 'button')
+      = submit_tag((t 'buttons.view_report'), class: 'button')

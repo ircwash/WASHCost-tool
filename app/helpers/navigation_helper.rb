@@ -167,7 +167,7 @@ module NavigationHelper
 #              context: I18n.t('nav.main.advanced.items.context'),
 #              system_management: I18n.t('nav.main.advanced.items.system_management'),
               system_characteristics: I18n.t('nav.main.advanced.items.system_characteristics'),
-              cost: I18n.t('nav.main.advanced.items.cost'),
+              technology: I18n.t('nav.main.advanced.items.technology'),
               service: I18n.t('nav.main.advanced.items.service')
             }
           }
@@ -186,7 +186,7 @@ module NavigationHelper
 #              context: I18n.t('nav.main.advanced.items.context'),
 #              system_management: I18n.t('nav.main.advanced.items.system_management'),
               system_characteristics: I18n.t('nav.main.advanced.items.system_characteristics'),
-              cost: I18n.t('nav.main.advanced.items.cost'),
+              technology: I18n.t('nav.main.advanced.items.technology'),
               service: I18n.t('nav.main.advanced.items.service')
             }
           }

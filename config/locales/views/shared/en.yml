@@ -37,6 +37,7 @@ en:
           context: Context
           system_management: System Management
           system_characteristics: System Characteristics
+          technology: Technology
           cost: Cost
           service: Service
     advanced:
