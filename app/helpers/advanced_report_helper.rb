@@ -18,7 +18,7 @@ module AdvancedReportHelper
   end
 
   def report_currency_value_for( value )
-    value != nil ? "US$ #{value.to_f.round(2)}" : t( 'report.no_data' )
+    value != nil ? "#{@questionnaire.currency} #{value.to_f.round(2)}" : t( 'report.no_data' )
   end
 
   def report_percentage_value_for( value )

@@ -2,6 +2,8 @@ class AdvancedSanitationQuestionnaire < Session
 
   attr_accessor :water_system_exists,
                 :country,
+                :currency,
+                :year_of_expenditure,
                 :region,
                 :town,
                 :area_type,
@@ -20,11 +22,6 @@ class AdvancedSanitationQuestionnaire < Session
                 :systems_number,
                 :system_population_design,
                 :system_population_actual,
-                :water_source,
-                :surface_water_primary_source,
-                :water_treatment,
-                :power_supply,
-                :distribution_line_length,
 
                 :actual_hardware_expenditure,
                 :system_lifespan_expectancy,
@@ -129,10 +126,6 @@ class AdvancedSanitationQuestionnaire < Session
       if value != nil
         attributes_with_values = attributes_with_values + 1
       end
-    end
-
-    if water_source.count == 0 || !water_source.include?( '1' )
-      attributes_with_values = attributes_with_values + 1
     end
 
     100 * attributes_with_values / self.attributes.count
@@ -487,6 +480,8 @@ class AdvancedSanitationQuestionnaire < Session
     # context
     @water_system_exists                      = nil
     @country                                  = nil
+    @currency                                 = nil
+    @year_of_expenditure                      = nil
     @region                                   = nil
     @town                                     = nil
     @area_type                                = nil
@@ -507,11 +502,6 @@ class AdvancedSanitationQuestionnaire < Session
     @systems_number                           = []
     @system_population_design                 = []
     @system_population_actual                 = []
-    @water_source                             = []
-    @surface_water_primary_source             = []
-    @water_treatment                          = []
-    @power_supply                             = []
-    @distribution_line_length                 = []
 
     # cost
     @actual_hardware_expenditure              = []

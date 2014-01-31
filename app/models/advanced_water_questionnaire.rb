@@ -2,6 +2,8 @@ class AdvancedWaterQuestionnaire < Session
 
   attr_accessor :water_system_exists,
                 :country,
+                :currency,
+                :year_of_expenditure,
                 :region,
                 :town,
                 :area_type,
@@ -487,6 +489,8 @@ class AdvancedWaterQuestionnaire < Session
     # context
     @water_system_exists              = nil
     @country                          = nil
+    @currency                         = nil
+    @year_of_expenditure              = nil
     @region                           = nil
     @town                             = nil
     @area_type                        = nil
