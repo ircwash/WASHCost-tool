@@ -9,29 +9,39 @@
     %h1.report--header--title= t( 'report.summmary' )
 
     .report--summary
-      .report--summary--item
-        .report--summary--item--title= t( 'report.expenditure_summary' )
 
-        .report--summary--item--mini_title
-          = t( 'report.total_expenditure_for_thirty_years' )
-        .report--summary--item--value= "US$ #{@questionnaire.total_expenditure_for_years(30).round(2)}"
-        .report--summary--item--subtitle= t( 'report.number_of_people', :people => @questionnaire.total_population.to_i )
+      - if report_totals_available
 
-        .report--summary--item--mini_title
-          = t( 'report.current_recurrent_expenditure' )
-          %span.report--summary--item--mini_title--subtitle= t( 'report.per_person_per_year' )
-        .report--summary--item--value= "US$ #{(@questionnaire.total_inputted_expenditure_per_person_per_year).round(2)}"
+        - if report_expenditure_totals_available
 
-        .report--summary--item--mini_title
-          = t( 'report.expenditure_surplus_shortfall' )
-          %span.report--summary--item--mini_title--subtitle= t( 'report.per_person_per_year' )
-        .report--summary--item--value= "US$ #{(@questionnaire.total_inputted_expenditure_per_person_per_year - @questionnaire.total_expected_expenditure_per_person_per_year).round(2)}"
+          .report--summary--item
+            .report--summary--item--title= t( 'report.expenditure_summary' )
 
-      .report--summary--item
-        .report--summary--item--title= t( 'report.service_level_summary' )
+            .report--summary--item--mini_title
+              = t( 'report.total_expenditure_for_thirty_years' )
+            .report--summary--item--value= report_currency_value_for( @questionnaire.total_expenditure_for_years(30) )
+            .report--summary--item--subtitle= t( 'report.number_of_people', :people => @questionnaire.total_population.to_i )
 
-        .report--summary--item--value= "#{@questionnaire.people_with_service_meeting_national_standard}%"
-        .report--summary--item--subtitle= t( 'report.number_of_people_with_service_meeting_national_standard' )
+            .report--summary--item--mini_title
+              = t( 'report.current_recurrent_expenditure' )
+              %span.report--summary--item--mini_title--subtitle= t( 'report.per_person_per_year' )
+            .report--summary--item--value= report_currency_value_for( @questionnaire.total_inputted_expenditure_per_person_per_year )
+
+            .report--summary--item--mini_title
+              = t( 'report.expenditure_surplus_shortfall' )
+              %span.report--summary--item--mini_title--subtitle= t( 'report.per_person_per_year' )
+            .report--summary--item--value= report_currency_value_for( @questionnaire.total_expenditure_delta_per_person_per_year )
+
+        - if report_service_level_summary_available
+
+          .report--summary--item
+            .report--summary--item--title= t( 'report.service_level_summary' )
+
+            .report--summary--item--value= report_percentage_value_for( @questionnaire.people_with_service_meeting_national_standard )
+            .report--summary--item--subtitle= t( 'report.number_of_people_with_service_meeting_national_standard' )
+
+      - else
+        .report--no_data= t( 'report.report_box_no_value' )
 
   %section.report--section
     .report--section--title= t('report.cost_of_sustaining_the_service');
@@ -44,28 +54,28 @@
 
       .report--outputs--item.report--outputs--item-20
         .report--outputs--title.report--outputs--title-double= t( 'report.operational_expenditure' )
-        .report--outputs--item--value= "US$ #{@questionnaire.operation_expenditure_per_person_per_year.round(2)}"
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.operation_expenditure_per_person_per_year )
 
       .report--outputs--item.report--outputs--item-20
         .report--outputs--title.report--outputs--title-double= t( 'report.capital_maintenance_expenditure' )
-        .report--outputs--item--value= "US$ #{@questionnaire.capital_maintenance_expenditure_per_person_per_year.round(2)}"
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.capital_maintenance_expenditure_per_person_per_year )
 
       .report--outputs--item.report--outputs--item-20
         .report--outputs--title.report--outputs--title-double= t( 'report.cost_of_capital' )
-        .report--outputs--item--value= "US$ #{@questionnaire.cost_of_capital_per_person_per_year.round(2)}"
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.cost_of_capital_per_person_per_year )
 
       .report--outputs--item.report--outputs--item-20
         .report--outputs--title.report--outputs--title-double= t( 'report.expenditure_of_direct_support' )
-        .report--outputs--item--value= "US$ #{@questionnaire.direct_support_cost_per_person_per_year.round(2)}"
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.direct_support_cost_per_person_per_year )
 
       .report--outputs--item.report--outputs--item-20
         .report--outputs--title.report--outputs--title-double= t( 'report.expenditure_of_indirect_support' )
-        .report--outputs--item--value= "US$ #{@questionnaire.indirect_support_cost_per_person_per_year.round(2)}"
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.indirect_support_cost_per_person_per_year )
 
     .report--outputs.report--outputs--total
       .report--outputs--item.report--outputs--item-20
         .report--outputs--title.report--outputs--title-total= t( 'report.total' )
-        .report--outputs--item--value= "US$ #{@questionnaire.total_inputted_expenditure_per_person_per_year.round(2)}"
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.total_inputted_expenditure_per_person_per_year )
 
     .report--subsection--title
       = t('report.expected_expenditure');
@@ -75,28 +85,28 @@
 
       .report--outputs--item.report--outputs--item-20
         .report--outputs--title.report--outputs--title-double= t( 'report.operational_expenditure' )
-        .report--outputs--item--value= "US$ #{@questionnaire.expected_operation_expenditure_per_person_per_year.round(2)}"
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.expected_operation_expenditure_per_person_per_year )
 
       .report--outputs--item.report--outputs--item-20
         .report--outputs--title.report--outputs--title-double= t( 'report.capital_maintenance_expenditure' )
-        .report--outputs--item--value= "US$ #{@questionnaire.expected_capital_maintenance_expenditure_per_person_per_year.round(2)}"
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.expected_capital_maintenance_expenditure_per_person_per_year )
 
       .report--outputs--item.report--outputs--item-20
         .report--outputs--title.report--outputs--title-double= t( 'report.cost_of_capital' )
-        .report--outputs--item--value= "US$ #{@questionnaire.cost_of_capital_per_person_per_year.round(2)}"
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.cost_of_capital_per_person_per_year )
 
       .report--outputs--item.report--outputs--item-20
         .report--outputs--title.report--outputs--title-double= t( 'report.expenditure_of_direct_support' )
-        .report--outputs--item--value= "US$ #{@questionnaire.direct_support_cost_per_person_per_year.round(2)}"
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.direct_support_cost_per_person_per_year )
 
       .report--outputs--item.report--outputs--item-20
         .report--outputs--title.report--outputs--title-double= t( 'report.expenditure_of_indirect_support' )
-        .report--outputs--item--value= "US$ #{@questionnaire.indirect_support_cost_per_person_per_year.round(2)}"
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.indirect_support_cost_per_person_per_year )
 
     .report--outputs.report--outputs--total
       .report--outputs--item.report--outputs--item-20
         .report--outputs--title.report--outputs--title-total= t( 'report.total' )
-        .report--outputs--item--value= "US$ #{@questionnaire.total_expected_expenditure_per_person_per_year.round(2)}"
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.total_expected_expenditure_per_person_per_year )
 
     .report--subsection--title
       = t('report.expenditure_surplus_shortfall');
@@ -106,28 +116,28 @@
 
       .report--outputs--item.report--outputs--item-20
         .report--outputs--title.report--outputs--title-double= t( 'report.operational_expenditure' )
-        .report--outputs--item--value= "US$ #{(@questionnaire.operation_expenditure_per_person_per_year - @questionnaire.expected_operation_expenditure_per_person_per_year).round(2)}"
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.expected_operation_expenditure_delta_per_person_per_year )
 
       .report--outputs--item.report--outputs--item-20
         .report--outputs--title.report--outputs--title-double= t( 'report.capital_maintenance_expenditure' )
-        .report--outputs--item--value= "US$ #{(@questionnaire.capital_maintenance_expenditure_per_person_per_year - @questionnaire.expected_capital_maintenance_expenditure_per_person_per_year).round(2)}"
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.expected_capital_maintenance_expenditure_delta_per_person_per_year )
 
       .report--outputs--item.report--outputs--item-20
         .report--outputs--title.report--outputs--title-double= t( 'report.cost_of_capital' )
-        .report--outputs--item--value= "US$ 0.00"
+        .report--outputs--item--value= report_currency_value_for( 0 )
 
       .report--outputs--item.report--outputs--item-20
         .report--outputs--title.report--outputs--title-double= t( 'report.expenditure_of_direct_support' )
-        .report--outputs--item--value= "US$ #{(@questionnaire.direct_support_cost_per_person_per_year - @questionnaire.direct_support_cost_per_person_per_year).round(2)}"
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.expenditure_of_direct_support_delta_per_person_per_year )
 
       .report--outputs--item.report--outputs--item-20
         .report--outputs--title.report--outputs--title-double= t( 'report.expenditure_of_indirect_support' )
-        .report--outputs--item--value= "US$ 0.00"
+        .report--outputs--item--value= report_currency_value_for( 0 )
 
     .report--outputs.report--outputs--total
       .report--outputs--item.report--outputs--item-20
         .report--outputs--title.report--outputs--title-total= t( 'report.total' )
-        .report--outputs--item--value= "US$ #{(@questionnaire.total_inputted_expenditure_per_person_per_year - @questionnaire.total_expected_expenditure_per_person_per_year).round(2)}"
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.total_expenditure_delta_per_person_per_year )
 
   %section.report--section
     .report--section--title= t('report.affordability_check');
@@ -136,15 +146,15 @@
 
       .report--outputs--item.report--outputs--item-33
         .report--outputs--title= t( 'report.annual_household_income' )
-        .report--outputs--item--value= "US$ #{@questionnaire.annual_household_income.to_f.round(2)}"
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.annual_household_income )
 
       .report--outputs--item.report--outputs--item-33
         .report--outputs--title= t( 'report.household_size' )
-        .report--outputs--item--value= "#{@questionnaire.household_size.to_i}"
+        .report--outputs--item--value= report_integer_value_for( @questionnaire.household_size )
 
       .report--outputs--item.report--outputs--item-33
         .report--outputs--title= t( 'report.annual_household_income_per_person' )
-        .report--outputs--item--value= "US$ #{@questionnaire.annual_household_income_per_person.round(2)}"
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.annual_household_income_per_person )
 
     .report--subsection--title
       = t('report.affordability_of_inputted_expenditure_for_actual_users');
@@ -153,31 +163,31 @@
 
       .report--outputs--item.report--outputs--item-50
         .report--outputs--title= t( 'report.annual_operational_expenditure' )
-        .report--outputs--item--value= "US$ #{@questionnaire.annual_operational_expenditure_for_actual_users.round(2)}"
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.annual_operational_expenditure_for_actual_users )
 
       .report--outputs--item.report--outputs--item-50
         .report--outputs--title= t( 'report.percentage_of_household_income' )
-        .report--outputs--item--value= "#{@questionnaire.annual_operational_expenditure_for_actual_users_as_percentage_of_household_income.round(2)}%"
+        .report--outputs--item--value= report_percentage_value_for( @questionnaire.annual_operational_expenditure_for_actual_users_as_percentage_of_household_income )
 
     .report--outputs
 
       .report--outputs--item.report--outputs--item-50
         .report--outputs--title= t( 'report.annual_capital_maintenance_expenditure' )
-        .report--outputs--item--value= "US$ #{@questionnaire.annual_capital_maintenance_expenditure_for_actual_users.round(2)}"
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.annual_capital_maintenance_expenditure_for_actual_users )
 
       .report--outputs--item.report--outputs--item-50
         .report--outputs--title= t( 'report.percentage_of_household_income' )
-        .report--outputs--item--value= "#{@questionnaire.annual_capital_maintenance_expenditure_for_actual_users_as_percentage_of_household_income.to_f.round(2)}%"
+        .report--outputs--item--value= report_percentage_value_for( @questionnaire.annual_capital_maintenance_expenditure_for_actual_users_as_percentage_of_household_income )
 
     .report--outputs
 
       .report--outputs--item.report--outputs--item-50
         .report--outputs--title= t( 'report.total' )
-        .report--outputs--item--value= "US$ #{@questionnaire.total_annual_expenditure_for_actual_users.round(2)}"
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.total_annual_expenditure_for_actual_users )
 
       .report--outputs--item.report--outputs--item-50
         .report--outputs--title= t( 'report.percentage_of_household_income' )
-        .report--outputs--item--value= "#{@questionnaire.total_annual_expenditure_for_actual_users_as_percentage_of_household_income.to_f.round(2)}%"
+        .report--outputs--item--value= report_percentage_value_for( @questionnaire.total_annual_expenditure_for_actual_users_as_percentage_of_household_income )
 
     .report--subsection--title
       = t('report.affordability_of_inputted_expenditure_for_designed_users');
@@ -186,31 +196,31 @@
 
       .report--outputs--item.report--outputs--item-50
         .report--outputs--title= t( 'report.annual_operational_expenditure' )
-        .report--outputs--item--value= "US$ #{@questionnaire.annual_operational_expenditure_for_designed_users.round(2)}"
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.annual_operational_expenditure_for_designed_users )
 
       .report--outputs--item.report--outputs--item-50
         .report--outputs--title= t( 'report.percentage_of_household_income' )
-        .report--outputs--item--value= "#{@questionnaire.annual_operational_expenditure_for_designed_users_as_percentage_of_household_income.round(2)}%"
+        .report--outputs--item--value= report_percentage_value_for( @questionnaire.annual_operational_expenditure_for_designed_users_as_percentage_of_household_income )
 
     .report--outputs
 
       .report--outputs--item.report--outputs--item-50
         .report--outputs--title= t( 'report.annual_capital_maintenance_expenditure' )
-        .report--outputs--item--value= "US$ #{@questionnaire.annual_capital_maintenance_expenditure_for_designed_users.round(2)}"
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.annual_capital_maintenance_expenditure_for_designed_users )
 
       .report--outputs--item.report--outputs--item-50
         .report--outputs--title= t( 'report.percentage_of_household_income' )
-        .report--outputs--item--value= "#{@questionnaire.annual_capital_maintenance_expenditure_for_designed_users_as_percentage_of_household_income.to_f.round(2)}%"
+        .report--outputs--item--value= report_percentage_value_for( @questionnaire.annual_capital_maintenance_expenditure_for_designed_users_as_percentage_of_household_income )
 
     .report--outputs
 
       .report--outputs--item.report--outputs--item-50
         .report--outputs--title= t( 'report.total' )
-        .report--outputs--item--value= "US$ #{@questionnaire.total_annual_expenditure_for_designed_users.round(2)}"
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.total_annual_expenditure_for_designed_users )
 
       .report--outputs--item.report--outputs--item-50
         .report--outputs--title= t( 'report.percentage_of_household_income' )
-        .report--outputs--item--value= "#{@questionnaire.total_annual_expenditure_for_designed_users_as_percentage_of_household_income.to_f.round(2)}%"
+        .report--outputs--item--value= report_percentage_value_for( @questionnaire.total_annual_expenditure_for_designed_users_as_percentage_of_household_income )
 
     .report--subsection--title
       = t('report.affordability_of_expected_expenditure_for_actual_users');
@@ -219,31 +229,31 @@
 
       .report--outputs--item.report--outputs--item-50
         .report--outputs--title= t( 'report.annual_operational_expenditure' )
-        .report--outputs--item--value= "US$ #{@questionnaire.expected_annual_operational_expenditure_for_actual_users.round(2)}"
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.expected_annual_operational_expenditure_for_actual_users )
 
       .report--outputs--item.report--outputs--item-50
         .report--outputs--title= t( 'report.percentage_of_household_income' )
-        .report--outputs--item--value= "#{@questionnaire.expected_annual_operational_expenditure_for_actual_users_as_percentage_of_household_income.round(2)}%"
+        .report--outputs--item--value= report_percentage_value_for( @questionnaire.expected_annual_operational_expenditure_for_actual_users_as_percentage_of_household_income )
 
     .report--outputs
 
       .report--outputs--item.report--outputs--item-50
         .report--outputs--title= t( 'report.annual_capital_maintenance_expenditure' )
-        .report--outputs--item--value= "US$ #{@questionnaire.expected_annual_capital_maintenance_expenditure_for_actual_users.round(2)}"
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.expected_annual_capital_maintenance_expenditure_for_actual_users )
 
       .report--outputs--item.report--outputs--item-50
         .report--outputs--title= t( 'report.percentage_of_household_income' )
-        .report--outputs--item--value= "#{@questionnaire.expected_annual_capital_maintenance_expenditure_for_actual_users_as_percentage_of_household_income.to_f.round(2)}%"
+        .report--outputs--item--value= report_percentage_value_for( @questionnaire.expected_annual_capital_maintenance_expenditure_for_actual_users_as_percentage_of_household_income )
 
     .report--outputs
 
       .report--outputs--item.report--outputs--item-50
         .report--outputs--title= t( 'report.total' )
-        .report--outputs--item--value= "US$ #{@questionnaire.total_expected_annual_expenditure_for_actual_users.round(2)}"
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.total_expected_annual_expenditure_for_actual_users )
 
       .report--outputs--item.report--outputs--item-50
         .report--outputs--title= t( 'report.percentage_of_household_income' )
-        .report--outputs--item--value= "#{@questionnaire.total_expected_annual_expenditure_for_actual_users_as_percentage_of_household_income.to_f.round(2)}%"
+        .report--outputs--item--value= report_percentage_value_for( @questionnaire.total_expected_annual_expenditure_for_actual_users_as_percentage_of_household_income )
 
 
 

@@ -69,6 +69,7 @@ en:
       minutes: "min"
     less_than: "Less than"
     no_specifed: "No specified"
+    report_box_no_value: "Looks like you need answer more questions to get a final report. Go back and add more answer about your service delivery"
     per_person_per_year: (Per person per year)
     save_your_report: "Save Your Report"
     report_saved: "Your report was %{action} successfully"
@@ -79,6 +80,7 @@ en:
     cross_to_water: "Cross to water"
     summmary: "Summary"
     total: "Total"
+    no_data: No data
     total_cost: "total cost"
     level_of_service: "level of service"
     caption_total_cost: "for a population of %{population} people"
