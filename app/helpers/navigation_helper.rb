@@ -12,6 +12,8 @@ module NavigationHelper
         path_helper = "basic_sanitation_action"
       when "advanced/water"
         path_helper = "advanced_water_action"
+      when "advanced/sanitation"
+        path_helper = "advanced_sanitation_action"
     end
 
     items.map do |k,v|
@@ -71,7 +73,47 @@ module NavigationHelper
   # return the data associated with all navigation about the basic tool specified
   # @return [Hash]
   def navigation_context
-    if controller_path == "basic/sanitation"
+    if controller_path == "basic/water"
+      {
+        path: basic_water_path,
+        sections:
+        {
+          context:
+          {
+            name: I18n.t('nav.main.context.title'),
+            first_action: :country,
+            items:
+            {
+              country: I18n.t('nav.main.context.items.country'),
+              water: I18n.t('nav.main.context.items.water'),
+              population: I18n.t('nav.main.context.items.population')
+            }
+          },
+          cost:
+          {
+            first_action: :capital,
+            name: I18n.t('nav.main.cost.title'),
+            items:
+            {
+              capital: I18n.t('nav.main.cost.items.capital'),
+              recurrent: I18n.t('nav.main.cost.items.recurrent')
+            }
+          },
+          service:
+          {
+            first_action: :time,
+            name: I18n.t('nav.main.service.title'),
+            items:
+            {
+              time: I18n.t('nav.main.service.items.time'),
+              quantity: I18n.t('nav.main.service.items.quantity'),
+              quality: I18n.t('nav.main.service.items.quality'),
+              reliability: I18n.t('nav.main.service.items.reliability')
+            }
+          }
+        }
+      }
+    elsif controller_path == "basic/sanitation"
       {
         path: basic_sanitation_path,
         sections:
@@ -112,47 +154,7 @@ module NavigationHelper
           }
         }
       }
-    elsif controller_path == "basic/water"
-      {
-        path: basic_water_path,
-        sections:
-        {
-          context:
-          {
-            name: I18n.t('nav.main.context.title'),
-            first_action: :country,
-            items:
-            {
-              country: I18n.t('nav.main.context.items.country'),
-              water: I18n.t('nav.main.context.items.water'),
-              population: I18n.t('nav.main.context.items.population')
-            }
-          },
-          cost:
-          {
-            first_action: :capital,
-            name: I18n.t('nav.main.cost.title'),
-            items:
-            {
-              capital: I18n.t('nav.main.cost.items.capital'),
-              recurrent: I18n.t('nav.main.cost.items.recurrent')
-            }
-          },
-          service:
-          {
-            first_action: :time,
-            name: I18n.t('nav.main.service.title'),
-            items:
-            {
-              time: I18n.t('nav.main.service.items.time'),
-              quantity: I18n.t('nav.main.service.items.quantity'),
-              quality: I18n.t('nav.main.service.items.quality'),
-              reliability: I18n.t('nav.main.service.items.reliability')
-            }
-          }
-        }
-      }
-    else
+    elsif controller_path == "advanced/water"
       {
         path: advanced_water_path,
         sections:
@@ -160,7 +162,25 @@ module NavigationHelper
           context:
           {
             name: I18n.t('nav.main.advanced.title'),
-            first_action: :country,
+            items:
+            {
+              context: I18n.t('nav.main.advanced.items.context'),
+              system_management: I18n.t('nav.main.advanced.items.system_management'),
+              system_characteristics: I18n.t('nav.main.advanced.items.system_characteristics'),
+              cost: I18n.t('nav.main.advanced.items.cost'),
+              service: I18n.t('nav.main.advanced.items.service')
+            }
+          }
+        }
+      }
+    elsif controller_path == "advanced/sanitation"
+      {
+        path: advanced_sanitation_path,
+        sections:
+        {
+          context:
+          {
+            name: I18n.t('nav.main.advanced.title'),
             items:
             {
               context: I18n.t('nav.main.advanced.items.context'),

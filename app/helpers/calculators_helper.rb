@@ -8,8 +8,8 @@ module CalculatorsHelper
         basic_sanitation_report_path( I18n.locale )
       when 'advanced/water'
         advanced_water_report_path( I18n.locale )
-      else
-        ''
+      when 'advanced/sanitation'
+        advanced_sanitation_report_path( I18n.locale )
     end
   end
 

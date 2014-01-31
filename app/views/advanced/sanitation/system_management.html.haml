@@ -1,0 +1,111 @@
+= content_for :title do
+  Start
+
+.questionnaire
+
+  = form_for @questionnaire, :url => advanced_sanitation_update_url( I18n.locale, 'system_characteristics' ), :html => { :class => 'dual_column_form', 'data-dynamic_form' => advanced_sanitation_dynamic_update_url( I18n.locale ) } do |f|
+
+    .dual_column_form--row
+
+      .dual_column_form--column.dual_column_form--column-50
+
+        .dual_column--field--label= t( 'advanced.water.questionnaire.service_management.label' )
+
+        - options_for_service_management.each_with_index do |option,i|
+
+          .dual_column_form--field.dual_column_form--field-box
+            = check_box_tag 'advanced_sanitation_questionnaire[service_management][]', option[1], @questionnaire.service_management.include?( option[1].to_s ), :id => "advanced_sanitation_questionnaire_service_management_#{i}", :class => 'dual_column_form--field--checkbox'
+            = f.label "service_management_#{i}", :class => 'dual_column--field--label dual_column--field--label-box' do
+              .dual_column_form--field--styled_checkbox
+              %span.dual_column--field--label-box--content= option[0]
+
+        = hidden_field_tag 'advanced_sanitation_questionnaire[service_management][]', ''
+
+      .dual_column_form--column.dual_column_form--column-50
+
+        .dual_column--field--label= t( 'advanced.water.questionnaire.construction_financier.label' )
+
+        - options_for_construction_financier.each_with_index do |option,i|
+
+          .dual_column_form--field.dual_column_form--field-box
+            = check_box_tag 'advanced_sanitation_questionnaire[construction_financier][]', option[1], @questionnaire.construction_financier.include?( option[1].to_s ), :id => "advanced_sanitation_questionnaire_construction_financier_#{i}", :class => 'dual_column_form--field--checkbox'
+            = f.label "construction_financier_#{i}", :class => 'dual_column--field--label dual_column--field--label-box' do
+              .dual_column_form--field--styled_checkbox
+              %span.dual_column--field--label-box--content= option[0]
+
+        = hidden_field_tag 'advanced_sanitation_questionnaire[construction_financier][]', ''
+
+    .dual_column_form--row
+
+      .dual_column_form--column.dual_column_form--column-50
+
+        .dual_column--field--label= t( 'advanced.water.questionnaire.infrastructure_operator.label' )
+
+        - options_for_infrastructure_operator.each_with_index do |option,i|
+
+          .dual_column_form--field.dual_column_form--field-box
+            = check_box_tag 'advanced_sanitation_questionnaire[infrastructure_operator][]', option[1], @questionnaire.infrastructure_operator.include?( option[1].to_s ), :id => "advanced_sanitation_questionnaire_infrastructure_operator_#{i}", :class => 'dual_column_form--field--checkbox'
+            = f.label "infrastructure_operator_#{i}", :class => 'dual_column--field--label dual_column--field--label-box' do
+              .dual_column_form--field--styled_checkbox
+              %span.dual_column--field--label-box--content= option[0]
+
+        = hidden_field_tag 'advanced_sanitation_questionnaire[infrastructure_operator][]', ''
+
+      .dual_column_form--column.dual_column_form--column-50
+
+        .dual_column--field--label= t( 'advanced.water.questionnaire.service_responsbility.label' )
+
+        - options_for_service_responsbility.each_with_index do |option,i|
+
+          .dual_column_form--field.dual_column_form--field-box
+            = check_box_tag 'advanced_sanitation_questionnaire[service_responsbility][]', option[1], @questionnaire.service_responsbility.include?( option[1].to_s ), :id => "advanced_sanitation_questionnaire_service_responsbility_#{i}", :class => 'dual_column_form--field--checkbox'
+            = f.label "service_responsbility_#{i}", :class => 'dual_column--field--label dual_column--field--label-box' do
+              .dual_column_form--field--styled_checkbox
+              %span.dual_column--field--label-box--content= option[0]
+
+        = hidden_field_tag 'advanced_sanitation_questionnaire[service_responsbility][]', ''
+
+    .dual_column_form--row
+
+      .dual_column_form--column.dual_column_form--column-50
+
+        .dual_column--field--label= t( 'advanced.water.questionnaire.standard_enforcer.label' )
+
+        - options_for_standard_enforcer.each_with_index do |option,i|
+
+          .dual_column_form--field.dual_column_form--field-box
+            = check_box_tag 'advanced_sanitation_questionnaire[standard_enforcer][]', option[1], @questionnaire.standard_enforcer.include?( option[1].to_s ), :id => "advanced_sanitation_questionnaire_standard_enforcer_#{i}", :class => 'dual_column_form--field--checkbox'
+            = f.label "standard_enforcer_#{i}", :class => 'dual_column--field--label dual_column--field--label-box' do
+              .dual_column_form--field--styled_checkbox
+              %span.dual_column--field--label-box--content= option[0]
+
+        = hidden_field_tag 'advanced_sanitation_questionnaire[standard_enforcer][]', ''
+
+      .dual_column_form--column.dual_column_form--column-50
+
+        .dual_column--field--label= t( 'advanced.water.questionnaire.rehabilitation_cost_owner.label' )
+
+        - options_for_rehabilitation_cost_owner.each_with_index do |option,i|
+
+          .dual_column_form--field.dual_column_form--field-box
+            = check_box_tag 'advanced_sanitation_questionnaire[rehabilitation_cost_owner][]', option[1], @questionnaire.rehabilitation_cost_owner.include?( option[1].to_s ), :id => "advanced_sanitation_questionnaire_rehabilitation_cost_owner_#{i}", :class => 'dual_column_form--field--checkbox'
+            = f.label "rehabilitation_cost_owner_#{i}", :class => 'dual_column--field--label dual_column--field--label-box' do
+              .dual_column_form--field--styled_checkbox
+              %span.dual_column--field--label-box--content= option[0]
+
+        = hidden_field_tag 'advanced_sanitation_questionnaire[rehabilitation_cost_owner][]', ''
+
+    .dual_column_form--row
+
+      .dual_column_form--column.dual_column_form--column-50
+        .dual_column_form--field.dual_column_form--field-dropdown
+          = f.label :annual_household_income, t( 'advanced.water.questionnaire.annual_household_income.label' ), :class => 'dual_column--field--label'
+          = f.text_field :annual_household_income, :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.questionnaire.annual_household_income.placeholder' ), 'data-checkbox_toggle-field' => 'annual_household_income'
+
+      .dual_column_form--column.dual_column_form--column-50
+        .dual_column_form--field.dual_column_form--field-dropdown
+          = f.label :household_size, t( 'advanced.water.questionnaire.household_size.label' ), :class => 'dual_column--field--label'
+          = f.text_field :household_size, :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.questionnaire.household_size.placeholder' ), 'data-checkbox_toggle-field' => 'household_size'
+
+    .question--buttons
+      = submit_tag((t 'buttons.next'), class: 'button')

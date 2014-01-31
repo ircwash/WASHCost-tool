@@ -4,13 +4,13 @@ class Session
   include ActiveModel::Conversion
   extend ActiveModel::Naming
 
-  @@identifier = ''
 
-  def initialize( session )
+  def initialize( session, identifier )
 
-    @session = session
+    @identifier = identifier
+    @session    = session
 
-    if ( session[ @@identifier ] )
+    if ( session[ @identifier ] )
       unarchive
     end
 
@@ -71,13 +71,14 @@ class Session
     attributes.each do |a|
       data[ a ] = send( a )
     end
-
-    @session[ @@identifier ] = data
+puts "MODEL SAVING: #{@identifier}"
+    @session[ @identifier ] = data
   end
 
 
   def unarchive
-    @session[ @@identifier ].each do |name, value|
+puts "MODEL LOADING: #{@identifier}"
+    @session[ @identifier ].each do |name, value|
       send( "#{name}=", value ) unless !self.respond_to? name
     end
   end

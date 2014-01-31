@@ -27,7 +27,7 @@ class CalculatorsController < ApplicationController
           when 'water'
             redirect_to advanced_water_begin_path( I18n.locale )
           when 'sanitation'
-
+            redirect_to advanced_sanitation_begin_path( I18n.locale )
         end
     end
   end

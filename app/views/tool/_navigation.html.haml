@@ -13,8 +13,5 @@
     %ul.navigation--subcategory--list
       - questionnaire_items_list.each do |item|
         %li{ :class => 'navigation--subcategory--item' }
-          - if controller_path == 'basic/water'
-            %a{ :href => item[:link], :class => "navigation--subcategory--link navigation--subcategory--link-#{item[:class]}" }= item[:name]
-          - else
-            %a{ :href => item[:link], :class => "navigation--subcategory--link navigation--subcategory--link-#{item[:class]}" }= item[:name]
+          %a{ :href => item[:link], :class => "navigation--subcategory--link navigation--subcategory--link-#{item[:class]}" }= item[:name]
 

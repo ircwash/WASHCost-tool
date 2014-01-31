@@ -48,6 +48,15 @@ WashCostApp::Application.routes.draw do
           root :to => redirect( '/%{locale}/calculators/advanced/water/context' ), :as => 'water'
         end
 
+        scope '/sanitation' do
+          get '/begin' => 'sanitation#begin', :as => 'sanitation_begin'
+          get '/report' => 'sanitation#report', :as => 'sanitation_report'
+          get  '/:section' => 'sanitation#questionnaire', :as => 'sanitation_action'
+          post '/update/:section' => 'sanitation#update', :as => 'sanitation_update'
+          post '/dynamic_update' => 'sanitation#dynamic_update', :as => 'sanitation_dynamic_update'
+          root :to => redirect( '/%{locale}/calculators/advanced/sanitation/context' ), :as => 'sanitation'
+        end
+
       end
 
       root :to => 'calculators#index', :as => 'calculators'

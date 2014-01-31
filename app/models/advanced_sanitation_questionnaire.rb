@@ -1,4 +1,4 @@
-class AdvancedWaterQuestionnaire < Session
+class AdvancedSanitationQuestionnaire < Session
 
   attr_accessor :water_system_exists,
                 :country,
@@ -46,7 +46,7 @@ class AdvancedWaterQuestionnaire < Session
 
 
   def initialize( session )
-    super( session, :advanced_water )
+    super( session, :advanced_sanitation )
   end
 
 
