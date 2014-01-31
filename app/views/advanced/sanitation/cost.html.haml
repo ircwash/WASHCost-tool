@@ -14,11 +14,11 @@
         - @questionnaire.supply_system_technologies.each do |technology|
           - puts technology.to_i
           .dual_column_form--column.dual_column_form--column-33
-            .dual_column--subheading= options_for_supply_system_technologies[ technology.to_i ][0]
+            .dual_column--subheading= options_for_sanitation_technologies[ technology.to_i ][0]
 
       .dual_column_form--row
 
-        .dual_column--field--label= t( 'advanced.water.questionnaire.aggregate_actual_hardware_expenditure.label' )
+        .dual_column--field--label= t( 'advanced.sanitation.questionnaire.aggregate_actual_hardware_expenditure.label' )
 
         - @questionnaire.supply_system_technologies.each_with_index do |technology,i|
           .dual_column_form--column.dual_column_form--column-33
@@ -36,7 +36,7 @@
 
       .dual_column_form--row
 
-        .dual_column--field--label= t( 'advanced.water.questionnaire.actual_software_expenditure.label' )
+        .dual_column--field--label= t( 'advanced.sanitation.questionnaire.actual_software_expenditure.label' )
 
         - @questionnaire.supply_system_technologies.each_with_index do |technology,i|
           .dual_column_form--column.dual_column_form--column-33
@@ -58,7 +58,7 @@
 
         - @questionnaire.supply_system_technologies.each do |technology|
           .dual_column_form--column.dual_column_form--column-33
-            .dual_column--subheading= options_for_supply_system_technologies[ technology.to_i ][0]
+            .dual_column--subheading= options_for_sanitation_technologies[ technology.to_i ][0]
 
       .dual_column_form--row
 

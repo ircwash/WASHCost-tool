@@ -40,9 +40,9 @@ class AdvancedSanitationQuestionnaire < Session
                 :service_level_name,
                 :service_level_share,
                 :national_accessibility_norms,
-                :national_quantity_norms,
-                :national_quality_norms,
-                :national_reliability_norms
+                :national_use_norms,
+                :national_reliability_norms,
+                :national_environmental_protection_norms
 
 
   def initialize( session )
@@ -290,8 +290,8 @@ class AdvancedSanitationQuestionnaire < Session
   end
 
   def people_with_service_meeting_national_standard
-    if service_level_name.count > 0 && ( national_accessibility_norms.count > 0 || national_quantity_norms.count > 0 || national_quality_norms.count > 0 || national_reliability_norms.count > 0 )
-      service_level_name.each_with_index.map{ |sl,i| ( national_accessibility_norms[i].to_i == 0 || national_quantity_norms[i].to_i == 0 || national_quality_norms[i].to_i == 0 || national_reliability_norms[i].to_i == 0 ) ? service_level_share[i].to_i : 0 }.inject(:+)
+    if service_level_name.count > 0 && ( national_accessibility_norms.count > 0 || national_use_norms.count > 0 || national_environmental_protection_norms.count > 0 || national_reliability_norms.count > 0 )
+      service_level_name.each_with_index.map{ |sl,i| ( national_accessibility_norms[i].to_i == 0 || national_use_norms[i].to_i == 0 || national_environmental_protection_norms[i].to_i == 0 || national_reliability_norms[i].to_i == 0 ) ? service_level_share[i].to_i : 0 }.inject(:+)
     else
       nil
     end
@@ -485,53 +485,53 @@ class AdvancedSanitationQuestionnaire < Session
   def set_properties
 
     # context
-    @water_system_exists              = nil
-    @country                          = nil
-    @region                           = nil
-    @town                             = nil
-    @area_type                        = nil
-    @population_density               = nil
+    @water_system_exists                      = nil
+    @country                                  = nil
+    @region                                   = nil
+    @town                                     = nil
+    @area_type                                = nil
+    @population_density                       = nil
 
     # system management
-    @service_management               = []
-    @construction_financier           = []
-    @infrastructure_operator          = []
-    @service_responsbility            = []
-    @standard_enforcer                = []
-    @rehabilitation_cost_owner        = []
-    @annual_household_income          = nil
-    @household_size                   = nil
+    @service_management                       = []
+    @construction_financier                   = []
+    @infrastructure_operator                  = []
+    @service_responsbility                    = []
+    @standard_enforcer                        = []
+    @rehabilitation_cost_owner                = []
+    @annual_household_income                  = nil
+    @household_size                           = nil
 
     # system characteristics
-    @supply_system_technologies       = []
-    @systems_number                   = []
-    @system_population_design         = []
-    @system_population_actual         = []
-    @water_source                     = []
-    @surface_water_primary_source     = []
-    @water_treatment                  = []
-    @power_supply                     = []
-    @distribution_line_length         = []
+    @supply_system_technologies               = []
+    @systems_number                           = []
+    @system_population_design                 = []
+    @system_population_actual                 = []
+    @water_source                             = []
+    @surface_water_primary_source             = []
+    @water_treatment                          = []
+    @power_supply                             = []
+    @distribution_line_length                 = []
 
     # cost
-    @actual_hardware_expenditure      = []
-    @system_lifespan_expectancy       = []
-    @actual_software_expenditure      = []
-    @unpaid_labour                    = []
-    @minor_operation_expenditure      = []
-    @capital_maintenance_expenditure  = []
-    @loan_cost                        = []
-    @loan_payback_period              = []
-    @direct_support_cost              = nil
-    @indirect_support_cost            = nil
+    @actual_hardware_expenditure              = []
+    @system_lifespan_expectancy               = []
+    @actual_software_expenditure              = []
+    @unpaid_labour                            = []
+    @minor_operation_expenditure              = []
+    @capital_maintenance_expenditure          = []
+    @loan_cost                                = []
+    @loan_payback_period                      = []
+    @direct_support_cost                      = nil
+    @indirect_support_cost                    = nil
 
     # service level
-    @service_level_name               = []
-    @service_level_share              = []
-    @national_accessibility_norms     = []
-    @national_quantity_norms          = []
-    @national_quality_norms           = []
-    @national_reliability_norms       = []
+    @service_level_name                       = []
+    @service_level_share                      = []
+    @national_accessibility_norms             = []
+    @national_use_norms                       = []
+    @national_reliability_norms               = []
+    @national_environmental_protection_norms  = []
 
   end
 

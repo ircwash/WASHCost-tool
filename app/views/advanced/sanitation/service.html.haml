@@ -7,7 +7,7 @@
 
     .dual_column_form--row
 
-      .dual_column--field--label= t( 'advanced.water.questionnaire.service_levels.label' )
+      .dual_column--field--label= t( 'advanced.santitation.questionnaire.service_levels.label' )
 
       .dual_column_form--column.dual_column_form--column-25
         .dual_column_form--field.dual_column_form--field-text_input
@@ -65,43 +65,23 @@
 
     .dual_column_form--row
 
-      .dual_column--field--label= t( 'advanced.water.questionnaire.national_quantity_norms.label' )
+      .dual_column--field--label= t( 'advanced.sanitation.questionnaire.national_use_norms.label' )
 
       .dual_column_form--column.dual_column_form--column-25{ 'data-column_dependency-dependent' => 'service_level-1' }
         .dual_column_form--field.dual_column_form--field-dropdown
-          = select_tag 'advanced_sanitation_questionnaire[national_quantity_norms][]', options_for_select( options_for_national_quantity_norms, @questionnaire.national_quantity_norms[0] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_sanitation_questionnaire_national_quantity_norms_1', 'data-placeholder' => t( 'advanced.water.questionnaire.national_quantity_norms.placeholder' ) }
+          = select_tag 'advanced_sanitation_questionnaire[national_use_norms][]', options_for_select( options_for_national_use_norms, @questionnaire.national_use_norms[0] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_sanitation_questionnaire_national_use_norms_1', 'data-placeholder' => t( 'advanced.water.questionnaire.national_use_norms.placeholder' ) }
 
       .dual_column_form--column.dual_column_form--column-25{ 'data-column_dependency-dependent' => 'service_level-2' }
         .dual_column_form--field.dual_column_form--field-dropdown
-          = select_tag 'advanced_sanitation_questionnaire[national_quantity_norms][]', options_for_select( options_for_national_quantity_norms, @questionnaire.national_quantity_norms[1] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_sanitation_questionnaire_national_quantity_norms_2', 'data-placeholder' => t( 'advanced.water.questionnaire.national_quantity_norms.placeholder' ) }
+          = select_tag 'advanced_sanitation_questionnaire[national_use_norms][]', options_for_select( options_for_national_use_norms, @questionnaire.national_use_norms[1] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_sanitation_questionnaire_national_use_norms_2', 'data-placeholder' => t( 'advanced.water.questionnaire.national_use_norms.placeholder' ) }
 
       .dual_column_form--column.dual_column_form--column-25{ 'data-column_dependency-dependent' => 'service_level-3' }
         .dual_column_form--field.dual_column_form--field-dropdown
-          = select_tag 'advanced_sanitation_questionnaire[national_quantity_norms][]', options_for_select( options_for_national_quantity_norms, @questionnaire.national_quantity_norms[2] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_sanitation_questionnaire_national_quantity_norms_3', 'data-placeholder' => t( 'advanced.water.questionnaire.national_quantity_norms.placeholder' ) }
+          = select_tag 'advanced_sanitation_questionnaire[national_use_norms][]', options_for_select( options_for_national_use_norms, @questionnaire.national_use_norms[2] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_sanitation_questionnaire_national_use_norms_3', 'data-placeholder' => t( 'advanced.water.questionnaire.national_use_norms.placeholder' ) }
 
       .dual_column_form--column.dual_column_form--column-25{ 'data-column_dependency-dependent' => 'service_level-4' }
         .dual_column_form--field.dual_column_form--field-dropdown
-          = select_tag 'advanced_sanitation_questionnaire[national_quantity_norms][]', options_for_select( options_for_national_quantity_norms, @questionnaire.national_quantity_norms[3] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_sanitation_questionnaire_national_quantity_norms_4', 'data-placeholder' => t( 'advanced.water.questionnaire.national_quantity_norms.placeholder' ) }
-
-    .dual_column_form--row
-
-      .dual_column--field--label= t( 'advanced.water.questionnaire.national_quality_norms.label' )
-
-      .dual_column_form--column.dual_column_form--column-25{ 'data-column_dependency-dependent' => 'service_level-1' }
-        .dual_column_form--field.dual_column_form--field-dropdown
-          = select_tag 'advanced_sanitation_questionnaire[national_quality_norms][]', options_for_select( options_for_national_quality_norms, @questionnaire.national_quality_norms[0] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_sanitation_questionnaire_national_quality_norms_1', 'data-placeholder' => t( 'advanced.water.questionnaire.national_quality_norms.placeholder' ) }
-
-      .dual_column_form--column.dual_column_form--column-25{ 'data-column_dependency-dependent' => 'service_level-2' }
-        .dual_column_form--field.dual_column_form--field-dropdown
-          = select_tag 'advanced_sanitation_questionnaire[national_quality_norms][]', options_for_select( options_for_national_quality_norms, @questionnaire.national_quality_norms[1] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_sanitation_questionnaire_national_quality_norms_2', 'data-placeholder' => t( 'advanced.water.questionnaire.national_quality_norms.placeholder' ) }
-
-      .dual_column_form--column.dual_column_form--column-25{ 'data-column_dependency-dependent' => 'service_level-3' }
-        .dual_column_form--field.dual_column_form--field-dropdown
-          = select_tag 'advanced_sanitation_questionnaire[national_quality_norms][]', options_for_select( options_for_national_quality_norms, @questionnaire.national_quality_norms[2] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_sanitation_questionnaire_national_quality_norms_3', 'data-placeholder' => t( 'advanced.water.questionnaire.national_quality_norms.placeholder' ) }
-
-      .dual_column_form--column.dual_column_form--column-25{ 'data-column_dependency-dependent' => 'service_level-4' }
-        .dual_column_form--field.dual_column_form--field-dropdown
-          = select_tag 'advanced_sanitation_questionnaire[national_quality_norms][]', options_for_select( options_for_national_quality_norms, @questionnaire.national_quality_norms[3] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_sanitation_questionnaire_national_quality_norms_4', 'data-placeholder' => t( 'advanced.water.questionnaire.national_quality_norms.placeholder' ) }
+          = select_tag 'advanced_sanitation_questionnaire[national_use_norms][]', options_for_select( options_for_national_use_norms, @questionnaire.national_use_norms[3] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_sanitation_questionnaire_national_use_norms_4', 'data-placeholder' => t( 'advanced.water.questionnaire.national_use_norms.placeholder' ) }
 
     .dual_column_form--row
 
@@ -122,6 +102,26 @@
       .dual_column_form--column.dual_column_form--column-25{ 'data-column_dependency-dependent' => 'service_level-4' }
         .dual_column_form--field.dual_column_form--field-dropdown
           = select_tag 'advanced_sanitation_questionnaire[national_reliability_norms][]', options_for_select( options_for_national_reliability_norms, @questionnaire.national_reliability_norms[3] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_sanitation_questionnaire_national_reliability_norms_4', 'data-placeholder' => t( 'advanced.water.questionnaire.national_reliability_norms.placeholder' ) }
+
+    .dual_column_form--row
+
+      .dual_column--field--label= t( 'advanced.sanitation.questionnaire.national_environmental_protection_norms.label' )
+
+      .dual_column_form--column.dual_column_form--column-25{ 'data-column_dependency-dependent' => 'service_level-1' }
+        .dual_column_form--field.dual_column_form--field-dropdown
+          = select_tag 'advanced_sanitation_questionnaire[national_environmental_protection_norms][]', options_for_select( options_for_national_environmental_protection_norms, @questionnaire.national_environmental_protection_norms[0] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_sanitation_questionnaire_national_environmental_protection_norms_1', 'data-placeholder' => t( 'advanced.water.questionnaire.national_environmental_protection_norms.placeholder' ) }
+
+      .dual_column_form--column.dual_column_form--column-25{ 'data-column_dependency-dependent' => 'service_level-2' }
+        .dual_column_form--field.dual_column_form--field-dropdown
+          = select_tag 'advanced_sanitation_questionnaire[national_environmental_protection_norms][]', options_for_select( options_for_national_environmental_protection_norms, @questionnaire.national_environmental_protection_norms[1] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_sanitation_questionnaire_national_environmental_protection_norms_2', 'data-placeholder' => t( 'advanced.water.questionnaire.national_environmental_protection_norms.placeholder' ) }
+
+      .dual_column_form--column.dual_column_form--column-25{ 'data-column_dependency-dependent' => 'service_level-3' }
+        .dual_column_form--field.dual_column_form--field-dropdown
+          = select_tag 'advanced_sanitation_questionnaire[national_environmental_protection_norms][]', options_for_select( options_for_national_environmental_protection_norms, @questionnaire.national_environmental_protection_norms[2] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_sanitation_questionnaire_national_environmental_protection_norms_3', 'data-placeholder' => t( 'advanced.water.questionnaire.national_environmental_protection_norms.placeholder' ) }
+
+      .dual_column_form--column.dual_column_form--column-25{ 'data-column_dependency-dependent' => 'service_level-4' }
+        .dual_column_form--field.dual_column_form--field-dropdown
+          = select_tag 'advanced_sanitation_questionnaire[national_environmental_protection_norms][]', options_for_select( options_for_national_environmental_protection_norms, @questionnaire.national_environmental_protection_norms[3] ), { :include_blank => true, :class => 'dual_column_form--field--dropdown chzn-select', :id => 'advanced_sanitation_questionnaire_national_environmental_protection_norms_4', 'data-placeholder' => t( 'advanced.water.questionnaire.national_environmental_protection_norms.placeholder' ) }
 
     .question--buttons
       = submit_tag((t 'buttons.next'), class: 'button')

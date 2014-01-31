@@ -8,6 +8,15 @@ module AdvancedCalculatorsHelper
     ]
   end
 
+  def options_for_sanitation_service_exists
+    [
+      [ 'Neither', 0 ],
+      [ 'Existing', 1 ],
+      [ 'Planned', 2 ],
+      [ 'Don\'t know', 3 ]
+    ]
+  end
+
   def options_for_area_type
     [
       [ 'Rural', 0 ],
@@ -249,6 +258,22 @@ module AdvancedCalculatorsHelper
   end
 
   def options_for_national_reliability_norms
+    [
+      [ 'Yes', 0 ],
+      [ 'No', 1 ],
+      [ 'Don\'t know', 2 ]
+    ]
+  end
+
+  def options_for_national_use_norms
+    [
+      [ 'Yes', 0 ],
+      [ 'No', 1 ],
+      [ 'Don\'t know', 2 ]
+    ]
+  end
+
+  def options_for_national_environmental_protection_norms
     [
       [ 'Yes', 0 ],
       [ 'No', 1 ],
