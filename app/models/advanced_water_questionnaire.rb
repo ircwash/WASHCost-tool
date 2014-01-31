@@ -131,6 +131,10 @@ class AdvancedWaterQuestionnaire < Session
       end
     end
 
+    if water_source.count == 0 || !water_source.include?( '1' )
+      attributes_with_values = attributes_with_values + 1
+    end
+
     100 * attributes_with_values / self.attributes.count
   end
 
