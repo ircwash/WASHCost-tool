@@ -36,19 +36,28 @@ module AdvancedCalculatorsHelper
 
   def options_for_service_management
     [
-      [ 'Utility management', 0 ],
-      [ 'Household management', 1 ],
-      [ 'Other (define)', 2 ],
-      [ 'Don\'t know', 3 ]
+      [ 'Community-based management', 0 ],
+      [ 'Public sector (local)', 1 ],
+      [ 'Public sector (national)', 2 ],
+      [ 'Private sector', 3 ],
+      [ 'Utility management', 4 ],
+      [ 'Household management', 5 ],
+      [ 'Other', 6 ],
+      [ 'Don\'t know', 7 ]
     ]
   end
 
   def options_for_construction_financier
     [
-      [ 'Utility management', 0 ],
-      [ 'Household management', 1 ],
-      [ 'Other (define)', 2 ],
-      [ 'Don\'t know', 3 ]
+      [ 'External donor', 0 ],
+      [ 'Community-based management', 1 ],
+      [ 'Public sector (local)', 2 ],
+      [ 'Public sector (national)', 3 ],
+      [ 'Private sector', 4 ],
+      [ 'Utility management', 5 ],
+      [ 'Household management', 6 ],
+      [ 'Other', 7 ],
+      [ 'Don\'t know', 8 ]
     ]
   end
 
