@@ -29,7 +29,8 @@ module AdvancedCalculatorsHelper
       [ 'Small town', 1 ],
       [ 'Peri-urban', 2 ],
       [ 'Urban', 3 ],
-      [ 'Don\'t know', 4 ]
+      [ 'Mixed', 4 ],
+      [ 'Don\'t know', 5 ]
     ]
   end
 
