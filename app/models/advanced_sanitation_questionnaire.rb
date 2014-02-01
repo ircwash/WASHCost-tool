@@ -340,9 +340,17 @@ class AdvancedSanitationQuestionnaire < Session
     end
   end
 
+  def annual_cost_of_capital_for_actual_users
+    if cost_of_capital_per_person_per_year != nil && total_actual_users != nil
+      cost_of_capital_per_person_per_year * total_actual_users
+    else
+      nil
+    end
+  end
+
   def total_annual_expenditure_for_actual_users
-    if annual_operational_expenditure_for_actual_users != nil && annual_capital_maintenance_expenditure_for_actual_users != nil
-      annual_operational_expenditure_for_actual_users + annual_capital_maintenance_expenditure_for_actual_users
+    if annual_operational_expenditure_for_actual_users != nil && annual_capital_maintenance_expenditure_for_actual_users != nil && annual_cost_of_capital_for_actual_users != nil
+      annual_operational_expenditure_for_actual_users + annual_capital_maintenance_expenditure_for_actual_users + annual_cost_of_capital_for_actual_users
     else
       nil
     end
@@ -390,9 +398,17 @@ class AdvancedSanitationQuestionnaire < Session
     end
   end
 
+  def annual_cost_of_capital_for_designed_users
+    if cost_of_capital_per_person_per_year != nil && total_designed_users != nil
+      cost_of_capital_per_person_per_year * total_designed_users
+    else
+      nil
+    end
+  end
+
   def total_annual_expenditure_for_designed_users
-    if annual_operational_expenditure_for_designed_users != nil && annual_capital_maintenance_expenditure_for_designed_users != nil
-      annual_operational_expenditure_for_designed_users + annual_capital_maintenance_expenditure_for_designed_users
+    if annual_operational_expenditure_for_designed_users != nil && annual_capital_maintenance_expenditure_for_designed_users != nil && annual_cost_of_capital_for_designed_users != nil
+      annual_operational_expenditure_for_designed_users + annual_capital_maintenance_expenditure_for_designed_users + annual_cost_of_capital_for_designed_users
     else
       nil
     end

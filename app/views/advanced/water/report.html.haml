@@ -159,6 +159,8 @@
     .report--subsection--title
       = t('report.affordability_of_inputted_expenditure_for_actual_users');
 
+    = render :partial => 'advanced/affordability_info', :locals => { :annual_expenditure_as_percentage_of_household_users => @questionnaire.total_annual_expenditure_for_actual_users_as_percentage_of_household_income }
+
     .report--outputs
 
       .report--outputs--item.report--outputs--item-50
@@ -182,6 +184,12 @@
     .report--outputs
 
       .report--outputs--item.report--outputs--item-50
+        .report--outputs--title= t( 'report.cost_of_capital' )
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.annual_cost_of_capital_for_actual_users )
+
+    .report--outputs
+
+      .report--outputs--item.report--outputs--item-50
         .report--outputs--title= t( 'report.total' )
         .report--outputs--item--value= report_currency_value_for( @questionnaire.total_annual_expenditure_for_actual_users )
 
@@ -191,6 +199,8 @@
 
     .report--subsection--title
       = t('report.affordability_of_inputted_expenditure_for_designed_users');
+
+    = render :partial => 'advanced/affordability_info', :locals => { :annual_expenditure_as_percentage_of_household_users => @questionnaire.total_annual_expenditure_for_designed_users_as_percentage_of_household_income }
 
     .report--outputs
 
@@ -215,6 +225,12 @@
     .report--outputs
 
       .report--outputs--item.report--outputs--item-50
+        .report--outputs--title= t( 'report.cost_of_capital' )
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.annual_cost_of_capital_for_designed_users )
+
+    .report--outputs
+
+      .report--outputs--item.report--outputs--item-50
         .report--outputs--title= t( 'report.total' )
         .report--outputs--item--value= report_currency_value_for( @questionnaire.total_annual_expenditure_for_designed_users )
 
@@ -224,6 +240,8 @@
 
     .report--subsection--title
       = t('report.affordability_of_expected_expenditure_for_actual_users');
+
+    = render :partial => 'advanced/affordability_info', :locals => { :annual_expenditure_as_percentage_of_household_users => @questionnaire.total_expected_annual_expenditure_for_actual_users_as_percentage_of_household_income }
 
     .report--outputs
 
@@ -244,6 +262,12 @@
       .report--outputs--item.report--outputs--item-50
         .report--outputs--title= t( 'report.percentage_of_household_income' )
         .report--outputs--item--value= report_percentage_value_for( @questionnaire.expected_annual_capital_maintenance_expenditure_for_actual_users_as_percentage_of_household_income )
+
+    .report--outputs
+
+      .report--outputs--item.report--outputs--item-50
+        .report--outputs--title= t( 'report.cost_of_capital' )
+        .report--outputs--item--value= report_currency_value_for( 0.00 )
 
     .report--outputs
 

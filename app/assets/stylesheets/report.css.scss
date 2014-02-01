@@ -463,5 +463,61 @@
   @include border-radius(3px);
 }
 
+.report--affordability_info {
+  margin-bottom:20px;
+  padding:20px;
+  background-color:rgba(255,255,255,0.5);
+}
 
+.report--affordability_info--traffic_light {
+  margin-bottom:10px;
+}
 
+.report--affordability_info--traffic_light--item::before {
+  content:"";
+  display:inline-block;
+  width:10px;
+  height:10px;
+  border:1px solid $faded_grey;
+
+  @include border-radius(100px);
+}
+
+.report--affordability_info--traffic_light--item-green::before {
+  border-color:$brand_green;
+  background-color:$brand_green;
+}
+
+.report--affordability_info--traffic_light--item-amber::before {
+  border-color:$warning_amber;
+  background-color:$warning_amber;
+}
+
+.report--affordability_info--traffic_light--item-red::before {
+  border-color:$warning_red;
+  background-color:$warning_red;
+}
+
+.report--affordability_info--verdict {
+  margin-bottom:12px;
+  font-size:18px;
+}
+
+.report--affordability_info--verdict-affordable {
+  color:$brand_green;
+}
+
+.report--affordability_info--verdict-risk {
+  color:$warning_amber;
+}
+
+.report--affordability_info--verdict-unaffordable {
+  color:$warning_red;
+}
+
+.report--affordability_info--detail {
+  width:50%;
+  margin:0 auto;
+  font-size:14px;
+  line-height:1.2;
+}

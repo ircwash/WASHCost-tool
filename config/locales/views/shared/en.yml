@@ -85,6 +85,13 @@ en:
     caption_total_cost: "for a population of %{population} people"
     population_caption: "%{population} people"
     full_review: "read full review"
+    unaffordable: Unaffordable
+    affordable: Affordable
+    risk_to_affordability: Risk to affordability
+    afforability_detail:
+      affordable: "%{percentage} of household expenditure is considered to be affordable."
+      risk: "%{percentage} of household expenditure is higher than guideline affordability standards in many countries around the world and may not be affordable to users."
+      unaffordable: "%{percentage} of household expenditure is significantly higher than guideline affordability standards in many countries around the world."
     context: "context"
     cost: "cost data"
     cost_subtitle: "10 year cost for %{population} people"
