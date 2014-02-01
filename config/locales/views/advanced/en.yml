@@ -10,7 +10,7 @@ en:
         placeholder: Select a currency
       year_of_expenditure:
         label: Year of expenditure
-        placeholder: 2011
+        placeholder: Select a year
       region:
         label: Region
         placeholder: Calabria

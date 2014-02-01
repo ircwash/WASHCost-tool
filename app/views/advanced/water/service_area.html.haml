@@ -25,9 +25,9 @@
           = f.select :currency, options_for_select( options_for_major_currencies, @questionnaire.currency ), { :include_blank=> ''  }, { :class => 'dual_column_form--field--dropdown chzn-select', 'data-placeholder' => t( 'advanced.shared.currency.placeholder' ) }
 
       .dual_column_form--column.dual_column_form--column-50
-        .dual_column_form--field.dual_column_form--field-text_input
+        .dual_column_form--field.dual_column_form--field-dropdown
           = f.label :year_of_expenditure, t( 'advanced.shared.year_of_expenditure.label' ), :class => 'dual_column--field--label'
-          = text_field_tag 'advanced_water_questionnaire[year_of_expenditure]', @questionnaire.year_of_expenditure != t( 'advanced.shared.dont_know' ) ? @questionnaire.year_of_expenditure : '', :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.shared.year_of_expenditure.placeholder' )
+          = f.select :year_of_expenditure, options_for_select( options_for_years, @questionnaire.year_of_expenditure ), { :include_blank=> ''  }, { :class => 'dual_column_form--field--dropdown chzn-select', 'data-placeholder' => t( 'advanced.shared.year_of_expenditure.placeholder' ) }
 
     .dual_column_form--row
 

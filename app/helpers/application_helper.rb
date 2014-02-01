@@ -273,6 +273,9 @@ module ApplicationHelper
     end.compact.flatten.map{ |c| [ c.upcase, c ] }
   end
 
+  def options_for_years
+    Array(1900..Date.today.year).reverse.map{ |y| [ y, y ] }
+  end
 
   def show_app_version
     if SHOW_APP_VERSION
