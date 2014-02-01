@@ -34,18 +34,14 @@ en:
       advanced:
         title: Advanced
         items:
+          service_area: Service Area
           context: Context
           system_management: System Management
           system_characteristics: System Characteristics
           technology: Technology
           cost: Cost
           service: Service
-    advanced:
-      context: "Context"
-      managing: "Managing"
-      technology: "Technology"
-      cost: "Cost"
-      service: "Service"
+          service_level: Service Level
   footer:
     final_report: " | Final Reports"
     complete: "Complete"

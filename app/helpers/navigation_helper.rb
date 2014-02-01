@@ -166,9 +166,9 @@ module NavigationHelper
             {
 #              context: I18n.t('nav.main.advanced.items.context'),
 #              system_management: I18n.t('nav.main.advanced.items.system_management'),
-              system_characteristics: I18n.t('nav.main.advanced.items.system_characteristics'),
+              service_area: I18n.t('nav.main.advanced.items.service_area'),
               technology: I18n.t('nav.main.advanced.items.technology'),
-              service: I18n.t('nav.main.advanced.items.service')
+              service_level: I18n.t('nav.main.advanced.items.service_level')
             }
           }
         }
@@ -185,9 +185,9 @@ module NavigationHelper
             {
 #              context: I18n.t('nav.main.advanced.items.context'),
 #              system_management: I18n.t('nav.main.advanced.items.system_management'),
-              system_characteristics: I18n.t('nav.main.advanced.items.system_characteristics'),
+              service_area: I18n.t('nav.main.advanced.items.service_area'),
               technology: I18n.t('nav.main.advanced.items.technology'),
-              service: I18n.t('nav.main.advanced.items.service')
+              service_level: I18n.t('nav.main.advanced.items.service_level')
             }
           }
         }
