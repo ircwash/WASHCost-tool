@@ -482,6 +482,103 @@ class AdvancedWaterQuestionnaire < Session
     end
   end
 
+  # service levels
+
+  def percentage_of_population_that_meets_accessibility_norms
+    if service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_accessibility_norms.count == service_level_name.count
+      national_accessibility_norms.each_with_index.map{ |nan,i| nan.to_i == 0 ? service_level_share[i].to_i : 0 }.inject(:+)
+    else
+      nil
+    end
+  end
+
+  def percentage_of_population_that_does_not_meet_accessibility_norms
+    if service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_accessibility_norms.count == service_level_name.count
+      national_accessibility_norms.each_with_index.map{ |nan,i| nan.to_i == 1 ? service_level_share[i].to_i : 0 }.inject(:+)
+    else
+      nil
+    end
+  end
+
+  def percentage_of_population_with_unknown_accessibility_norms
+    if service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_accessibility_norms.count == service_level_name.count
+      national_accessibility_norms.each_with_index.map{ |nan,i| nan.to_i == 2 ? service_level_share[i].to_i : 0 }.inject(:+)
+    else
+      nil
+    end
+  end
+
+  def percentage_of_population_that_meets_quantity_norms
+    if service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_quantity_norms.count == service_level_name.count
+      national_quantity_norms.each_with_index.map{ |nan,i| nan.to_i == 0 ? service_level_share[i].to_i : 0 }.inject(:+)
+    else
+      nil
+    end
+  end
+
+  def percentage_of_population_that_does_not_meet_quantity_norms
+    if service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_quantity_norms.count == service_level_name.count
+      national_quantity_norms.each_with_index.map{ |nan,i| nan.to_i == 1 ? service_level_share[i].to_i : 0 }.inject(:+)
+    else
+      nil
+    end
+  end
+
+  def percentage_of_population_with_unknown_quantity_norms
+    if service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_quantity_norms.count == service_level_name.count
+      national_quantity_norms.each_with_index.map{ |nan,i| nan.to_i == 2 ? service_level_share[i].to_i : 0 }.inject(:+)
+    else
+      nil
+    end
+  end
+
+  def percentage_of_population_that_meets_quality_norms
+    if service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_quality_norms.count == service_level_name.count
+      national_quality_norms.each_with_index.map{ |nan,i| nan.to_i == 0 ? service_level_share[i].to_i : 0 }.inject(:+)
+    else
+      nil
+    end
+  end
+
+  def percentage_of_population_that_does_not_meet_quality_norms
+    if service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_quality_norms.count == service_level_name.count
+      national_quality_norms.each_with_index.map{ |nan,i| nan.to_i == 1 ? service_level_share[i].to_i : 0 }.inject(:+)
+    else
+      nil
+    end
+  end
+
+  def percentage_of_population_with_unknown_quality_norms
+    if service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_quality_norms.count == service_level_name.count
+      national_quality_norms.each_with_index.map{ |nan,i| nan.to_i == 2 ? service_level_share[i].to_i : 0 }.inject(:+)
+    else
+      nil
+    end
+  end
+
+  def percentage_of_population_that_meets_reliability_norms
+    if service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_reliability_norms.count == service_level_name.count
+      national_reliability_norms.each_with_index.map{ |nan,i| nan.to_i == 0 ? service_level_share[i].to_i : 0 }.inject(:+)
+    else
+      nil
+    end
+  end
+
+  def percentage_of_population_that_does_not_meet_reliability_norms
+    if service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_reliability_norms.count == service_level_name.count
+      national_reliability_norms.each_with_index.map{ |nan,i| nan.to_i == 1 ? service_level_share[i].to_i : 0 }.inject(:+)
+    else
+      nil
+    end
+  end
+
+  def percentage_of_population_with_unknown_reliability_norms
+    if service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_reliability_norms.count == service_level_name.count
+      national_reliability_norms.each_with_index.map{ |nan,i| nan.to_i == 2 ? service_level_share[i].to_i : 0 }.inject(:+)
+    else
+      nil
+    end
+  end
 
   # BENCHMARK VALUES
 

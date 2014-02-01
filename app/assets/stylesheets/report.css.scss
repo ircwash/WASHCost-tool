@@ -521,3 +521,22 @@
   font-size:14px;
   line-height:1.2;
 }
+
+.report--service_level_summary {
+  width:100%;
+  text-align:left;
+}
+
+.report--service_level_summary--heading {
+  font-size:14px;
+  font-weight:bold;
+  text-transform:uppercase;
+}
+
+.report--service_level--cell {
+  width:20%;
+  padding:10px;
+  vertical-align:top;
+
+  @include box-sizing(border-box);
+}

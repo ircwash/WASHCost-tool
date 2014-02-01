@@ -48,7 +48,7 @@
 
     .report--subsection--title
       = t('report.inputted_expenditure');
-      %span.report--subsection--subtitle= t('report.per_person_per_year');
+      %span.report--subsection--subtitle= t('report.per_person_per_year')
 
     .report--outputs
 
@@ -79,7 +79,7 @@
 
     .report--subsection--title
       = t('report.expected_expenditure');
-      %span.report--subsection--subtitle= t('report.per_person_per_year');
+      %span.report--subsection--subtitle= t('report.per_person_per_year')
 
     .report--outputs
 
@@ -110,7 +110,7 @@
 
     .report--subsection--title
       = t('report.expenditure_surplus_shortfall');
-      %span.report--subsection--subtitle= t('report.per_person_per_year');
+      %span.report--subsection--subtitle= t('report.per_person_per_year')
 
     .report--outputs
 
@@ -140,7 +140,7 @@
         .report--outputs--item--value= report_delta_currency_value_for( @questionnaire.total_expenditure_delta_per_person_per_year )
 
   %section.report--section
-    .report--section--title= t('report.affordability_check');
+    .report--section--title= t('report.affordability_check')
 
     .report--outputs
 
@@ -279,9 +279,36 @@
         .report--outputs--title= t( 'report.percentage_of_household_income' )
         .report--outputs--item--value= report_percentage_value_for( @questionnaire.total_expected_annual_expenditure_for_actual_users_as_percentage_of_household_income )
 
+  %section.report--section
+    .report--section--title= t('report.service_level_summary')
 
-
-
+    %table.report--service_level_summary
+      %tr
+        %tr
+          %th.report--service_level--cell.report--service_level_summary--heading
+          %th.report--service_level--cell.report--service_level_summary--heading= t( 'report.service_levels.accessibility' )
+          %th.report--service_level--cell.report--service_level_summary--heading= t( 'report.service_levels.quantity' )
+          %th.report--service_level--cell.report--service_level_summary--heading= t( 'report.service_levels.quality' )
+          %th.report--service_level--cell.report--service_level_summary--heading= t( 'report.service_levels.reliability' )
+      %tbody
+        %tr
+          %th.report--service_level--cell.report--service_level_summary--heading= t( 'report.meets_national_norm' )
+          %td.report--service_level--cell= report_percentage_value_for( @questionnaire.percentage_of_population_that_meets_accessibility_norms )
+          %td.report--service_level--cell= report_percentage_value_for( @questionnaire.percentage_of_population_that_meets_quantity_norms )
+          %td.report--service_level--cell= report_percentage_value_for( @questionnaire.percentage_of_population_that_meets_quality_norms )
+          %td.report--service_level--cell= report_percentage_value_for( @questionnaire.percentage_of_population_that_meets_reliability_norms )
+        %tr
+          %th.report--service_level--cell.report--service_level_summary--heading= t( 'report.does_not_meet_national_norm' )
+          %td.report--service_level--cell= report_percentage_value_for( @questionnaire.percentage_of_population_that_does_not_meet_accessibility_norms )
+          %td.report--service_level--cell= report_percentage_value_for( @questionnaire.percentage_of_population_that_does_not_meet_quantity_norms )
+          %td.report--service_level--cell= report_percentage_value_for( @questionnaire.percentage_of_population_that_does_not_meet_quality_norms )
+          %td.report--service_level--cell= report_percentage_value_for( @questionnaire.percentage_of_population_that_does_not_meet_reliability_norms )
+        %tr
+          %th.report--service_level--cell.report--service_level_summary--heading= t( 'report.no_data' )
+          %td.report--service_level--cell= report_percentage_value_for( @questionnaire.percentage_of_population_with_unknown_accessibility_norms )
+          %td.report--service_level--cell= report_percentage_value_for( @questionnaire.percentage_of_population_with_unknown_quantity_norms )
+          %td.report--service_level--cell= report_percentage_value_for( @questionnaire.percentage_of_population_with_unknown_quality_norms )
+          %td.report--service_level--cell= report_percentage_value_for( @questionnaire.percentage_of_population_with_unknown_reliability_norms )
 
 
 
