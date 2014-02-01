@@ -120,6 +120,7 @@ class AdvancedWaterQuestionnaire < Session
 
   def complete
     attributes_with_values = 0
+    total_attributes = self.attributes.count
 
     attributes.each do |attribute|
       value = send( "#{attribute}" )
@@ -133,11 +134,11 @@ class AdvancedWaterQuestionnaire < Session
       end
     end
 
-    if water_source.count == 0 || !water_source.include?( '1' )
-      attributes_with_values = attributes_with_values + 1
+    if water_source == nil || !water_source.include?( '1' )
+      total_attributes = total_attributes - 1
     end
 
-    100 * attributes_with_values / self.attributes.count
+    100 * attributes_with_values / total_attributes
   end
 
 

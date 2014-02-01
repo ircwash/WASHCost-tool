@@ -77,6 +77,8 @@ en:
     cross_to_water: "Cross to water"
     summmary: "Summary"
     total: "Total"
+    surplus: Surplus
+    shortfall: Shortfall
     no_data: No data
     total_cost: "total cost"
     level_of_service: "level of service"
