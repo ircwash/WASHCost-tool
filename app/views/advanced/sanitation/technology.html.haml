@@ -211,19 +211,5 @@
         .dual_column_form--field.dual_column_form--field-text_input
           = text_field_tag 'advanced_sanitation_questionnaire[loan_payback_period][]', @questionnaire.loan_payback_period[2], :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.questionnaire.loan_payback_period.placeholder' )
 
-    .dual_column--heading= t( 'advanced.water.questionnaire.cost.support_costs' )
-
-    .dual_column_form--row
-
-      .dual_column_form--column.dual_column_form--column-50
-        .dual_column_form--field.dual_column_form--field-text_input
-          = f.label :direct_support_cost, t( 'advanced.water.questionnaire.direct_support_cost.label' ), :class => 'dual_column--field--label'
-          = f.text_field :direct_support_cost, :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.questionnaire.direct_support_cost.placeholder' )
-
-      .dual_column_form--column.dual_column_form--column-50
-        .dual_column_form--field.dual_column_form--field-text_input
-          = f.label :indirect_support_cost, t( 'advanced.water.questionnaire.indirect_support_cost.label' ), :class => 'dual_column--field--label'
-          = f.text_field :indirect_support_cost, :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.questionnaire.indirect_support_cost.placeholder' )
-
     .question--buttons
       = submit_tag((t 'buttons.next'), class: 'button')
