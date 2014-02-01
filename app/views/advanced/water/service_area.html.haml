@@ -3,7 +3,7 @@
 
 .questionnaire
 
-  = form_for @questionnaire, :url => advanced_water_update_url( I18n.locale, 'system_management' ), :html => { :class => 'dual_column_form', 'data-dynamic_form' => advanced_water_dynamic_update_url( I18n.locale ) } do |f|
+  = form_for @questionnaire, :url => advanced_water_update_url( I18n.locale, 'technology' ), :html => { :class => 'dual_column_form', 'data-dynamic_form' => advanced_water_dynamic_update_url( I18n.locale ) } do |f|
 
     .dual_column_form--row
 
@@ -22,7 +22,7 @@
       .dual_column_form--column.dual_column_form--column-50
         .dual_column_form--field.dual_column_form--field-dropdown
           = f.label :currency, t( 'advanced.shared.currency.label' ), :class => 'dual_column--field--label'
-          = f.select :currency, options_for_select( options_for_currencies, @questionnaire.currency ), { :include_blank=> ''  }, { :class => 'dual_column_form--field--dropdown chzn-select', 'data-placeholder' => t( 'advanced.shared.currency.placeholder' ) }
+          = f.select :currency, options_for_select( options_for_major_currencies, @questionnaire.currency ), { :include_blank=> ''  }, { :class => 'dual_column_form--field--dropdown chzn-select', 'data-placeholder' => t( 'advanced.shared.currency.placeholder' ) }
 
       .dual_column_form--column.dual_column_form--column-50
         .dual_column_form--field.dual_column_form--field-text_input

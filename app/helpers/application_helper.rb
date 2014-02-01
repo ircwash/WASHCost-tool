@@ -256,6 +256,24 @@ module ApplicationHelper
     ]
   end
 
+  def options_for_currencies
+    Money::Currency.table.keys.map{ |c| [ c.upcase, c ] }
+  end
+
+  def options_for_major_currencies
+    Money::Currency.table.inject([]) do |array, (id, attributes)|
+      priority = attributes[:priority]
+
+      if priority
+        array[priority] ||= []
+        array[priority] << id
+      end
+
+      array
+    end.compact.flatten.map{ |c| [ c.upcase, c ] }
+  end
+
+
   def show_app_version
     if SHOW_APP_VERSION
       %Q{<div class="application_version">Current version is: #{APP_VERSION}</div>}.html_safe

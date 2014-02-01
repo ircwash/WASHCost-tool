@@ -71,13 +71,12 @@ class Session
     attributes.each do |a|
       data[ a ] = send( a )
     end
-puts "MODEL SAVING: #{@identifier}"
+
     @session[ @identifier ] = data
   end
 
 
   def unarchive
-puts "MODEL LOADING: #{@identifier}"
     @session[ @identifier ].each do |name, value|
       send( "#{name}=", value ) unless !self.respond_to? name
     end
