@@ -17,7 +17,7 @@
       .dual_column_form--column.dual_column_form--column-50
         .dual_column_form--field.dual_column_form--field-dropdown
           = f.label :country, t( 'advanced.shared.country.label' ), :class => 'dual_column--field--label'
-          = f.select :country, options_for_select( get_countries, @questionnaire.country ), { :include_blank=> ''  }, { :class => 'dual_column_form--field--dropdown chzn-select', 'data-placeholder' => t( 'advanced.shared.country.placeholder' ) }
+          = f.select :country, options_for_select( options_for_countries, @questionnaire.country ), { :include_blank=> ''  }, { :class => 'dual_column_form--field--dropdown chzn-select', 'data-placeholder' => t( 'advanced.shared.country.placeholder' ) }
 
     .dual_column_form--row
 

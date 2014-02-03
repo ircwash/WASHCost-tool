@@ -17,12 +17,6 @@ module AdvancedCalculatorsHelper
     ]
   end
 
-  def options_for_currencies
-    [
-      [ 'US Dollars', 'USD' ]
-    ]
-  end
-
   def options_for_area_type
     [
       [ 'Rural', 0 ],
