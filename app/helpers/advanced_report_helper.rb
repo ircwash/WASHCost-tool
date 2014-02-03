@@ -18,11 +18,11 @@ module AdvancedReportHelper
   end
 
   def report_currency_value_for( value )
-    value != nil ? "#{@questionnaire.currency.upcase} #{number_with_precision( value.to_f, :precision => 2 )}" : t( 'report.no_data' )
+    value != nil ? "#{( @questionnaire.currency || '' ).upcase} #{number_with_precision( value.to_f, :precision => 2 )}" : t( 'report.no_data' )
   end
 
   def report_delta_currency_value_for( value )
-    value != nil ? "#{@questionnaire.currency.upcase} #{number_with_precision( value.to_f.abs, :precision => 2 )} #{value.to_f > 0 ? t( 'report.surplus' ) : t( 'report.shortfall' )}" : t( 'report.no_data' )
+    value != nil ? "#{( @questionnaire.currency || '' ).upcase} #{number_with_precision( value.to_f.abs, :precision => 2 )} #{value.to_f > 0 ? t( 'report.surplus' ) : t( 'report.shortfall' )}" : t( 'report.no_data' )
   end
 
   def report_percentage_value_for( value )
