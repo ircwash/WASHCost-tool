@@ -15,7 +15,9 @@ gem 'quiet_assets'
 gem 'thin'
 gem 'active_attr'
 gem 'money'
+gem 'currencies'
 gem 'countries'
+gem 'httparty'
 
 group :development, :test do
   gem 'ruby-prof'
