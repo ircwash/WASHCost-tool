@@ -1,7 +1,7 @@
 /*jshint browser:true, undef:true, latedef:true, forin:true, eqeqeq:true, noarg:true, onevar:true, globalstrict:true, lastsemic:true, smarttabs:true, trailing:true, newcap:false */
 /*global define:true, require:true, d3:true */
 
-window.WashCostLineChart = (function()
+window.WashCostAreaChart = (function()
 {
 	'use strict';
 
@@ -18,9 +18,9 @@ window.WashCostLineChart = (function()
 	};
 
 	// define chart
-	var WashCostLineChart = function ( options ) { };
+	var WashCostAreaChart = function ( options ) { };
 
-	WashCostLineChart.prototype = {
+	WashCostAreaChart.prototype = {
 
 		init: function( options )
 		{
@@ -64,20 +64,20 @@ window.WashCostLineChart = (function()
 			this.textSize                   = options.textSize || '14px';
 			this.textWeight                 = options.textWeight || 600;
 			this.textFamily                 = options.textFamily || 'Helvetica, Arial';
-			this.xAxisStyle                 = Helper.extend( { hide:false, tickTextSize:'10px', titleTextSize:'13px', textWeight:300, textColour:'white', titleColour:'white', tickColour:'white', tickSize:6, tickPadding:8, textFamily:'Helvetica', lineColour:'black', renderSymbol:false }, options.xAxisStyle );
-			this.yAxisStyle                 = Helper.extend( { hide:false, tickTextSize:'10px', titleTextSize:'13px', textWeight:300, textColour:'white', titleColour:'white', tickColour:'white', tickSize:6, tickPadding:8, textFamily:'Helvetica', lineColour:'black', renderSymbol:false }, options.yAxisStyle );
-			this.zAxisStyle                 = Helper.extend( { hide:false, tickTextSize:'10px', titleTextSize:'13px', textWeight:300, textColour:'white', titleColour:'white', tickColour:'white', tickSize:6, tickPadding:8, textFamily:'Helvetica', lineColour:'black', renderSymbol:false }, options.zAxisStyle );
+			this.xAxisStyle                 = Helper.extend( { hide:false, tickTextSize:'10px', titleTextSize:'13px', textWeight:300, textColour:'white', titleColour:'white', tickColour:'white', tickSize:6, tickPadding:8, textFamily:'Helvetica', lineColour:'black', renderSymbol:false, renderGridLines:false }, options.xAxisStyle );
+			this.yAxisStyle                 = Helper.extend( { hide:false, tickTextSize:'10px', titleTextSize:'13px', textWeight:300, textColour:'white', titleColour:'white', tickColour:'white', tickSize:6, tickPadding:8, textFamily:'Helvetica', lineColour:'black', renderSymbol:false, renderGridLines:false }, options.yAxisStyle );
+			this.zAxisStyle                 = Helper.extend( { hide:false, tickTextSize:'10px', titleTextSize:'13px', textWeight:300, textColour:'white', titleColour:'white', tickColour:'white', tickSize:6, tickPadding:8, textFamily:'Helvetica', lineColour:'black', renderSymbol:false, renderGridLines:false }, options.zAxisStyle );
 			this.xAxisTitle                 = options.xAxisTitle || '';
 			this.yAxisTitle                 = options.yAxisTitle || '';
 			this.zAxisTitle                 = options.zAxisTitle || '';
 			this.xAxisUnit                  = options.xAxisUnit || '';
 			this.yAxisUnit                  = options.yAxisUnit || '';
 			this.zAxisUnit                  = options.zAxisUnit || '';
+			this.tickFormatters             = Helper.extend( { x:null, y:null, z:null }, options.tickFormatters );
 			this.timeAxisTickInterval       = this.timeIntervalForIntervalName( options.timeAxisTickInterval || 'months' );
 			this.hasBrush                   = options.hasBrush || false;
 			this.brushOptions               = Helper.extend(  { parent:null, dimensions:{ width:100, height:25 }, backgroundColour:'transparent', focusBackgroundColour:'transparent', shadeOpacity:0.0, handles:{ width:20, image:null } }, options.brushOptions );
 
-			this.lineStrokeWidth            = options.lineStrokeWidth || 5.0;
 
 			// create formatters from strings
 			this.percentFormatter = d3.format( this.percentFormat );
@@ -115,7 +115,7 @@ window.WashCostLineChart = (function()
 					.orient( "bottom" )
 					.tickPadding( this.xAxisStyle.tickPadding )
 					.tickSize( this.xAxisStyle.tickSize, this.xAxisStyle.tickSize / 2, this.xAxisStyle.tickSize )
-					.tickFormat( this.tickFormatForAxisType( this.axisTypes.x ) );
+					.ticks( this.xAxisStyle.tickCount );
 
 				if ( this.axisTypes.x === 'time' ) { this.xAxis.ticks( this.timeAxisTickInterval ); }
 				if ( !this.dataAccessors.x ) { this.dataAccessors.x = this.defaultAccessorForAxisType( this.axisTypes.x ); }
@@ -129,7 +129,7 @@ window.WashCostLineChart = (function()
 					.ticks( Math.round( this.height / 80 ) )
 					.tickPadding( this.yAxisStyle.tickPadding )
 					.tickSize( this.yAxisStyle.tickSize, this.yAxisStyle.tickSize / 2, this.yAxisStyle.tickSize )
-					.tickFormat( this.tickFormatForAxisType( this.axisTypes.y ) );
+					.ticks( this.yAxisStyle.tickCount );
 
 				if ( this.axisTypes.y === 'time' ) { this.yAxis.ticks( this.timeAxisTickInterval ); }
 				if ( !this.dataAccessors.y ) { this.dataAccessors.y = this.defaultAccessorForAxisType( this.axisTypes.y ); }
@@ -143,7 +143,7 @@ window.WashCostLineChart = (function()
 					.ticks( Math.round( this.height / 80 ) )
 					.tickPadding( this.zAxisStyle.tickPadding )
 					.tickSize( this.zAxisStyle.tickSize, this.zAxisStyle.tickSize / 2, this.zAxisStyle.tickSize )
-					.tickFormat( this.tickFormatForAxisType( this.axisTypes.z ) );
+					.ticks( this.zAxisStyle.tickCount );
 
 					if ( this.axisTypes.z === 'time' ) { this.zAxis.ticks( this.timeAxisTickInterval ); }
 					if ( !this.dataAccessors.z ) { this.dataAccessors.z = this.defaultAccessorForAxisType( this.axisTypes.z ); }
@@ -210,59 +210,7 @@ window.WashCostLineChart = (function()
 					.attr( "width", this.width )
 					.attr( "height", this.height )
 					.attr( 'opacity', 0 );
-/*
-			// append drop shadow filter
-			this.filterDefs = this.canvas.append( 'defs' );
 
-			this.dropShadowFilter = this.filterDefs.append( 'filter' )
-				.attr( 'id', 'drop-shadow-filter' )
-				.attr( 'x', 0 )
-				.attr( 'y', 0 )
-				.attr( 'width', '200%' )
-				.attr( 'height', '200%' );
-
-			this.dropShadowFilter.append( 'feOffset' )
-				.attr( 'result', 'offOut' )
-				.attr( 'in', 'SourceGraphic' );
-
-			this.dropShadowFilter.append( 'feColorMatrix' )
-				.attr( 'result', 'matrixOut' )
-				.attr( 'in', 'offOut' )
-				.attr( 'type', 'matrix' )
-				.attr( 'values', '0.0 0 0 0 0 0 0.0 0 0 0 0 0 0.0 0 0 0 0 0 1 0' );
-
-			this.dropShadowFilter.append( 'feGaussianBlur' )
-				.attr( 'result', 'blurOut' )
-				.attr( 'in', 'matrixOut' )
-				.attr( 'stdDeviation', 3 );
-
-			this.dropShadowFilter.append( 'feBlend' )
-				.attr( 'mode', 'normal' )
-				.attr( 'in', 'SourceGraphic' )
-				.attr( 'in2', 'blurOut' );
-
-			this.backgroundFillFilter = this.filterDefs.append( 'filter' )
-				.attr( 'id', 'background-fill-filter' )
-				.attr( 'x', 0 )
-				.attr( 'y', 0 )
-				.attr( 'dx', -10 )
-				.attr( 'dy', -10 )
-				.attr( 'width', 1.0 )
-				.attr( 'height', 1.0 );
-
-			this.backgroundFillFilter.append( 'feFlood' )
-				.attr( 'flood-color', 'black' )
-				.attr( 'result', 'floodOut' )
-				.attr( 'flood-opacity', 0.3 );
-
-			this.backgroundFillFilter.append( 'feGaussianBlur' )
-				.attr( 'result', 'blurOut' )
-				.attr( 'in', 'floodOut' )
-				.attr( 'stdDeviation', 3 );
-
-			this.backgroundFillFilter.append( 'feComposite' )
-				.attr( 'in', 'SourceGraphic' );
-*/
 			// create tooltip
 			if ( this.renderToolTips ) this.renderToolTip();
 
@@ -284,17 +232,6 @@ window.WashCostLineChart = (function()
 						var mousePos = d3.mouse( this );
 						self.scrubbed.call( self, self.parentPosToChartPos( mousePos ) );
 					} );
-				/*
-				//create the indicator line
-				this.scrubIndicator = {};
-				this.scrubIndicator.scrubLine = d3.select( this.parent ).append( 'div' )
-					.attr( 'class', 'scrubIndicator' )
-					.style( 'position', 'absolute' )
-					.style( 'border-right', 'dashed #a5a5a5 1px' )
-					.style( 'height', this.height + 'px' )
-					.style( 'top', this.padding.top + 30 + 'px' )
-					.style( "opacity", 0 );*/
-
 			}
 
 			// set up auto resize
@@ -310,67 +247,66 @@ window.WashCostLineChart = (function()
 		},
 
 
-		parseData: function( data )
-		{
-			var years     = 10,
-			    finalData = [],
-			    i;
-
-			// always start off at 0
-			finalData.push( { x:1, y:0 } );
-
-			// put in the setup cost part way through the first year
-			finalData.push( { x:1.3, y:data.capital * data.population } );
-
-			// bring back down to recurrent cost before the start of the second year
-			finalData.push( { x:1.7, y:data.recurrent * data.population } );
-
-			// maintain recurrent cost for rest of time frame
-			for ( i = 2; i <= years; i++ )
-			{
-				finalData.push( { x:i, y:data.recurrent * data.population } );
-			}
-
-			return [ { seriesName:'Cost', data:finalData } ];
-		},
-
-
-		render: function ( data )
+		render: function( data )
 		{
 			this.data                       = data[0] instanceof Array ? data : [ data ];  // cache data
 
 			var self                        = this,
 			    xScale                      = this.xScale,
+			    xScale2                     = this.xScale2,
 			    yScale                      = this.yScale,
+			    yScale2                     = this.yScale2,
+			    zScale                      = this.zScale,
 			    height                      = this.height,
 			    width                       = this.width,
 			    xAxis                       = this.xAxis,
 			    yAxis                       = this.yAxis,
+			    zAxis                       = this.zAxis,
 			    colourPalette               = this.colourPalette,
+			    colourPalette1              = this.colourPalette1,
 			    dataAccessors               = this.dataAccessors,
-			    commaFormatter,
-			    annotationData,
+			    gridLineStyle               = this.gridLineStyle,
+			    primaryAnimationDuration    = this.primaryAnimationDuration,
+			    secondaryAnimationDuration  = this.secondaryAnimationDuration,
+			    dataPointStyle              = this.dataPointStyle,
+			    seriesLength,
+			    lineConstructor,
+			    brushLineConstructor,
+			    middleLineConstructor,
+			    zeroLineConstructor,
+			    lines0,
+			    lines1,
+			    points0,
+			    points1,
+			    series0,
+			    series1,
+			    brushSeries,
+			    brushLines,
+			    tooltip,
+			    selectedDataPointStyle,
+			    nestedData,
+			    areaConstructor,
+			    areaFills0,
+			    areaFills1,
 			    i;
 
-			//parse the data (currently might be strings) and rewrite as real dates or values
-			this.data = this.parseData( data );
+
+			//keep tab of max number of data points for animations...
+			seriesLength = d3.max( this.data, function( d ) { return d3.max( d, function( s ) { return s.data.length; } ); } );
 
 			//set up scales
 			xScale.domain(
 			[
-				d3.min( this.data, function( s ) { return d3.min( s.data, dataAccessors.x ); } ),
-				d3.max( this.data, function( s ) { return d3.max( s.data, dataAccessors.x ); } )
+				d3.min( this.data, function( d ) { return d3.min( d, function( s ) { return d3.min( s.data, dataAccessors.x ); } ) } ),
+				d3.max( this.data, function( d ) { return d3.max( d, function( s ) { return d3.max( s.data, dataAccessors.x ); } ) } )
 			] )
-			.range( [ 0, width ] )
+			.rangeRound( [ 0, width ] )
 			.nice();
 
-			yScale.domain(
-			[
-				d3.min( this.data, function( s ) { return d3.min( s.data, dataAccessors.y ); } ),
-				d3.max( this.data, function( s ) { return d3.max( s.data, dataAccessors.y ); } )
-			] )
-			.range( [ height, 0] )
-			.nice();
+			yScale.domain( [ d3.min( this.data[ 0 ], function( s ) { return d3.min( s.data, dataAccessors.y ); } ),
+					         d3.max( this.data[ 0 ], function( s ) { return d3.max( s.data, dataAccessors.y ); } ) ] )
+				.rangeRound( [ height, 0] )
+				.nice();
 
 			// index all the datapoints for later reference during scrubbing
 			this.dataByXValue = {};
@@ -379,102 +315,175 @@ window.WashCostLineChart = (function()
 			// pad domains
 			this.applyAxisPadding();
 
-			// draw vertical grid lines
-			this.renderGridLines( 'x' );
+			//set up axis if we're drawing them
+			if ( !this.hideAxes )
+			{
+				// Draw X-axis grid lines
+				if ( !this.hideGridLines && this.xAxisStyle.renderGridLines ) this.renderGridLines( 'x' );
+
+				// Draw Y-axis grid lines
+				if ( !this.hideGridLines && this.yAxisStyle.renderGridLines ) this.renderGridLines( 'y' );
+
+				// draw a zero-line along the x plane
+				if ( !this.hideZeroLines ) this.renderZeroLine( 'y' );
+
+				// render axis last so that they are one top
+				this.renderAxis( 'y' );
+				if ( this.isTripleAxis ) this.renderAxis( 'z' );
+			}
+
+			// set up brush scaling
+			if ( this.hasBrush )
+			{
+				this.brush.xScale.domain( xScale.domain() );
+				this.brush.yScale.domain( yScale.domain() );
+			}
+
+			//build clipping rectangle for line entrance animation
+			this.lineClipPath = this.canvas.append( "clipPath" )
+				.attr( "id", this.id + '-line-clip-path' )
+				.append( "rect" )
+					.attr( "x", 0 )
+					.attr( "y", 0 )
+					.attr( "width", 0 )
+					.attr( "height", this.height )
+					.attr( 'opacity', 0 )
+					.transition()
+					.duration( this.secondaryAnimationDuration )
+					.delay( primaryAnimationDuration + secondaryAnimationDuration )
+					.attr('width', this.width )
+					.each( 'end', function()  // on animation end, set clip path to the chart area bounds
+					{
+						d3.selectAll( 'g.series0' ).attr( "clip-path", 'url(#' + this.id + '-point-clip-path)' );
+						d3.selectAll( 'g.series1' ).attr( "clip-path", 'url(#' + this.id + '-point-clip-path)' );
+
+						d3.selectAll( 'g.series0 path' ).attr( "clip-path", 'url(#' + this.id + '-chart-area)' );
+						d3.selectAll( 'g.series1 path' ).attr( "clip-path", 'url(#' + this.id + '-chart-area)' );
+
+						// remove clip path at the end of the animation
+						d3.select( '#' + this.id + 'line-clip-path').remove();
+					} );
+
+			// build another clip path for the points
+			// append clipping path
+			this.pointClipPath = this.canvas.append( "clipPath" )
+				.attr( "id", this.id + '-point-clip-path' )
+				.append( "rect" )
+					.attr( "x", 0 - this.dataPointStyle.radius - this.dataPointStyle.strokeWidth )
+					.attr( "y", 0 - this.dataPointStyle.radius - this.dataPointStyle.strokeWidth )
+					.attr( "width", this.width +  ( 2 * ( this.dataPointStyle.radius + this.dataPointStyle.strokeWidth ) ) )
+					.attr( "height", this.height +  ( 2 * ( this.dataPointStyle.radius + this.dataPointStyle.strokeWidth ) ) )
+					.attr( 'opacity', 0 );
 
 			// build the line elements
 
 			// define line constructor function
-			this.lineConstructor = d3.svg.line()
-				.x( function( d ) { return xScale( d.x ); } )
-				.y( function( d ) { return yScale( d.y ); } )
+			lineConstructor = d3.svg.line()
+				.x( function( d ) { return xScale( self.dataAccessors.x( d ) ); } )
+				.y( function( d ) { return yScale( self.dataAccessors.y( d ) ); } )
 				.interpolate( this.interpolation );
 
-			this.middleLineConstructor = d3.svg.line()
-				.x( function( d ) { return xScale( d.x ); } )
-				.y( function( d ) { return yScale( ( self.yScale.domain()[ 1 ] - self.yScale.domain()[ 0 ] ) / 2 );} )
+			this.lineConstructor = lineConstructor;
+
+			zeroLineConstructor = d3.svg.line()
+				.x( function( d ) { return xScale( self.dataAccessors.x( d ) ); } )
+				.y( function( d ) { return yScale( 0 ); } )
 				.interpolate( this.interpolation );
+
+			middleLineConstructor = d3.svg.line()
+				.x( function( d ) { return xScale( self.dataAccessors.x( d ) ); } )
+				.y( function( d ) { return yScale( 0 ); } )
+				.interpolate( this.interpolation );
+
+			areaConstructor = d3.svg.area()
+					.interpolate( this.interpolation )
+					.x( function( d ) { return xScale( self.dataAccessors.x( d ) ); } )
+					.y0( height )
+					.y1( function( d ) { return yScale( self.dataAccessors.y( d ) ); } );
+
+			this.areaConstructor = areaConstructor;
+
+			/*
+				start by constructing the regular y axis series,
+				if we have a z/y2 axis, we'll swap the constructor y accessors round and render those
+			*/
 
 			// construct a group which will contain the paths, fills etc for all y1-axis elements
-			this.series = this.canvas.append( "g" )
-					.attr( "class", "series" );
+			series0 = this.canvas.append( "g" )
+					.attr( "class", "series0" );
+			this.series0 = series0;
+
+
+			// construct the area fill which will go under the lines
+			areaFills0 = series0.selectAll( 'path.dataFill' )
+			.data( this.data[ 0 ] )
+			.enter().append( 'path' )
+				.attr( "class", "dataFill" )
+				.attr( "clip-path", "url(#line-clip-path)" )
+				.attr( "d", function( d ) { return areaConstructor( d.data ); } )
+				.attr( 'pointer-events', 'none' )
+				.style( 'stroke', function( d, i ) { var colour = d.colour || colourPalette( i ); return colour; } )
+				.style( 'fill', function( d, i ) { var colour = d.colour || colourPalette( i ); return colour; } )
+				.style( 'opacity', 0.3 );
 
 
 			// construct the lines
-			this.lines = this.series.selectAll( 'path.dataLine' )
-			.data( this.data, this.seriesNameAccessor )
+			lines0 = series0.selectAll( 'path.dataLine' )
+			.data( this.data[ 0 ], this.seriesNameAccessor )
 			.enter().append( 'path' )
 				.attr( "class", "dataLine" )
 				.attr( "clip-path", this.ie8Detected ? 'none' : 'url(#' + this.id + '-line-clip-path)' )
-				.attr( "d", function( d ) { return self.middleLineConstructor( d.data ); } )
-				.attr( 'stroke-dasharray', function()
-				{
-					var length = d3.select( this ).node().getTotalLength();
-					return [ length, length ];
-				} )
-				.attr( 'stroke-dashoffset', function()
-				{
-					var length = d3.select( this ).node().getTotalLength();
-					return length;
-				} )
+				.attr( "d", function( d ) { return lineConstructor( d.data ); } )
 				.style( 'stroke-width', this.lineStrokeWidth )
 				.style( 'stroke', function( d, i ) { var colour = d.colour || colourPalette( i ); return colour; } )
-				.style( 'fill', 'none' )
-				.style( 'opacity', 0 );
+				.style( 'stroke-dasharray', self.lineStrokeDash )
+				.style( 'fill', 'none' );
 
+			// build the point groups
+			points0 = series0.selectAll( "g.pointGroup" )
+			.data( this.data[ 0 ], this.seriesNameAccessor )
+			.enter().append( 'g' )
+				.attr( "class", "pointGroup" )
+				.style( 'stroke', function( d, i ) { var colour = d.colour || colourPalette( i ); return colour; } );
+
+			// build the points for each point group
+			points0.selectAll( 'circle.dataPoint' )
+				.data( function( d )
+				{
+					var sCount = d.data.length;  // write the length of the series to each datapoint for reference in animation
+					d.data.forEach( function( dp ) { dp.sCount = sCount; } );
+					return d.data;
+				} )
+				.enter().append( "circle" )
+					.attr( "class", "dataPoint" )
+					.attr( "clip-path", 'url(#' + this.id + '-point-clip-path)' )
+					.attr( "r", this.dataPointStyle.radius )
+					.attr( "cx", function( d ) { return xScale( self.dataAccessors.x( d ) ); } )
+					.attr( "cy", this.ie8Detected ? function( d ) { return yScale( self.dataAccessors.y( d ) ); } : yScale( 0 ) )
+					.style( 'stroke-width', this.dataPointStyle.strokeWidth )
+					.style( 'fill', this.dataPointStyle.fillColour );
+
+			// animate into position
+			if ( !this.ie8Detected )
+			{
+				points0.selectAll( 'circle.dataPoint' ).transition()
+					.duration( function( d ) { return primaryAnimationDuration; } )
+					.delay( function( d, i ) { return i * ( secondaryAnimationDuration / d.sCount ); } )
+					.attr( "cy", function( d ) { return yScale( self.dataAccessors.y( d )); } );
+			}
+
+			// ie8 does not inherit group styling, so go and manually set point stroke colour
+			points0.each( function( series, groupIndex )
+			{
+				d3.select( this ).selectAll( 'circle' )
+					.style( 'stroke', function( d ) { var colour = series.colour || colourPalette( groupIndex ); return colour; } );
+			} );
 
 
 			// render our x axis last so it sits on top
 			if ( !this.hideAxes ) this.renderAxis( 'x' );
 
-
-			// bind the xScale to the zoom
 			if ( this.shouldZoom ) this.zoom.x( xScale );
-
-
-			// draw annotations
-			this.annotationGroup = this.canvas.append( 'g' )
-				.attr( 'class', 'annotations' );
-
-			annotationData = [ this.data[0].data[ 1 ], this.data[0].data[ 6 ] ];
-
-			this.annotations = this.annotationGroup.selectAll( 'annotation' )
-				.data( annotationData )
-				.enter().append( 'g' )
-					.attr( 'class', 'annotation' )
-					.attr( 'transform', function( d ) { return 'translate( ' + xScale( d.x ) + ',-100)' } );
-
-			this.annotations.append( 'rect' )
-				.style( 'fill', '#aacb4d' )
-				.attr( 'width', 100 )
-				.attr( 'height', 30 )
-				.attr( 'x', -100 / 2 )
-				.attr( 'y', -30 / 2 )
-				.attr( 'stroke', 'white' )
-				.attr( 'stroke-width', 3 )
-				.attr( 'rx', 3 )
-				.attr( 'ry', 3 );
-
-			commaFormatter = d3.format( '0,000' );
-
-			this.annotations.append( 'text' )
-				.text( function( d ) { return commaFormatter( d.y ); } )
-				.style( 'text-anchor', 'middle' )
-				.style( 'fill', 'white' )
-				.attr( 'alignment-baseline', 'middle' );
-
-
-			// animate in elements
-			this.canvas.selectAll( 'path.dataLine' ).transition().duration( 800 )
-				.attr( 'stroke-dashoffset', 0 )
-				.style( 'opacity', 1 )
-				.transition().duration( 300 )
-				.attr( 'stroke-dasharray', [] )
-				.attr( 'd', function( d ) { return self.lineConstructor( d.data ); } );
-
-			this.annotations.transition()
-				.duration( 300 ).delay( function( d, i ) { return ( i * 200 ) + 800; } )
-				.attr( 'transform', function( d ) { return 'translate( ' + xScale( d.x ) + ',' + yScale( d.y ) + ')' } );
 		},
 
 
@@ -525,7 +534,7 @@ window.WashCostLineChart = (function()
 
 			if ( this.xAxis && axis === 'x' )
 			{
-				if ( this.axisTypes.x === 'linear' ) this.xAxis.tickFormat( this.numberFormatterForValues( this.xScale.ticks() ) );
+				if ( this.axisTypes.x === 'linear' ) this.xAxis.tickFormat( this.tickFormatters.x || this.numberFormatterForValues( this.xScale.ticks() ) );
 
 				if ( this.axisShouldHideZeroTicks( axis ) ) this.xAxis.tickValues( this.removeZeroTicks( this.xScale.ticks() ) );
 
@@ -561,7 +570,7 @@ window.WashCostLineChart = (function()
 
 			if ( this.yAxis && axis === 'y' )
 			{
-				if ( this.axisTypes.y === 'linear' ) this.yAxis.tickFormat( this.numberFormatterForValues( this.yScale.ticks() ) );
+				if ( this.axisTypes.y === 'linear' ) this.yAxis.tickFormat( this.tickFormatters.y || this.numberFormatterForValues( this.yScale.ticks() ) );
 
 				if ( this.axisShouldHideZeroTicks( axis ) ) this.yAxis.tickValues( this.removeZeroTicks( this.yScale.ticks() ) );
 
@@ -627,7 +636,7 @@ window.WashCostLineChart = (function()
 
 			if ( this.zAxis && axis === 'z' )
 			{
-				if ( this.axisTypes.z === 'linear' ) this.zAxis.tickFormat( this.numberFormatterForValues( this.zScale.ticks() ) );
+				if ( this.axisTypes.z === 'linear' ) this.zAxis.tickFormat( this.tickFormatters.z || this.numberFormatterForValues( this.zScale.ticks() ) );
 
 				if ( this.axisShouldHideZeroTicks( axis ) ) this.zAxis.tickValues( this.removeZeroTicks( this.zScale.ticks() ) );
 
@@ -863,7 +872,8 @@ window.WashCostLineChart = (function()
 						.attr( "y1", 0 )
 						.attr( "y2", this.height )
 						.attr( 'stroke-dasharray', this.gridLineStyle.dashArray )
-						.style( 'stroke', this.gridLineStyle.colour );
+						.style( 'stroke', this.gridLineStyle.colour )
+						.style( 'shape-rendering', 'crispedges' );
 			}
 			else if ( axis === 'y' )
 			{
@@ -877,7 +887,8 @@ window.WashCostLineChart = (function()
 						.attr( "y1", this.yScale )
 						.attr( "y2", this.yScale )
 						.attr( 'stroke-dasharray', this.gridLineStyle.dashArray )
-						.style( 'stroke', this.gridLineStyle.colour );
+						.style( 'stroke', this.gridLineStyle.colour )
+						.style( 'shape-rendering', 'crispedges' );
 			}
 			else
 			{
@@ -891,7 +902,8 @@ window.WashCostLineChart = (function()
 						.attr( "y1", this.zScale )
 						.attr( "y2", this.zScale )
 						.attr( 'stroke-dasharray', this.gridLineStyle.dashArray )
-						.style( 'stroke', this.gridLineStyle.colour );
+						.style( 'stroke', this.gridLineStyle.colour )
+						.style( 'shape-rendering', 'crispedges' );
 			}
 		},
 
@@ -1241,21 +1253,51 @@ window.WashCostLineChart = (function()
 			var self            = this,
 			    xScale          = this.xScale,
 			    yScale          = this.yScale,
-				lineConstructor = this.lineConstructor;
+			    zScale          = this.zScale,
+			    dataPointStyle  = this.dataPointStyle,
+				lineConstructor = this.lineConstructor,
+				areaConstructor = this.areaConstructor;
 
 			// apply new size to scales
 			this.xScale.range( [ 0, this.width ] );
 			this.yScale.range( [ this.height, 0] );
 
+			// dataPoints
+			this.canvas.selectAll( 'circle.dataPoint' )
+				.attr( "cx", function( d ) { return xScale( self.dataAccessors.x( d ) ); } )
+				.attr( "cy", function( d ) { return yScale( self.dataAccessors.y( d ) ); } );
+
+			this.canvas.selectAll( 'rect.dataPoint' )
+				.attr( "x", function( d ) { return xScale( self.dataAccessors.x( d ) ) - dataPointStyle.radius; } )
+				.attr( "y", function( d ) { return zScale( self.dataAccessors.z( d ) )  - dataPointStyle.radius; } );
+
 
 			// lines
-			this.canvas.selectAll( '.series path.dataLine' ).attr( "d", function( d ) { return lineConstructor( d.data ); } );
+			this.canvas.selectAll( '.series0 path.dataLine' ).attr( "d", function( d ) { return lineConstructor( d.data ); } );
 
+			//swap for z axis
+			lineConstructor.y( function( d ) { return zScale( self.dataAccessors.z( d ) ); } );
+			this.canvas.selectAll( '.series1 path.dataLine' ).attr( "d", function( d ) { return lineConstructor( d.data ); } );
+
+			//swap back
+			lineConstructor.y( function( d ) { return yScale( self.dataAccessors.y( d ) ); } );
+
+			// fill areas
+			this.canvas.selectAll( '.series0 path.dataFill' ).attr( "d", function( d ) { return areaConstructor( d.data ); } );
+
+			//swap for z axis
+			areaConstructor.y( function( d ) { return zScale( self.dataAccessors.z( d ) ); } );
+			this.canvas.selectAll( '.series1 path.dataFill' ).attr( "d", function( d ) { return areaConstructor( d.data ); } );
+
+			//swap back
+			areaConstructor.y( function( d ) { return yScale( self.dataAccessors.y( d ) ); } );
 
 			// redraw axis
 			this.canvas.select( 'g.x.axis' ).call( this.xAxis );
 			this.canvas.select( 'g.x.axis' ).attr( "transform", function() { var axisPos = self.yScale( 0 ); if ( axisPos > self.height || axisPos < 0 ) axisPos = self.height; return "translate(0," + axisPos + ")"; } );
 			this.canvas.select( 'g.y.axis' ).call( this.yAxis );
+			if ( this.zAxis ) this.canvas.select( 'g.z.axis' ).call( this.zAxis );
+
 
 			// style axis
 			this.applyAxisStyling();
@@ -1263,6 +1305,10 @@ window.WashCostLineChart = (function()
 			// update gridLines
 			if ( !this.hideGridLines )
 			{
+				this.gridLines.selectAll( "line.y.gridLine" )
+						.attr( "y1", this.yScale )
+						.attr( "y2", this.yScale );
+
 				this.gridLines.selectAll( "line.x.gridLine" )
 						.attr( "x1", this.xScale )
 						.attr( "x2", this.xScale );
@@ -1964,14 +2010,26 @@ window.WashCostLineChart = (function()
 		},
 
 
-		numberFormatterForValues: function()
+		numberFormatterForValues: function( values )
 		{
-			var func = function( d )
-			{
-				return "YR" + d;
-			};
+			var precision = this.calculateMinimumDecimalPrecision( values ),
+			    formatter = function( input )
+				{
+					var output = '';
 
-			return func;
+					if ( input < 1 && input > -1 ) output = input.toFixed( precision );
+					else if ( Math.abs( input ) >= 1000000000000 ) output = input / 1000000000000 + 'T';
+					else if ( Math.abs( input ) >= 1000000000 ) output = input / 1000000000 + 'B';
+					else if ( Math.abs( input ) >= 1000000 ) output = input / 1000000 + 'M';
+					else if ( Math.abs( input ) >= 1000 ) output = input / 1000 + 'K';
+					else output = input.toFixed( precision );
+
+					// catch any rounding errors
+					if ( input.toFixed( precision ) === '-0.00' || input.toFixed( precision ) === '0.00' ) output = '0';
+
+					return output;
+				};
+			return formatter;
 		},
 
 
@@ -2287,5 +2345,5 @@ window.WashCostLineChart = (function()
 	};
 
 
-	return WashCostLineChart;
+	return WashCostAreaChart;
 })();
