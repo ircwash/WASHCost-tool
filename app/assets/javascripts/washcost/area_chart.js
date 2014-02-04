@@ -254,7 +254,6 @@ window.WashCostAreaChart = (function()
 		render: function( data )
 		{
 			this.data                       = data[0] instanceof Array ? data : [ data ];  // cache data
-			console.log( this.data );
 
 			var self                        = this,
 			    xScale                      = this.xScale,
@@ -305,13 +304,11 @@ window.WashCostAreaChart = (function()
 				d3.min( this.data, function( d ) { return d3.min( d, function( s ) { return d3.min( s.data, dataAccessors.x ); } ) } ),
 				d3.max( this.data, function( d ) { return d3.max( d, function( s ) { return d3.max( s.data, dataAccessors.x ); } ) } )
 			] )
-			.rangeRound( [ 0, width ] )
-			.nice();
+			.rangeRound( [ 0, width ] );
 
 			yScale.domain( [ d3.min( this.data[ 0 ], function( s ) { return d3.min( s.data, dataAccessors.y ); } ),
 					         d3.max( this.data[ 0 ], function( s ) { return d3.max( s.data, dataAccessors.y ); } ) ] )
-				.rangeRound( [ height, 0] )
-				.nice();
+				.rangeRound( [ height, 0] );
 
 			// index all the datapoints for later reference during scrubbing
 			this.dataByXValue = {};
@@ -418,13 +415,12 @@ window.WashCostAreaChart = (function()
 					.attr( "class", "series0" );
 			this.series0 = series0;
 
-
 			// construct the area fill which will go under the lines
 			areaFills0 = series0.selectAll( 'path.dataFill' )
 			.data( this.data[ 0 ] )
 			.enter().append( 'path' )
 				.attr( "class", "dataFill" )
-				.attr( "clip-path", "url(#line-clip-path)" )
+				.attr( "clip-path", this.ie8Detected ? 'none' : 'url(#' + this.id + '-line-clip-path)' )
 				.attr( "d", function( d ) { return areaConstructor( d.data ); } )
 				.attr( 'pointer-events', 'none' )
 				.style( 'stroke', function( d, i ) { var colour = d.colour || colourPalette( i ); return colour; } )
@@ -555,7 +551,7 @@ window.WashCostAreaChart = (function()
 				xAxisTitleElement = this.canvas.append( 'text' )
 					.attr( 'text-anchor', 'middle' )
 					.attr( 'class', 'x-axis-title' )
-					.attr( 'transform', 'translate( ' + ( this.width / 2 ) + ',' + ( this.height + this.padding.top + parseInt( this.xAxisStyle.titleTextSize, 10 ) ) + ')' )
+					.attr( 'transform', 'translate( ' + ( this.width / 2 ) + ',' + ( this.height + this.padding.top + this.padding.bottom - parseInt( this.xAxisStyle.titleTextSize, 10 ) ) + ')' )
 					.style( "font-size", this.xAxisStyle.titleTextSize )
 					.style( "font-weight", 'bold' )
 					.style( 'fill', this.xAxisStyle.titleColour )

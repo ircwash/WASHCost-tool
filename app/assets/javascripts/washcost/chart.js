@@ -26,18 +26,21 @@ $( document ).ready( function()
           parent: $( this )[0],
           id: 'washcostSustainChart',
           dimensions: { width:container.width(), height:container.height() },
-          padding:{ top:0, right:40, bottom:60, left:90 },
+          padding:{ top:10, right:40, bottom:60, left:90 },
           axisTypes:{ x:'linear', y:'linear', z:null },
           tickFormatters:{ y:function( d ) { return currency + ' ' + d; } },
           yAxisTitle:'Recurrent Costs',
           xAxisTitle:'Year',
           lineStrokeDash:[ 5, 5 ],
           hideAxes:false,
+          lockAxesToZero:false,
           xAxisStyle:{ hide:false, tickTextSize:'12px', textWeight:300, textColour:'#797979', titleColour:'#333333', tickColour:'', tickSize:6, tickPadding:8, tickCount:30, textFamily:'Helvetica', lineColour:'transparent', renderSymbol:false, renderGridLines:true },
           yAxisStyle:{ hide:false, tickTextSize:'12px', textColour:'#797979', titleColour:'#333333', tickColour:'', tickSize:0, tickCount:4, textFamily:'Helvetica', lineColour:'transparent', renderSymbol:false, renderGridLines:false },
           gridLineStyle:{ colour: 'rgba(0,0,0,0.1)', dashArray:[ ] },
           shouldScrub:false,
           yPadding:0.3,
+          primaryAnimationDuration:1,
+          secondaryAnimationDuration:700,
           dataAccessors:{ x:function( d ){ return d.year; }, y:function( d ){ return d.cost; } }
         } );
 
