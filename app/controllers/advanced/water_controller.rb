@@ -42,4 +42,14 @@ class Advanced::WaterController < CalculatorController
     render layout: 'report'
   end
 
+  def save_report
+    @report = Report.new
+
+    render layout: 'general', template: 'shared/save_report'
+  end
+
+  def store_report
+    super( params[ :report ][ :title ], 'advanced', 'water', AdvancedWaterQuestionnaire.new( session ).attributes )
+  end
+
 end
