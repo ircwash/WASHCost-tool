@@ -16,6 +16,10 @@ module AdvancedReportHelper
     @questionnaire.operation_expenditure_per_person_per_year != nil && @questionnaire.direct_support_cost_per_person_per_year != nil && @questionnaire.capital_maintenance_expenditure_per_person_per_year != nil && @questionnaire.total_inputted_expenditure_per_person_per_year != nil
   end
 
+  def service_area_comparison_available
+    @questionnaire.total_service_area_capital_expenditure != nil && @questionnaire.total_service_area_recurrent_expenditure != nil
+  end
+
 
   def report_integer_value_for( value )
     value != nil ? "#{value.to_i}" : t( 'report.no_data' )

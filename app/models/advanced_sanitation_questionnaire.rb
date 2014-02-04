@@ -538,7 +538,7 @@ class AdvancedSanitationQuestionnaire < Session
 
   def service_area_capital_expenditure_per_technology
     if supply_system_technologies.count > 0 && actual_hardware_expenditure.count == supply_system_technologies.count && actual_software_expenditure.count == supply_system_technologies.count && system_population_design.count == supply_system_technologies.count
-      supply_system_technologies.each_with_index.map{ |s,i| ( actual_hardware_expenditure[i].to_f + actual_software_expenditure[i].to_f ) / system_population_design.to_f }
+      supply_system_technologies.each_with_index.map{ |s,i| ( actual_hardware_expenditure[i].to_f + actual_software_expenditure[i].to_f ) / system_population_design[i].to_f }
     else
       nil
     end
@@ -553,8 +553,8 @@ class AdvancedSanitationQuestionnaire < Session
   end
 
   def service_area_recurrent_expenditure_per_technology
-    if supply_system_technologies.count > 0 && minor_operation_expenditure.count == supply_system_technologies.count && capital_maintenance_expenditure.count == supply_system_technologies.count && direct_support_cost.count == supply_system_technologies.count && indirect_support_cost.count == supply_system_technologies.count
-      supply_system_technologies.each_with_index.map{ |s,i| minor_operation_expenditure[i].to_f + capital_maintenance_expenditure[i].to_f + direct_support_cost[i].to_f + indirect_support_cost[i].to_f }
+    if supply_system_technologies.count > 0 && minor_operation_expenditure.count == supply_system_technologies.count && capital_maintenance_expenditure.count == supply_system_technologies.count
+      supply_system_technologies.each_with_index.map{ |s,i| minor_operation_expenditure[i].to_f + capital_maintenance_expenditure[i].to_f }
     else
       nil
     end
