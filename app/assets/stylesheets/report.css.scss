@@ -549,6 +549,10 @@
   @include clearfix;
 }
 
+.report--comparison_expenditure + .report--comparison_expenditure {
+  margin-top:30px;
+}
+
 .report--comparison_expenditure--title {
   margin-bottom:30px;
   font-size:20px;
@@ -616,4 +620,41 @@
   content:"n = ";
 }
 
+.report--comparison_expenditure--key {
+  clear:both;
+  padding-top:20px;
+  font-size:14px;
+  text-align:center;
+}
 
+.report--comparison_expenditure--key--item {
+  display:inline-block;
+
+  @include pie-clearfix;
+}
+
+.report--comparison_expenditure--key--item + .report--comparison_expenditure--key--item {
+  margin-left:20px;
+}
+
+.report--comparison_expenditure--key--item--indicator {
+  float:left;
+  width:10px;
+  height:10px;
+  margin:2px 5px 0 0;
+
+  @include border-radius(100px);
+}
+
+.report--comparison_expenditure--key--item--indicator-yours {
+  background-color:#1f9cd8;
+}
+
+.report--comparison_expenditure--key--item--indicator-all {
+  background-color:#e40e7e;
+}
+
+.report--comparison_expenditure--key--item--label {
+  float:left;
+  white-space:nowrap;
+}

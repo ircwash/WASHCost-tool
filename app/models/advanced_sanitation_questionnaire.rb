@@ -561,8 +561,8 @@ class AdvancedSanitationQuestionnaire < Session
   end
 
   def total_service_area_recurrent_expenditure
-    if service_area_recurrent_expenditure_per_technology != nil
-      service_area_recurrent_expenditure_per_technology.inject(:+)
+    if service_area_recurrent_expenditure_per_technology != nil && direct_support_cost != nil && indirect_support_cost != nil
+      service_area_recurrent_expenditure_per_technology.inject(:+) + direct_support_cost.to_f + indirect_support_cost.to_f
     else
       nil
     end

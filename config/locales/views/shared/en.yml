@@ -140,6 +140,8 @@ en:
     capital_expenditure: Capital Expenditure
     recurrent_expenditure: Recurrent Expenditure
     percentile_rank_technology_related_expenditure: Percentile rank of technology related expenditure
+    users_data: "%{name}'s data"
+    all_data: All data
 
 
 
