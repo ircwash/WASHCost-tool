@@ -77,6 +77,10 @@ window.WashCostAreaChart = (function()
 			this.timeAxisTickInterval       = this.timeIntervalForIntervalName( options.timeAxisTickInterval || 'months' );
 			this.hasBrush                   = options.hasBrush || false;
 			this.brushOptions               = Helper.extend(  { parent:null, dimensions:{ width:100, height:25 }, backgroundColour:'transparent', focusBackgroundColour:'transparent', shadeOpacity:0.0, handles:{ width:20, image:null } }, options.brushOptions );
+			this.lineStrokeWidth            = options.lineStrokeWidth || 2.0;
+			this.lineStrokeDash             = options.lineStrokeDash || [];
+			this.selectedDataPointStyle     = options.selectedDataPointStyle || { strokeWidth:1.0, strokeColour:'#888', fillColour:'#FFF', radius:20 };
+			this.dataPointStyle             = options.dataPointStyle || { strokeWidth:2.0, strokeColour:'#888', fillColour:'#F00', radius:0 };
 
 
 			// create formatters from strings
@@ -250,6 +254,7 @@ window.WashCostAreaChart = (function()
 		render: function( data )
 		{
 			this.data                       = data[0] instanceof Array ? data : [ data ];  // cache data
+			console.log( this.data );
 
 			var self                        = this,
 			    xScale                      = this.xScale,
