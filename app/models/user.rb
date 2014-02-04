@@ -49,7 +49,7 @@ class User
 
   def name
     if first_name || last_name
-      "#{first_name} #{last_name}"
+      "#{first_name} #{last_name}".split.map(&:capitalize).join(' ')
     else
       email.split('@')[0]
     end

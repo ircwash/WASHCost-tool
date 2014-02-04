@@ -136,6 +136,12 @@ en:
       reliability: Reliability
     meets_national_norm: Meets national norm
     does_not_meet_national_norm: Does not meet national norm
+    percentile_rank_service_area_expenditure: Percentile rank of the service area expenditure
+    capital_expenditure: Capital Expenditure
+    recurrent_expenditure: Recurrent Expenditure
+    percentile_rank_technology_related_expenditure: Percentile rank of technology related expenditure
+    users_data: "%{name}'s data"
+    all_data: All data
 
 
 

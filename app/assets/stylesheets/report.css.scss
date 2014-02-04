@@ -222,7 +222,7 @@
   text-transform:uppercase;
 }
 
-.report--outputs + .report--subsection--title {
+* + .report--subsection--title {
   margin-top:40px;
 }
 
@@ -539,4 +539,122 @@
   vertical-align:top;
 
   @include box-sizing(border-box);
+}
+
+.report--comparison_expenditure {
+  padding:20px;
+  background-color:rgba(255,255,255,0.5);
+
+  @include border-radius(5px);
+  @include clearfix;
+}
+
+.report--comparison_expenditure + .report--comparison_expenditure {
+  margin-top:30px;
+}
+
+.report--comparison_expenditure--title {
+  margin-bottom:30px;
+  font-size:20px;
+}
+
+.report--comparison_expenditure--item {
+  float:left;
+  width:50%;
+
+  @include box-sizing(border-box);
+}
+
+.report--comparison_expenditure--item + .report--comparison_expenditure--item {
+  border-left:1px solid rgba(0,0,0,0.1);
+}
+
+.report--comparison_expenditure--item--title {
+  margin-bottom:20px;
+  font-size:14px;
+  text-transform:uppercase;
+}
+
+.report--comparison_expenditure--result {
+  position:relative;
+  display:table;
+  width:100px;
+  height:100px;
+  margin:0 auto;
+}
+
+.report--comparison_expenditure--result + .report--comparison_expenditure--result {
+  margin-top:30px;
+}
+
+.report--comparison_expenditure--result--value {
+  position:relative;
+  z-index:11;
+  display:table-cell;
+  font-size:22px;
+  text-align:center;
+  vertical-align:middle;
+  line-height:1;
+}
+
+.report--comparison_expenditure--result--chart {
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  z-index:10;
+}
+
+.report--comparison_expenditure--result--sample {
+  position:absolute;
+  top:50%;
+  right:-100%;
+  width:100%;
+  margin-top:-0.5em;
+  font-size:16px;
+  line-height:1;
+}
+
+.report--comparison_expenditure--result--sample::before {
+  content:"n = ";
+}
+
+.report--comparison_expenditure--key {
+  clear:both;
+  padding-top:20px;
+  font-size:14px;
+  text-align:center;
+}
+
+.report--comparison_expenditure--key--item {
+  display:inline-block;
+
+  @include pie-clearfix;
+}
+
+.report--comparison_expenditure--key--item + .report--comparison_expenditure--key--item {
+  margin-left:20px;
+}
+
+.report--comparison_expenditure--key--item--indicator {
+  float:left;
+  width:10px;
+  height:10px;
+  margin:2px 5px 0 0;
+
+  @include border-radius(100px);
+}
+
+.report--comparison_expenditure--key--item--indicator-yours {
+  background-color:#1f9cd8;
+}
+
+.report--comparison_expenditure--key--item--indicator-all {
+  background-color:#e40e7e;
+}
+
+.report--comparison_expenditure--key--item--label {
+  float:left;
+  white-space:nowrap;
 }

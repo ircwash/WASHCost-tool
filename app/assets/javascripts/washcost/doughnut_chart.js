@@ -4,39 +4,29 @@ $( document ).ready( function()
 
   var colours = [ '#1f9cd8', '#e40e7e' ];
 
-  $( '[data-minicharts]' ).each( function()
+  $( '[data-minichart]' ).each( function(i)
   {
-    var start   = 0,
-        segment = 0;
+    var $el        = $( this ),
+        size       = $el.width(),
+        radius     = size / 2,
+        depth      = size / 8,
+        percentage = parseInt( $el.data( 'minichart-percentage' ), 10 ) / 100,
+        canvas     = $( '<canvas width="' + size + '" height="' + size + '"></canvas>' )[0],
+        context;
 
-    $( '[data-minichart]' ).each( function()
-    {
-      var $el        = $( this ),
-          size       = $el.width(),
-          radius     = size / 2,
-          depth      = size / 4,
-          percentage = parseInt( $el.data( 'minichart-percentage' ), 10 ) / 100,
-          canvas     = $( '<canvas width="' + size + '" height="' + size + '"></canvas>' )[0],
-          context;
+    // initialise canvas
+    context = canvas.getContext( '2d' );
+    context.fillStyle = '#d7d7d7';
 
-      // initialise canvas
-      context = canvas.getContext( '2d' );
-      context.fillStyle = '#d7d7d7';
+    // draw empty ring
+    drawDoughnut( context, radius, size, depth, 0, 1 );
 
-      // draw empty ring
-      drawDoughnut( context, radius, size, depth, 0, 1 );
+    // draw segment
+    context.fillStyle = colours[ i % 2 ];
+    drawDoughnut( context, radius, size, depth, 0, percentage );
 
-      // draw segment
-      context.fillStyle = colours[ segment ];
-      drawDoughnut( context, radius, size, depth, start, percentage );
-
-      // add chart to dom
-      $el.append( canvas );
-
-      // increment start position
-      start   += percentage;
-      segment += 1;
-    } );
+    // add chart to dom
+    $el.append( canvas );
   } );
 
 

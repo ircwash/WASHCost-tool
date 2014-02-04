@@ -313,14 +313,79 @@
           %td.report--service_level--cell= report_percentage_value_for( @questionnaire.percentage_of_population_with_unknown_reliability_norms )
           %td.report--service_level--cell= report_percentage_value_for( @questionnaire.percentage_of_population_with_unknown_environmental_protection_norms )
 
-  %section.report--section
-    .report--section--title= t('report.comparing_costs_and_services');
+  - if service_area_comparison_available
 
+    %section.report--section
+      .report--section--title= t('report.comparing_costs_and_services');
 
+      .report--subsection--title
+        = t('report.percentile_rank_service_area_expenditure');
 
+      .report--comparison_expenditure
+        .report--comparison_expenditure--item
+          .report--comparison_expenditure--item--title= t( 'report.capital_expenditure' )
+          .report--comparison_expenditure--result
+            .report--comparison_expenditure--result--value 75%
+            .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => 75 }
+            .report--comparison_expenditure--result--sample 8
+          .report--comparison_expenditure--result
+            .report--comparison_expenditure--result--value 50%
+            .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => 50 }
+            .report--comparison_expenditure--result--sample 8
+        .report--comparison_expenditure--item
+          .report--comparison_expenditure--item--title= t( 'report.recurrent_expenditure' )
+          .report--comparison_expenditure--result
+            .report--comparison_expenditure--result--value 50%
+            .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => 50 }
+            .report--comparison_expenditure--result--sample 8
+          .report--comparison_expenditure--result
+            .report--comparison_expenditure--result--value 75%
+            .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => 75 }
+            .report--comparison_expenditure--result--sample 8
 
+        .report--comparison_expenditure--key
+          .report--comparison_expenditure--key--item
+            .report--comparison_expenditure--key--item--indicator.report--comparison_expenditure--key--item--indicator-yours
+            .report--comparison_expenditure--key--item--label= t( 'report.users_data', :name => current_user.name )
+          .report--comparison_expenditure--key--item
+            .report--comparison_expenditure--key--item--indicator.report--comparison_expenditure--key--item--indicator-all
+            .report--comparison_expenditure--key--item--label= t( 'report.all_data' )
 
+      .report--subsection--title
+        = t('report.percentile_rank_technology_related_expenditure');
 
+      - @questionnaire.supply_system_technologies.each do |technology|
 
+        .report--comparison_expenditure
+          .report--comparison_expenditure--title= options_for_sanitation_technologies[ technology.to_i ][0]
+
+          .report--comparison_expenditure--item
+            .report--comparison_expenditure--item--title= t( 'report.capital_expenditure' )
+            .report--comparison_expenditure--result
+              .report--comparison_expenditure--result--value 75%
+              .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => 75 }
+              .report--comparison_expenditure--result--sample 8
+            .report--comparison_expenditure--result
+              .report--comparison_expenditure--result--value 50%
+              .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => 50 }
+              .report--comparison_expenditure--result--sample 8
+          .report--comparison_expenditure--item
+            .report--comparison_expenditure--item--title= t( 'report.recurrent_expenditure' )
+            .report--comparison_expenditure--result
+              .report--comparison_expenditure--result--value 50%
+              .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => 50 }
+              .report--comparison_expenditure--result--sample 8
+            .report--comparison_expenditure--result
+              .report--comparison_expenditure--result--value 75%
+              .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => 75 }
+              .report--comparison_expenditure--result--sample 8
+
+          .report--comparison_expenditure--key
+            .report--comparison_expenditure--key--item
+              .report--comparison_expenditure--key--item--indicator.report--comparison_expenditure--key--item--indicator-yours
+              .report--comparison_expenditure--key--item--label= t( 'report.users_data', :name => current_user.name )
+            .report--comparison_expenditure--key--item
+              .report--comparison_expenditure--key--item--indicator.report--comparison_expenditure--key--item--indicator-all
+              .report--comparison_expenditure--key--item--label= t( 'report.all_data' )
 
 
