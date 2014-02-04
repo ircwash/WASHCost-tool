@@ -12,6 +12,10 @@ module AdvancedReportHelper
     @questionnaire.people_with_service_meeting_national_standard != nil
   end
 
+  def report_sustainability_chart_available
+    @questionnaire.operation_expenditure_per_person_per_year != nil && @questionnaire.direct_support_cost_per_person_per_year != nil && @questionnaire.capital_maintenance_expenditure_per_person_per_year != nil && @questionnaire.total_inputted_expenditure_per_person_per_year != nil
+  end
+
 
   def report_integer_value_for( value )
     value != nil ? "#{value.to_i}" : t( 'report.no_data' )
