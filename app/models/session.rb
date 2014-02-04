@@ -42,15 +42,20 @@ class Session
   end
 
 
+  def attributes
+    Hash[ property_attributes.map{ |a| [ a, send( "#{a}" ) ] } ]
+  end
+
+
   protected
 
 
-  def self.attributes
+  def self.property_attributes
     @attributes
   end
 
-  def attributes
-    self.class.attributes
+  def property_attributes
+    self.class.property_attributes
   end
 
 
@@ -68,7 +73,7 @@ class Session
   def archive
     data = {}
 
-    attributes.each do |a|
+    property_attributes.each do |a|
       data[ a ] = send( a )
     end
 

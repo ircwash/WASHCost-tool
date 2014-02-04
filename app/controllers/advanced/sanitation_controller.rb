@@ -1,4 +1,4 @@
-class Advanced::SanitationController < ApplicationController
+class Advanced::SanitationController < CalculatorController
 
   layout 'tool_advanced'
 
@@ -40,6 +40,16 @@ class Advanced::SanitationController < ApplicationController
     @questionnaire = AdvancedSanitationQuestionnaire.new( session )
 
     render layout: 'report'
+  end
+
+  def save_report
+    @report = Report.new
+
+    render layout: 'general', template: 'shared/save_report'
+  end
+
+  def store_report
+    super( params[ :report ][ :title ], 'advanced', 'sanitation', AdvancedSanitationQuestionnaire.new( session ).attributes )
   end
 
 end

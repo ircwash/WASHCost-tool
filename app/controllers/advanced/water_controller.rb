@@ -1,4 +1,4 @@
-class Advanced::WaterController < ApplicationController
+class Advanced::WaterController < CalculatorController
 
   layout 'tool_advanced'
 

@@ -58,42 +58,6 @@ class AdvancedSanitationQuestionnaire < Session
 
   def update_attributes( attributes )
 
-    if attributes[ :water_treatment_0 ] != nil || attributes[ :water_treatment_1 ] != nil || attributes[ :water_treatment_2 ] != nil
-
-      @water_treatment = []
-
-      if attributes[ :water_treatment_0 ] != nil
-        @water_treatment.push attributes[ :water_treatment_0 ]
-      end
-
-      if attributes[ :water_treatment_1 ] != nil
-        @water_treatment.push attributes[ :water_treatment_1 ]
-      end
-
-      if attributes[ :water_treatment_2 ] != nil
-        @water_treatment.push attributes[ :water_treatment_2 ]
-      end
-
-    end
-
-    if attributes[ :power_supply_0 ] != nil || attributes[ :power_supply_1 ] != nil || attributes[ :power_supply_2 ] != nil
-
-      @power_supply    = []
-
-      if attributes[ :power_supply_0 ] != nil
-        @power_supply.push attributes[ :power_supply_0 ]
-      end
-
-      if attributes[ :power_supply_1 ] != nil
-        @power_supply.push attributes[ :power_supply_1 ]
-      end
-
-      if attributes[ :power_supply_2 ] != nil
-        @power_supply.push attributes[ :power_supply_2 ]
-      end
-
-    end
-
     super
 
     if attributes[ :region_unknown ] != nil
@@ -116,7 +80,7 @@ class AdvancedSanitationQuestionnaire < Session
   def complete
     attributes_with_values = 0
 
-    attributes.each do |attribute|
+    property_attributes.each do |attribute|
       value = send( "#{attribute}" )
 
       if value != nil && value.kind_of?( Array ) && value & [''] == value
@@ -128,7 +92,7 @@ class AdvancedSanitationQuestionnaire < Session
       end
     end
 
-    100 * attributes_with_values / self.attributes.count
+    100 * attributes_with_values / property_attributes.count
   end
 
 

@@ -120,9 +120,9 @@ class AdvancedWaterQuestionnaire < Session
 
   def complete
     attributes_with_values = 0
-    total_attributes = self.attributes.count
+    total_attributes = property_attributes.count
 
-    attributes.each do |attribute|
+    property_attributes.each do |attribute|
       value = send( "#{attribute}" )
 
       if value != nil && value.kind_of?( Array ) && value & [''] == value

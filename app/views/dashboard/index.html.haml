@@ -35,6 +35,7 @@
         .reports
           %table
             %tr.text-left.head
+              %th{width: 200} NAME
               %th{width: 200} LOCATION
               %th{width: 150} DATE
               %th{width: 300} CALCULATOR TYPE
@@ -42,10 +43,9 @@
               %th{width: 200} FINAL REPORT
 
             - current_user.basic_questionnaires.each do |basic_questionnaire|
-              %tr.divisor
+              %tr.content-report
                 %td
                   = basic_questionnaire.title.upcase
-              %tr.content-report
                 %td{valign: :middle}
                   .row
                     - if basic_questionnaire.form["country"].present?
@@ -70,3 +70,29 @@
                   .service INSTALLED
                 %td= link_to 'VIEW REPORT', basic_report_load_path(id_questionnaire: basic_questionnaire.id), "data-method" => "post", class: 'view_report'
 
+            - @reports.each do |report|
+              %tr.content-report
+                %td
+                  = report.title
+                %td{valign: :middle}
+                  .row
+                    - if report.questionnaire["country"].present?
+                      .large-3.columns.country-flag
+                        .flag{class: "flag-#{report.questionnaire["country"].downcase}"}
+                      .large-9.columns.country-name
+                        .country= Country.new(report.questionnaire["country"]).name.truncate(13).upcase
+                    -else
+                      .large-3.columns
+                        .flag
+                      .large-9.columns
+                        .country NN
+                %td
+                  .date
+                    = report.created_at
+                %td
+                  .row.text-center
+                    .large-12.columns
+                      .tool_name=  "#{report.level.upcase} | #{report.type.upcase}"
+                %td
+                  .service INSTALLED
+                %td= link_to 'VIEW REPORT', reports_load_path( report.id ), "data-method" => "post", class: 'view_report'

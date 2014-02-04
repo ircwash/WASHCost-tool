@@ -8,7 +8,15 @@ class Ability
     user ||= User.new
 
     if user.new_record?
-      can :manage, [Basic::WaterController, Basic::SanitationController, Advanced::WaterController, Advanced::SanitationController]
+      can :manage, [Basic::WaterController, Basic::SanitationController]
+
+      cannot :manage, [ Advanced::WaterController, Advanced::SanitationController ] do |controller|
+        @permission_denied = {}
+        @permission_denied[:location] = new_user_session_path( I18n.locale )
+        @permission_denied[:message] = 'test message'
+        @permission_denied[:output_from] = 'http'
+        true
+      end
 
       cannot :questionnaire, Basic::ReportsController do |kontroller|
         @permission_denied = {}
@@ -17,6 +25,7 @@ class Ability
         @permission_denied[:output_from] = 'http'
         true
       end
+
       cannot :manage, DashboardController do |kontroller|
         @permission_denied = {}
         @permission_denied[:location] = new_user_session_path( I18n.locale )

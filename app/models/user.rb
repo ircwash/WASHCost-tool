@@ -7,6 +7,7 @@ class User
          :recoverable, :rememberable, :trackable, :validatable
 
   # Persistence relations
+  embeds_many :reports
   embeds_many :basic_questionnaires, class_name: 'BasicReport'
 
   ## Database authenticatable
