@@ -47,7 +47,7 @@ WashCostApp::Application.routes.draw do
           get  '/:section' => 'water#questionnaire', :as => 'water_action'
           post '/update/:section' => 'water#update', :as => 'water_update'
           post '/dynamic_update' => 'water#dynamic_update', :as => 'water_dynamic_update'
-          root :to => redirect( '/%{locale}/calculators/advanced/water/system_characteristics' ), :as => 'water'
+          root :to => redirect( '/%{locale}/calculators/advanced/water/service_area' ), :as => 'water'
         end
 
         scope '/sanitation' do
@@ -58,7 +58,7 @@ WashCostApp::Application.routes.draw do
           get  '/:section' => 'sanitation#questionnaire', :as => 'sanitation_action'
           post '/update/:section' => 'sanitation#update', :as => 'sanitation_update'
           post '/dynamic_update' => 'sanitation#dynamic_update', :as => 'sanitation_dynamic_update'
-          root :to => redirect( '/%{locale}/calculators/advanced/sanitation/system_characteristics' ), :as => 'sanitation'
+          root :to => redirect( '/%{locale}/calculators/advanced/sanitation/service_area' ), :as => 'sanitation'
         end
 
       end

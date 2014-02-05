@@ -56,8 +56,13 @@
       - else
         .report--no_data= t( 'report.report_box_no_value' )
 
+      %a.report--summary--edit{ :href => advanced_sanitation_path }= t( 'edit' )
+
   %section.report--section
     .report--section--title= t('report.cost_of_sustaining_the_service');
+
+    .report--section--edit
+      %a.report--section--edit--link{ :href => advanced_sanitation_action_path( I18n.locale, 'technology' ) }= t( 'edit' )
 
     - if report_sustainability_chart_available
       .report--chart{ 'data-chart-type' => 'advanced', 'data-chart-currency' => ( @questionnaire.currency || '' ).upcase, 'data-chart-seeds' => "[#{@questionnaire.operation_expenditure_per_person_per_year},#{@questionnaire.direct_support_cost_per_person_per_year},#{@questionnaire.capital_maintenance_expenditure_per_person_per_year},#{@questionnaire.total_inputted_expenditure_per_person_per_year}]" }
@@ -157,6 +162,9 @@
 
   %section.report--section
     .report--section--title= t('report.affordability_check');
+
+    .report--section--edit
+      %a.report--section--edit--link{ :href => advanced_sanitation_action_path( I18n.locale, 'technology' ) }= t( 'edit' )
 
     .report--outputs
 
@@ -297,6 +305,9 @@
 
   %section.report--section
     .report--section--title= t('report.service_level_summary')
+
+    .report--section--edit
+      %a.report--section--edit--link{ :href => advanced_sanitation_action_path( I18n.locale, 'service_level' ) }= t( 'edit' )
 
     %table.report--service_level_summary
       %tr
