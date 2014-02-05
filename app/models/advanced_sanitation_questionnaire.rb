@@ -549,6 +549,21 @@ class AdvancedSanitationQuestionnaire < Session
     end
   end
 
+  def service_area_capital_expenditure_for_technology( technology )
+    expenditure = 0
+
+    if supply_system_technologies.include?( technology ) && actual_hardware_expenditure.count == supply_system_technologies.count && actual_software_expenditure.count == supply_system_technologies.count && system_population_design.count == supply_system_technologies.count
+      supply_system_technologies.each_with_index do |t,i|
+
+        if t == technology
+          expenditure = expenditure + ( actual_hardware_expenditure[i].to_f + actual_software_expenditure[i].to_f ) / system_population_design[i].to_f
+        end
+      end
+    end
+
+    expenditure
+  end
+
   def total_service_area_capital_expenditure
     if service_area_capital_expenditure_per_technology != nil
       service_area_capital_expenditure_per_technology.inject(:+)
@@ -563,6 +578,21 @@ class AdvancedSanitationQuestionnaire < Session
     else
       nil
     end
+  end
+
+  def service_area_recurrent_expenditure_for_technology( technology )
+    expenditure = 0
+
+    if supply_system_technologies.include?( technology ) && minor_operation_expenditure.count == supply_system_technologies.count && capital_maintenance_expenditure.count == supply_system_technologies.count
+      supply_system_technologies.each_with_index do |t,i|
+
+        if t == technology
+          expenditure = expenditure + minor_operation_expenditure[i].to_f + capital_maintenance_expenditure[i].to_f
+        end
+      end
+    end
+
+    expenditure
   end
 
   def total_service_area_recurrent_expenditure
