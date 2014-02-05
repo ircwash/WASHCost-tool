@@ -750,4 +750,37 @@ module AdvancedReportHelper
     [ @user_service_quality_percentile, @user_service_quality_total_reports ]
   end
 
+  def global_aggregate_service_percentile( report_type )
+    if @global_service_quality_percentile == nil && @global_service_quality_total_reports == nil
+      services_with_lower_quality           = 0
+      @global_service_quality_percentile    = 0
+      @global_service_quality_total_reports = 0
+
+      User.all.each do |user|
+        user.reports.each do |report|
+          if report.level == 'advanced' && report.type == report_type
+
+            # unpack questionnaire model from report
+            questionnaire = report.unpack_questionnaire
+
+            # check that report is complete
+            if questionnaire.complete? && @questionnaire.percentage_of_population_that_meets_all_norms != nil
+
+              if questionnaire.percentage_of_population_that_meets_all_norms <= @questionnaire.percentage_of_population_that_meets_all_norms
+                services_with_lower_quality = services_with_lower_quality + 1
+              end
+
+              # increment total to compute percentile
+              @global_service_quality_total_reports = @global_service_quality_total_reports + 1
+            end
+          end
+        end
+      end
+
+      @global_service_quality_percentile = @global_service_quality_total_reports > 0 ? 100 - 100 * services_with_lower_quality / @global_service_quality_total_reports : nil
+    end
+
+    @global_service_quality_percentile
+  end
+
 end

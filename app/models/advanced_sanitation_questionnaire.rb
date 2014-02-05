@@ -539,6 +539,14 @@ class AdvancedSanitationQuestionnaire < Session
     end
   end
 
+  def percentage_of_population_that_meets_all_norms
+    if percentage_of_population_that_meets_accessibility_norms != nil || percentage_of_population_that_meets_use_norms != nil || percentage_of_population_that_meets_reliability_norms != nil || percentage_of_population_that_meets_environmental_protection_norms != nil
+      ( ( percentage_of_population_that_meets_accessibility_norms || 0 ) + ( percentage_of_population_that_meets_use_norms || 0 ) + ( percentage_of_population_that_meets_reliability_norms || 0 ) + ( percentage_of_population_that_meets_environmental_protection_norms || 0 ) ) / 400
+    else
+      nil
+    end
+  end
+
   # cost comparison
 
   def service_area_capital_expenditure_per_technology

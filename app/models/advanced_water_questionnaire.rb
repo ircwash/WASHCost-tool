@@ -585,35 +585,9 @@ class AdvancedWaterQuestionnaire < Session
     end
   end
 
-  # cost comparison
-
-  def service_area_capital_expenditure_per_technology
-    if supply_system_technologies.count > 0 && actual_hardware_expenditure.count == supply_system_technologies.count && actual_software_expenditure.count == supply_system_technologies.count && system_population_design.count == supply_system_technologies.count
-      supply_system_technologies.each_with_index.map{ |s,i| ( actual_hardware_expenditure[i].to_f + actual_software_expenditure[i].to_f ) / system_population_design.to_f }
-    else
-      nil
-    end
-  end
-
-  def total_service_area_capital_expenditure
-    if service_area_capital_expenditure_per_technology != nil
-      service_area_capital_expenditure_per_technology.inject(:+)
-    else
-      nil
-    end
-  end
-
-  def service_area_recurrent_expenditure_per_technology
-    if supply_system_technologies.count > 0 && minor_operation_expenditure.count == supply_system_technologies.count && capital_maintenance_expenditure.count == supply_system_technologies.count && direct_support_cost.count == supply_system_technologies.count && indirect_support_cost.count == supply_system_technologies.count
-      supply_system_technologies.each_with_index.map{ |s,i| minor_operation_expenditure[i].to_f + capital_maintenance_expenditure[i].to_f + direct_support_cost[i].to_f + indirect_support_cost[i].to_f }
-    else
-      nil
-    end
-  end
-
-  def total_service_area_recurrent_expenditure
-    if service_area_recurrent_expenditure_per_technology != nil
-      service_area_recurrent_expenditure_per_technology.inject(:+)
+  def percentage_of_population_that_meets_all_norms
+    if percentage_of_population_that_meets_accessibility_norms != nil || percentage_of_population_that_meets_quantity_norms != nil || percentage_of_population_that_meets_quality_norms != nil || percentage_of_population_that_meets_reliability_norms != nil
+      ( ( percentage_of_population_that_meets_accessibility_norms || 0 ) + ( percentage_of_population_that_meets_quantity_norms || 0 ) + ( percentage_of_population_that_meets_quality_norms || 0 ) + ( percentage_of_population_that_meets_reliability_norms || 0 ) ) / 400
     else
       nil
     end
