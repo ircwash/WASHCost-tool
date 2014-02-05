@@ -10,7 +10,7 @@ class Session
     @identifier = identifier
     @session    = session
 
-    if ( session[ @identifier ] )
+    if ( session != nil && session[ @identifier ] )
       unarchive
     end
 
@@ -77,7 +77,7 @@ class Session
       data[ a ] = send( a )
     end
 
-    @session[ @identifier ] = data
+    @session[ @identifier ] = data unless @session == nil
   end
 
 

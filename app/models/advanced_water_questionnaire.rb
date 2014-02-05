@@ -142,6 +142,11 @@ class AdvancedWaterQuestionnaire < Session
   end
 
 
+  def complete?
+    complete == 100
+  end
+
+
   # CALCULATIONS
 
   def total_population
