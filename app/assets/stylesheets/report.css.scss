@@ -727,6 +727,11 @@
 
 @media screen and ( max-device-width: $mobile_breakpoint ) {
 
+  .report {
+    margin:0 -20px;
+    padding-bottom:120px;
+  }
+
   .report--header--title {
     margin-top:60px;
     margin-bottom:10px;
@@ -757,9 +762,3 @@
   }
 
 }
-
-.report {
-  margin:0 -20px;
-  padding-bottom:120px;
-}
-
