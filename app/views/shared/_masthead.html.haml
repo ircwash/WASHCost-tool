@@ -13,18 +13,13 @@
         %li.header--links--item
           %a{ :href => "#", :class => "header--links--link" } Contact
 
-        %li.header--links--item.has-dropdown.not-click
-          %a{ :href => "#", :class => "header--links--link" } Language
+        %li.header--links--item.header--links--item-dropdown
+          %a{ :href => "#", :class => "header--links--link header--links--link-dropdown" } Language
           %ul.header--links--item--dropdown
             %li.header--links--item--dropdown--item
-              %h5
-                %a{ :href => "#", :class => "header--links--item--dropdown--link" } « Back
+              = link_to 'English', calculators_path( 'en' ), :class => 'header--links--item--dropdown--link'
             %li.header--links--item--dropdown--item
-              = link_to 'English', localised_root_path( 'en' ), :class => 'header--links--item--dropdown--link'
-            %li.header--links--item--dropdown--item
-              = link_to 'Français', localised_root_path( 'fr' ), :class => 'header--links--item--dropdown--link'
-            %li.header--links--item--dropdown--item
-              %a{ :href => "#", :class => "header--links--link" } Spanish
+              = link_to 'Français', calculators_path( 'fr' ), :class => 'header--links--item--dropdown--link'
 
         - if user_signed_in? && current_user
           %li.header--links--item

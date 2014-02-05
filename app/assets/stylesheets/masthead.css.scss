@@ -5,13 +5,12 @@
   left:0;
   z-index:900;
   height:$masthead_height;
-  overflow:hidden;
   background-color:$dark_grey;
   -webkit-font-smoothing:antialiased;
 }
 
 .header--content {
-  @include clearfix;
+  @include pie-clearfix;
   padding:10px 0;
 }
 
@@ -29,6 +28,7 @@
 }
 
 .header--links--item {
+  position:relative;
   float:left;
 }
 
@@ -40,12 +40,13 @@
   font-weight:bold;
   color:#fff;
   text-decoration:none;
+  white-space:nowrap;
 
   @include box-sizing(border-box);
   @include transition(background-color 0.3s);
 }
 
-.header--links--link:hover {
+.header--links--item:hover .header--links--link {
   background-color:$dark_grey_hover;
 }
 
@@ -53,8 +54,49 @@
   color:$brand_orange;
 }
 
+.header--links--link-dropdown {
+  position:relative;
+  padding-right:38px;
+}
+
+.header--links--link-dropdown::after {
+  content:"";
+  position:absolute;
+  top:50%;
+  right:20px;
+  margin-top:-1px;
+  border-style:solid;
+  border-width:4px 4px 0 4px;
+  border-color:#fff transparent transparent transparent;
+}
+
 .header--links--item--dropdown {
+  position:absolute;
+  top:100%;
+  left:0;
   display:none;
+  min-width:100%;
+  background-color:$dark_grey;
+}
+
+.header--links--item-dropdown:hover .header--links--item--dropdown {
+  display:block;
+}
+
+.header--links--item--dropdown--link {
+  display:block;
+  padding:15px 20px;
+  font-size:13px;
+  font-weight:bold;
+  color:#fff;
+  white-space:nowrap;
+  text-decoration:none;
+
+  @include transition(background-color 0.3s);
+}
+
+.header--links--item--dropdown--link:hover {
+  background-color:$dark_grey_hover;
 }
 
 .header--primary_button {
