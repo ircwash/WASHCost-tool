@@ -37,16 +37,16 @@ module AdvancedReportHelper
     value != nil ? "#{value.to_i}" : t( 'report.no_data' )
   end
 
-  def report_currency_value_for( value )
-    value != nil ? "#{( @questionnaire.currency || '' ).upcase} #{number_with_precision( value.to_f, :precision => 2 )}" : t( 'report.no_data' )
+  def report_currency_value_for( value, precision = 2 )
+    value != nil ? "#{( @questionnaire.currency || '' ).upcase} #{number_with_precision( value.to_f, :precision => precision )}" : t( 'report.no_data' )
   end
 
-  def report_delta_currency_value_for( value )
-    value != nil ? "#{( @questionnaire.currency || '' ).upcase} #{number_with_precision( value.to_f.abs, :precision => 2 )} #{value.to_f > 0 ? t( 'report.surplus' ) : t( 'report.shortfall' )}" : t( 'report.no_data' )
+  def report_delta_currency_value_for( value, precision = 2 )
+    value != nil ? "#{( @questionnaire.currency || '' ).upcase} #{number_with_precision( value.to_f.abs, :precision => precision )} #{value.to_f > 0 ? t( 'report.surplus' ) : t( 'report.shortfall' )}" : t( 'report.no_data' )
   end
 
   def report_percentage_value_for( value )
-    value != nil ? "#{value.to_f.round(2)}%" : t( 'report.no_data' )
+    value != nil ? "#{value.to_f.round(1)}%" : t( 'report.no_data' )
   end
 
   def report_integer_percentage_value_for( value )

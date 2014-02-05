@@ -19,7 +19,7 @@
 
             .report--summary--item--mini_title
               = t( 'report.total_expenditure_for_thirty_years' )
-            .report--summary--item--value= report_currency_value_for( @questionnaire.total_expenditure_for_years(30) )
+            .report--summary--item--value= report_currency_value_for( @questionnaire.total_expenditure_for_years(30), 0 )
             .report--summary--item--subtitle= t( 'report.number_of_people', :people => @questionnaire.total_population.to_i )
 
             .report--summary--item--mini_title
