@@ -2,7 +2,7 @@
   .page_content
     .header--content
 
-      = link_to localised_root_path( I18n.locale ), class: 'header--logo' do
+      = link_to calculators_path( I18n.locale ), class: 'header--logo' do
         = image_tag 'image-logo.png', class: 'header--logo--image', :alt => 'WASHCost powered by IRC', :width => 200, :height => 38
 
       %ul.header--links
@@ -26,9 +26,12 @@
             %li.header--links--item--dropdown--item
               %a{ :href => "#", :class => "header--links--link" } Spanish
 
-        %li.header--links--item
-          - if user_signed_in? && current_user
+        - if user_signed_in? && current_user
+          %li.header--links--item
+            = link_to current_user.name, dashboard_path, class: 'header--links--link header--links--link-special'
+          %li.header--links--item
             = link_to 'Sign Out', destroy_user_session_path( I18n.locale ), method: :delete, class: 'header--links--link header--links--link-special'
-          - else
+        - else
+          %li.header--links--item
             = link_to 'Sign In', new_user_session_path( I18n.locale ), class: 'header--links--link header--links--link-special'
 
