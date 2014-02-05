@@ -47,6 +47,18 @@ class Session
   end
 
 
+  def reset
+    set_properties
+
+    archive
+  end
+
+
+  def complete?
+    complete == 100
+  end
+
+
   protected
 
 
@@ -85,6 +97,11 @@ class Session
     @session[ @identifier ].each do |name, value|
       send( "#{name}=", value ) unless !self.respond_to? name
     end
+  end
+
+
+  def set_properties
+
   end
 
 end

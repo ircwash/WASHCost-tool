@@ -47,15 +47,6 @@ class AdvancedSanitationQuestionnaire < Session
   end
 
 
-  def reset
-
-    set_properties
-
-    archive
-
-  end
-
-
   def update_attributes( attributes )
 
     super
@@ -93,11 +84,6 @@ class AdvancedSanitationQuestionnaire < Session
     end
 
     100 * attributes_with_values / property_attributes.count
-  end
-
-
-  def complete?
-    complete == 100
   end
 
 

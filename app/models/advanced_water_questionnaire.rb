@@ -52,15 +52,6 @@ class AdvancedWaterQuestionnaire < Session
   end
 
 
-  def reset
-
-    set_properties
-
-    archive
-
-  end
-
-
   def update_attributes( attributes )
 
     if attributes[ :water_treatment_0 ] != nil || attributes[ :water_treatment_1 ] != nil || attributes[ :water_treatment_2 ] != nil
@@ -139,11 +130,6 @@ class AdvancedWaterQuestionnaire < Session
     end
 
     100 * attributes_with_values / total_attributes
-  end
-
-
-  def complete?
-    complete == 100
   end
 
 
