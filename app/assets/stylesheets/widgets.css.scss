@@ -12,6 +12,7 @@
   line-height:1;
   background-color:$brand_light_orange;
   text-decoration:none;
+  white-space:nowrap;
   cursor:pointer;
   -webkit-font-smoothing:antialiased;
 
@@ -35,6 +36,11 @@
 
 .button:active {
   @include box-shadow(0 1px 0 rgba(0,0,0,0.15) inset);
+}
+
+.button-small {
+  padding:5px 10px;
+  font-size:12px;
 }
 
 

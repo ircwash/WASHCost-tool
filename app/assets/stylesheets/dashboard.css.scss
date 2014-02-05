@@ -1,0 +1,72 @@
+.dashboard {
+
+}
+
+.dashboard--profile {
+  @include clearfix;
+}
+
+.dashboard--profile--profile_image {
+
+}
+
+.dashboard--profile--user {
+  float:left;
+  width:200px;
+  margin-right:20px;
+}
+
+.dashboard--profile--user--image {
+  display:block;
+  width:200px;
+  height:200px;
+}
+
+.dashboard--profile--details {
+
+}
+
+.dashboard--profile--details--title {
+  margin-bottom:10px;
+  font-size:32px;
+}
+
+.dashboard--profile--details--field {
+  font-size:14px;
+}
+
+.dashboard--profile--details--field + .dashboard--profile--details--field {
+  margin-top:5px;
+}
+
+.dashboard--profile--user--button {
+  margin-top:20px;
+}
+
+.dashboard--report_table {
+  width:100%;
+  margin-top:20px;
+}
+
+.dashboard--report_table--heading {
+  padding:10px;
+  background-color:rgba(255,255,255,0.2);
+  font-size:14px;
+  font-weight:bold;
+}
+
+.dashboard--report_table--row:nth-child(even) {
+  background-color:rgba(0,0,0,0.1);
+}
+
+.dashboard--report_table--cell {
+  padding:7px 10px;
+  font-size:14px;
+}
+
+@media screen and ( max-device-width: $mobile_breakpoint ) {
+  .dashboard--profile--user {
+    float: none;
+  }
+}
+
