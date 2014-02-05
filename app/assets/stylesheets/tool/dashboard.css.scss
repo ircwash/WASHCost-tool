@@ -1,0 +1,61 @@
+.dashboard {
+  overflow:hidden;
+}
+
+.dashboard--row {
+  overflow:hidden;
+  margin-bottom:10px;
+}
+
+.dashboard--image,
+.dashboard--details {
+  float:left;
+}
+
+.dashboard--image {
+  position:relative;
+  margin-right:20px;
+  padding-right:63px;
+}
+
+.setting-button {
+  position:absolute;
+  right:0;
+  top:-5px;
+}
+
+.details--row {
+  margin-bottom:20px;
+}
+
+.details--row-name {
+  font-size:22px;
+}
+.dashboard--details {
+  
+}
+
+.dashboard--links {
+  overflow:hidden;
+  text-align:center;
+
+  a {
+    margin-bottom:10px;
+  }
+}
+
+@media screen and ( max-device-width: $mobile_breakpoint ) {
+  .dashboard--image,
+  .dashboard--details {
+    float: none;
+  }
+
+  .dashboard--image {
+    text-align:center;
+    margin-right:0;
+    padding-right:0;
+    margin-bottom:20px;
+  }
+
+}
+

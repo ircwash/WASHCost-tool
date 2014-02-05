@@ -112,3 +112,34 @@
   margin-top:30px;
   text-align:center;
 }
+
+@media screen and ( max-device-width: $mobile_breakpoint ) {
+
+  .question {
+    padding-bottom:160px;
+  }
+
+  .question--radios {
+    text-align: center;
+  }
+
+  .question--radios--label {
+    position:relative;
+    min-height:183px;
+    float:none;
+    display:inline-block;
+    margin-left:15px;
+    margin-right:15px;
+  }
+
+  .question--radios--label + .question--radios--label {
+    margin-left: 15px;
+  }
+
+  .question--radios--text {
+    position:absolute;
+    width:100%;
+    top:125px;
+  }
+
+}

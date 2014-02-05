@@ -9,7 +9,7 @@
           - else
             = link_to item[:name], basic_sanitation_action_path( I18n.locale, item[:redirect_to] ), :class => "navigation--category--link navigation--category--link-#{item[:class]}"
 
-  .navigation--subcategory
+  .navigation--subcategory.navigation--subcategory-mobile
     %ul.navigation--subcategory--list
       - questionnaire_items_list.each do |item|
         %li{ :class => 'navigation--subcategory--item' }

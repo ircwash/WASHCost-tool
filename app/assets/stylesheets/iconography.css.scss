@@ -57,20 +57,20 @@
 }
 
 .icon--tool-noTest::before {
-  background-position:50% -1935px;
+  background-position:50% -2415px;
 }
 
-.icon--tool-quality::before,
 .icon--tool-test::before {
-  background-position:50% -2095px;
-}
-
-.icon--tool-occasional::before {
   background-position:50% -2255px;
 }
 
+.icon--tool-quality::before,
+.icon--tool-occasional::before {
+  background-position:50% -2095px;
+}
+
 .icon--tool-regular::before {
-  background-position:50% -2415px;
+  background-position:50% -1935px;
 }
 
 .icon--tool-worksAll::before {

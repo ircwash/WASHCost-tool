@@ -145,3 +145,42 @@ html, body {
 .preapplication_footer--important--link + .preapplication_footer--important--link {
   margin-top:10px;
 }
+
+@media screen and ( max-device-width: $mobile_breakpoint ) {
+
+  .preapplication_footer--links,
+  .preapplication_footer--social {
+    position:absolute !important;
+    clip:rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip:rect(1px, 1px, 1px, 1px);
+    padding:0 !important;
+    border:0 !important;
+    height:1px !important;
+    width:1px !important;
+    overflow:hidden;
+  }
+
+  .preapplication_footer--important {
+    width:100%;
+    text-align:center;
+  }
+
+
+  .boxed_container {
+    height:auto;
+    padding-bottom:0;
+  }
+
+  .boxed_content {
+    height:auto;
+  }
+
+  .preapplication_footer {
+    position:static;
+
+    .page_content {
+      padding: 0;
+    }
+  }
+
+}

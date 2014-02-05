@@ -2,30 +2,31 @@
   .boxed_content.page_content
 
     .dashboard
-      .row.section
-        .large-2.columns
+
+      .dashboard--row
+        .dashboard--image
           -#%img{:src => "holder.js/140x140"}
           = image_tag 'user.jpg', style: 'width: 140px'
           = link_to edit_user_registration_path do
             = image_tag 'setting-icon.png', class: 'setting-button'
-        .large-4.columns
-          .name
+        .dashboard--details
+          %p.details--row.details--row-name
             = current_user.name.titleize
-          %p
-            COMPANY:
-            %strong= current_user.company.upcase
-          %p
-            COUNTRY:
+          %p.details--row
+            Company:
+            %strong= current_user.company
+          %p.details--row
+            Country:
             %strong=  Country.new(current_user.country).data.present? ? Country.new(current_user.country).name.capitalize : "NOT SPECIFIED"
-          %p
+          %p.details--row
             Prefered Language:
-            %strong= current_user.prefered_language.upcase
-          %p
+            %strong= current_user.prefered_language
+          %p.details--row
             Contact Mail:
             %strong= current_user.email.upcase
 
-        .large-4.columns
-          .link-container
+        .dashboard--row
+          .dashboard--links
             = link_to 'START A BASIC CALCULATOR', calculators_path, class: 'large button expand button-landing-page button-landing-page-size radius centered'
             = link_to 'START AN ADVANCED CALCULATOR (COMING SOON)', 'http://blog.washcost.org/', class: 'large button expand button-landing-page button-landing-page-size radius'
       .row
