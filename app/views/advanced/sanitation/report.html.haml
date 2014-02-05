@@ -14,7 +14,7 @@
 
         - if report_expenditure_totals_available
 
-          .report--summary--item
+          %div{ :class => "report--summary--item report--summary--item-#{summary_columns_for_report( [ report_expenditure_totals_available, report_service_level_summary_available, report_comparison_summary_available ] )}" }
             .report--summary--item--title= t( 'report.expenditure_summary' )
 
             .report--summary--item--mini_title
@@ -34,11 +34,19 @@
 
         - if report_service_level_summary_available
 
-          .report--summary--item
+          %div{ :class => "report--summary--item report--summary--item-#{summary_columns_for_report( [ report_expenditure_totals_available, report_service_level_summary_available, report_comparison_summary_available ] )}" }
             .report--summary--item--title= t( 'report.service_level_summary' )
 
             .report--summary--item--value= report_percentage_value_for( @questionnaire.people_with_service_meeting_national_standard )
             .report--summary--item--subtitle= t( 'report.number_of_people_with_service_meeting_national_standard' )
+
+        - if report_comparison_summary_available
+
+          %div{ :class => "report--summary--item report--summary--item-#{summary_columns_for_report( [ report_expenditure_totals_available, report_service_level_summary_available, report_comparison_summary_available ] )}" }
+            .report--summary--item--title= t( 'report.comparison_summary' )
+
+            .report--summary--item--value= report_integer_percentage_value_for( global_recurrent_expenditure_percentile( 'sanitation' )[0] )
+            .report--summary--item--subtitle= t( 'report.number_of_other_reports_with_lower_recurrent_expenditure' )
 
       - else
         .report--no_data= t( 'report.report_box_no_value' )

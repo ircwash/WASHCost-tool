@@ -22,6 +22,14 @@ module AdvancedReportHelper
     @questionnaire.total_service_area_capital_expenditure != nil && @questionnaire.total_service_area_recurrent_expenditure != nil
   end
 
+  def report_comparison_summary_available
+    @questionnaire.total_service_area_capital_expenditure != nil
+  end
+
+  def summary_columns_for_report( available )
+    100 / available.delete_if{ |i| i == false }.count
+  end
+
 
   # formatteres
 
