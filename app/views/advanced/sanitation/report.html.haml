@@ -321,72 +321,37 @@
           %td.report--service_level--cell= report_percentage_value_for( @questionnaire.percentage_of_population_with_unknown_reliability_norms )
           %td.report--service_level--cell= report_percentage_value_for( @questionnaire.percentage_of_population_with_unknown_environmental_protection_norms )
 
-  - if service_area_comparison_available
+  - if service_area_comparison_available || sanitation_service_level_comparison_available
 
     %section.report--section
       .report--section--title= t('report.comparing_costs_and_services');
 
-      .report--subsection--title
-        = t('report.percentile_rank_service_area_expenditure');
+      - if service_area_comparison_available
 
-      .report--comparison_expenditure
-        .report--comparison_expenditure--item
-          .report--comparison_expenditure--item--title= t( 'report.capital_expenditure' )
-          .report--comparison_expenditure--result
-            .report--comparison_expenditure--result--value= report_integer_percentage_value_for( user_capital_expenditure_percentile( 'sanitation' )[0] )
-            .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => user_capital_expenditure_percentile( 'sanitation' )[0] }
-            .report--comparison_expenditure--result--sample= user_capital_expenditure_percentile( 'sanitation' )[1]
-          .report--comparison_expenditure--result
-            .report--comparison_expenditure--result--value= report_integer_percentage_value_for( global_capital_expenditure_percentile( 'sanitation' )[0] )
-            .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => global_capital_expenditure_percentile( 'sanitation' )[0] }
-            .report--comparison_expenditure--result--sample= global_capital_expenditure_percentile( 'sanitation' )[1]
-        .report--comparison_expenditure--item
-          .report--comparison_expenditure--item--title= t( 'report.recurrent_expenditure' )
-          .report--comparison_expenditure--result
-            .report--comparison_expenditure--result--value= report_integer_percentage_value_for( user_recurrent_expenditure_percentile( 'sanitation' )[0] )
-            .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => user_recurrent_expenditure_percentile( 'sanitation' )[0] }
-            .report--comparison_expenditure--result--sample= user_recurrent_expenditure_percentile( 'sanitation' )[1]
-          .report--comparison_expenditure--result
-            .report--comparison_expenditure--result--value= report_integer_percentage_value_for( global_recurrent_expenditure_percentile( 'sanitation' )[0] )
-            .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => global_recurrent_expenditure_percentile( 'sanitation' )[0] }
-            .report--comparison_expenditure--result--sample= global_recurrent_expenditure_percentile( 'sanitation' )[1]
-
-        .report--comparison_expenditure--key
-          .report--comparison_expenditure--key--item
-            .report--comparison_expenditure--key--item--indicator.report--comparison_expenditure--key--item--indicator-yours
-            .report--comparison_expenditure--key--item--label= t( 'report.users_data', :name => current_user.name )
-          .report--comparison_expenditure--key--item
-            .report--comparison_expenditure--key--item--indicator.report--comparison_expenditure--key--item--indicator-all
-            .report--comparison_expenditure--key--item--label= t( 'report.all_data' )
-
-      .report--subsection--title
-        = t('report.percentile_rank_technology_related_expenditure');
-
-      - @questionnaire.supply_system_technologies.each do |technology|
+        .report--subsection--title
+          = t('report.percentile_rank_service_area_expenditure');
 
         .report--comparison_expenditure
-          .report--comparison_expenditure--title= options_for_sanitation_technologies[ technology.to_i ][0]
-
           .report--comparison_expenditure--item
             .report--comparison_expenditure--item--title= t( 'report.capital_expenditure' )
             .report--comparison_expenditure--result
-              .report--comparison_expenditure--result--value= report_integer_percentage_value_for( user_technology_capital_expenditure_percentile( 'sanitation', technology )[0] )
-              .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => user_technology_capital_expenditure_percentile( 'sanitation', technology )[0] }
-              .report--comparison_expenditure--result--sample= user_technology_capital_expenditure_percentile( 'sanitation', technology )[1]
+              .report--comparison_expenditure--result--value= report_integer_percentage_value_for( user_capital_expenditure_percentile( 'sanitation' )[0] )
+              .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => user_capital_expenditure_percentile( 'sanitation' )[0] }
+              .report--comparison_expenditure--result--sample= user_capital_expenditure_percentile( 'sanitation' )[1]
             .report--comparison_expenditure--result
-              .report--comparison_expenditure--result--value= report_integer_percentage_value_for( global_technology_capital_expenditure_percentile( 'sanitation', technology )[0] )
-              .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => global_technology_capital_expenditure_percentile( 'sanitation', technology )[0] }
-              .report--comparison_expenditure--result--sample= global_technology_capital_expenditure_percentile( 'sanitation', technology )[1]
+              .report--comparison_expenditure--result--value= report_integer_percentage_value_for( global_capital_expenditure_percentile( 'sanitation' )[0] )
+              .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => global_capital_expenditure_percentile( 'sanitation' )[0] }
+              .report--comparison_expenditure--result--sample= global_capital_expenditure_percentile( 'sanitation' )[1]
           .report--comparison_expenditure--item
             .report--comparison_expenditure--item--title= t( 'report.recurrent_expenditure' )
             .report--comparison_expenditure--result
-              .report--comparison_expenditure--result--value= report_integer_percentage_value_for( user_technology_recurrent_expenditure_percentile( 'sanitation', technology )[0] )
-              .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => user_technology_recurrent_expenditure_percentile( 'sanitation', technology )[0] }
-              .report--comparison_expenditure--result--sample= user_technology_recurrent_expenditure_percentile( 'sanitation', technology )[1]
+              .report--comparison_expenditure--result--value= report_integer_percentage_value_for( user_recurrent_expenditure_percentile( 'sanitation' )[0] )
+              .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => user_recurrent_expenditure_percentile( 'sanitation' )[0] }
+              .report--comparison_expenditure--result--sample= user_recurrent_expenditure_percentile( 'sanitation' )[1]
             .report--comparison_expenditure--result
-              .report--comparison_expenditure--result--value= report_integer_percentage_value_for( global_technology_recurrent_expenditure_percentile( 'sanitation', technology )[0] )
-              .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => global_technology_recurrent_expenditure_percentile( 'sanitation', technology )[0] }
-              .report--comparison_expenditure--result--sample= global_technology_recurrent_expenditure_percentile( 'sanitation', technology )[1]
+              .report--comparison_expenditure--result--value= report_integer_percentage_value_for( global_recurrent_expenditure_percentile( 'sanitation' )[0] )
+              .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => global_recurrent_expenditure_percentile( 'sanitation' )[0] }
+              .report--comparison_expenditure--result--sample= global_recurrent_expenditure_percentile( 'sanitation' )[1]
 
           .report--comparison_expenditure--key
             .report--comparison_expenditure--key--item
@@ -396,4 +361,97 @@
               .report--comparison_expenditure--key--item--indicator.report--comparison_expenditure--key--item--indicator-all
               .report--comparison_expenditure--key--item--label= t( 'report.all_data' )
 
+        .report--subsection--title
+          = t('report.percentile_rank_technology_related_expenditure');
 
+        - @questionnaire.supply_system_technologies.each do |technology|
+
+          .report--comparison_expenditure
+            .report--comparison_expenditure--title= options_for_sanitation_technologies[ technology.to_i ][0]
+
+            .report--comparison_expenditure--item
+              .report--comparison_expenditure--item--title= t( 'report.capital_expenditure' )
+              .report--comparison_expenditure--result
+                .report--comparison_expenditure--result--value= report_integer_percentage_value_for( user_technology_capital_expenditure_percentile( 'sanitation', technology )[0] )
+                .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => user_technology_capital_expenditure_percentile( 'sanitation', technology )[0] }
+                .report--comparison_expenditure--result--sample= user_technology_capital_expenditure_percentile( 'sanitation', technology )[1]
+              .report--comparison_expenditure--result
+                .report--comparison_expenditure--result--value= report_integer_percentage_value_for( global_technology_capital_expenditure_percentile( 'sanitation', technology )[0] )
+                .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => global_technology_capital_expenditure_percentile( 'sanitation', technology )[0] }
+                .report--comparison_expenditure--result--sample= global_technology_capital_expenditure_percentile( 'sanitation', technology )[1]
+            .report--comparison_expenditure--item
+              .report--comparison_expenditure--item--title= t( 'report.recurrent_expenditure' )
+              .report--comparison_expenditure--result
+                .report--comparison_expenditure--result--value= report_integer_percentage_value_for( user_technology_recurrent_expenditure_percentile( 'sanitation', technology )[0] )
+                .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => user_technology_recurrent_expenditure_percentile( 'sanitation', technology )[0] }
+                .report--comparison_expenditure--result--sample= user_technology_recurrent_expenditure_percentile( 'sanitation', technology )[1]
+              .report--comparison_expenditure--result
+                .report--comparison_expenditure--result--value= report_integer_percentage_value_for( global_technology_recurrent_expenditure_percentile( 'sanitation', technology )[0] )
+                .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => global_technology_recurrent_expenditure_percentile( 'sanitation', technology )[0] }
+                .report--comparison_expenditure--result--sample= global_technology_recurrent_expenditure_percentile( 'sanitation', technology )[1]
+
+            .report--comparison_expenditure--key
+              .report--comparison_expenditure--key--item
+                .report--comparison_expenditure--key--item--indicator.report--comparison_expenditure--key--item--indicator-yours
+                .report--comparison_expenditure--key--item--label= t( 'report.users_data', :name => current_user.name )
+              .report--comparison_expenditure--key--item
+                .report--comparison_expenditure--key--item--indicator.report--comparison_expenditure--key--item--indicator-all
+                .report--comparison_expenditure--key--item--label= t( 'report.all_data' )
+
+      - if sanitation_service_level_comparison_available
+
+        .report--subsection--title
+          = t('report.percentile_rank_service_indicators');
+
+        .report--comparison_expenditure
+          .report--comparison_expenditure--item.report--comparison_expenditure--item-narrow
+            .report--comparison_expenditure--item--title= t( 'report.access' )
+            .report--comparison_expenditure--result.report--comparison_expenditure--result-narrow
+              .report--comparison_expenditure--result--value.report--comparison_expenditure--result-narrow--value= report_integer_percentage_value_for( user_service_accessibility_percentile( 'sanitation' )[0] )
+              .report--comparison_expenditure--result--chart.report--comparison_expenditure--result-narrow--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => user_service_accessibility_percentile( 'sanitation' )[0] }
+              .report--comparison_expenditure--result--sample.report--comparison_expenditure--result-narrow--sample= user_service_accessibility_percentile( 'sanitation' )[1]
+            .report--comparison_expenditure--result.report--comparison_expenditure--result-narrow
+              .report--comparison_expenditure--result--value.report--comparison_expenditure--result-narrow--value= report_integer_percentage_value_for( global_service_accessibility_percentile( 'sanitation' )[0] )
+              .report--comparison_expenditure--result--chart.report--comparison_expenditure--result-narrow--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => global_service_accessibility_percentile( 'sanitation' )[0] }
+              .report--comparison_expenditure--result--sample.report--comparison_expenditure--result-narrow--sample= global_service_accessibility_percentile( 'sanitation' )[1]
+
+          .report--comparison_expenditure--item.report--comparison_expenditure--item-narrow
+            .report--comparison_expenditure--item--title= t( 'report.use' )
+            .report--comparison_expenditure--result.report--comparison_expenditure--result-narrow
+              .report--comparison_expenditure--result--value.report--comparison_expenditure--result-narrow--value= report_integer_percentage_value_for( user_service_use_percentile( 'sanitation' )[0] )
+              .report--comparison_expenditure--result--chart.report--comparison_expenditure--result-narrow--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => user_service_use_percentile( 'sanitation' )[0] }
+              .report--comparison_expenditure--result--sample.report--comparison_expenditure--result-narrow--sample= user_service_use_percentile( 'sanitation' )[1]
+            .report--comparison_expenditure--result.report--comparison_expenditure--result-narrow
+              .report--comparison_expenditure--result--value.report--comparison_expenditure--result-narrow--value= report_integer_percentage_value_for( global_service_use_percentile( 'sanitation' )[0] )
+              .report--comparison_expenditure--result--chart.report--comparison_expenditure--result-narrow--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => global_service_use_percentile( 'sanitation' )[0] }
+              .report--comparison_expenditure--result--sample.report--comparison_expenditure--result-narrow--sample= global_service_use_percentile( 'sanitation' )[1]
+
+          .report--comparison_expenditure--item.report--comparison_expenditure--item-narrow
+            .report--comparison_expenditure--item--title= t( 'report.reliability' )
+            .report--comparison_expenditure--result.report--comparison_expenditure--result-narrow
+              .report--comparison_expenditure--result--value.report--comparison_expenditure--result-narrow--value= report_integer_percentage_value_for( user_service_reliability_percentile( 'sanitation' )[0] )
+              .report--comparison_expenditure--result--chart.report--comparison_expenditure--result-narrow--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => user_service_reliability_percentile( 'sanitation' )[0] }
+              .report--comparison_expenditure--result--sample.report--comparison_expenditure--result-narrow--sample= user_service_reliability_percentile( 'sanitation' )[1]
+            .report--comparison_expenditure--result.report--comparison_expenditure--result-narrow
+              .report--comparison_expenditure--result--value.report--comparison_expenditure--result-narrow--value= report_integer_percentage_value_for( global_service_reliability_percentile( 'sanitation' )[0] )
+              .report--comparison_expenditure--result--chart.report--comparison_expenditure--result-narrow--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => global_service_reliability_percentile( 'sanitation' )[0] }
+              .report--comparison_expenditure--result--sample.report--comparison_expenditure--result-narrow--sample= global_service_reliability_percentile( 'sanitation' )[1]
+
+          .report--comparison_expenditure--item.report--comparison_expenditure--item-narrow
+            .report--comparison_expenditure--item--title= t( 'report.environmental_protection' )
+            .report--comparison_expenditure--result.report--comparison_expenditure--result-narrow
+              .report--comparison_expenditure--result--value.report--comparison_expenditure--result-narrow--value= report_integer_percentage_value_for( user_service_environmental_protection_percentile( 'sanitation' )[0] )
+              .report--comparison_expenditure--result--chart.report--comparison_expenditure--result-narrow--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => user_service_environmental_protection_percentile( 'sanitation' )[0] }
+              .report--comparison_expenditure--result--sample.report--comparison_expenditure--result-narrow--sample= user_service_environmental_protection_percentile( 'sanitation' )[1]
+            .report--comparison_expenditure--result.report--comparison_expenditure--result-narrow
+              .report--comparison_expenditure--result--value.report--comparison_expenditure--result-narrow--value= report_integer_percentage_value_for( global_service_environmental_protection_percentile( 'sanitation' )[0] )
+              .report--comparison_expenditure--result--chart.report--comparison_expenditure--result-narrow--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => global_service_environmental_protection_percentile( 'sanitation' )[0] }
+              .report--comparison_expenditure--result--sample.report--comparison_expenditure--result-narrow--sample= global_service_environmental_protection_percentile( 'sanitation' )[1]
+
+          .report--comparison_expenditure--key
+            .report--comparison_expenditure--key--item
+              .report--comparison_expenditure--key--item--indicator.report--comparison_expenditure--key--item--indicator-yours
+              .report--comparison_expenditure--key--item--label= t( 'report.users_data', :name => current_user.name )
+            .report--comparison_expenditure--key--item
+              .report--comparison_expenditure--key--item--indicator.report--comparison_expenditure--key--item--indicator-all
+              .report--comparison_expenditure--key--item--label= t( 'report.all_data' )
