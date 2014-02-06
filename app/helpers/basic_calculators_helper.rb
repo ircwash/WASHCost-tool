@@ -50,6 +50,22 @@ module BasicCalculatorsHelper
     3
   end
 
+  def minimum_capital_expenditure_for_sanitation
+    0
+  end
+
+  def maximum_capital_expenditure_for_sanitation
+    50
+  end
+
+  def minimum_guidance_capital_expenditure_for_sanitation
+    7
+  end
+
+  def maximum_guidance_capital_expenditure_for_sanitation
+    26
+  end
+
   # options
 
   def options_for_water_supply_technologies
