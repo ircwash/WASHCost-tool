@@ -81,4 +81,13 @@ module BasicCalculatorsHelper
     ]
   end
 
+  def options_for_water_reliability
+    [
+      [ 'works_all_the_time', 0 ],
+      [ 'not_working_less_than_twelve_days_a_year', 1 ],
+      [ 'not_working_more_than_twelve_days_a_year', 2 ],
+      [ 'not_working_all_of_the_time', 3 ]
+    ]
+  end
+
 end
