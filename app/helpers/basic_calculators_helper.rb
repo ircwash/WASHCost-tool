@@ -66,6 +66,22 @@ module BasicCalculatorsHelper
     26
   end
 
+  def minimum_recurrent_expenditure_for_sanitation
+    0
+  end
+
+  def maximum_recurrent_expenditure_for_sanitation
+    8
+  end
+
+  def minimum_guidance_recurrent_expenditure_for_sanitation
+    1.5
+  end
+
+  def maximum_guidance_recurrent_expenditure_for_sanitation
+    4.0
+  end
+
   # options
 
   def options_for_water_supply_technologies
