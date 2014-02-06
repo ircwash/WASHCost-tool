@@ -98,4 +98,15 @@ module BasicCalculatorsHelper
     ]
   end
 
+  def options_for_latrine_technologies
+    [
+      [ 'traditional_pit_latrine', 0 ],
+      [ 'slab_latrine', 1 ],
+      [ 'vip_latrine', 2 ],
+      [ 'pour_flush_latrine', 3 ],
+      [ 'twin_pit_pour_flush_latrine', 4 ],
+      [ 'latrine_with_septic_tank', 5 ]
+    ]
+  end
+
 end

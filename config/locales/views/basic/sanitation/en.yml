@@ -12,13 +12,13 @@ en:
           question: What is the typical household size?
         latrine:
           question: What type of latrine technology is being used?
-          answers:
-            a0: Traditional pit latrine
-            a1: Slab latrine
-            a2: Vip latrine
-            a3: Pour Flush Latrine
-            a4: Twin Pit Pour Flush Latrine
-            a5: Latrine with septic tank
+          options:
+            traditional_pit_latrine: Traditional pit latrine
+            slab_latrine: Slab latrine
+            vip_latrine: Vip latrine
+            pour_flush_latrine: Pour Flush Latrine
+            twin_pit_pour_flush_latrine: Twin Pit Pour Flush Latrine
+            latrine_with_septic_tank: Latrine with septic tank
         population:
           question: How many people in this area are receiving this sanitation service?
           value_label: People
