@@ -72,4 +72,13 @@ module BasicCalculatorsHelper
     ]
   end
 
+  def options_for_water_qualities
+    [
+      [ 'regular_and_meets_standards', 0 ],
+      [ 'occasional_and_meets_standards', 1 ],
+      [ 'one_off_after_construction', 2 ],
+      [ 'no_testing', 3 ]
+    ]
+  end
+
 end

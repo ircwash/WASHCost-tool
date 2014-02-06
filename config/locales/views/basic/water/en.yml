@@ -37,18 +37,18 @@ en:
             more_than_sixy_litres: More than 60L
         quality:
           question: Is water quality testing done?
-          answers:
-            a3: Regular and meets standards
-            a2: Occational and meets standards
-            a1: One-off after construction
-            a0: No testing
+          options:
+            regular_and_meets_standards: Regular and meets standards
+            occasional_and_meets_standards: Occasional and meets standards
+            one_off_after_construction: One-off after construction
+            no_testing: No testing
         reliability:
           question: How reliable is the water service?
-          answers:
-            a0: Works all the time
-            a1: Not working less than 12 days a year
-            a2: Not working more than 12 days a year
-            a3: Not working all of the time
+          options:
+            works_all_the_time: Works all the time
+            not_working_less_than_twelve_days_a_year: Not working less than 12 days a year
+            not_working_more_than_twelve_days_a_year: Not working more than 12 days a year
+            not_working_all_of_the_time: Not working all of the time
         recurrent:
           value_label: US$ Per person per Year
       report:

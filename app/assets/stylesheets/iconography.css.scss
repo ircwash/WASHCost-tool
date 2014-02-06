@@ -54,32 +54,34 @@
   background-position:50% -1775px;
 }
 
-.icon--tool-noTest::before {
-  background-position:50% -2415px;
-}
-
-.icon--tool-test::before {
-  background-position:50% -2255px;
-}
-
-.icon--tool-quality::before,
-.icon--tool-occasional::before {
-  background-position:50% -2095px;
-}
-
-.icon--tool-regular::before {
+.icon--tool-regular_and_meets_standards::before {
   background-position:50% -1935px;
 }
 
-.icon--tool-worksAll::before {
+.icon--tool-occasional_and_meets_standards::before {
+  background-position:50% -2095px;
+}
+
+.icon--tool-one_off_after_construction::before {
+  background-position:50% -2255px;
+}
+
+
+.icon--tool-no_testing::before {
+  background-position:50% -2415px;
+}
+
+
+
+
+.icon--tool-xxx::before {
   background-position:50% -2575px;
 }
 
-.icon--tool-worksMostly::before {
+.icon--tool-yyy::before {
   background-position:50% -2735px;
 }
 
-.icon--tool-reliability::before,
 .icon--tool-breakDown::before {
   background-position:50% -2895px;
 }
@@ -87,6 +89,9 @@
 .icon--tool-notWorking::before {
   background-position:50% -3055px;
 }
+
+
+
 
 .icon--tool-water_calculator::before {
   height:180px;
