@@ -15,15 +15,21 @@ namespace :db do
 
       [ country.alpha3, country.currency[ :code ] ] unless country.data == nil || country.currency == nil
     end.compact.uniq{ |c| c[1] }.each do |country, currency|
-      puts "#{currency}"
 
-      response = HTTParty.get( "http://api.worldbank.org/countries/#{country}/indicators/PA.NUS.FCRF", {} )
+      response = HTTParty.get( "http://api.worldbank.org/countries/#{country}/indicators/pa.nus.fcrf?format=json&date=2011", {} )
 
-      if response.parsed_response && response.parsed_response[ 'data' ] && response.parsed_response[ 'data' ][ 'data' ]
-        currency = ExchangeRate.create(
-          :name  => currency,
-          :rates => Hash[ response.parsed_response[ 'data' ][ 'data' ].map{ |fx| [ fx[ 'date' ].to_i, fx[ 'value' ].to_f ] } ]
-        )
+      if response.parsed_response != nil && response.parsed_response.count > 1 && response.parsed_response[1] != nil && response.parsed_response[1].count > 0
+        fx = response.parsed_response[1][0]
+
+        if fx[ 'date' ].to_i == 2011 && fx[ 'value' ] != nil
+          exchange_rate = ExchangeRate.create(
+            :name  => currency,
+            :year  => fx[ 'date' ].to_i,
+            :rate  => fx[ 'value' ].to_f
+          )
+
+          puts "#{currency} -> #{fx[ 'value' ]}"
+        end
       end
     end
 

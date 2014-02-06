@@ -2,9 +2,10 @@ class ExchangeRate
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  validates_presence_of :name, :rates
+  validates_presence_of :name, :year, :rate
 
   field :name, :type => String
-  field :rates, :type => Hash, :default => {}
+  field :year, :type => Integer
+  field :rate, :type => Float
 
 end
