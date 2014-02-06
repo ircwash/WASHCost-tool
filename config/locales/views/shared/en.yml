@@ -23,7 +23,7 @@ en:
       service:
         title: Service
         items:
-          time: Access
+          access: Access
           quantity: Quantity
           quality: Quality
           providing: Household Latrine

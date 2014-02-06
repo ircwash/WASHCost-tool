@@ -101,11 +101,11 @@ module NavigationHelper
           },
           service:
           {
-            first_action: :time,
+            first_action: :access,
             name: I18n.t('nav.main.service.title'),
             items:
             {
-              time: I18n.t('nav.main.service.items.time'),
+              access: I18n.t('nav.main.service.items.access'),
               quantity: I18n.t('nav.main.service.items.quantity'),
               quality: I18n.t('nav.main.service.items.quality'),
               reliability: I18n.t('nav.main.service.items.reliability')

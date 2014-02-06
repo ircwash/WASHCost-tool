@@ -34,6 +34,14 @@ module BasicCalculatorsHelper
     6
   end
 
+  def minimum_access_for_water
+    0
+  end
+
+  def maximum_access_for_water
+    3
+  end
+
   # options
 
   def options_for_water_supply_technologies
@@ -43,6 +51,15 @@ module BasicCalculatorsHelper
       [ 'single_town_scheme', 2 ],
       [ 'multi_town_scheme', 3 ],
       [ 'mixed_pipe_supply', 4 ]
+    ]
+  end
+
+  def options_for_water_access
+    [
+      t( 'basic.water.questionnaire.access.options.less_than_ten' ),
+      t( 'basic.water.questionnaire.access.options.between_ten_and_thirty' ),
+      t( 'basic.water.questionnaire.access.options.between_thirty_and_sixty' ),
+      t( 'basic.water.questionnaire.access.options.more_thank_sixty' )
     ]
   end
 
