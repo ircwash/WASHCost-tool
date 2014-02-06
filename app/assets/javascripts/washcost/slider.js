@@ -21,13 +21,13 @@ $( document ).ready( function()
           below       = input.data( 'slider-below' ),
           above       = input.data( 'slider-above' ),
           value       = logarithmic ? _logslider.logposition( parseInt( label.val(), 10 ), min, max ) : parseInt( label.val(), 10 ),
-          options     = { slide:update_value, value:value },
+          options     = { slide:update_value, value:value, change:input_did_change },
           step_slider, below_offset, above_offset;
 
       // set up options
       if ( min )  options.min  = min;
       if ( max )  options.max  = max;
-console.warn( options )
+
       // initialise slider widget
       slider.slider( options );
 
@@ -112,6 +112,16 @@ console.warn( options )
     var label = $( this );
 
     label.val( parseInt( label.val(), 10 ).toLocaleString() );
+  }
+
+
+  function input_did_change( event )
+  {
+    var label       = $( this ),
+        input       = label.siblings( '[data-slider-input]' );
+
+    // trigger change event
+    input.trigger( 'change' );
   }
 
 

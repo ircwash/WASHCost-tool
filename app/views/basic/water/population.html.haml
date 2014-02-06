@@ -1,19 +1,19 @@
 = content_for :title do
-  3 of 9 (Population)
+  3 of 9 (Population) - Basic Water Calculator
 
 .question
-  %h1.question--title= @population[:question_label]
+  %h1.question--title= @questionnaire.technology != nil ? t( 'basic.water.questionnaire.population.question', :technology => t( "basic.water.questionnaire.technology.answers.#{options_for_water_supply_technologies[@questionnaire.technology[1].to_i][0]}" ) ) : t( 'basic.water.questionnaire.population.default_question' )
 
   .question--answer
 
     .question--answer--title= t 'form.water_basic.population.value_label'
 
-    = form_tag basic_water_action_url( I18n.locale, 'population' ), id: 'waterBasicForm' do
+    = form_for @questionnaire, :url => basic_water_update_url( I18n.locale, 'capital_expenditure' ), :html => { 'data-dynamic_form' => basic_water_dynamic_update_url( I18n.locale ) } do |f|
 
       .slider
-        %input.slider--value{ :type => 'text', :value => @population[:value].present? ? number_with_precision( @population[:value], :precision => 0, :locale => I18n.locale ) : 0 }
+        %input.slider--value{ :type => 'text', :value => @questionnaire.population != nil ? number_with_precision( @questionnaire.population, :precision => 0, :locale => I18n.locale ) : 0 }
         .slider--widget
-        %input{ :name => 'population', :type => 'hidden', :value => @population[:value].present? ? @population[:value] : 0, 'data-slider-input' => 'true', 'data-logarithmic' => 'true', 'data-slider-min' => 100, 'data-slider-max' => 1000000 }
+        = f.hidden_field :population, { 'data-slider-input' => 'true', 'data-logarithmic' => 'true', 'data-slider-min' => 100, 'data-slider-max' => 1000000 }
 
       .question--buttons
         = submit_tag((t 'buttons.next'), class: 'button')

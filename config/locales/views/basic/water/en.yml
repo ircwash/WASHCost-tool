@@ -11,11 +11,11 @@ en:
             multi_town_scheme: "Multi-town scheme"
             mixed_pipe_supply: "Mixed-pipe supply"
           info:
-            i0: "Reticulated supply with pumping, storage and distribution through public stand posts with provision for house connections."
-            i1: "Water is supplied through a small distribution network and connected public stand posts. Water storage is limited, typically to an overhead storage tank  directly connected to the pump.  Household connections are rare."
-            i2: "Maecenas elementum tristique nunc sed vehicula. Mauris dignissim erat ut lectus rutrum elementum. Etiam pharetra ac massa sit amet mattis. Nam blandit, nibh sed mattis accumsan, nisi risus vulputate eros, in ar laoreet."
-            i3: "Reticulated supply with pumping, storage and distribution supplied to a number of interconnected towns or villages. Each village with its own storage and distribution network."
-            i4: "Water is supplied through a combination of separate, often overlapping, service delivery systems."
+            borehole_handpump: "Reticulated supply with pumping, storage and distribution through public stand posts with provision for house connections."
+            mechanised_borehole: "Water is supplied through a small distribution network and connected public stand posts. Water storage is limited, typically to an overhead storage tank  directly connected to the pump.  Household connections are rare."
+            single_town_scheme: "Maecenas elementum tristique nunc sed vehicula. Mauris dignissim erat ut lectus rutrum elementum. Etiam pharetra ac massa sit amet mattis. Nam blandit, nibh sed mattis accumsan, nisi risus vulputate eros, in ar laoreet."
+            multi_town_scheme: "Reticulated supply with pumping, storage and distribution supplied to a number of interconnected towns or villages. Each village with its own storage and distribution network."
+            mixed_pipe_supply: "Water is supplied through a combination of separate, often overlapping, service delivery systems."
         population:
           default_question: "How many people in this area are receiving this water service?"
           question: "How many people are served by a %{technology}?"
