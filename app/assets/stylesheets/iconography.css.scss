@@ -66,16 +66,17 @@
   background-position:50% -2255px;
 }
 
-
 .icon--tool-no_testing::before {
   background-position:50% -2415px;
 }
 
-.icon--tool-works_all_the_time::before {
+.icon--tool-works_all_the_time::before,
+.icon--tool-latrine_reliable::before, {
   background-position:50% -2575px;
 }
 
-.icon--tool-not_working_less_than_twelve_days_a_year::before {
+.icon--tool-not_working_less_than_twelve_days_a_year::before,
+.icon--tool-latrine_inconsistent::before {
   background-position:50% -2735px;
 }
 
@@ -83,12 +84,10 @@
   background-position:50% -2895px;
 }
 
-.icon--tool-not_working_all_of_the_time::before {
+.icon--tool-not_working_all_of_the_time::before,
+.icon--tool-latrine_unreliable::before {
   background-position:50% -3055px;
 }
-
-
-
 
 .icon--tool-water_calculator::before {
   height:180px;
@@ -103,9 +102,6 @@
 .icon--tool-population::before {
   background-position:50% -3215px;
 }
-
-
-
 
 .icon--tool-traditional_pit_latrine::before {
   background-position:50% -3695px;

@@ -171,4 +171,12 @@ module BasicCalculatorsHelper
     ]
   end
 
+  def options_for_latrine_reliability
+    [
+      [ 'latrine_reliable', 0 ],
+      [ 'latrine_inconsistent', 1 ],
+      [ 'latrine_unreliable', 2 ]
+    ]
+  end
+
 end

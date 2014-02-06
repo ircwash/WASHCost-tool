@@ -43,13 +43,10 @@ en:
             latrine_usage_none: None
         reliability:
           question: Is the latrine cleaned and emptied when required?
-          answers:
-            a0: Yes
-            a1: Not consistently
-            a2: No
-        recurrent:
-          question: How much is being spent/will be spent to operate, maintain and support the delivery of sanitation services (per person per year)?
-          value_label: US$ Per person per Year
+          options:
+            latrine_reliable: "Yes"
+            latrine_inconsistent: Not consistently
+            latrine_unreliable: "No"
       report:
         final_report: Basic Sanitation | Final Report
         sustainability:
