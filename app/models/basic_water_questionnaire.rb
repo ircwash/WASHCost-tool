@@ -36,6 +36,11 @@ class BasicWaterQuestionnaire < Session
   end
 
 
+  def reportable?
+    [ latrine, capital_expenditure, recurrent_expenditure, reliability, service_rating ].all?
+  end
+
+
   # DEFINITIONS
 
   def minimum_population

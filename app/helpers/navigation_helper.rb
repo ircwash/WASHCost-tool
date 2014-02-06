@@ -133,7 +133,7 @@ module NavigationHelper
           },
           service:
           {
-            first_action: :providing,
+            first_action: :household_latrine,
             name: I18n.t('nav.main.service.title'),
             items:
             {

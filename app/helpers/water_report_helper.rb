@@ -1,5 +1,5 @@
 module WaterReportHelper
-  include ReportHelper
+#  include ReportHelper
 
   def get_session_form
 

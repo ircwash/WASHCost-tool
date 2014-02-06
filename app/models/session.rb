@@ -19,21 +19,23 @@ class Session
 
   def update_attributes( attributes )
 
-    attributes.each do |name, value|
+    if attributes != nil
+      attributes.each do |name, value|
 
-      if value == ''
-        value = nil
-      elsif value.kind_of?(Array)
-        value.reject! { |v| v.empty? }
+        if value == ''
+          value = nil
+        elsif value.kind_of?(Array)
+          value.reject! { |v| v.empty? }
 
+        end
+
+        if respond_to?( "#{name}=" )
+          send( "#{name}=", value )
+        end
       end
 
-      if respond_to?( "#{name}=" )
-        send( "#{name}=", value )
-      end
+      archive
     end
-
-    archive
   end
 
 
