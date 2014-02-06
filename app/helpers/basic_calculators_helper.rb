@@ -148,14 +148,14 @@ module BasicCalculatorsHelper
     ]
   end
 
-  def options_for_impermeability
+  def options_for_latrine_impermeability
     [
       [ 'impermeable_slab', 0 ],
       [ 'no_impermeable_slab', 1 ]
     ]
   end
 
-  def options_for_environmental_impact
+  def options_for_latrine_environmental_impact
     [
       [ 'non_problematic_safe_disposal_reuse_biproducts', 0 ],
       [ 'non_problematic_safe_disposal', 1 ],
