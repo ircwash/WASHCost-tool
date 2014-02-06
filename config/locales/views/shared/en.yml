@@ -28,7 +28,7 @@ en:
           quality: Quality
           household_latrine: Household Latrine
           impermeability: Impermeability
-          environment: Environment
+          environmental_impact: Environment
           usage: Usage
           reliability: Reliability
       advanced:

@@ -155,4 +155,12 @@ module BasicCalculatorsHelper
     ]
   end
 
+  def options_for_environmental_impact
+    [
+      [ 'non_problematic_safe_disposal_reuse_biproducts', 0 ],
+      [ 'non_problematic_safe_disposal', 1 ],
+      [ 'significant_pollution', 2 ]
+    ]
+  end
+
 end

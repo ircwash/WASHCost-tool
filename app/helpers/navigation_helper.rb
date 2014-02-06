@@ -139,7 +139,7 @@ module NavigationHelper
             {
               household_latrine: I18n.t('nav.main.service.items.household_latrine'),
               impermeability: I18n.t('nav.main.service.items.impermeability'),
-              environment: I18n.t('nav.main.service.items.environment'),
+              environmental_impact: I18n.t('nav.main.service.items.environmental_impact'),
               usage: I18n.t('nav.main.service.items.usage'),
               reliability: I18n.t('nav.main.service.items.reliability')
             }

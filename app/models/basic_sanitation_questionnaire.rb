@@ -7,7 +7,7 @@ class BasicSanitationQuestionnaire < Session
                 :recurrent_expenditure,
                 :household_latrine,
                 :impermeability,
-                :environment,
+                :environmental_impact,
                 :usage,
                 :reliability
 
@@ -49,7 +49,7 @@ class BasicSanitationQuestionnaire < Session
     @recurrent_expenditure = nil
     @household_latrine     = nil
     @impermeability        = nil
-    @environment           = nil
+    @environmental_impact  = nil
     @usage                 = nil
     @reliability           = nil
 
