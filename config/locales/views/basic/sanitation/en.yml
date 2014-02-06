@@ -37,10 +37,10 @@ en:
             significant_pollution: Significant pollution
         usage:
           question: Which family members use the latrine?
-          answers:
-            a0: All
-            a1: Some
-            a2: None
+          options:
+            latrine_usage_all: All
+            latrine_usage_some: Some
+            latrine_usage_none: None
         reliability:
           question: Is the latrine cleaned and emptied when required?
           answers:

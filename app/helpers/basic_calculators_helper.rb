@@ -163,4 +163,12 @@ module BasicCalculatorsHelper
     ]
   end
 
+  def options_for_latrine_usage
+    [
+      [ 'latrine_usage_all', 0 ],
+      [ 'latrine_usage_some', 1 ],
+      [ 'latrine_usage_none', 2 ]
+    ]
+  end
+
 end
