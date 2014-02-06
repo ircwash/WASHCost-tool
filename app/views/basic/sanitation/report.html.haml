@@ -7,32 +7,32 @@
 
     .report--header--pretitle= t( 'basic.sanitation.report.final_report' )
     %h1.report--header--title= t( 'report.summmary' )
-    = link_to basic_water_report_path, ">> #{t('report.cross_to_water')}", :class => 'report--header--quicklink'
+    = link_to "#{t('report.cross_to_water')}", basic_water_report_path, :class => 'report--header--quicklink'
 
     - if @questionnaire.reportable?
       .report--summary
         .report--summary--item
           .report--summary--item--title= t( 'report.total_cost' )
-          .report--summary--item--value= "US$ #{number_with_delimiter(flash[:results][:total], :delimiter=>',')}"
-          .report--summary--item--caption= t('report.caption_total_cost', population: flash[:results][:population])
+          .report--summary--item--value= "#{report_dollar_currency_value_for(@questionnaire.total_cost, 0)}"
+          .report--summary--item--caption= t( 'report.caption_total_cost', :population => report_integer_value_for( @questionnaire.population ) )
 
         .report--summary--item
-          .report--summary--item--title= t('report.level_of_service')
+          .report--summary--item--title= t( 'report.level_of_service' )
           .report--summary--item--rating
-            - ( flash[:results][:service_rating] + 1 ).times do
+            - ( @questionnaire.service_rating + 1 ).times do
               .report--rating_icon.icon--star-full
-            - ( 3 - flash[:results][:service_rating] ).times do
+            - ( 3 - @questionnaire.service_rating ).times do
               .report--rating_icon.icon--star-empty
-          .report--summary--item--caption= t('report.substandard')
+          .report--summary--item--caption= sanitation_service_level_rating_label
 
       .report--summary--description
-        .report--summary--description--icon{ :class => flash[:results][:cost_rating] == 1 ? "icon--status-good" : "icon--status-bad" }
-        .report--summary--description--caption= flash[:results][:cost_rating_label].html_safe
+        .report--summary--description--icon{ :class => @questionnaire.cost_rating_inside_benchmarks? ? "icon--status-good" : "icon--status-bad" }
+        .report--summary--description--caption= cost_rating_inside_benchmarks_label
 
       %section.report--review{ "data-togglecontent" => "true" }
         %a.report--review--link{ :href => '#', "data-togglecontent-link" => "true" }= "#{t('report.full_review')} >>"
         .report--review--content{ "data-togglecontent-content" => "true" }
-          .report--review--content--text= simple_format flash[:results][:service_level]
+          .report--review--content--text= basic_report_level_of_service
 
     - else
       .report--no_data= t('report.report_box_no_value')

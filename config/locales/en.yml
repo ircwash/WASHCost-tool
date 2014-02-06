@@ -12,5 +12,4 @@ en:
     not_ready:
       summary: "You must complete the form before we can provide summary analysis"
       cost: "You must complete the form before we can provide cost analysis"
-    value_not_set: "No answer provided"
     skip: "skip this question"

@@ -148,6 +148,13 @@ module SanitationReportHelper
     end
   end
 
+
+
+
+
+
+
+#-----------------------------------
   # @return [Integer], return the capital value take into account the rules based on latrine technology
   def get_capital(capital)
     form = get_session_form
@@ -188,6 +195,9 @@ module SanitationReportHelper
         { max_value: 8, min_value: 0, below_value: 1.5, above_value: 4.0 }
     end
   end
+#---------------------------
+
+
 
 
   @@recEx_rating_code = {
@@ -254,6 +264,12 @@ module SanitationReportHelper
       1 =>   "3"
   }
 
+
+
+
+
+
+#-------------------------------------------
   # Total Cost & Cost Rating/Benchmarking Calculations
   # @return [Integer], return the total costs for population including capital and recurrent expenditures
   def get_total(capital, recurrent, population)
@@ -293,6 +309,17 @@ module SanitationReportHelper
       t 'report.benchmark_outside'
     end
   end
+#-----------------------
+
+
+
+
+
+
+
+
+
+
 
 
   def get_rating(providing, impermeability, environment, usage, reliability)
@@ -327,6 +354,14 @@ module SanitationReportHelper
     rating_for_expenditure expenditure_value, benchmark[:below_value], benchmark[:above_value]
   end
 
+
+
+
+
+
+
+
+#-----------------------------
   def rating_for_combined_service_levels(providing, impermeability, environment, usage, reliability)
     access_rating = get_access_service_level(providing, impermeability)
     environment_rating = rating_for_service_level environment
@@ -360,6 +395,13 @@ module SanitationReportHelper
 
     return label
   end
+#–------------------------------------
+
+
+
+
+
+
 
   #@return [String], return the full review associated to recurrent expenditure, quality and reliability, capExp,
   # providing, impermeability and environment indicators
