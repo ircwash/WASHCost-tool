@@ -1,5 +1,11 @@
 module BasicReportHelper
 
+  # availability checks
+
+  def basic_report_cost_available
+    @questionnaire.capital_expenditure != nil && @questionnaire.recurrent_expenditure != nil
+  end
+
   # formatters
 
   def report_dollar_currency_value_for( value, precision = 2 )
@@ -29,7 +35,6 @@ module BasicReportHelper
       t 'report.benchmark_outside'
     end
   end
-
 
   def basic_report_level_of_service
     "#{t( 'basic.sanitation.report.summaries.a' + @questionnaire.level_of_service[0] )} \n #{t( 'basic.sanitation.report.summaries.b' + @questionnaire.level_of_service[1] )}"

@@ -54,6 +54,17 @@ en:
           two_stars: Limited service
           three_stars: Basic service
           four_stars: Improved service
+        sections:
+          country: Country
+          latrine_technology: Latrine Technology
+          population: Population
+          capital_expenditure_per_person: Capital expenditure per person
+          recurrent_expenditure_per_person: Recurrent expenditure per person
+          household_latrine: Providing
+          impermeability: Impermeability
+          environmental_impact: Environment
+          usage: Usage
+          reliatilibty: Reliability
         summaries:
           a111: "There is a high incidence of open defecation as latrines are not being used. Additionally, if there are latrines, these are not being cleaned or emptied. Barely any money is being spent on recurrent annual expenditure  and as a result the service has failed and live may be at risk!"
           a113: "Although existing latrines are reasonably clean, there is a high incidence of open defecation as latrines are not being used. Barely any money is being spent on recurrent annual expenditure, specifically on maintaining or improving behaviour change for latrine use. Lives may be at risk!"

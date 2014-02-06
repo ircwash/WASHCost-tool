@@ -31,7 +31,7 @@
 
       %section.report--review{ "data-togglecontent" => "true" }
         %a.report--review--link{ :href => '#', "data-togglecontent-link" => "true" }= "#{t('report.full_review')} >>"
-        .report--review--content{ "data-togglecontent-content" => "true" }
+        .report--review--content{ "data-togglecontent-content" => "report--review--content-visible" }
           .report--review--content--text= basic_report_level_of_service
 
     - else
@@ -41,52 +41,98 @@
     .report--section--title= t('report.context');
 
     .report--option_grid
-      - flash[:results][:context_report].each_slice(3) do |box_by_row|
-        .report--option_grid--row
+      .report--option_grid--row
 
-          - box_by_row.each do |box|
-            .report--option_grid--item
-              .report--option_grid--item--content
-                .report--option_grid--item--title= box[:title]
-                %div{ :class => "icon--tool-#{box[:css_icon]}" }
-                .report--option_grid--item--caption= box[:caption]
-                = link_to 'Edit', box[:link], :class => 'report--option_grid--item--edit'
+        .report--option_grid--item
+          .report--option_grid--item--content
+            .report--option_grid--item--title= t( 'basic.sanitation.report.sections.country' )
+            %div{ :class => 'icon--tool-globe' }
+            .report--option_grid--item--caption= @questionnaire.country != nil ? Country.new( @questionnaire.country ).name : t( 'basic.shared.report.no_answer_provided' )
+            = link_to 'Edit', basic_sanitation_action_path( I18n.locale, 'country' ), :class => 'report--option_grid--item--edit'
+
+        .report--option_grid--item
+          .report--option_grid--item--content
+            .report--option_grid--item--title= t( 'basic.sanitation.report.sections.latrine_technology' )
+            %div{ :class => "icon--tool-#{options_for_latrine_technologies[@questionnaire.latrine.to_i][0] unless @questionnaire.latrine == nil}" }
+            .report--option_grid--item--caption= t( "basic.sanitation.questionnaire.latrine.options.#{options_for_latrine_technologies[@questionnaire.latrine.to_i][0]}" )
+            = link_to 'Edit', basic_sanitation_action_path( I18n.locale, 'latrine' ), :class => 'report--option_grid--item--edit'
+
+        .report--option_grid--item
+          .report--option_grid--item--content
+            .report--option_grid--item--title= t( 'basic.sanitation.report.sections.population' )
+            %div{ :class => "icon--tool-population" }
+            .report--option_grid--item--caption= @questionnaire.population != nil ? @questionnaire.population : t( 'basic.shared.report.no_answer_provided' )
+            = link_to 'Edit', basic_sanitation_action_path( I18n.locale, 'population' ), :class => 'report--option_grid--item--edit'
 
 
-  %section.report--section
-    .report--section--title= t('report.cost');
-    .report--section--subtitle= t('report.cost_subtitle', population: flash[:results][:population])
+%section.report--section
+  .report--section--title= t( 'report.cost' );
+  .report--section--subtitle= t( 'report.cost_subtitle', :population => @questionnaire.population || @questionnaire.minimum_population )
 
-    - if flash[:results][:is_cost_avaliable]
-      .report--chart{ 'data-chart-capital' => flash[:results][:capital] || 0, 'data-chart-recurrent' => flash[:results][:recurrent] || 0, 'data-chart-population' => flash[:results][:population] || 0 }
+  - if basic_report_cost_available
+    .report--chart{ 'data-chart-capital' => @questionnaire.capital_expenditure || 0, 'data-chart-recurrent' => @questionnaire.recurrent_expenditure || 0, 'data-chart-population' => @questionnaire.population || 0 }
 
-      .report--costs
-        - flash[:results][:cost_report].each do |cost_box|
-          .report--costs--column.report--costs--column-small
-            .report--costs--title= cost_box[:title]
-            .report--costs--detail
-              .report--costs--detail--value= cost_box[:value]
-              = link_to 'Edit', cost_box[:link], :class => 'report--costs--detail--edit'
+    .report--costs
 
-        .report--costs--column.report--costs--column-big
-          .report--costs--title= t('report.total')
-          .report--costs--bigvalue US #{number_to_currency(flash[:results][:total], precision: 2)}
+      .report--costs--column.report--costs--column-small
+        .report--costs--title= t( 'basic.sanitation.report.sections.capital_expenditure_per_person' )
+        .report--costs--detail
+          .report--costs--detail--value= report_dollar_currency_value_for( @questionnaire.capital_expenditure )
+          = link_to 'Edit', basic_sanitation_action_path( I18n.locale, 'capital_expenditure' ), :class => 'report--costs--detail--edit'
 
-    - else
-      .report--no_data= t('report.cost_box_no_value')
+      .report--costs--column.report--costs--column-small
+        .report--costs--title= t( 'basic.sanitation.report.sections.recurrent_expenditure_per_person' )
+        .report--costs--detail
+          .report--costs--detail--value= report_dollar_currency_value_for( @questionnaire.recurrent_expenditure )
+          = link_to 'Edit', basic_sanitation_action_path( I18n.locale, 'recurrent_expenditure' ), :class => 'report--costs--detail--edit'
 
-  %section.report--section
-    .report--section--title= t('report.service');
-    .report--section--subtitle= t('report.distance')
+      .report--costs--column.report--costs--column-big
+        .report--costs--title= t( 'report.total' )
+        .report--costs--bigvalue= report_dollar_currency_value_for(@questionnaire.total_cost, 2)
 
-    .report--option_grid
-      - flash[:results][:service_report].each_slice(3) do |box_by_row|
-        .report--option_grid--row
+  - else
+    .report--no_data= t('report.cost_box_no_value')
 
-          - box_by_row.each do |box|
-            .report--option_grid--item
-              .report--option_grid--item--content
-                .report--option_grid--item--title= box[:title]
-                %div{ :class => "icon--tool-#{box[:css_icon]}" }
-                .report--option_grid--item--caption= box[:caption]
-                = link_to '', box[:link], :class => 'report--option_grid--item--edit'
+%section.report--section
+  .report--section--title= t('report.service');
+  .report--section--subtitle= t('report.distance')
+
+  .report--option_grid
+    .report--option_grid--row
+
+      .report--option_grid--item
+        .report--option_grid--item--content
+          .report--option_grid--item--title= t( 'basic.sanitation.report.sections.household_latrine' )
+          %div{ :class => "icon--tool-#{options_for_household_latrines[@questionnaire.household_latrine.to_i][0] unless @questionnaire.household_latrine == nil}" }
+          .report--option_grid--item--caption= t( "basic.sanitation.questionnaire.household_latrine.options.#{options_for_household_latrines[@questionnaire.household_latrine.to_i][0]}" )
+          = link_to '', basic_sanitation_action_path( I18n.locale, 'household_latrine' ), :class => 'report--option_grid--item--edit'
+
+      .report--option_grid--item
+        .report--option_grid--item--content
+          .report--option_grid--item--title= t( 'basic.sanitation.report.sections.impermeability' )
+          %div{ :class => "icon--tool-#{options_for_latrine_impermeability[@questionnaire.impermeability.to_i][0] unless @questionnaire.impermeability == nil}" }
+          .report--option_grid--item--caption= t( "basic.sanitation.questionnaire.impermeability.options.#{options_for_latrine_impermeability[@questionnaire.impermeability.to_i][0]}" )
+          = link_to '', basic_sanitation_action_path( I18n.locale, 'impermeability' ), :class => 'report--option_grid--item--edit'
+
+      .report--option_grid--item
+        .report--option_grid--item--content
+          .report--option_grid--item--title= t( 'basic.sanitation.report.sections.environmental_impact' )
+          %div{ :class => "icon--tool-#{options_for_latrine_environmental_impact[@questionnaire.environmental_impact.to_i][0] unless @questionnaire.environmental_impact == nil}" }
+          .report--option_grid--item--caption= t( "basic.sanitation.questionnaire.environmental_impact.options.#{options_for_latrine_environmental_impact[@questionnaire.environmental_impact.to_i][0]}" )
+          = link_to '', basic_sanitation_action_path( I18n.locale, 'environmental_impact' ), :class => 'report--option_grid--item--edit'
+
+    .report--option_grid--row
+
+      .report--option_grid--item
+        .report--option_grid--item--content
+          .report--option_grid--item--title= t( 'basic.sanitation.report.sections.usage' )
+          %div{ :class => "icon--tool-#{options_for_latrine_usage[@questionnaire.usage.to_i][0] unless @questionnaire.usage == nil}" }
+          .report--option_grid--item--caption= t( "basic.sanitation.questionnaire.usage.options.#{options_for_latrine_usage[@questionnaire.usage.to_i][0]}" )
+          = link_to '', basic_sanitation_action_path( I18n.locale, 'usage' ), :class => 'report--option_grid--item--edit'
+
+      .report--option_grid--item
+        .report--option_grid--item--content
+          .report--option_grid--item--title= t( 'basic.sanitation.report.sections.reliability' )
+          %div{ :class => "icon--tool-#{options_for_latrine_reliability[@questionnaire.reliability.to_i][0] unless @questionnaire.reliability == nil}" }
+          .report--option_grid--item--caption= t( "basic.sanitation.questionnaire.reliability.options.#{options_for_latrine_reliability[@questionnaire.reliability.to_i][0]}" )
+          = link_to '', basic_sanitation_action_path( I18n.locale, 'reliability' ), :class => 'report--option_grid--item--edit'

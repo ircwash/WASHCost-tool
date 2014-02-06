@@ -62,6 +62,7 @@ en:
   report:
     substandard: "Sub-Standard"
     distance: "Distance"
+    no_answer_provided: No answer provided
     time:
       minutes: "min"
     less_than: "Less than"
