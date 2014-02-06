@@ -36,6 +36,62 @@ class BasicWaterQuestionnaire < Session
   end
 
 
+  # DEFINITIONS
+
+  def minimum_basic_population
+    100
+  end
+
+  def maximum_basic_population
+    1000000
+  end
+
+  def minimum_capital_expenditure
+    0
+  end
+
+  def maximum_capital_expenditure
+    300
+  end
+
+  def minimum_guidance_capital_expenditure
+    20
+  end
+
+  def maximum_guidance_capital_expenditure
+    61
+  end
+
+  def minimum_recurrent_expenditure
+    0
+  end
+
+  def maximum_recurrent_expenditure
+    30
+  end
+
+  def minimum_guidance_recurrent_expenditure
+    3
+  end
+
+  def maximum_guidance_recurrent_expenditure
+    6
+  end
+
+  def minimum_access
+    0
+  end
+
+  def maximum_access
+    3
+  end
+
+
+  # CALCULATIONS
+
+
+
+
   private
 
 

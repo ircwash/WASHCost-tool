@@ -5,15 +5,15 @@
 
   .report--header
 
-    .report--header--pretitle= t('basic.sanitation.report.final_report')
-    %h1.report--header--title= t('report.summmary')
-    .report--header--quicklink=  ">> #{t('report.cross_to_water')}"
+    .report--header--pretitle= t( 'basic.sanitation.report.final_report' )
+    %h1.report--header--title= t( 'report.summmary' )
+    = link_to basic_water_report_path, ">> #{t('report.cross_to_water')}", :class => 'report--header--quicklink'
 
-    - if flash[:results][:is_form_ready]
+    - if @questionnaire.reportable?
       .report--summary
         .report--summary--item
-          .report--summary--item--title= t('report.total_cost')
-          .report--summary--item--value="US$ #{number_with_delimiter(flash[:results][:total], :delimiter=>',')}"
+          .report--summary--item--title= t( 'report.total_cost' )
+          .report--summary--item--value= "US$ #{number_with_delimiter(flash[:results][:total], :delimiter=>',')}"
           .report--summary--item--caption= t('report.caption_total_cost', population: flash[:results][:population])
 
         .report--summary--item
