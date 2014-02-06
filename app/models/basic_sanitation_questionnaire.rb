@@ -44,11 +44,11 @@ class BasicSanitationQuestionnaire < Session
 
   # DEFINITIONS
 
-  def minimum_basic_population
+  def minimum_population
     100
   end
 
-  def maximum_basic_population
+  def maximum_population
     1000000
   end
 
