@@ -8,7 +8,7 @@ class Basic::WaterController < CalculatorController
   def begin
     @questionnaire = BasicWaterQuestionnaire.new( session )
     @questionnaire.reset
-puts "DFLSJDFLSKJFLKSDF"
+
     redirect_to basic_water_action_path( :country )
   end
 

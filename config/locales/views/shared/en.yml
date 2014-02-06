@@ -26,7 +26,7 @@ en:
           access: Access
           quantity: Quantity
           quality: Quality
-          providing: Household Latrine
+          household_latrine: Household Latrine
           impermeability: Impermeability
           environment: Environment
           usage: Usage

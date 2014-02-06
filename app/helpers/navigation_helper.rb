@@ -123,12 +123,12 @@ module NavigationHelper
           },
           cost:
           {
-            first_action: :capital,
+            first_action: :capital_expenditure,
             name: I18n.t('nav.main.cost.title'),
             items:
             {
-              capital: I18n.t('nav.main.cost.items.capital'),
-              recurrent: I18n.t('nav.main.cost.items.recurrent')
+              capital_expenditure: I18n.t('nav.main.cost.items.capital_expenditure'),
+              recurrent_expenditure: I18n.t('nav.main.cost.items.recurrent_expenditure')
             }
           },
           service:
@@ -137,10 +137,10 @@ module NavigationHelper
             name: I18n.t('nav.main.service.title'),
             items:
             {
-              providing: I18n.t('nav.main.service.items.providing'),
+              household_latrine: I18n.t('nav.main.service.items.household_latrine'),
               impermeability: I18n.t('nav.main.service.items.impermeability'),
               environment: I18n.t('nav.main.service.items.environment'),
-              usage: I18n.t('nav.main.service.items.usage')      ,
+              usage: I18n.t('nav.main.service.items.usage'),
               reliability: I18n.t('nav.main.service.items.reliability')
             }
           }
