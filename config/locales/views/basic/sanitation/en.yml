@@ -25,9 +25,9 @@ en:
             household_latrine_unavailable: "No"
         impermeability:
           question: Does the latrine have an impermeable slab?
-          answers:
-            a0: Impermeable slab
-            a1: No impermeable slab
+          options:
+            impermeable_slab: Impermeable slab
+            no_impermeable_slab: No impermeable slab
           info: This can be a traditional pit latrine with an impermeable slab (made from local materials, a pit latrine with a concrete impermeable slab, or a pour-flush or septic tank latrines, often with a concrete or bricked lines pit/tank with sealed impermeable slab.
         environment:
           question: What is the environmental impact of the service?

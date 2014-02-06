@@ -148,4 +148,11 @@ module BasicCalculatorsHelper
     ]
   end
 
+  def options_for_impermeability
+    [
+      [ 'impermeable_slab', 0 ],
+      [ 'no_impermeable_slab', 1 ]
+    ]
+  end
+
 end
