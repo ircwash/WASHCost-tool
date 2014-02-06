@@ -63,4 +63,13 @@ module BasicCalculatorsHelper
     ]
   end
 
+  def options_for_water_quantities
+    [
+      [ 'less_than_five_litres', 0 ],
+      [ 'between_five_and_nineteen_litres', 1 ],
+      [ 'between_twenty_and_sixty_litres', 2 ],
+      [ 'more_than_sixy_litres', 3 ]
+    ]
+  end
+
 end

@@ -38,20 +38,19 @@
   background-position:50% -815px;
 }
 
-.icon--tool-waterLessThan::before {
+.icon--tool-less_than_five_litres::before {
   background-position:50% -1295px;
 }
 
-.icon--tool-waterFromFive::before {
+.icon--tool-between_five_and_nineteen_litres::before {
   background-position:50% -1455px;
 }
 
-.icon--tool-quantity::before,
-.icon--tool-waterFromTwenty::before {
+.icon--tool-between_twenty_and_sixty_litres::before {
   background-position:50% -1615px;
 }
 
-.icon--tool-waterMoreThan::before {
+.icon--tool-more_than_sixy_litres::before {
   background-position:50% -1775px;
 }
 

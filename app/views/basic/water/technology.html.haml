@@ -14,7 +14,7 @@
             = f.radio_button( :technology, option[1], :class => 'question--radios--radio' )
             %span.question--checked_icon
             %span{ :class => "question--radios--icon icon--tool-#{option[0]}" }
-            %span.question--radios--text= t( ".questionnaire.technology.#{option[0]}" )
+            %span.question--radios--text= t( "basic.water.questionnaire.technology.options.#{option[0]}" )
 
       .question--buttons
         = submit_tag t( 'buttons.next' ), :class => 'button'
