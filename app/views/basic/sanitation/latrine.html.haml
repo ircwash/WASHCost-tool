@@ -10,7 +10,7 @@
 
       .question--radios
         - options_for_latrine_technologies.each do |option|
-          = f.label( "latrine_#{option[1]}", class: "question--radios--label question--radios--label-narrow" ) do
+          = f.label( "latrine_#{option[1]}", :class => "question--radios--label question--radios--label-narrow" ) do
             = f.radio_button( :latrine, option[1], :class => 'question--radios--radio' )
             %span.question--checked_icon
             %span{ :class => "question--radios--icon icon--tool-#{option[0]}" }

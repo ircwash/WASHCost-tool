@@ -141,4 +141,11 @@ module BasicCalculatorsHelper
     ]
   end
 
+  def options_for_household_latrines
+    [
+      [ 'household_latrine_available', 0 ],
+      [ 'household_latrine_unavailable', 1 ]
+    ]
+  end
+
 end
