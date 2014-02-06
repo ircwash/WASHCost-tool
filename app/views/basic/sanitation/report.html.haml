@@ -46,7 +46,7 @@
         .report--option_grid--item
           .report--option_grid--item--content
             .report--option_grid--item--title= t( 'basic.sanitation.report.sections.country' )
-            %div{ :class => 'icon--tool-globe' }
+            %div{ :class => 'icon--tool-#{"globe" unless @questionnaire.country == nil}' }
             .report--option_grid--item--caption= @questionnaire.country != nil ? Country.new( @questionnaire.country ).name : t( 'basic.shared.report.no_answer_provided' )
             = link_to 'Edit', basic_sanitation_action_path( I18n.locale, 'country' ), :class => 'report--option_grid--item--edit'
 
