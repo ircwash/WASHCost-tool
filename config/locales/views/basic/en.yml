@@ -5,6 +5,7 @@ en:
         per_person_usd: per person US$
         usd_per_person_per_year: US$ per person per year
         minutes_per_day: Minutes per day
+        people: People
         country:
           question: In which country does your water service take place?
           placeholder: Select a country

@@ -2,11 +2,11 @@
   3 of 9 (Population) - Basic Water Calculator
 
 .question
-  %h1.question--title= @questionnaire.technology != nil ? t( 'basic.water.questionnaire.population.question', :technology => t( "basic.water.questionnaire.technology.answers.#{options_for_water_supply_technologies[@questionnaire.technology.to_i][0]}" ) ) : t( 'basic.water.questionnaire.population.default_question' )
+  %h1.question--title= @questionnaire.technology != nil ? t( 'basic.water.questionnaire.population.question', :technology => t( "basic.water.questionnaire.technology.options.#{options_for_water_supply_technologies[@questionnaire.technology.to_i][0]}" ) ) : t( 'basic.water.questionnaire.population.default_question' )
 
   .question--answer
 
-    .question--answer--title= t 'form.water_basic.population.value_label'
+    .question--answer--title= t 'basic.shared.questionnaire.people'
 
     = form_for @questionnaire, :url => basic_water_update_url( I18n.locale, 'capital_expenditure' ), :html => { 'data-dynamic_form' => basic_water_dynamic_update_url( I18n.locale ) } do |f|
 

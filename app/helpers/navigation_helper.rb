@@ -18,9 +18,9 @@ module NavigationHelper
 
     items.map do |k,v|
       {
-          name: v,
-          link: send( "#{path_helper}_path", I18n.locale, k.to_s ),
-          class: item_class_by_action(k),
+        name: v,
+        link: send( "#{path_helper}_path", I18n.locale, k.to_s ),
+        class: item_class_by_action(k),
       }
     end
   end
@@ -29,25 +29,18 @@ module NavigationHelper
   # @return [Array]
   def questionnaire_sections
     current_path = navigation_context[ :path ]
-    sections = navigation_context[ :sections ].keys
+    sections     = navigation_context[ :sections ].keys
 
     sections.map do |section|
-      {
-          name: navigation_context[ :sections ][section][:name],
-          redirect_to: navigation_context[ :sections ][section][:first_action],
-          number_of_items: navigation_context[ :sections ][section][:items].length,
-          class: navigation_context[ :sections ][section.to_sym][:items].has_key?(controller.action_name.to_sym) ? "active" : "",
-      }
+    {
+      name: navigation_context[ :sections ][section][:name],
+      redirect_to: navigation_context[ :sections ][section][:first_action],
+      number_of_items: navigation_context[ :sections ][section][:items].length,
+      class: navigation_context[ :sections ][section.to_sym][:items].has_key?( params[ :section ].to_sym ) ? "active" : "",
+    }
     end
   end
 
-  # return an array with the items associated to each section
-  # @return [Array]
-  def index_questionnaire_item_active
-    items = questionnaire_items
-    items.each_with_index do |item|
-    end
-  end
 
   private
 
@@ -62,10 +55,9 @@ module NavigationHelper
   # return the css class associated with specific state of item (.active, .resolved or nothing)
   # @return [String]
   def item_class_by_action(action)
-    form = "#{controller.controller_name}_basic_form".to_sym
-    if action.to_s == controller.action_name || action.to_s == params[ :section ]
+    if action.to_s == params[ :section ]
       "active"
-    elsif session[form].present? && session[form].has_key?(action.to_s)
+    elsif @questionnaire.send( action ) != nil
       "resolved"
     end
   end
