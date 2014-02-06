@@ -18,7 +18,7 @@ en:
       cost:
         title: "Cost Data"
         items:
-          capital: "Capital Expenditure"
+          capital_expenditure: "Capital Expenditure"
           recurrent: "Recurrent Expenditure"
       service:
         title: "Service"

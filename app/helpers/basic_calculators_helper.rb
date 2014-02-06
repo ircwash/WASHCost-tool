@@ -1,5 +1,25 @@
 module BasicCalculatorsHelper
 
+  # constants
+
+  def minimum_capital_expenditure_for_water
+    0
+  end
+
+  def maximum_capital_expenditure_for_water
+    300
+  end
+
+  def minimum_guidance_capital_expenditure_for_water
+    20
+  end
+
+  def maximum_guidance_capital_expenditure_for_water
+    61
+  end
+
+  # options
+
   def options_for_water_supply_technologies
     [
       [ 'borehole_handpump', 0 ],

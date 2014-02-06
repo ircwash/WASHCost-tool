@@ -2,7 +2,7 @@
   3 of 9 (Population) - Basic Water Calculator
 
 .question
-  %h1.question--title= @questionnaire.technology != nil ? t( 'basic.water.questionnaire.population.question', :technology => t( "basic.water.questionnaire.technology.answers.#{options_for_water_supply_technologies[@questionnaire.technology[1].to_i][0]}" ) ) : t( 'basic.water.questionnaire.population.default_question' )
+  %h1.question--title= @questionnaire.technology != nil ? t( 'basic.water.questionnaire.population.question', :technology => t( "basic.water.questionnaire.technology.answers.#{options_for_water_supply_technologies[@questionnaire.technology.to_i][0]}" ) ) : t( 'basic.water.questionnaire.population.default_question' )
 
   .question--answer
 
@@ -16,7 +16,7 @@
         = f.hidden_field :population, { 'data-slider-input' => 'true', 'data-logarithmic' => 'true', 'data-slider-min' => 100, 'data-slider-max' => 1000000 }
 
       .question--buttons
-        = submit_tag((t 'buttons.next'), class: 'button')
+        = submit_tag t( 'buttons.next' ), :class => 'button'
 
 .info_tab
   .info_tab--icon infoTab

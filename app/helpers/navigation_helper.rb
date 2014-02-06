@@ -91,12 +91,12 @@ module NavigationHelper
           },
           cost:
           {
-            first_action: :capital,
+            first_action: :capital_expenditure,
             name: I18n.t('nav.main.cost.title'),
             items:
             {
-              capital: I18n.t('nav.main.cost.items.capital'),
-              recurrent: I18n.t('nav.main.cost.items.recurrent')
+              capital_expenditure: I18n.t('nav.main.cost.items.capital_expenditure'),
+              recurrent_expenditure: I18n.t('nav.main.cost.items.recurrent_expenditure')
             }
           },
           service:

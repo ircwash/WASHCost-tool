@@ -1,0 +1,29 @@
+= content_for :title do
+  4 of 9 (Capital Expenditure) - Basic Water Calculator
+
+.question
+  %h1.question--title= t 'basic.shared.questionnaire.capital_expenditure.question'
+
+  .question--answer
+
+    .question--answer--title= t 'basic.shared.questionnaire.per_person_usd'
+
+    = form_for @questionnaire, :url => basic_water_update_url( I18n.locale, 'recurrent_expenditure' ), :html => { 'data-dynamic_form' => basic_water_dynamic_update_url( I18n.locale ) } do |f|
+
+      .slider
+        %input.slider--value{ 'data-target' => 'capitalSlider', :value => @questionnaire.capital_expenditure != nil ? @questionnaire.capital_expenditure : 0 }
+        .slider--widget.threshold-marks
+        = f.hidden_field :capital_expenditure, { 'data-slider-input' => 'true', 'data-slider-min' => minimum_capital_expenditure_for_water, 'data-slider-max' => maximum_capital_expenditure_for_water, 'data-slider-below' => minimum_guidance_capital_expenditure_for_water, 'data-slider-above' => maximum_guidance_capital_expenditure_for_water }
+
+        .slider--scale
+          .slider--scale--point.slider--scale--point-min= "US$ #{minimum_guidance_capital_expenditure_for_water}"
+          .slider--scale--point.slider--scale--point-max= "US$ #{maximum_guidance_capital_expenditure_for_water}"
+
+      .question--buttons
+        = submit_tag t( 'buttons.next' ), :class => 'button'
+
+.info_tab
+  .info_tab--icon
+  .info_tab--container
+    .info_tab--content
+      %p.info_tab--content--text= t 'form.shared.capital.info'
