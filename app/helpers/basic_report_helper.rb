@@ -37,7 +37,7 @@ module BasicReportHelper
   end
 
   def basic_report_level_of_service
-    "#{t( 'basic.sanitation.report.summaries.a' + @questionnaire.level_of_service[0] )} \n #{t( 'basic.sanitation.report.summaries.b' + @questionnaire.level_of_service[1] )}"
+    "#{t( 'basic.sanitation.report.summaries.a' + @questionnaire.level_of_service[0] )} \n #{t( 'basic.sanitation.report.summaries.b' + @questionnaire.level_of_service[1] )}" unless @questionnaire.level_of_service == nil
   end
 
 end

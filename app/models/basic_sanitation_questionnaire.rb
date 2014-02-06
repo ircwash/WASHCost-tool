@@ -38,7 +38,7 @@ class BasicSanitationQuestionnaire < Session
 
 
   def reportable?
-    [ latrine, capital_expenditure, recurrent_expenditure, reliability ].all?
+    [ latrine, capital_expenditure, recurrent_expenditure, reliability, service_rating ].all?
   end
 
 

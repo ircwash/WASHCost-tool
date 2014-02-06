@@ -296,7 +296,11 @@
 }
 
 .report--option_grid--item--content {
+  position:relative;
+
   @include report-box(30px);
+
+  padding-bottom:45px;
 }
 
 .report--option_grid--item--title {
@@ -306,6 +310,11 @@
 }
 
 .report--option_grid--item--caption {
+  position:absolute;
+  bottom:25px;
+  left:30px;
+  right:30px;
+  margin:0 30px;
   font-size:12px;
 }
 
