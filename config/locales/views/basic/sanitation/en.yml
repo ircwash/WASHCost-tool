@@ -1,6 +1,59 @@
 en:
   basic:
     sanitation:
+      questionnaire:
+        country:
+          question: "In which country does your sanitation service take place?"
+        recurrent:
+          question: "How much is being spent/will be spent to operate, maintain and support the delivery of sanitation services (per person per year)?"
+          info: "Operating and minor maintenance expenditure: typically comprises regular expenditure such as labour, fuel, chemicals, materials, and purchases of any bulk water. See: http://akvopedia.org/wiki/Operational_and_Minor_Maintenance_Expenditure_(OpEx) Capital maintenance expenditure: Asset renewal and replacement cost: occasional and ‘lumpy’ costs that seek to restore the functionality of a system, such as replacing pump rods or foot valves in handpumps, or a diesel generator in motorised systems. See: http://akvopedia.org/wiki/Capital_Maintenance_Expenditure_(CapManEx) Expediture of direct support: Direct support is structured support to service providers and users or user groups related to the operation and management of a WASH service; direct support costs are the costs of such support. They cover monitoring, technical advice and administrative, organisational or legal support.  The costs of support before and during the capital construction of a project are not included; they are considered to be capital software. Direct support is often used synonymously with “post-construction support”. See: http://akvopedia.org/wiki/Expenditure_Direct_Support_(ExpDS) Expenditure of indirect support: Indirect support costs cover expenditure on this macro-level support, including planning and policy making, and support to decentralised service authorities or local government. Indirect support includes capacity building for professionals and technicians and capacity support to local government as service authorities, for example to adhere to national norms, standards and guidelines. See: http://akvopedia.org/wiki/Expenditure_Indirect_Support_(ExpIDS)"
+          value_label: "Per person<br/> per year"
+        household:
+          question: "What is the typical household size?"
+        latrine:
+          question: "What type of latrine technology is being used?"
+          answers:
+            a0: "Traditional pit latrine"
+            a1: "Slab latrine"
+            a2: "Vip latrine"
+            a3: "Pour Flush Latrine"
+            a4: "Twin Pit Pour Flush Latrine"
+            a5: "Latrine with septic tank"
+        population:
+          question: "How many people in this area are receiving this sanitation service?"
+          value_label: "People"
+        providing:
+          question: "Does the service provide latrines at the household level?"
+          answers:
+            a0: "Yes"
+            a1: "No"
+        impermeability:
+          question: "Does the latrine have an impermeable slab?"
+          answers:
+            a0: "Impermeable slab"
+            a1: "No impermeable slab"
+          info: "This can be a traditional pit latrine with an impermeable slab (made from local materials, a pit latrine with a concrete impermeable slab, or a pour-flush or septic tank latrines, often with a concrete or bricked lines pit/tank with sealed impermeable slab."
+        environment:
+          question: "What is the environmental impact of the service?"
+          answers:
+            a0: "Non problematic + safe disposal + re-use of bi-products "
+            a1: "Non problematic +safe disposal"
+            a2: "Significant pollution"
+        usage:
+          question: "Which family members use the latrine?"
+          answers:
+            a0: "All"
+            a1: "Some"
+            a2: "None"
+        reliability:
+          question: "Is the latrine cleaned and emptied when required?"
+          answers:
+            a0: "Yes"
+            a1: "Not consistently"
+            a2: "No"
+        recurrent:
+          question: "How much is being spent/will be spent to operate, maintain and support the delivery of sanitation services (per person per year)?"
+          value_label: "US$ Per person per Year"
       report:
         final_report: Basic Sanitation | Final Report
         sustainability:

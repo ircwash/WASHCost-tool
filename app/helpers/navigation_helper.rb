@@ -85,7 +85,7 @@ module NavigationHelper
             items:
             {
               country: I18n.t('nav.main.context.items.country'),
-              water: I18n.t('nav.main.context.items.water'),
+              technology: I18n.t('nav.main.context.items.technology'),
               population: I18n.t('nav.main.context.items.population')
             }
           },

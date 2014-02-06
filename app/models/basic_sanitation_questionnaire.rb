@@ -13,7 +13,7 @@ class BasicSanitationQuestionnaire < Session
 
 
   def initialize( session )
-    super( session, :basic_water )
+    super( session, :basic_sanitation )
   end
 
 

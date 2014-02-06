@@ -1,6 +1,63 @@
 en:
   basic:
     water:
+      questionnaire:
+        technology:
+          question: "What is the main water supply technology used?"
+          answers:
+            borehole_handpump: "Borehole & handpump"
+            mechanised_borehole: "Mechanised borehole"
+            single_town_scheme: "Single-town scheme"
+            multi_town_scheme: "Multi-town scheme"
+            mixed_pipe_supply: "Mixed-pipe supply"
+          info:
+            i0: "Reticulated supply with pumping, storage and distribution through public stand posts with provision for house connections."
+            i1: "Water is supplied through a small distribution network and connected public stand posts. Water storage is limited, typically to an overhead storage tank  directly connected to the pump.  Household connections are rare."
+            i2: "Maecenas elementum tristique nunc sed vehicula. Mauris dignissim erat ut lectus rutrum elementum. Etiam pharetra ac massa sit amet mattis. Nam blandit, nibh sed mattis accumsan, nisi risus vulputate eros, in ar laoreet."
+            i3: "Reticulated supply with pumping, storage and distribution supplied to a number of interconnected towns or villages. Each village with its own storage and distribution network."
+            i4: "Water is supplied through a combination of separate, often overlapping, service delivery systems."
+        population:
+          default_question: "How many people in this area are receiving this water service?"
+          question: "How many people are served by a %{technology}?"
+          value_label: "People"
+          answers:
+            a0: "Less than 500"
+            a1: "501 - 5,000"
+            a2: "5,001 - 15,000"
+            a3: "More than 15,000"
+          info: "Please indicate the total number of people that are meant to be using the service in the area. A water system will typically have a design population, sometimes defined by local regulations, for how many people it is meant to serve. The total number of people would be the design population of the system times the number of systems in the area. For example, if a handpump is meant to serve 300 people and there are 100 handpumps in the area, the number of people that are meant to be using the service is 30,000 people (300 people x 100 handpumps)."
+        time:
+          question: "How long does it take to collect water per day from these services?"
+          value_label: "Minutes per day"
+          answers:
+            a0: "Less than 10"
+            a1: "Between 10 and 30"
+            a2: "Between 30 and 60"
+            a3: "More than 60"
+        quantity:
+          question: "How much water is used from the water service?"
+          value_label: "Litres per person per day"
+          answers:
+            a0: "Less than 5L"
+            a1: "5 - 19L"
+            a2: "20-60L"
+            a3: "More than 60L"
+        quality:
+          question: "Is water quality testing done?"
+          answers:
+            a3: "Regular and meets standards"
+            a2: "Occational and meets standards"
+            a1: "One-off after construction"
+            a0: "No testing"
+        reliability:
+          question: "How reliable is the water service?"
+          answers:
+            a0: "Works all the time"
+            a1: "Not working less than 12 days a year"
+            a2: "Not working more than 12 days a year"
+            a3: "Not working all of the time"
+        recurrent:
+          value_label: "US$ Per person per Year"
       report:
         final_report: Basic Water | Final Report
         sustainability:

@@ -11,7 +11,7 @@ en:
         title: "Context"
         items:
           country: "Country"
-          water: "Technology"
+          technology: "Technology"
           population: "Population"
           household: "Household"
           latrine: "Latrine"
