@@ -1,22 +1,22 @@
 = content_for :title do
-  2 of 9 (Population)
+  2 of 9 (Population) - Basic Sanitation Calculator
 
 .question
-  %h1.question--title= t 'form.sanitation_basic.population.question'
+  %h1.question--title= t 'basic.sanitation.questionnaire.population.question'
 
   .question--answer
 
-    .question--answer--title= t 'form.sanitation_basic.population.value_label'
+    .question--answer--title= t 'basic.shared.questionnaire.people'
 
-    = form_tag basic_sanitation_action_url( I18n.locale, 'population' ), id: 'sanitationBasicForm' do
+    = form_for @questionnaire, :url => basic_sanitation_update_url( I18n.locale, 'latrine' ), :html => { 'data-dynamic_form' => basic_sanitation_dynamic_update_url( I18n.locale ) } do |f|
 
       .slider
-        %input.slider--value{ :type => 'text', :value => @population.present? ? number_with_precision( @population, :precision => 0, :locale => I18n.locale ) : 100 }
+        %input.slider--value{ :type => 'text', :value => @questionnaire.population != nil ? number_with_precision( @questionnaire.population, :precision => 0, :locale => I18n.locale ) : minimum_basic_population }
         .slider--widget
-        %input{ :name => 'population', :type => 'hidden', :value => @population.present? ? @population : 100, 'data-slider-input' => 'true', 'data-logarithmic' => 'true', 'data-slider-min' => 100, 'data-slider-max' => 1000000 }
+        = f.hidden_field :population, { 'data-slider-input' => 'true', 'data-logarithmic' => 'true', 'data-slider-min' => minimum_basic_population, 'data-slider-max' => maximum_basic_population }
 
       .question--buttons
-        = submit_tag((t 'buttons.next'), class: 'button')
+        = submit_tag t( 'buttons.next' ), :class => 'button'
 
 .info_tab
   .info_tab--icon infoTab

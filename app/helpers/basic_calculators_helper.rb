@@ -2,6 +2,14 @@ module BasicCalculatorsHelper
 
   # constants
 
+  def minimum_basic_population
+    100
+  end
+
+  def maximum_basic_population
+    1000000
+  end
+
   def minimum_capital_expenditure_for_water
     0
   end

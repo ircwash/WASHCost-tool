@@ -11,9 +11,9 @@
     = form_for @questionnaire, :url => basic_water_update_url( I18n.locale, 'capital_expenditure' ), :html => { 'data-dynamic_form' => basic_water_dynamic_update_url( I18n.locale ) } do |f|
 
       .slider
-        %input.slider--value{ :type => 'text', :value => @questionnaire.population != nil ? number_with_precision( @questionnaire.population, :precision => 0, :locale => I18n.locale ) : 0 }
+        %input.slider--value{ :type => 'text', :value => @questionnaire.population != nil ? number_with_precision( @questionnaire.population, :precision => 0, :locale => I18n.locale ) : minimum_basic_population }
         .slider--widget
-        = f.hidden_field :population, { 'data-slider-input' => 'true', 'data-logarithmic' => 'true', 'data-slider-min' => 100, 'data-slider-max' => 1000000 }
+        = f.hidden_field :population, { 'data-slider-input' => 'true', 'data-logarithmic' => 'true', 'data-slider-min' => minimum_basic_population, 'data-slider-max' => maximum_basic_population }
 
       .question--buttons
         = submit_tag t( 'buttons.next' ), :class => 'button'
