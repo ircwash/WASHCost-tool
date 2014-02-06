@@ -1,36 +1,36 @@
 en:
   nav:
     utility:
-      about: "About"
-      help: "help"
-      contact: "Contact"
-      sign_in: "Sign In"
-      sign_out: "Sign Out"
+      about: About
+      help: help
+      contact: Contact
+      sign_in: Sign In
+      sign_out: Sign Out
     main:
       context:
-        title: "Context"
+        title: Context
         items:
-          country: "Country"
-          technology: "Technology"
-          population: "Population"
-          household: "Household"
-          latrine: "Latrine"
+          country: Country
+          technology: Technology
+          population: Population
+          household: Household
+          latrine: Latrine
       cost:
-        title: "Cost Data"
+        title: Cost Data
         items:
-          capital_expenditure: "Capital Expenditure"
-          recurrent: "Recurrent Expenditure"
+          capital_expenditure: Capital Expenditure
+          recurrent_expenditure: Recurrent Expenditure
       service:
-        title: "Service"
+        title: Service
         items:
-          time: "Access"
-          quantity: "Quantity"
-          quality: "Quality"
-          providing: "Household Latrine"
-          impermeability: "Impermeability"
-          environment: "Environment"
-          usage: "Usage"
-          reliability: "Reliability"
+          time: Access
+          quantity: Quantity
+          quality: Quality
+          providing: Household Latrine
+          impermeability: Impermeability
+          environment: Environment
+          usage: Usage
+          reliability: Reliability
       advanced:
         title: Advanced
         items:

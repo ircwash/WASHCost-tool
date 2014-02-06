@@ -18,6 +18,22 @@ module BasicCalculatorsHelper
     61
   end
 
+  def minimum_recurrent_expenditure_for_water
+    0
+  end
+
+  def maximum_recurrent_expenditure_for_water
+    30
+  end
+
+  def minimum_guidance_recurrent_expenditure_for_water
+    3
+  end
+
+  def maximum_guidance_recurrent_expenditure_for_water
+    6
+  end
+
   # options
 
   def options_for_water_supply_technologies
