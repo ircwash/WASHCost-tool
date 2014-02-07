@@ -4,7 +4,6 @@ class ReportsController < ApplicationController
     report = current_user ? current_user.reports.find( params[ :id ] ) || Report.find( params[ :id ] ) : Report.find( params[ :id ] )
 
     if report != nil
-puts "EIORGUEORIGUEOIRGUEORIG"
       if report.level == 'basic'
         if report.type == 'water'
           questionnaire = BasicWaterQuestionnaire.new( session )
