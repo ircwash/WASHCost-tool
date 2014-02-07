@@ -135,7 +135,7 @@ class AdvancedWaterQuestionnaire < Session
   # determine navigation item completion
 
   def service_area
-    true unless water_system_exists == nil || country == nil || currency == nil || year_of_expenditure == nil || region == nil || town == nil || area_type == nil || population_density == nil || service_management == nil || construction_financier == nil || infrastructure_operator == nil || service_responsbility == nil || standard_enforcer == nil || rehabilitation_cost_owner == nil || annual_household_income == nil || household_size == nil || direct_support_cost == nil || indirect_support_cost == nil
+    true unless water_system_exists == nil || country == nil || currency == nil || year_of_expenditure == nil || region == nil || town == nil || area_type == nil || population_density == nil || service_management.count == 0 || construction_financier.count == 0 || infrastructure_operator.count == 0 || service_responsbility.count == 0 || standard_enforcer.count == 0 || rehabilitation_cost_owner.count == 0 || annual_household_income == nil || household_size == nil || direct_support_cost == nil || indirect_support_cost == nil
   end
 
   def technology

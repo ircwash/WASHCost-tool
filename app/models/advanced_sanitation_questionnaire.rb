@@ -17,6 +17,8 @@ class AdvancedSanitationQuestionnaire < Session
                 :rehabilitation_cost_owner,
                 :annual_household_income,
                 :household_size,
+                :direct_support_cost,
+                :indirect_support_cost,
 
                 :supply_system_technologies,
                 :systems_number,
@@ -31,8 +33,6 @@ class AdvancedSanitationQuestionnaire < Session
                 :capital_maintenance_expenditure,
                 :loan_cost,
                 :loan_payback_period,
-                :direct_support_cost,
-                :indirect_support_cost,
 
                 :service_level_name,
                 :service_level_share,
@@ -84,6 +84,20 @@ class AdvancedSanitationQuestionnaire < Session
     end
 
     100 * attributes_with_values / property_attributes.count
+  end
+
+  # determine navigation item completion
+
+  def service_area
+    true unless water_system_exists == nil || country == nil || currency == nil || year_of_expenditure == nil || region == nil || town == nil || area_type == nil || population_density == nil || service_management.count == 0 || construction_financier.count == 0 || infrastructure_operator.count == 0 || service_responsbility.count == 0 || standard_enforcer.count == 0 || rehabilitation_cost_owner.count == 0 || annual_household_income == nil || household_size == nil
+  end
+
+  def technology
+    true unless supply_system_technologies.count == 0 || systems_number.count == 0 || system_population_design.count == 0 || system_population_actual.count == 0 || actual_hardware_expenditure.count == 0 || system_lifespan_expectancy.count == 0 || actual_software_expenditure.count == 0 || unpaid_labour.count == 0 || minor_operation_expenditure.count == 0 || capital_maintenance_expenditure.count == 0 || loan_cost.count == 0 || loan_payback_period.count == 0
+  end
+
+  def service_level
+    true unless service_level_name.count == 0 || service_level_share.count == 0 || national_accessibility_norms.count == 0 || national_use_norms.count == 0 || national_reliability_norms.count == 0 || national_environmental_protection_norms.count == 0
   end
 
 
@@ -637,6 +651,8 @@ class AdvancedSanitationQuestionnaire < Session
     @rehabilitation_cost_owner                = []
     @annual_household_income                  = nil
     @household_size                           = nil
+    @direct_support_cost                      = nil
+    @indirect_support_cost                    = nil
 
     # system characteristics
     @supply_system_technologies               = []
@@ -653,8 +669,6 @@ class AdvancedSanitationQuestionnaire < Session
     @capital_maintenance_expenditure          = []
     @loan_cost                                = []
     @loan_payback_period                      = []
-    @direct_support_cost                      = nil
-    @indirect_support_cost                    = nil
 
     # service level
     @service_level_name                       = []
