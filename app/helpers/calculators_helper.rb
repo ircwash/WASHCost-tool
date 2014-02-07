@@ -16,13 +16,26 @@ module CalculatorsHelper
   def footer_save_report_url
     case controller_path
       when 'basic/water'
-        basic_water_save_report_path( I18n.locale, :tool_name => 'water' )
+        basic_water_save_report_path( I18n.locale )
       when 'basic/sanitation'
-        basic_sanitation_save_report_path( I18n.locale, :tool_name => 'sanitation' )
+        basic_sanitation_save_report_path( I18n.locale )
       when 'advanced/water'
         advanced_water_save_report_path( I18n.locale )
       when 'advanced/sanitation'
         advanced_sanitation_save_report_path( I18n.locale )
+    end
+  end
+
+  def footer_share_report_url
+    case controller_path
+      when 'basic/water'
+        basic_water_share_report_path( I18n.locale )
+      when 'basic/sanitation'
+        basic_sanitation_share_report_path( I18n.locale )
+      when 'advanced/water'
+        advanced_water_share_report_path( I18n.locale )
+      when 'advanced/sanitation'
+        advanced_sanitation_share_report_path( I18n.locale )
     end
   end
 
