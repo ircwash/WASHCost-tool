@@ -1,15 +1,56 @@
 en:
-  global:
-    yes: "Yes"
-    no: "No"
-  inputs:
-    choose_a_country: "Choose a country"
-  register_if_acces_to_cuesstinaire_view: "You must be registered if you want access to basic tool"
-  view_report: View Report
-
-
-  form:
-    not_ready:
-      summary: "You must complete the form before we can provide summary analysis"
-      cost: "You must complete the form before we can provide cost analysis"
-    skip: "skip this question"
+  number:
+    format:
+      separator: "."
+      delimiter: ","
+      precision: 2
+    currency:
+      format:
+        format: "%u%n"
+        unit: "$"
+        separator: "."
+        delimiter: ","
+        precision: 2
+  navigation:
+    utility:
+      about: About
+      help: help
+      contact: Contact
+      sign_in: Sign In
+      sign_out: Sign Out
+    calculators:
+      context: Context
+      country: Country
+      technology: Technology
+      population: Population
+      household: Household
+      latrine: Latrine
+      cost: Cost
+      capital_expenditure: Capital Expenditure
+      recurrent_expenditure: Recurrent Expenditure
+      service: Service
+      access: Access
+      quantity: Quantity
+      quality: Quality
+      household_latrine: Household Latrine
+      impermeability: Impermeability
+      environmental_impact: Environment
+      usage: Usage
+      reliability: Reliability
+      advanced: Advanced
+      service_area: Service Area
+      system_management: System Management
+      system_characteristics: System Characteristics
+      service_level: Service Level
+  footer:
+    calculator_progress: "%{level} %{type} Report"
+  buttons:
+    next: "Next Question"
+    start: "Start the calculator"
+    view_report: "View Report"
+    save_report: "Save Report"
+  calculators:
+    basic: Basic
+    advanced: Advanced
+    water: Water
+    sanitation: Sanitation

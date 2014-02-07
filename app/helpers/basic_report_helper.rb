@@ -9,7 +9,7 @@ module BasicReportHelper
   # formatters
 
   def report_dollar_currency_value_for( value, precision = 2 )
-    value != nil ? "US$ #{number_with_precision( value.to_f, :precision => precision )}" : t( 'report.no_data' )
+    value != nil ? "US$ #{number_with_delimiter( number_with_precision( value.to_f, :precision => precision ), :locale => I18n.locale )}" : t( 'report.no_data' )
   end
 
   # outputs

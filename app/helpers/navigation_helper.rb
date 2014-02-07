@@ -57,7 +57,7 @@ module NavigationHelper
   def item_class_by_action(action)
     if action.to_s == params[ :section ]
       "active"
-    elsif @questionnaire.send( action ) != nil
+    elsif @questionnaire.methods.include?( action ) && @questionnaire.send( action ) != nil
       "resolved"
     end
   end
@@ -65,121 +65,117 @@ module NavigationHelper
   # return the data associated with all navigation about the basic tool specified
   # @return [Hash]
   def navigation_context
-    if controller_path == "basic/water"
+    if controller_path == 'basic/water'
       {
         path: basic_water_path,
         sections:
         {
           context:
           {
-            name: I18n.t('nav.main.context.title'),
+            name: I18n.t( 'navigation.calculators.context' ),
             first_action: :country,
             items:
             {
-              country: I18n.t('nav.main.context.items.country'),
-              technology: I18n.t('nav.main.context.items.technology'),
-              population: I18n.t('nav.main.context.items.population')
+              country: I18n.t( 'navigation.calculators.country' ),
+              technology: I18n.t( 'navigation.calculators.technology' ),
+              population: I18n.t( 'navigation.calculators.population' )
             }
           },
           cost:
           {
             first_action: :capital_expenditure,
-            name: I18n.t('nav.main.cost.title'),
+            name: I18n.t( 'navigation.calculators.cost' ),
             items:
             {
-              capital_expenditure: I18n.t('nav.main.cost.items.capital_expenditure'),
-              recurrent_expenditure: I18n.t('nav.main.cost.items.recurrent_expenditure')
+              capital_expenditure: I18n.t( 'navigation.calculators.capital_expenditure' ),
+              recurrent_expenditure: I18n.t( 'navigation.calculators.recurrent_expenditure' )
             }
           },
           service:
           {
             first_action: :access,
-            name: I18n.t('nav.main.service.title'),
+            name: I18n.t( 'navigation.calculators.service' ),
             items:
             {
-              access: I18n.t('nav.main.service.items.access'),
-              quantity: I18n.t('nav.main.service.items.quantity'),
-              quality: I18n.t('nav.main.service.items.quality'),
-              reliability: I18n.t('nav.main.service.items.reliability')
+              access: I18n.t( 'navigation.calculators.access' ),
+              quantity: I18n.t( 'navigation.calculators.quantity' ),
+              quality: I18n.t( 'navigation.calculators.quality' ),
+              reliability: I18n.t( 'navigation.calculators.reliability' )
             }
           }
         }
       }
-    elsif controller_path == "basic/sanitation"
+    elsif controller_path == 'basic/sanitation'
       {
         path: basic_sanitation_path,
         sections:
         {
           context:
           {
-            name: I18n.t('nav.main.context.title'),
+            name: I18n.t( 'navigation.calculators.context' ),
             first_action: :country,
             items:
             {
-              country: I18n.t('nav.main.context.items.country'),
-              population: I18n.t('nav.main.context.items.population'),
-              latrine: I18n.t('nav.main.context.items.latrine'),
+              country: I18n.t( 'navigation.calculators.country' ),
+              population: I18n.t( 'navigation.calculators.population' ),
+              latrine: I18n.t( 'navigation.calculators.latrine' ),
             }
           },
           cost:
           {
             first_action: :capital_expenditure,
-            name: I18n.t('nav.main.cost.title'),
+            name: I18n.t( 'navigation.calculators.cost' ),
             items:
             {
-              capital_expenditure: I18n.t('nav.main.cost.items.capital_expenditure'),
-              recurrent_expenditure: I18n.t('nav.main.cost.items.recurrent_expenditure')
+              capital_expenditure: I18n.t( 'navigation.calculators.capital_expenditure' ),
+              recurrent_expenditure: I18n.t( 'navigation.calculators.recurrent_expenditure' )
             }
           },
           service:
           {
             first_action: :household_latrine,
-            name: I18n.t('nav.main.service.title'),
+            name: I18n.t( 'navigation.calculators.service' ),
             items:
             {
-              household_latrine: I18n.t('nav.main.service.items.household_latrine'),
-              impermeability: I18n.t('nav.main.service.items.impermeability'),
-              environmental_impact: I18n.t('nav.main.service.items.environmental_impact'),
-              usage: I18n.t('nav.main.service.items.usage'),
-              reliability: I18n.t('nav.main.service.items.reliability')
+              household_latrine: I18n.t( 'navigation.calculators.household_latrine' ),
+              impermeability: I18n.t( 'navigation.calculators.impermeability' ),
+              environmental_impact: I18n.t( 'navigation.calculators.environmental_impact' ),
+              usage: I18n.t( 'navigation.calculators.usage' ),
+              reliability: I18n.t( 'navigation.calculators.reliability' )
             }
           }
         }
       }
-    elsif controller_path == "advanced/water"
+    elsif controller_path == 'advanced/water'
       {
         path: advanced_water_path,
         sections:
         {
           context:
           {
-            name: I18n.t('nav.main.advanced.title'),
+            name: I18n.t( 'navigation.calculators.advanced' ),
             items:
             {
-#              context: I18n.t('nav.main.advanced.items.context'),
-#              system_management: I18n.t('nav.main.advanced.items.system_management'),
-              service_area: I18n.t('nav.main.advanced.items.service_area'),
-              technology: I18n.t('nav.main.advanced.items.technology'),
-              service_level: I18n.t('nav.main.advanced.items.service_level')
+              service_area: I18n.t( 'navigation.calculators.service_area' ),
+              technology: I18n.t( 'navigation.calculators.technology' ),
+              service_level: I18n.t( 'navigation.calculators.service_level' )
             }
           }
         }
       }
-    elsif controller_path == "advanced/sanitation"
+    elsif controller_path == 'advanced/sanitation'
       {
         path: advanced_sanitation_path,
         sections:
         {
           context:
           {
-            name: I18n.t('nav.main.advanced.title'),
+            name: I18n.t( 'navigation.calculators.advanced.title' ),
             items:
             {
-#              context: I18n.t('nav.main.advanced.items.context'),
-#              system_management: I18n.t('nav.main.advanced.items.system_management'),
-              service_area: I18n.t('nav.main.advanced.items.service_area'),
-              technology: I18n.t('nav.main.advanced.items.technology'),
-              service_level: I18n.t('nav.main.advanced.items.service_level')
+              service_area: I18n.t( 'navigation.calculators.service_area' ),
+              technology: I18n.t( 'navigation.calculators.technology' ),
+              service_level: I18n.t( 'navigation.calculators.service_level' )
             }
           }
         }

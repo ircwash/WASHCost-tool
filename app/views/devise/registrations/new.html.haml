@@ -2,24 +2,24 @@
   .boxed_content
     .page_content
 
-      = simple_form_for resource, :as => resource_name, :url => registration_path(resource_name), html: { :class => 'standalone_form' } do |f|
+      = form_for resource, :as => resource_name, :url => registration_path( resource_name ), :html => { :class => 'standalone_form' } do |f|
 
         %h1.standalone_form--heading Create your account
 
         = render "devise/shared/messages"
 
         .standalone_form--field.standalone_form--field-text
-          = f.input :email, :required => false, label: false, input_html: { class: 'standalone_form--field--input standalone_form--field--input-text' }, placeholder: 'Email'
+          = f.text_field :email, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => 'Email'
 
         .standalone_form--field.standalone_form--field-text
-          = f.input :password, :required => false, label: false, input_html: { class: 'standalone_form--field--input standalone_form--field--input-text' }, placeholder: 'Password'
+          = f.password_field :password, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => 'Password'
 
         .standalone_form--field.standalone_form--field-text
-          = f.input :password_confirmation, :required => false, label: false, input_html: { class: 'standalone_form--field--input standalone_form--field--input-text' }, placeholder: 'Repeat your password'
+          = f.password_field :password_confirmation, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => 'Repeat your password'
 
         .standalone_form--footer
           .standalone_form--buttons
-            = f.button :submit, "Register", class: 'button'
+            = f.submit "Register", :class => 'button'
 
           .standalone_form--links
             = render "devise/shared/links"

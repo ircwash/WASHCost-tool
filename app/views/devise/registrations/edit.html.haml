@@ -2,47 +2,47 @@
   .boxed_content
     .page_content
 
-      = simple_form_for resource, :as => resource_name, :url => registration_path(resource_name), html: { :class => 'standalone_form' } do |f|
+      = form_for resource, :as => resource_name, :url => registration_path(resource_name), html: { :class => 'standalone_form' } do |f|
 
         %h1.standalone_form--heading Edit your account
 
         = render "devise/shared/messages"
 
         .standalone_form--field.standalone_form--field-text
-          = f.input :first_name, :required => false, :autofocus => true, label: false, input_html: { class: 'standalone_form--field--input standalone_form--field--input-text' }, placeholder: 'Your first name'
+          = f.text_field :first_name, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => 'Your first name'
 
         .standalone_form--field.standalone_form--field-text
-          = f.input :last_name, :required => false, :autofocus => true, label: false, input_html: { class: 'standalone_form--field--input standalone_form--field--input-text' }, placeholder: 'Your last name'
+          = f.text_field :last_name, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => 'Your last name'
 
         .standalone_form--field.standalone_form--field-text
-          = f.input :email, :required => false, :autofocus => true, label: false, input_html: { class: 'standalone_form--field--input standalone_form--field--input-text' }, placeholder: 'Your email'
+          = f.text_field :email, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => 'Your email'
 
         .standalone_form--field.standalone_form--field-text
-          = f.input :company, :required => false, :autofocus => true, label: false, input_html: { class: 'standalone_form--field--input standalone_form--field--input-text' }, placeholder: 'Your company'
+          = f.text_field :company, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => 'Your company'
 
         .standalone_form--field.standalone_form--field-dropdown
-          = f.input :country, :required => false, :autofocus => true, label: false, input_html: { class: 'standalone_form--field--input standalone_form--field--input-text chzn-select' }, placeholder: 'Your country'
+          = f.select :country, options_for_select( get_countries ), { :include_blank=> ''  }, { :class => 'standalone_form--field--input standalone_form--field--input-text chzn-select' }
 
         .standalone_form--field.standalone_form--field-dropdown
-          = f.input :prefered_language, collection: ['English','Spanish','French'], label: false, include_blank: false, input_html: { class: "standalone_form--field--input standalone_form--field--input-text chzn-select" }
+          = f.select :prefered_language, options_for_select( [ [ 'English', 'en' ], [ 'Spanish', 'es' ], [ 'French', 'fr' ] ] ), { :include_blank=> ''  }, { :class => "standalone_form--field--input standalone_form--field--input-text chzn-select" }
 
         .standalone_form--field{ "data-togglecontent" => "true" }
-          %a.standalone_form--interstitial_link.standalone_form--promo--link{ :href => "#password-section", "data-togglecontent-link" => "true" } Change your password
+          %a.standalone_form--interstitial_link.standalone_form--promo--link{ :href => "#", "data-togglecontent-link" => "true" } Change your password
 
-          .standalone_form--hidden_content{ "data-togglecontent-content" => "true" }
+          .standalone_form--hidden_content{ "data-togglecontent-content" => "standalone_form--hidden_content-visible" }
             .standalone_form--field.standalone_form--field-text
-              = f.input :password, :required => false, :autofocus => true, label: false, input_html: { class: 'standalone_form--field--input standalone_form--field--input-text' }, placeholder: 'Your password', disabled: true
-
-            .standalone_form--field.standalone_form--field-text
-              = f.input :password_confirmation, :required => false, :autofocus => true, label: false, input_html: { class: 'standalone_form--field--input standalone_form--field--input-text' }, placeholder: 'Repeat your password', disabled: true
+              = f.password_field :password, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => 'Your password', :disabled => true
 
             .standalone_form--field.standalone_form--field-text
-              = f.input :current_password, :required => false, :autofocus => true, label: false, input_html: { class: 'standalone_form--field--input standalone_form--field--input-text' }, placeholder: 'Your current password', disabled: true
+              = f.password_field :password_confirmation, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => 'Repeat your password', :disabled => true
+
+            .standalone_form--field.standalone_form--field-text
+              = f.password_field :current_password, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => 'Your current password', :disabled => true
 
 
         .standalone_form--footer
           .standalone_form--buttons
-            = f.button :submit, "Update", class: 'button'
+            = f.submit "Update", :class => 'button'
 
           .standalone_form--links
             = link_to 'Back', :back, :class => 'standalone_form--link'

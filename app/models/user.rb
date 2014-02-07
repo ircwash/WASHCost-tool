@@ -8,7 +8,6 @@ class User
 
   # Persistence relations
   embeds_many :reports
-  embeds_many :basic_questionnaires, class_name: 'BasicReport'
 
   ## Database authenticatable
   field :first_name,         type: String
