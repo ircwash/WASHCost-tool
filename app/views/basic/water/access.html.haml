@@ -13,7 +13,7 @@
       .slider.slider-time
         %input.slider--value.slider--value-wide{ :type => 'text', :value => @questionnaire.access != nil ? @questionnaire.access : 0, :readonly => 'true' }
         .slider--widget
-        = f.hidden_field :access, { 'data-slider-input' => 'true', 'data-slider-min' => minimum_access_for_water, 'data-slider-max' => maximum_access_for_water, 'data-slider-values' => options_for_water_access.to_s }
+        = f.hidden_field :access, { 'data-slider-input' => 'true', 'data-slider-min' => @questionnaire.minimum_access, 'data-slider-max' => @questionnaire.maximum_access, 'data-slider-values' => options_for_water_access.to_s }
 
       .question--buttons
         = submit_tag t( 'buttons.next' ), :class => 'button'

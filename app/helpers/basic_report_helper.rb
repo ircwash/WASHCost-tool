@@ -14,6 +14,20 @@ module BasicReportHelper
 
   # outputs
 
+  def water_service_level_rating_label
+    if @questionnaire.service_rating == 0
+      t 'basic.water.report.sustainability.one_star'
+    elsif @questionnaire.service_rating == 1
+      t 'basic.water.report.sustainability.two_stars'
+    elsif @questionnaire.service_rating == 2
+      t 'basic.water.report.sustainability.three_stars'
+    elsif @questionnaire.service_rating == 3
+      t 'basic.water.report.sustainability.four_stars'
+    else
+      t 'basic.water.report.value_not_set'
+    end
+  end
+
   def sanitation_service_level_rating_label
     if @questionnaire.service_rating == 0
       t 'basic.sanitation.report.sustainability.one_star'
@@ -34,6 +48,30 @@ module BasicReportHelper
     else
       t 'report.benchmark_outside'
     end
+  end
+
+  def water_access_amount
+    case @questionnaire.access
+      when '0'
+        10
+      when '1'
+        30
+      else
+        60
+    end
+  end
+
+  def water_access_heading
+    case @questionnaire.access
+      when '3'
+        t 'report.more_than'
+      else
+        t 'report.less_than'
+    end
+  end
+
+  def basic_water_report_level_of_service
+    "#{t( 'basic.water.report.summaries.a' + @questionnaire.level_of_service[0] )} \n #{t( 'basic.water.report.summaries.b' + @questionnaire.level_of_service[1] )}" unless @questionnaire.level_of_service == nil
   end
 
   def basic_sanitation_report_level_of_service

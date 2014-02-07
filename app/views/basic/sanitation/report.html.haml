@@ -46,7 +46,7 @@
         .report--option_grid--item
           .report--option_grid--item--content
             .report--option_grid--item--title= t( 'basic.sanitation.report.sections.country' )
-            %div{ :class => 'icon--tool-#{"globe" unless @questionnaire.country == nil}' }
+            %div{ :class => "icon--tool-#{'globe' unless @questionnaire.country == nil}" }
             .report--option_grid--item--caption= @questionnaire.country != nil ? Country.new( @questionnaire.country ).name : t( 'basic.shared.report.no_answer_provided' )
             = link_to 'Edit', basic_sanitation_action_path( I18n.locale, 'country' ), :class => 'report--option_grid--item--edit'
 
@@ -60,7 +60,7 @@
         .report--option_grid--item
           .report--option_grid--item--content
             .report--option_grid--item--title= t( 'basic.sanitation.report.sections.population' )
-            %div{ :class => "icon--tool-population" }
+            %div{ :class => "icon--tool-#{'population' unless @questionnaire.population == nil}" }
             .report--option_grid--item--caption= @questionnaire.population != nil ? @questionnaire.population : t( 'basic.shared.report.no_answer_provided' )
             = link_to 'Edit', basic_sanitation_action_path( I18n.locale, 'population' ), :class => 'report--option_grid--item--edit'
 

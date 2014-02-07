@@ -44,6 +44,7 @@ class BasicSanitationQuestionnaire < Session
 
   # DEFINITIONS
 
+
   def minimum_population
     100
   end
@@ -123,6 +124,7 @@ class BasicSanitationQuestionnaire < Session
     end
   end
 
+
   # CALCULATIONS
 
 
@@ -133,7 +135,6 @@ class BasicSanitationQuestionnaire < Session
       nil
     end
   end
-
 
   def service_rating
     if household_latrine != nil && impermeability != nil && environmental_impact != nil && usage != nil && reliability != nil
@@ -147,11 +148,9 @@ class BasicSanitationQuestionnaire < Session
     end
   end
 
-
   def access_rating
     [ [ 3, 1 ], [ 2, 1 ] ][ household_latrine.to_i ][ impermeability.to_i ]
   end
-
 
   def cost_rating_inside_benchmarks?
     if capital_expenditure != nil && recurrent_expenditure != nil
@@ -160,7 +159,6 @@ class BasicSanitationQuestionnaire < Session
       false
     end
   end
-
 
   def level_of_service
     if latrine != nil && capital_expenditure != nil && recurrent_expenditure != nil && usage != nil && reliability != nil && household_latrine != nil && impermeability != nil && environmental_impact != nil
@@ -198,21 +196,17 @@ class BasicSanitationQuestionnaire < Session
     @reliability           = nil
   end
 
-
   def service_level_rating( service )
     { 0 => 3, 1 => 2, 2 => 1 }[ service ]
   end
-
 
   def capital_expenditure_inside_benchmarks
     capital_expenditure.to_f >= minimum_guidance_capital_expenditure && capital_expenditure.to_f <= maximum_guidance_capital_expenditure
   end
 
-
   def recurrent_expenditure_inside_benchmarks
     recurrent_expenditure.to_f >= minimum_guidance_recurrent_expenditure && recurrent_expenditure.to_f <= maximum_guidance_recurrent_expenditure
   end
-
 
   def expenditure_rating( value, minimum, maximum )
     if value < minimum
@@ -224,10 +218,8 @@ class BasicSanitationQuestionnaire < Session
     end
   end
 
-
   def map_indicator_to_output( index )
     { 0 => 4, 1 => 3, 2 => 1}[ index ]
   end
-
 
 end

@@ -37,7 +37,7 @@ class BasicWaterQuestionnaire < Session
 
 
   def reportable?
-    [ latrine, capital_expenditure, recurrent_expenditure, reliability, service_rating ].all?
+    [ technology, capital_expenditure, recurrent_expenditure, access, quality, quantity, reliability ].all?
   end
 
 
@@ -95,13 +95,61 @@ class BasicWaterQuestionnaire < Session
   # CALCULATIONS
 
 
+  def total_cost
+    if capital_expenditure != nil && recurrent_expenditure != nil && population != nil
+      ( capital_expenditure.to_i + recurrent_expenditure.to_i * 10 ) * population.to_i
+    else
+      nil
+    end
+  end
+
+  def service_rating
+    if access != nil && quality != nil && quantity != nil && reliability != nil
+      access_rating = service_level_rating( access.to_i )
+      quality_rating       = service_level_rating( quality.to_i )
+      quantity_rating = service_level_rating( quantity.to_i )
+      reliability_rating = service_level_rating( reliability.to_i )
+
+      [ access_rating, quality_rating, quantity_rating, reliability_rating ].min
+    else
+      nil
+    end
+  end
+
+  def cost_rating_inside_benchmarks?
+    if capital_expenditure != nil && recurrent_expenditure != nil
+      capital_expenditure_inside_benchmarks && recurrent_expenditure_inside_benchmarks
+    else
+      false
+    end
+  end
+
+  def level_of_service
+    if technology != nil && capital_expenditure != nil && recurrent_expenditure != nil && access != nil && quantity != nil && quality != nil && reliability != nil
+
+      capital_expenditure_code   = expenditure_rating( capital_expenditure.to_f, minimum_guidance_capital_expenditure, maximum_guidance_capital_expenditure )
+      recurrent_expenditure_code = expenditure_rating( recurrent_expenditure.to_f, minimum_guidance_recurrent_expenditure, maximum_guidance_recurrent_expenditure )
+
+      access_code                = service_level_rating( access.to_i )
+      quality_code               = service_level_rating( quality.to_i )
+      reliability_code           = service_level_rating( reliability.to_i )
+
+      quantity_code              = quantity.to_i + 1
+
+      concat_first_service_group  = recurrent_expenditure_code.to_s + quantity_code.to_s + access_code.to_s
+      concat_second_service_group = capital_expenditure_code.to_s   + quality_code.to_s  + reliability_code.to_s
+
+      [ concat_first_service_group, concat_second_service_group ]
+    else
+      nil
+    end
+  end
 
 
   private
 
 
   def set_properties
-
     @country               = nil
     @technology            = nil
     @population            = nil
@@ -111,7 +159,28 @@ class BasicWaterQuestionnaire < Session
     @quantity              = nil
     @quality               = nil
     @reliability           = nil
+  end
 
+  def service_level_rating( service )
+    { 0 => 3, 1 => 2, 2 => 1, 3 => 0 }[ service ]
+  end
+
+  def capital_expenditure_inside_benchmarks
+    capital_expenditure.to_f >= minimum_guidance_capital_expenditure && capital_expenditure.to_f <= maximum_guidance_capital_expenditure
+  end
+
+  def recurrent_expenditure_inside_benchmarks
+    recurrent_expenditure.to_f >= minimum_guidance_recurrent_expenditure && recurrent_expenditure.to_f <= maximum_guidance_recurrent_expenditure
+  end
+
+  def expenditure_rating( value, minimum, maximum )
+    if value < minimum
+      1
+    elsif value >= minimum && value <= maximum
+      2
+    else
+      3
+    end
   end
 
 end
