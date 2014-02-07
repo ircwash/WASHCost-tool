@@ -2,7 +2,7 @@
   .boxed_content
     .page_content
 
-      = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f|
+      = form_for @user, :url => password_path( :user ), :html => { :method => :put } do |f|
         = f.hidden_field :reset_password_token
 
         %h1.standalone_form--heading Change your password

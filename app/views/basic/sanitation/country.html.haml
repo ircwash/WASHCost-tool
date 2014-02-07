@@ -11,7 +11,7 @@
     = form_for @questionnaire, :url => basic_sanitation_update_url( I18n.locale, 'population' ), :html => { 'data-dynamic_form' => basic_sanitation_dynamic_update_url( I18n.locale ) } do |f|
 
       .choices-select
-        = f.select :country, options_for_select( get_countries, @questionnaire.country ), { :include_blank => t( 'basic.shared.questionnaire.country.placeholder' ) }, { :class=>"chzn-select" }
+        = f.select :country, options_for_select( options_for_countries, @questionnaire.country ), { :include_blank => t( 'basic.shared.questionnaire.country.placeholder' ) }, { :class=>"chzn-select" }
 
       .question--buttons
         = submit_tag t( 'buttons.next' ), :class => 'button'

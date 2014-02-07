@@ -2,7 +2,7 @@
   .boxed_content
     .page_content
 
-      = form_for resource, :as => resource_name, :url => registration_path(resource_name), html: { :class => 'standalone_form' } do |f|
+      = form_for @user, :url => registration_path( :user ), html: { :class => 'standalone_form' } do |f|
 
         %h1.standalone_form--heading Edit your account
 
@@ -21,7 +21,7 @@
           = f.text_field :company, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => 'Your company'
 
         .standalone_form--field.standalone_form--field-dropdown
-          = f.select :country, options_for_select( get_countries ), { :include_blank=> ''  }, { :class => 'standalone_form--field--input standalone_form--field--input-text chzn-select' }
+          = f.select :country, options_for_select( options_for_countries ), { :include_blank=> ''  }, { :class => 'standalone_form--field--input standalone_form--field--input-text chzn-select' }
 
         .standalone_form--field.standalone_form--field-dropdown
           = f.select :prefered_language, options_for_select( [ [ 'English', 'en' ], [ 'Spanish', 'es' ], [ 'French', 'fr' ] ] ), { :include_blank=> ''  }, { :class => "standalone_form--field--input standalone_form--field--input-text chzn-select" }
