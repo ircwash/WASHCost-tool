@@ -9,19 +9,9 @@ WashCostApp::Application.routes.draw do
 
     resources :dashboard
 
-    resources :subscribers
-
     scope '/calculators' do
 
-      post '/selection' => 'calculators#selection'
-
       namespace :basic do
-
-        scope '/report' do
-          get  '/questionnaire', :to => 'reports#questionnaire', :as => 'report_questionnaire'
-          post '/save', :to => 'reports#save', :as => 'report_save'
-          post '/load', :to => 'reports#load', :as => 'report_load'
-        end
 
         scope '/water' do
           get '/begin' => 'water#begin', :as => 'water_begin'
@@ -72,6 +62,8 @@ WashCostApp::Application.routes.draw do
         end
 
       end
+
+      post '/selection' => 'calculators#selection'
 
       root :to => 'calculators#index', :as => 'calculators'
 

@@ -36,19 +36,6 @@
             %th.dashboard--report_table--heading{ :width => 0 }
 
         %tbody
-          - current_user.basic_questionnaires.each do |basic_questionnaire|
-            %tr.dashboard--report_table--row
-              %td.dashboard--report_table--cell= basic_questionnaire.title.upcase
-              %td.dashboard--report_table--cell
-                - if basic_questionnaire.form["country"].present?
-                  %div{ :class => "flag flag-#{basic_questionnaire.form['country'].downcase}" }
-              %td.dashboard--report_table--cell= Country.new(basic_questionnaire.form["country"]).name.truncate(13)
-              %td.dashboard--report_table--cell= basic_questionnaire.created_at.strftime( '%d.%m.%Y' )
-              %td.dashboard--report_table--cell= "Basic #{basic_questionnaire.tool_name.capitalize} (#{basic_questionnaire.percent_completed}%)"
-              %td.dashboard--report_table--cell INSTALLED
-              %td.dashboard--report_table--cell
-                = link_to t( 'view_report' ), basic_report_load_path(id_questionnaire: basic_questionnaire.id), "data-method" => "post", :class => 'button button-small'
-
           - @reports.each do |report|
             %tr.dashboard--report_table--row
               %td.dashboard--report_table--cell= report.title
