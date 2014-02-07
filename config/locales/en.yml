@@ -45,10 +45,11 @@ en:
   footer:
     calculator_progress: "%{level} %{type} Report"
   buttons:
-    next: "Next Question"
-    start: "Start the calculator"
-    view_report: "View Report"
-    save_report: "Save Report"
+    next: Next Question
+    start: Start the calculator
+    view_report: View Report
+    save_report: Save Report
+    share_report: Share Report
   calculators:
     basic: Basic
     advanced: Advanced

@@ -1,7 +1,14 @@
-= content_for :inner_content do
+= content_for :content do
+
+  = render 'shared/masthead'
+
+  = render 'shared/messages'
+
   .boxed_container
     .page_content
 
       = yield
 
-= render template: "layouts/calculators"
+  = render 'tool/report_footer'
+
+= render template: "layouts/application"
