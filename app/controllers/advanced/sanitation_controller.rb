@@ -43,13 +43,13 @@ class Advanced::SanitationController < CalculatorController
   end
 
   def save_report
-    @report = Report.new
+    @report = UserReport.new
 
     render layout: 'general', template: 'shared/save_report'
   end
 
   def store_report
-    super( params[ :report ][ :title ], 'advanced', 'sanitation', AdvancedSanitationQuestionnaire.new( session ).attributes )
+    super( params[ :user_report ][ :title ], 'advanced', 'sanitation', AdvancedSanitationQuestionnaire.new( session ).attributes )
   end
 
 end

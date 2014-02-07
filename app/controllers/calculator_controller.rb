@@ -3,7 +3,7 @@ class CalculatorController < ApplicationController
   protected
 
   def store_report( title, level, type, questionnaire )
-    current_user.reports <<  Report.new(
+    current_user.reports <<  UserReport.new(
       :title => title,
       :type  => type,
       :level => level,
