@@ -277,18 +277,6 @@ module ApplicationHelper
     Array(1900..Date.today.year).reverse.map{ |y| [ y, y ] }
   end
 
-  def show_app_version
-    if SHOW_APP_VERSION
-      %Q{<div class="application_version">Current version is: #{APP_VERSION}</div>}.html_safe
-    else
-      %Q{<div style="display:none">Current version is: #{APP_VERSION}</div>}.html_safe
-    end
-  end
-
-  def show_debugger
-    link_to 'debugger', '#',class: 'debug-trigger-button'
-  end
-
   def resource_name
     :user
   end
