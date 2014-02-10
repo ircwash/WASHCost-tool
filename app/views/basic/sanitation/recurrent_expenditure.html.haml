@@ -11,9 +11,9 @@
     = form_for @questionnaire, :url => basic_sanitation_update_url( I18n.locale, 'household_latrine' ), :html => { 'data-dynamic_form' => basic_sanitation_dynamic_update_url( I18n.locale ) } do |f|
 
       .slider
-        %input.slider--value{ 'data-target' => 'recurrentSlider', :value => @questionnaire.recurrent_expenditure != nil ? @questionnaire.recurrent_expenditure : 0 }
+        %input.slider--value{ 'data-target' => 'recurrentSlider', :value => @questionnaire.recurrent_expenditure != nil ? @questionnaire.recurrent_expenditure : @questionnaire.minimum_recurrent_expenditure }
         .slider--widget.threshold-marks
-        = f.hidden_field :recurrent_expenditure, { 'data-slider-input' => 'true', 'data-slider-min' => @questionnaire.minimum_recurrent_expenditure, 'data-slider-max' => @questionnaire.maximum_recurrent_expenditure, 'data-slider-below' => @questionnaire.minimum_guidance_recurrent_expenditure, 'data-slider-above' => @questionnaire.maximum_guidance_recurrent_expenditure }
+        = f.hidden_field :recurrent_expenditure, { :value => @questionnaire.recurrent_expenditure != nil ? @questionnaire.recurrent_expenditure : @questionnaire.minimum_recurrent_expenditure, 'data-slider-input' => 'true', 'data-slider-min' => @questionnaire.minimum_recurrent_expenditure, 'data-slider-max' => @questionnaire.maximum_recurrent_expenditure, 'data-slider-below' => @questionnaire.minimum_guidance_recurrent_expenditure, 'data-slider-above' => @questionnaire.maximum_guidance_recurrent_expenditure }
 
         .slider--scale
           .slider--scale--point.slider--scale--point-min= "US$ #{@questionnaire.minimum_guidance_recurrent_expenditure}"

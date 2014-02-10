@@ -11,9 +11,9 @@
     = form_for @questionnaire, :url => basic_sanitation_update_url( I18n.locale, 'recurrent_expenditure' ), :html => { 'data-dynamic_form' => basic_sanitation_dynamic_update_url( I18n.locale ) } do |f|
 
       .slider
-        %input.slider--value{ 'data-target' => 'capitalSlider', :value => @questionnaire.capital_expenditure != nil ? @questionnaire.capital_expenditure : 0 }
+        %input.slider--value{ 'data-target' => 'capitalSlider', :value => @questionnaire.capital_expenditure != nil ? @questionnaire.capital_expenditure : @questionnaire.minimum_capital_expenditure }
         .slider--widget.threshold-marks
-        = f.hidden_field :capital_expenditure, { 'data-slider-input' => 'true', 'data-slider-min' => @questionnaire.minimum_capital_expenditure, 'data-slider-max' => @questionnaire.maximum_capital_expenditure, 'data-slider-below' => @questionnaire.minimum_guidance_capital_expenditure, 'data-slider-above' => @questionnaire.maximum_guidance_capital_expenditure }
+        = f.hidden_field :capital_expenditure, { :value => @questionnaire.capital_expenditure != nil ? @questionnaire.capital_expenditure : @questionnaire.minimum_capital_expenditure, 'data-slider-input' => 'true', 'data-slider-min' => @questionnaire.minimum_capital_expenditure, 'data-slider-max' => @questionnaire.maximum_capital_expenditure, 'data-slider-below' => @questionnaire.minimum_guidance_capital_expenditure, 'data-slider-above' => @questionnaire.maximum_guidance_capital_expenditure }
 
         .slider--scale
           .slider--scale--point.slider--scale--point-min= "US$ #{@questionnaire.minimum_guidance_capital_expenditure}"

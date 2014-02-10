@@ -13,7 +13,7 @@
       .slider
         %input.slider--value{ :type => 'text', :value => @questionnaire.population != nil ? number_with_precision( @questionnaire.population, :precision => 0, :locale => I18n.locale ) : @questionnaire.minimum_population }
         .slider--widget
-        = f.hidden_field :population, { 'data-slider-input' => 'true', 'data-logarithmic' => 'true', 'data-slider-min' => @questionnaire.minimum_population, 'data-slider-max' => @questionnaire.maximum_population }
+        = f.hidden_field :population, { :value => @questionnaire.population ? @questionnaire.population : @questionnaire.minimum_population, 'data-slider-input' => 'true', 'data-logarithmic' => 'true', 'data-slider-min' => @questionnaire.minimum_population, 'data-slider-max' => @questionnaire.maximum_population }
 
       .question--buttons
         = submit_tag t( 'buttons.next' ), :class => 'button'
