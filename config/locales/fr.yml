@@ -3,7 +3,7 @@ fr:
     format:
       separator: ","
       delimiter: " "
-      precision: 3
+      precision: 2
     currency:
       format:
         format: "%u%n"
@@ -11,4 +11,47 @@ fr:
         separator: ","
         delimiter: " "
         precision: 2
-
+  navigation:
+    utility:
+      about: Au sujet de
+      help: Aide
+      contact: Contact
+      sign_in: Connexion
+      sign_out: Sign Out - Translation required
+    calculators:
+      context: Contexte
+      country: Pays
+      technology: Technologie
+      population: Population
+      household: Household
+      latrine: Latrine
+      cost: Coût
+      capital_expenditure: Coût d'investissement
+      recurrent_expenditure: Coût récurrents
+      service: Service
+      access: Accès
+      quantity: Quantité
+      quality: Qualité
+      household_latrine: Household Latrine
+      impermeability: Imperméable
+      environmental_impact: L'environnement
+      usage: Utilisent
+      reliability: Fiabilité
+      advanced: Advanced
+      service_area: Service Area - Translation required
+      system_management: System Management - Translation required
+      system_characteristics: System Characteristics - Translation required
+      service_level: Service Level - Translation required
+  footer:
+    calculator_progress: "%{level} %{type} rapport"
+  buttons:
+    next: Prochain Question
+    start: OK! Commencer à utiliser le calculateur
+    view_report: Voir le rapport
+    save_report: Sauvegarder le rapport
+    share_report: Share Report
+  calculators:
+    basic: Basic - Translation required
+    advanced: Advanced - Translation required
+    water: Eau
+    sanitation: Sanitation - Translation required
