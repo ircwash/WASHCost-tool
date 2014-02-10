@@ -49,7 +49,7 @@ $( document ).ready( function()
 
       // bind events
       label.on( 'keydown', validate_slider );
-      label.on( 'keyup',   update_slider );
+      label.on( 'blur',    update_slider );
       label.on( 'focus',   unformat_label );
       label.on( 'blur',    reformat_label );
     } );
@@ -93,7 +93,7 @@ $( document ).ready( function()
         value       = logarithmic ? _logslider.logposition( parseInt( label.val(), 10 ), min, max ) : parseInt( label.val(), 10 );
 
     // update input
-    input.val( value );
+    input.val( label.val() );
 
     // update slider
     slider.slider( { value:value } );

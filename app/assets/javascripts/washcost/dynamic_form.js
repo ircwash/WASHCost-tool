@@ -5,7 +5,7 @@ $( document ).ready( function()
 
   function init()
   {
-    $( '[data-dynamic_form]' ).find( 'input,select' ).on( 'change', function()
+    $( '[data-dynamic_form]' ).find( 'input[name],select[name]' ).on( 'change', function()
     {
       var form = $( this ).parents( '[data-dynamic_form]' ),
           url  = form.data( 'dynamic_form' );
