@@ -7,7 +7,6 @@
 
     .report--header--pretitle= t( 'basic.water.report.final_report' )
     %h1.report--header--title= t( 'report.summmary' )
-    = link_to "#{t('report.cross_to_sanitation')}", basic_sanitation_report_path, :class => 'report--header--quicklink'
 
     - if @questionnaire.reportable?
       .report--summary
