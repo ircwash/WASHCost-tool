@@ -73,25 +73,26 @@
     - if basic_report_cost_available
       .report--chart{ 'data-chart-capital' => @questionnaire.capital_expenditure || 0, 'data-chart-recurrent' => @questionnaire.recurrent_expenditure || 0, 'data-chart-population' => @questionnaire.population || 0 }
 
-      .report--costs
-
-        .report--costs--column.report--costs--column-small
-          .report--costs--title= t( 'basic.water.report.sections.capital_expenditure_per_person' )
-          .report--costs--detail
-            .report--costs--detail--value= report_dollar_currency_value_for( @questionnaire.capital_expenditure )
-            = link_to 'Edit', basic_water_action_path( I18n.locale, 'capital_expenditure' ), :class => 'report--costs--detail--edit'
-
-        .report--costs--column.report--costs--column-small
-          .report--costs--title= t( 'basic.water.report.sections.recurrent_expenditure_per_person' )
-          .report--costs--detail
-            .report--costs--detail--value= report_dollar_currency_value_for( @questionnaire.recurrent_expenditure )
-            = link_to 'Edit', basic_water_action_path( I18n.locale, 'recurrent_expenditure' ), :class => 'report--costs--detail--edit'
-
-        .report--costs--column.report--costs--column-big
-          .report--costs--title= t( 'report.total' )
-          .report--costs--bigvalue= report_dollar_currency_value_for(@questionnaire.total_cost, 2)
     - else
       .report--no_data= t('report.cost_box_no_value')
+
+    .report--costs
+
+      .report--costs--column.report--costs--column-small
+        .report--costs--title= t( 'basic.water.report.sections.capital_expenditure_per_person' )
+        .report--costs--detail
+          .report--costs--detail--value= report_dollar_currency_value_for( @questionnaire.capital_expenditure )
+          = link_to 'Edit', basic_water_action_path( I18n.locale, 'capital_expenditure' ), :class => 'report--costs--detail--edit'
+
+      .report--costs--column.report--costs--column-small
+        .report--costs--title= t( 'basic.water.report.sections.recurrent_expenditure_per_person' )
+        .report--costs--detail
+          .report--costs--detail--value= report_dollar_currency_value_for( @questionnaire.recurrent_expenditure )
+          = link_to 'Edit', basic_water_action_path( I18n.locale, 'recurrent_expenditure' ), :class => 'report--costs--detail--edit'
+
+      .report--costs--column.report--costs--column-big
+        .report--costs--title= t( 'report.total' )
+        .report--costs--bigvalue= report_dollar_currency_value_for(@questionnaire.total_cost, 2)
 
   %section.report--section
     .report--section--title= t( 'report.service' );
