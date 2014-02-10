@@ -30,7 +30,7 @@
 // STYLESHEET
 
 .report {
-
+  @include background-image(linear-gradient(to right,  rgb(221, 214, 153) 0%, rgb(235, 232, 202) 50%, rgb(221, 214, 153) 100%));
 }
 
 .report--header {
@@ -215,13 +215,16 @@
   line-height:1.5;
 }
 
+.report--content {
+  @include background-image(radial-gradient(center bottom, circle, #e6e3be, #a08d62));
+}
+
 .report--section {
   padding:30px;
   color:#333;
   text-align:center;
-  background-color:rgb(173,203,84);
 
-  @include background-image(linear-gradient(to right,  rgb(221, 214, 153) 0%, rgb(235, 232, 202) 50%, rgb(221, 214, 153) 100%));
+//  @include background-image(linear-gradient(to right,  rgb(221, 214, 153) 0%, rgb(235, 232, 202) 50%, rgb(221, 214, 153) 100%));
 }
 
 .report--section + .report--section {
