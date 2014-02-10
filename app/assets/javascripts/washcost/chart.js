@@ -95,7 +95,7 @@ $( document ).ready( function()
           parent: $( this )[0],
           id: 'washcostlineChart',
           dimensions: { width:container.width(), height:container.height() },
-          padding:{ top:40, right:40, bottom:40, left:40 },
+          padding:{ top:40, right:40, bottom:40, left:60 },
           axisTypes: {x:'linear', y:'linear', z:null},
           colourPalette:[ '#ffffff' ],
           backgroundColour: 'transparent',

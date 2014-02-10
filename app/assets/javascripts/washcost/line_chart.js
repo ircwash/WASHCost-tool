@@ -317,16 +317,16 @@ window.WashCostLineChart = (function()
 			    i;
 
 			// always start off at 0
-			finalData.push( { x:1, y:0 } );
+			//finalData.push( { x:0, y:0 } );
 
 			// put in the setup cost part way through the first year
-			finalData.push( { x:1.3, y:data.capital * data.population } );
+			finalData.push( { x:0, y:data.capital * data.population } );
 
 			// bring back down to recurrent cost before the start of the second year
-			finalData.push( { x:1.7, y:data.recurrent * data.population } );
+			finalData.push( { x:0.7, y:data.recurrent * data.population } );
 
 			// maintain recurrent cost for rest of time frame
-			for ( i = 2; i <= years; i++ )
+			for ( i = 1; i <= years; i++ )
 			{
 				finalData.push( { x:i, y:data.recurrent * data.population } );
 			}
@@ -436,7 +436,7 @@ window.WashCostLineChart = (function()
 			this.annotationGroup = this.canvas.append( 'g' )
 				.attr( 'class', 'annotations' );
 
-			annotationData = [ this.data[0].data[ 1 ], this.data[0].data[ 6 ] ];
+			annotationData = [ this.data[0].data[ 0 ], this.data[0].data[ 6 ] ];
 
 			this.annotations = this.annotationGroup.selectAll( 'annotation' )
 				.data( annotationData )
