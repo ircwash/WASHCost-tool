@@ -153,9 +153,9 @@ class BasicWaterQuestionnaire < Session
       capital_expenditure_code   = expenditure_rating( capital_expenditure.to_f, minimum_guidance_capital_expenditure, maximum_guidance_capital_expenditure )
       recurrent_expenditure_code = expenditure_rating( recurrent_expenditure.to_f, minimum_guidance_recurrent_expenditure, maximum_guidance_recurrent_expenditure )
 
-      access_code                = service_level_rating( access.to_i )
-      quality_code               = service_level_rating( quality.to_i )
-      reliability_code           = service_level_rating( reliability.to_i )
+      access_code                = service_level_rating( access.to_i ) + 1
+      quality_code               = service_level_rating( quality.to_i ) + 1
+      reliability_code           = service_level_rating( reliability.to_i ) + 1
 
       quantity_code              = quantity.to_i + 1
 
