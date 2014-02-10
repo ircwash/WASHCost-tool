@@ -20,9 +20,9 @@
           %a{ :href => "#", :class => "header--links--link header--links--link-dropdown" } Language
           %ul.header--links--item--dropdown
             %li.header--links--item--dropdown--item
-              = link_to 'English', calculators_path( 'en' ), :class => 'header--links--item--dropdown--link'
+              = link_to 'English', request.path.gsub( /^\/[^\/]+/, '/en' ), :class => 'header--links--item--dropdown--link'
             %li.header--links--item--dropdown--item
-              = link_to 'Français', calculators_path( 'fr' ), :class => 'header--links--item--dropdown--link'
+              = link_to 'Français', request.path.gsub( /^\/[^\/]+/, '/fr' ), :class => 'header--links--item--dropdown--link'
 
         - if user_signed_in? && current_user
           %li.header--links--item
