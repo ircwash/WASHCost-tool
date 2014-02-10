@@ -60,8 +60,9 @@ class BasicSanitationQuestionnaire < Session
   def maximum_capital_expenditure
     case latrine.to_i
       when 0
-      when 5
-        50
+        100
+      when 1..5
+        500
       else
         500
     end
@@ -69,18 +70,22 @@ class BasicSanitationQuestionnaire < Session
 
   def minimum_guidance_capital_expenditure
     case latrine.to_i
+      when 0
+        7
       when 1..2
         36
-      when 3..4
+      when 3..5
         92
       else
-        2
+        7
     end
   end
 
   def maximum_guidance_capital_expenditure
     case latrine.to_i
-      when 1..4
+      when 0
+        26
+      when 1..5
         358
       else
         26
@@ -93,9 +98,11 @@ class BasicSanitationQuestionnaire < Session
 
   def maximum_recurrent_expenditure
     case latrine.to_i
+      when 0
+        8
       when 1..2
         17
-      when 3..4
+      when 3..5
         23
       else
         8
@@ -104,9 +111,11 @@ class BasicSanitationQuestionnaire < Session
 
   def minimum_guidance_recurrent_expenditure
     case latrine.to_i
+      when 0
+        1.5
       when 1..2
         2.5
-      when 3..4
+      when 3..5
         3.5
       else
         1.5
@@ -115,9 +124,11 @@ class BasicSanitationQuestionnaire < Session
 
   def maximum_guidance_recurrent_expenditure
     case latrine.to_i
+      when 0
+        4.0
       when 1..2
         8.5
-      when 3..4
+      when 3..5
         11.5
       else
         4.0

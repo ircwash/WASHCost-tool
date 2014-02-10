@@ -60,11 +60,27 @@ class BasicWaterQuestionnaire < Session
   end
 
   def minimum_guidance_capital_expenditure
-    20
+    case technology.to_i
+      when 0
+        20
+      when 1
+        30
+      else
+        20
+    end
   end
 
   def maximum_guidance_capital_expenditure
-    61
+    case technology.to_i
+      when 0
+        61
+      when 1
+        131
+      when 2..4
+        152
+      else
+        61
+    end
   end
 
   def minimum_recurrent_expenditure
@@ -80,7 +96,14 @@ class BasicWaterQuestionnaire < Session
   end
 
   def maximum_guidance_recurrent_expenditure
-    6
+    case technology.to_i
+      when 0
+        6
+      when 1..4
+        15
+      else
+        6
+    end
   end
 
   def minimum_access
