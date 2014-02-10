@@ -1,7 +1,20 @@
-# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
-
 en:
   devise:
+    log_into_your_account: Login to your account
+    remember_me: remember me
+    log_in: Log in
+    create_account: Create account
+    email: Email
+    password: Password
+    repeat_password: Repeat your password
+    sign_in: Sign in
+    sign_up: Sign up
+    forgot_your_password: Forgot your password?
+    didnt_receive_confirmation_instructions: Didn't receive confirmation instructions?
+    didnt_receive_unlock_instructions: Didn't receive unlock instructions?
+    sign_in_with_provider: "Sign in with %{provider}"
+    register: Register
+    please_visit_washcost_blog_html: "Please visit the <a href=\"http://blog.washcost.org/\" class=\"standalone_form--promo--link\">WASHCost Blog</a> to learn more about the Advanced Calculator"
     confirmations:
       confirmed: "Your account was successfully confirmed. You are now signed in."
       send_instructions: "You will receive an email with instructions about how to confirm your account in a few minutes."
