@@ -17,7 +17,7 @@
             = Country.new(current_user.country).data.present? ? Country.new(current_user.country).name.capitalize : 'Not specified'
           .dashboard--profile--details--field
             = "#{t( 'dashboard.preferred_language' )}:"
-            = options_for_languages[ options_for_languages.index{ |l| l[1] == current_user.prefered_language } ][0]
+            = current_user.prefered_language != nil ? options_for_languages[ options_for_languages.index{ |l| l[1] == current_user.prefered_language } ][0]  : ''
           .dashboard--profile--details--field
             = "#{t( 'dashboard.current_mail' )}:"
             = current_user.email

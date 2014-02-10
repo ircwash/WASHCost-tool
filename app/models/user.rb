@@ -13,7 +13,7 @@ class User
   field :first_name,         type: String
   field :last_name,          type: String
   field :country,            type: String, default: "GB"
-  field :prefered_language,  type: String, default: "English"
+  field :prefered_language,  type: String, default: I18n.locale
   field :company,            type: String, default: ""
   field :email,              type: String, default: ""
   field :encrypted_password, type: String, default: ""
