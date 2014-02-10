@@ -11,7 +11,7 @@ $( document ).ready( function()
 
   function init()
   {
-    if ( _navigation.length )
+    if ( _navigation.length && $( window ).width > 600 )
     {
       // set full width of navigation items
       _list.css( { width:_items.width() * _items.length } );

@@ -95,13 +95,6 @@
   text-shadow:0 -1px 0 $medium_brown;
 }
 
-.js .navigation--subcategory-mobile {
-  position:relative;
-}
-
-.nav-toggle {
-  display:none;
-}
 
 @media screen and ( max-device-width:$mobile_breakpoint ) {
 
@@ -111,9 +104,9 @@
   }
 
   .navigation--subcategory {
+    display:block;
     height:auto;
     margin-bottom:10px;
-    width:auto !important; //override js style
   }
 
   .navigation--category--item {
@@ -133,73 +126,11 @@
   .navigation--subcategory--link {
     width:100%;
     float:none;
+    display:none;
+  }
+
+  .navigation--subcategory--link-active {
     display:block;
-  }
-
-  .navigation--subcategory-mobile ul {
-    margin:0;
-    padding:0;
-    width:100%;
-    display:block;
-    list-style:none;
-  }
-
-  .navigation--subcategory-mobile li {
-    width:100%;
-    display:block;
-  }
-
-  .js .navigation--subcategory-mobile {
-    clip:rect(0 0 0 0);
-    max-height:0;
-    position:absolute;
-    display:block;
-    overflow:hidden;
-    zoom:1;
-  }
-
-  .navigation--subcategory-mobile.opened {
-    max-height:9999px;
-  }
-
-  .js .navigation--subcategory-mobile.closed {
-    max-height:auto;
-  }
-  .navigation--subcategory-mobile.disable-pointer-events {
-    pointer-events:none !important;
-  }
-
-  .nav-toggle {
-    display:inline-block;
-    padding:14px;
-    font-weight: bold;
-    font-size: 13px;
-    color: rgba(3, 3, 3, 0.5);
-    text-decoration: none;
-    -webkit-font-smoothing: antialiased;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-    border-radius: 5px;
-    background-color:rgba(255, 255, 255, 0.3);
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-transition: background-color 0.3s, color 0.3s;
-    -moz-transition: background-color 0.3s, color 0.3s;
-    -o-transition: background-color 0.3s, color 0.3s;
-    transition: background-color 0.3s, color 0.3s;
-    -webkit-touch-callout:none;
-    -webkit-user-select:none;
-    -moz-user-select:none;
-    -ms-user-select:none;
-    -o-user-select:none;
-    user-select:none;
-  }
-
-  .nav-toggle:hover {
-    background-color:rgba(255, 255, 255, 0.6);
   }
 
 }
