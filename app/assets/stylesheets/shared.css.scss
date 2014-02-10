@@ -146,6 +146,27 @@ html, body {
   margin-top:10px;
 }
 
+.share_report {
+  width:80%;
+  margin:0 auto;
+  padding:10px;
+  font-size:14px;
+  background-color:$dark_grey;
+
+  @include border-radius(5px);
+}
+
+.share_report--link {
+  color:#fff;
+  text-decoration:none;
+  -webkit-font-smoothing:antialiased;
+}
+
+.share_report--link:hover {
+  text-decoration:underline;
+}
+
+
 @media screen and ( max-device-width: $mobile_breakpoint ) {
 
   .preapplication_footer--links,
