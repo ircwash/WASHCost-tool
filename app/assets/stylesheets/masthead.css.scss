@@ -84,6 +84,7 @@
 }
 
 .header--links--item--dropdown--link {
+  position:relative;
   display:block;
   padding:15px 20px;
   font-size:13px;
@@ -93,6 +94,17 @@
   text-decoration:none;
 
   @include transition(background-color 0.3s);
+}
+
+.header--links--item--dropdown--link-active::after {
+  content:"";
+  position:absolute;
+  top:50%;
+  right:15px;
+  width:10px;
+  height:10px;
+  margin-top:-5px;
+  background:transparent image-url('icon-tick.png') no-repeat 50% 50%;
 }
 
 .header--links--item--dropdown--link:hover {

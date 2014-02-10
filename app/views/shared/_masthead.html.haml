@@ -19,10 +19,9 @@
         %li.header--links--item.header--links--item-dropdown
           %a{ :href => "#", :class => "header--links--link header--links--link-dropdown" } Language
           %ul.header--links--item--dropdown
-            %li.header--links--item--dropdown--item
-              = link_to 'English', request.path.gsub( /^\/[^\/]+/, '/en' ), :class => 'header--links--item--dropdown--link'
-            %li.header--links--item--dropdown--item
-              = link_to 'Français', request.path.gsub( /^\/[^\/]+/, '/fr' ), :class => 'header--links--item--dropdown--link'
+            - options_for_languages.each do |language|
+              %li.header--links--item--dropdown--item
+                = link_to language[0], request.path.gsub( /^\/[^\/]+/, "/#{language[1]}" ), :class => "header--links--item--dropdown--link #{'header--links--item--dropdown--link-active' unless language[1] != I18n.locale.to_s}"
 
         - if user_signed_in? && current_user
           %li.header--links--item

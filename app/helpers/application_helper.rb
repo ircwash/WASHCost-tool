@@ -2,7 +2,7 @@
 module ApplicationHelper
 
   def options_for_languages
-    [ [ 'English', 'en' ], [ 'Spanish', 'es' ], [ 'French', 'fr' ] ]
+    [ [ 'English', 'en' ], [ 'Français', 'fr' ] ]
   end
 
   def options_for_countries
