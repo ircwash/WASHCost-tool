@@ -10,7 +10,7 @@ class Advanced::WaterController < CalculatorController
     @questionnaire = AdvancedWaterQuestionnaire.new( session )
     @questionnaire.reset
 
-    redirect_to advanced_water_action_path( :service_area )
+    redirect_to advanced_water_action_path( I18n.locale, :service_area )
   end
 
   def questionnaire

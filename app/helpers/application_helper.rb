@@ -1,6 +1,10 @@
 # encoding: utf-8
 module ApplicationHelper
 
+  def options_for_languages
+    [ [ 'English', 'en' ], [ 'Spanish', 'es' ], [ 'French', 'fr' ] ]
+  end
+
   def options_for_countries
     Country.all.sort{ |c1,c2| c1[0] <=> c2[0] }
   end

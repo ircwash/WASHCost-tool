@@ -24,7 +24,7 @@
           = f.select :country, options_for_select( options_for_countries ), { :include_blank=> ''  }, { :class => 'standalone_form--field--input standalone_form--field--input-text chzn-select' }
 
         .standalone_form--field.standalone_form--field-dropdown
-          = f.select :prefered_language, options_for_select( [ [ 'English', 'en' ], [ 'Spanish', 'es' ], [ 'French', 'fr' ] ] ), { :include_blank=> ''  }, { :class => "standalone_form--field--input standalone_form--field--input-text chzn-select" }
+          = f.select :prefered_language, options_for_select( options_for_languages ), { :include_blank=> ''  }, { :class => "standalone_form--field--input standalone_form--field--input-text chzn-select" }
 
         .standalone_form--field{ "data-togglecontent" => "true" }
           %a.standalone_form--interstitial_link.standalone_form--promo--link{ :href => "#", "data-togglecontent-link" => "true" } Change your password

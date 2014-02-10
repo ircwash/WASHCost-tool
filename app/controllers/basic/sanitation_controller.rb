@@ -9,7 +9,7 @@ class Basic::SanitationController < CalculatorController
     @questionnaire = BasicSanitationQuestionnaire.new( session )
     @questionnaire.reset
 
-    redirect_to basic_sanitation_action_path( :country )
+    redirect_to basic_sanitation_action_path( I18n.locale, :country )
   end
 
   def questionnaire

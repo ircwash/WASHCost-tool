@@ -17,7 +17,7 @@
             = Country.new(current_user.country).data.present? ? Country.new(current_user.country).name.capitalize : 'Not specified'
           .dashboard--profile--details--field
             = "#{t( 'dashboard.preferred_language' )}:"
-            = current_user.prefered_language
+            = options_for_languages[ options_for_languages.index{ |l| l[1] == current_user.prefered_language } ][0]
           .dashboard--profile--details--field
             = "#{t( 'dashboard.current_mail' )}:"
             = current_user.email
@@ -47,4 +47,4 @@
               %td.dashboard--report_table--cell= "#{report.level.capitalize} #{report.type.capitalize}"
               %td.dashboard--report_table--cell INSTALLED
               %td.dashboard--report_table--cell
-                = link_to t( 'view_report' ), reports_load_path( report.id ), "data-method" => "post", :class => 'button button-small'
+                = link_to t( 'view_report' ), reports_load_path( I18n.locale, report.id ), "data-method" => "post", :class => 'button button-small'

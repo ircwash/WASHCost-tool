@@ -9,7 +9,7 @@ class Basic::WaterController < CalculatorController
     @questionnaire = BasicWaterQuestionnaire.new( session )
     @questionnaire.reset
 
-    redirect_to basic_water_action_path( :country )
+    redirect_to basic_water_action_path( I18n.locale, :country )
   end
 
   def questionnaire

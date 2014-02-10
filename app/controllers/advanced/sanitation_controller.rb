@@ -10,7 +10,7 @@ class Advanced::SanitationController < CalculatorController
     @questionnaire = AdvancedSanitationQuestionnaire.new( session )
     @questionnaire.reset
 
-    redirect_to advanced_sanitation_action_path( :service_area )
+    redirect_to advanced_sanitation_action_path( I18n.locale, :service_area )
   end
 
   def questionnaire
