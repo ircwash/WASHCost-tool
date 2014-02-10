@@ -15,6 +15,8 @@ en:
     sign_in_with_provider: "Sign in with %{provider}"
     register: Register
     please_visit_washcost_blog_html: "Please visit the <a href=\"http://blog.washcost.org/\" class=\"standalone_form--promo--link\">WASHCost Blog</a> to learn more about the Advanced Calculator"
+    select_a_country: Select a country
+    select_a_preferred_language: Select a preferred language
     confirmations:
       confirmed: "Your account was successfully confirmed. You are now signed in."
       send_instructions: "You will receive an email with instructions about how to confirm your account in a few minutes."
