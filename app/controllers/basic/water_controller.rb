@@ -2,7 +2,7 @@ class Basic::WaterController < CalculatorController
 
   layout 'tool_basic'
 
-  authorize_resource :class => Basic::WaterController
+  load_and_authorize_resource UserReport, :only => [ :save_report, :store_report ]
 
 
   def begin

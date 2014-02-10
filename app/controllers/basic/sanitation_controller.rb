@@ -2,7 +2,7 @@ class Basic::SanitationController < CalculatorController
 
   layout 'tool_basic'
 
-  authorize_resource :class => Basic::SanitationController
+  load_and_authorize_resource UserReport, :only => [ :save_report, :store_report ]
 
 
   def begin

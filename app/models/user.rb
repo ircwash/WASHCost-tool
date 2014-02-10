@@ -7,7 +7,7 @@ class User
          :recoverable, :rememberable, :trackable, :validatable
 
   # Persistence relations
-  embeds_many :reports
+  embeds_many :user_reports
 
   ## Database authenticatable
   field :first_name,         type: String

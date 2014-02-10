@@ -71,7 +71,7 @@ module AdvancedReportHelper
       @global_capital_total_reports                 = 0
 
       User.all.each do |user|
-        user.reports.each do |report|
+        user.user_reports.each do |report|
 
           if report.level == 'advanced' && report.type == report_type
 
@@ -107,7 +107,7 @@ module AdvancedReportHelper
       @user_capital_expenditure_percentile        = 0
       @user_capital_total_reports                 = 0
 
-      current_user.reports.each do |report|
+      current_user.user_reports.each do |report|
 
         if report.level == 'advanced' && report.type == report_type
 
@@ -143,7 +143,7 @@ module AdvancedReportHelper
       @global_recurrent_total_reports                 = 0
 
       User.all.each do |user|
-        user.reports.each do |report|
+        user.user_reports.each do |report|
 
           if report.level == 'advanced' && report.type == report_type
 
@@ -179,7 +179,7 @@ module AdvancedReportHelper
       @user_recurrent_expenditure_percentile        = 0
       @user_recurrent_total_reports                 = 0
 
-      current_user.reports.each do |report|
+      current_user.user_reports.each do |report|
 
         if report.level == 'advanced' && report.type == report_type
 
@@ -218,7 +218,7 @@ module AdvancedReportHelper
       @global_technology_capital_total_reports[ technology ]          = 0
 
       User.all.each do |user|
-        user.reports.each do |report|
+        user.user_reports.each do |report|
 
           if report.level == 'advanced' && report.type == report_type
 
@@ -257,7 +257,7 @@ module AdvancedReportHelper
       @user_technology_capital_expenditure_percentile[ technology ] = 0
       @user_technology_capital_total_reports[ technology ]          = 0
 
-      current_user.reports.each do |report|
+      current_user.user_reports.each do |report|
 
         if report.level == 'advanced' && report.type == report_type
 
@@ -296,7 +296,7 @@ module AdvancedReportHelper
       @global_technology_recurrent_total_reports[ technology ]          = 0
 
       User.all.each do |user|
-        user.reports.each do |report|
+        user.user_reports.each do |report|
 
           if report.level == 'advanced' && report.type == report_type
 
@@ -335,7 +335,7 @@ module AdvancedReportHelper
       @user_technology_recurrent_expenditure_percentile[ technology ] = 0
       @user_technology_recurrent_total_reports[ technology ]          = 0
 
-      current_user.reports.each do |report|
+      current_user.user_reports.each do |report|
 
         if report.level == 'advanced' && report.type == report_type
 
@@ -373,7 +373,7 @@ module AdvancedReportHelper
       @global_service_accessibility_total_reports = 0
 
       User.all.each do |user|
-        user.reports.each do |report|
+        user.user_reports.each do |report|
           if report.level == 'advanced' && report.type == report_type
 
             # unpack questionnaire model from report
@@ -405,7 +405,7 @@ module AdvancedReportHelper
       @user_service_accessibility_percentile    = 0
       @user_service_accessibility_total_reports = 0
 
-      current_user.reports.each do |report|
+      current_user.user_reports.each do |report|
         if report.level == 'advanced' && report.type == report_type
 
           # unpack questionnaire model from report
@@ -437,7 +437,7 @@ module AdvancedReportHelper
       @global_service_use_total_reports = 0
 
       User.all.each do |user|
-        user.reports.each do |report|
+        user.user_reports.each do |report|
           if report.level == 'advanced' && report.type == report_type
 
             # unpack questionnaire model from report
@@ -469,7 +469,7 @@ module AdvancedReportHelper
       @user_service_use_percentile    = 0
       @user_service_use_total_reports = 0
 
-      current_user.reports.each do |report|
+      current_user.user_reports.each do |report|
         if report.level == 'advanced' && report.type == report_type
 
           # unpack questionnaire model from report
@@ -501,7 +501,7 @@ module AdvancedReportHelper
       @global_service_reliability_total_reports = 0
 
       User.all.each do |user|
-        user.reports.each do |report|
+        user.user_reports.each do |report|
           if report.level == 'advanced' && report.type == report_type
 
             # unpack questionnaire model from report
@@ -533,7 +533,7 @@ module AdvancedReportHelper
       @user_service_reliability_percentile    = 0
       @user_service_reliability_total_reports = 0
 
-      current_user.reports.each do |report|
+      current_user.user_reports.each do |report|
         if report.level == 'advanced' && report.type == report_type
 
           # unpack questionnaire model from report
@@ -565,7 +565,7 @@ module AdvancedReportHelper
       @global_service_environmental_protection_total_reports = 0
 
       User.all.each do |user|
-        user.reports.each do |report|
+        user.user_reports.each do |report|
           if report.level == 'advanced' && report.type == report_type
 
             # unpack questionnaire model from report
@@ -597,7 +597,7 @@ module AdvancedReportHelper
       @user_service_environmental_protection_percentile    = 0
       @user_service_environmental_protection_total_reports = 0
 
-      current_user.reports.each do |report|
+      current_user.user_reports.each do |report|
         if report.level == 'advanced' && report.type == report_type
 
           # unpack questionnaire model from report
@@ -629,7 +629,7 @@ module AdvancedReportHelper
       @global_service_quantity_total_reports = 0
 
       User.all.each do |user|
-        user.reports.each do |report|
+        user.user_reports.each do |report|
           if report.level == 'advanced' && report.type == report_type
 
             # unpack questionnaire model from report
@@ -661,7 +661,7 @@ module AdvancedReportHelper
       @user_service_quantity_percentile    = 0
       @user_service_quantity_total_reports = 0
 
-      current_user.reports.each do |report|
+      current_user.user_reports.each do |report|
         if report.level == 'advanced' && report.type == report_type
 
           # unpack questionnaire model from report
@@ -693,7 +693,7 @@ module AdvancedReportHelper
       @global_service_quality_total_reports = 0
 
       User.all.each do |user|
-        user.reports.each do |report|
+        user.user_reports.each do |report|
           if report.level == 'advanced' && report.type == report_type
 
             # unpack questionnaire model from report
@@ -725,7 +725,7 @@ module AdvancedReportHelper
       @user_service_quality_percentile    = 0
       @user_service_quality_total_reports = 0
 
-      current_user.reports.each do |report|
+      current_user.user_reports.each do |report|
         if report.level == 'advanced' && report.type == report_type
 
           # unpack questionnaire model from report
@@ -757,7 +757,7 @@ module AdvancedReportHelper
       @global_service_quality_total_reports = 0
 
       User.all.each do |user|
-        user.reports.each do |report|
+        user.user_reports.each do |report|
           if report.level == 'advanced' && report.type == report_type
 
             # unpack questionnaire model from report

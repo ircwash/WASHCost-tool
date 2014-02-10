@@ -40,9 +40,9 @@
             %tr.dashboard--report_table--row
               %td.dashboard--report_table--cell= report.title
               %td.dashboard--report_table--cell
-                - if report.questionnaire["country"].present?
+                - if report.questionnaire[ 'country' ].present?
                   %div{ :class => "flag flag-#{report.questionnaire['country'].downcase}" }
-              %td.dashboard--report_table--cell= Country.new(report.questionnaire["country"]).name.truncate(13)
+              %td.dashboard--report_table--cell= report.questionnaire[ 'country' ].present? ? Country.new( report.questionnaire["country"] ).name.truncate(13) : ''
               %td.dashboard--report_table--cell= report.created_at.strftime( '%d.%m.%Y' )
               %td.dashboard--report_table--cell= "#{report.level.capitalize} #{report.type.capitalize}"
               %td.dashboard--report_table--cell INSTALLED

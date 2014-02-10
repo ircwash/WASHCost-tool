@@ -133,6 +133,10 @@
     @include transition(top 0.5s);
   }
 
+  .button.header--primary_button {
+    display:none;
+  }
+
   .header--mobile_navigation_button {
     position:absolute;
     top: 14px;

@@ -3,6 +3,7 @@ class Advanced::SanitationController < CalculatorController
   layout 'tool_advanced'
 
   authorize_resource :class => Advanced::SanitationController
+  load_and_authorize_resource UserReport, :only => [ :save_report, :store_report ]
 
 
   def begin

@@ -3,6 +3,7 @@ class Advanced::WaterController < CalculatorController
   layout 'tool_advanced'
 
   authorize_resource :class => Advanced::WaterController
+  load_and_authorize_resource UserReport, :only => [ :save_report, :store_report ]
 
 
   def begin

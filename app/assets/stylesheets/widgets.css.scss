@@ -1,6 +1,7 @@
 // BUTTONS
 .button {
   display:inline-block;
+  overflow:hidden;
   padding:11px 24px 10px;
   border:1px solid $brand_dark_orange;
   font-family:inherit;
@@ -13,6 +14,7 @@
   background-color:$brand_light_orange;
   text-decoration:none;
   white-space:nowrap;
+  text-overflow:ellipsis;
   cursor:pointer;
   -webkit-font-smoothing:antialiased;
   -webkit-appearance:none;

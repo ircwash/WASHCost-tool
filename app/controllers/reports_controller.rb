@@ -1,7 +1,7 @@
 class ReportsController < ApplicationController
 
   def load
-    report = current_user ? current_user.reports.find( params[ :id ] ) || Report.find( params[ :id ] ) : Report.find( params[ :id ] )
+    report = current_user ? current_user.user_reports.find( params[ :id ] ) || Report.find( params[ :id ] ) : Report.find( params[ :id ] )
 
     if report != nil
       if report.level == 'basic'
