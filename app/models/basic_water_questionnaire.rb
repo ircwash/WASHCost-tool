@@ -128,9 +128,9 @@ class BasicWaterQuestionnaire < Session
 
   def service_rating
     if access != nil && quality != nil && quantity != nil && reliability != nil
-      access_rating = service_level_rating( access.to_i )
-      quality_rating       = service_level_rating( quality.to_i )
-      quantity_rating = service_level_rating( quantity.to_i )
+      access_rating      = service_level_rating( access.to_i )
+      quality_rating     = service_level_rating( quality.to_i )
+      quantity_rating    = quantity.to_i
       reliability_rating = service_level_rating( reliability.to_i )
 
       [ access_rating, quality_rating, quantity_rating, reliability_rating ].min
