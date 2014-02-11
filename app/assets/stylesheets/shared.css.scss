@@ -28,6 +28,7 @@ html, body {
   position:relative;
   height:100%;
   padding:20px;
+  background-color:#e6e3be;
 
   @include box-sizing(border-box);
   @include box-shadow(0 0 4px rgba(0,0,0,0.25));
@@ -36,6 +37,7 @@ html, body {
 
 .boxed_content-higher_contrast {
   background-attachment:fixed;
+  background-color:#c6bb93;
 
   @include background-image(radial-gradient(center bottom, circle, #c6bb93, #a08d62));
 }
