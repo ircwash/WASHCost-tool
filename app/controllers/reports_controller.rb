@@ -44,4 +44,17 @@ class ReportsController < ApplicationController
     end
   end
 
+
+  def update
+    if params[ :user_report ].present? && params[ :user_report ][ :id ].present?
+      report = current_user.user_reports.find( params[ :user_report ][ :id ] )
+
+      if report != nil
+        report.update_attributes( params[ :user_report ] )
+      end
+    end
+
+    render json: {}
+  end
+
 end

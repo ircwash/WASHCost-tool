@@ -73,8 +73,9 @@ WashCostApp::Application.routes.draw do
 
     end
 
-    match '/dashboard' => 'dashboard#index', :as => 'dashboard'
-    match '/report/:id' => 'reports#load', :as => 'reports_load'
+    get '/dashboard' => 'dashboard#index', :as => 'dashboard'
+    get '/report/:id' => 'reports#load', :as => 'reports_load'
+    put '/report' => 'reports#update', :as => 'report'
 
     root :to => 'landing#index', :as => 'localised_root'
 

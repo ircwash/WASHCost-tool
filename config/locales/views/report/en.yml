@@ -91,7 +91,9 @@ en:
     users_data: "%{name}'s data"
     all_data: All data
     percentile_rank_service_indicators: Percentile rank of the service indicators
-
+    status:
+      installed: Installed
+      planned: Planned
 
 
 

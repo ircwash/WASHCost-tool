@@ -6,7 +6,8 @@ class Report
 
   field :level,         :type => String
   field :type,          :type => String
-  field :questionnaire, :type => Hash, :default => {}
+  field :status,        :type => String, :default => 'installed'
+  field :questionnaire, :type => Hash,   :default => {}
 
 
   def unpack_questionnaire

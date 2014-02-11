@@ -30,6 +30,13 @@ module ApplicationHelper
     Array(1900..Date.today.year).reverse.map{ |y| [ y, y ] }
   end
 
+  def options_for_report_statuses
+    [
+      [ t( 'report.status.installed' ), 'installed' ],
+      [ t( 'report.status.planned' ), 'planned' ]
+    ]
+  end
+
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
   end

@@ -46,6 +46,9 @@
               %td.dashboard--report_table--cell= report.questionnaire[ 'country' ].present? ? Country.new( report.questionnaire["country"] ).name.truncate(13) : ''
               %td.dashboard--report_table--cell= report.created_at.strftime( '%d.%m.%Y' )
               %td.dashboard--report_table--cell= "#{report.level.capitalize} #{report.type.capitalize}"
-              %td.dashboard--report_table--cell INSTALLED
+              %td.dashboard--report_table--cell
+                = form_for report, :url => report_path( I18n.locale ), :html => { 'data-dynamic_form' => report_path( I18n.locale ) } do |f|
+                  = f.hidden_field :id
+                  = f.select :status, options_for_select( options_for_report_statuses, report.status )
               %td.dashboard--report_table--cell
                 = link_to t( 'view_report' ), reports_load_path( I18n.locale, report.id ), "data-method" => "post", :class => 'button button-small'
