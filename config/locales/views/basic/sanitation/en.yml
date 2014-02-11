@@ -4,8 +4,10 @@ en:
       questionnaire:
         country:
           question: In which country does your sanitation service take place?
+          info: ""
         population:
           question: How many people in this area are receiving this sanitation service?
+          info: ""
         latrine:
           question: What type of latrine technology is being used?
           options:
@@ -15,14 +17,16 @@ en:
             pour_flush_latrine: Pour Flush Latrine
             twin_pit_pour_flush_latrine: Twin Pit Pour Flush Latrine
             latrine_with_septic_tank: Latrine with septic tank
+          info: ""
         recurrent_expenditure:
           question: How much is being spent/will be spent to operate, maintain and support the delivery of sanitation services (per person per year)?
-          info: "Operating and minor maintenance expenditure: typically comprises regular expenditure such as labour, fuel, chemicals, materials, and purchases of any bulk water. See: http://akvopedia.org/wiki/Operational_and_Minor_Maintenance_Expenditure_(OpEx) Capital maintenance expenditure: Asset renewal and replacement cost: occasional and ‘lumpy’ costs that seek to restore the functionality of a system, such as replacing pump rods or foot valves in handpumps, or a diesel generator in motorised systems. See: http://akvopedia.org/wiki/Capital_Maintenance_Expenditure_(CapManEx) Expediture of direct support: Direct support is structured support to service providers and users or user groups related to the operation and management of a WASH service; direct support costs are the costs of such support. They cover monitoring, technical advice and administrative, organisational or legal support.  The costs of support before and during the capital construction of a project are not included; they are considered to be capital software. Direct support is often used synonymously with “post-construction support”. See: http://akvopedia.org/wiki/Expenditure_Direct_Support_(ExpDS) Expenditure of indirect support: Indirect support costs cover expenditure on this macro-level support, including planning and policy making, and support to decentralised service authorities or local government. Indirect support includes capacity building for professionals and technicians and capacity support to local government as service authorities, for example to adhere to national norms, standards and guidelines. See: http://akvopedia.org/wiki/Expenditure_Indirect_Support_(ExpIDS)"
+          info: "Operating and minor maintenance expenditure: typically comprises regular expenditure such as labour, fuel, chemicals, materials, and purchases of any bulk water.<br/> See: <a href=\"http://akvopedia.org/wiki/Operational_and_Minor_Maintenance_Expenditure_(OpEx)\" target=\"_blank\">http://akvopedia.org/wiki/Operational_and_Minor_Maintenance_Expenditure_(OpEx)</a><br/><br/> Capital maintenance expenditure: Asset renewal and replacement cost: occasional and ‘lumpy’ costs that seek to restore the functionality of a system, such as replacing pump rods or foot valves in handpumps, or a diesel generator in motorised systems.<br/> See: <a href=\"http://akvopedia.org/wiki/Capital_Maintenance_Expenditure_(CapManEx)\" target=\"_blank\">http://akvopedia.org/wiki/Capital_Maintenance_Expenditure_(CapManEx)</a><br/><br/> Expediture of direct support: Direct support is structured support to service providers and users or user groups related to the operation and management of a WASH service; direct support costs are the costs of such support. They cover monitoring, technical advice and administrative, organisational or legal support.  The costs of support before and during the capital construction of a project are not included; they are considered to be capital software. Direct support is often used synonymously with “post-construction support”.<br/> See: <a href=\"http://akvopedia.org/wiki/Expenditure_Direct_Support_(ExpDS)\" target=\"_blank\">http://akvopedia.org/wiki/Expenditure_Direct_Support_(ExpDS)</a><br/><br/> Expenditure of indirect support: Indirect support costs cover expenditure on this macro-level support, including planning and policy making, and support to decentralised service authorities or local government. Indirect support includes capacity building for professionals and technicians and capacity support to local government as service authorities, for example to adhere to national norms, standards and guidelines.<br/> See: <a href=\"http://akvopedia.org/wiki/Expenditure_Indirect_Support_(ExpIDS)\" target=\"_blank\">http://akvopedia.org/wiki/Expenditure_Indirect_Support_(ExpIDS)</a>"
         household_latrine:
           question: Does the service provide latrines at the household level?
           options:
             household_latrine_available: "Yes"
             household_latrine_unavailable: "No"
+          info: ""
         impermeability:
           question: Does the latrine have an impermeable slab?
           options:
@@ -35,18 +39,21 @@ en:
             non_problematic_safe_disposal_reuse_biproducts: Non problematic + safe disposal + re-use of bi-products
             non_problematic_safe_disposal: Non problematic + safe disposal
             significant_pollution: Significant pollution
+          info: ""
         usage:
           question: Which family members use the latrine?
           options:
             latrine_usage_all: All
             latrine_usage_some: Some
             latrine_usage_none: None
+          info: ""
         reliability:
           question: Is the latrine cleaned and emptied when required?
           options:
             latrine_reliable: "Yes"
             latrine_inconsistent: Not consistently
             latrine_unreliable: "No"
+          info: ""
       report:
         final_report: Basic Sanitation | Final Report
         sustainability:
