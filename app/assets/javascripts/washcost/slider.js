@@ -48,10 +48,11 @@ $( document ).ready( function()
       }
 
       // bind events
-      label.on( 'keydown', validate_slider );
-      label.on( 'blur',    update_slider );
-      label.on( 'focus',   unformat_label );
-      label.on( 'blur',    reformat_label );
+      label.on( 'keydown',  validate_slider );
+      label.on( 'keypress', prevent_enter );
+      label.on( 'blur',     update_slider );
+      label.on( 'focus',    unformat_label );
+      label.on( 'blur',     reformat_label );
     } );
   }
 
@@ -78,6 +79,17 @@ $( document ).ready( function()
     if ( !( ( event.keyCode >= 48 && event.keyCode <= 57 ) || ( event.keyCode >= 96 && event.keyCode <= 105 ) || ( event.keyCode >= 37 && event.keyCode <= 40 ) || event.keyCode === 13 || event.keyCode === 8 || event.keyCode === 46 || event.keyCode === 9 || event.metaKey ) )
     {
       event.preventDefault();
+    }
+  }
+
+
+  function prevent_enter( event )
+  {
+    if ( event.keyCode === 13 )
+    {
+      event.preventDefault();
+
+      this.blur();
     }
   }
 
