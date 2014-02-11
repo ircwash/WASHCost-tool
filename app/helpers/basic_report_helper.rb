@@ -71,11 +71,11 @@ module BasicReportHelper
   end
 
   def basic_water_report_level_of_service
-    "#{t( 'basic.water.report.summaries.a' + @questionnaire.level_of_service[0] )} \n #{t( 'basic.water.report.summaries.b' + @questionnaire.level_of_service[1] )}" unless @questionnaire.level_of_service == nil
+    "<p>#{t( 'basic.water.report.summaries.a' + @questionnaire.level_of_service[0] )}</p><p>#{t( 'basic.water.report.summaries.b' + @questionnaire.level_of_service[1] )}</p>" unless @questionnaire.level_of_service == nil
   end
 
   def basic_sanitation_report_level_of_service
-    "#{t( 'basic.sanitation.report.summaries.a' + @questionnaire.level_of_service[0] )} \n #{t( 'basic.sanitation.report.summaries.b' + @questionnaire.level_of_service[1] )}" unless @questionnaire.level_of_service == nil
+    "<p>#{t( 'basic.sanitation.report.summaries.a' + @questionnaire.level_of_service[0] )}</p><p>#{t( 'basic.sanitation.report.summaries.b' + @questionnaire.level_of_service[1] )}</p>" unless @questionnaire.level_of_service == nil
   end
 
 end

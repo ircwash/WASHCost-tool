@@ -209,10 +209,14 @@
 
 .report--review--content--text {
   padding-top:30px;
-  font-size:12px;
+  font-size:14px;
   color:#fff;
-  text-align:justify;
-  line-height:1.5;
+  text-align:left;
+  line-height:1.2;
+}
+
+.report--review--content--text p + p {
+  margin-top:1em;
 }
 
 .report--content {

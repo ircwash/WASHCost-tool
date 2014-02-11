@@ -31,7 +31,7 @@
       %section.report--review{ "data-togglecontent" => "true" }
         %a.report--review--link{ :href => '#', "data-togglecontent-link" => "true" }= "#{t('report.full_review')} >>"
         .report--review--content{ "data-togglecontent-content" => "report--review--content-visible" }
-          .report--review--content--text= basic_water_report_level_of_service
+          .report--review--content--text= raw basic_water_report_level_of_service
 
     - else
       .report--no_data= t('report.report_box_no_value')
