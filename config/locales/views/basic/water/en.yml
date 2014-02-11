@@ -27,6 +27,7 @@ en:
             between_ten_and_thirty: Between 10 and 30
             between_thirty_and_sixty: Between 30 and 60
             more_thank_sixty: More than 60
+          info: ""
         quantity:
           question: How much water is used from the water service?
           label: Litres per person per day
@@ -35,6 +36,7 @@ en:
             between_five_and_nineteen_litres: 5 - 19L
             between_twenty_and_sixty_litres: 20-60L
             more_than_sixy_litres: More than 60L
+          info: ""
         quality:
           question: Is water quality testing done?
           options:
@@ -42,6 +44,7 @@ en:
             occasional_and_meets_standards: Occasional and meets standards
             one_off_after_construction: One-off after construction
             no_testing: No testing
+          info: ""
         reliability:
           question: How reliable is the water service?
           options:
@@ -49,6 +52,7 @@ en:
             not_working_less_than_twelve_days_a_year: Not working less than 12 days a year
             not_working_more_than_twelve_days_a_year: Not working more than 12 days a year
             not_working_all_of_the_time: Not working all of the time
+          info: ""
         recurrent:
           value_label: US$ Per person per Year
       report:
