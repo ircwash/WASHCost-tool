@@ -1,5 +1,13 @@
 module BasicCalculatorsHelper
 
+  # formatters
+
+  def format_info_text( locale_key )
+    t( locale_key ).gsub /http:\/\/[^\s<]+/, '<a href="\0" target="_blank">\0</a>'
+  end
+
+  # options
+
   def options_for_water_supply_technologies
     [
       [ 'borehole_handpump', 0 ],
