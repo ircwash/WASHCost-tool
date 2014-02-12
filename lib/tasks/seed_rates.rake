@@ -33,6 +33,20 @@ namespace :db do
       end
     end
 
+    # add USD
+    exchange_rate = ExchangeRate.create(
+      :name  => 'USD',
+      :year  => 2011,
+      :rate  => 1.0
+    )
+
+    # add EUR
+    exchange_rate = ExchangeRate.create(
+      :name  => 'EUR',
+      :year  => 2011,
+      :rate  => 0.748209
+    )
+
   end
 
 end
