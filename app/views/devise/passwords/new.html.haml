@@ -2,7 +2,7 @@
   .boxed_content
     .page_content
 
-      = form_for resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :class => 'standalone_form' } do |f|
+      = form_for @user, :url => password_path( :user ), :html => { :method => :post, :class => 'standalone_form' } do |f|
 
         %h1.standalone_form--heading Forgot your password?
 

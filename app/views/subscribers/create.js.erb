@@ -1,9 +1,0 @@
-
-<%- if @subscriber.valid? %>
-  $('.washcost-popup .notification.subscriber').foundation('reveal', 'close');
-
-
-<%- else %>
-  $('.washcost-popup .notification.subscriber .form-subscriber .error-notification').html('<%= @subscriber.errors.full_messages.first %>')
-<%- end %>
-

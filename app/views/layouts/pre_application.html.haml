@@ -4,12 +4,10 @@
 
   .boxed_container
     .boxed_content
-      .page_content.page_content-narrow
+      .page_content
 
         = yield
 
   = render 'landing/footer'
-
-  = show_app_version
 
 = render template: "layouts/application"

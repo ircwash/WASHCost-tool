@@ -96,4 +96,41 @@
 }
 
 
+@media screen and ( max-device-width:$mobile_breakpoint ) {
 
+  .navigation--category {
+    width:100%;
+    margin-bottom:10px;
+  }
+
+  .navigation--subcategory {
+    display:block;
+    height:auto;
+    margin-bottom:10px;
+  }
+
+  .navigation--category--item {
+    float:none;
+    display:inline-block;
+  }
+
+  .navigation--subcategory--list {
+    overflow:auto;
+  }
+
+  .navigation--subcategory--item {
+    width:auto;
+    float:none;
+  }
+
+  .navigation--subcategory--link {
+    width:100%;
+    float:none;
+    display:none;
+  }
+
+  .navigation--subcategory--link-active {
+    display:block;
+  }
+
+}

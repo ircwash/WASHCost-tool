@@ -11,82 +11,82 @@
   height:130px;
   background-image:image-url('sprite-question_icons.png');
   background-repeat:no-repeat;
+  background-position:50% 100%;
+  background-size:180px 7200px;
 }
 
-.icon--tool-globe::before,
-.icon--tool-country::before {
+.icon--tool-globe::before {
   background-position:50% -15px;
 }
 
-.icon--tool-boreHold::before {
+.icon--tool-borehole_handpump::before {
   background-position:50% -175px;
 }
 
-.icon--tool-water::before,
-.icon--tool-mechanised::before {
+.icon--tool-mechanised_borehole::before {
   background-position:50% -335px;
 }
 
-.icon--tool-singleTown::before {
+.icon--tool-single_town_scheme::before {
   background-position:50% -495px;
 }
 
-.icon--tool-multiTown::before {
+.icon--tool-multi_town_scheme::before {
   background-position:50% -655px;
 }
 
-.icon--tool-mixedPipe::before {
+.icon--tool-mixed_pipe_supply::before {
   background-position:50% -815px;
 }
 
-.icon--tool-waterLessThan::before {
+.icon--tool-less_than_five_litres::before {
   background-position:50% -1295px;
 }
 
-.icon--tool-waterFromFive::before {
+.icon--tool-between_five_and_nineteen_litres::before {
   background-position:50% -1455px;
 }
 
-.icon--tool-quantity::before,
-.icon--tool-waterFromTwenty::before {
+.icon--tool-between_twenty_and_sixty_litres::before {
   background-position:50% -1615px;
 }
 
-.icon--tool-waterMoreThan::before {
+.icon--tool-more_than_sixy_litres::before {
   background-position:50% -1775px;
 }
 
-.icon--tool-noTest::before {
+.icon--tool-regular_and_meets_standards::before {
   background-position:50% -1935px;
 }
 
-.icon--tool-quality::before,
-.icon--tool-test::before {
+.icon--tool-occasional_and_meets_standards::before {
   background-position:50% -2095px;
 }
 
-.icon--tool-occasional::before {
+.icon--tool-one_off_after_construction::before {
   background-position:50% -2255px;
 }
 
-.icon--tool-regular::before {
+.icon--tool-no_testing::before {
   background-position:50% -2415px;
 }
 
-.icon--tool-worksAll::before {
+.icon--tool-works_all_the_time::before,
+.icon--tool-latrine_reliable::before, {
   background-position:50% -2575px;
 }
 
-.icon--tool-worksMostly::before {
+.icon--tool-not_working_less_than_twelve_days_a_year::before,
+.icon--tool-latrine_inconsistent::before {
   background-position:50% -2735px;
 }
 
-.icon--tool-reliability::before,
-.icon--tool-breakDown::before {
+.icon--tool-not_working_more_than_twelve_days_a_year::before {
   background-position:50% -2895px;
 }
 
-.icon--tool-notWorking::before {
+.icon--tool-not_working_all_of_the_time::before,
+.icon--tool-latrine_unreliable::before {
   background-position:50% -3055px;
 }
 
@@ -104,67 +104,67 @@
   background-position:50% -3215px;
 }
 
-.icon--tool-traditional::before {
+.icon--tool-traditional_pit_latrine::before {
   background-position:50% -3695px;
 }
 
-.icon--tool-improved::before {
-  background-position:50% -3855px;
-}
-
-.icon--tool-slab::before {
+.icon--tool-slab_latrine::before {
   background-position:50% -4015px;
 }
 
-.icon--tool-vip::before {
+.icon--tool-vip_latrine::before {
   background-position:50% -4175px;
 }
 
-.icon--tool-flush::before {
+.icon--tool-pour_flush_latrine::before {
   background-position:50% -4335px;
 }
 
-.icon--tool-septik::before {
+.icon--tool-twin_pit_pour_flush_latrine::before {
+  background-position:50% -3855px;
+}
+
+.icon--tool-latrine_with_septic_tank::before {
   background-position:50% -4495px;
 }
 
-.icon--tool-capitalYes::before {
+.icon--tool-household_latrine_available::before {
   background-position:50% -4655px;
 }
 
-.icon--tool-capitalNo::before {
+.icon--tool-household_latrine_unavailable::before {
   background-position:50% -4815px;
 }
 
-.icon--tool-impermeabilityYes::before {
+.icon--tool-impermeable_slab::before {
   background-position:50% -4975px;
 }
 
-.icon--tool-impermeabilityNo::before {
+.icon--tool-no_impermeable_slab::before {
   background-position:50% -5135px;
 }
 
-.icon--tool-safe::before {
+.icon--tool-non_problematic_safe_disposal_reuse_biproducts::before {
   background-position:50% -5295px;
 }
 
-.icon--tool-reusable::before {
+.icon--tool-non_problematic_safe_disposal::before {
   background-position:50% -5455px;
 }
 
-.icon--tool-pollution::before {
+.icon--tool-significant_pollution::before {
   background-position:50% -5615px;
 }
 
-.icon--tool-all::before {
+.icon--tool-latrine_usage_all::before {
   background-position:50% -5775px;
 }
 
-.icon--tool-some::before {
+.icon--tool-latrine_usage_some::before {
   background-position:50% -5935px;
 }
 
-.icon--tool-none::before {
+.icon--tool-latrine_usage_none::before {
   background-position:50% -6095px;
 }
 
@@ -223,10 +223,19 @@
 }
 
 .icon--status-good::before {
-  background-position:-4px -5px;
+  background-position:-5px -5px;
 }
 
 .icon--status-bad::before {
   background-position:-4px -35px;
 }
 
+
+@media (-webkit-min-device-pixel-ratio:2), (min-resolution:192dpi) {
+
+  [class^="icon--tool-"]::before,
+  [class*=" icon--tool-"]::before {
+    background-image:image-url('sprite-question_icons@2x.png');
+  }
+
+}

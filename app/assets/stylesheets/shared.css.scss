@@ -28,16 +28,23 @@ html, body {
   position:relative;
   height:100%;
   padding:20px;
+  background-color:#a08d62;
+  background-image:-webkit-radial-gradient(center bottom, circle, #e6e3be, #a08d62);
+  background-image:-moz-radial-gradient(center bottom, circle, #e6e3be, #a08d62);
+  background-image:-o-radial-gradient(center bottom, circle, #e6e3be, #a08d62);
+  background-image:radial-gradient(circle at center bottom, #e6e3be, #a08d62);
 
   @include box-sizing(border-box);
   @include box-shadow(0 0 4px rgba(0,0,0,0.25));
-  @include background-image(radial-gradient(center bottom, circle, #e6e3be, #a08d62));
 }
 
 .boxed_content-higher_contrast {
   background-attachment:fixed;
-
-  @include background-image(radial-gradient(center bottom, circle, #c6bb93, #a08d62));
+  background-color:#a08d62;
+  background-image:-webkit-radial-gradient(center bottom, circle, #c6bb93, #a08d62);
+  background-image:-moz-radial-gradient(center bottom, circle, #c6bb93, #a08d62);
+  background-image:-o-radial-gradient(center bottom, circle, #c6bb93, #a08d62);
+  background-image:radial-gradient(circle at center bottom, #c6bb93, #a08d62);
 }
 
 .application_version {
@@ -144,4 +151,64 @@ html, body {
 
 .preapplication_footer--important--link + .preapplication_footer--important--link {
   margin-top:10px;
+}
+
+.share_report {
+  width:80%;
+  margin:0 auto;
+  padding:10px;
+  font-size:14px;
+  background-color:$dark_grey;
+
+  @include border-radius(5px);
+}
+
+.share_report--link {
+  color:#fff;
+  text-decoration:none;
+  -webkit-font-smoothing:antialiased;
+}
+
+.share_report--link:hover {
+  text-decoration:underline;
+}
+
+
+@media screen and ( max-device-width: $mobile_breakpoint ) {
+
+  .preapplication_footer--links,
+  .preapplication_footer--social {
+    position:absolute !important;
+    clip:rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip:rect(1px, 1px, 1px, 1px);
+    padding:0 !important;
+    border:0 !important;
+    height:1px !important;
+    width:1px !important;
+    overflow:hidden;
+  }
+
+  .preapplication_footer--important {
+    width:100%;
+    text-align:center;
+  }
+
+
+  .boxed_container {
+    height:auto;
+    padding-bottom:0;
+  }
+
+  .boxed_content {
+    height:auto;
+  }
+
+  .preapplication_footer {
+    position:static;
+
+    .page_content {
+      padding: 0;
+    }
+  }
+
 }

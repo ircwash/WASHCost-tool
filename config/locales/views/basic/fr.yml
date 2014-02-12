@@ -1,0 +1,27 @@
+fr:
+  basic:
+    shared:
+      questionnaire:
+        per_person_usd: par personne US$
+        usd_per_person_per_year: US$ par personne par année
+        minutes_per_day: Minutes par jour
+        people: Personnes
+        country:
+          question: Dans quel pays se déroule votre programme (intervention)??
+          placeholder: Choisir un pays
+        capital_expenditure:
+          question: Combien a été/sera dépensé pour la construction du système d'approvisionnement en eau (par personne)?
+          info:
+        recurrent_expenditure:
+          question: "Combien a été/sera dépensé pour exploiter, entretenir et appuyer le service d'eau (par personne par année)?"
+          info:
+          value_label: Par personne par année
+        values:
+          v0: Pas de service
+          v1: Service limité
+          v2: Service de base
+          v3: Service amélioré
+          info:
+        select_an_option: Selectionner une option
+
+

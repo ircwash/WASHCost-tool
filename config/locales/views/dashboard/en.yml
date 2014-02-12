@@ -1,0 +1,11 @@
+en:
+  dashboard:
+    company: Company
+    country: Country
+    preferred_language: Preferred Language
+    current_mail: Current Mail
+    name: Name
+    location: Location
+    date: Date
+    calculator_type: Calculator type
+    service: Service

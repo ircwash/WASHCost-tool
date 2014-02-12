@@ -1,0 +1,14 @@
+%footer.footer
+  .page_content
+    .footer--content
+
+      = link_to t( 'buttons.share_report' ), footer_share_report_url, :class => 'footer--link footer--link-report'
+
+      .footer--progress
+        .footer--progress--percentage
+          = t( 'footer.calculator_progress', :level => controller_path.match( /basic/ ) ? t( 'calculators.basic' ) : t( 'calculators.advanced' ), :type => controller_path.match( /water/ ) ? t( 'calculators.water' ) : t( 'calculators.sanitation' ) )
+          %span{ 'data-progress-label' => true }= "(#{@questionnaire.complete}%)"
+        .footer--progress--bar
+          .footer--progress--bar--fill{ :style => "width: #{@questionnaire.complete}%", 'data-progress-bar' => true }
+
+      = link_to t( 'buttons.save_report') , footer_save_report_url, :class => "footer--link footer--link-save"

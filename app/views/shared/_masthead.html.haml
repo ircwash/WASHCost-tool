@@ -2,33 +2,32 @@
   .page_content
     .header--content
 
-      = link_to localised_root_path( I18n.locale ), class: 'header--logo' do
-        = image_tag 'image-logo.png', class: 'header--logo--image', :alt => 'WASHCost powered by IRC', :width => 200, :height => 38
+      = link_to calculators_path( I18n.locale ), :class => 'header--logo' do
+        = image_tag 'image-logo.png', :class => 'header--logo--image', :alt => 'WASHCost powered by IRC', :width => 200, :height => 40
+
+      %span.header--mobile_navigation_button
 
       %ul.header--links
 
-        %li.header--links--item
-          %a{ :href => "#", :class => "header--links--link" } About
+        -#
+          %li.header--links--item
+            %a{ :href => "#", :class => "header--links--link" } About
 
-        %li.header--links--item
-          %a{ :href => "#", :class => "header--links--link" } Contact
+          %li.header--links--item
+            %a{ :href => "#", :class => "header--links--link" } Contact
 
-        %li.header--links--item.has-dropdown.not-click
-          %a{ :href => "#", :class => "header--links--link" } Language
+        %li.header--links--item.header--links--item-dropdown
+          %a{ :href => "#", :class => "header--links--link header--links--link-dropdown" } Language
           %ul.header--links--item--dropdown
-            %li.header--links--item--dropdown--item
-              %h5
-                %a{ :href => "#", :class => "header--links--item--dropdown--link" } « Back
-            %li.header--links--item--dropdown--item
-              = link_to 'English', localised_root_path( 'en' ), :class => 'header--links--item--dropdown--link'
-            %li.header--links--item--dropdown--item
-              = link_to 'Français', localised_root_path( 'fr' ), :class => 'header--links--item--dropdown--link'
-            %li.header--links--item--dropdown--item
-              %a{ :href => "#", :class => "header--links--link" } Spanish
+            - options_for_languages.each do |language|
+              %li.header--links--item--dropdown--item
+                = link_to language[0], request.path.gsub( /^\/[^\/]+/, "/#{language[1]}" ), :class => "header--links--item--dropdown--link #{'header--links--item--dropdown--link-active' unless language[1] != I18n.locale.to_s}"
 
-        %li.header--links--item
-          - if user_signed_in? && current_user
+        - if user_signed_in? && current_user
+          %li.header--links--item
+            = link_to current_user.name, dashboard_path, class: 'header--links--link header--links--link-special'
+          %li.header--links--item
             = link_to 'Sign Out', destroy_user_session_path( I18n.locale ), method: :delete, class: 'header--links--link header--links--link-special'
-          - else
+        - else
+          %li.header--links--item
             = link_to 'Sign In', new_user_session_path( I18n.locale ), class: 'header--links--link header--links--link-special'
-

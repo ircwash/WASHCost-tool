@@ -1,99 +1,134 @@
 = content_for :title do
-  Basic Report
+  Basic Water Report
 
 .report
 
   .report--header
 
-    .report--header--pretitle= t('basic.water.report.final_report')
-    %h1.report--header--title= t('report.summmary')
-    .report--header--quicklink= ">> #{t('report.cross_to_sanitation')}"
+    .report--header--pretitle= t( 'basic.water.report.final_report' )
+    %h1.report--header--title= t( 'report.summmary' )
 
-    - if flash[:results][:is_form_ready]
+    - if @questionnaire.reportable?
       .report--summary
         .report--summary--item
-          .report--summary--item--title= t('report.total_cost')
-          .report--summary--item--value="US$ #{number_with_delimiter(flash[:results][:total], :delimiter=>',')}"
-          .report--summary--item--caption= t('report.caption_total_cost', population: flash[:results][:population])
+          .report--summary--item--title= t( 'report.total_cost' )
+          .report--summary--item--value= "#{report_dollar_currency_value_for(@questionnaire.total_cost, 0)}"
+          .report--summary--item--caption= t( 'report.caption_total_cost', :population => report_integer_value_for( @questionnaire.population ) )
 
         .report--summary--item
-          .report--summary--item--title= t('report.level_of_service')
+          .report--summary--item--title= t( 'report.level_of_service' )
           .report--summary--item--rating
-            - ( flash[:results][:service_rating] + 1 ).times do
+            - ( @questionnaire.service_rating + 1 ).times do
               .report--rating_icon.icon--star-full
-            - ( 3 - flash[:results][:service_rating] ).times do
+            - ( 3 - @questionnaire.service_rating ).times do
               .report--rating_icon.icon--star-empty
-          .report--summary--item--caption= t('report.substandard')
+          .report--summary--item--caption= water_service_level_rating_label
 
       .report--summary--description
-        .report--summary--description--icon{ :class => flash[:results][:cost_rating] == 1 ? "icon--status-good" : "icon--status-bad" }
-        .report--summary--description--caption= flash[:results][:cost_rating_label].html_safe
+        .report--summary--description--icon{ :class => @questionnaire.cost_rating_inside_benchmarks? ? "icon--status-good" : "icon--status-bad" }
+        .report--summary--description--caption= cost_rating_inside_benchmarks_label
 
       %section.report--review{ "data-togglecontent" => "true" }
         %a.report--review--link{ :href => '#', "data-togglecontent-link" => "true" }= "#{t('report.full_review')} >>"
         .report--review--content{ "data-togglecontent-content" => "report--review--content-visible" }
-          .report--review--content--text= simple_format flash[:results][:service_level]
+          .report--review--content--text= raw basic_water_report_level_of_service
 
     - else
       .report--no_data= t('report.report_box_no_value')
 
 
   %section.report--section
-    .report--section--title= t('report.context');
+    .report--section--title= t( 'report.context' );
 
     .report--option_grid
-      - flash[:results][:context_report].each_slice(3) do |box_by_row|
-        .report--option_grid--row
+      .report--option_grid--row
 
-          - box_by_row.each do |box|
-            .report--option_grid--item
-              .report--option_grid--item--content
-                .report--option_grid--item--title= box[:title]
-                %div{ :class => "icon--tool-#{box[:css_icon]}" }
-                .report--option_grid--item--caption= box[:caption]
-                = link_to 'Edit', box[:link], :class => 'report--option_grid--item--edit'
+        .report--option_grid--item
+          .report--option_grid--item--content
+            .report--option_grid--item--title= t( 'basic.water.report.sections.country' )
+            %div{ :class => "icon--tool-#{'globe' unless @questionnaire.country == nil}" }
+            .report--option_grid--item--caption= @questionnaire.country != nil ? Country.new( @questionnaire.country ).name : t( 'basic.shared.report.no_answer_provided' )
+            = link_to 'Edit', basic_water_action_path( I18n.locale, 'country' ), :class => 'report--option_grid--item--edit'
+
+        .report--option_grid--item
+          .report--option_grid--item--content
+            .report--option_grid--item--title= t( 'basic.water.report.sections.technology' )
+            %div{ :class => "icon--tool-#{options_for_water_supply_technologies[@questionnaire.technology.to_i][0] unless @questionnaire.technology == nil}" }
+            .report--option_grid--item--caption= @questionnaire.technology != nil ? t( "basic.water.questionnaire.technology.options.#{options_for_water_supply_technologies[@questionnaire.technology.to_i][0]}" ) : t( 'basic.shared.report.no_answer_provided' )
+            = link_to 'Edit', basic_water_action_path( I18n.locale, 'technology' ), :class => 'report--option_grid--item--edit'
+
+        .report--option_grid--item
+          .report--option_grid--item--content
+            .report--option_grid--item--title= t( 'basic.water.report.sections.population' )
+            %div{ :class => "icon--tool-#{'population' unless @questionnaire.population == nil}" }
+            .report--option_grid--item--caption= @questionnaire.population != nil ? @questionnaire.population : t( 'basic.shared.report.no_answer_provided' )
+            = link_to 'Edit', basic_water_action_path( I18n.locale, 'population' ), :class => 'report--option_grid--item--edit'
 
 
   %section.report--section
-    .report--section--title= t('report.cost');
-    .report--section--subtitle= t('report.cost_subtitle', population: flash[:results][:population])
+    .report--section--title= t( 'report.cost' );
+    .report--section--subtitle= t( 'report.cost_subtitle', :population => @questionnaire.population || @questionnaire.minimum_population )
 
-    - if flash[:results][:is_cost_avaliable]
-      .report--chart{ 'data-chart-capital' => flash[:results][:capital] || 0, 'data-chart-recurrent' => flash[:results][:recurrent] || 0, 'data-chart-population' => flash[:results][:population] || 0 }
+    - if basic_report_cost_available
+      .report--chart{ 'data-chart-capital' => @questionnaire.capital_expenditure || 0, 'data-chart-recurrent' => @questionnaire.recurrent_expenditure || 0, 'data-chart-population' => @questionnaire.population || 0 }
 
-      .report--costs
-        - flash[:results][:cost_report].each do |cost_box|
-          .report--costs--column.report--costs--column-small
-            .report--costs--title= cost_box[:title]
-            .report--costs--detail
-              .report--costs--detail--value= cost_box[:value]
-              = link_to 'Edit', cost_box[:link], :class => 'report--costs--detail--edit'
-
-        .report--costs--column.report--costs--column-big
-          .report--costs--title= t('report.total')
-          .report--costs--bigvalue US #{number_to_currency(flash[:results][:total], precision: 2)}
     - else
       .report--no_data= t('report.cost_box_no_value')
 
-  %section.report--section
-    .report--section--title= t('report.service');
-    .report--section--subtitle= t('report.distance')
+    .report--costs
 
-    .report-service_level
-      .report-service_level--value
-        .report-service_level--prefix= flash[:results][:time][:header]
-        .report-service_level--amount= flash[:results][:time][:amount]
-        .report-service_level--suffix= t('report.time.minutes')
-      = link_to 'Edit', './time', :class => 'report-service_level--edit'
+      .report--costs--column.report--costs--column-small
+        .report--costs--title= t( 'basic.water.report.sections.capital_expenditure_per_person' )
+        .report--costs--detail
+          .report--costs--detail--value= report_dollar_currency_value_for( @questionnaire.capital_expenditure )
+          = link_to 'Edit', basic_water_action_path( I18n.locale, 'capital_expenditure' ), :class => 'report--costs--detail--edit'
+
+      .report--costs--column.report--costs--column-small
+        .report--costs--title= t( 'basic.water.report.sections.recurrent_expenditure_per_person' )
+        .report--costs--detail
+          .report--costs--detail--value= report_dollar_currency_value_for( @questionnaire.recurrent_expenditure )
+          = link_to 'Edit', basic_water_action_path( I18n.locale, 'recurrent_expenditure' ), :class => 'report--costs--detail--edit'
+
+      .report--costs--column.report--costs--column-big
+        .report--costs--title= t( 'report.total' )
+        .report--costs--bigvalue= report_dollar_currency_value_for(@questionnaire.total_cost, 2)
+
+  %section.report--section
+    .report--section--title= t( 'report.service' );
+    .report--section--subtitle= t( 'report.distance' )
+
+    - if @questionnaire.access != nil
+      .report-service_level
+        .report-service_level--value
+          .report-service_level--prefix= water_access_heading
+          .report-service_level--amount= water_access_amount
+          .report-service_level--suffix= t( 'report.time.minutes' )
+        = link_to 'Edit', basic_water_action_path( I18n.locale, 'access' ), :class => 'report-service_level--edit'
+    - else
+      = link_to 'Edit', basic_water_action_path( I18n.locale, 'access' ), :class => 'report-service_level--edit'
+      .report--no_data= t('report.cost_box_no_value')
 
     .report--option_grid
-      - flash[:results][:service_report].each_slice(3) do |box_by_row|
-        .report--option_grid--row
 
-          - box_by_row.each do |box|
-            .report--option_grid--item
-              .report--option_grid--item--content
-                .report--option_grid--item--title= box[:title]
-                %div{ :class => "icon--tool-#{box[:css_icon]}" }
-                .report--option_grid--item--caption= box[:caption]
-                = link_to '', box[:link], :class => 'report--option_grid--item--edit'
+      .report--option_grid--row
+
+        .report--option_grid--item
+          .report--option_grid--item--content
+            .report--option_grid--item--title= t( 'basic.water.report.sections.quantity' )
+            %div{ :class => "icon--tool-#{options_for_water_quantities[@questionnaire.quantity.to_i][0] unless @questionnaire.quantity == nil}" }
+            .report--option_grid--item--caption= @questionnaire.quantity != nil ? t( "basic.water.questionnaire.quantity.options.#{options_for_water_quantities[@questionnaire.quantity.to_i][0]}" ) : t( 'basic.shared.report.no_answer_provided' )
+            = link_to '', basic_water_action_path( I18n.locale, 'quantity' ), :class => 'report--option_grid--item--edit'
+
+        .report--option_grid--item
+          .report--option_grid--item--content
+            .report--option_grid--item--title= t( 'basic.water.report.sections.quality' )
+            %div{ :class => "icon--tool-#{options_for_water_qualities[@questionnaire.quality.to_i][0] unless @questionnaire.quality == nil}" }
+            .report--option_grid--item--caption= @questionnaire.quality != nil ? t( "basic.water.questionnaire.quality.options.#{options_for_water_qualities[@questionnaire.quality.to_i][0]}" ) : t( 'basic.shared.report.no_answer_provided' )
+            = link_to '', basic_water_action_path( I18n.locale, 'quality' ), :class => 'report--option_grid--item--edit'
+
+        .report--option_grid--item
+          .report--option_grid--item--content
+            .report--option_grid--item--title= t( 'basic.water.report.sections.reliability' )
+            %div{ :class => "icon--tool-#{options_for_water_reliability[@questionnaire.reliability.to_i][0] unless @questionnaire.reliability == nil}" }
+            .report--option_grid--item--caption= @questionnaire.reliability != nil ? t( "basic.water.questionnaire.reliability.options.#{options_for_water_reliability[@questionnaire.reliability.to_i][0]}" ) : t( 'basic.shared.report.no_answer_provided' )
+            = link_to '', basic_water_action_path( I18n.locale, 'reliability' ), :class => 'report--option_grid--item--edit'

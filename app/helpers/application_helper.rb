@@ -1,8 +1,12 @@
 # encoding: utf-8
 module ApplicationHelper
 
+  def options_for_languages
+    [ [ 'English', 'en' ], [ 'Français', 'fr' ] ]
+  end
+
   def options_for_countries
-    Country.all.sort{ |a,b| a[0] <=> b[0] }
+    Country.all.sort{ |c1,c2| c1[0] <=> c2[0] }
   end
 
   def options_for_currencies
@@ -26,24 +30,11 @@ module ApplicationHelper
     Array(1900..Date.today.year).reverse.map{ |y| [ y, y ] }
   end
 
-  def show_app_version
-    if SHOW_APP_VERSION
-      %Q{<div class="application_version">Current version is: #{APP_VERSION}</div>}.html_safe
-    else
-      %Q{<div style="display:none">Current version is: #{APP_VERSION}</div>}.html_safe
-    end
-  end
-
-  def show_debugger
-    link_to 'debugger', '#',class: 'debug-trigger-button'
-  end
-
-  def resource_name
-    :user
-  end
-
-  def resource
-    @resource ||= User.new
+  def options_for_report_statuses
+    [
+      [ t( 'report.status.installed' ), 'installed' ],
+      [ t( 'report.status.planned' ), 'planned' ]
+    ]
   end
 
   def devise_mapping

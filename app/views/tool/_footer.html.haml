@@ -6,9 +6,9 @@
 
       .footer--progress
         .footer--progress--percentage
-          = t( "footer.#{controller_path.match( /basic/ ) ? 'basic' : 'advanced'}.#{controller_path.match( /water/ ) ? 'water' : 'sanitation'}" )
-          %span{ 'data-progress-label' => true }= "(#{@questionnaire ? @questionnaire.complete : flash[:percent_complete]}%)"
+          = t( 'footer.calculator_progress', :level => controller_path.match( /basic/ ) ? t( 'calculators.basic' ) : t( 'calculators.advanced' ), :type => controller_path.match( /water/ ) ? t( 'calculators.water' ) : t( 'calculators.sanitation' ) )
+          %span{ 'data-progress-label' => true }= "(#{@questionnaire.complete}%)"
         .footer--progress--bar
-          .footer--progress--bar--fill{ :style => "width: #{@questionnaire ? @questionnaire.complete : flash[:percent_complete]}%", 'data-progress-bar' => true }
+          .footer--progress--bar--fill{ :style => "width: #{@questionnaire.complete}%", 'data-progress-bar' => true }
 
-      = link_to t( 'buttons.save_report') , basic_report_questionnaire_path( tool_name: 'water' ), :class => "footer--link footer--link-save"
+      = link_to t( 'buttons.save_report') , footer_save_report_url, :class => "footer--link footer--link-save"

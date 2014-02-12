@@ -1,20 +1,26 @@
 = content_for :title do
-  9 of 9 (Reliability)
+  9 of 9 (Reliability) - Basic Water Calculator
 
 .question
-  %h1.question--title= t 'form.water_basic.reliability.question'
+  %h1.question--title= t 'basic.water.questionnaire.reliability.question'
 
   .question--answer
 
-    = form_tag basic_water_action_url( I18n.locale, 'reliability' ), id: 'waterBasicForm' do
+    = form_for @questionnaire, :url => basic_water_update_url( I18n.locale, 'report' ), :html => { 'data-dynamic_form' => basic_water_dynamic_update_url( I18n.locale ) } do |f|
 
       .question--radios
-        - @reliability[:choices].each_with_index do |choice, index|
-          = label_tag( choice, nil, class: "question--radios--label" ) do
-            = radio_button_tag( 'reliability', index, index == @reliability[:value], id: choice, :class => 'question--radios--radio' )
+        - options_for_water_reliability.each do |option|
+          = f.label( "reliability_#{option[1]}", :class => "question--radios--label" ) do
+            = f.radio_button :reliability, option[1], :class => 'question--radios--radio'
             %span.question--checked_icon
-            %span{ :class => "question--radios--icon icon--tool-#{choice}" }
-            %span.question--radios--text= t "form.water_basic.reliability.answers.a#{index}"
+            %span{ :class => "question--radios--icon icon--tool-#{option[0]}" }
+            %span.question--radios--text= t "basic.water.questionnaire.reliability.options.#{option[0]}"
 
       .question--buttons
-        = submit_tag((t 'buttons.next'), class: 'button')
+        = submit_tag t( 'buttons.next' ), :class => 'button'
+
+.info_tab
+  .info_tab--icon
+  .info_tab--container
+    .info_tab--content
+      %p.info_tab--content--text= raw format_info_text 'basic.water.questionnaire.reliability.info'

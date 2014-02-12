@@ -17,6 +17,8 @@ class AdvancedSanitationQuestionnaire < Session
                 :rehabilitation_cost_owner,
                 :annual_household_income,
                 :household_size,
+                :direct_support_cost,
+                :indirect_support_cost,
 
                 :supply_system_technologies,
                 :systems_number,
@@ -31,8 +33,6 @@ class AdvancedSanitationQuestionnaire < Session
                 :capital_maintenance_expenditure,
                 :loan_cost,
                 :loan_payback_period,
-                :direct_support_cost,
-                :indirect_support_cost,
 
                 :service_level_name,
                 :service_level_share,
@@ -47,52 +47,7 @@ class AdvancedSanitationQuestionnaire < Session
   end
 
 
-  def reset
-
-    set_properties
-
-    archive
-
-  end
-
-
   def update_attributes( attributes )
-
-    if attributes[ :water_treatment_0 ] != nil || attributes[ :water_treatment_1 ] != nil || attributes[ :water_treatment_2 ] != nil
-
-      @water_treatment = []
-
-      if attributes[ :water_treatment_0 ] != nil
-        @water_treatment.push attributes[ :water_treatment_0 ]
-      end
-
-      if attributes[ :water_treatment_1 ] != nil
-        @water_treatment.push attributes[ :water_treatment_1 ]
-      end
-
-      if attributes[ :water_treatment_2 ] != nil
-        @water_treatment.push attributes[ :water_treatment_2 ]
-      end
-
-    end
-
-    if attributes[ :power_supply_0 ] != nil || attributes[ :power_supply_1 ] != nil || attributes[ :power_supply_2 ] != nil
-
-      @power_supply    = []
-
-      if attributes[ :power_supply_0 ] != nil
-        @power_supply.push attributes[ :power_supply_0 ]
-      end
-
-      if attributes[ :power_supply_1 ] != nil
-        @power_supply.push attributes[ :power_supply_1 ]
-      end
-
-      if attributes[ :power_supply_2 ] != nil
-        @power_supply.push attributes[ :power_supply_2 ]
-      end
-
-    end
 
     super
 
@@ -116,7 +71,7 @@ class AdvancedSanitationQuestionnaire < Session
   def complete
     attributes_with_values = 0
 
-    attributes.each do |attribute|
+    property_attributes.each do |attribute|
       value = send( "#{attribute}" )
 
       if value != nil && value.kind_of?( Array ) && value & [''] == value
@@ -128,7 +83,21 @@ class AdvancedSanitationQuestionnaire < Session
       end
     end
 
-    100 * attributes_with_values / self.attributes.count
+    100 * attributes_with_values / property_attributes.count
+  end
+
+  # determine navigation item completion
+
+  def service_area
+    true unless water_system_exists == nil || country == nil || currency == nil || year_of_expenditure == nil || region == nil || town == nil || area_type == nil || population_density == nil || service_management.count == 0 || construction_financier.count == 0 || infrastructure_operator.count == 0 || service_responsbility.count == 0 || standard_enforcer.count == 0 || rehabilitation_cost_owner.count == 0 || annual_household_income == nil || household_size == nil
+  end
+
+  def technology
+    true unless supply_system_technologies.count == 0 || systems_number.count == 0 || system_population_design.count == 0 || system_population_actual.count == 0 || actual_hardware_expenditure.count == 0 || system_lifespan_expectancy.count == 0 || actual_software_expenditure.count == 0 || unpaid_labour.count == 0 || minor_operation_expenditure.count == 0 || capital_maintenance_expenditure.count == 0 || loan_cost.count == 0 || loan_payback_period.count == 0
+  end
+
+  def service_level
+    true unless service_level_name.count == 0 || service_level_share.count == 0 || national_accessibility_norms.count == 0 || national_use_norms.count == 0 || national_reliability_norms.count == 0 || national_environmental_protection_norms.count == 0
   end
 
 
@@ -570,6 +539,79 @@ class AdvancedSanitationQuestionnaire < Session
     end
   end
 
+  def percentage_of_population_that_meets_all_norms
+    if percentage_of_population_that_meets_accessibility_norms != nil || percentage_of_population_that_meets_use_norms != nil || percentage_of_population_that_meets_reliability_norms != nil || percentage_of_population_that_meets_environmental_protection_norms != nil
+      ( ( percentage_of_population_that_meets_accessibility_norms || 0 ) + ( percentage_of_population_that_meets_use_norms || 0 ) + ( percentage_of_population_that_meets_reliability_norms || 0 ) + ( percentage_of_population_that_meets_environmental_protection_norms || 0 ) ) / 400
+    else
+      nil
+    end
+  end
+
+  # cost comparison
+
+  def service_area_capital_expenditure_per_technology
+    if supply_system_technologies.count > 0 && actual_hardware_expenditure.count == supply_system_technologies.count && actual_software_expenditure.count == supply_system_technologies.count && system_population_design.count == supply_system_technologies.count
+      supply_system_technologies.each_with_index.map{ |s,i| ( actual_hardware_expenditure[i].to_f + actual_software_expenditure[i].to_f ) / system_population_design[i].to_f }
+    else
+      nil
+    end
+  end
+
+  def service_area_capital_expenditure_for_technology( technology )
+    expenditure = 0
+
+    if supply_system_technologies.include?( technology ) && actual_hardware_expenditure.count == supply_system_technologies.count && actual_software_expenditure.count == supply_system_technologies.count && system_population_design.count == supply_system_technologies.count
+      supply_system_technologies.each_with_index do |t,i|
+
+        if t == technology
+          expenditure = expenditure + ( actual_hardware_expenditure[i].to_f + actual_software_expenditure[i].to_f ) / system_population_design[i].to_f
+        end
+      end
+    end
+
+    expenditure
+  end
+
+  def total_service_area_capital_expenditure
+    if service_area_capital_expenditure_per_technology != nil
+      service_area_capital_expenditure_per_technology.inject(:+)
+    else
+      nil
+    end
+  end
+
+  def service_area_recurrent_expenditure_per_technology
+    if supply_system_technologies.count > 0 && minor_operation_expenditure.count == supply_system_technologies.count && capital_maintenance_expenditure.count == supply_system_technologies.count
+      supply_system_technologies.each_with_index.map{ |s,i| minor_operation_expenditure[i].to_f + capital_maintenance_expenditure[i].to_f }
+    else
+      nil
+    end
+  end
+
+  def service_area_recurrent_expenditure_for_technology( technology )
+    expenditure = 0
+
+    if supply_system_technologies.include?( technology ) && minor_operation_expenditure.count == supply_system_technologies.count && capital_maintenance_expenditure.count == supply_system_technologies.count
+      supply_system_technologies.each_with_index do |t,i|
+
+        if t == technology
+          expenditure = expenditure + minor_operation_expenditure[i].to_f + capital_maintenance_expenditure[i].to_f
+        end
+      end
+    end
+
+    expenditure
+  end
+
+  def total_service_area_recurrent_expenditure
+    if service_area_recurrent_expenditure_per_technology != nil && direct_support_cost != nil && indirect_support_cost != nil
+      service_area_recurrent_expenditure_per_technology.inject(:+) + direct_support_cost.to_f + indirect_support_cost.to_f
+    else
+      nil
+    end
+  end
+
+
   # BENCHMARK VALUES
 
   def benchmark_minor_operation_expenditure
@@ -609,6 +651,8 @@ class AdvancedSanitationQuestionnaire < Session
     @rehabilitation_cost_owner                = []
     @annual_household_income                  = nil
     @household_size                           = nil
+    @direct_support_cost                      = nil
+    @indirect_support_cost                    = nil
 
     # system characteristics
     @supply_system_technologies               = []
@@ -625,8 +669,6 @@ class AdvancedSanitationQuestionnaire < Session
     @capital_maintenance_expenditure          = []
     @loan_cost                                = []
     @loan_payback_period                      = []
-    @direct_support_cost                      = nil
-    @indirect_support_cost                    = nil
 
     # service level
     @service_level_name                       = []

@@ -2,29 +2,28 @@
   .boxed_content
     .page_content
 
-      = simple_form_for resource, :as => resource_name, :url => registration_path(resource_name), html: { :class => 'standalone_form' } do |f|
+      = form_for @user, :url => registration_path( :user ), :html => { :class => 'standalone_form' } do |f|
 
-        %h1.standalone_form--heading Create your account
+        %h1.standalone_form--heading= t( 'devise.create_account' )
 
         = render "devise/shared/messages"
 
         .standalone_form--field.standalone_form--field-text
-          = f.input :email, :required => false, label: false, input_html: { class: 'standalone_form--field--input standalone_form--field--input-text' }, placeholder: 'Email'
+          = f.text_field :email, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => t( 'devise.email' )
 
         .standalone_form--field.standalone_form--field-text
-          = f.input :password, :required => false, label: false, input_html: { class: 'standalone_form--field--input standalone_form--field--input-text' }, placeholder: 'Password'
+          = f.password_field :password, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => t( 'devise.password' )
 
         .standalone_form--field.standalone_form--field-text
-          = f.input :password_confirmation, :required => false, label: false, input_html: { class: 'standalone_form--field--input standalone_form--field--input-text' }, placeholder: 'Repeat your password'
+          = f.password_field :password_confirmation, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => t( 'devise.repeat_password' )
 
         .standalone_form--footer
           .standalone_form--buttons
-            = f.button :submit, "Register", class: 'button'
+            = f.submit t( 'devise.register' ), :class => 'button'
 
           .standalone_form--links
             = render "devise/shared/links"
 
         .standalone_form--promo
-          Please visit the
-          = link_to 'WASHCost Blog', 'http://blog.washcost.org/', :class => 'standalone_form--promo--link'
-          to learn more about the Advanced Calculator
+          =t( 'devise.please_visit_washcost_blog_html' )
+

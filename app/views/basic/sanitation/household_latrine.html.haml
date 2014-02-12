@@ -1,0 +1,26 @@
+= content_for :title do
+  6 of 11 (sanitation Source) - Basic Sanitation Calculator
+
+.question
+  %h1.question--title= t 'basic.sanitation.questionnaire.household_latrine.question'
+
+  .question--answer
+
+    = form_for @questionnaire, :url => basic_sanitation_update_url( I18n.locale, 'impermeability' ), :html => { 'data-dynamic_form' => basic_sanitation_dynamic_update_url( I18n.locale ) } do |f|
+
+      .question--radios
+        - options_for_household_latrines.each do |option|
+          = f.label( "household_latrine_#{option[1]}", :class => "question--radios--label question--radios--label-wide" ) do
+            = f.radio_button( :household_latrine, option[1], :class => 'question--radios--radio' )
+            %span.question--checked_icon
+            %span{ :class => "question--radios--icon icon--tool-#{option[0]}" }
+            %span.question--radios--text= t( "basic.sanitation.questionnaire.household_latrine.options.#{option[0]}" )
+
+      .question--buttons
+        = submit_tag t( 'buttons.next' ), :class => 'button'
+
+.info_tab
+  .info_tab--icon
+  .info_tab--container
+    .info_tab--content
+      %p.info_tab--content--text= raw format_info_text 'basic.sanitation.questionnaire.household_latrine.info'

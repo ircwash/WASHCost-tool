@@ -30,7 +30,7 @@
 // STYLESHEET
 
 .report {
-
+  @include background-image(linear-gradient(to right,  rgb(221, 214, 153) 0%, rgb(235, 232, 202) 50%, rgb(221, 214, 153) 100%));
 }
 
 .report--header {
@@ -65,6 +65,7 @@
 }
 
 .report--summary {
+  display:inline-block;
   margin-bottom:10px;
   text-align:center;
 
@@ -72,9 +73,28 @@
 }
 
 .report--summary--item {
-  display:inline-block;
-  width:33.33%;
+  float:left;
+
+  padding:0 15px;
   vertical-align:top;
+
+  @include box-sizing(border-box);
+}
+
+.report--summary--item-100 {
+  width:100%;
+}
+
+.report--summary--item-50 {
+  width:50%;
+}
+
+.report--summary--item-33 {
+  width:33.333%;
+}
+
+.report--summary--item-25 {
+  width:25%;
 }
 
 .report--summary--item-floated {
@@ -110,10 +130,14 @@
 }
 
 .report--summary--item--value {
-  height:30px;
+  //height:30px;
   margin-bottom:14px;
-  font-size:30px;
+  font-size:26px;
   color:#fff;
+}
+
+.report--summary--item--value-title {
+  margin-top:20px;
 }
 
 .report--summary--item--rating {
@@ -150,6 +174,13 @@
   font-weight:bold;
 }
 
+.report--summary--edit {
+  @include report-edit-button;
+
+  top:20px;
+  right:20px;
+}
+
 .report--review {
   width:50%;
   margin:0 auto;
@@ -178,19 +209,26 @@
 
 .report--review--content--text {
   padding-top:30px;
-  font-size:12px;
+  font-size:14px;
   color:#fff;
-  text-align:justify;
-  line-height:1.5;
+  text-align:left;
+  line-height:1.2;
+}
+
+.report--review--content--text p + p {
+  margin-top:1em;
+}
+
+.report--content {
+  @include background-image(radial-gradient(center bottom, circle, #e6e3be, #a08d62));
 }
 
 .report--section {
   padding:30px;
   color:#333;
   text-align:center;
-  background-color:rgb(173,203,84);
 
-  @include background-image(linear-gradient(to right,  rgb(221, 214, 153) 0%, rgb(235, 232, 202) 50%, rgb(221, 214, 153) 100%));
+//  @include background-image(linear-gradient(to right,  rgb(221, 214, 153) 0%, rgb(235, 232, 202) 50%, rgb(221, 214, 153) 100%));
 }
 
 .report--section + .report--section {
@@ -222,13 +260,24 @@
   text-transform:uppercase;
 }
 
-.report--outputs + .report--subsection--title {
+* + .report--subsection--title {
   margin-top:40px;
 }
 
 .report--subsection--subtitle {
   font-size:11px;
   font-weight:normal;
+}
+
+.report--section--edit {
+  margin-bottom:20px;
+}
+
+.report--section--edit--link {
+  @include report-edit-button;
+
+  position:static;
+  display:inline-block;
 }
 
 .report--option_grid {
@@ -254,7 +303,11 @@
 }
 
 .report--option_grid--item--content {
+  position:relative;
+
   @include report-box(30px);
+
+  padding-bottom:45px;
 }
 
 .report--option_grid--item--title {
@@ -264,6 +317,11 @@
 }
 
 .report--option_grid--item--caption {
+  position:absolute;
+  bottom:25px;
+  left:30px;
+  right:30px;
+  margin:0 30px;
   font-size:12px;
 }
 
@@ -539,4 +597,199 @@
   vertical-align:top;
 
   @include box-sizing(border-box);
+}
+
+.report--comparison_expenditure {
+  padding:20px;
+  background-color:rgba(255,255,255,0.5);
+
+  @include border-radius(5px);
+  @include clearfix;
+}
+
+.report--comparison_expenditure + .report--comparison_expenditure {
+  margin-top:30px;
+}
+
+.report--comparison_expenditure--title {
+  margin-bottom:30px;
+  font-size:20px;
+}
+
+.report--comparison_expenditure--item {
+  float:left;
+  width:50%;
+
+  @include box-sizing(border-box);
+}
+
+.report--comparison_expenditure--item-narrow {
+  width:25%;
+}
+
+.report--comparison_expenditure--item + .report--comparison_expenditure--item {
+  border-left:1px solid rgba(0,0,0,0.1);
+}
+
+.report--comparison_expenditure--item--title {
+  margin-bottom:20px;
+  padding:0 15px;
+  font-size:14px;
+  text-transform:uppercase;
+}
+
+.report--comparison_expenditure--result {
+  position:relative;
+  display:table;
+  width:100px;
+  height:100px;
+  margin:0 auto;
+}
+
+.report--comparison_expenditure--result-narrow {
+  width:200px;
+}
+
+.report--comparison_expenditure--result + .report--comparison_expenditure--result {
+  margin-top:30px;
+}
+
+.report--comparison_expenditure--result--value {
+  position:relative;
+  z-index:11;
+  display:table-cell;
+  font-size:22px;
+  text-align:center;
+  vertical-align:middle;
+  line-height:1;
+}
+
+.report--comparison_expenditure--result-narrow--value {
+  width:100px;
+}
+
+.report--comparison_expenditure--result--chart {
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  z-index:10;
+}
+
+.report--comparison_expenditure--result-narrow--chart {
+  right:100px;
+}
+
+.report--comparison_expenditure--result--sample {
+  position:absolute;
+  top:50%;
+  right:-100%;
+  width:100%;
+  margin-top:-0.5em;
+  font-size:16px;
+  line-height:1;
+}
+
+.report--comparison_expenditure--result-narrow--sample {
+  right:0;
+  width:100px;
+}
+
+.report--comparison_expenditure--result--sample::before {
+  content:"n = ";
+}
+
+.report--comparison_expenditure--key {
+  clear:both;
+  padding-top:20px;
+  font-size:14px;
+  text-align:center;
+}
+
+.report--comparison_expenditure--key--item {
+  display:inline-block;
+
+  @include pie-clearfix;
+}
+
+.report--comparison_expenditure--key--item + .report--comparison_expenditure--key--item {
+  margin-left:20px;
+}
+
+.report--comparison_expenditure--key--item--indicator {
+  float:left;
+  width:10px;
+  height:10px;
+  margin:2px 5px 0 0;
+
+  @include border-radius(100px);
+}
+
+.report--comparison_expenditure--key--item--indicator-yours {
+  background-color:#1f9cd8;
+}
+
+.report--comparison_expenditure--key--item--indicator-all {
+  background-color:#e40e7e;
+}
+
+.report--comparison_expenditure--key--item--label {
+  float:left;
+  white-space:nowrap;
+}
+
+
+
+@media screen and ( max-device-width: $mobile_breakpoint ) {
+
+  .report {
+    margin:0 -20px;
+    padding-bottom:0;
+  }
+
+  .report--header--title {
+    margin-top:60px;
+    margin-bottom:10px;
+  }
+
+  .report--summary {
+    display:block;
+  }
+
+  .report--review,
+  .report--summary--description {
+    width:auto;
+  }
+
+  .report--header--quicklink {
+    top:80px;
+  }
+
+  .report--summary--item {
+    float:none;
+    display:block;
+    width:auto;
+    margin-top:40px;
+  }
+
+  .report--option_grid--item,
+  .report--costs--column-small,
+  .report--costs--column-big {
+    float:none;
+    width:auto;
+    margin-top:20px;
+    margin-right:auto;
+    margin-left:auto;
+  }
+
+  .report-service_level::before,
+  .report-service_level::after {
+    content:none;
+  }
+
+  .report--costs--column-small {
+    width:auto;
+  }
+
 }

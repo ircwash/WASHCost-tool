@@ -1,0 +1,14 @@
+.boxed_container.boxed_container-full_height
+  .boxed_content
+    .page_content
+
+      = form_for @report, :url => footer_save_report_url, :html => { :class => 'standalone_form' } do |f|
+
+        %h1.standalone_form--heading= t 'report.save_your_report'
+
+        .standalone_form--field.standalone_form--field-text
+          = f.text_field :title, { :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => 'Name' }
+
+        .standalone_form--footer
+          .standalone_form--buttons.standalone_form--buttons-centred
+            = f.submit "Save", :class => 'button'

@@ -10,7 +10,7 @@ class Session
     @identifier = identifier
     @session    = session
 
-    if ( session[ @identifier ] )
+    if ( session != nil && session[ @identifier ] )
       unarchive
     end
 
@@ -19,21 +19,23 @@ class Session
 
   def update_attributes( attributes )
 
-    attributes.each do |name, value|
+    if attributes != nil
+      attributes.each do |name, value|
 
-      if value == ''
-        value = nil
-      elsif value.kind_of?(Array)
-        value.reject! { |v| v.empty? }
+        if value == ''
+          value = nil
+        elsif value.kind_of?(Array)
+          value.reject! { |v| v.empty? }
 
+        end
+
+        if respond_to?( "#{name}=" )
+          send( "#{name}=", value )
+        end
       end
 
-      if respond_to?( "#{name}=" )
-        send( "#{name}=", value )
-      end
+      archive
     end
-
-    archive
   end
 
 
@@ -42,15 +44,32 @@ class Session
   end
 
 
+  def attributes
+    Hash[ property_attributes.map{ |a| [ a, send( "#{a}" ) ] } ]
+  end
+
+
+  def reset
+    set_properties
+
+    archive
+  end
+
+
+  def complete?
+    complete == 100
+  end
+
+
   protected
 
 
-  def self.attributes
+  def self.property_attributes
     @attributes
   end
 
-  def attributes
-    self.class.attributes
+  def property_attributes
+    self.class.property_attributes
   end
 
 
@@ -68,11 +87,11 @@ class Session
   def archive
     data = {}
 
-    attributes.each do |a|
+    property_attributes.each do |a|
       data[ a ] = send( a )
     end
 
-    @session[ @identifier ] = data
+    @session[ @identifier ] = data unless @session == nil
   end
 
 
@@ -80,6 +99,11 @@ class Session
     @session[ @identifier ].each do |name, value|
       send( "#{name}=", value ) unless !self.respond_to? name
     end
+  end
+
+
+  def set_properties
+
   end
 
 end

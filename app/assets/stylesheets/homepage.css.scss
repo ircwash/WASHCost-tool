@@ -18,6 +18,16 @@
 .homepage--video {
   margin:20px 0;
   cursor:pointer;
+  position:relative;
+  padding-bottom:57%;
+
+  iframe {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+  }
 }
 
 .homepage--buttons {
@@ -39,4 +49,22 @@
   width:100%;
 
   @include box-sizing(border-box);
+}
+
+@media screen and ( max-device-width: $mobile_breakpoint ) {
+
+  .homepage {
+    padding-bottom:0;
+  }
+
+  .homepage--buttons--item {
+    float:none;
+    width:100%;
+    margin:20px 0;
+  }
+
+  .homepage--button {
+      padding:20px;
+  }
+
 }

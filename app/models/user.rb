@@ -7,13 +7,13 @@ class User
          :recoverable, :rememberable, :trackable, :validatable
 
   # Persistence relations
-  embeds_many :basic_questionnaires, class_name: 'BasicReport'
+  embeds_many :user_reports
 
   ## Database authenticatable
   field :first_name,         type: String
   field :last_name,          type: String
   field :country,            type: String, default: "GB"
-  field :prefered_language,  type: String, default: "English"
+  field :prefered_language,  type: String, default: I18n.locale
   field :company,            type: String, default: ""
   field :email,              type: String, default: ""
   field :encrypted_password, type: String, default: ""
@@ -48,7 +48,7 @@ class User
 
   def name
     if first_name || last_name
-      "#{first_name} #{last_name}"
+      "#{first_name} #{last_name}".split.map(&:capitalize).join(' ')
     else
       email.split('@')[0]
     end

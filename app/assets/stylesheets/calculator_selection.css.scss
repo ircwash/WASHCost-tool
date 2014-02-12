@@ -34,6 +34,7 @@
   display:inline-block;
   width:200px;
   cursor:pointer;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
 }
 
 .calculator_selection--selector--item + .calculator_selection--selector--item {
@@ -91,4 +92,17 @@
   margin-top:30px;
 }
 
+@media screen and ( max-device-width: $mobile_breakpoint ) {
 
+  .calculator_selection--selector--item {
+    display:block;
+    width:auto;
+    margin:0 auto;
+  }
+
+  .calculator_selection--selector--item + .calculator_selection--selector--item {
+    margin-top:15px;
+    margin-left:auto;
+  }
+
+}

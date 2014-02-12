@@ -1,0 +1,11 @@
+.boxed_container
+  .boxed_content.page_content
+
+    %h1.standalone_form--heading= t 'report.share_your_report'
+
+    .share_report
+      = link_to "#{root_url.match(/^[^?]+/)[0][0..-2]}#{reports_load_path( I18n.locale, @report.id )}", "#{root_url.match(/^[^?]+/)[0][0..-2]}#{reports_load_path( I18n.locale, @report.id )}", { :class => 'share_report--link' }
+
+    .standalone_form--footer
+      .standalone_form--buttons.standalone_form--buttons-centred
+        = link_to "Back", @back_path, :class => 'button'

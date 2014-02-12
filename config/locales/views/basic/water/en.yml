@@ -1,6 +1,60 @@
 en:
   basic:
     water:
+      questionnaire:
+        technology:
+          question: What is the main water supply technology used?
+          options:
+            borehole_handpump: Borehole & handpump
+            mechanised_borehole: Mechanised borehole
+            single_town_scheme: Single-town scheme
+            multi_town_scheme: Multi-town scheme
+            mixed_pipe_supply: Mixed-pipe supply
+          info:
+            borehole_handpump: Reticulated supply with pumping, storage and distribution through public stand posts with provision for house connections.
+            mechanised_borehole: Water is supplied through a small distribution network and connected public stand posts. Water storage is limited, typically to an overhead storage tank  directly connected to the pump.  Household connections are rare.
+            single_town_scheme: Maecenas elementum tristique nunc sed vehicula. Mauris dignissim erat ut lectus rutrum elementum. Etiam pharetra ac massa sit amet mattis. Nam blandit, nibh sed mattis accumsan, nisi risus vulputate eros, in ar laoreet.
+            multi_town_scheme: Reticulated supply with pumping, storage and distribution supplied to a number of interconnected towns or villages. Each village with its own storage and distribution network.
+            mixed_pipe_supply: Water is supplied through a combination of separate, often overlapping, service delivery systems.
+        population:
+          default_question: How many people in this area are receiving this water service?
+          question: "How many people are served by a %{technology}?"
+          info: Please indicate the total number of people that are meant to be using the service in the area. A water system will typically have a design population, sometimes defined by local regulations, for how many people it is meant to serve. The total number of people would be the design population of the system times the number of systems in the area. For example, if a handpump is meant to serve 300 people and there are 100 handpumps in the area, the number of people that are meant to be using the service is 30,000 people (300 people x 100 handpumps).
+        access:
+          question: How long does it take to collect water per day from these services?
+          options:
+            less_than_ten: Less than 10
+            between_ten_and_thirty: Between 10 and 30
+            between_thirty_and_sixty: Between 30 and 60
+            more_thank_sixty: More than 60
+          info: ""
+        quantity:
+          question: How much water is used from the water service?
+          label: Litres per person per day
+          options:
+            less_than_five_litres: Less than 5L
+            between_five_and_nineteen_litres: 5 - 19L
+            between_twenty_and_sixty_litres: 20-60L
+            more_than_sixy_litres: More than 60L
+          info: ""
+        quality:
+          question: Is water quality testing done?
+          options:
+            regular_and_meets_standards: Regular and meets standards
+            occasional_and_meets_standards: Occasional and meets standards
+            one_off_after_construction: One-off after construction
+            no_testing: No testing
+          info: ""
+        reliability:
+          question: How reliable is the water service?
+          options:
+            works_all_the_time: Works all the time
+            not_working_less_than_twelve_days_a_year: Not working less than 12 days a year
+            not_working_more_than_twelve_days_a_year: Not working more than 12 days a year
+            not_working_all_of_the_time: Not working all of the time
+          info: ""
+        recurrent:
+          value_label: US$ Per person per Year
       report:
         final_report: Basic Water | Final Report
         sustainability:

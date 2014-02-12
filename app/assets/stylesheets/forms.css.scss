@@ -17,7 +17,7 @@
 }
 
 .standalone_form {
-  width:$form_width;
+  max-width:$form_width;
   margin:30px auto;
   padding:30px;
   color:#fff;
@@ -34,6 +34,14 @@
 
 .standalone_form--field {
   @include pie-clearfix;
+}
+
+.standalone_form--field--label {
+  display:block;
+  margin-bottom:5px;
+  font-size:12px;
+  font-weight:bold;
+  text-transform:uppercase;
 }
 
 .standalone_form--field + .standalone_form--field {
@@ -71,6 +79,17 @@
   }
 }
 
+.standalone_form--field--input-dropdown {
+  width:100%;
+
+  @include box-sizing(border-box);
+}
+
+.standalone_form--field-dropdown .chosen-container .chosen-single span,
+.standalone_form--field-dropdown .chosen-container-active.chosen-with-drop .chosen-single span {
+  text-align:left;
+}
+
 .standalone_form--field--input-box {
   float:left;
   width:20px;
@@ -90,6 +109,11 @@
 
 .standalone_form--buttons {
   float:left;
+}
+
+.standalone_form--buttons-centred {
+  float:none;
+  text-align:center;
 }
 
 .standalone_form--links {
@@ -316,4 +340,13 @@
 
 .dual_column--field--label + .dual_column_form--field.dual_column_form--field-box {
   margin-top:15px;
+}
+
+
+@media screen and ( max-device-width: $mobile_breakpoint ) {
+
+  .standalone_form {
+    margin:0 -20px;
+  }
+
 }

@@ -1,6 +1,59 @@
 en:
   basic:
     sanitation:
+      questionnaire:
+        country:
+          question: In which country does your sanitation service take place?
+          info: ""
+        population:
+          question: How many people in this area are receiving this sanitation service?
+          info: ""
+        latrine:
+          question: What type of latrine technology is being used?
+          options:
+            traditional_pit_latrine: Traditional pit latrine
+            slab_latrine: Slab latrine
+            vip_latrine: Vip latrine
+            pour_flush_latrine: Pour Flush Latrine
+            twin_pit_pour_flush_latrine: Twin Pit Pour Flush Latrine
+            latrine_with_septic_tank: Latrine with septic tank
+          info: ""
+        recurrent_expenditure:
+          question: How much is being spent/will be spent to operate, maintain and support the delivery of sanitation services (per person per year)?
+          info: "Operating and minor maintenance expenditure: typically comprises regular expenditure such as labour, fuel, chemicals, materials, and purchases of any bulk water.<br/> See: http://akvopedia.org/wiki/Operational_and_Minor_Maintenance_Expenditure_(OpEx)<br/><br/> Capital maintenance expenditure: Asset renewal and replacement cost: occasional and ‘lumpy’ costs that seek to restore the functionality of a system, such as replacing pump rods or foot valves in handpumps, or a diesel generator in motorised systems.<br/> See: http://akvopedia.org/wiki/Capital_Maintenance_Expenditure_(CapManEx)<br/><br/> Expediture of direct support: Direct support is structured support to service providers and users or user groups related to the operation and management of a WASH service; direct support costs are the costs of such support. They cover monitoring, technical advice and administrative, organisational or legal support.  The costs of support before and during the capital construction of a project are not included; they are considered to be capital software. Direct support is often used synonymously with “post-construction support”.<br/> See: http://akvopedia.org/wiki/Expenditure_Direct_Support_(ExpDS)<br/><br/> Expenditure of indirect support: Indirect support costs cover expenditure on this macro-level support, including planning and policy making, and support to decentralised service authorities or local government. Indirect support includes capacity building for professionals and technicians and capacity support to local government as service authorities, for example to adhere to national norms, standards and guidelines.<br/> See: http://akvopedia.org/wiki/Expenditure_Indirect_Support_(ExpIDS)"
+        household_latrine:
+          question: Does the service provide latrines at the household level?
+          options:
+            household_latrine_available: "Yes"
+            household_latrine_unavailable: "No"
+          info: ""
+        impermeability:
+          question: Does the latrine have an impermeable slab?
+          options:
+            impermeable_slab: Impermeable slab
+            no_impermeable_slab: No impermeable slab
+          info: This can be a traditional pit latrine with an impermeable slab (made from local materials, a pit latrine with a concrete impermeable slab, or a pour-flush or septic tank latrines, often with a concrete or bricked lines pit/tank with sealed impermeable slab.
+        environmental_impact:
+          question: What is the environmental impact of the service?
+          options:
+            non_problematic_safe_disposal_reuse_biproducts: Non problematic + safe disposal + re-use of bi-products
+            non_problematic_safe_disposal: Non problematic + safe disposal
+            significant_pollution: Significant pollution
+          info: ""
+        usage:
+          question: Which family members use the latrine?
+          options:
+            latrine_usage_all: All
+            latrine_usage_some: Some
+            latrine_usage_none: None
+          info: ""
+        reliability:
+          question: Is the latrine cleaned and emptied when required?
+          options:
+            latrine_reliable: "Yes"
+            latrine_inconsistent: Not consistently
+            latrine_unreliable: "No"
+          info: ""
       report:
         final_report: Basic Sanitation | Final Report
         sustainability:
@@ -8,6 +61,17 @@ en:
           two_stars: Limited service
           three_stars: Basic service
           four_stars: Improved service
+        sections:
+          country: Country
+          latrine_technology: Latrine Technology
+          population: Population
+          capital_expenditure_per_person: Capital expenditure per person
+          recurrent_expenditure_per_person: Recurrent expenditure per person
+          household_latrine: Providing
+          impermeability: Impermeability
+          environmental_impact: Environment
+          usage: Usage
+          reliatilibty: Reliability
         summaries:
           a111: "There is a high incidence of open defecation as latrines are not being used. Additionally, if there are latrines, these are not being cleaned or emptied. Barely any money is being spent on recurrent annual expenditure  and as a result the service has failed and live may be at risk!"
           a113: "Although existing latrines are reasonably clean, there is a high incidence of open defecation as latrines are not being used. Barely any money is being spent on recurrent annual expenditure, specifically on maintaining or improving behaviour change for latrine use. Lives may be at risk!"

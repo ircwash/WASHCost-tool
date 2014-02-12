@@ -1,0 +1,29 @@
+= content_for :title do
+  5 of 9 (Recurrent Expenditure) - Basic Water Calculator
+
+.question
+  %h1.question--title= t 'basic.shared.questionnaire.recurrent_expenditure.question'
+
+  .question--answer
+
+    .question--answer--title= t 'basic.share.usd_per_person_per_year'
+
+    = form_for @questionnaire, :url => basic_water_update_url( I18n.locale, 'access' ), :html => { 'data-dynamic_form' => basic_water_dynamic_update_url( I18n.locale ) } do |f|
+
+      .slider
+        %input.slider--value{ 'data-target' => 'recurrentSlider', :value => @questionnaire.recurrent_expenditure != nil ? @questionnaire.recurrent_expenditure : @questionnaire.minimum_recurrent_expenditure }
+        .slider--widget.threshold-marks
+        = f.hidden_field :recurrent_expenditure, { :value => @questionnaire.recurrent_expenditure != nil ? @questionnaire.recurrent_expenditure : @questionnaire.minimum_recurrent_expenditure, 'data-slider-input' => 'true', 'data-slider-min' => @questionnaire.minimum_recurrent_expenditure, 'data-slider-max' => @questionnaire.maximum_recurrent_expenditure, 'data-slider-below' => @questionnaire.minimum_guidance_recurrent_expenditure, 'data-slider-above' => @questionnaire.maximum_guidance_recurrent_expenditure }
+
+        .slider--scale
+          .slider--scale--point.slider--scale--point-min= "US$ #{@questionnaire.minimum_guidance_recurrent_expenditure}"
+          .slider--scale--point.slider--scale--point-max= "US$ #{@questionnaire.maximum_guidance_recurrent_expenditure}"
+
+      .question--buttons
+        = submit_tag t( 'buttons.next' ), :class => 'button'
+
+.info_tab
+  .info_tab--icon
+  .info_tab--container
+    .info_tab--content
+      %p.info_tab--content--text= raw format_info_text 'basic.shared.questionnaire.recurrent_expenditure.info'

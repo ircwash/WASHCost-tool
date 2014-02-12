@@ -3,16 +3,16 @@
   top:140px;
   right:0;
   width:52px;
-  padding:5px 0 5px 5px;
+  padding:5px 0 5px 57px;
   z-index:100;
-  max-height:300px;
   overflow:hidden;
 
+  @include box-sizing(border-box);
   @include transition(width 0.75s);
 }
 
 .info_tab-open {
-  width:452px;
+  width:66.66%;
 }
 
 .info_tab--icon {
@@ -44,8 +44,7 @@
 }
 
 .info_tab--container {
-  width:400px;
-  margin-left:52px;
+  width:100%;
   overflow:hidden;
 
   @include border-radius(0 0 0 5px);
@@ -69,6 +68,24 @@
 .info_tab--content--text {
   color:#d5d7cf;
   font-size:12px;
-  text-align:justify;
+  text-align:left;
   line-height:1.5;
+}
+
+.info_tab--content--text a {
+  color:$brand_orange;
+  text-decoration:none;
+}
+
+.info_tab--content--text a:hover {
+  text-decoration:underline;
+}
+
+
+@media screen and ( max-device-width: $mobile_breakpoint ) {
+
+  .info_tab-open {
+    width:100%;
+  }
+
 }

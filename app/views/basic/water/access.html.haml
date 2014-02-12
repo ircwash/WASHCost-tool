@@ -1,0 +1,25 @@
+= content_for :title do
+  6 of 9 (Access) - Basic Water Calculator
+
+.question
+  %h1.question--title= t 'basic.water.questionnaire.access.question'
+
+  .question--answer
+
+    .question--answer--title= t 'basic.shared.questionnaire.minutes_per_day'
+
+    = form_for @questionnaire, :url => basic_water_update_url( I18n.locale, 'quantity' ), :html => { 'data-dynamic_form' => basic_water_dynamic_update_url( I18n.locale ) } do |f|
+
+      .slider.slider-time
+        %input.slider--value.slider--value-wide{ :type => 'text', :value => @questionnaire.access != nil ? @questionnaire.access : 0, :readonly => 'true' }
+        .slider--widget
+        = f.hidden_field :access, { :value => @questionnaire.access != nil ? @questionnaire.access : 0, 'data-slider-input' => 'true', 'data-slider-min' => @questionnaire.minimum_access, 'data-slider-max' => @questionnaire.maximum_access, 'data-slider-values' => options_for_water_access.to_s }
+
+      .question--buttons
+        = submit_tag t( 'buttons.next' ), :class => 'button'
+
+.info_tab
+  .info_tab--icon
+  .info_tab--container
+    .info_tab--content
+      %p.info_tab--content--text= raw format_info_text 'basic.water.questionnaire.access.info'
