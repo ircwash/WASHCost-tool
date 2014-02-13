@@ -40,17 +40,17 @@
             .report--summary--item--value.report--summary--item--value-title= report_percentage_value_for( @questionnaire.people_with_service_meeting_national_standard )
             .report--summary--item--subtitle= t( 'report.number_of_people_with_service_meeting_national_standard' )
 
-        - if report_comparison_summary_available || global_aggregate_service_percentile( 'water' ) != nil
+        - if report_comparison_summary_available || advanced_percentile_comparison( :percentage_of_population_that_meets_all_norms, 'water' )[0] != nil
 
           %div{ :class => "report--summary--item report--summary--item-#{summary_columns_for_report( [ report_expenditure_totals_available, report_service_level_summary_available, report_comparison_summary_available ] )}" }
             .report--summary--item--title= t( 'report.comparison_summary' )
 
             - if report_comparison_summary_available
-              .report--summary--item--value.report--summary--item--value-title= report_integer_percentage_value_for( global_recurrent_expenditure_percentile( 'water' )[0] )
+              .report--summary--item--value.report--summary--item--value-title= report_integer_percentage_value_for( advanced_percentile_comparison( :total_service_area_capital_expenditure, 'water' )[0] || 0 )
               .report--summary--item--subtitle= t( 'report.number_of_other_reports_with_lower_recurrent_expenditure' )
 
-            - if global_aggregate_service_percentile( 'water' ) != nil
-              .report--summary--item--value.report--summary--item--value-title= report_integer_percentage_value_for( global_aggregate_service_percentile( 'water' ) )
+            - if advanced_percentile_comparison( :percentage_of_population_that_meets_all_norms, 'water' )[0] != nil
+              .report--summary--item--value.report--summary--item--value-title= report_integer_percentage_value_for( advanced_percentile_comparison( :percentage_of_population_that_meets_all_norms, 'water' )[0] || 0 )
               .report--summary--item--subtitle= t( 'report.number_of_other_reports_with_lower_recurrent_expenditure' )
 
       - else
@@ -349,23 +349,23 @@
         .report--comparison_expenditure--item
           .report--comparison_expenditure--item--title= t( 'report.capital_expenditure' )
           .report--comparison_expenditure--result
-            .report--comparison_expenditure--result--value= report_integer_percentage_value_for( user_capital_expenditure_percentile( 'water' )[0] )
-            .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => user_capital_expenditure_percentile( 'water' )[0] }
-            .report--comparison_expenditure--result--sample= user_capital_expenditure_percentile( 'water' )[1]
+            .report--comparison_expenditure--result--value= report_integer_percentage_value_for( advanced_percentile_comparison_for_user( :total_service_area_capital_expenditure, 'water' )[0] )
+            .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => advanced_percentile_comparison_for_user( :total_service_area_capital_expenditure, 'water' )[0] }
+            .report--comparison_expenditure--result--sample= advanced_percentile_comparison_for_user( :total_service_area_capital_expenditure, 'water' )[1]
           .report--comparison_expenditure--result
-            .report--comparison_expenditure--result--value= report_integer_percentage_value_for( global_capital_expenditure_percentile( 'water' )[0] )
-            .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => global_capital_expenditure_percentile( 'water' )[0] }
-            .report--comparison_expenditure--result--sample= global_capital_expenditure_percentile( 'water' )[1]
+            .report--comparison_expenditure--result--value= report_integer_percentage_value_for( advanced_percentile_comparison( :total_service_area_capital_expenditure, 'water' )[0] )
+            .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => advanced_percentile_comparison( :total_service_area_capital_expenditure, 'water' )[0] }
+            .report--comparison_expenditure--result--sample= advanced_percentile_comparison( :total_service_area_capital_expenditure, 'water' )[1]
         .report--comparison_expenditure--item
           .report--comparison_expenditure--item--title= t( 'report.recurrent_expenditure' )
           .report--comparison_expenditure--result
-            .report--comparison_expenditure--result--value= report_integer_percentage_value_for( user_recurrent_expenditure_percentile( 'water' )[0] )
-            .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => user_recurrent_expenditure_percentile( 'water' )[0] }
-            .report--comparison_expenditure--result--sample= user_recurrent_expenditure_percentile( 'water' )[1]
+            .report--comparison_expenditure--result--value= report_integer_percentage_value_for( advanced_percentile_comparison_for_user( :total_service_area_recurrent_expenditure, 'water' )[0] )
+            .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => advanced_percentile_comparison_for_user( :total_service_area_recurrent_expenditure, 'water' )[0] }
+            .report--comparison_expenditure--result--sample= advanced_percentile_comparison_for_user( :total_service_area_recurrent_expenditure, 'water' )[1]
           .report--comparison_expenditure--result
-            .report--comparison_expenditure--result--value= report_integer_percentage_value_for( global_recurrent_expenditure_percentile( 'water' )[0] )
-            .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => global_recurrent_expenditure_percentile( 'water' )[0] }
-            .report--comparison_expenditure--result--sample= global_recurrent_expenditure_percentile( 'water' )[1]
+            .report--comparison_expenditure--result--value= report_integer_percentage_value_for( advanced_percentile_comparison( :total_service_area_recurrent_expenditure, 'water' )[0] )
+            .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => advanced_percentile_comparison( :total_service_area_recurrent_expenditure, 'water' )[0] }
+            .report--comparison_expenditure--result--sample= advanced_percentile_comparison( :total_service_area_recurrent_expenditure, 'water' )[1]
 
         .report--comparison_expenditure--key
           .report--comparison_expenditure--key--item
@@ -386,23 +386,23 @@
           .report--comparison_expenditure--item
             .report--comparison_expenditure--item--title= t( 'report.capital_expenditure' )
             .report--comparison_expenditure--result
-              .report--comparison_expenditure--result--value= report_integer_percentage_value_for( user_technology_capital_expenditure_percentile( 'water', technology )[0] )
-              .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => user_technology_capital_expenditure_percentile( 'water', technology )[0] }
-              .report--comparison_expenditure--result--sample= user_technology_capital_expenditure_percentile( 'water', technology )[1]
+              .report--comparison_expenditure--result--value= report_integer_percentage_value_for( advanced_percentile_comparison_for_user_for_technology( :service_area_capital_expenditure_for_technology, 'water', technology )[0] )
+              .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => advanced_percentile_comparison_for_user_for_technology( :service_area_capital_expenditure_for_technology, 'water', technology )[0] }
+              .report--comparison_expenditure--result--sample= advanced_percentile_comparison_for_user_for_technology( :service_area_capital_expenditure_for_technology, 'water', technology )[1]
             .report--comparison_expenditure--result
-              .report--comparison_expenditure--result--value= report_integer_percentage_value_for( global_technology_capital_expenditure_percentile( 'water', technology )[0] )
-              .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => global_technology_capital_expenditure_percentile( 'water', technology )[0] }
-              .report--comparison_expenditure--result--sample= global_technology_capital_expenditure_percentile( 'water', technology )[1]
+              .report--comparison_expenditure--result--value= report_integer_percentage_value_for( advanced_percentile_comparison_for_technology( :service_area_capital_expenditure_for_technology, 'water', technology )[0] )
+              .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => advanced_percentile_comparison_for_technology( :service_area_capital_expenditure_for_technology, 'water', technology )[0] }
+              .report--comparison_expenditure--result--sample= advanced_percentile_comparison_for_technology( :service_area_capital_expenditure_for_technology, 'water', technology )[1]
           .report--comparison_expenditure--item
             .report--comparison_expenditure--item--title= t( 'report.recurrent_expenditure' )
             .report--comparison_expenditure--result
-              .report--comparison_expenditure--result--value= report_integer_percentage_value_for( user_technology_recurrent_expenditure_percentile( 'water', technology )[0] )
-              .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => user_technology_recurrent_expenditure_percentile( 'water', technology )[0] }
-              .report--comparison_expenditure--result--sample= user_technology_recurrent_expenditure_percentile( 'water', technology )[1]
+              .report--comparison_expenditure--result--value= report_integer_percentage_value_for( advanced_percentile_comparison_for_user_for_technology( :service_area_recurrent_expenditure_for_technology, 'water', technology )[0] )
+              .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => advanced_percentile_comparison_for_user_for_technology( :service_area_recurrent_expenditure_for_technology, 'water', technology )[0] }
+              .report--comparison_expenditure--result--sample= advanced_percentile_comparison_for_user_for_technology( :service_area_recurrent_expenditure_for_technology, 'water', technology )[1]
             .report--comparison_expenditure--result
-              .report--comparison_expenditure--result--value= report_integer_percentage_value_for( global_technology_recurrent_expenditure_percentile( 'water', technology )[0] )
-              .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => global_technology_recurrent_expenditure_percentile( 'water', technology )[0] }
-              .report--comparison_expenditure--result--sample= global_technology_recurrent_expenditure_percentile( 'water', technology )[1]
+              .report--comparison_expenditure--result--value= report_integer_percentage_value_for( advanced_percentile_comparison_for_technology( :service_area_recurrent_expenditure_for_technology, 'water', technology )[0] )
+              .report--comparison_expenditure--result--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => advanced_percentile_comparison_for_technology( :service_area_recurrent_expenditure_for_technology, 'water', technology )[0] }
+              .report--comparison_expenditure--result--sample= advanced_percentile_comparison_for_technology( :service_area_recurrent_expenditure_for_technology, 'water', technology )[1]
 
           .report--comparison_expenditure--key
             .report--comparison_expenditure--key--item
@@ -425,46 +425,46 @@
         .report--comparison_expenditure--item.report--comparison_expenditure--item-narrow
           .report--comparison_expenditure--item--title= t( 'report.access' )
           .report--comparison_expenditure--result.report--comparison_expenditure--result-narrow
-            .report--comparison_expenditure--result--value.report--comparison_expenditure--result-narrow--value= report_integer_percentage_value_for( user_service_accessibility_percentile( 'water' )[0] )
-            .report--comparison_expenditure--result--chart.report--comparison_expenditure--result-narrow--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => user_service_accessibility_percentile( 'water' )[0] }
-            .report--comparison_expenditure--result--sample.report--comparison_expenditure--result-narrow--sample= user_service_accessibility_percentile( 'water' )[1]
+            .report--comparison_expenditure--result--value.report--comparison_expenditure--result-narrow--value= report_integer_percentage_value_for( advanced_percentile_comparison_for_user( :percentage_of_population_that_meets_accessibility_norms, 'water' )[0] )
+            .report--comparison_expenditure--result--chart.report--comparison_expenditure--result-narrow--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => advanced_percentile_comparison_for_user( :percentage_of_population_that_meets_accessibility_norms, 'water' )[0] }
+            .report--comparison_expenditure--result--sample.report--comparison_expenditure--result-narrow--sample= advanced_percentile_comparison_for_user( :percentage_of_population_that_meets_accessibility_norms, 'water' )[1]
           .report--comparison_expenditure--result.report--comparison_expenditure--result-narrow
-            .report--comparison_expenditure--result--value.report--comparison_expenditure--result-narrow--value= report_integer_percentage_value_for( global_service_accessibility_percentile( 'water' )[0] )
-            .report--comparison_expenditure--result--chart.report--comparison_expenditure--result-narrow--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => global_service_accessibility_percentile( 'water' )[0] }
-            .report--comparison_expenditure--result--sample.report--comparison_expenditure--result-narrow--sample= global_service_accessibility_percentile( 'water' )[1]
+            .report--comparison_expenditure--result--value.report--comparison_expenditure--result-narrow--value= report_integer_percentage_value_for( advanced_percentile_comparison( :percentage_of_population_that_meets_accessibility_norms, 'water' )[0] )
+            .report--comparison_expenditure--result--chart.report--comparison_expenditure--result-narrow--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => advanced_percentile_comparison( :percentage_of_population_that_meets_accessibility_norms, 'water' )[0] }
+            .report--comparison_expenditure--result--sample.report--comparison_expenditure--result-narrow--sample= advanced_percentile_comparison( :percentage_of_population_that_meets_accessibility_norms, 'water' )[1]
 
         .report--comparison_expenditure--item.report--comparison_expenditure--item-narrow
           .report--comparison_expenditure--item--title= t( 'report.reliability' )
           .report--comparison_expenditure--result.report--comparison_expenditure--result-narrow
-            .report--comparison_expenditure--result--value.report--comparison_expenditure--result-narrow--value= report_integer_percentage_value_for( user_service_reliability_percentile( 'water' )[0] )
-            .report--comparison_expenditure--result--chart.report--comparison_expenditure--result-narrow--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => user_service_reliability_percentile( 'water' )[0] }
-            .report--comparison_expenditure--result--sample.report--comparison_expenditure--result-narrow--sample= user_service_reliability_percentile( 'water' )[1]
+            .report--comparison_expenditure--result--value.report--comparison_expenditure--result-narrow--value= report_integer_percentage_value_for( advanced_percentile_comparison_for_user( :percentage_of_population_that_meets_reliability_norms, 'water' )[0] )
+            .report--comparison_expenditure--result--chart.report--comparison_expenditure--result-narrow--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => advanced_percentile_comparison_for_user( :percentage_of_population_that_meets_reliability_norms, 'water' )[0] }
+            .report--comparison_expenditure--result--sample.report--comparison_expenditure--result-narrow--sample= advanced_percentile_comparison_for_user( :percentage_of_population_that_meets_reliability_norms, 'water' )[1]
           .report--comparison_expenditure--result.report--comparison_expenditure--result-narrow
-            .report--comparison_expenditure--result--value.report--comparison_expenditure--result-narrow--value= report_integer_percentage_value_for( global_service_reliability_percentile( 'water' )[0] )
-            .report--comparison_expenditure--result--chart.report--comparison_expenditure--result-narrow--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => global_service_reliability_percentile( 'water' )[0] }
-            .report--comparison_expenditure--result--sample.report--comparison_expenditure--result-narrow--sample= global_service_reliability_percentile( 'water' )[1]
+            .report--comparison_expenditure--result--value.report--comparison_expenditure--result-narrow--value= report_integer_percentage_value_for( advanced_percentile_comparison( :percentage_of_population_that_meets_reliability_norms, 'water' )[0] )
+            .report--comparison_expenditure--result--chart.report--comparison_expenditure--result-narrow--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => advanced_percentile_comparison( :percentage_of_population_that_meets_reliability_norms, 'water' )[0] }
+            .report--comparison_expenditure--result--sample.report--comparison_expenditure--result-narrow--sample= advanced_percentile_comparison( :percentage_of_population_that_meets_reliability_norms, 'water' )[1]
 
         .report--comparison_expenditure--item.report--comparison_expenditure--item-narrow
           .report--comparison_expenditure--item--title= t( 'report.quality' )
           .report--comparison_expenditure--result.report--comparison_expenditure--result-narrow
-            .report--comparison_expenditure--result--value.report--comparison_expenditure--result-narrow--value= report_integer_percentage_value_for( user_service_quality_percentile( 'water' )[0] )
-            .report--comparison_expenditure--result--chart.report--comparison_expenditure--result-narrow--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => user_service_quality_percentile( 'water' )[0] }
-            .report--comparison_expenditure--result--sample.report--comparison_expenditure--result-narrow--sample= user_service_quality_percentile( 'water' )[1]
+            .report--comparison_expenditure--result--value.report--comparison_expenditure--result-narrow--value= report_integer_percentage_value_for( advanced_percentile_comparison_for_user( :percentage_of_population_that_meets_quality_norms, 'water' )[0] )
+            .report--comparison_expenditure--result--chart.report--comparison_expenditure--result-narrow--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => advanced_percentile_comparison_for_user( :percentage_of_population_that_meets_quality_norms, 'water' )[0] }
+            .report--comparison_expenditure--result--sample.report--comparison_expenditure--result-narrow--sample= advanced_percentile_comparison_for_user( :percentage_of_population_that_meets_quality_norms, 'water' )[1]
           .report--comparison_expenditure--result.report--comparison_expenditure--result-narrow
-            .report--comparison_expenditure--result--value.report--comparison_expenditure--result-narrow--value= report_integer_percentage_value_for( global_service_quality_percentile( 'water' )[0] )
-            .report--comparison_expenditure--result--chart.report--comparison_expenditure--result-narrow--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => global_service_quality_percentile( 'water' )[0] }
-            .report--comparison_expenditure--result--sample.report--comparison_expenditure--result-narrow--sample= global_service_quality_percentile( 'water' )[1]
+            .report--comparison_expenditure--result--value.report--comparison_expenditure--result-narrow--value= report_integer_percentage_value_for( advanced_percentile_comparison( :percentage_of_population_that_meets_quality_norms, 'water' )[0] )
+            .report--comparison_expenditure--result--chart.report--comparison_expenditure--result-narrow--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => advanced_percentile_comparison( :percentage_of_population_that_meets_quality_norms, 'water' )[0] }
+            .report--comparison_expenditure--result--sample.report--comparison_expenditure--result-narrow--sample= advanced_percentile_comparison( :percentage_of_population_that_meets_quality_norms, 'water' )[1]
 
         .report--comparison_expenditure--item.report--comparison_expenditure--item-narrow
           .report--comparison_expenditure--item--title= t( 'report.quantity' )
           .report--comparison_expenditure--result.report--comparison_expenditure--result-narrow
-            .report--comparison_expenditure--result--value.report--comparison_expenditure--result-narrow--value= report_integer_percentage_value_for( user_service_quantity_percentile( 'water' )[0] )
-            .report--comparison_expenditure--result--chart.report--comparison_expenditure--result-narrow--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => user_service_quantity_percentile( 'water' )[0] }
-            .report--comparison_expenditure--result--sample.report--comparison_expenditure--result-narrow--sample= user_service_quantity_percentile( 'water' )[1]
+            .report--comparison_expenditure--result--value.report--comparison_expenditure--result-narrow--value= report_integer_percentage_value_for( advanced_percentile_comparison_for_user( :percentage_of_population_that_meets_quantity_norms, 'water' )[0] )
+            .report--comparison_expenditure--result--chart.report--comparison_expenditure--result-narrow--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => advanced_percentile_comparison_for_user( :percentage_of_population_that_meets_quantity_norms, 'water' )[0] }
+            .report--comparison_expenditure--result--sample.report--comparison_expenditure--result-narrow--sample= advanced_percentile_comparison_for_user( :percentage_of_population_that_meets_quantity_norms, 'water' )[1]
           .report--comparison_expenditure--result.report--comparison_expenditure--result-narrow
-            .report--comparison_expenditure--result--value.report--comparison_expenditure--result-narrow--value= report_integer_percentage_value_for( global_service_quantity_percentile( 'water' )[0] )
-            .report--comparison_expenditure--result--chart.report--comparison_expenditure--result-narrow--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => global_service_quantity_percentile( 'water' )[0] }
-            .report--comparison_expenditure--result--sample.report--comparison_expenditure--result-narrow--sample= global_service_quantity_percentile( 'water' )[1]
+            .report--comparison_expenditure--result--value.report--comparison_expenditure--result-narrow--value= report_integer_percentage_value_for( advanced_percentile_comparison( :percentage_of_population_that_meets_quantity_norms, 'water' )[0] )
+            .report--comparison_expenditure--result--chart.report--comparison_expenditure--result-narrow--chart{ 'data-minichart' => 'true', 'data-minichart-percentage' => advanced_percentile_comparison( :percentage_of_population_that_meets_quantity_norms, 'water' )[0] }
+            .report--comparison_expenditure--result--sample.report--comparison_expenditure--result-narrow--sample= advanced_percentile_comparison( :percentage_of_population_that_meets_quantity_norms, 'water' )[1]
 
     - else
       .report--no_data= t( 'report.report_box_no_value' )

@@ -64,11 +64,11 @@ module AdvancedReportHelper
 
   # cumulative expenditure outputs
 
-  def global_capital_expenditure_percentile( report_type )
-    if @global_capital_expenditure_percentile == nil && @global_capital_total_reports == nil
-      global_reports_with_lower_expenditure = 0
-      @global_capital_expenditure_percentile        = 0
-      @global_capital_total_reports                 = 0
+  def advanced_percentile_comparison( metric, report_type )
+    if instance_variable_get( "@global_percentile_#{metric.to_s}" ) == nil && instance_variable_get( "@global_total_reports_#{metric.to_s}" ) == nil
+      reports_lower        = 0
+      global_percentile    = 0
+      global_total_reports = 0
 
       User.all.each do |user|
         user.user_reports.each do |report|
@@ -81,12 +81,12 @@ module AdvancedReportHelper
             # check that report is complete
             if questionnaire.complete?
 
-              if questionnaire.total_service_area_capital_expenditure <= @questionnaire.total_service_area_capital_expenditure
-                global_reports_with_lower_expenditure = global_reports_with_lower_expenditure + 1
+              if questionnaire.send( "#{metric.to_s}" ) <= @questionnaire.send( "#{metric.to_s}" )
+                reports_lower = reports_lower + 1
               end
 
               # increment total to compute percentile
-              @global_capital_total_reports = @global_capital_total_reports + 1
+              global_total_reports = global_total_reports + 1
 
             end
 
@@ -95,17 +95,21 @@ module AdvancedReportHelper
         end
       end
 
-      @global_capital_expenditure_percentile = @global_capital_total_reports > 0 ? 100 * global_reports_with_lower_expenditure / @global_capital_total_reports : '-'
+      global_percentile = global_total_reports > 0 ? 100 * reports_lower / global_total_reports : nil
+
+      # cache values into instance variables
+      instance_variable_set( "@global_percentile_#{metric.to_s}", global_percentile )
+      instance_variable_set( "@global_total_reports_#{metric.to_s}", global_total_reports )
     end
 
-    [ @global_capital_expenditure_percentile, @global_capital_total_reports ]
+    [ instance_variable_get( "@global_percentile_#{metric.to_s}" ), instance_variable_get( "@global_total_reports_#{metric.to_s}" ) ]
   end
 
-  def user_capital_expenditure_percentile( report_type )
-    if @user_capital_expenditure_percentile == nil && @user_capital_total_reports == nil
-      user_reports_with_lower_expenditure = 0
-      @user_capital_expenditure_percentile        = 0
-      @user_capital_total_reports                 = 0
+  def advanced_percentile_comparison_for_user( metric, report_type )
+    if instance_variable_get( "@user_percentile_#{metric.to_s}" ) == nil && instance_variable_get( "@user_total_reports_#{metric.to_s}" ) == nil
+      reports_lower      = 0
+      user_percentile    = 0
+      user_total_reports = 0
 
       current_user.user_reports.each do |report|
 
@@ -117,12 +121,12 @@ module AdvancedReportHelper
           # check that report is complete
           if questionnaire.complete?
 
-            if questionnaire.total_service_area_capital_expenditure <= @questionnaire.total_service_area_capital_expenditure
-              user_reports_with_lower_expenditure = user_reports_with_lower_expenditure + 1
+            if questionnaire.send( "#{metric.to_s}" ) <= @questionnaire.send( "#{metric.to_s}" )
+              reports_lower = reports_lower + 1
             end
 
             # increment total to compute percentile
-            @user_capital_total_reports = @user_capital_total_reports + 1
+            user_total_reports = user_total_reports + 1
 
           end
 
@@ -130,92 +134,24 @@ module AdvancedReportHelper
 
       end
 
-      @user_capital_expenditure_percentile = @user_capital_total_reports > 0 ? 100 * user_reports_with_lower_expenditure / @user_capital_total_reports : '-'
+      user_percentile = user_total_reports > 0 ? 100 * reports_lower / user_total_reports : nil
+
+      # cache values into instance variables
+      instance_variable_set( "@user_percentile_#{metric.to_s}", user_percentile )
+      instance_variable_set( "@user_total_reports_#{metric.to_s}", user_total_reports )
     end
 
-    [ @user_capital_expenditure_percentile, @user_capital_total_reports ]
+    [ instance_variable_get( "@user_percentile_#{metric.to_s}" ), instance_variable_get( "@user_total_reports_#{metric.to_s}" ) ]
   end
 
-  def global_recurrent_expenditure_percentile( report_type )
-    if @global_recurrent_expenditure_percentile == nil && @global_recurrent_total_reports == nil
-      global_reports_with_lower_expenditure = 0
-      @global_recurrent_expenditure_percentile        = 0
-      @global_recurrent_total_reports                 = 0
+  def advanced_percentile_comparison_for_technology( metric, report_type, technology )
+    instance_variable_set( "@global_percentile_for_technology_#{metric.to_s}", {} )    unless instance_variable_get( "@global_percentile_for_technology_#{metric.to_s}" ) != nil
+    instance_variable_set( "@global_total_reports_for_technology_#{metric.to_s}", {} ) unless instance_variable_get( "@global_total_reports_for_technology_#{metric.to_s}" ) != nil
 
-      User.all.each do |user|
-        user.user_reports.each do |report|
-
-          if report.level == 'advanced' && report.type == report_type
-
-            # unpack questionnaire model from report
-            questionnaire = report.unpack_questionnaire
-
-            # check that report is complete
-            if questionnaire.complete?
-
-              if questionnaire.total_service_area_recurrent_expenditure <= @questionnaire.total_service_area_recurrent_expenditure
-                global_reports_with_lower_expenditure = global_reports_with_lower_expenditure + 1
-              end
-
-              # increment total to compute percentile
-              @global_recurrent_total_reports = @global_recurrent_total_reports + 1
-
-            end
-
-          end
-
-        end
-      end
-
-      @global_recurrent_expenditure_percentile = @global_recurrent_total_reports > 0 ? 100 * global_reports_with_lower_expenditure / @global_recurrent_total_reports : '-'
-    end
-
-    [ @global_recurrent_expenditure_percentile, @global_recurrent_total_reports ]
-  end
-
-  def user_recurrent_expenditure_percentile( report_type )
-    if @user_recurrent_expenditure_percentile == nil && @user_recurrent_total_reports == nil
-      user_reports_with_lower_expenditure = 0
-      @user_recurrent_expenditure_percentile        = 0
-      @user_recurrent_total_reports                 = 0
-
-      current_user.user_reports.each do |report|
-
-        if report.level == 'advanced' && report.type == report_type
-
-          # unpack questionnaire model from report
-          questionnaire = report.unpack_questionnaire
-
-          # check that report is complete
-          if questionnaire.complete?
-
-            if questionnaire.total_service_area_recurrent_expenditure <= @questionnaire.total_service_area_recurrent_expenditure
-              user_reports_with_lower_expenditure = user_reports_with_lower_expenditure + 1
-            end
-
-            # increment total to compute percentile
-            @user_recurrent_total_reports = @user_recurrent_total_reports + 1
-
-          end
-
-        end
-
-      end
-
-      @user_recurrent_expenditure_percentile = @user_recurrent_total_reports > 0 ? 100 * user_reports_with_lower_expenditure / @user_recurrent_total_reports : '-'
-    end
-
-    [ @user_recurrent_expenditure_percentile, @user_recurrent_total_reports ]
-  end
-
-  def global_technology_capital_expenditure_percentile( report_type, technology )
-    @global_technology_capital_expenditure_percentile = {} unless @global_technology_capital_expenditure_percentile != nil
-    @global_technology_capital_total_reports          = {} unless @global_technology_capital_total_reports != nil
-
-    if @global_technology_capital_expenditure_percentile[ technology ] == nil && @global_technology_capital_total_reports[ technology ] == nil
-      technology_reports_with_lower_expenditure                       = 0
-      @global_technology_capital_expenditure_percentile[ technology ] = 0
-      @global_technology_capital_total_reports[ technology ]          = 0
+    if instance_variable_get( "@global_percentile_for_technology_#{metric.to_s}" )[ technology ] == nil && instance_variable_get( "@global_total_reports_for_technology_#{metric.to_s}" )[ technology ] == nil
+      reports_lower        = 0
+      global_percentile    = 0
+      global_total_reports = 0
 
       User.all.each do |user|
         user.user_reports.each do |report|
@@ -228,12 +164,12 @@ module AdvancedReportHelper
             # check that report is complete
             if questionnaire.complete? && questionnaire.supply_system_technologies.include?( technology )
 
-              if questionnaire.service_area_capital_expenditure_for_technology( technology ) <= @questionnaire.service_area_capital_expenditure_for_technology( technology )
-                technology_reports_with_lower_expenditure = technology_reports_with_lower_expenditure + 1
+              if questionnaire.send( "#{metric.to_s}", technology ) <= @questionnaire.send( "#{metric.to_s}", technology )
+                reports_lower = reports_lower + 1
               end
 
               # increment total to compute percentile
-              @global_technology_capital_total_reports[ technology ] = @global_technology_capital_total_reports[ technology ] + 1
+              global_total_reports = global_total_reports + 1
 
             end
 
@@ -242,20 +178,24 @@ module AdvancedReportHelper
         end
       end
 
-      @global_technology_capital_expenditure_percentile[ technology ] = @global_technology_capital_total_reports[ technology ] > 0 ? 100 * technology_reports_with_lower_expenditure / @global_technology_capital_total_reports[ technology ] : '-'
+      global_percentile = global_total_reports > 0 ? 100 * reports_lower / global_total_reports : nil
+
+      # cache values into instance variables
+      instance_variable_get( "@global_percentile_for_technology_#{metric.to_s}" )[ technology ]    = global_percentile
+      instance_variable_get( "@global_total_reports_for_technology_#{metric.to_s}" )[ technology ] = global_total_reports
     end
 
-    [ @global_technology_capital_expenditure_percentile[ technology ], @global_technology_capital_total_reports[ technology ] ]
+    [ instance_variable_get( "@global_percentile_for_technology_#{metric.to_s}" )[ technology ], instance_variable_get( "@global_total_reports_for_technology_#{metric.to_s}" )[ technology ] ]
   end
 
-  def user_technology_capital_expenditure_percentile( report_type, technology )
-    @user_technology_capital_expenditure_percentile = {} unless @user_technology_capital_expenditure_percentile != nil
-    @user_technology_capital_total_reports          = {} unless @user_technology_capital_total_reports != nil
+  def advanced_percentile_comparison_for_user_for_technology( metric, report_type, technology )
+    instance_variable_set( "@user_percentile_for_technology_#{metric.to_s}", {} )    unless instance_variable_get( "@user_percentile_for_technology_#{metric.to_s}" ) != nil
+    instance_variable_set( "@user_total_reports_for_technology_#{metric.to_s}", {} ) unless instance_variable_get( "@user_total_reports_for_technology_#{metric.to_s}" ) != nil
 
-    if @user_technology_capital_expenditure_percentile[ technology ] == nil && @user_technology_capital_total_reports[ technology ] == nil
-      user_reports_with_lower_expenditure                           = 0
-      @user_technology_capital_expenditure_percentile[ technology ] = 0
-      @user_technology_capital_total_reports[ technology ]          = 0
+    if instance_variable_get( "@user_percentile_for_technology_#{metric.to_s}" )[ technology ] == nil && instance_variable_get( "@user_total_reports_for_technology_#{metric.to_s}" )[ technology ] == nil
+      reports_lower      = 0
+      user_percentile    = 0
+      user_total_reports = 0
 
       current_user.user_reports.each do |report|
 
@@ -267,12 +207,12 @@ module AdvancedReportHelper
           # check that report is complete
           if questionnaire.complete? && questionnaire.supply_system_technologies.include?( technology )
 
-            if questionnaire.service_area_capital_expenditure_for_technology( technology ) <= @questionnaire.service_area_capital_expenditure_for_technology( technology )
-              user_reports_with_lower_expenditure = user_reports_with_lower_expenditure + 1
+            if questionnaire.send( "#{metric.to_s}", technology ) <= @questionnaire.send( "#{metric.to_s}", technology )
+              reports_lower = reports_lower + 1
             end
 
             # increment total to compute percentile
-            @user_technology_capital_total_reports[ technology ] = @user_technology_capital_total_reports[ technology ] + 1
+            user_total_reports = user_total_reports + 1
 
           end
 
@@ -280,507 +220,14 @@ module AdvancedReportHelper
 
       end
 
-      @user_technology_capital_expenditure_percentile[ technology ] = @user_technology_capital_total_reports[ technology ] > 0 ? 100 * user_reports_with_lower_expenditure / @user_technology_capital_total_reports[ technology ] : '-'
+      user_percentile = user_total_reports > 0 ? 100 * reports_lower / user_total_reports : nil
+
+      # cache values into instance variables
+      instance_variable_get( "@user_percentile_for_technology_#{metric.to_s}" )[ technology ]    = user_percentile
+      instance_variable_get( "@user_total_reports_for_technology_#{metric.to_s}" )[ technology ] = user_total_reports
     end
 
-    [ @user_technology_capital_expenditure_percentile[ technology ], @user_technology_capital_total_reports[ technology ] ]
-  end
-
-  def global_technology_recurrent_expenditure_percentile( report_type, technology )
-    @global_technology_recurrent_expenditure_percentile = {} unless @global_technology_recurrent_expenditure_percentile != nil
-    @global_technology_recurrent_total_reports          = {} unless @global_technology_recurrent_total_reports != nil
-
-    if @global_technology_recurrent_expenditure_percentile[ technology ] == nil && @global_technology_recurrent_total_reports[ technology ] == nil
-      global_reports_with_lower_expenditure               = 0
-      @global_technology_recurrent_expenditure_percentile[ technology ] = 0
-      @global_technology_recurrent_total_reports[ technology ]          = 0
-
-      User.all.each do |user|
-        user.user_reports.each do |report|
-
-          if report.level == 'advanced' && report.type == report_type
-
-            # unpack questionnaire model from report
-            questionnaire = report.unpack_questionnaire
-
-            # check that report is complete
-            if questionnaire.complete?
-
-              if questionnaire.service_area_recurrent_expenditure_for_technology( technology ) <= @questionnaire.service_area_recurrent_expenditure_for_technology( technology )
-                global_reports_with_lower_expenditure = global_reports_with_lower_expenditure + 1
-              end
-
-              # increment total to compute percentile
-              @global_technology_recurrent_total_reports[ technology ] = @global_technology_recurrent_total_reports[ technology ] + 1
-
-            end
-
-          end
-
-        end
-      end
-
-      @global_technology_recurrent_expenditure_percentile[ technology ] = @global_technology_recurrent_total_reports[ technology ] > 0 ? 100 * global_reports_with_lower_expenditure / @global_technology_recurrent_total_reports[ technology ] : '-'
-    end
-
-    [ @global_technology_recurrent_expenditure_percentile[ technology ], @global_technology_recurrent_total_reports[ technology ] ]
-  end
-
-  def user_technology_recurrent_expenditure_percentile( report_type, technology )
-    @user_technology_recurrent_expenditure_percentile = {} unless @user_technology_recurrent_expenditure_percentile != nil
-    @user_technology_recurrent_total_reports          = {} unless @user_technology_recurrent_total_reports != nil
-
-    if @user_technology_recurrent_expenditure_percentile[ technology ] == nil && @user_technology_recurrent_total_reports[ technology ] == nil
-      user_reports_with_lower_expenditure               = 0
-      @user_technology_recurrent_expenditure_percentile[ technology ] = 0
-      @user_technology_recurrent_total_reports[ technology ]          = 0
-
-      current_user.user_reports.each do |report|
-
-        if report.level == 'advanced' && report.type == report_type
-
-          # unpack questionnaire model from report
-          questionnaire = report.unpack_questionnaire
-
-          # check that report is complete
-          if questionnaire.complete?
-
-            if questionnaire.service_area_recurrent_expenditure_for_technology( technology ) <= @questionnaire.service_area_recurrent_expenditure_for_technology( technology )
-              user_reports_with_lower_expenditure = user_reports_with_lower_expenditure + 1
-            end
-
-            # increment total to compute percentile
-            @user_technology_recurrent_total_reports[ technology ] = @user_technology_recurrent_total_reports[ technology ] + 1
-
-          end
-
-        end
-
-      end
-
-      @user_technology_recurrent_expenditure_percentile[ technology ] = @user_technology_recurrent_total_reports[ technology ] > 0 ? 100 * user_reports_with_lower_expenditure / @user_technology_recurrent_total_reports[ technology ] : '-'
-    end
-
-    [ @user_technology_recurrent_expenditure_percentile[ technology ], @user_technology_recurrent_total_reports[ technology ] ]
-  end
-
-  # cumulative service level outputs
-
-  def global_service_accessibility_percentile( report_type )
-    if @global_service_accessibility_percentile == nil && @global_service_accessibility_total_reports == nil
-      services_with_lower_accessibility           = 0
-      @global_service_accessibility_percentile    = 0
-      @global_service_accessibility_total_reports = 0
-
-      User.all.each do |user|
-        user.user_reports.each do |report|
-          if report.level == 'advanced' && report.type == report_type
-
-            # unpack questionnaire model from report
-            questionnaire = report.unpack_questionnaire
-
-            # check that report is complete
-            if questionnaire.complete?
-
-              if questionnaire.percentage_of_population_that_meets_accessibility_norms <= @questionnaire.percentage_of_population_that_meets_accessibility_norms
-                services_with_lower_accessibility = services_with_lower_accessibility + 1
-              end
-
-              # increment total to compute percentile
-              @global_service_accessibility_total_reports = @global_service_accessibility_total_reports + 1
-            end
-          end
-        end
-      end
-
-      @global_service_accessibility_percentile = @global_service_accessibility_total_reports > 0 ? 100 * services_with_lower_accessibility    / @global_service_accessibility_total_reports : '-'
-    end
-
-    [ @global_service_accessibility_percentile, @global_service_accessibility_total_reports ]
-  end
-
-  def user_service_accessibility_percentile( report_type )
-    if @user_service_accessibility_percentile == nil && @user_service_accessibility_total_reports == nil
-      services_with_lower_accessibility         = 0
-      @user_service_accessibility_percentile    = 0
-      @user_service_accessibility_total_reports = 0
-
-      current_user.user_reports.each do |report|
-        if report.level == 'advanced' && report.type == report_type
-
-          # unpack questionnaire model from report
-          questionnaire = report.unpack_questionnaire
-
-          # check that report is complete
-          if questionnaire.complete?
-
-            if questionnaire.percentage_of_population_that_meets_accessibility_norms <= @questionnaire.percentage_of_population_that_meets_accessibility_norms
-              services_with_lower_accessibility = services_with_lower_accessibility + 1
-            end
-
-            # increment total to compute percentile
-            @user_service_accessibility_total_reports = @user_service_accessibility_total_reports + 1
-          end
-        end
-      end
-
-      @user_service_accessibility_percentile = @user_service_accessibility_total_reports > 0 ? 100 * services_with_lower_accessibility / @user_service_accessibility_total_reports : '-'
-    end
-
-    [ @user_service_accessibility_percentile, @user_service_accessibility_total_reports ]
-  end
-
-  def global_service_use_percentile( report_type )
-    if @global_service_use_percentile == nil && @global_service_use_total_reports == nil
-      services_with_lower_use           = 0
-      @global_service_use_percentile    = 0
-      @global_service_use_total_reports = 0
-
-      User.all.each do |user|
-        user.user_reports.each do |report|
-          if report.level == 'advanced' && report.type == report_type
-
-            # unpack questionnaire model from report
-            questionnaire = report.unpack_questionnaire
-
-            # check that report is complete
-            if questionnaire.complete?
-
-              if questionnaire.percentage_of_population_that_meets_use_norms <= @questionnaire.percentage_of_population_that_meets_use_norms
-                services_with_lower_use = services_with_lower_use + 1
-              end
-
-              # increment total to compute percentile
-              @global_service_use_total_reports = @global_service_use_total_reports + 1
-            end
-          end
-        end
-      end
-
-      @global_service_use_percentile = @global_service_use_total_reports > 0 ? 100 * services_with_lower_use    / @global_service_use_total_reports : '-'
-    end
-
-    [ @global_service_use_percentile, @global_service_use_total_reports ]
-  end
-
-  def user_service_use_percentile( report_type )
-    if @user_service_use_percentile == nil && @user_service_use_total_reports == nil
-      services_with_lower_use         = 0
-      @user_service_use_percentile    = 0
-      @user_service_use_total_reports = 0
-
-      current_user.user_reports.each do |report|
-        if report.level == 'advanced' && report.type == report_type
-
-          # unpack questionnaire model from report
-          questionnaire = report.unpack_questionnaire
-
-          # check that report is complete
-          if questionnaire.complete?
-
-            if questionnaire.percentage_of_population_that_meets_use_norms <= @questionnaire.percentage_of_population_that_meets_use_norms
-              services_with_lower_use = services_with_lower_use + 1
-            end
-
-            # increment total to compute percentile
-            @user_service_use_total_reports = @user_service_use_total_reports + 1
-          end
-        end
-      end
-
-      @user_service_use_percentile = @user_service_use_total_reports > 0 ? 100 * services_with_lower_use / @user_service_use_total_reports : '-'
-    end
-
-    [ @user_service_use_percentile, @user_service_use_total_reports ]
-  end
-
-  def global_service_reliability_percentile( report_type )
-    if @global_service_reliability_percentile == nil && @global_service_reliability_total_reports == nil
-      services_with_lower_reliability           = 0
-      @global_service_reliability_percentile    = 0
-      @global_service_reliability_total_reports = 0
-
-      User.all.each do |user|
-        user.user_reports.each do |report|
-          if report.level == 'advanced' && report.type == report_type
-
-            # unpack questionnaire model from report
-            questionnaire = report.unpack_questionnaire
-
-            # check that report is complete
-            if questionnaire.complete?
-
-              if questionnaire.percentage_of_population_that_meets_reliability_norms <= @questionnaire.percentage_of_population_that_meets_reliability_norms
-                services_with_lower_reliability = services_with_lower_reliability + 1
-              end
-
-              # increment total to compute percentile
-              @global_service_reliability_total_reports = @global_service_reliability_total_reports + 1
-            end
-          end
-        end
-      end
-
-      @global_service_reliability_percentile = @global_service_reliability_total_reports > 0 ? 100 * services_with_lower_reliability    / @global_service_reliability_total_reports : '-'
-    end
-
-    [ @global_service_reliability_percentile, @global_service_reliability_total_reports ]
-  end
-
-  def user_service_reliability_percentile( report_type )
-    if @user_service_reliability_percentile == nil && @user_service_reliability_total_reports == nil
-      services_with_lower_reliability         = 0
-      @user_service_reliability_percentile    = 0
-      @user_service_reliability_total_reports = 0
-
-      current_user.user_reports.each do |report|
-        if report.level == 'advanced' && report.type == report_type
-
-          # unpack questionnaire model from report
-          questionnaire = report.unpack_questionnaire
-
-          # check that report is complete
-          if questionnaire.complete?
-
-            if questionnaire.percentage_of_population_that_meets_reliability_norms <= @questionnaire.percentage_of_population_that_meets_reliability_norms
-              services_with_lower_reliability = services_with_lower_reliability + 1
-            end
-
-            # increment total to compute percentile
-            @user_service_reliability_total_reports = @user_service_reliability_total_reports + 1
-          end
-        end
-      end
-
-      @user_service_reliability_percentile = @user_service_reliability_total_reports > 0 ? 100 * services_with_lower_reliability / @user_service_reliability_total_reports : '-'
-    end
-
-    [ @user_service_reliability_percentile, @user_service_reliability_total_reports ]
-  end
-
-  def global_service_environmental_protection_percentile( report_type )
-    if @global_service_environmental_protection_percentile == nil && @global_service_environmental_protection_total_reports == nil
-      services_with_lower_environmental_protection           = 0
-      @global_service_environmental_protection_percentile    = 0
-      @global_service_environmental_protection_total_reports = 0
-
-      User.all.each do |user|
-        user.user_reports.each do |report|
-          if report.level == 'advanced' && report.type == report_type
-
-            # unpack questionnaire model from report
-            questionnaire = report.unpack_questionnaire
-
-            # check that report is complete
-            if questionnaire.complete?
-
-              if questionnaire.percentage_of_population_that_meets_environmental_protection_norms <= @questionnaire.percentage_of_population_that_meets_environmental_protection_norms
-                services_with_lower_environmental_protection = services_with_lower_environmental_protection + 1
-              end
-
-              # increment total to compute percentile
-              @global_service_environmental_protection_total_reports = @global_service_environmental_protection_total_reports + 1
-            end
-          end
-        end
-      end
-
-      @global_service_environmental_protection_percentile = @global_service_environmental_protection_total_reports > 0 ? 100 * services_with_lower_environmental_protection    / @global_service_environmental_protection_total_reports : '-'
-    end
-
-    [ @global_service_environmental_protection_percentile, @global_service_environmental_protection_total_reports ]
-  end
-
-  def user_service_environmental_protection_percentile( report_type )
-    if @user_service_environmental_protection_percentile == nil && @user_service_environmental_protection_total_reports == nil
-      services_with_lower_environmental_protection         = 0
-      @user_service_environmental_protection_percentile    = 0
-      @user_service_environmental_protection_total_reports = 0
-
-      current_user.user_reports.each do |report|
-        if report.level == 'advanced' && report.type == report_type
-
-          # unpack questionnaire model from report
-          questionnaire = report.unpack_questionnaire
-
-          # check that report is complete
-          if questionnaire.complete?
-
-            if questionnaire.percentage_of_population_that_meets_environmental_protection_norms <= @questionnaire.percentage_of_population_that_meets_environmental_protection_norms
-              services_with_lower_environmental_protection = services_with_lower_environmental_protection + 1
-            end
-
-            # increment total to compute percentile
-            @user_service_environmental_protection_total_reports = @user_service_environmental_protection_total_reports + 1
-          end
-        end
-      end
-
-      @user_service_environmental_protection_percentile = @user_service_environmental_protection_total_reports > 0 ? 100 * services_with_lower_environmental_protection / @user_service_environmental_protection_total_reports : '-'
-    end
-
-    [ @user_service_environmental_protection_percentile, @user_service_environmental_protection_total_reports ]
-  end
-
-  def global_service_quantity_percentile( report_type )
-    if @global_service_quantity_percentile == nil && @global_service_quantity_total_reports == nil
-      services_with_lower_quantity           = 0
-      @global_service_quantity_percentile    = 0
-      @global_service_quantity_total_reports = 0
-
-      User.all.each do |user|
-        user.user_reports.each do |report|
-          if report.level == 'advanced' && report.type == report_type
-
-            # unpack questionnaire model from report
-            questionnaire = report.unpack_questionnaire
-
-            # check that report is complete
-            if questionnaire.complete?
-
-              if questionnaire.percentage_of_population_that_meets_quantity_norms <= @questionnaire.percentage_of_population_that_meets_quantity_norms
-                services_with_lower_quantity = services_with_lower_quantity + 1
-              end
-
-              # increment total to compute percentile
-              @global_service_quantity_total_reports = @global_service_quantity_total_reports + 1
-            end
-          end
-        end
-      end
-
-      @global_service_quantity_percentile = @global_service_quantity_total_reports > 0 ? 100 * services_with_lower_quantity    / @global_service_quantity_total_reports : '-'
-    end
-
-    [ @global_service_quantity_percentile, @global_service_quantity_total_reports ]
-  end
-
-  def user_service_quantity_percentile( report_type )
-    if @user_service_quantity_percentile == nil && @user_service_quantity_total_reports == nil
-      services_with_lower_quantity         = 0
-      @user_service_quantity_percentile    = 0
-      @user_service_quantity_total_reports = 0
-
-      current_user.user_reports.each do |report|
-        if report.level == 'advanced' && report.type == report_type
-
-          # unpack questionnaire model from report
-          questionnaire = report.unpack_questionnaire
-
-          # check that report is complete
-          if questionnaire.complete?
-
-            if questionnaire.percentage_of_population_that_meets_quantity_norms <= @questionnaire.percentage_of_population_that_meets_quantity_norms
-              services_with_lower_quantity = services_with_lower_quantity + 1
-            end
-
-            # increment total to compute percentile
-            @user_service_quantity_total_reports = @user_service_quantity_total_reports + 1
-          end
-        end
-      end
-
-      @user_service_quantity_percentile = @user_service_quantity_total_reports > 0 ? 100 * services_with_lower_quantity / @user_service_quantity_total_reports : '-'
-    end
-
-    [ @user_service_quantity_percentile, @user_service_quantity_total_reports ]
-  end
-
-  def global_service_quality_percentile( report_type )
-    if @global_service_quality_percentile == nil && @global_service_quality_total_reports == nil
-      services_with_lower_quality           = 0
-      @global_service_quality_percentile    = 0
-      @global_service_quality_total_reports = 0
-
-      User.all.each do |user|
-        user.user_reports.each do |report|
-          if report.level == 'advanced' && report.type == report_type
-
-            # unpack questionnaire model from report
-            questionnaire = report.unpack_questionnaire
-
-            # check that report is complete
-            if questionnaire.complete?
-
-              if questionnaire.percentage_of_population_that_meets_quality_norms <= @questionnaire.percentage_of_population_that_meets_quality_norms
-                services_with_lower_quality = services_with_lower_quality + 1
-              end
-
-              # increment total to compute percentile
-              @global_service_quality_total_reports = @global_service_quality_total_reports + 1
-            end
-          end
-        end
-      end
-
-      @global_service_quality_percentile = @global_service_quality_total_reports > 0 ? 100 * services_with_lower_quality    / @global_service_quality_total_reports : '-'
-    end
-
-    [ @global_service_quality_percentile, @global_service_quality_total_reports ]
-  end
-
-  def user_service_quality_percentile( report_type )
-    if @user_service_quality_percentile == nil && @user_service_quality_total_reports == nil
-      services_with_lower_quality         = 0
-      @user_service_quality_percentile    = 0
-      @user_service_quality_total_reports = 0
-
-      current_user.user_reports.each do |report|
-        if report.level == 'advanced' && report.type == report_type
-
-          # unpack questionnaire model from report
-          questionnaire = report.unpack_questionnaire
-
-          # check that report is complete
-          if questionnaire.complete?
-
-            if questionnaire.percentage_of_population_that_meets_quality_norms <= @questionnaire.percentage_of_population_that_meets_quality_norms
-              services_with_lower_quality = services_with_lower_quality + 1
-            end
-
-            # increment total to compute percentile
-            @user_service_quality_total_reports = @user_service_quality_total_reports + 1
-          end
-        end
-      end
-
-      @user_service_quality_percentile = @user_service_quality_total_reports > 0 ? 100 * services_with_lower_quality / @user_service_quality_total_reports : '-'
-    end
-
-    [ @user_service_quality_percentile, @user_service_quality_total_reports ]
-  end
-
-  def global_aggregate_service_percentile( report_type )
-    if @global_service_quality_percentile == nil && @global_service_quality_total_reports == nil
-      services_with_lower_quality           = 0
-      @global_service_quality_percentile    = 0
-      @global_service_quality_total_reports = 0
-
-      User.all.each do |user|
-        user.user_reports.each do |report|
-          if report.level == 'advanced' && report.type == report_type
-
-            # unpack questionnaire model from report
-            questionnaire = report.unpack_questionnaire
-
-            # check that report is complete
-            if questionnaire.complete? && @questionnaire.percentage_of_population_that_meets_all_norms != nil
-
-              if questionnaire.percentage_of_population_that_meets_all_norms <= @questionnaire.percentage_of_population_that_meets_all_norms
-                services_with_lower_quality = services_with_lower_quality + 1
-              end
-
-              # increment total to compute percentile
-              @global_service_quality_total_reports = @global_service_quality_total_reports + 1
-            end
-          end
-        end
-      end
-
-      @global_service_quality_percentile = @global_service_quality_total_reports > 0 ? 100 - 100 * services_with_lower_quality / @global_service_quality_total_reports : nil
-    end
-
-    @global_service_quality_percentile
+    [ instance_variable_get( "@user_percentile_for_technology_#{metric.to_s}" )[ technology ], instance_variable_get( "@user_total_reports_for_technology_#{metric.to_s}" )[ technology ] ]
   end
 
 end
