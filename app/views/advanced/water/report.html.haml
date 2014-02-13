@@ -25,7 +25,7 @@
             .report--summary--item--mini_title
               = t( 'report.current_recurrent_expenditure' )
               %span.report--summary--item--mini_title--subtitle= t( 'report.per_person_per_year' )
-            .report--summary--item--value= report_currency_value_for( @questionnaire.total_inputted_expenditure_per_person_per_year )
+            .report--summary--item--value= report_currency_value_for( @questionnaire.total_inputted_recurrent_expenditure_per_person_per_year )
 
             .report--summary--item--mini_title
               = t( 'report.expenditure_surplus_shortfall' )
@@ -65,7 +65,7 @@
       %a.report--section--edit--link{ :href => advanced_water_action_path( I18n.locale, 'technology' ) }= t( 'edit' )
 
     - if report_sustainability_chart_available
-      .report--chart{ 'data-chart-type' => 'advanced', 'data-chart-currency' => ( @questionnaire.currency || '' ).upcase, 'data-chart-seeds' => "[#{@questionnaire.operation_expenditure_per_person_per_year},#{@questionnaire.direct_support_cost_per_person_per_year},#{@questionnaire.capital_maintenance_expenditure_per_person_per_year},#{@questionnaire.total_inputted_expenditure_per_person_per_year}]" }
+      .report--chart{ 'data-chart-type' => 'advanced', 'data-chart-currency' => ( @questionnaire.currency || '' ).upcase, 'data-chart-seeds' => "[#{@questionnaire.operation_expenditure_per_person_per_year},#{@questionnaire.direct_support_cost},#{@questionnaire.capital_maintenance_expenditure_per_person_per_year},#{@questionnaire.total_inputted_recurrent_expenditure_per_person_per_year}]" }
 
     .report--subsection--title
       = t('report.inputted_expenditure');
@@ -87,16 +87,16 @@
 
       .report--outputs--item.report--outputs--item-20
         .report--outputs--title.report--outputs--title-double= t( 'report.expenditure_of_direct_support' )
-        .report--outputs--item--value= report_currency_value_for( @questionnaire.direct_support_cost_per_person_per_year )
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.direct_support_cost )
 
       .report--outputs--item.report--outputs--item-20
         .report--outputs--title.report--outputs--title-double= t( 'report.expenditure_of_indirect_support' )
-        .report--outputs--item--value= report_currency_value_for( @questionnaire.indirect_support_cost_per_person_per_year )
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.indirect_support_cost )
 
     .report--outputs.report--outputs--total
       .report--outputs--item.report--outputs--item-20
         .report--outputs--title.report--outputs--title-total= t( 'report.total' )
-        .report--outputs--item--value= report_currency_value_for( @questionnaire.total_inputted_expenditure_per_person_per_year )
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.total_inputted_recurrent_expenditure_per_person_per_year )
 
     .report--subsection--title
       = t('report.expected_expenditure');
@@ -118,11 +118,11 @@
 
       .report--outputs--item.report--outputs--item-20
         .report--outputs--title.report--outputs--title-double= t( 'report.expenditure_of_direct_support' )
-        .report--outputs--item--value= report_currency_value_for( @questionnaire.direct_support_cost_per_person_per_year )
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.direct_support_cost )
 
       .report--outputs--item.report--outputs--item-20
         .report--outputs--title.report--outputs--title-double= t( 'report.expenditure_of_indirect_support' )
-        .report--outputs--item--value= report_currency_value_for( @questionnaire.indirect_support_cost_per_person_per_year )
+        .report--outputs--item--value= report_currency_value_for( @questionnaire.indirect_support_cost )
 
     .report--outputs.report--outputs--total
       .report--outputs--item.report--outputs--item-20
