@@ -64,7 +64,7 @@ module AdvancedReportHelper
 
   # cumulative expenditure outputs
 
-  def advanced_percentile_comparison( metric, report_type )
+  def advanced_percentile_comparison( metric, report_type, currency = false )
     if instance_variable_get( "@global_percentile_#{metric.to_s}" ) == nil && instance_variable_get( "@global_total_reports_#{metric.to_s}" ) == nil
       reports_lower        = 0
       global_percentile    = 0
@@ -81,7 +81,7 @@ module AdvancedReportHelper
             # check that report is complete
             if questionnaire.complete?
 
-              if questionnaire.send( "#{metric.to_s}" ) <= @questionnaire.send( "#{metric.to_s}" )
+              if value_for_advanced_metric( questionnaire.send( "#{metric.to_s}" ), currency ? questionnaire.currency : nil ) <= value_for_advanced_metric( @questionnaire.send( "#{metric.to_s}" ), currency ? @questionnaire.currency : nil )
                 reports_lower = reports_lower + 1
               end
 
@@ -105,7 +105,7 @@ module AdvancedReportHelper
     [ instance_variable_get( "@global_percentile_#{metric.to_s}" ), instance_variable_get( "@global_total_reports_#{metric.to_s}" ) ]
   end
 
-  def advanced_percentile_comparison_for_user( metric, report_type )
+  def advanced_percentile_comparison_for_user( metric, report_type, currency = false )
     if instance_variable_get( "@user_percentile_#{metric.to_s}" ) == nil && instance_variable_get( "@user_total_reports_#{metric.to_s}" ) == nil
       reports_lower      = 0
       user_percentile    = 0
@@ -121,7 +121,7 @@ module AdvancedReportHelper
           # check that report is complete
           if questionnaire.complete?
 
-            if questionnaire.send( "#{metric.to_s}" ) <= @questionnaire.send( "#{metric.to_s}" )
+            if value_for_advanced_metric( questionnaire.send( "#{metric.to_s}" ), currency ? questionnaire.currency : nil ) <= value_for_advanced_metric( @questionnaire.send( "#{metric.to_s}" ), currency ? @questionnaire.currency : nil )
               reports_lower = reports_lower + 1
             end
 
@@ -144,7 +144,7 @@ module AdvancedReportHelper
     [ instance_variable_get( "@user_percentile_#{metric.to_s}" ), instance_variable_get( "@user_total_reports_#{metric.to_s}" ) ]
   end
 
-  def advanced_percentile_comparison_for_technology( metric, report_type, technology )
+  def advanced_percentile_comparison_for_technology( metric, report_type, technology, currency = false )
     instance_variable_set( "@global_percentile_for_technology_#{metric.to_s}", {} )    unless instance_variable_get( "@global_percentile_for_technology_#{metric.to_s}" ) != nil
     instance_variable_set( "@global_total_reports_for_technology_#{metric.to_s}", {} ) unless instance_variable_get( "@global_total_reports_for_technology_#{metric.to_s}" ) != nil
 
@@ -164,7 +164,7 @@ module AdvancedReportHelper
             # check that report is complete
             if questionnaire.complete? && questionnaire.supply_system_technologies.include?( technology )
 
-              if questionnaire.send( "#{metric.to_s}", technology ) <= @questionnaire.send( "#{metric.to_s}", technology )
+              if value_for_advanced_metric( questionnaire.send( "#{metric.to_s}", technology ), currency ? questionnaire.currency : nil ) <= value_for_advanced_metric( @questionnaire.send( "#{metric.to_s}", technology ), currency ? @questionnaire.currency : nil )
                 reports_lower = reports_lower + 1
               end
 
@@ -188,7 +188,7 @@ module AdvancedReportHelper
     [ instance_variable_get( "@global_percentile_for_technology_#{metric.to_s}" )[ technology ], instance_variable_get( "@global_total_reports_for_technology_#{metric.to_s}" )[ technology ] ]
   end
 
-  def advanced_percentile_comparison_for_user_for_technology( metric, report_type, technology )
+  def advanced_percentile_comparison_for_user_for_technology( metric, report_type, technology, currency = false )
     instance_variable_set( "@user_percentile_for_technology_#{metric.to_s}", {} )    unless instance_variable_get( "@user_percentile_for_technology_#{metric.to_s}" ) != nil
     instance_variable_set( "@user_total_reports_for_technology_#{metric.to_s}", {} ) unless instance_variable_get( "@user_total_reports_for_technology_#{metric.to_s}" ) != nil
 
@@ -207,7 +207,7 @@ module AdvancedReportHelper
           # check that report is complete
           if questionnaire.complete? && questionnaire.supply_system_technologies.include?( technology )
 
-            if questionnaire.send( "#{metric.to_s}", technology ) <= @questionnaire.send( "#{metric.to_s}", technology )
+            if value_for_advanced_metric( questionnaire.send( "#{metric.to_s}", technology ), currency ? questionnaire.currency : nil ) <= value_for_advanced_metric( @questionnaire.send( "#{metric.to_s}", technology ), currency ? @questionnaire.currency : nil )
               reports_lower = reports_lower + 1
             end
 
@@ -228,6 +228,20 @@ module AdvancedReportHelper
     end
 
     [ instance_variable_get( "@user_percentile_for_technology_#{metric.to_s}" )[ technology ], instance_variable_get( "@user_total_reports_for_technology_#{metric.to_s}" )[ technology ] ]
+  end
+
+  def value_for_advanced_metric( metric_value, currency )
+    if currency != nil
+      er = ExchangeRate.where( :name => currency.upcase, :year => 2011 )
+
+      if er != nil && er.count
+        currency == true ? er[0].rate * metric_value : metric_value
+      else
+        0
+      end
+    else
+      metric_value
+    end
   end
 
 end
