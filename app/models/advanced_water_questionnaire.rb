@@ -140,18 +140,18 @@ class AdvancedWaterQuestionnaire < Session
 
   def technology
     true unless supply_system_technologies.count == 0 || systems_number.count == 0 || system_population_design.count == 0 || system_population_actual.count == 0 || water_source.count == 0 || surface_water_primary_source.count == 0 || water_treatment.count == 0 || power_supply.count == 0 || distribution_line_length.count == 0 || actual_hardware_expenditure.count == 0 || system_lifespan_expectancy.count == 0 || actual_software_expenditure.count == 0 || unpaid_labour.count == 0 || minor_operation_expenditure.count == 0 || capital_maintenance_expenditure.count == 0 || loan_cost.count == 0 || loan_payback_period.count == 0
-   end
+  end
 
-   def service_level
+  def service_level
     true unless service_level_name.count == 0 || service_level_share.count == 0 || national_accessibility_norms.count == 0 || national_quantity_norms.count == 0 || national_quality_norms.count == 0 || national_reliability_norms.count == 0
-    end
+  end
 
 
   # CALCULATIONS
 
   def total_population
     if supply_system_technologies.count > 0 && system_population_actual.count == supply_system_technologies.count
-      supply_system_technologies.each_with_index.map{ |s,i| system_population_actual[i].to_f }.inject(:+)
+      system_population_actual.map{ |p| p.to_f }.inject(:+)
     else
       nil
     end
@@ -159,7 +159,7 @@ class AdvancedWaterQuestionnaire < Session
 
   def total_expenditure_for_years( years )
     if hardware_and_software_expenditure != nil && expected_operation_expenditure_per_person_per_year != nil && expected_capital_maintenance_expenditure_per_person_per_year != nil && expected_direct_support_cost_per_person_per_year != nil && total_population != nil && direct_support_cost != nil && indirect_support_cost != nil
-      years * ( hardware_and_software_expenditure + ( expected_operation_expenditure_per_person_per_year + expected_capital_maintenance_expenditure_per_person_per_year + expected_direct_support_cost_per_person_per_year ) * total_population + direct_support_cost.to_f + indirect_support_cost.to_f )
+      hardware_and_software_expenditure + total_operation_expenditure * years + total_capital_maintenance_expenditure * years + direct_support_cost.to_f * total_population * years + indirect_support_cost.to_f * total_population * years + cost_of_capital_for_years( years ) )
     else
       nil
     end
@@ -175,6 +175,22 @@ class AdvancedWaterQuestionnaire < Session
 
   # expenditure
 
+  def total_operation_expenditure
+    if supply_system_technologies.count > 0 && minor_operation_expenditure.count == supply_system_technologies.count
+      minor_operation_expenditure.map{ |e| e.to_f }.inject(:+)
+    else
+      nil
+    end
+  end
+
+  def total_capital_maintenance_expenditure
+    if supply_system_technologies.count > 0 && capital_maintenance_expenditure.count == supply_system_technologies.count
+      capital_maintenance_expenditure.map{ |e| e.to_f }.inject(:+)
+    else
+      nil
+    end
+  end
+
   def operation_expenditure_per_person_per_year
     if supply_system_technologies.count > 0 && minor_operation_expenditure.count == supply_system_technologies.count && system_population_actual.count == supply_system_technologies.count
       supply_system_technologies.each_with_index.map{ |s,i| minor_operation_expenditure[i].to_f / system_population_actual[i].to_f }.inject(:+)
@@ -186,6 +202,14 @@ class AdvancedWaterQuestionnaire < Session
   def capital_maintenance_expenditure_per_person_per_year
     if supply_system_technologies.count > 0 && capital_maintenance_expenditure.count == supply_system_technologies.count && system_population_actual.count == supply_system_technologies.count
       supply_system_technologies.each_with_index.map{ |s,i| capital_maintenance_expenditure[i].to_f / system_population_actual[i].to_f }.inject(:+)
+    else
+      nil
+    end
+  end
+
+  def cost_of_capital_for_years( years )
+    if supply_system_technologies.count > 0 && loan_cost.count == supply_system_technologies.count && loan_payback_period.count == supply_system_technologies.count
+      supply_system_technologies.each_with_index{ |s,i| loan_cost[i].to_f * [ loan_payback_period[i].to_i, years ].min }.inject( :+ )
     else
       nil
     end
