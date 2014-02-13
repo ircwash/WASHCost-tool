@@ -201,7 +201,7 @@ class AdvancedWaterQuestionnaire < Session
 
   def operation_expenditure_per_person_per_year
     if supply_system_technologies.count > 0 && minor_operation_expenditure.count == supply_system_technologies.count && system_population_actual.count == supply_system_technologies.count
-      supply_system_technologies.each_with_index.map{ |s,i| minor_operation_expenditure[i].to_f / system_population_actual[i].to_f }.inject(:+)
+      minor_operation_expenditure.map{ |e| e.to_f }.inject(:+) / system_population_actual.map{ |p| p.to_f }.inject(:+)
     else
       nil
     end
@@ -209,15 +209,15 @@ class AdvancedWaterQuestionnaire < Session
 
   def capital_maintenance_expenditure_per_person_per_year
     if supply_system_technologies.count > 0 && capital_maintenance_expenditure.count == supply_system_technologies.count && system_population_actual.count == supply_system_technologies.count
-      supply_system_technologies.each_with_index.map{ |s,i| capital_maintenance_expenditure[i].to_f / system_population_actual[i].to_f }.inject(:+)
+      capital_maintenance_expenditure.map{ |e| e.to_f }.inject(:+) / system_population_actual.map{ |p| p.to_f }.inject(:+)
     else
       nil
     end
   end
 
   def cost_of_capital_per_person_per_year
-    if supply_system_technologies.count > 0 && loan_cost.count == supply_system_technologies.count && loan_payback_period.count == supply_system_technologies.count && system_population_actual.count == supply_system_technologies.count
-      supply_system_technologies.each_with_index.map{ |s,i| ( loan_cost[i].to_f / system_population_actual[i].to_f }.inject(:+)
+    if supply_system_technologies.count > 0 && loan_cost.count == supply_system_technologies.count && system_population_actual.count == supply_system_technologies.count
+      loan_cost.map{ |e| e.to_f }.inject(:+) / system_population_actual.map{ |p| p.to_f }.inject(:+)
     else
       nil
     end
@@ -231,37 +231,33 @@ class AdvancedWaterQuestionnaire < Session
     end
   end
 
-
-
-
-
   def expected_operation_expenditure_per_person_per_year
-    if benchmark_minor_operation_expenditure != nil && total_population != nil
-      benchmark_minor_operation_expenditure.to_f / total_population
+    if supply_system_technologies.count > 0 && system_population_actual.count == supply_system_technologies.count
+      supply_system_technologies.each_with_index.map{ |s,i| benchmark_minor_operation_expenditure[ s.to_i ] * system_population_actual[i].to_f }.inject(:+) / system_population_actual.map{ |p| p.to_f }.inject(:+)
     else
       nil
     end
   end
 
   def expected_capital_maintenance_expenditure_per_person_per_year
-    if benchmark_capital_maintenance_expenditure != nil && total_population != nil
-      benchmark_capital_maintenance_expenditure.to_f / total_population
+    if supply_system_technologies.count > 0 && capital_maintenance_expenditure.count == supply_system_technologies.count && system_lifespan_expectancy.count == supply_system_technologies.count && system_population_actual.count == supply_system_technologies.count
+      supply_system_technologies.each_with_index.map{ |s,i| ( 30 / system_lifespan_expectancy[i].to_f ).floor * capital_maintenance_expenditure[i].to_f }.inject(:+) / 30 / system_population_actual.map{ |p| p.to_f }.inject(:+)
     else
       nil
     end
   end
 
   def expected_direct_support_cost_per_person_per_year
-    if benchmark_direct_support_cost != nil && total_population != nil
-      benchmark_direct_support_cost.to_f / total_population
+    if supply_system_technologies.count > 0 && system_population_actual.count == supply_system_technologies.count
+      supply_system_technologies.each_with_index.map{ |s,i| benchmark_direct_support_cost[ s.to_i ].to_f * system_population_actual[i].to_f }.inject(:+) / system_population_actual.map{ |p| p.to_f }.inject(:+)
     else
       nil
     end
   end
 
   def total_expected_expenditure_per_person_per_year
-    if expected_operation_expenditure_per_person_per_year != nil && expected_capital_maintenance_expenditure_per_person_per_year != nil && cost_of_capital_per_person_per_year != nil && expected_direct_support_cost_per_person_per_year != nil && indirect_support_cost_per_person_per_year != nil
-      expected_operation_expenditure_per_person_per_year + expected_capital_maintenance_expenditure_per_person_per_year + cost_of_capital_per_person_per_year + expected_direct_support_cost_per_person_per_year + indirect_support_cost_per_person_per_year
+    if expected_operation_expenditure_per_person_per_year != nil && expected_capital_maintenance_expenditure_per_person_per_year != nil && cost_of_capital_per_person_per_year != nil && expected_direct_support_cost_per_person_per_year != nil && indirect_support_cost != nil
+      expected_operation_expenditure_per_person_per_year + expected_capital_maintenance_expenditure_per_person_per_year + cost_of_capital_per_person_per_year + expected_direct_support_cost_per_person_per_year + indirect_support_cost.to_f
     else
       nil
     end
@@ -673,15 +669,45 @@ class AdvancedWaterQuestionnaire < Session
   # BENCHMARK VALUES
 
   def benchmark_minor_operation_expenditure
-    11
-  end
-
-  def benchmark_capital_maintenance_expenditure
-    13
+    [
+      0.75,
+      2.75,
+      2.75,
+      2.75,
+      2.75,
+      2.75,
+      2.75,
+      2.75,
+      2.75,
+      2.75,
+      2.75,
+      2.75,
+      2.75,
+      2.75,
+      0,
+      0
+    ]
   end
 
   def benchmark_direct_support_cost
-    40
+    [
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0
+    ]
   end
 
 
