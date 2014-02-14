@@ -14,6 +14,8 @@ class BasicSanitationQuestionnaire < Session
 
   def initialize( session )
     super( session, :basic_sanitation )
+
+    property_attributes :country, :population, :latrine, :capital_expenditure, :recurrent_expenditure, :household_latrine, :impermeability, :environmental_impact, :usage, :reliability
   end
 
 
