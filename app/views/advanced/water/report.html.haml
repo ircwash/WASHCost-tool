@@ -211,6 +211,10 @@
         .report--outputs--title= t( 'report.cost_of_capital' )
         .report--outputs--item--value= report_currency_value_for( @questionnaire.annual_cost_of_capital_for_actual_users )
 
+      .report--outputs--item.report--outputs--item-50
+        .report--outputs--title= t( 'report.percentage_of_household_income' )
+        .report--outputs--item--value= report_percentage_value_for( @questionnaire.annual_cost_of_capital_for_actual_users_as_percentage_of_household_income )
+
     .report--outputs
 
       .report--outputs--item.report--outputs--item-50

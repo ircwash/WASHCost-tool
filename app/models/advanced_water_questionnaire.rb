@@ -159,7 +159,7 @@ class AdvancedWaterQuestionnaire < Session
 
   def total_expenditure_for_years( years )
     if hardware_and_software_expenditure != nil && total_operation_expenditure != nil && total_capital_maintenance_expenditure != nil && direct_support_cost != nil && indirect_support_cost != nil && total_population != nil && cost_of_capital_for_years( years ) != nil
-      hardware_and_software_expenditure + total_operation_expenditure * years + total_capital_maintenance_expenditure * years + direct_support_cost.to_f * total_population * years + indirect_support_cost.to_f * total_population * years + cost_of_capital_for_years( years ) )
+      hardware_and_software_expenditure + total_operation_expenditure * years + total_capital_maintenance_expenditure * years + direct_support_cost.to_f * total_population * years + indirect_support_cost.to_f * total_population * years + cost_of_capital_for_years( years )
     else
       nil
     end
@@ -193,7 +193,7 @@ class AdvancedWaterQuestionnaire < Session
 
   def cost_of_capital_for_years( years )
     if supply_system_technologies.count > 0 && loan_cost.count == supply_system_technologies.count && loan_payback_period.count == supply_system_technologies.count
-      supply_system_technologies.each_with_index{ |s,i| loan_cost[i].to_f * [ loan_payback_period[i].to_i, years ].min }.inject( :+ )
+      supply_system_technologies.each_with_index.map{ |s,i| loan_cost[i].to_f * [ loan_payback_period[i].to_i, years ].min }.inject( :+ )
     else
       nil
     end
@@ -333,7 +333,7 @@ class AdvancedWaterQuestionnaire < Session
 
   def annual_operational_expenditure_for_actual_users
     if minor_operation_expenditure.count > 0 && total_actual_users != nil
-      minor_operation_expenditure.each.map{ |moe| moe.to_f }.inject(:+) / total_actual_users
+      minor_operation_expenditure.map{ |moe| moe.to_f }.inject(:+) / total_actual_users
     else
       nil
     end
@@ -349,7 +349,7 @@ class AdvancedWaterQuestionnaire < Session
 
   def annual_capital_maintenance_expenditure_for_actual_users
     if capital_maintenance_expenditure.count > 0 && total_actual_users != nil
-      capital_maintenance_expenditure.each.map{ |cme| cme.to_f }.inject(:+) / total_actual_users
+      capital_maintenance_expenditure.map{ |cme| cme.to_f }.inject(:+) / total_actual_users
     else
       nil
     end
@@ -364,8 +364,16 @@ class AdvancedWaterQuestionnaire < Session
   end
 
   def annual_cost_of_capital_for_actual_users
-    if cost_of_capital_per_person_per_year != nil && total_actual_users != nil
-      cost_of_capital_per_person_per_year * total_actual_users
+    if loan_cost.count > 0 && total_actual_users != nil
+      loan_cost.map{ |lc| lc.to_f }.inject(:+) / total_actual_users
+    else
+      nil
+    end
+  end
+
+  def annual_cost_of_capital_for_actual_users_as_percentage_of_household_income
+    if annual_cost_of_capital_for_actual_users != nil && annual_household_income != nil
+      100 * annual_cost_of_capital_for_actual_users / annual_household_income.to_f
     else
       nil
     end
@@ -448,8 +456,8 @@ class AdvancedWaterQuestionnaire < Session
   # affordability expected actual users
 
   def expected_annual_operational_expenditure_for_actual_users
-    if benchmark_minor_operation_expenditure != nil && total_actual_users != nil
-      benchmark_minor_operation_expenditure / total_actual_users
+    if supply_system_technologies.count > 0 && total_actual_users != nil
+      supply_system_technologies.each_with_index.map{ |s,i| benchmark_minor_operation_expenditure[ s.to_i ] * system_population_actual[i].to_f }.inject(:+) / total_actual_users
     else
       nil
     end
@@ -464,8 +472,8 @@ class AdvancedWaterQuestionnaire < Session
   end
 
   def expected_annual_capital_maintenance_expenditure_for_actual_users
-    if benchmark_capital_maintenance_expenditure != nil && total_actual_users != nil
-      benchmark_capital_maintenance_expenditure / total_actual_users
+    if supply_system_technologies.count > 0 && capital_maintenance_expenditure.count == supply_system_technologies.count && system_lifespan_expectancy.count == supply_system_technologies.count && total_actual_users != nil
+      supply_system_technologies.each_with_index.map{ |s,i| ( 30 / system_lifespan_expectancy[i].to_f ).floor * capital_maintenance_expenditure[i].to_f }.inject(:+) / 30 / total_actual_users
     else
       nil
     end

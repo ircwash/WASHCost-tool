@@ -7,7 +7,7 @@ module AdvancedReportHelper
   end
 
   def report_expenditure_totals_available
-    @questionnaire.total_expenditure_for_years(30) != nil && @questionnaire.total_inputted_expenditure_per_person_per_year != nil && @questionnaire.total_expenditure_delta_per_person_per_year != nil
+    @questionnaire.total_expenditure_for_years(30) != nil && @questionnaire.total_inputted_recurrent_expenditure_per_person_per_year != nil && @questionnaire.total_expenditure_delta_per_person_per_year != nil
   end
 
   def report_service_level_summary_available
@@ -15,7 +15,7 @@ module AdvancedReportHelper
   end
 
   def report_sustainability_chart_available
-    @questionnaire.operation_expenditure_per_person_per_year != nil && @questionnaire.direct_support_cost_per_person_per_year != nil && @questionnaire.capital_maintenance_expenditure_per_person_per_year != nil && @questionnaire.total_inputted_expenditure_per_person_per_year != nil
+    @questionnaire.operation_expenditure_per_person_per_year != nil && @questionnaire.direct_support_cost != nil && @questionnaire.capital_maintenance_expenditure_per_person_per_year != nil && @questionnaire.total_inputted_recurrent_expenditure_per_person_per_year != nil
   end
 
   def service_area_comparison_available
