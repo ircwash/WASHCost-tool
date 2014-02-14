@@ -241,7 +241,7 @@ class AdvancedWaterQuestionnaire < Session
 
   def expected_capital_maintenance_expenditure_per_person_per_year
     if supply_system_technologies.count > 0 && capital_maintenance_expenditure.count == supply_system_technologies.count && system_lifespan_expectancy.count == supply_system_technologies.count && system_population_actual.count == supply_system_technologies.count
-      supply_system_technologies.each_with_index.map{ |s,i| ( 30 / system_lifespan_expectancy[i].to_f ).floor * capital_maintenance_expenditure[i].to_f }.inject(:+) / 30 / system_population_actual.map{ |p| p.to_f }.inject(:+)
+      ( supply_system_technologies.each_with_index.map{ |s,i| ( 30 / system_lifespan_expectancy[i].to_f ).floor * capital_maintenance_expenditure[i].to_f }.inject(:+) / 30 ) / system_population_actual.map{ |p| p.to_f }.inject(:+)
     else
       nil
     end
@@ -399,7 +399,7 @@ class AdvancedWaterQuestionnaire < Session
 
   def annual_operational_expenditure_for_designed_users
     if minor_operation_expenditure.count > 0 && total_designed_users != nil
-      minor_operation_expenditure.each.map{ |moe| moe.to_f }.inject(:+) / total_designed_users
+      minor_operation_expenditure.map{ |moe| moe.to_f }.inject(:+) / total_designed_users
     else
       nil
     end
@@ -415,7 +415,7 @@ class AdvancedWaterQuestionnaire < Session
 
   def annual_capital_maintenance_expenditure_for_designed_users
     if capital_maintenance_expenditure.count > 0 && total_designed_users != nil
-      capital_maintenance_expenditure.each.map{ |cme| cme.to_f }.inject(:+) / total_designed_users
+      capital_maintenance_expenditure.map{ |cme| cme.to_f }.inject(:+) / total_designed_users
     else
       nil
     end
@@ -430,8 +430,16 @@ class AdvancedWaterQuestionnaire < Session
   end
 
   def annual_cost_of_capital_for_designed_users
-    if cost_of_capital_per_person_per_year != nil && total_designed_users != nil
-      cost_of_capital_per_person_per_year * total_designed_users
+    if loan_cost.count > 0 && total_designed_users != nil
+      loan_cost.map{ |lc| lc.to_f }.inject(:+) / total_designed_users
+    else
+      nil
+    end
+  end
+
+  def annual_cost_of_capital_for_designed_users_as_percentage_of_household_income
+    if annual_cost_of_capital_for_designed_users != nil && annual_household_income != nil
+      100 * annual_cost_of_capital_for_designed_users / annual_household_income.to_f
     else
       nil
     end
@@ -473,7 +481,7 @@ class AdvancedWaterQuestionnaire < Session
 
   def expected_annual_capital_maintenance_expenditure_for_actual_users
     if supply_system_technologies.count > 0 && capital_maintenance_expenditure.count == supply_system_technologies.count && system_lifespan_expectancy.count == supply_system_technologies.count && total_actual_users != nil
-      supply_system_technologies.each_with_index.map{ |s,i| ( 30 / system_lifespan_expectancy[i].to_f ).floor * capital_maintenance_expenditure[i].to_f }.inject(:+) / 30 / total_actual_users
+      supply_system_technologies.each_with_index.map{ |s,i| capital_maintenance_expenditure[i].to_f / system_lifespan_expectancy[i].to_f }.inject(:+) / total_actual_users
     else
       nil
     end
@@ -487,9 +495,25 @@ class AdvancedWaterQuestionnaire < Session
     end
   end
 
+  def expected_annual_cost_of_capital_for_actual_users
+    if loan_cost.count > 0 && total_actual_users != nil
+      loan_cost.map{ |lc| lc.to_f }.inject(:+) / total_actual_users
+    else
+      nil
+    end
+  end
+
+  def expected_annual_cost_of_capital_for_actual_users_as_percentage_of_household_income
+    if expected_annual_cost_of_capital_for_actual_users != nil && annual_household_income != nil
+      100 * expected_annual_cost_of_capital_for_actual_users / annual_household_income.to_f
+    else
+      nil
+    end
+  end
+
   def total_expected_annual_expenditure_for_actual_users
-    if expected_annual_operational_expenditure_for_actual_users != nil && expected_annual_capital_maintenance_expenditure_for_actual_users != nil
-      expected_annual_operational_expenditure_for_actual_users + expected_annual_capital_maintenance_expenditure_for_actual_users
+    if expected_annual_operational_expenditure_for_actual_users != nil && expected_annual_capital_maintenance_expenditure_for_actual_users != nil && expected_annual_cost_of_capital_for_actual_users != nil
+      expected_annual_operational_expenditure_for_actual_users + expected_annual_capital_maintenance_expenditure_for_actual_users + expected_annual_cost_of_capital_for_actual_users
     else
       nil
     end
