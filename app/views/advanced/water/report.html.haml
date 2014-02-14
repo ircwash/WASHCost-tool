@@ -37,7 +37,7 @@
           %div{ :class => "report--summary--item report--summary--item-#{summary_columns_for_report( [ report_expenditure_totals_available, report_service_level_summary_available, report_comparison_summary_available ] )}" }
             .report--summary--item--title= t( 'report.service_level_summary' )
 
-            .report--summary--item--value.report--summary--item--value-title= report_percentage_value_for( @questionnaire.people_with_service_meeting_national_standard )
+            .report--summary--item--value.report--summary--item--value-title= report_percentage_value_for( @questionnaire.percentage_of_population_that_meets_all_norms )
             .report--summary--item--subtitle= t( 'report.number_of_people_with_service_meeting_national_standard' )
 
         - if report_comparison_summary_available || advanced_percentile_comparison( :percentage_of_population_that_meets_all_norms, 'water' )[0] != nil
@@ -320,6 +320,11 @@
 
     .report--section--edit
       %a.report--section--edit--link{ :href => advanced_water_action_path( I18n.locale, 'service_level' ) }= t( 'edit' )
+
+    - if @questionnaire.percentage_of_population_with_defined_service < 100
+      .report--no_data= t( 'report.service_level_population_incomplete' )
+    - elsif @questionnaire.percentage_of_population_with_defined_service > 100
+      .report--no_data= t( 'report.service_level_population_overcomplete' )
 
     %table.report--service_level_summary
       %tr

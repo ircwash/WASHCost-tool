@@ -11,7 +11,7 @@ module AdvancedReportHelper
   end
 
   def report_service_level_summary_available
-    @questionnaire.people_with_service_meeting_national_standard != nil
+    @questionnaire.percentage_of_population_that_meets_all_norms != nil
   end
 
   def report_sustainability_chart_available

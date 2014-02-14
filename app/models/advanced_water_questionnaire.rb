@@ -305,14 +305,6 @@ class AdvancedWaterQuestionnaire < Session
     end
   end
 
-  def people_with_service_meeting_national_standard
-    if service_level_name.count > 0 && ( national_accessibility_norms.count > 0 || national_quantity_norms.count > 0 || national_quality_norms.count > 0 || national_reliability_norms.count > 0 )
-      service_level_name.each_with_index.map{ |sl,i| ( national_accessibility_norms[i].to_i == 0 || national_quantity_norms[i].to_i == 0 || national_quality_norms[i].to_i == 0 || national_reliability_norms[i].to_i == 0 ) ? service_level_share[i].to_i : 0 }.inject(:+)
-    else
-      nil
-    end
-  end
-
   def total_actual_users
     if system_population_actual.count > 0
       system_population_actual.map{ |spd| spd.to_f }.inject(:+)
@@ -527,7 +519,20 @@ class AdvancedWaterQuestionnaire < Session
     end
   end
 
+
+
+
+
+
   # service levels
+
+  def percentage_of_population_with_defined_service
+    if service_level_name.count > 0 && service_level_share.count == service_level_name.count
+      service_level_share.map{ |sl| sl.to_i }.inject(:+)
+    else
+      nil
+    end
+  end
 
   def percentage_of_population_that_meets_accessibility_norms
     if service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_accessibility_norms.count == service_level_name.count
@@ -626,8 +631,8 @@ class AdvancedWaterQuestionnaire < Session
   end
 
   def percentage_of_population_that_meets_all_norms
-    if percentage_of_population_that_meets_accessibility_norms != nil || percentage_of_population_that_meets_quantity_norms != nil || percentage_of_population_that_meets_quality_norms != nil || percentage_of_population_that_meets_reliability_norms != nil
-      ( ( percentage_of_population_that_meets_accessibility_norms || 0 ) + ( percentage_of_population_that_meets_quantity_norms || 0 ) + ( percentage_of_population_that_meets_quality_norms || 0 ) + ( percentage_of_population_that_meets_reliability_norms || 0 ) ) / 400
+    if percentage_of_population_that_meets_accessibility_norms != nil || percentage_of_population_with_unknown_accessibility_norms != nil || percentage_of_population_that_meets_quantity_norms != nil || percentage_of_population_with_unknown_quantity_norms != nil || percentage_of_population_that_meets_quality_norms != nil || percentage_of_population_with_unknown_quality_norms != nil || percentage_of_population_that_meets_reliability_norms != nil || percentage_of_population_with_unknown_reliability_norms != nil
+      ( ( percentage_of_population_that_meets_accessibility_norms || 0 ) + ( percentage_of_population_with_unknown_accessibility_norms || 0 ) + ( percentage_of_population_that_meets_quantity_norms || 0 ) + ( percentage_of_population_with_unknown_quantity_norms || 0 ) + ( percentage_of_population_that_meets_quality_norms || 0 ) + ( percentage_of_population_with_unknown_quality_norms || 0 ) + ( percentage_of_population_that_meets_reliability_norms || 0 ) + ( percentage_of_population_with_unknown_reliability_norms || 0 ) )
     else
       nil
     end

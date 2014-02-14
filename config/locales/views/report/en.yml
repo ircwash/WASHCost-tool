@@ -98,7 +98,8 @@ en:
     percentage_of_household_income: Percentage of household Income
     annual_operational_expenditure: Annual operational expenditure
     annual_capital_maintenance_expenditure: Annual capital maintenance expenditure
-
+    service_level_population_incomplete: You have not defined the service level for the total population. Some data is missing.
+    service_level_population_overcomplete: You have defined the service level for more people than possible. Please check your inputs.
 
 
 
