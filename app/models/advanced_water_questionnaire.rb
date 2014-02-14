@@ -1,46 +1,20 @@
-class AdvancedWaterQuestionnaire < Session
+class AdvancedWaterQuestionnaire < AdvancedQuestionnaire
 
-  attr_accessor :water_system_exists,
-                :country,
-                :currency,
-                :year_of_expenditure,
-                :region,
-                :town,
-                :area_type,
-                :population_density,
-
-                :service_management,
+  attr_accessor :service_management,
                 :construction_financier,
                 :infrastructure_operator,
                 :service_responsbility,
                 :standard_enforcer,
                 :rehabilitation_cost_owner,
-                :annual_household_income,
-                :household_size,
-                :direct_support_cost,
-                :indirect_support_cost,
 
-                :supply_system_technologies,
-                :systems_number,
-                :system_population_design,
-                :system_population_actual,
                 :water_source,
                 :surface_water_primary_source,
                 :water_treatment,
                 :power_supply,
                 :distribution_line_length,
 
-                :actual_hardware_expenditure,
-                :system_lifespan_expectancy,
-                :actual_software_expenditure,
                 :unpaid_labour,
-                :minor_operation_expenditure,
-                :capital_maintenance_expenditure,
-                :loan_cost,
-                :loan_payback_period,
 
-                :service_level_name,
-                :service_level_share,
                 :national_accessibility_norms,
                 :national_quantity_norms,
                 :national_quality_norms,
@@ -49,43 +23,46 @@ class AdvancedWaterQuestionnaire < Session
 
   def initialize( session )
     super( session, :advanced_water )
-  end
+
+    property_attributes :service_management, :construction_financier, :infrastructure_operator, :service_responsbility, :standard_enforcer, :rehabilitation_cost_owner, :water_source, :surface_water_primary_source, :water_treatment, :power_supply, :distribution_line_length, :unpaid_labour, :national_accessibility_norms, :national_quantity_norms, :national_quality_norms, :national_reliability_norms
+   end
 
 
   def update_attributes( attributes )
+    super
 
     if attributes[ :water_treatment_0 ] != nil || attributes[ :water_treatment_1 ] != nil || attributes[ :water_treatment_2 ] != nil
 
       @water_treatment = []
 
       if attributes[ :water_treatment_0 ] != nil
-        @water_treatment.push attributes[ :water_treatment_0 ]
+        water_treatment.push attributes[ :water_treatment_0 ]
       end
 
       if attributes[ :water_treatment_1 ] != nil
-        @water_treatment.push attributes[ :water_treatment_1 ]
+        water_treatment.push attributes[ :water_treatment_1 ]
       end
 
       if attributes[ :water_treatment_2 ] != nil
-        @water_treatment.push attributes[ :water_treatment_2 ]
+        water_treatment.push attributes[ :water_treatment_2 ]
       end
 
     end
 
     if attributes[ :power_supply_0 ] != nil || attributes[ :power_supply_1 ] != nil || attributes[ :power_supply_2 ] != nil
 
-      @power_supply    = []
+      power_supply    = []
 
       if attributes[ :power_supply_0 ] != nil
-        @power_supply.push attributes[ :power_supply_0 ]
+        power_supply.push attributes[ :power_supply_0 ]
       end
 
       if attributes[ :power_supply_1 ] != nil
-        @power_supply.push attributes[ :power_supply_1 ]
+        power_supply.push attributes[ :power_supply_1 ]
       end
 
       if attributes[ :power_supply_2 ] != nil
-        @power_supply.push attributes[ :power_supply_2 ]
+        power_supply.push attributes[ :power_supply_2 ]
       end
 
     end
@@ -93,15 +70,15 @@ class AdvancedWaterQuestionnaire < Session
     super
 
     if attributes[ :region_unknown ] != nil
-      @region = attributes[ :region_unknown ]
+      region = attributes[ :region_unknown ]
     end
 
     if attributes[ :town_unknown ] != nil
-      @town = attributes[ :town_unknown ]
+      town = attributes[ :town_unknown ]
     end
 
     if attributes[ :population_density_unknown ] != nil
-      @population_density = attributes[ :population_density_unknown ]
+      population_density = attributes[ :population_density_unknown ]
     end
 
     archive
@@ -135,7 +112,7 @@ class AdvancedWaterQuestionnaire < Session
   # determine navigation item completion
 
   def service_area
-    true unless water_system_exists == nil || country == nil || currency == nil || year_of_expenditure == nil || region == nil || town == nil || area_type == nil || population_density == nil || service_management.count == 0 || construction_financier.count == 0 || infrastructure_operator.count == 0 || service_responsbility.count == 0 || standard_enforcer.count == 0 || rehabilitation_cost_owner.count == 0 || annual_household_income == nil || household_size == nil || direct_support_cost == nil || indirect_support_cost == nil
+    true unless status == nil || country == nil || currency == nil || year_of_expenditure == nil || region == nil || town == nil || area_type == nil || population_density == nil || service_management.count == 0 || construction_financier.count == 0 || infrastructure_operator.count == 0 || service_responsbility.count == 0 || standard_enforcer.count == 0 || rehabilitation_cost_owner.count == 0 || annual_household_income == nil || household_size == nil || direct_support_cost == nil || indirect_support_cost == nil
   end
 
   def technology
@@ -149,390 +126,7 @@ class AdvancedWaterQuestionnaire < Session
 
   # CALCULATIONS
 
-  def total_population
-    if supply_system_technologies.count > 0 && system_population_actual.count == supply_system_technologies.count
-      system_population_actual.map{ |p| p.to_f }.inject(:+)
-    else
-      nil
-    end
-  end
-
-  def total_expenditure_for_years( years )
-    if hardware_and_software_expenditure != nil && total_operation_expenditure != nil && total_capital_maintenance_expenditure != nil && direct_support_cost != nil && indirect_support_cost != nil && total_population != nil && cost_of_capital_for_years( years ) != nil
-      hardware_and_software_expenditure + total_operation_expenditure * years + total_capital_maintenance_expenditure * years + direct_support_cost.to_f * total_population * years + indirect_support_cost.to_f * total_population * years + cost_of_capital_for_years( years )
-    else
-      nil
-    end
-  end
-
-  def hardware_and_software_expenditure
-    if supply_system_technologies.count > 0 && actual_hardware_expenditure.count == supply_system_technologies.count && actual_software_expenditure.count == supply_system_technologies.count
-      supply_system_technologies.each_with_index.map{ |s,i| actual_hardware_expenditure[i].to_f + actual_software_expenditure[i].to_f }.inject(:+)
-    else
-      nil
-    end
-  end
-
-  # expenditure
-
-  def total_operation_expenditure
-    if supply_system_technologies.count > 0 && minor_operation_expenditure.count == supply_system_technologies.count
-      minor_operation_expenditure.map{ |e| e.to_f }.inject(:+)
-    else
-      nil
-    end
-  end
-
-  def total_capital_maintenance_expenditure
-    if supply_system_technologies.count > 0 && capital_maintenance_expenditure.count == supply_system_technologies.count
-      capital_maintenance_expenditure.map{ |e| e.to_f }.inject(:+)
-    else
-      nil
-    end
-  end
-
-  def cost_of_capital_for_years( years )
-    if supply_system_technologies.count > 0 && loan_cost.count == supply_system_technologies.count && loan_payback_period.count == supply_system_technologies.count
-      supply_system_technologies.each_with_index.map{ |s,i| loan_cost[i].to_f * [ loan_payback_period[i].to_i, years ].min }.inject( :+ )
-    else
-      nil
-    end
-  end
-
-  def operation_expenditure_per_person_per_year
-    if supply_system_technologies.count > 0 && minor_operation_expenditure.count == supply_system_technologies.count && system_population_actual.count == supply_system_technologies.count
-      minor_operation_expenditure.map{ |e| e.to_f }.inject(:+) / system_population_actual.map{ |p| p.to_f }.inject(:+)
-    else
-      nil
-    end
-  end
-
-  def capital_maintenance_expenditure_per_person_per_year
-    if supply_system_technologies.count > 0 && capital_maintenance_expenditure.count == supply_system_technologies.count && system_population_actual.count == supply_system_technologies.count
-      capital_maintenance_expenditure.map{ |e| e.to_f }.inject(:+) / system_population_actual.map{ |p| p.to_f }.inject(:+)
-    else
-      nil
-    end
-  end
-
-  def cost_of_capital_per_person_per_year
-    if supply_system_technologies.count > 0 && loan_cost.count == supply_system_technologies.count && system_population_actual.count == supply_system_technologies.count
-      loan_cost.map{ |e| e.to_f }.inject(:+) / system_population_actual.map{ |p| p.to_f }.inject(:+)
-    else
-      nil
-    end
-  end
-
-  def total_inputted_recurrent_expenditure_per_person_per_year
-    if operation_expenditure_per_person_per_year != nil && capital_maintenance_expenditure_per_person_per_year != nil && cost_of_capital_per_person_per_year != nil && direct_support_cost != nil && indirect_support_cost != nil
-      operation_expenditure_per_person_per_year + capital_maintenance_expenditure_per_person_per_year + cost_of_capital_per_person_per_year + direct_support_cost.to_f + indirect_support_cost.to_f
-    else
-      nil
-    end
-  end
-
-  def expected_operation_expenditure_per_person_per_year
-    if supply_system_technologies.count > 0 && system_population_actual.count == supply_system_technologies.count
-      supply_system_technologies.each_with_index.map{ |s,i| benchmark_minor_operation_expenditure[ s.to_i ] * system_population_actual[i].to_f }.inject(:+) / system_population_actual.map{ |p| p.to_f }.inject(:+)
-    else
-      nil
-    end
-  end
-
-  def expected_capital_maintenance_expenditure_per_person_per_year
-    if supply_system_technologies.count > 0 && capital_maintenance_expenditure.count == supply_system_technologies.count && system_lifespan_expectancy.count == supply_system_technologies.count && system_population_actual.count == supply_system_technologies.count
-      ( supply_system_technologies.each_with_index.map{ |s,i| ( 30 / system_lifespan_expectancy[i].to_f ).floor * capital_maintenance_expenditure[i].to_f }.inject(:+) / 30 ) / system_population_actual.map{ |p| p.to_f }.inject(:+)
-    else
-      nil
-    end
-  end
-
-  def expected_direct_support_cost_per_person_per_year
-    if supply_system_technologies.count > 0 && system_population_actual.count == supply_system_technologies.count
-      supply_system_technologies.each_with_index.map{ |s,i| benchmark_direct_support_cost[ s.to_i ].to_f * system_population_actual[i].to_f }.inject(:+) / system_population_actual.map{ |p| p.to_f }.inject(:+)
-    else
-      nil
-    end
-  end
-
-  def total_expected_expenditure_per_person_per_year
-    if expected_operation_expenditure_per_person_per_year != nil && expected_capital_maintenance_expenditure_per_person_per_year != nil && cost_of_capital_per_person_per_year != nil && expected_direct_support_cost_per_person_per_year != nil && indirect_support_cost != nil
-      expected_operation_expenditure_per_person_per_year + expected_capital_maintenance_expenditure_per_person_per_year + cost_of_capital_per_person_per_year + expected_direct_support_cost_per_person_per_year + indirect_support_cost.to_f
-    else
-      nil
-    end
-  end
-
-  def expected_operation_expenditure_delta_per_person_per_year
-    if operation_expenditure_per_person_per_year != nil && expected_operation_expenditure_per_person_per_year != nil
-      operation_expenditure_per_person_per_year - expected_operation_expenditure_per_person_per_year
-    else
-      nil
-    end
-  end
-
-  def expected_capital_maintenance_expenditure_delta_per_person_per_year
-    if capital_maintenance_expenditure_per_person_per_year != nil && expected_capital_maintenance_expenditure_per_person_per_year != nil
-      capital_maintenance_expenditure_per_person_per_year - expected_capital_maintenance_expenditure_per_person_per_year
-    else
-      nil
-    end
-  end
-
-  def expenditure_of_direct_support_delta_per_person_per_year
-    if direct_support_cost != nil && direct_support_cost != nil
-      direct_support_cost.to_f - direct_support_cost.to_f
-    else
-      nil
-    end
-  end
-
-  def total_expenditure_delta_per_person_per_year
-    if total_inputted_recurrent_expenditure_per_person_per_year != nil && total_expected_expenditure_per_person_per_year != nil
-      total_inputted_recurrent_expenditure_per_person_per_year - total_expected_expenditure_per_person_per_year
-    else
-      nil
-    end
-  end
-
-  # affordability
-
-  def annual_household_income_per_person
-    if annual_household_income != nil && household_size != nil
-      annual_household_income.to_f / household_size.to_f
-    else
-      nil
-    end
-  end
-
-  def total_actual_users
-    if system_population_actual.count > 0
-      system_population_actual.map{ |spd| spd.to_f }.inject(:+)
-    else
-      nil
-    end
-  end
-
-  def total_designed_users
-    if system_population_design.count > 0
-      system_population_design.map{ |spa| spa.to_f }.inject(:+)
-    else
-      nil
-    end
-  end
-
-  # affordability inputted actual users
-
-  def annual_operational_expenditure_for_actual_users
-    if minor_operation_expenditure.count > 0 && total_actual_users != nil
-      minor_operation_expenditure.map{ |moe| moe.to_f }.inject(:+) / total_actual_users
-    else
-      nil
-    end
-  end
-
-  def annual_operational_expenditure_for_actual_users_as_percentage_of_household_income
-    if annual_operational_expenditure_for_actual_users != nil && annual_household_income != nil
-      100 * annual_operational_expenditure_for_actual_users / annual_household_income.to_f
-    else
-      nil
-    end
-  end
-
-  def annual_capital_maintenance_expenditure_for_actual_users
-    if capital_maintenance_expenditure.count > 0 && total_actual_users != nil
-      capital_maintenance_expenditure.map{ |cme| cme.to_f }.inject(:+) / total_actual_users
-    else
-      nil
-    end
-  end
-
-  def annual_capital_maintenance_expenditure_for_actual_users_as_percentage_of_household_income
-    if annual_capital_maintenance_expenditure_for_actual_users != nil && annual_household_income != nil
-      100 * annual_capital_maintenance_expenditure_for_actual_users / annual_household_income.to_f
-    else
-      nil
-    end
-  end
-
-  def annual_cost_of_capital_for_actual_users
-    if loan_cost.count > 0 && total_actual_users != nil
-      loan_cost.map{ |lc| lc.to_f }.inject(:+) / total_actual_users
-    else
-      nil
-    end
-  end
-
-  def annual_cost_of_capital_for_actual_users_as_percentage_of_household_income
-    if annual_cost_of_capital_for_actual_users != nil && annual_household_income != nil
-      100 * annual_cost_of_capital_for_actual_users / annual_household_income.to_f
-    else
-      nil
-    end
-  end
-
-  def total_annual_expenditure_for_actual_users
-    if annual_operational_expenditure_for_actual_users != nil && annual_capital_maintenance_expenditure_for_actual_users != nil && annual_cost_of_capital_for_actual_users != nil
-      annual_operational_expenditure_for_actual_users + annual_capital_maintenance_expenditure_for_actual_users + annual_cost_of_capital_for_actual_users
-    else
-      nil
-    end
-  end
-
-  def total_annual_expenditure_for_actual_users_as_percentage_of_household_income
-    if total_annual_expenditure_for_actual_users != nil && annual_household_income != nil
-      100 * total_annual_expenditure_for_actual_users / annual_household_income.to_f
-    else
-      nil
-    end
-  end
-
-  # affordability inputted designed users
-
-  def annual_operational_expenditure_for_designed_users
-    if minor_operation_expenditure.count > 0 && total_designed_users != nil
-      minor_operation_expenditure.map{ |moe| moe.to_f }.inject(:+) / total_designed_users
-    else
-      nil
-    end
-  end
-
-  def annual_operational_expenditure_for_designed_users_as_percentage_of_household_income
-    if annual_operational_expenditure_for_designed_users != nil && annual_household_income != nil
-      100 * annual_operational_expenditure_for_designed_users / annual_household_income.to_f
-    else
-      nil
-    end
-  end
-
-  def annual_capital_maintenance_expenditure_for_designed_users
-    if capital_maintenance_expenditure.count > 0 && total_designed_users != nil
-      capital_maintenance_expenditure.map{ |cme| cme.to_f }.inject(:+) / total_designed_users
-    else
-      nil
-    end
-  end
-
-  def annual_capital_maintenance_expenditure_for_designed_users_as_percentage_of_household_income
-    if annual_capital_maintenance_expenditure_for_designed_users != nil && annual_household_income != nil
-      100 * annual_capital_maintenance_expenditure_for_designed_users / annual_household_income.to_f
-    else
-      nil
-    end
-  end
-
-  def annual_cost_of_capital_for_designed_users
-    if loan_cost.count > 0 && total_designed_users != nil
-      loan_cost.map{ |lc| lc.to_f }.inject(:+) / total_designed_users
-    else
-      nil
-    end
-  end
-
-  def annual_cost_of_capital_for_designed_users_as_percentage_of_household_income
-    if annual_cost_of_capital_for_designed_users != nil && annual_household_income != nil
-      100 * annual_cost_of_capital_for_designed_users / annual_household_income.to_f
-    else
-      nil
-    end
-  end
-
-  def total_annual_expenditure_for_designed_users
-    if annual_operational_expenditure_for_designed_users != nil && annual_capital_maintenance_expenditure_for_designed_users != nil && annual_cost_of_capital_for_designed_users != nil
-      annual_operational_expenditure_for_designed_users + annual_capital_maintenance_expenditure_for_designed_users + annual_cost_of_capital_for_designed_users
-    else
-      nil
-    end
-  end
-
-  def total_annual_expenditure_for_designed_users_as_percentage_of_household_income
-    if total_annual_expenditure_for_designed_users != nil && annual_household_income != nil
-      100 * total_annual_expenditure_for_designed_users / annual_household_income.to_f
-    else
-      nil
-    end
-  end
-
-  # affordability expected actual users
-
-  def expected_annual_operational_expenditure_for_actual_users
-    if supply_system_technologies.count > 0 && total_actual_users != nil
-      supply_system_technologies.each_with_index.map{ |s,i| benchmark_minor_operation_expenditure[ s.to_i ] * system_population_actual[i].to_f }.inject(:+) / total_actual_users
-    else
-      nil
-    end
-  end
-
-  def expected_annual_operational_expenditure_for_actual_users_as_percentage_of_household_income
-    if expected_annual_operational_expenditure_for_actual_users != nil && annual_household_income != nil
-      100 * expected_annual_operational_expenditure_for_actual_users / annual_household_income.to_f
-    else
-      nil
-    end
-  end
-
-  def expected_annual_capital_maintenance_expenditure_for_actual_users
-    if supply_system_technologies.count > 0 && capital_maintenance_expenditure.count == supply_system_technologies.count && system_lifespan_expectancy.count == supply_system_technologies.count && total_actual_users != nil
-      supply_system_technologies.each_with_index.map{ |s,i| capital_maintenance_expenditure[i].to_f / system_lifespan_expectancy[i].to_f }.inject(:+) / total_actual_users
-    else
-      nil
-    end
-  end
-
-  def expected_annual_capital_maintenance_expenditure_for_actual_users_as_percentage_of_household_income
-    if expected_annual_capital_maintenance_expenditure_for_actual_users != nil && annual_household_income != nil
-      100 * expected_annual_capital_maintenance_expenditure_for_actual_users / annual_household_income.to_f
-    else
-      nil
-    end
-  end
-
-  def expected_annual_cost_of_capital_for_actual_users
-    if loan_cost.count > 0 && total_actual_users != nil
-      loan_cost.map{ |lc| lc.to_f }.inject(:+) / total_actual_users
-    else
-      nil
-    end
-  end
-
-  def expected_annual_cost_of_capital_for_actual_users_as_percentage_of_household_income
-    if expected_annual_cost_of_capital_for_actual_users != nil && annual_household_income != nil
-      100 * expected_annual_cost_of_capital_for_actual_users / annual_household_income.to_f
-    else
-      nil
-    end
-  end
-
-  def total_expected_annual_expenditure_for_actual_users
-    if expected_annual_operational_expenditure_for_actual_users != nil && expected_annual_capital_maintenance_expenditure_for_actual_users != nil && expected_annual_cost_of_capital_for_actual_users != nil
-      expected_annual_operational_expenditure_for_actual_users + expected_annual_capital_maintenance_expenditure_for_actual_users + expected_annual_cost_of_capital_for_actual_users
-    else
-      nil
-    end
-  end
-
-  def total_expected_annual_expenditure_for_actual_users_as_percentage_of_household_income
-    if total_expected_annual_expenditure_for_actual_users != nil && annual_household_income != nil
-      100 * total_expected_annual_expenditure_for_actual_users / annual_household_income.to_f
-    else
-      nil
-    end
-  end
-
-
-
-
-
-
   # service levels
-
-  def percentage_of_population_with_defined_service
-    if service_level_name.count > 0 && service_level_share.count == service_level_name.count
-      service_level_share.map{ |sl| sl.to_i }.inject(:+)
-    else
-      nil
-    end
-  end
 
   def percentage_of_population_that_meets_accessibility_norms
     if service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_accessibility_norms.count == service_level_name.count
@@ -638,50 +232,6 @@ class AdvancedWaterQuestionnaire < Session
     end
   end
 
-  # cost comparison
-
-  def total_service_area_capital_expenditure
-    if supply_system_technologies.count > 0 && actual_hardware_expenditure.count == supply_system_technologies.count && actual_software_expenditure.count == supply_system_technologies.count && system_population_design.count == supply_system_technologies.count
-      supply_system_technologies.each_with_index.map{ |s,i| ( actual_hardware_expenditure[i].to_f + actual_software_expenditure[i].to_f ) }.inject(:+) / system_population_design.map{ |sp| sp.to_f }.inject(:+)
-    else
-      nil
-    end
-  end
-
-  def total_service_area_recurrent_expenditure
-    total_inputted_recurrent_expenditure_per_person_per_year
-  end
-
-  def service_area_capital_expenditure_for_technology( technology )
-    expenditure = 0
-
-    if supply_system_technologies.include?( technology ) && actual_hardware_expenditure.count == supply_system_technologies.count && actual_software_expenditure.count == supply_system_technologies.count && system_population_design.count == supply_system_technologies.count
-      supply_system_technologies.each_with_index do |t,i|
-
-        if t == technology
-          expenditure = expenditure + ( actual_hardware_expenditure[i].to_f + actual_software_expenditure[i].to_f ) / system_population_design[i].to_f
-        end
-      end
-    end
-
-    expenditure
-  end
-
-  def service_area_recurrent_expenditure_for_technology( technology )
-    expenditure = 0
-
-    if supply_system_technologies.include?( technology ) && minor_operation_expenditure.count == supply_system_technologies.count && capital_maintenance_expenditure.count == supply_system_technologies.count && system_population_design.count == supply_system_technologies.count && loan_cost.count == supply_system_technologies.count && loan_payback_period.count == supply_system_technologies.count
-      supply_system_technologies.each_with_index do |t,i|
-
-        if t == technology
-          expenditure = expenditure + ( minor_operation_expenditure[i].to_f + capital_maintenance_expenditure[i].to_f + loan_cost[i].to_f * [ loan_payback_period[i].to_i, 30 ].min ) / system_population_design[i].to_f
-        end
-      end
-    end
-
-    expenditure
-  end
-
 
   # BENCHMARK VALUES
 
@@ -732,57 +282,31 @@ class AdvancedWaterQuestionnaire < Session
 
 
   def set_properties
-
-    # context
-    @water_system_exists              = nil
-    @country                          = nil
-    @currency                         = nil
-    @year_of_expenditure              = nil
-    @region                           = nil
-    @town                             = nil
-    @area_type                        = nil
-    @population_density               = nil
+    super
 
     # system management
-    @service_management               = []
-    @construction_financier           = []
-    @infrastructure_operator          = []
-    @service_responsbility            = []
-    @standard_enforcer                = []
-    @rehabilitation_cost_owner        = []
-    @annual_household_income          = nil
-    @household_size                   = nil
-    @direct_support_cost              = nil
-    @indirect_support_cost            = nil
+    self.service_management               = []
+    self.construction_financier           = []
+    self.infrastructure_operator          = []
+    self.service_responsbility            = []
+    self.standard_enforcer                = []
+    self.rehabilitation_cost_owner        = []
 
     # system characteristics
-    @supply_system_technologies       = []
-    @systems_number                   = []
-    @system_population_design         = []
-    @system_population_actual         = []
-    @water_source                     = []
-    @surface_water_primary_source     = []
-    @water_treatment                  = []
-    @power_supply                     = []
-    @distribution_line_length         = []
+    self.water_source                     = []
+    self.surface_water_primary_source     = []
+    self.water_treatment                  = []
+    self.power_supply                     = []
+    self.distribution_line_length         = []
 
     # cost
-    @actual_hardware_expenditure      = []
-    @system_lifespan_expectancy       = []
-    @actual_software_expenditure      = []
-    @unpaid_labour                    = []
-    @minor_operation_expenditure      = []
-    @capital_maintenance_expenditure  = []
-    @loan_cost                        = []
-    @loan_payback_period              = []
+    self.unpaid_labour                    = []
 
     # service level
-    @service_level_name               = []
-    @service_level_share              = []
-    @national_accessibility_norms     = []
-    @national_quantity_norms          = []
-    @national_quality_norms           = []
-    @national_reliability_norms       = []
+    self.national_accessibility_norms     = []
+    self.national_quantity_norms          = []
+    self.national_quality_norms           = []
+    self.national_reliability_norms       = []
 
   end
 
