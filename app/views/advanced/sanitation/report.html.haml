@@ -80,10 +80,11 @@
     .report--section--edit
       %a.report--section--edit--link{ :href => advanced_sanitation_action_path( I18n.locale, 'service_level' ) }= t( 'edit' )
 
-    - if @questionnaire.percentage_of_population_with_defined_service < 100
-      .report--no_data= t( 'report.service_level_population_incomplete' )
-    - elsif @questionnaire.percentage_of_population_with_defined_service > 100
-      .report--no_data= t( 'report.service_level_population_overcomplete' )
+    - if @questionnaire.percentage_of_population_with_defined_service != nil
+      - if @questionnaire.percentage_of_population_with_defined_service < 100
+        .report--no_data= t( 'report.service_level_population_incomplete' )
+      - elsif @questionnaire.percentage_of_population_with_defined_service > 100
+        .report--no_data= t( 'report.service_level_population_overcomplete' )
 
     %table.report--service_level_summary
       %tr
