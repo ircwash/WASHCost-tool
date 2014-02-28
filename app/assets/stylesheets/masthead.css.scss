@@ -11,7 +11,7 @@
 
 .header--content {
   @include pie-clearfix;
-  padding:10px 0;
+  padding:10px 0 8px;
 }
 
 .header--logo {
@@ -24,7 +24,7 @@
 
 .header--links {
   float:right;
-  margin:-10px 0;
+  margin:-10px 0 -8px;
 }
 
 .header--links--item {
@@ -202,6 +202,20 @@
   .header--links--item--dropdown--link {
     padding-left:34px;
     padding-right:34px;
+  }
+
+}
+
+
+@media (-webkit-min-device-pixel-ratio:2), (min-resolution:192dpi) {
+
+  .header--logo {
+    background-image:image-url('image-logo@2x.png');
+    background-size:200px 40px;
+  }
+
+  .header--logo--image {
+    visibility:hidden;
   }
 
 }

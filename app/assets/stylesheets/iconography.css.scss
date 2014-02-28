@@ -12,6 +12,7 @@
   background-image:image-url('sprite-question_icons.png');
   background-repeat:no-repeat;
   background-position:50% 100%;
+  background-size:180px 7200px;
 }
 
 .icon--tool-globe::before {
@@ -229,3 +230,12 @@
   background-position:-4px -35px;
 }
 
+
+@media (-webkit-min-device-pixel-ratio:2), (min-resolution:192dpi) {
+
+  [class^="icon--tool-"]::before,
+  [class*=" icon--tool-"]::before {
+    background-image:image-url('sprite-question_icons@2x.png');
+  }
+
+}

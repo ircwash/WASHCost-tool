@@ -45,7 +45,7 @@ class Session
 
 
   def attributes
-    Hash[ property_attributes.map{ |a| [ a, send( "#{a}" ) ] } ]
+    Hash[ property_attributes.map{ |a| [ a, self.send(a) ] } ]
   end
 
 
@@ -64,34 +64,22 @@ class Session
   protected
 
 
-  def self.property_attributes
+  def property_attributes
     @attributes
   end
 
-  def property_attributes
-    self.class.property_attributes
+
+  def property_attributes(*attributes)
+    @attributes ||= []
+    @attributes.concat attributes
   end
 
 
   private
 
 
-  def self.attr_accessor(*vars)
-    @attributes ||= []
-    @attributes.concat vars
-
-    super
-  end
-
-
   def archive
-    data = {}
-
-    property_attributes.each do |a|
-      data[ a ] = send( a )
-    end
-
-    @session[ @identifier ] = data unless @session == nil
+    @session[ @identifier ] = attributes unless @session == nil
   end
 
 

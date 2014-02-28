@@ -71,8 +71,8 @@
 @media screen and ( max-device-width: $mobile_breakpoint ) {
 
   .footer {
+    position:static;
     height:auto;
-    margin:0 -20px;
   }
 
   .footer--link,

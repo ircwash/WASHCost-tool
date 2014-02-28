@@ -3,7 +3,7 @@ WashCostApp::Application.routes.draw do
   match '/infographic' => 'infographic#index'
   match '/infographic/mobile' => 'mobile#infographic'
 
-  scope '/:locale', locale: /en|fr/ do
+  scope '/(:locale)', locale: /en|fr/ do
 
     devise_for :users, :controllers => { :sessions => 'authentication/sessions', :registrations => 'authentication/registrations', :passwords => 'authentication/passwords' }
 

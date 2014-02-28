@@ -745,7 +745,7 @@
 
   .report {
     margin:0 -20px;
-    padding-bottom:120px;
+    padding-bottom:0;
   }
 
   .report--header--title {
@@ -753,28 +753,43 @@
     margin-bottom:10px;
   }
 
+  .report--summary {
+    display:block;
+  }
+
+  .report--review,
+  .report--summary--description {
+    width:auto;
+  }
+
   .report--header--quicklink {
     top:80px;
   }
 
   .report--summary--item {
+    float:none;
     display:block;
     width:auto;
-    margint-top:40px;
+    margin-top:40px;
   }
 
   .report--option_grid--item,
   .report--costs--column-small,
   .report--costs--column-big {
     float:none;
-    width:80%;
+    width:auto;
     margin-top:20px;
     margin-right:auto;
     margin-left:auto;
   }
 
+  .report-service_level::before,
+  .report-service_level::after {
+    content:none;
+  }
+
   .report--costs--column-small {
-    width:60%;
+    width:auto;
   }
 
 }

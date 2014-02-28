@@ -13,6 +13,8 @@ class BasicWaterQuestionnaire < Session
 
   def initialize( session )
     super( session, :basic_water )
+
+    property_attributes :country, :technology, :population, :capital_expenditure, :recurrent_expenditure, :access, :quantity, :quality, :reliability
   end
 
 

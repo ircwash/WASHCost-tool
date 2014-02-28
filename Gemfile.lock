@@ -111,6 +111,9 @@ GEM
       railties (>= 3.1, < 4.1)
     hike (1.2.3)
     hirb (0.7.1)
+    httparty (0.12.0)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.6.1)
     jazz_hands (0.5.1)
       awesome_print (~> 1.1.0)
@@ -165,6 +168,7 @@ GEM
       tzinfo (~> 0.3.29)
     moped (1.5.1)
     multi_json (1.8.1)
+    multi_xml (0.5.5)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
     origin (1.1.0)
@@ -292,12 +296,14 @@ DEPENDENCIES
   capybara-webkit
   compass-rails
   countries
+  currencies
   database_cleaner
   devise
   factory_girl_rails
   faker
   haml
   haml-rails
+  httparty
   jazz_hands
   jquery-rails
   jquery-ui-sass-rails

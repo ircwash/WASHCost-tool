@@ -341,3 +341,12 @@
 .dual_column--field--label + .dual_column_form--field.dual_column_form--field-box {
   margin-top:15px;
 }
+
+
+@media screen and ( max-device-width: $mobile_breakpoint ) {
+
+  .standalone_form {
+    margin:0 -20px;
+  }
+
+}
