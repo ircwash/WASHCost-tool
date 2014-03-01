@@ -7,6 +7,7 @@
         %h1.standalone_form--heading Edit your account
 
         = render "devise/shared/messages"
+        .standalone_form--message= devise_error_messages!
 
         .standalone_form--field.standalone_form--field-text
           = f.text_field :first_name, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => 'Your first name'
@@ -15,7 +16,7 @@
           = f.text_field :last_name, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => 'Your last name'
 
         .standalone_form--field.standalone_form--field-text
-          = f.text_field :email, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => 'Your email'
+          = f.text_field :email, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => 'Your email', :disabled => true
 
         .standalone_form--field.standalone_form--field-text
           = f.text_field :company, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => 'Your company'
