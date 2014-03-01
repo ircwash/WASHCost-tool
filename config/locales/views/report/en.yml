@@ -95,6 +95,8 @@ en:
     status:
       installed: Installed
       planned: Planned
+      neither: Neither
+      unknown: Unknown
     percentage_of_household_income: Percentage of household Income
     annual_operational_expenditure: Annual operational expenditure
     annual_capital_maintenance_expenditure: Annual capital maintenance expenditure
