@@ -8,6 +8,7 @@
         %h1.standalone_form--heading Change your password
 
         = render "devise/shared/messages"
+        .standalone_form--message= devise_error_messages!
 
         .standalone_form--field.standalone_form--field-text
           = f.password_field :password, :placeholder => 'New password', :class => 'standalone_form--field--input standalone_form--field--input-text'
