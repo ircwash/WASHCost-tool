@@ -1,5 +1,4 @@
 WashCostApp::Application.routes.draw do
-
   match '/infographic' => 'infographic#index'
   match '/infographic/mobile' => 'mobile#infographic'
 
