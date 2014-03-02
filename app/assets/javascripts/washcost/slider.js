@@ -20,7 +20,7 @@ $( document ).ready( function()
           values      = input.data( 'slider-values' ),
           below       = input.data( 'slider-below' ),
           above       = input.data( 'slider-above' ),
-          value       = logarithmic ? _logslider.logposition( parseInt( label.val(), 10 ), min, max ) : parseInt( label.val(), 10 ),
+          value       = logarithmic ? _logslider.logposition( parseFloat( label.val(), 10 ), min, max ) : parseFloat( label.val(), 10 ),
           options     = { slide:update_value, value:value, change:input_did_change },
           step_slider, below_offset, above_offset;
 
@@ -32,7 +32,7 @@ $( document ).ready( function()
       slider.slider( options );
 
       // force label value to locale string
-      label.val( values ? values[ parseInt( label.val(), 10 ) ] : parseInt( label.val(), 10 ).toLocaleString() );
+      label.val( values ? values[ parseFloat( label.val(), 10 ) ] : parseFloat( label.val(), 10 ).toLocaleString() );
 
       // if there are above/below options specified, render this in the ui
       if ( above && below )
@@ -76,10 +76,10 @@ $( document ).ready( function()
 
   function validate_slider( event )
   {
-    if ( !( ( event.keyCode >= 48 && event.keyCode <= 57 ) || ( event.keyCode >= 96 && event.keyCode <= 105 ) || ( event.keyCode >= 37 && event.keyCode <= 40 ) || event.keyCode === 13 || event.keyCode === 8 || event.keyCode === 46 || event.keyCode === 9 || event.metaKey ) )
-    {
-      event.preventDefault();
-    }
+    // if ( !( ( event.keyCode >= 48 && event.keyCode <= 57 ) || ( event.keyCode >= 96 && event.keyCode <= 105 ) || ( event.keyCode >= 37 && event.keyCode <= 40 ) || event.keyCode === 13 || event.keyCode === 8 || event.keyCode === 46 || event.keyCode === 9 || event.metaKey ) )
+    // {
+    //   event.preventDefault();
+    // }
   }
 
 
@@ -102,7 +102,7 @@ $( document ).ready( function()
         logarithmic = input.data( 'logarithmic' ),
         min         = input.data( 'slider-min' ),
         max         = input.data( 'slider-max' ),
-        value       = logarithmic ? _logslider.logposition( parseInt( label.val(), 10 ), min, max ) : parseInt( label.val(), 10 );
+        value       = logarithmic ? _logslider.logposition( parseFloat( label.val(), 10 ), min, max ) : parseFloat( label.val(), 10 );
 
     // update input
     input.val( label.val() );
@@ -123,7 +123,7 @@ $( document ).ready( function()
   {
     var label = $( this );
 
-    label.val( parseInt( label.val(), 10 ).toLocaleString() );
+    label.val( parseFloat( label.val(), 10 ).toLocaleString() );
   }
 
 
