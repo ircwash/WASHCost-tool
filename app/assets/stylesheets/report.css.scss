@@ -30,6 +30,7 @@
 // STYLESHEET
 
 .report {
+  background: #DDD698;
   @include background-image(linear-gradient(to right,  rgb(221, 214, 153) 0%, rgb(235, 232, 202) 50%, rgb(221, 214, 153) 100%));
 }
 
