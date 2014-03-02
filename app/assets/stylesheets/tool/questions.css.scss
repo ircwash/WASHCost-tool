@@ -114,7 +114,7 @@
   text-align:center;
 }
 
-@media screen and ( max-device-width: $mobile_breakpoint ) {
+@media screen and ( max-width: $mobile_breakpoint ) {
 
   .question--radios {
     display:block;
