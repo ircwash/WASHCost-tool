@@ -27,6 +27,7 @@ html, body {
 .boxed_content {
   position:relative;
   height:100%;
+  overflow: auto;
   padding:20px;
   background-color:#a08d62;
   background-image:-webkit-radial-gradient(center bottom, circle, #e6e3be, #a08d62);

@@ -30,13 +30,13 @@
 
 .question--radios {
   display:inline-block;
-
+  text-align: center;
   @include clearfix;
 }
 
 .question--radios--label {
   position:relative;
-  float:left;
+  display: inline-block;
   width:160px;
   cursor:pointer;
   -webkit-tap-highlight-color:rgba(0,0,0,0);
@@ -50,8 +50,8 @@
   width:200px;
 }
 
-.question--radios--label + .question--radios--label {
-  margin-left:30px;
+.question--radios--label {
+  margin: 0 10px;
 }
 
 .question--radios--label-narrow + .question--radios--label-narrow {
