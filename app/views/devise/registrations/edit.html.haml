@@ -27,7 +27,7 @@
 
         .standalone_form--field.standalone_form--field-dropdown
           = f.label :prefered_language, { :class => 'standalone_form--field--label' }
-          = f.select :prefered_language, options_for_select( options_for_languages ), {  }, { :class => "standalone_form--field--input standalone_form--field--input-dropdown chzn-select" }
+          = f.select :prefered_language, options_for_select( options_for_languages, @user.prefered_language ), {  }, { :class => "standalone_form--field--input standalone_form--field--input-dropdown chzn-select" }
 
         .standalone_form--field{ "data-togglecontent" => "true" }
           %a.standalone_form--interstitial_link.standalone_form--promo--link{ :href => "#", "data-togglecontent-link" => "true" } Change your password
