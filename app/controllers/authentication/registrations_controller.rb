@@ -9,15 +9,16 @@ class Authentication::RegistrationsController < Devise::RegistrationsController
 
     # prevent updating email address
     params[:user][:email] = @user.email
+    I18n.locale = params[:user][:prefered_language]
 
     successfully_updated = if needs_password?(@user, params)
-                             @user.update_with_password(params[:user])
-                           else
-                             # remove the virtual current_password attribute update_without_password
-                             # doesn't know how to ignore it
-                             params[:user].delete(:current_password)
-                             @user.update_without_password(params[:user])
-                           end
+      @user.update_with_password(params[:user])
+    else
+      # remove the virtual current_password attribute update_without_password
+      # doesn't know how to ignore it
+      params[:user].delete(:current_password)
+      @user.update_without_password(params[:user])
+    end
 
     if successfully_updated
       set_flash_message :notice, :updated
@@ -37,13 +38,13 @@ class Authentication::RegistrationsController < Devise::RegistrationsController
   # extend this as needed
   def needs_password?(user, params)
     user.email != params[:user][:email] ||
-        params[:user][:password].present?
+      params[:user][:password].present?
   end
 
   protected
 
   def after_update_path_for(resource)
-    dashboard_index_path
+    "/" + current_user.prefered_language + dashboard_index_path
   end
 
 end
