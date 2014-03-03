@@ -2,10 +2,10 @@
   = link_to t( 'devise.sign_in' ), new_session_path( :user ), :class => 'standalone_form--link'
 
 - if devise_mapping.registerable? && controller_name != 'registrations'
-  = link_to t( 'devise.sign_up' ), new_registration_path( :user ), :class => 'standalone_form--link'
+  = link_to t( 'devise.sign_up' ), new_registration_path( :user, I18n.locale ), :class => 'standalone_form--link'
 
 - if devise_mapping.recoverable? && controller_name != 'passwords'
-  = link_to t( 'devise.forgot_your_password' ), new_password_path( :user ), :class => 'standalone_form--link'
+  = link_to t( 'devise.forgot_your_password' ), new_password_path( :user, I18n.locale ), :class => 'standalone_form--link'
 
 - if devise_mapping.confirmable? && controller_name != 'confirmations'
   = link_to t( 'devise.didnt_receive_confirmation_instructions' ), new_confirmation_path( :user ), :class => 'standalone_form--link'
