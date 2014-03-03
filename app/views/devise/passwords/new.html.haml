@@ -7,7 +7,6 @@
         %h1.standalone_form--heading Forgot your password?
 
         = render "devise/shared/messages"
-        .standalone_form--message= devise_error_messages!
 
         .standalone_form--field.standalone_form--field-text
           = f.email_field :email, :placeholder => 'Email', :class => 'standalone_form--field--input standalone_form--field--input-text'

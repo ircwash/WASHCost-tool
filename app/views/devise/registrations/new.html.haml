@@ -7,7 +7,6 @@
         %h1.standalone_form--heading= t( 'devise.create_account' )
 
         = render "devise/shared/messages"
-        .standalone_form--message= devise_error_messages!
 
         .standalone_form--field.standalone_form--field-text
           = f.text_field :email, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => t( 'devise.email' )

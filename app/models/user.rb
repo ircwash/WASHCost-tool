@@ -4,7 +4,7 @@ class User
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+    :recoverable, :rememberable, :trackable
 
   # Persistence relations
   embeds_many :user_reports
@@ -17,6 +17,15 @@ class User
   field :company,            type: String, default: ""
   field :email,              type: String, default: ""
   field :encrypted_password, type: String, default: ""
+
+  validates :email,
+    :uniqueness => {:message => :unique_email},
+    :presence => {:message => :email_missing}
+
+  validates :password,
+    :presence => {:message => :password_missing},
+    :length => {:within => 8..128, :too_long => :password_too_long, :too_short => :password_too_short},
+    :confirmation => {:message => :password_confirm_mismatch}
 
   ## Recoverable
   field :reset_password_token,   :type => String

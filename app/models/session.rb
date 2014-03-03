@@ -4,7 +4,6 @@ class Session
   include ActiveModel::Conversion
   extend ActiveModel::Naming
 
-
   def initialize( session, identifier )
 
     @identifier = identifier

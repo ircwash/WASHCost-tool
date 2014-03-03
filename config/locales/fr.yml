@@ -1,4 +1,19 @@
-fr:
+en:
+  errors:
+    messages:
+      unique_email: "Email address needs to be unique"
+      email_missing: "Email address can't be blank"
+      password_missing: "A password is required"
+      password_too_long: "Password too long"
+      password_too_short: "Password too short"
+      password_confirm_mismatch: "Passwords do not match"
+  mongoid:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "Email address can't be blank"
   number:
     format:
       separator: ","

@@ -1,5 +1,8 @@
+- if @user.errors.messages.any?
+	- @user.errors.messages.each do |key, value|
+		.standalone_form--message= value.first
+- else
+	- @user.errors.full_messages.each do |key, value|
+		.standalone_form--message= value	
 - flash.each do |name, msg|
-
-  - if msg.is_a?( String ) && name.to_s == 'alert'
-
-    .standalone_form--message= msg
+	.standalone_form--message= msg

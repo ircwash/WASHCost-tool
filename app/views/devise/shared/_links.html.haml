@@ -1,5 +1,5 @@
 - if controller_name != 'sessions'
-  = link_to t( 'devise.sign_in' ), new_session_path( :user ), :class => 'standalone_form--link'
+  = link_to t( 'devise.sign_in' ), new_session_path( :user, I18n.locale ), :class => 'standalone_form--link'
 
 - if devise_mapping.registerable? && controller_name != 'registrations'
   = link_to t( 'devise.sign_up' ), new_registration_path( :user, I18n.locale ), :class => 'standalone_form--link'
