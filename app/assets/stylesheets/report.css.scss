@@ -40,6 +40,7 @@
   border-bottom:#fff solid 5px;
   text-align:center;
   background-color:$brand_green;
+  @include background-image(linear-gradient(to bottom, $faded_green 0%, $brand_green 50%, $brand_dark_green 100%));
 }
 
 .report--header--pretitle {
