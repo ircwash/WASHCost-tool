@@ -8,12 +8,13 @@
     .report--header--pretitle= t( 'basic.sanitation.report.final_report' )
     %h1.report--header--title= t( 'report.summmary' )
 
-    - if @questionnaire.reportable?
+    - if @questionnaire.service_reportable?
       .report--summary
-        .report--summary--item
-          .report--summary--item--title= t( 'report.total_cost' )
-          .report--summary--item--value= "#{report_dollar_currency_value_for(@questionnaire.total_cost, 0)}"
-          .report--summary--item--caption= t( 'report.caption_total_cost', :population => report_integer_value_for( @questionnaire.population ) )
+        - if @questionnaire.reportable?
+          .report--summary--item
+            .report--summary--item--title= t( 'report.total_cost' )
+            .report--summary--item--value= "#{report_dollar_currency_value_for(@questionnaire.total_cost, 0)}"
+            .report--summary--item--caption= t( 'report.caption_total_cost', :population => report_integer_value_for( @questionnaire.population ) )
 
         .report--summary--item
           .report--summary--item--title= t( 'report.level_of_service' )

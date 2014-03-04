@@ -38,6 +38,9 @@ class BasicSanitationQuestionnaire < Session
     100 * attributes_with_values / total_attributes
   end
 
+  def service_reportable?
+    [ service_rating ].all?
+  end
 
   def reportable?
     [ latrine, capital_expenditure, recurrent_expenditure, reliability, service_rating ].all?

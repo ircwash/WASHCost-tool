@@ -37,6 +37,9 @@ class BasicWaterQuestionnaire < Session
     100 * attributes_with_values / total_attributes
   end
 
+  def service_reportable?
+    [ access, quality, quantity, reliability ].all?
+  end
 
   def reportable?
     [ technology, capital_expenditure, recurrent_expenditure, access, quality, quantity, reliability ].all?
