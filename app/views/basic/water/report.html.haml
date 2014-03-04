@@ -68,7 +68,8 @@
 
   %section.report--section
     .report--section--title= t( 'report.cost' );
-    .report--section--subtitle= t( 'report.cost_subtitle', :population => @questionnaire.population || @questionnaire.minimum_population )
+    - if basic_report_cost_available
+      .report--section--subtitle= t( 'report.cost_subtitle', :population => @questionnaire.population || @questionnaire.minimum_population )
 
     - if basic_report_cost_available
       .report--chart{ 'data-chart-capital' => @questionnaire.capital_expenditure || 0, 'data-chart-recurrent' => @questionnaire.recurrent_expenditure || 0, 'data-chart-population' => @questionnaire.population || 0 }
