@@ -9,7 +9,7 @@
         minutes_per_day: Minutes per round trip
         people: People
         country:
-          question: In which country does your %{type} service take place?
+          question: "In which country does your %{type} service take place?"
           placeholder: Select a country
           #changed 12/02/2014
           info: "Please select the country where the service is taking place to help set the context for your calculation." 
