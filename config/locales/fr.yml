@@ -24,51 +24,51 @@ fr:
     currency:
       format:
         format: "%u%n"
-        unit: "€"
+        unit: "US$"
         separator: ","
         delimiter: " "
         precision: 2
   navigation:
     utility:
-      about: Au sujet de
+      about: À propos de 
       help: Aide
       contact: Contact
-      sign_in: Connexion
-      sign_out: Sign Out - Translation required
+      sign_in: Ouvrir une session
+      sign_out: Fermer la session
     calculators:
       context: Contexte
       country: Pays
       technology: Technologie
       population: Population
-      household: Household
+      household: Ménage
       latrine: Latrine
       cost: Coût
-      capital_expenditure: Coût d'investissement
-      recurrent_expenditure: Coût récurrents
+      capital_expenditure: Dépense d'investissement
+      recurrent_expenditure: Dépenses récurrentes
       service: Service
       access: Accès
       quantity: Quantité
       quality: Qualité
-      household_latrine: Household Latrine
+      household_latrine: Latrine familiale
       impermeability: Imperméable
-      environmental_impact: L'environnement
-      usage: Utilisent
+      environmental_impact: Impact sur l'environnement
+      usage: Utilisation
       reliability: Fiabilité
-      advanced: Advanced
-      service_area: Service Area - Translation required
-      system_management: System Management - Translation required
-      system_characteristics: System Characteristics - Translation required
-      service_level: Service Level - Translation required
+      advanced: Outil avancé
+      service_area: Zone de service
+      system_management: Gestion du système
+      system_characteristics: Caractéristiques techniques
+      service_level: Niveau de service
   footer:
-    calculator_progress: "%{level} %{type} rapport"
+    calculator_progress: "Rapport %{level} %{type} "
   buttons:
-    next: Prochain Question
-    start: OK! Commencer à utiliser le calculateur
+    next: Question suivante
+    start: Commencez à utiliser le calculateur
     view_report: Voir le rapport
     save_report: Sauvegarder le rapport
-    share_report: Share Report
+    share_report: Partager le rapport
   calculators:
-    basic: Basic - Translation required
-    advanced: Advanced - Translation required
+    basic: Outil de base
+    advanced: Outil avancé
     water: Eau
-    sanitation: Sanitation - Translation required
+    sanitation: Assainissement

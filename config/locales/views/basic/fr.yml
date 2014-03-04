@@ -1,27 +1,28 @@
-fr:
+﻿fr:
   basic:
     shared:
       questionnaire:
-        per_person_usd: par personne US$
-        usd_per_person_per_year: US$ par personne par année
-        minutes_per_day: Minutes par jour
+        per_person_usd: US$ par personne 
+        usd_per_person_per_year: US$ par personne par an
+        minutes_per_day: Minutes par aller-retour
         people: Personnes
         country:
-          question: Dans quel pays se déroule votre programme (intervention)??
-          placeholder: Choisir un pays
+          question: Dans quel pays se trouve votre service?
+          placeholder: Sélectionner un pays
+          info: Veuillez sélectionner le pays où le service est mis en place pour nous aider à définir le contexte pour votre calcul. 
         capital_expenditure:
-          question: Combien a été/sera dépensé pour la construction du système d'approvisionnement en eau (par personne)?
-          info:
+          question: Combien avez-vous dépensé ou allez-vous dépenser pour la mise en place du système d'approvisionnement en eau de type %{type} (y compris la construction des ouvrages)(par personne)?
+          info: La ligne blanche indique la fourchette de coûts observés dans des projets WASHCost dans des zones avec un niveau de service de base. Les coûts de démarrage comprennent les dépenses d'investissement matériel et immatériel, tels que décrits ci-dessous,  Dépense d'investissement (matériel), capital investi dans la construction ou l'achat d'actifs fixes tels que structures en béton, pompes et tuyaux. Dépense d'investissement (immatériel), dépense dans les activités ponctuelles avec les parties prenantes, préalables à la construction, la mise en œuvre ou l'extension (y compris le développement des capacités). Voir - "http://akvopedia.org/wiki/Capital_Expenditure_(CapEx)"
         recurrent_expenditure:
-          question: "Combien a été/sera dépensé pour exploiter, entretenir et appuyer le service d'eau (par personne par année)?"
-          info:
-          value_label: Par personne par année
+          question: Combien avez-vous dépensé ou allez-vous dépenser pour exploiter, entretenir et appuyer la fourniture du service d'eau %{type} (par personne par an)?
+          info: La ligne blanche indique la fourchette de dépenses récurrentes observées dans des projets WASHCost dans des zones avec un niveau de service de base. Le total des dépenses récurrentes nécessaires pour maintenir un service de base continu "comprennent:" Dépenses d'exploitation et de "fonctionnement:" en général il s'agit de dépenses récurrentes pour la main-d'œuvre, le carburant, les produits chimiques, des fournitures et l'achat d'eau en gros. "Voir:" "http://akvopedia.org/wiki/Operational_and_Minor_Maintenance_Expenditure_(OpEx)" Dépense de "renouvellement:" dépense pour le renouvellement et le remplacement des actifs fixes, dépense occasionnelle pour assurer le fonctionnement continu d'un système, tel que le remplacement d'une dalle de latrine ou un moteur diesel dans un système d'exhaure motorisé. "Voir:" "http://akvopedia.org/wiki/Capital_Maintenance_Expenditure_(CapManEx)" "Dépenses d'appui direct:" il s’agit d’un appui structurel aux autorités de services ou gouvernements locaux et aux fournisseurs de service et aux usagers ou groupes d’usagers, dédié à l’organisation et à la gestion d’un service WASH. Cette dépense couvre le renforcement de capacités post-construction, le suivi, le conseil technique et l’appui administratif, organisationnel et juridique, notamment pour la mise en conformité avec les normes et directives nationales. "Voir:" "http://akvopedia.org/wiki/Expenditure_Direct_Support_(ExpDS)" "Dépenses d'appui indirect:" dépense pour l'appui au niveau macro, pour la planification et l'élaboration des politiques sectorielles. Voir - "http://akvopedia.org/wiki/Expenditure_Indirect_Support_(ExpIDS)"
+          value_label: Par personne par an
         values:
           v0: Pas de service
           v1: Service limité
           v2: Service de base
           v3: Service amélioré
-          info:
-        select_an_option: Selectionner une option
+          info: Le niveau d'un service se caractérise par les bénéfices pour les usagers, mesurés par rapport à quatre "critères:" quantité de l'eau, qualité de l'eau; accessibilité et fiabilité. "Voir:" "http://www.washcost.info/page/2454"
+        select_an_option: Sélectionner une option
 
 

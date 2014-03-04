@@ -1,59 +1,79 @@
-en:
+﻿en:
   basic:
     sanitation:
       questionnaire:
         country:
           question: In which country does your sanitation service take place?
-          info: ""
+        #added info box
+          info: Please indicate the country where the service takes place.
         population:
           question: How many people in this area are receiving this sanitation service?
-          info: ""
+        #added info box
+          info: The number of people receiving the sanitation service is an important part of service area cost calculations. In the basic tool, you can select between 100 and 1,000,000 people.
         latrine:
           question: What type of latrine technology is being used?
           options:
-            traditional_pit_latrine: Traditional pit latrine
-            slab_latrine: Slab latrine
-            vip_latrine: Vip latrine
+            #Check copy with Peter Burr for the sanitation technologies 
+            traditional_pit_latrine: Pit latrine without a concrete slab
+            slab_latrine: Concrete slab latrine
+            vip_latrine: VIP latrine
             pour_flush_latrine: Pour Flush Latrine
-            twin_pit_pour_flush_latrine: Twin Pit Pour Flush Latrine
+            twin_pit_pour_flush_latrine: Double Pit Pour Flush Latrine
             latrine_with_septic_tank: Latrine with septic tank
-          info: ""
+          #added info: assuming the same syntax as for water. 
+          info: 
+            traditional_pit_latrine: Pit latrine with an impermeable slab (made often from local materials) but not made out of concrete. "See:" "http://akvopedia.org/wiki/Single_Pit"
+            slab_latrine: A pit latrine with a concrete slab. 
+            vip_latrine: A Ventilated Improved Pit Latrine, also known as a VIP latrine, is a pit latrine with a concrete slab and concrete superstructures (with ventilation pipeand screen to reduce odours and flies). "See:" "http://akvopedia.org/wiki/Single_Ventilated_Improved_Pit"
+            pour_flush_latrine: Any kind of single pit pour flush latrine with a concrete slab and without a septic system.
+            twin_pit_pour_flush_latrine: Any kind of double pit pour flush latrine with a concrete slab and without a septic system. 
+            latrine_with_septic_tank: A latrine with septic tank and drainage field
         recurrent_expenditure:
+        #recurrent_expenditure seems to be double. It is also in views/basic/en.yml
+        #I would prefer to keep this sanitation specific text
           question: How much is being spent/will be spent to operate, maintain and support the delivery of sanitation services (per person per year)?
-          info: "Operating and minor maintenance expenditure: typically comprises regular expenditure such as labour, fuel, chemicals, materials, and purchases of any bulk water.<br/> See: http://akvopedia.org/wiki/Operational_and_Minor_Maintenance_Expenditure_(OpEx)<br/><br/> Capital maintenance expenditure: Asset renewal and replacement cost: occasional and ‘lumpy’ costs that seek to restore the functionality of a system, such as replacing pump rods or foot valves in handpumps, or a diesel generator in motorised systems.<br/> See: http://akvopedia.org/wiki/Capital_Maintenance_Expenditure_(CapManEx)<br/><br/> Expediture of direct support: Direct support is structured support to service providers and users or user groups related to the operation and management of a WASH service; direct support costs are the costs of such support. They cover monitoring, technical advice and administrative, organisational or legal support.  The costs of support before and during the capital construction of a project are not included; they are considered to be capital software. Direct support is often used synonymously with “post-construction support”.<br/> See: http://akvopedia.org/wiki/Expenditure_Direct_Support_(ExpDS)<br/><br/> Expenditure of indirect support: Indirect support costs cover expenditure on this macro-level support, including planning and policy making, and support to decentralised service authorities or local government. Indirect support includes capacity building for professionals and technicians and capacity support to local government as service authorities, for example to adhere to national norms, standards and guidelines.<br/> See: http://akvopedia.org/wiki/Expenditure_Indirect_Support_(ExpIDS)"
+          info: "Please indicate the total recurrent costs to maintain a continuous service. The different costs include: <br/>Operating and minor maintenance expenditure: typically regular expenditure such as cleaning materials and labour. See: http://akvopedia.org/wiki/Operational_and_Minor_Maintenance_Expenditure_(OpEx) <br/>Capital maintenance expenditure: Asset renewal and replacement cost occasional and ‘lumpy’ costs that seek to restore the functionality of a system or facility, such as replacing a latrine slab, emptying the pit, or repairing the roof of a superstrucutre. See: http://akvopedia.org/wiki/Capital_Maintenance_Expenditure_(CapManEx) <br/>Expediture of direct support: Direct support is structured support to decentralised service authorities or local governments, service providers and users or user groups related to the organisation and the management of a WASH service. The costs cover local planning, monitoring, technical advice and administrative, organisational or legal support after construction. The direct support includes capacity building for local governments to adhere to national norms, standards and guidelines. See: http://akvopedia.org/wiki/Expenditure_Direct_Support_(ExpDS) <br/>Expenditure of indirect support: Indirect support costs cover expenditure on the macro-level support, including planning and policy making. See: http://akvopedia.org/wiki/Expenditure_Indirect_Support_(ExpIDS)"
         household_latrine:
-          question: Does the service provide latrines at the household level?
+          question: Does each household have its own latrine?
           options:
-            household_latrine_available: "Yes"
-            household_latrine_unavailable: "No"
-          info: ""
+            #made options more descriptive for the report
+            household_latrine_available: "Household-level latrine"
+            household_latrine_unavailable: "No household-level latrine"
+          #added info
+          info: A latrine at household level means that there is a latrine dedicated to just one household and on location. A shared latrine, is not considered a household-level latrine.
         impermeability:
           question: Does the latrine have an impermeable slab?
           options:
-            impermeable_slab: Impermeable slab
+            #made option more descriptive
+            impermeable_slab: Impermeable slab present
             no_impermeable_slab: No impermeable slab
-          info: This can be a traditional pit latrine with an impermeable slab (made from local materials, a pit latrine with a concrete impermeable slab, or a pour-flush or septic tank latrines, often with a concrete or bricked lines pit/tank with sealed impermeable slab.
+          #added info.
+          info: The slab refers to the floor of the latrine, often covering the pit. The slab is important of the latrine maintenance and to a clean environment. An impermeable slab can be made from local materials or concrete. For example, pour-flush or septic tank latrines often have a concrete or bricked lined pit/tank with sealed impermeable slab.
         environmental_impact:
           question: What is the environmental impact of the service?
           options:
             non_problematic_safe_disposal_reuse_biproducts: Non problematic + safe disposal + re-use of bi-products
             non_problematic_safe_disposal: Non problematic + safe disposal
             significant_pollution: Significant pollution
-          info: ""
+          #added info
+          info: Separating the people from feces is the goal of safe sanitation. Environmental protection is required to ensure that the use of a latrine does not cause harm to people elsewhere. 
         usage:
           question: Which family members use the latrine?
           options:
-            latrine_usage_all: All
-            latrine_usage_some: Some
-            latrine_usage_none: None
-          info: ""
+            latrine_usage_all: All members use the latrine
+            latrine_usage_some: Some members use the latrine
+            latrine_usage_none: None of the family uses the latrine
+          #added info
+          info: It is critical that all household members also use the latrine and do not defecate in the open. The level of a sanitation service is also judged by the use of household members.
         reliability:
           question: Is the latrine cleaned and emptied when required?
           options:
-            latrine_reliable: "Yes"
-            latrine_inconsistent: Not consistently
-            latrine_unreliable: "No"
-          info: ""
+            #made options more descriptive
+            latrine_reliable: "The latrine is cleaned and emptied"
+            latrine_inconsistent: The latrine is not consistently clean and emptied
+            latrine_unreliable: The latrine is not cleaned and emptied
+          #added info
+          info: The reliability of the latrine depends on the maintenance of the facility. To offer a clean and safe sanitation option, it should be cleaned regularly and the pit or septic tank emptied on time. 
       report:
         final_report: Basic Sanitation | Final Report
         sustainability:
@@ -67,9 +87,9 @@ en:
           population: Population
           capital_expenditure_per_person: Capital expenditure per person
           recurrent_expenditure_per_person: Recurrent expenditure per person
-          household_latrine: Providing
+          household_latrine: Household-level latrine
           impermeability: Impermeability
-          environmental_impact: Environment
+          environmental_impact: Environmental impact
           usage: Usage
           reliatilibty: Reliability
         summaries:

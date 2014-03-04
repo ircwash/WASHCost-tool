@@ -1,11 +1,11 @@
-fr:
+﻿fr:
   dashboard:
-    company: Entreprise
+    company: Organisation
     country: Pays
     preferred_language: Langue préférée
-    current_mail: Message actuel
+    current_mail: Adresse e-mail actuelle
     name: Nom
-    location: Lieu
+    location: Localité
     date: Date
-    calculator_type: Type de calculatrice
+    calculator_type: Type de calculateur
     service: Service

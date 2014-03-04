@@ -24,7 +24,7 @@ en:
     currency:
       format:
         format: "%u%n"
-        unit: "$"
+        unit: "US$"
         separator: "."
         delimiter: ","
         precision: 2
@@ -51,7 +51,8 @@ en:
       quality: Quality
       household_latrine: Household Latrine
       impermeability: Impermeability
-      environmental_impact: Environment
+      #Not clear where this is being applied. This may need to change Environmental protection, which is the actual name of the indicator
+      environmental_impact: Environmental Impact
       usage: Usage
       reliability: Reliability
       advanced: Advanced

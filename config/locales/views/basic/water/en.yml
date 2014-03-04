@@ -13,46 +13,58 @@ en:
           info:
             borehole_handpump: Reticulated supply with pumping, storage and distribution through public stand posts with provision for house connections.
             mechanised_borehole: Water is supplied through a small distribution network and connected public stand posts. Water storage is limited, typically to an overhead storage tank  directly connected to the pump.  Household connections are rare.
-            single_town_scheme: Maecenas elementum tristique nunc sed vehicula. Mauris dignissim erat ut lectus rutrum elementum. Etiam pharetra ac massa sit amet mattis. Nam blandit, nibh sed mattis accumsan, nisi risus vulputate eros, in ar laoreet.
+            #added description to single town scheme
+            single_town_scheme: Reticulated supply with pumping, storage and distribution to a single town through public stand posts with provision for house connections.
             multi_town_scheme: Reticulated supply with pumping, storage and distribution supplied to a number of interconnected towns or villages. Each village with its own storage and distribution network.
             mixed_pipe_supply: Water is supplied through a combination of separate, often overlapping, service delivery systems.
         population:
           default_question: How many people in this area are receiving this water service?
-          question: "How many people are served by a %{technology}?"
+          #20140221 - Changed the text of the question below
+          question: "How many people are served by a %{technology} in the entire area?"
           info: Please indicate the total number of people that are meant to be using the service in the area. A water system will typically have a design population, sometimes defined by local regulations, for how many people it is meant to serve. The total number of people would be the design population of the system times the number of systems in the area. For example, if a handpump is meant to serve 300 people and there are 100 handpumps in the area, the number of people that are meant to be using the service is 30,000 people (300 people x 100 handpumps).
         access:
-          question: How long does it take to collect water per day from these services?
+          #changed to round trip 
+          question: How long does it take to collect water from these services?
           options:
+            #below we refer to minutes per roundtrip. The unit label is shown on the webpage.
             less_than_ten: Less than 10
             between_ten_and_thirty: Between 10 and 30
             between_thirty_and_sixty: Between 30 and 60
             more_thank_sixty: More than 60
-          info: ""
+           #added info
+          info: The time it takes to collect water for a household is an important aspect of water services. A high level of service, such as a tap in the household, reduces the time and effort to taken to access water.
         quantity:
-          question: How much water is used from the water service?
+          #20140221 quantity question below has been changed to avoid the word "use" or "delivered" in the basic tool
+          question: How much water does this service provide?
           label: Litres per person per day
           options:
-            less_than_five_litres: Less than 5L
-            between_five_and_nineteen_litres: 5 - 19L
-            between_twenty_and_sixty_litres: 20-60L
-            more_than_sixy_litres: More than 60L
-          info: ""
+            #wrote out Litres in full with per person per day
+            less_than_five_litres: Less than 5 litres per person per day
+            between_five_and_nineteen_litres: 5 - 19 litres per person per day
+            between_twenty_and_sixty_litres: 20-60 litres per person per day
+            more_than_sixy_litres: More than 60 litres per person per day
+          #added info
+          info: The absolute minimum for drinking, cooking and basic hygiene in emergency situations is 5 litres per capita per day. A minimum of 20 litres per day is generally required for basic needs. A higher standard gives scope for some productive use of water. At 60 litres, it is assumed that users enjoy more options for water use.
         quality:
           question: Is water quality testing done?
           options:
-            regular_and_meets_standards: Regular and meets standards
-            occasional_and_meets_standards: Occasional and meets standards
-            one_off_after_construction: One-off after construction
+            #changed options
+            regular_and_meets_standards: Regular testing, which meets standards
+            occasional_and_meets_standards: Occasional testing, which meets standards
+            one_off_after_construction: One-off testing after construction
             no_testing: No testing
-          info: ""
+            #add info
+          info: A water service should assure a good quality of water that meets national and/or WHO standards over time.
         reliability:
           question: How reliable is the water service?
           options:
+            #changed options
             works_all_the_time: Works all the time
-            not_working_less_than_twelve_days_a_year: Not working less than 12 days a year
-            not_working_more_than_twelve_days_a_year: Not working more than 12 days a year
+            not_working_less_than_twelve_days_a_year: Working most days, less than 12 days a year without service
+            not_working_more_than_twelve_days_a_year: Not working 12 or more days a year
             not_working_all_of_the_time: Not working all of the time
-          info: ""
+            #add info
+          info: A very reliable service is one where people are secure in the knowledge that they can access water that meets all the other indicators from a given source at a given time. Reliability is also measured by the punctuality of a service. Even a service that punctually provides water every three days could be considered reliable. A service that is based on using different sources during wetter and drier periods of the year can also be considered a reliable overall service. Problematic services are characterised by down time, significant breakdowns, and slow repairs.
         recurrent:
           value_label: US$ Per person per Year
       report:
