@@ -6,7 +6,7 @@ class Report
 
   field :level,         :type => String
   field :type,          :type => String
-  field :status,        :type => String, :default => 'installed'
+  field :status,        :type => String, :default => 'neither'
   field :questionnaire, :type => Hash,   :default => {}
 
 
