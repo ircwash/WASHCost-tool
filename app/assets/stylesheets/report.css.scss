@@ -288,7 +288,7 @@
 
 .report--option_grid--row {
   margin:0 -15px;
-
+  text-align: center;
   @include pie-clearfix;
 }
 
@@ -297,8 +297,9 @@
 }
 
 .report--option_grid--item {
-  float:left;
-  width:33.33%;
+  display: inline-block;
+  vertical-align: middle;
+  width:30%;
   padding:0 15px;
 
   @include box-sizing(border-box);
