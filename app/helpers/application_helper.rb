@@ -32,9 +32,9 @@ module ApplicationHelper
 
   def options_for_report_statuses
     [
+      [ t( 'report.status.neither' ), 'neither' ],
       [ t( 'report.status.installed' ), 'installed' ],
       [ t( 'report.status.planned' ), 'planned' ],
-      [ t( 'report.status.neither' ), 'neither' ],
       [ t( 'report.status.unknown' ), 'unknown' ]
     ]
   end
