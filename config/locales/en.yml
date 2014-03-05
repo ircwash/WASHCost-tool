@@ -15,8 +15,6 @@ en:
           attributes:
             email:
               blank: "Email address can't be blank"
-            password:
-              blank: "A password is required"
   number:
     format:
       separator: "."
