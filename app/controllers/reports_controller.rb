@@ -10,13 +10,13 @@ class ReportsController < ApplicationController
 
           questionnaire.update_attributes( report.questionnaire )
 
-          redirect_to basic_water_report_path
+          redirect_to basic_water_report_path(I18n.locale)
         elsif report.type == 'sanitation'
           questionnaire = BasicSanitationQuestionnaire.new( session )
 
           questionnaire.update_attributes( report.questionnaire )
 
-          redirect_to basic_sanitation_report_path
+          redirect_to basic_sanitation_report_path(I18n.locale)
         else
           raise ActionController::RoutingError.new('Not Found')
         end
@@ -26,13 +26,13 @@ class ReportsController < ApplicationController
 
           questionnaire.update_attributes( report.questionnaire )
 
-          redirect_to advanced_water_report_path
+          redirect_to advanced_water_report_path(I18n.locale)
         elsif report.type == 'sanitation'
           questionnaire = AdvancedSanitationQuestionnaire.new( session )
 
           questionnaire.update_attributes( report.questionnaire )
 
-          redirect_to advanced_sanitation_report_path
+          redirect_to advanced_sanitation_report_path(I18n.locale)
         else
           raise ActionController::RoutingError.new('Not Found')
         end
