@@ -25,7 +25,9 @@ class User
   validates :password,
     :presence => {:message => :password_missing},
     :length => {:within => 8..128, :too_long => :password_too_long, :too_short => :password_too_short},
-    :confirmation => {:message => :password_confirm_mismatch}
+    :confirmation => {:message => :password_confirm_mismatch}, unless: :skip_password_validation
+
+  attr_accessor :skip_password_validation
 
   ## Recoverable
   field :reset_password_token,   :type => String
