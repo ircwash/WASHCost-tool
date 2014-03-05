@@ -2,7 +2,7 @@
   .boxed_content
     .page_content
 
-      = form_for @user, :url => user_session_path, :html => { :class => 'standalone_form' } do |f|
+      = form_for @user, :url => user_session_path( I18n.locale ), :html => { :class => 'standalone_form' } do |f|
 
         %h1.standalone_form--heading= t( 'devise.log_in_to_your_account' )
 
