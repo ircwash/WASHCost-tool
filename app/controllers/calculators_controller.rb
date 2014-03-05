@@ -7,8 +7,8 @@ class CalculatorsController < ApplicationController
   end
 
   def selection
-
-    case params[ :tool_level ]
+    level = params[ :tool_level ] || 'basic'
+    case level
       when 'basic'
         case params[ :tool_name ]
           when 'water'
