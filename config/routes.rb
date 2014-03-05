@@ -8,6 +8,10 @@ WashCostApp::Application.routes.draw do
       get 'users' => 'authentication/registrations#new'
     end
 
+    devise_scope :user do
+      get 'users/password' => 'authentication/passwords#new'
+    end
+
     devise_for :users, :controllers => { :sessions => 'authentication/sessions', :registrations => 'authentication/registrations', :passwords => 'authentication/passwords' }
 
     resources :dashboard

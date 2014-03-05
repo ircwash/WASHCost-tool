@@ -188,7 +188,6 @@ class BasicSanitationQuestionnaire < Session
 
       concat_first_service_group  = recurrent_expenditure_code.to_s + usage_code.to_s    + reliability_code.to_s
       concat_second_service_group = capital_expenditure_code.to_s   + access_rating.to_s + evironment_code.to_s
-
       [ concat_first_service_group, concat_second_service_group ]
     else
       nil
