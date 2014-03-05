@@ -7,6 +7,7 @@ en:
       password_too_long: "Password too long"
       password_too_short: "Password too short"
       password_confirm_mismatch: "Passwords do not match"
+      register_if_acces_to_cuesstinaire_view: "You need to be registered first"
   mongoid:
     errors:
       models:
