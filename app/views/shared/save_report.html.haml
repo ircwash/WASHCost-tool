@@ -6,6 +6,8 @@
 
         %h1.standalone_form--heading= t 'report.save_your_report'
 
+        = render "devise/shared/messages"
+
         .standalone_form--field.standalone_form--field-text
           = f.text_field :title, { :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => 'Name' }
 

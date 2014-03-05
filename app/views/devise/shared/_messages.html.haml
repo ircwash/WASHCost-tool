@@ -1,8 +1,10 @@
-- if @user.errors.messages.any?
-	- @user.errors.messages.each do |key, value|
-		.standalone_form--message= value.first
-- else
-	- @user.errors.full_messages.each do |key, value|
-		.standalone_form--message= value	
+- model = @user || @report
+- if model
+	- if model.errors.messages.any?
+		- model.errors.messages.each do |key, value|
+			.standalone_form--message= value.first
+	- else
+		- model.errors.full_messages.each do |key, value|
+			.standalone_form--message= value	
 - flash.each do |name, msg|
 	.standalone_form--message= msg

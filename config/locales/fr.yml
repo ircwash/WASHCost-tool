@@ -18,6 +18,12 @@ fr:
             email:
               # will match the email_missing error above
               blank: "Email address can't be blank"
+        # for report saving
+        user_report:
+          attributes:
+            title:
+              report_title_missing: A title is required
+              unique_report: Report names must be unique
   number:
     format:
       separator: ","
