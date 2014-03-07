@@ -9,6 +9,9 @@
   font-weight:normal;
   color:#fff;
   -webkit-font-smoothing:antialiased;
+  max-width: 95%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .question--answer--title {
@@ -44,7 +47,7 @@
 }
 
 .question--radios--label-narrow {
-  width:140px;
+  width:160px;
 }
 
 .question--radios--label-wide {
@@ -52,11 +55,11 @@
 }
 
 .question--radios--label {
-  margin: 0;
+  margin: 0 20px;
 }
 
 .question--radios--label-narrow + .question--radios--label-narrow {
-  margin-left:16px;
+  // margin-left:16px;
 }
 
 .question--radios--radio {
