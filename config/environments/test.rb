@@ -48,8 +48,8 @@ WashCostApp::Application.configure do
     :address        => "smtp.gmail.com",
     :port           => 587,
     :authentication => :plain,
-    :user_name      => "benhowdletest@gmail.com",
-    :password       => "benhowdlet3st"
+    :user_name      => "noreplywashcostcalculator@gmail.com",
+    :password       => "password999"
   }
 
 end
