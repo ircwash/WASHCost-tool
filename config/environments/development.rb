@@ -40,7 +40,10 @@ WashCostApp::Application.configure do
     :domain => 'dev.washcost.org',                 # example.com
     :user_name => 'passwordreset',            # user.name
     :password => 'Native2014', # p@ssw0rd
-    :port => 25
+    :authentication       => "plain",
+    :port => 25,
+    :enable_starttls_auto => true,
+    :openssl_verify_mode  => 'none'
   }
 
 end
