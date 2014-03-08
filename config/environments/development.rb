@@ -32,18 +32,18 @@ WashCostApp::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  config.action_mailer.default_url_options = { :host => 'dev.washcost.org' }
-  config.active_support.deprecation = :notify
+  config.action_mailer.perform_deliveries = true # Set it to false to disable the email in dev mode
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :address => '89.206.255.82',          # mail.example.com
-    :domain => 'dev.washcost.org',                 # example.com
-    :user_name => 'passwordreset',            # user.name
-    :password => 'Native2014', # p@ssw0rd
-    :authentication       => :login,
-    :port => 25,
-    :enable_starttls_auto => true,
-    :openssl_verify_mode  => 'none'
+  config.action_mailer.default_url_options = { :host => "dev.washcost.org" }
+
+
+  ActionMailer::Base.smtp_settings = {
+    :address        => "smtp.gmail.com",
+    :port           => 587,
+    :authentication => :plain,
+    :user_name      => "benhowdletest@gmail.com",
+    :password       => "benhowdlet3st"
   }
 
 end
