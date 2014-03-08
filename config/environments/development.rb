@@ -36,6 +36,7 @@ WashCostApp::Application.configure do
   config.assets.debug = true
 
   # Mail settings
+  config.active_support.deprecation = :notify
   config.action_mailer.default_url_options = { :host => 'dev.washcost.org' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
@@ -43,11 +44,12 @@ WashCostApp::Application.configure do
   config.action_mailer.smtp_settings = {
     :address => "89.206.255.82",
     :port    => 25,
+    :domain => 'dev.washcost.org',
     :user_name  => "passwordreset",
     :password   => "Native2014",
-    :authentication     => :ntlm,
-    :enable_starttls_auto       => true,
-    :openssl_verify_mode => 'none'
+    :authentication     => :cram_md5,
+    # :enable_starttls_auto       => true,
+    # :openssl_verify_mode => 'none'
   }
 
 end
