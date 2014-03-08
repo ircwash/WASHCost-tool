@@ -42,8 +42,7 @@ WashCostApp::Application.configure do
     :password => 'Native2014', # p@ssw0rd
     :authentication       => "plain",
     :port => 25,
-    :enable_starttls_auto => true,
-    :openssl_verify_mode  => 'none'
+    :enable_starttls_auto => true
   }
 
 end
