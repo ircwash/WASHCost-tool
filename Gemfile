@@ -17,6 +17,7 @@ gem 'money'
 gem 'currencies'
 gem 'countries'
 gem 'httparty'
+gem 'ruby-ntlm'
 
 group :development, :test do
   gem 'ruby-prof'
