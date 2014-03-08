@@ -31,20 +31,15 @@ WashCostApp::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
-
-  # Mail settings
-  config.action_mailer.default_url_options = { :host => 'dev.washcost.org' }
+  
+  config.active_support.deprecation = :notify
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.smtp_settings = {
-    :address => "89.206.255.82",
-    :port    => 25,
-    :user_name  => "passwordreset",
-    :password   => "Native2014",
-    :authentication     => :StartTLS,
-    :enable_starttls_auto       => true,
-    :openssl_verify_mode => 'none'
+    :address => '89.206.255.82',          # mail.example.com
+    :domain => 'dev.washcost.org',                 # example.com
+    :user_name => 'passwordreset',            # user.name
+    :password => 'Native2014', # p@ssw0rd
+    :port => 25
   }
 
 end
