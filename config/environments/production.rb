@@ -58,10 +58,23 @@ WashCostApp::Application.configure do
   # the I18n.default_locale when a translation can not be found)
   config.i18n.fallbacks = true
 
-  # Send deprecation notices to registered listeners
-  config.active_support.deprecation = :notify
+  # Print deprecation notices to the stderr
+  config.active_support.deprecation = :stderr
 
-  # Log the query plan for queries taking more than this (works
-  # with SQLite, MySQL, and PostgreSQL)
-  # config.active_record.auto_explain_threshold_in_seconds = 0.5
+  # Use RackSessionAccess middleware for accessing session data in tests
+  config.middleware.use RackSessionAccess::Middleware
+
+  config.action_mailer.perform_deliveries = true # Set it to false to disable the email in dev mode
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { :host => "test.washcost.org" }
+
+
+  ActionMailer::Base.smtp_settings = {
+    :address        => "smtp.gmail.com",
+    :port           => 587,
+    :authentication => :plain,
+    :user_name      => "noreplywashcostcalculator@gmail.com",
+    :password       => "password999"
+  }
 end
