@@ -40,7 +40,7 @@ WashCostApp::Application.configure do
 
   ActionMailer::Base.smtp_settings = {
     :address        => "smtp.gmail.com",
-    :port           => 465,
+    :port           => 587,
     :authentication => :plain,
     :user_name      => "benhowdletest@gmail.com",
     :password       => "benhowdlet3st"
