@@ -38,4 +38,18 @@ WashCostApp::Application.configure do
   # Use RackSessionAccess middleware for accessing session data in tests
   config.middleware.use RackSessionAccess::Middleware
 
+  config.action_mailer.perform_deliveries = true # Set it to false to disable the email in dev mode
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { :host => "dev.washcost.org" }
+
+
+  ActionMailer::Base.smtp_settings = {
+    :address        => "smtp.gmail.com",
+    :port           => 587,
+    :authentication => :plain,
+    :user_name      => "benhowdletest@gmail.com",
+    :password       => "benhowdlet3st"
+  }
+
 end

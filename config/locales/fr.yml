@@ -2,13 +2,13 @@ fr:
   # for registration errors
   errors:
     messages:
-      unique_email: "Email address needs to be unique"
-      email_missing: "Email address can't be blank"
-      password_missing: "A password is required"
-      password_too_long: "Password too long"
-      password_too_short: "Password too short"
-      password_confirm_mismatch: "Passwords do not match"
-      register_if_acces_to_cuesstinaire_view: "You need to be registered first"
+      unique_email: "L'adresse e-mail doit être unique"
+      email_missing: "Le champ e-mail doit être renseigné"
+      password_missing: "Veuillez saisir un mot de passe"
+      password_too_long: "Mot de passe trop long"
+      password_too_short: "Mot de passe trop court"
+      password_confirm_mismatch: "Les deux mots de passe ne correspondent pas"
+      register_if_acces_to_cuesstinaire_view: "Veuillez d'abord vous inscrire"
   # for registration errors
   mongoid:
     errors:
@@ -17,13 +17,13 @@ fr:
           attributes:
             email:
               # will match the email_missing error above
-              blank: "Email address can't be blank"
+              blank: "Le champ e-mail doit être renseigné"
         # for report saving
         user_report:
           attributes:
             title:
-              report_title_missing: A title is required
-              unique_report: Report names must be unique
+              report_title_missing: Veuillez saisir un titre
+              unique_report: Les noms de rapport doivent être uniques
   number:
     format:
       separator: ","
@@ -51,21 +51,21 @@ fr:
       household: Ménage
       latrine: Latrine
       cost: Coût
-      capital_expenditure: Dépense d'investissement
+      capital_expenditure: Coût d'investissement
       recurrent_expenditure: Dépenses récurrentes
       service: Service
       access: Accès
       quantity: Quantité
       quality: Qualité
       household_latrine: Latrine familiale
-      impermeability: Imperméable
+      impermeability: Imperméabilité
       environmental_impact: Impact sur l'environnement
       usage: Utilisation
       reliability: Fiabilité
       advanced: Outil avancé
       service_area: Zone de service
       system_management: Gestion du système
-      system_characteristics: Caractéristiques techniques
+      system_characteristics: Caractéristiques techniques du système
       service_level: Niveau de service
   footer:
     calculator_progress: "Rapport %{level} %{type} "
@@ -80,7 +80,7 @@ fr:
     advanced: Outil avancé
     water: Eau
     sanitation: Assainissement
-    title: Do the math and make it last
-    sub_title: Do a sustainability check and get the personal report based on your service delivery model.
-    pre_question_note: Before you start, please answer these two questions
-    tool_selection_basic: Basic tool
+    title: Faites le calcul et faites durer votre service
+    sub_title: Évaluez la pérennité de votre service et obtenez un rapport personnalisé basé sur votre modèle de fourniture de service.
+    pre_question_note: Avant de commencer, veuillez répondre à ces deux questions
+    tool_selection_basic: Outil de base
