@@ -42,14 +42,14 @@ WashCostApp::Application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.smtp_settings = {
-    :address => "89.206.255.82",
+    :address => "mail.native.com",
     :port    => 25,
     :domain => 'dev.washcost.org',
     :user_name  => "passwordreset",
     :password   => "Native2014",
-    :authentication     => :cram_md5,
-    # :enable_starttls_auto       => true,
-    # :openssl_verify_mode => 'none'
+    :authentication     => :ntlm,
+    :enable_starttls_auto       => true,
+    :openssl_verify_mode => 'none'
   }
 
 end
