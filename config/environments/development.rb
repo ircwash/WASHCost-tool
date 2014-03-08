@@ -45,7 +45,7 @@ WashCostApp::Application.configure do
     :port    => 25,
     :user_name  => "passwordreset",
     :password   => "Native2014",
-    :authentication     => :login,
+    :authentication     => :ntlm,
     :enable_starttls_auto       => true,
     :openssl_verify_mode => 'none'
   }
