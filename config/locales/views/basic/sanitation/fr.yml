@@ -17,13 +17,13 @@
             pour_flush_latrine: Latrine à fosse simple à chasse d'eau manuelle
             twin_pit_pour_flush_latrine: Latrine à double fosse à chasse d'eau manuelle 
             latrine_with_septic_tank: Latrine avec fosse septique
-          info: 
-            traditional_pit_latrine: Latrine à fosse munie d’une dalle imperméable, en matériau (local) autre que du béton. ""Voir:" ""http://akvopedia.org/wiki/Single_Pit"
-            slab_latrine: Latrine à fosse munie d’une dalle en béton. 
-            vip_latrine: Latrine améliorée à fosse ventilée (ou latrine VIP) ; latrine à fosse avec une dalle en béton et une superstructure en béton avec un tuyau de ventilation muni d’une grille pour réduire les odeurs et écarter les mouches. "Voir:" "http://akvopedia.org/wiki/Single_Ventilated_Improved_Pit
-            pour_flush_latrine: Tous types de latrines à fosse simple et chasse d’eau manuelle, munies d’une dalle en béton mais sans fosse septique.
-            twin_pit_pour_flush_latrine: Tous types de latrines à double fosse et chasse d’eau manuelle, munies d’une dalle en béton mais sans fosse septique. 
-            latrine_with_septic_tank: Latrine à fosse septique avec champ d’infiltration
+          info: |+
+            Latrine à fosse simple sans dalle en béton: Latrine à fosse munie d’une dalle imperméable, en matériau (local) autre que du béton. Voir: http://akvopedia.org/wiki/Single_Pit
+            Latrine à fosse simple avec dalle en béton: Latrine à fosse munie d’une dalle en béton. 
+            Latrine améliorée à fosse ventilée: Latrine améliorée à fosse ventilée (ou latrine VIP) ; latrine à fosse avec une dalle en béton et une superstructure en béton avec un tuyau de ventilation muni d’une grille pour réduire les odeurs et écarter les mouches. "Voir:" "http://akvopedia.org/wiki/Single_Ventilated_Improved_Pit
+            Latrine à fosse simple à chasse d'eau manuelle: Tous types de latrines à fosse simple et chasse d’eau manuelle, munies d’une dalle en béton mais sans fosse septique.
+            Latrine à double fosse à chasse d'eau manuelle: Tous types de latrines à double fosse et chasse d’eau manuelle, munies d’une dalle en béton mais sans fosse septique. 
+            Latrine avec fosse septique: Latrine à fosse septique avec champ d’infiltration
         recurrent_expenditure:
           question: Quelles sont/seront les dépenses d’exploitation, de maintenance et d’appui pour les services d’assainissement fournis (par personne et par an)?
           info: Veuillez indiquer les dépenses récurrentes totales nécessaires pour maintenir un service continu. Ces dépenses "comprennent:" <br/> les dépenses "d’exploitation:" dépenses récurrentes, régulières pour les produits de nettoyage, la main d’œuvre, etc. "Voir:" "http://akvopedia.org/wiki/Operational_and_Minor_Maintenance_Expenditure_(OpEx)" <br/> Dépense de "renouvellement:" dépenses pour le renouvellement et le remplacement d’équipements, dépenses importantes mais peu fréquentes permettant de remettre un système ou des équipements en état de fonctionnement, par exemple le remplacement de la dalle de latrine, la vidange de la fosse ou la réparation du toit de la superstructure. "Voir:" "http://akvopedia.org/wiki/Capital_Maintenance_Expenditure_(CapManEx) <br/> Dépense d’appui "direct:" il s’agit d’un appui structurel aux autorités de services ou gouvernements locaux et aux fournisseurs de service et aux usagers ou groupes d’usagers, dédié à l’organisation et à la gestion d’un service WASH. Cette dépense couvre le renforcement de capacités post-construction, le suivi, le conseil technique et l’appui administratif, organisationnel et juridique, notamment pour la mise en conformité avec les normes et directives nationales. "Voir:" "http://akvopedia.org/wiki/Expenditure_Direct_Support_(ExpDS) <br/> Dépense d’appui "indirect:" Les dépenses d'appui indirect couvrent les dépenses d'appui au niveau macro, pour la planification et l'élaboration des politiques sectorielles. "Voir:" "http://akvopedia.org/wiki/Expenditure_Indirect_Support_(ExpIDS)"           

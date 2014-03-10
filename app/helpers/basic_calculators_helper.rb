@@ -3,7 +3,8 @@ module BasicCalculatorsHelper
   # formatters
 
   def format_info_text( locale_key )
-    t( locale_key ).gsub /http:\/\/[^\s<]+/, '<a href="\0" target="_blank">\0</a>'
+    str = t( locale_key ).gsub(/http:\/\/[^\s<]+/, '<a href="\0" target="_blank">\0</a>')
+    simple_format( str )
   end
 
   # options

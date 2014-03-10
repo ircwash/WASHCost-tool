@@ -10,12 +10,12 @@
             single_town_scheme: Réseau pour une seule localité
             multi_town_scheme: Réseau desservant plusieurs localités
             mixed_pipe_supply: Système mixte forage et réseau
-          info:
-            borehole_handpump: Adduction avec pompage, stockage et distribution à des bornes fontaines publiques et possibilité de branchements privés.
-            mechanised_borehole: L'eau est distribuée grâce à un petit réseau de bornes fontaines publiques. Le stockage est en général limité à un réservoir surélevé directement raccordé à la pompe. Les branchements privés sont rares.
-            single_town_scheme: Système en réseau avec pompage, stockage et distribution qui s'étend sur plusieurs localités raccordées les unes aux autres. Chaque localité a son propre réservoir de stockage et son propre réseau de distribution. 
-            multi_town_scheme: Système en réseau avec pompage, stockage et distribution qui s'étend sur plusieurs localités raccordées les unes aux autres. Chaque localité a son propre réservoir de stockage et son propre réseau de distribution.
-            mixed_pipe_supply: L’eau est distribuée par plusieurs systèmes distincts de fourniture de service qui se chevauchent fréquemment. 
+          info: |+
+            Forage avec pompe à motricité humaine: Adduction avec pompage, stockage et distribution à des bornes fontaines publiques et possibilité de branchements privés.
+            Forage mécanisé: L'eau est distribuée grâce à un petit réseau de bornes fontaines publiques. Le stockage est en général limité à un réservoir surélevé directement raccordé à la pompe. Les branchements privés sont rares.
+            Réseau pour une seule localité: Système en réseau avec pompage, stockage et distribution qui s'étend sur plusieurs localités raccordées les unes aux autres. Chaque localité a son propre réservoir de stockage et son propre réseau de distribution. 
+            Réseau desservant plusieurs localités: Système en réseau avec pompage, stockage et distribution qui s'étend sur plusieurs localités raccordées les unes aux autres. Chaque localité a son propre réservoir de stockage et son propre réseau de distribution.
+            Système mixte forage et réseau: L’eau est distribuée par plusieurs systèmes distincts de fourniture de service qui se chevauchent fréquemment. 
         population:
           default_question: Combien y a-t-il d'habitants dans la zone d'intervention?
           question: "Combien de personnes sont desservies par le système %{technology} dans la zone d'intervention?"
