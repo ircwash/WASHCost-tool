@@ -165,7 +165,7 @@ class BasicSanitationQuestionnaire < Session
   end
 
   def access_rating
-    [ [ 3, 1 ], [ 2, 1 ] ][ household_latrine.to_i ][ impermeability.to_i ]
+    [ [ 3, 1 ], [ 1, 1 ] ][ household_latrine.to_i ][ impermeability.to_i ]
   end
 
   def cost_rating_inside_benchmarks?

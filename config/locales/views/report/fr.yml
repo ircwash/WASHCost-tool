@@ -3,6 +3,7 @@
     substandard: Limité
     distance: Distance 
     no_answer_provided: Pas de réponse fournie
+    no_data: There's no data for this
     time: 
       minutes: min
     less_than: Moins de

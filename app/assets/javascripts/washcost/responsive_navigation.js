@@ -9,7 +9,7 @@ $( document ).ready( function()
   {
     header_button = $( '.header--mobile_navigation_button' );
 
-    header_button.on( 'touchend', toggleNavigation );
+    header_button.on( 'click', toggleNavigation );
   }
 
 
@@ -17,8 +17,8 @@ $( document ).ready( function()
   {
     header_button.toggleClass( 'header--mobile_navigation_button-open' );
 
-    if ( header_button.hasClass( 'header--mobile_navigation_button-open' ) ) $( 'header' ).siblings().on( 'touchstart', toggleNavigation );
-    else $( 'header' ).siblings().off( 'touchstart', toggleNavigation );
+    if ( header_button.hasClass( 'header--mobile_navigation_button-open' ) ) $( 'header' ).siblings().on( 'click', toggleNavigation );
+    else $( 'header' ).siblings().off( 'click', toggleNavigation );
   }
 
 

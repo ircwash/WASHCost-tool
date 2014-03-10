@@ -4,6 +4,7 @@ en:
     substandard: Sub-Standard
     distance: Distance
     no_answer_provided: No answer provided
+    no_data: There's no data for this
     time:
       minutes: min
     less_than: Less than

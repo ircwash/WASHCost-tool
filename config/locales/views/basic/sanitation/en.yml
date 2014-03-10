@@ -21,13 +21,13 @@
             twin_pit_pour_flush_latrine: Double Pit Pour Flush Latrine
             latrine_with_septic_tank: Latrine with septic tank
           #added info: assuming the same syntax as for water. 
-          info: 
-            traditional_pit_latrine: Pit latrine with an impermeable slab (made often from local materials) but not made out of concrete. "See:" "http://akvopedia.org/wiki/Single_Pit"
-            slab_latrine: A pit latrine with a concrete slab. 
-            vip_latrine: A Ventilated Improved Pit Latrine, also known as a VIP latrine, is a pit latrine with a concrete slab and concrete superstructures (with ventilation pipeand screen to reduce odours and flies). "See:" "http://akvopedia.org/wiki/Single_Ventilated_Improved_Pit"
-            pour_flush_latrine: Any kind of single pit pour flush latrine with a concrete slab and without a septic system.
-            twin_pit_pour_flush_latrine: Any kind of double pit pour flush latrine with a concrete slab and without a septic system. 
-            latrine_with_septic_tank: A latrine with septic tank and drainage field
+          info: |+
+            Traditional pit latrine: Pit latrine with an impermeable slab (made often from local materials) but not made out of concrete. See: http://akvopedia.org/wiki/Single_Pit
+            Slab latrine: A pit latrine with a concrete slab. 
+            VIP latrine: A Ventilated Improved Pit Latrine, also known as a VIP latrine, is a pit latrine with a concrete slab and concrete superstructures (with ventilation pipeand screen to reduce odours and flies). "See:" "http://akvopedia.org/wiki/Single_Ventilated_Improved_Pit"
+            Pour flush latrine: Any kind of single pit pour flush latrine with a concrete slab and without a septic system.
+            Twin pit pour flush latrine: Any kind of double pit pour flush latrine with a concrete slab and without a septic system. 
+            Latrine with septic tank: A latrine with septic tank and drainage field
         recurrent_expenditure:
         #recurrent_expenditure seems to be double. It is also in views/basic/en.yml
         #I would prefer to keep this sanitation specific text
