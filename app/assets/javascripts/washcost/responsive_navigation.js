@@ -9,7 +9,7 @@ $( document ).ready( function()
   {
     header_button = $( '.header--mobile_navigation_button' );
 
-    header_button.on( 'touchend', toggleNavigation );
+    header_button.on( 'touchend click', toggleNavigation );
   }
 
 
