@@ -104,8 +104,14 @@ $( document ).ready( function()
         max         = input.data( 'slider-max' ),
         value       = logarithmic ? _logslider.logposition( parseFloat( label.val(), 10 ), min, max ) : parseFloat( label.val(), 10 );
 
+    var val = label.val();
+
+    if(!val || val == 0){
+      val = 1;
+    }
+
     // update input
-    input.val( label.val() );
+    input.val( val );
 
     // update slider
     slider.slider( { value:value } );
