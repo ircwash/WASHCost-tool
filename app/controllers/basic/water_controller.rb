@@ -50,6 +50,7 @@ class Basic::WaterController < CalculatorController
 
   def share_report
     @report = Report.create( :level => 'basic', :type => 'water', :questionnaire => BasicWaterQuestionnaire.new( session ).attributes )
+    @report.save
     @back_path = basic_water_report_path( I18n.locale )
 
     render layout: 'general', template: 'shared/share_report'
