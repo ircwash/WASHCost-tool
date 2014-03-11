@@ -50,6 +50,7 @@ class Basic::SanitationController < CalculatorController
 
   def share_report
     @report = Report.create( :level => 'basic', :type => 'sanitation', :questionnaire => BasicSanitationQuestionnaire.new( session ).attributes )
+    @report.save
     @back_path = basic_sanitation_report_path( I18n.locale )
 
     render layout: 'general', template: 'shared/share_report'
