@@ -33,7 +33,7 @@
             household_latrine_available: "Latrine familiale disponible "
             household_latrine_unavailable: "Pas de latrine familiale"
           info: Une latrine familiale signifie qu’il y a une latrine dans ou près de l’habitation pour l’usage exclusif d’un seul ménage. Une latrine partagée n’est pas considérée comme latrine familiale.
-        imperméabilité:
+        impermeability:
           question: Est-ce que les latrines ont une dalle imperméable?
           options:
             impermeable_slab: Dalle imperméable

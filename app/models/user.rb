@@ -12,7 +12,7 @@ class User
   ## Database authenticatable
   field :first_name,         type: String
   field :last_name,          type: String
-  field :country,            type: String, default: "GB"
+  field :country,            type: String
   field :prefered_language,  type: String, default: I18n.locale
   field :company,            type: String, default: ""
   field :email,              type: String, default: ""
