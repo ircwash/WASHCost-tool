@@ -2,7 +2,6 @@ class ReportsController < ApplicationController
 
   def load
     report = current_user ? current_user.user_reports.find( params[ :id ] ) || Report.find( params[ :id ] ) : Report.find( params[ :id ] )
-    # raise report.inspect
     if report != nil
       if report.level == 'basic'
         if report.type == 'water'
