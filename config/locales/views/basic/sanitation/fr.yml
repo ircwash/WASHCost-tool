@@ -2,6 +2,9 @@
   basic:
     sanitation:
       questionnaire:
+        capital_expenditure:
+          question: Combien avez-vous dépensé ou allez-vous dépenser pour la mise en place du système d'approvisionnement en eau de type sanitation (y compris la construction des ouvrages)(par personne)?
+          info: La ligne blanche indique la fourchette de coûts observés dans des projets WASHCost dans des zones avec un niveau de service de base. Les coûts de démarrage comprennent les dépenses d'investissement matériel et immatériel, tels que décrits ci-dessous,  Dépense d'investissement (matériel), capital investi dans la construction ou l'achat d'actifs fixes tels que structures en béton, pompes et tuyaux. Dépense d'investissement (immatériel), dépense dans les activités ponctuelles avec les parties prenantes, préalables à la construction, la mise en œuvre ou l'extension (y compris le développement des capacités). Voir - "http://akvopedia.org/wiki/Capital_Expenditure_(CapEx)"
         country:
           question: Dans quel pays se trouve votre service d'assainissement?
           info: Veuillez indiquer le pays où le service est mis en place.

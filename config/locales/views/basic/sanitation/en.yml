@@ -2,6 +2,9 @@
   basic:
     sanitation:
       questionnaire:
+        capital_expenditure:
+          question: 'How much has been/will be spent setting up the sanitation service including construction (per person)?'
+          info: "The white line shows the range of costs found during the WASHCost project in areas with a basic level of service. The start up costs include expenditure related to hardware and software as described below:  <br/>Capital Expenditure (hardware): Capital invested in constructing or purchasing fixed assets such as concrete structures, pumps and pipes. <br/>Capital Expenditure (software): The costs of one-off work with stakeholders prior to construction or implementation, extension, enhancement and augmentation (including costs of one-off capacity building activities). <br/>See: http://akvopedia.org/wiki/Capital_Expenditure_(CapEx)"
         country:
           question: In which country does your sanitation service take place?
         #added info box
