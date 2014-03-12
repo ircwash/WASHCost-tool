@@ -1,5 +1,12 @@
 ﻿fr:
   report:
+    status:
+      neither: Neither
+      installed: Installed
+      planned: Planned
+      unknown: Unknown
+    share_your_report: Share your report
+    back: Back
     substandard: Limité
     distance: Distance 
     no_answer_provided: Pas de réponse fournie
@@ -11,6 +18,8 @@
     report_box_no_value: Il n'y a pas assez de réponses. Pour obtenir un rapport final, revenez vers le questionnaire et répondez à plus de questions sur votre service.
     per_person_per_year: (par personne par an)
     save_your_report: Sauvegarder
+    save_input: name
+    save_submit: Save
     report_saved: Votre rapport a été sauvegardé avec succès
     created_successsfully: Votre rapport a été créé avec succès
     updated_successsfully: Votre rapport a été mis à jour avec succès

@@ -4,29 +4,29 @@
 
       = form_for @user, :url => registration_path( :user ), html: { :class => 'standalone_form' } do |f|
 
-        %h1.standalone_form--heading Edit your account
+        %h1.standalone_form--heading=t('devise.edit_your_account')
 
         = render "devise/shared/messages"
         .standalone_form--message= devise_error_messages!
 
         .standalone_form--field.standalone_form--field-text
-          = f.text_field :first_name, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => 'Your first name'
+          = f.text_field :first_name, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => t('devise.your_first_name')
 
         .standalone_form--field.standalone_form--field-text
-          = f.text_field :last_name, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => 'Your last name'
+          = f.text_field :last_name, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => t('devise.your_last_name')
 
         .standalone_form--field.standalone_form--field-text
-          = f.text_field :email, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => 'Your email', :disabled => true
+          = f.text_field :email, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => t('devise.your_email'), :disabled => true
 
         .standalone_form--field.standalone_form--field-text
-          = f.text_field :company, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => 'Your company'
+          = f.text_field :company, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => t('devise.your_company')
 
         .standalone_form--field.standalone_form--field-dropdown
-          = f.label :country, { :class => 'standalone_form--field--label' }
+          = f.label :country, t('devise.country'), { :class => 'standalone_form--field--label' }
           = f.select :country, options_for_select( options_for_countries, Country.new(current_user.country).data.present? ? Country.new(current_user.country).un_locode : 'Not specified' ), { :include_blank=> '' }, { :class => 'standalone_form--field--input standalone_form--field--input-dropdown chzn-select', 'data-placeholder' => t( 'devise.select_a_country' ) }
 
         .standalone_form--field.standalone_form--field-dropdown
-          = f.label :prefered_language, { :class => 'standalone_form--field--label' }
+          = f.label :prefered_language, t('devise.prefered_language'),  { :class => 'standalone_form--field--label' }
           = f.select :prefered_language, options_for_select( options_for_languages, @user.prefered_language ), {  }, { :class => "standalone_form--field--input standalone_form--field--input-dropdown chzn-select" }
 
         / .standalone_form--field{ "data-togglecontent" => "true" }
@@ -45,8 +45,8 @@
 
         .standalone_form--footer
           .standalone_form--buttons
-            = f.submit "Update", :class => 'button'
+            = f.submit t('devise.update'), :class => 'button'
 
           .standalone_form--links
-            = link_to 'Back', :back, :class => 'standalone_form--link'
+            = link_to t('devise.back'), :back, :class => 'standalone_form--link'
 

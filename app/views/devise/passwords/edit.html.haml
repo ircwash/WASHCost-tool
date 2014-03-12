@@ -5,16 +5,16 @@
       = form_for @user, :url => password_path( :user ), :html => { :method => :put } do |f|
         = f.hidden_field :reset_password_token
 
-        %h1.standalone_form--heading Change your password
+        %h1.standalone_form--heading=t('devise.change_your_password')
 
         = render "devise/shared/messages"
 
         .standalone_form--field.standalone_form--field-text
-          = f.password_field :password, :placeholder => 'New password', :class => 'standalone_form--field--input standalone_form--field--input-text'
+          = f.password_field :password, :placeholder => t('devise.new_password'), :class => 'standalone_form--field--input standalone_form--field--input-text'
 
         .standalone_form--field.standalone_form--field-text
-          = f.password_field :password_confirmation, :placeholder => 'Confirm new password', :class => 'standalone_form--field--input standalone_form--field--input-text'
+          = f.password_field :password_confirmation, :placeholder => t('devise.confirm_password'), :class => 'standalone_form--field--input standalone_form--field--input-text'
 
         .standalone_form--footer
           .standalone_form--buttons
-            = f.submit "Change my password", :class => 'button'
+            = f.submit t('devise.change_my_password'), :class => 'button'

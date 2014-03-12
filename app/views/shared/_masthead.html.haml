@@ -11,13 +11,13 @@
 
         -#
           %li.header--links--item
-            %a{ :href => "#", :class => "header--links--link" } About
+            %a{ :href => "#", :class => "header--links--link" }=t( 'navigation.utility.about' )
 
           %li.header--links--item
-            %a{ :href => "#", :class => "header--links--link" } Contact
+            %a{ :href => "#", :class => "header--links--link" }=t( 'navigation.utility.contact' )
 
         %li.header--links--item.header--links--item-dropdown
-          %a{ :href => "#", :class => "header--links--link header--links--link-dropdown" } Language
+          %a{ :href => "#", :class => "header--links--link header--links--link-dropdown" }=t( 'navigation.utility.language' )
           %ul.header--links--item--dropdown
             - options_for_languages.each do |language|
               %li.header--links--item--dropdown--item
@@ -27,7 +27,7 @@
           %li.header--links--item
             = link_to (current_user.first_name && !current_user.first_name.empty?) ? "#{current_user.first_name} #{current_user.last_name}".split.map(&:capitalize).join(' ') : current_user.email.split('@')[0], "/" + I18n.locale.to_s + dashboard_path, class: 'header--links--link header--links--link-special'
           %li.header--links--item
-            = link_to 'Sign Out', destroy_user_session_path( I18n.locale ), method: :delete, class: 'header--links--link header--links--link-special'
+            = link_to t('navigation.utility.sign_out'), destroy_user_session_path( I18n.locale ), method: :delete, class: 'header--links--link header--links--link-special'
         - else
           %li.header--links--item
-            = link_to 'Sign In', new_user_session_path( I18n.locale ), class: 'header--links--link header--links--link-special'
+            = link_to t('navigation.utility.sign_in'), new_user_session_path( I18n.locale ), class: 'header--links--link header--links--link-special'

@@ -9,8 +9,8 @@
         = render "devise/shared/messages"
 
         .standalone_form--field.standalone_form--field-text
-          = f.text_field :title, { :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => 'Name' }
+          = f.text_field :title, { :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => t( 'report.save_input' ) }
 
         .standalone_form--footer
           .standalone_form--buttons.standalone_form--buttons-centred
-            = f.submit "Save", :class => 'button'
+            = f.submit t( 'report.save_submit' ), :class => 'button'

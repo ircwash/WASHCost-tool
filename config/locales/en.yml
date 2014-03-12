@@ -24,6 +24,7 @@ en:
             title:
               report_title_missing: A title is required
               unique_report: Report names must be unique
+  edit: Edit
   number:
     format:
       separator: "."
@@ -43,6 +44,7 @@ en:
       contact: Contact
       sign_in: Sign In
       sign_out: Sign Out
+      language: Language
     calculators:
       context: Context
       country: Country

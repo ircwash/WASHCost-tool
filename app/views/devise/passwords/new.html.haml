@@ -4,14 +4,14 @@
 
       = form_for @user, :url => password_path( :user, I18n.locale ), :html => { :method => :post, :class => 'standalone_form' } do |f|
 
-        %h1.standalone_form--heading Forgot your password?
+        %h1.standalone_form--heading=t('devise.forgot_your_password')
 
         = render "devise/shared/messages"
 
         .standalone_form--field.standalone_form--field-text
-          = f.email_field :email, :placeholder => 'Email', :class => 'standalone_form--field--input standalone_form--field--input-text'
+          = f.email_field :email, :placeholder => t('devise.email'), :class => 'standalone_form--field--input standalone_form--field--input-text'
 
         .standalone_form--footer
           .standalone_form--buttons
-            = f.submit "Send me reset password instructions", :class => 'button'
+            = f.submit t('devise.send_me_reset_password_instructions'), :class => 'button'
 

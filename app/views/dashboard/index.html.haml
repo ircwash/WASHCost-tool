@@ -45,7 +45,7 @@
                   %div{ :class => "flag flag-#{report.questionnaire['country'].downcase}" }
               %td.dashboard--report_table--cell= report.questionnaire[ 'country' ].present? ? Country.new( report.questionnaire["country"] ).name.truncate(13) : ''
               %td.dashboard--report_table--cell= report.created_at.strftime( '%d.%m.%Y' )
-              %td.dashboard--report_table--cell= "#{report.level.capitalize} #{report.type.capitalize}"
+              %td.dashboard--report_table--cell= t('calculators.' + report.level).capitalize + ' ' +  t('calculators.' + report.type).capitalize
               %td.dashboard--report_table--cell
                 = form_for report, :url => report_path( I18n.locale ), :html => { 'data-dynamic_form' => report_path( I18n.locale ) } do |f|
                   = f.hidden_field :id

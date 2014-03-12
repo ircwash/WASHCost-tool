@@ -17,6 +17,20 @@ en:
     please_visit_washcost_blog_html: "Please visit the <a href=\"http://blog.washcost.org/\" class=\"standalone_form--promo--link\">WASHCost Blog</a> to learn more about the Advanced Calculator"
     select_a_country: Select a country
     select_a_preferred_language: Select a preferred language
+    send_me_reset_password_instructions: Send me reset password instructions 
+    change_my_password: Change my password
+    change_your_password: Change your password
+    new_password: New password
+    confirm_password: Confirm new password
+    edit_your_account: Edit your account
+    your_first_name: Your first name
+    your_last_name: Your last name
+    your_email: Your email
+    your_company: Your company
+    country: Country
+    prefered_language: Preferred language
+    back: back
+    update: update
     confirmations:
       confirmed: "Your account was successfully confirmed. You are now signed in."
       send_instructions: "You will receive an email with instructions about how to confirm your account in a few minutes."

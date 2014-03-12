@@ -1,6 +1,13 @@
 en:
   #is this water and sanitation mixed together? Not clear where the service level indicators are. For example, both water and sanitation have an access indicator but should have separate labels as they may translate differently. 
   report:
+    status:
+      neither: Neither
+      installed: Installed
+      planned: Planned
+      unknown: Unknown
+    share_your_report: Share your report
+    back: Back
     substandard: Sub-Standard
     distance: Distance
     no_answer_provided: No answer provided
@@ -12,6 +19,8 @@ en:
     report_box_no_value: Looks like you need to answer more questions to get a final report. Go back and add more answer about your service delivery
     per_person_per_year: (Per person per year)
     save_your_report: Save Your Report
+    save_input: name
+    save_submit: Save
     report_saved: "Your report was %{action} successfully"
     created_successsfully: Your report was created successfully
     updated_successsfully: Your report was updated successfully
