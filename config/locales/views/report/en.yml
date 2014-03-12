@@ -51,9 +51,9 @@ en:
     recurrent_expenditure_title: Recurrent Expenditure per Person
     complete: Report Complete
     benchmark_below: Below Benchmarks
-    benchmark_within: Expenditure is within of WashCost benchmarks. Read the review below for more information.
+    benchmark_within: Expenditure is within WASHCost benchmarks. Read the review below for more information.
     benchmark_above: above the Benchmarks
-    benchmark_outside: Expenditure is outside of WashCost benchmarks. Read the review below for more information.
+    benchmark_outside: Expenditure is outside of WASHCost benchmarks. Read the review below for more information.
     access: Access
     use: Use
     reliability: Reliability

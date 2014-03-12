@@ -24,7 +24,7 @@ fr:
             title:
               report_title_missing: Veuillez saisir un titre
               unique_report: Les noms de rapport doivent être uniques
-  edit: Edit
+  edit: Modifier
   number:
     format:
       separator: ","
@@ -44,7 +44,7 @@ fr:
       contact: Contact
       sign_in: Ouvrir une session
       sign_out: Fermer la session
-      language: Language
+      language: Langue
     calculators:
       context: Contexte
       country: Pays
