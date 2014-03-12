@@ -16,6 +16,7 @@ gem 'active_attr'
 gem 'money'
 gem 'currencies'
 gem 'countries'
+gem 'country_select'
 gem 'httparty'
 gem 'ruby-ntlm'
 

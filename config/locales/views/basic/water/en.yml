@@ -67,6 +67,13 @@ en:
         recurrent:
           value_label: US$ Per person per Year
       report:
+        sections:
+          country: Country
+          technology: Technology
+          population: Population
+          quantity: Quantity
+          quality: Quality
+          reliability: Reliability
         final_report: Basic Water | Final Report
         sustainability:
           one_star: No service

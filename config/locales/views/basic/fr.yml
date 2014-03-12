@@ -1,5 +1,7 @@
 ﻿fr:
   basic:
+    share:
+      usd_per_person_per_year: US$ par personne par an
     shared:
       questionnaire:
         per_person_usd: US$ par personne 

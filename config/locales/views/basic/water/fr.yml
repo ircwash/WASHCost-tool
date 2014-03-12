@@ -62,6 +62,13 @@
           two_stars: Service limité
           three_stars: Service de base
           four_stars: Service de bonne qualité
+        sections:
+          country: Country
+          technology: Technology
+          population: Population
+          quantity: Quantity
+          quality: Quality
+          reliability: Reliability
         summaries:
           a111: "Ce service ne fournit pas la quantité minimale souhaitée, soit en raison des faibles dépenses d’investissement, soit parce que les sources sont à plus de 60 minutes (aller-retour) des habitations. Des facteurs autres que les coûts peuvent aussi influencer la qualité du service."
           a112: "Ce service ne fournit pas la quantité minimale souhaitée, soit en raison des faibles dépenses d’investissement, soit parce que les sources sont entre 30 et 60 minutes (aller-retour) des habitations. Des facteurs autres que les coûts peuvent aussi influencer la qualité du service."

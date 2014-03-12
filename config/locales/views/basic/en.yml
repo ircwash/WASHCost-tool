@@ -1,5 +1,7 @@
 ﻿en:
   basic:
+    share:
+      usd_per_person_per_year: US$ per person per year
     shared:
       questionnaire:
         per_person_usd: per person US$
