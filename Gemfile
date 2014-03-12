@@ -15,7 +15,7 @@ gem 'thin'
 gem 'active_attr'
 gem 'money'
 gem 'currencies'
-gem 'countries'
+gem 'countries', "0.9.3"
 gem 'country_select'
 gem 'httparty'
 gem 'ruby-ntlm'

@@ -6,7 +6,12 @@ module ApplicationHelper
   end
 
   def options_for_countries
-    Country.all.sort{ |c1,c2| c1[0] <=> c2[0] }
+    translated_countries = []
+    Country.all.each do |c|
+      d = Country.new(c[1])
+      translated_countries << [d.translations[I18n.locale.to_s], d.alpha2]
+    end
+    translated_countries
   end
 
   def options_for_currencies
