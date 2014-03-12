@@ -13,7 +13,7 @@
         - if @questionnaire.reportable?
           .report--summary--item
             .report--summary--item--title= t( 'report.total_cost' )
-            .report--summary--item--value= "#{report_dollar_currency_value_for(@questionnaire.total_cost, 0)}"
+            .report--summary--item--value= "#{report_dollar_currency_value_for(@questionnaire.total_cost, 2)}"
             .report--summary--item--caption= t( 'report.caption_total_cost', :population => report_integer_value_for( @questionnaire.population ) )
 
         .report--summary--item
