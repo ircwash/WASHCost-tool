@@ -62,7 +62,7 @@ WashCostApp::Application.configure do
   config.active_support.deprecation = :stderr
 
   # Use RackSessionAccess middleware for accessing session data in tests
-  config.middleware.use RackSessionAccess::Middleware
+  # config.middleware.use RackSessionAccess::Middleware
 
   config.action_mailer.perform_deliveries = true # Set it to false to disable the email in dev mode
   config.action_mailer.raise_delivery_errors = true
