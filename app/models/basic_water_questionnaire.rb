@@ -154,7 +154,6 @@ class BasicWaterQuestionnaire < Session
 
   def level_of_service
     if technology != nil && capital_expenditure != nil && recurrent_expenditure != nil && access != nil && quantity != nil && quality != nil && reliability != nil
-
       capital_expenditure_code   = expenditure_rating( capital_expenditure.to_f, minimum_guidance_capital_expenditure, maximum_guidance_capital_expenditure )
       recurrent_expenditure_code = expenditure_rating( recurrent_expenditure.to_f, minimum_guidance_recurrent_expenditure, maximum_guidance_recurrent_expenditure )
 
@@ -164,8 +163,8 @@ class BasicWaterQuestionnaire < Session
 
       quantity_code              = quantity.to_i + 1
 
-      concat_first_service_group  = recurrent_expenditure_code.to_s + quantity_code.to_s + access_code.to_s
-      concat_second_service_group = capital_expenditure_code.to_s   + quality_code.to_s  + reliability_code.to_s
+      concat_first_service_group  = capital_expenditure_code.to_s + quantity_code.to_s + access_code.to_s
+      concat_second_service_group = recurrent_expenditure_code.to_s   + quality_code.to_s  + reliability_code.to_s
 
       [ concat_first_service_group, concat_second_service_group ]
     else
