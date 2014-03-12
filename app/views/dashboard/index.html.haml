@@ -23,7 +23,7 @@
             = "#{t( 'dashboard.current_mail' )}:"
             = current_user.email
 
-          = link_to t( 'edit' ), "/" + I18n.locale.to_s + edit_user_registration_path, :class => 'button dashboard--profile--user--button'
+          = link_to t( 'edit' ), edit_user_registration_path(I18n.locale), :class => 'button dashboard--profile--user--button'
 
       %table.dashboard--report_table
         %thead
