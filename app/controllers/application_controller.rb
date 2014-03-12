@@ -13,10 +13,10 @@ class ApplicationController < ActionController::Base
     case current_ability.permission_denied[:output_from]
     when 'xhr'
       render 'basic/reports/redirect'
-      when 'http'
-        redirect_to @path_to
-      when 'popup'
-        render 'basic/reports/open_popup'
+    when 'http'
+      redirect_to @path_to
+    when 'popup'
+      render 'basic/reports/open_popup'
     end
   end
 
@@ -24,6 +24,10 @@ class ApplicationController < ActionController::Base
   def set_locale
     def_lang = (current_user) ? current_user.prefered_language : nil
     I18n.locale = params[ :locale ] || def_lang || I18n.default_locale
+  end
+
+  def self.default_url_options
+    { :locale => I18n.locale }
   end
 
   private
