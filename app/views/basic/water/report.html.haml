@@ -49,21 +49,21 @@
             .report--option_grid--item--title= t( 'basic.water.report.sections.country' )
             %div{ :class => "icon--tool-#{'globe' unless @questionnaire.country == nil}" }
             .report--option_grid--item--caption= @questionnaire.country != nil ? Country.new( @questionnaire.country ).name : t( 'basic.shared.report.no_answer_provided' )
-            = link_to 'Edit', basic_water_action_path( I18n.locale, 'country' ), :class => 'report--option_grid--item--edit'
+            = link_to 'Edit', basic_water_action_path( I18n.locale, 'country' ), :class => 'report--option_grid--item--edit', :title => t('edit')
 
         .report--option_grid--item
           .report--option_grid--item--content
             .report--option_grid--item--title= t( 'basic.water.report.sections.technology' )
             %div{ :class => "icon--tool-#{options_for_water_supply_technologies[@questionnaire.technology.to_i][0] unless @questionnaire.technology == nil}" }
             .report--option_grid--item--caption= @questionnaire.technology != nil ? t( "basic.water.questionnaire.technology.options.#{options_for_water_supply_technologies[@questionnaire.technology.to_i][0]}" ) : t( 'basic.shared.report.no_answer_provided' )
-            = link_to 'Edit', basic_water_action_path( I18n.locale, 'technology' ), :class => 'report--option_grid--item--edit'
+            = link_to 'Edit', basic_water_action_path( I18n.locale, 'technology' ), :class => 'report--option_grid--item--edit', :title => t('edit')
 
         .report--option_grid--item
           .report--option_grid--item--content
             .report--option_grid--item--title= t( 'basic.water.report.sections.population' )
             %div{ :class => "icon--tool-#{'population' unless @questionnaire.population == nil}" }
             .report--option_grid--item--caption= @questionnaire.population != nil ? @questionnaire.population : t( 'basic.shared.report.no_answer_provided' )
-            = link_to 'Edit', basic_water_action_path( I18n.locale, 'population' ), :class => 'report--option_grid--item--edit'
+            = link_to 'Edit', basic_water_action_path( I18n.locale, 'population' ), :class => 'report--option_grid--item--edit', :title => t('edit')
 
 
   %section.report--section
@@ -83,13 +83,13 @@
         .report--costs--title= t( 'basic.water.report.sections.capital_expenditure_per_person' )
         .report--costs--detail
           .report--costs--detail--value= report_dollar_currency_value_for( @questionnaire.capital_expenditure )
-          = link_to 'Edit', basic_water_action_path( I18n.locale, 'capital_expenditure' ), :class => 'report--costs--detail--edit'
+          = link_to 'Edit', basic_water_action_path( I18n.locale, 'capital_expenditure' ), :class => 'report--costs--detail--edit', :title => t('edit')
 
       .report--costs--column.report--costs--column-small
         .report--costs--title= t( 'basic.water.report.sections.recurrent_expenditure_per_person' )
         .report--costs--detail
           .report--costs--detail--value= report_dollar_currency_value_for( @questionnaire.recurrent_expenditure )
-          = link_to 'Edit', basic_water_action_path( I18n.locale, 'recurrent_expenditure' ), :class => 'report--costs--detail--edit'
+          = link_to 'Edit', basic_water_action_path( I18n.locale, 'recurrent_expenditure' ), :class => 'report--costs--detail--edit', :title => t('edit')
 
       .report--costs--column.report--costs--column-big
         .report--costs--title= t( 'report.total' )
@@ -105,9 +105,9 @@
           .report-service_level--prefix= water_access_heading
           .report-service_level--amount= water_access_amount
           .report-service_level--suffix= t( 'report.time.minutes' )
-        = link_to 'Edit', basic_water_action_path( I18n.locale, 'access' ), :class => 'report-service_level--edit'
+        = link_to 'Edit', basic_water_action_path( I18n.locale, 'access' ), :class => 'report-service_level--edit', :title => t('edit')
     - else
-      = link_to 'Edit', basic_water_action_path( I18n.locale, 'access' ), :class => 'report-service_level--edit'
+      = link_to 'Edit', basic_water_action_path( I18n.locale, 'access' ), :class => 'report-service_level--edit', :title => t('edit')
       .report--no_data= t('report.cost_box_no_value')
 
     .report--option_grid
@@ -119,18 +119,18 @@
             .report--option_grid--item--title= t( 'basic.water.report.sections.quantity' )
             %div{ :class => "icon--tool-#{options_for_water_quantities[@questionnaire.quantity.to_i][0] unless @questionnaire.quantity == nil}" }
             .report--option_grid--item--caption= @questionnaire.quantity != nil ? t( "basic.water.questionnaire.quantity.options.#{options_for_water_quantities[@questionnaire.quantity.to_i][0]}" ) : t( 'basic.shared.report.no_answer_provided' )
-            = link_to '', basic_water_action_path( I18n.locale, 'quantity' ), :class => 'report--option_grid--item--edit'
+            = link_to '', basic_water_action_path( I18n.locale, 'quantity' ), :class => 'report--option_grid--item--edit', :title => t('edit')
 
         .report--option_grid--item
           .report--option_grid--item--content
             .report--option_grid--item--title= t( 'basic.water.report.sections.quality' )
             %div{ :class => "icon--tool-#{options_for_water_qualities[@questionnaire.quality.to_i][0] unless @questionnaire.quality == nil}" }
             .report--option_grid--item--caption= @questionnaire.quality != nil ? t( "basic.water.questionnaire.quality.options.#{options_for_water_qualities[@questionnaire.quality.to_i][0]}" ) : t( 'basic.shared.report.no_answer_provided' )
-            = link_to '', basic_water_action_path( I18n.locale, 'quality' ), :class => 'report--option_grid--item--edit'
+            = link_to '', basic_water_action_path( I18n.locale, 'quality' ), :class => 'report--option_grid--item--edit', :title => t('edit')
 
         .report--option_grid--item
           .report--option_grid--item--content
             .report--option_grid--item--title= t( 'basic.water.report.sections.reliability' )
             %div{ :class => "icon--tool-#{options_for_water_reliability[@questionnaire.reliability.to_i][0] unless @questionnaire.reliability == nil}" }
             .report--option_grid--item--caption= @questionnaire.reliability != nil ? t( "basic.water.questionnaire.reliability.options.#{options_for_water_reliability[@questionnaire.reliability.to_i][0]}" ) : t( 'basic.shared.report.no_answer_provided' )
-            = link_to '', basic_water_action_path( I18n.locale, 'reliability' ), :class => 'report--option_grid--item--edit'
+            = link_to '', basic_water_action_path( I18n.locale, 'reliability' ), :class => 'report--option_grid--item--edit', :title => t('edit')
