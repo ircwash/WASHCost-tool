@@ -19,6 +19,8 @@ test:
         # low amounts for fast failures.
         max_retries: 1
         retry_interval: 0
+  options:
+    raise_not_found_error: false
 
 staging:
   sessions:
@@ -28,3 +30,5 @@ staging:
         - localhost:27017
       options:
         consistency: :strong
+  options:
+    raise_not_found_error: false
