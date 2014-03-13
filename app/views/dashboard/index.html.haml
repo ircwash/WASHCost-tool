@@ -15,7 +15,7 @@
             = current_user.company.present? ? current_user.company : 'Not specified'
           .dashboard--profile--details--field
             = "#{t( 'dashboard.country' )}:"
-            = (current_user.country && Country.new(current_user.country).data.present?) ? Country.new(current_user.country).translations[I18n.locale.to_s].titleize : 'Not specified'
+            = (current_user.country != nil && Country.new(current_user.country).data.present?) ? Country.new(current_user.country).translations[I18n.locale.to_s].titleize : 'Not specified'
           .dashboard--profile--details--field
             = "#{t( 'dashboard.preferred_language' )}:"
             = current_user.prefered_language != nil ? options_for_languages[ options_for_languages.index{ |l| l[1] == current_user.prefered_language } ][0]  : ''
