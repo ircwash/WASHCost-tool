@@ -1,7 +1,21 @@
 class ReportsController < ApplicationController
 
+  def destroy
+    report = Report.find( params[ :id ] )
+    if report == nil
+      report = (current_user != nil) ? current_user.user_reports.find( params[ :id ] ) : nil
+    end
+    if report != nil
+      report.destroy
+      redirect_to dashboard_index_path( I18n.locale )
+    end
+  end
+
   def load
     report = Report.find( params[ :id ] )
+    if report == nil
+      report = (current_user != nil) ? current_user.user_reports.find( params[ :id ] ) : nil
+    end
     if report != nil
       if report.level == 'basic'
         if report.type == 'water'
@@ -42,7 +56,6 @@ class ReportsController < ApplicationController
       raise ActionController::RoutingError.new('Not Found')
     end
   end
-
 
   def update
     if params[ :user_report ].present? && params[ :user_report ][ :id ].present?

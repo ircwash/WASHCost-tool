@@ -81,6 +81,7 @@ WashCostApp::Application.routes.draw do
     end
 
     get '/dashboard' => 'dashboard#index', :as => 'dashboard'
+    get '/report/destroy/:id' => 'reports#destroy', :as => 'reports_destroy'
     get '/report/:id' => 'reports#load', :as => 'reports_load'
     put '/report' => 'reports#update', :as => 'report'
 

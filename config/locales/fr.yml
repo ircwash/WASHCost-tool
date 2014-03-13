@@ -77,6 +77,7 @@ fr:
     view_report: Voir le rapport
     save_report: Sauvegarder le rapport
     share_report: Partager le rapport
+    delete_report: Effacer le rapport
   calculators:
     basic: Outil de base
     advanced: Outil avancé

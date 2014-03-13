@@ -52,3 +52,4 @@
                   = f.select :status, options_for_select( options_for_report_statuses, report.status )
               %td.dashboard--report_table--cell
                 = link_to t( 'buttons.view_report' ), reports_load_path( I18n.locale, report.id ), :class => 'button button-small'
+                = link_to t( 'buttons.delete_report' ), reports_destroy_path( I18n.locale, report.id ), :class => 'button button-small'

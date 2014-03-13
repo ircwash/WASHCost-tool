@@ -26,7 +26,7 @@ class CalculatorController < ApplicationController
         :level => level,
         :questionnaire => questionnaire
       )
-      redirect_to dashboard_index_path
+      redirect_to dashboard_index_path(I18n.locale)
     end
   end
 end
