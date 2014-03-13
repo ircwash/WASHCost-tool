@@ -11,7 +11,10 @@ module ApplicationHelper
       d = Country.new(c[1])
       translated_countries << [d.translations[I18n.locale.to_s], d.alpha2]
     end
-    translated_countries
+    translated_countries.sort do |a, b|
+      a[0].to_s <=> b[0].to_s
+    end
+
   end
 
   def options_for_currencies
