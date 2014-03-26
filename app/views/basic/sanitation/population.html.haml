@@ -11,7 +11,7 @@
     = form_for @questionnaire, :url => basic_sanitation_update_url( I18n.locale, 'latrine' ), :html => { 'data-dynamic_form' => basic_sanitation_dynamic_update_url( I18n.locale ) } do |f|
 
       .slider
-        %input.slider--value{ :type => 'text', :value => @questionnaire.population != nil ? number_with_precision( @questionnaire.population, :precision => 0, :locale => I18n.locale ) : @questionnaire.minimum_population }
+        %input.slider--value{ :type => 'text', :value => @questionnaire.population != nil ? number_with_precision( @questionnaire.population, :precision => 1, :locale => I18n.locale ) : @questionnaire.minimum_population }
         .slider--widget
         = f.hidden_field :population, { :value => @questionnaire.population ? @questionnaire.population : @questionnaire.minimum_population, 'data-slider-input' => 'true', 'data-logarithmic' => 'true', 'data-slider-min' => @questionnaire.minimum_population, 'data-slider-max' => @questionnaire.maximum_population }
 
