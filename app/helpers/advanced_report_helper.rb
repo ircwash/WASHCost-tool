@@ -45,6 +45,10 @@ module AdvancedReportHelper
     value != nil ? "#{value.to_i}" : t( 'report.no_data' )
   end
 
+  def report_float_value_for( value )
+    value != nil ? "#{value.to_f}" : t( 'report.no_data' )
+  end
+
   def report_currency_value_for( value, precision = 2 )
     value != nil ? "#{( @questionnaire.currency || '' ).upcase} #{number_with_precision( value.to_f, :precision => precision )}" : t( 'report.no_data' )
   end

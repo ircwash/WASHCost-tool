@@ -146,7 +146,7 @@ class BasicSanitationQuestionnaire < Session
 
   def total_cost
     if capital_expenditure != nil && recurrent_expenditure != nil && population != nil
-      ( capital_expenditure.to_i + recurrent_expenditure.to_i * 10 ) * population.to_i
+      ( capital_expenditure.to_f + recurrent_expenditure.to_f * 10 ) * population.to_f
     else
       nil
     end
@@ -165,7 +165,8 @@ class BasicSanitationQuestionnaire < Session
   end
 
   def access_rating
-    [ [ 3, 1 ], [ 1, 1 ] ][ household_latrine.to_i ][ impermeability.to_i ]
+    # changed this from [1, 1] to [2, 1] to fix latrine error
+    [ [ 3, 1 ], [ 2, 1 ] ][ household_latrine.to_i ][ impermeability.to_i ]
   end
 
   def cost_rating_inside_benchmarks?

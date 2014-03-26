@@ -125,7 +125,7 @@ class BasicWaterQuestionnaire < Session
 
   def total_cost
     if capital_expenditure != nil && recurrent_expenditure != nil && population != nil
-      ( capital_expenditure.to_i + recurrent_expenditure.to_i * 10 ) * population.to_i
+      ( capital_expenditure.to_f + recurrent_expenditure.to_f * 10 ) * population.to_f
     else
       nil
     end
