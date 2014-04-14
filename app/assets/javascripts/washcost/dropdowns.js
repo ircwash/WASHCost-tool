@@ -7,6 +7,14 @@ $( document ).ready( function()
   {
     $('.chzn-select').chosen( { allow_single_deselect:true } );
 
+    $('select[name="advanced_water_questionnaire[currency]"],select[name="advanced_sanitation_questionnaire[currency]"]').on('change', function (event) {
+      var currency = $(this).val().toUpperCase();
+      $('[data-currency]').each(function () {
+        var n = $(this).attr('data-currency');
+        $(this).attr('placeholder', n + ' (' + currency + ')');
+      });
+    });
+
     // Handle surface water
     $('select[name="advanced_water_questionnaire[water_source][]"]').on('change', function( event ) {
       var idx = this.selectedIndex;

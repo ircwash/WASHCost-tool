@@ -63,16 +63,16 @@
           = f.label :area_type, t( 'advanced.water.questionnaire.area_type.label' ), :class => 'dual_column--field--label'
           = f.select :area_type, options_for_select( options_for_area_type, @questionnaire.area_type ), { :include_blank=> '' }, { :tabindex => '9', :class => 'dual_column_form--field--dropdown chzn-select', 'data-placeholder' => t( 'advanced.water.questionnaire.area_type.placeholder' ) }
 
-      .dual_column_form--column.dual_column_form--column-50
-        .dual_column_form--field.dual_column_form--field-text_input
-          = f.label :population_density, t( 'advanced.water.questionnaire.population_density.label' ), :class => 'dual_column--field--label'
-          = text_field_tag 'advanced_water_questionnaire[population_density]', @questionnaire.population_density != t( 'advanced.shared.dont_know' ) ? @questionnaire.population_density : '', :tabindex => '10', :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.questionnaire.population_density.placeholder' ), 'data-checkbox_toggle-field' => 'population_density'
+      /.dual_column_form--column.dual_column_form--column-50
+      /  .dual_column_form--field.dual_column_form--field-text_input
+      /    = f.label :population_density, t( 'advanced.water.questionnaire.population_density.label' ), :class => 'dual_column--field--label'
+      /    = text_field_tag 'advanced_water_questionnaire[population_density]', @questionnaire.population_density != t( 'advanced.shared.dont_know' ) ? @questionnaire.population_density : '', :tabindex => '10', :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.questionnaire.population_density.placeholder' ), 'data-checkbox_toggle-field' => 'population_density'
 
-        .dual_column_form--field.dual_column_form--field-box
-          = check_box_tag 'advanced_water_questionnaire[population_density_unknown]', t( 'advanced.shared.dont_know' ), @questionnaire.population_density == t( 'advanced.shared.dont_know' ), { :class => 'dual_column_form--field--checkbox', 'data-checkbox_toggle-checkbox' => 'population_density' }
-          = f.label :population_density_unknown, :class => 'dual_column--field--label dual_column--field--label-box' do
-            %a.dual_column_form--field--styled_checkbox{:tabindex => '11'}
-            %span.dual_column--field--label-box--content= t( 'advanced.shared.dont_know' )
+      /  .dual_column_form--field.dual_column_form--field-box
+      /    = check_box_tag 'advanced_water_questionnaire[population_density_unknown]', t( 'advanced.shared.dont_know' ), @questionnaire.population_density == t( 'advanced.shared.dont_know' ), { :class => 'dual_column_form--field--checkbox', 'data-checkbox_toggle-checkbox' => 'population_density' }
+      /    = f.label :population_density_unknown, :class => 'dual_column--field--label dual_column--field--label-box' do
+      /      %a.dual_column_form--field--styled_checkbox{:tabindex => '11'}
+      /      %span.dual_column--field--label-box--content= t( 'advanced.shared.dont_know' )
 
     -# SYSTEM MANAGEMENT
 
@@ -171,7 +171,7 @@
       .dual_column_form--column.dual_column_form--column-50
         .dual_column_form--field.dual_column_form--field-dropdown
           = f.label :annual_household_income, t( 'advanced.water.questionnaire.annual_household_income.label' ), :class => 'dual_column--field--label'
-          = f.text_field :annual_household_income, :tabindex => '18', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.annual_household_income.placeholder' ), 'data-checkbox_toggle-field' => 'annual_household_income'
+          = f.text_field :annual_household_income, :"data-currency" => 600, :tabindex => '18', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.annual_household_income.placeholder' ), 'data-checkbox_toggle-field' => 'annual_household_income'
 
       .dual_column_form--column.dual_column_form--column-50
         .dual_column_form--field.dual_column_form--field-dropdown
@@ -183,12 +183,12 @@
       .dual_column_form--column.dual_column_form--column-50
         .dual_column_form--field.dual_column_form--field-text_input
           = f.label :direct_support_cost, t( 'advanced.water.questionnaire.direct_support_cost.label' ), :class => 'dual_column--field--label'
-          = f.text_field :direct_support_cost, :tabindex => '20', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.direct_support_cost.placeholder' )
+          = f.text_field :direct_support_cost, :"data-currency" => 2000, :tabindex => '20', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.direct_support_cost.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-50
         .dual_column_form--field.dual_column_form--field-text_input
           = f.label :indirect_support_cost, t( 'advanced.water.questionnaire.indirect_support_cost.label' ), :class => 'dual_column--field--label'
-          = f.text_field :indirect_support_cost, :tabindex => '21', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.indirect_support_cost.placeholder' )
+          = f.text_field :indirect_support_cost, :"data-currency" => 2000, :tabindex => '21', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.indirect_support_cost.placeholder' )
 
     .question--buttons
       = submit_tag((t 'buttons.next'), class: 'button', tabindex: '22')

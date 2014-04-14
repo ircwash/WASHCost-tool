@@ -84,17 +84,17 @@
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-1' }
         .dual_column_form--field.dual_column_form--field-text_input
           = label_tag "advanced_sanitation_questionnaire_actual_hardware_expenditure_1", t( 'advanced.water.questionnaire.actual_hardware_expenditure.label' ), :class => 'dual_column--field--label'
-          = text_field_tag 'advanced_sanitation_questionnaire[actual_hardware_expenditure][]', @questionnaire.actual_hardware_expenditure[0], :id => "advanced_sanitation_questionnaire_actual_hardware_expenditure_1", :tabindex => '5', :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.questionnaire.actual_hardware_expenditure.placeholder' )
+          = text_field_tag 'advanced_sanitation_questionnaire[actual_hardware_expenditure][]', @questionnaire.actual_hardware_expenditure[0], :id => "advanced_sanitation_questionnaire_actual_hardware_expenditure_1", :tabindex => '5', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.actual_hardware_expenditure.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-2' }
         .dual_column_form--field.dual_column_form--field-text_input
           = label_tag "advanced_sanitation_questionnaire_actual_hardware_expenditure_2", t( 'advanced.water.questionnaire.actual_hardware_expenditure.label' ), :class => 'dual_column--field--label'
-          = text_field_tag 'advanced_sanitation_questionnaire[actual_hardware_expenditure][]', @questionnaire.actual_hardware_expenditure[1], :id => "advanced_sanitation_questionnaire_actual_hardware_expenditure_2", :tabindex => '17', :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.questionnaire.actual_hardware_expenditure.placeholder' )
+          = text_field_tag 'advanced_sanitation_questionnaire[actual_hardware_expenditure][]', @questionnaire.actual_hardware_expenditure[1], :id => "advanced_sanitation_questionnaire_actual_hardware_expenditure_2", :tabindex => '17', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.actual_hardware_expenditure.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-3' }
         .dual_column_form--field.dual_column_form--field-text_input
           = label_tag "advanced_sanitation_questionnaire_actual_hardware_expenditure_3", t( 'advanced.water.questionnaire.actual_hardware_expenditure.label' ), :class => 'dual_column--field--label'
-          = text_field_tag 'advanced_sanitation_questionnaire[actual_hardware_expenditure][]', @questionnaire.actual_hardware_expenditure[2], :id => "advanced_sanitation_questionnaire_actual_hardware_expenditure_3", :tabindex => '29', :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.questionnaire.actual_hardware_expenditure.placeholder' )
+          = text_field_tag 'advanced_sanitation_questionnaire[actual_hardware_expenditure][]', @questionnaire.actual_hardware_expenditure[2], :id => "advanced_sanitation_questionnaire_actual_hardware_expenditure_3", :tabindex => '29', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.actual_hardware_expenditure.placeholder' )
 
     .dual_column_form--row
 
@@ -119,15 +119,15 @@
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-1' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_sanitation_questionnaire[actual_software_expenditure][]', @questionnaire.actual_software_expenditure[0], :tabindex => '7', :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.questionnaire.actual_software_expenditure.placeholder' )
+          = text_field_tag 'advanced_sanitation_questionnaire[actual_software_expenditure][]', @questionnaire.actual_software_expenditure[0], :tabindex => '7', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.actual_software_expenditure.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-2' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_sanitation_questionnaire[actual_software_expenditure][]', @questionnaire.actual_software_expenditure[1], :tabindex => '19', :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.questionnaire.actual_software_expenditure.placeholder' )
+          = text_field_tag 'advanced_sanitation_questionnaire[actual_software_expenditure][]', @questionnaire.actual_software_expenditure[1], :tabindex => '19', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.actual_software_expenditure.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-3' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_sanitation_questionnaire[actual_software_expenditure][]', @questionnaire.actual_software_expenditure[2], :tabindex => '31', :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.questionnaire.actual_software_expenditure.placeholder' )
+          = text_field_tag 'advanced_sanitation_questionnaire[actual_software_expenditure][]', @questionnaire.actual_software_expenditure[2], :tabindex => '31', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.actual_software_expenditure.placeholder' )
 
     .dual_column_form--row
 
@@ -153,15 +153,15 @@
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-1' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_sanitation_questionnaire[minor_operation_expenditure][]', @questionnaire.minor_operation_expenditure[0], :tabindex => '9', :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.questionnaire.minor_operation_expenditure.placeholder' )
+          = text_field_tag 'advanced_sanitation_questionnaire[minor_operation_expenditure][]', @questionnaire.minor_operation_expenditure[0], :tabindex => '9', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.minor_operation_expenditure.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-2' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_sanitation_questionnaire[minor_operation_expenditure][]', @questionnaire.minor_operation_expenditure[1], :tabindex => '21', :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.questionnaire.minor_operation_expenditure.placeholder' )
+          = text_field_tag 'advanced_sanitation_questionnaire[minor_operation_expenditure][]', @questionnaire.minor_operation_expenditure[1], :tabindex => '21', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.minor_operation_expenditure.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-3' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_sanitation_questionnaire[minor_operation_expenditure][]', @questionnaire.minor_operation_expenditure[2], :tabindex => '33', :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.questionnaire.minor_operation_expenditure.placeholder' )
+          = text_field_tag 'advanced_sanitation_questionnaire[minor_operation_expenditure][]', @questionnaire.minor_operation_expenditure[2], :tabindex => '33', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.minor_operation_expenditure.placeholder' )
 
     .dual_column_form--row
 
@@ -169,15 +169,15 @@
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-1' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_sanitation_questionnaire[capital_maintenance_expenditure][]', @questionnaire.capital_maintenance_expenditure[0], :tabindex => '10', :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.questionnaire.capital_maintenance_expenditure.placeholder' )
+          = text_field_tag 'advanced_sanitation_questionnaire[capital_maintenance_expenditure][]', @questionnaire.capital_maintenance_expenditure[0], :tabindex => '10', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.capital_maintenance_expenditure.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-2' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_sanitation_questionnaire[capital_maintenance_expenditure][]', @questionnaire.capital_maintenance_expenditure[1], :tabindex => '22', :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.questionnaire.capital_maintenance_expenditure.placeholder' )
+          = text_field_tag 'advanced_sanitation_questionnaire[capital_maintenance_expenditure][]', @questionnaire.capital_maintenance_expenditure[1], :tabindex => '22', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.capital_maintenance_expenditure.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-3' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_sanitation_questionnaire[capital_maintenance_expenditure][]', @questionnaire.capital_maintenance_expenditure[2], :tabindex => '34', :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.questionnaire.capital_maintenance_expenditure.placeholder' )
+          = text_field_tag 'advanced_sanitation_questionnaire[capital_maintenance_expenditure][]', @questionnaire.capital_maintenance_expenditure[2], :tabindex => '34', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.capital_maintenance_expenditure.placeholder' )
 
     .dual_column_form--row
 
@@ -185,15 +185,15 @@
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-1' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_sanitation_questionnaire[loan_cost][]', @questionnaire.loan_cost[0], :tabindex => '11', :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.questionnaire.loan_cost.placeholder' )
+          = text_field_tag 'advanced_sanitation_questionnaire[loan_cost][]', @questionnaire.loan_cost[0], :tabindex => '11', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.loan_cost.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-2' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_sanitation_questionnaire[loan_cost][]', @questionnaire.loan_cost[1], :tabindex => '23', :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.questionnaire.loan_cost.placeholder' )
+          = text_field_tag 'advanced_sanitation_questionnaire[loan_cost][]', @questionnaire.loan_cost[1], :tabindex => '23', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.loan_cost.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-3' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_sanitation_questionnaire[loan_cost][]', @questionnaire.loan_cost[2], :tabindex => '35', :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.questionnaire.loan_cost.placeholder' )
+          = text_field_tag 'advanced_sanitation_questionnaire[loan_cost][]', @questionnaire.loan_cost[2], :tabindex => '35', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.loan_cost.placeholder' )
 
     .dual_column_form--row
 
