@@ -2,13 +2,24 @@ $( document ).ready( function()
 {
   'use strict';
 
-
   function init()
   {
     $( '[data-column_dependency]' ).on( 'keyup', set_dependencies ).each( set_dependencies );
     $( '[data-column_dependency]' ).on( 'change', set_dependencies ).each( set_dependencies );
+    $('[name="advanced_water_questionnaire[service_level_share][]"]').on('keyup', enforce_numeric);
+    $('[name="advanced_water_questionnaire[service_level_share][]"]').on('blur', add_percentage);
   }
 
+  function enforce_numeric() {
+    var value = $(this).val();
+    $(this).val(value.replace(/[^0-9\.]+/g, ''));
+  }
+
+  function add_percentage() {
+    var value = $(this).val().replace(/%/g, '');
+    if (value === '' || value === null) value = 0;
+    $(this).val(value + '%');
+  }
 
   function set_dependencies()
   {
@@ -28,7 +39,6 @@ $( document ).ready( function()
       $('select[name="advanced_water_questionnaire[surface_water_primary_source][]"]').attr( { disabled:'disabled' } ).trigger( 'chosen:updated' );
     }
   }
-
 
   init();
 } );
