@@ -248,4 +248,8 @@ module AdvancedCalculatorsHelper
     ]
   end
 
+  def placeholder_currency(text)
+    t(text).to_s + (' (' + @questionnaire.currency.to_s  + ')' || '' ).upcase.to_s
+  end
+
 end
