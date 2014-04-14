@@ -5,15 +5,15 @@ $( document ).ready( function()
 
   function init()
   {
+    $( '[data-column_dependency]' ).on( 'keyup', set_dependencies ).each( set_dependencies );
     $( '[data-column_dependency]' ).on( 'change', set_dependencies ).each( set_dependencies );
   }
 
 
   function set_dependencies()
   {
-    var associated = $( this ).data( 'column_dependency' ),
-        dependents = $( '[data-column_dependency-dependent="' + associated + '"]' );
-
+    var associated = $( this ).data( 'column_dependency' ), dependents = $( '[data-column_dependency-dependent="' + associated + '"]' );
+ 
     if ( this.value === '' )
     {
       dependents.find( 'input:not([type="checkbox"],[type="radio"])' ).val( '' ).attr( { disabled:'disabled' } );
@@ -25,6 +25,7 @@ $( document ).ready( function()
     {
       dependents.find( 'input' ).removeAttr( 'disabled' );
       dependents.find( 'select' ).removeAttr( 'disabled' ).trigger( 'chosen:updated' );
+      $('select[name="advanced_water_questionnaire[surface_water_primary_source][]"]').attr( { disabled:'disabled' } ).trigger( 'chosen:updated' );
     }
   }
 

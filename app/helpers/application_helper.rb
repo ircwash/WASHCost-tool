@@ -24,14 +24,12 @@ module ApplicationHelper
   def options_for_major_currencies
     Money::Currency.table.inject([]) do |array, (id, attributes)|
       priority = attributes[:priority]
-
       if priority
         array[priority] ||= []
-        array[priority] << id
+        array[priority] << [ :name => "#{attributes[:name]} (#{attributes[:iso_code]})", :id => id ]
       end
-
       array
-    end.compact.flatten.map{ |c| [ c.upcase, c ] }
+    end.compact.flatten.map{ |c| [ c[:name], c[:id] ] }
   end
 
   def options_for_years

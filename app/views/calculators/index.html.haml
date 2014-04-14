@@ -15,7 +15,6 @@
             %span.calculator_selection--selector--icon.icon--tool-water_calculator
             %span.calculator_selection--selector--text= t('calculators.water')
 
-
           = label_tag( 'sanitation_tool', 'name', :class => 'calculator_selection--selector--item' ) do
             = radio_button_tag( 'tool_name', 'sanitation', false, id: 'sanitation_tool', :class => 'calculator_selection--selector--radio' )
             %span.calculator_selection--selector--checked_icon
@@ -23,16 +22,15 @@
             %span.calculator_selection--selector--text= t('calculators.sanitation')
 
         .calculator_selection--selector--container.calculator_selection--selector--container-version
-          / = label_tag( 'basic_tool', nil, :class => 'calculator_selection--selector--item' ) do
-          /   = radio_button_tag( 'tool_level', 'basic', true, id: 'basic_tool', :class => 'calculator_selection--selector--radio' )
-          /   %span.calculator_selection--selector--checked_icon
-          /   %span.calculator_selection--selector--icon.calculator_selection--selector--text= t('calculators.tool_selection_basic')
+          = label_tag( 'basic_tool', nil, :class => 'calculator_selection--selector--item' ) do
+            = radio_button_tag( 'tool_level', 'basic', true, id: 'basic_tool', :class => 'calculator_selection--selector--radio' )
+            %span.calculator_selection--selector--checked_icon
+            %span.calculator_selection--selector--icon.calculator_selection--selector--text= t('calculators.tool_selection_basic')
 
-          / = label_tag( 'advanced_tool', nil, :class => 'calculator_selection--selector--item' ) do
-          /   = radio_button_tag( 'tool_level', 'advanced', false, id: 'advanced_tool', :class => 'calculator_selection--selector--radio' )
-          /   %span.calculator_selection--selector--checked_icon
-          /   %span.calculator_selection--selector--icon.calculator_selection--selector--text Advanced Tool
+          = label_tag( 'advanced_tool', nil, :class => 'calculator_selection--selector--item' ) do
+            = radio_button_tag( 'tool_level', 'advanced', false, id: 'advanced_tool', :class => 'calculator_selection--selector--radio' )
+            %span.calculator_selection--selector--checked_icon
+            %span.calculator_selection--selector--icon.calculator_selection--selector--text Advanced Tool
 
         .calculator_selection--buttons
           = submit_tag t('buttons.start'), :class => 'button'
-

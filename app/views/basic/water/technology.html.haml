@@ -17,10 +17,10 @@
             %span.question--radios--text= t( "basic.water.questionnaire.technology.options.#{option[0]}" )
 
       .question--buttons
-        = submit_tag t( 'buttons.next' ), :class => 'button'
+        = submit_tag t( 'buttons.next' ), :class => 'button', :tabindex => '6'
 
 .info_tab
   .info_tab--icon
   .info_tab--container
     .info_tab--content
-      %p.info_tab--content--text= raw format_info_text 'basic.water.questionnaire.technology.info'
+      %p.info_tab--content--text=# raw format_info_text 'basic.water.questionnaire.technology.info'

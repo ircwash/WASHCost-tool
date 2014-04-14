@@ -7,9 +7,14 @@ $( document ).ready( function()
   {
     $( '[data-checkbox_toggle-field]' ).on( 'keydown', function( event )
     {
-      var associated = $( this ).data( 'checkbox_toggle-field' );
+      $('.dual_column_form--field--styled_checkbox').on('keyup', function (e) {
+        var code = e.keyCode || e.which;
+        if (code === 13) $(this).parent().prev().trigger('click');
+      });
 
-      $( '[data-checkbox_toggle-checkbox="' + associated + '"]' ).removeAttr( 'checked' );
+      /*var associated = $( this ).data( 'checkbox_toggle-field' );
+      $( '[data-checkbox_toggle-checkbox="' + associated + '"]' ).removeAttr( 'checked' );*/
+      
     } );
 
     $( '[data-checkbox_toggle-checkbox]' ).on( 'change', function( event )

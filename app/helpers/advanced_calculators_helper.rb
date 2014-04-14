@@ -10,10 +10,9 @@ module AdvancedCalculatorsHelper
 
   def options_for_sanitation_service_exists
     [
-      [ 'Neither', 0 ],
-      [ 'Existing', 1 ],
-      [ 'Planned', 2 ],
-      [ 'Don\'t know', 3 ]
+      [ 'Existing', 0 ],
+      [ 'Planned', 1 ],
+      [ 'Don\'t know', 2 ]
     ]
   end
 

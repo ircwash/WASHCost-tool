@@ -12,6 +12,7 @@
     __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
+
   SelectParser = (function() {
     function SelectParser() {
       this.options_index = 0;
@@ -530,11 +531,13 @@
         container_props.id = this.form_field.id.replace(/[^\w]/g, '_') + "_chosen";
       }
       this.container = $("<div />", container_props);
+
       if (this.is_multiple) {
-        this.container.html('<ul class="chosen-choices"><li class="search-field"><input type="text" value="' + this.default_text + '" class="default" autocomplete="off" style="width:25px;" /></li></ul><div class="chosen-drop"><ul class="chosen-results"></ul></div>');
+        this.container.html('<ul class="chosen-choices" tabindex="' + this.form_field.tabIndex + '"><li class="search-field"><input type="text" value="' + this.default_text + '" class="default" autocomplete="off" style="width:25px;" /></li></ul><div class="chosen-drop"><ul class="chosen-results"></ul></div>');
       } else {
-        this.container.html('<a class="chosen-single chosen-default" tabindex="-1"><span>' + this.default_text + '</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input type="text" autocomplete="off" /></div><ul class="chosen-results"></ul></div>');
+        this.container.html('<a class="chosen-single chosen-default" tabindex="' + this.form_field.tabIndex + '"><span>' + this.default_text + '</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input type="text" autocomplete="off" /></div><ul class="chosen-results"></ul></div>');
       }
+
       this.form_field_jq.hide().after(this.container);
       this.dropdown = this.container.find('div.chosen-drop').first();
       this.search_field = this.container.find('input').first();
@@ -559,6 +562,9 @@
     Chosen.prototype.register_observers = function() {
       var _this = this;
 
+      this.container.children('a').bind('focus.chosen', function(evt) { // Hack for the tab issue
+        _this.container_mousedown(evt);
+      });
       this.container.bind('mousedown.chosen', function(evt) {
         _this.container_mousedown(evt);
       });
