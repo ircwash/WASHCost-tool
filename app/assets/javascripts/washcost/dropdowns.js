@@ -11,6 +11,7 @@ $( document ).ready( function()
       var currency = $(this).val().toUpperCase();
       $('[data-currency]').each(function () {
         var n = $(this).attr('data-currency');
+        if (currency === null || currency === '') currency = 'USD';
         $(this).attr('placeholder', n + ' (' + currency + ')');
       });
     });
