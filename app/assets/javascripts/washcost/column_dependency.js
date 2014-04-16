@@ -8,6 +8,8 @@ $( document ).ready( function()
     $( '[data-column_dependency]' ).on( 'change', set_dependencies ).each( set_dependencies );
     $('[name="advanced_water_questionnaire[service_level_share][]"]').on('keyup', enforce_numeric);
     $('[name="advanced_water_questionnaire[service_level_share][]"]').on('blur', add_percentage);
+    $('[data-numeric]').on('keyup', enforce_numeric);
+    $('[data-numeric]').on('change', enforce_numeric);
   }
 
   function enforce_numeric() {
