@@ -86,11 +86,11 @@ en:
           label: What is the payback period on this loan?
           placeholder: 20
         direct_support_cost:
-          label: What has been/will be expenditure on direct support?
-          placeholder: 2000
+          label: What has been/will be expenditure on direct support per person per year?
+          placeholder: 10
         indirect_support_cost:
-          label: What has been/will be expenditure on indirect support?
-          placeholder: 2000
+          label: What has been/will be expenditure on indirect support per person per year?
+          placeholder: 2
         service_levels:
           label: Please define upto four service levels for users of the water system
         service_level_name:
