@@ -4,6 +4,7 @@ fr:
     messages:
       unique_email: "L'adresse e-mail doit être unique"
       email_missing: "Le champ e-mail doit être renseigné"
+      email_valid: "Adresse e-mail doit être valide"
       password_missing: "Veuillez saisir un mot de passe"
       password_too_long: "Mot de passe trop long"
       password_too_short: "Mot de passe trop court"

@@ -21,6 +21,10 @@ $( document ).ready( function()
     return true;
   } 
 
+  function addError (msg, type) {
+    $('<div class="standalone_form--message" id="' + type+ '">' + msg + '</div>').insertAfter('.standalone_form--heading');
+  }
+
 
   function init()
   {
@@ -34,23 +38,27 @@ $( document ).ready( function()
 
       $('#email-error,#password-error').remove();
 
-      if (!validateInput(password)) {
-        $('<div class="standalone_form--message" id="password-error">A password is required</div>').insertAfter('.standalone_form--heading');
+      if ($('input#user_password').length > 0 && !validateInput(password)) {
+        var msg = $('input#user_password').attr('data-req-msg');
+        addError(msg, 'password-error');
         errors = false;
       } 
 
       if ($('input#user_password_confirmation').length > 0 && errors && !validatePassword(password)) {
-        $('<div class="standalone_form--message" id="password-error">Password too short (minimum 8 characters)</div>').insertAfter('.standalone_form--heading');
+        var msg = $('input#user_password').attr('data-pwd-short');
+        addError(msg, 'password-error');
         errors = false;
       } 
 
       if ($('input#user_password_confirmation').length > 0 && password != password_confirmation) {
-        $('<div class="standalone_form--message" id="password-error">Passwords don\'t match</div>').insertAfter('.standalone_form--heading');
+        var msg = $('input#user_password_confirmation').attr('data-pwd-match');
+        addError(msg, 'password-error');
         errors = false;
       }
 
       if (!validateEmail(email)) {
-        $('<div class="standalone_form--message" id="email-error">Email address must be valid</div>').insertAfter('.standalone_form--heading');
+        var msg = $('input#user_email').attr('data-email-valid');
+        addError(msg, 'email-error');
         errors = false;
       }
 

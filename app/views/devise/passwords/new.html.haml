@@ -9,7 +9,7 @@
         = render "devise/shared/messages"
 
         .standalone_form--field.standalone_form--field-text
-          = f.email_field :email, :placeholder => t('devise.email'), :class => 'standalone_form--field--input standalone_form--field--input-text'
+          = f.email_field :email, :'data-email-valid' => t('errors.messages.email_valid'), :placeholder => t('devise.email'), :class => 'standalone_form--field--input standalone_form--field--input-text'
 
         .standalone_form--footer
           .standalone_form--buttons

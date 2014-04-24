@@ -9,13 +9,13 @@
         = render "devise/shared/messages"
 
         .standalone_form--field.standalone_form--field-text
-          = f.text_field :email, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => t( 'devise.email' )
+          = f.text_field :email, :'data-email-valid' => t('errors.messages.email_valid'), :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => t( 'devise.email' )
 
         .standalone_form--field.standalone_form--field-text
-          = f.password_field :password, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => t( 'devise.password' )
+          = f.password_field :password, :'data-pwd-short' => t('errors.messages.password_too_short'), :'data-req-msg' => t('errors.messages.password_missing'), :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => t( 'devise.password' )
 
         .standalone_form--field.standalone_form--field-text
-          = f.password_field :password_confirmation, :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => t( 'devise.repeat_password' )
+          = f.password_field :password_confirmation, :'data-pwd-match' => t('errors.messages.password_confirm_mismatch'), :class => 'standalone_form--field--input standalone_form--field--input-text', :placeholder => t( 'devise.repeat_password' )
 
         .standalone_form--footer
           .standalone_form--buttons

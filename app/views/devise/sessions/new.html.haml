@@ -10,10 +10,10 @@
         = devise_error_messages!
 
         .standalone_form--field.standalone_form--field-text
-          = f.text_field :email, :class => 'standalone_form--field--input standalone_form--field--input-text', :required => false, :autofocus => true, :placeholder => t( 'devise.email' )
+          = f.text_field :email, :'data-email-valid' => t('errors.messages.email_valid'), :class => 'standalone_form--field--input standalone_form--field--input-text', :required => false, :autofocus => true, :placeholder => t( 'devise.email' )
 
         .standalone_form--field.standalone_form--field-text
-          = f.password_field :password, :class => 'standalone_form--field--input standalone_form--field--input-text', :required => false, :placeholder => t( 'devise.password' )
+          = f.password_field :password, :'data-req-msg' => t('errors.messages.password_missing'), :class => 'standalone_form--field--input standalone_form--field--input-text', :required => false, :placeholder => t( 'devise.password' )
 
         .standalone_form--field.standalone_form--field-box
           = f.check_box :remember_me, label: false, :id => 'remember_me_input', :class => 'standalone_form--field--input standalone_form--field--input-box', :as => :boolean if devise_mapping.rememberable?

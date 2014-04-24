@@ -8,6 +8,7 @@ fr:
         country:
           question: Dans quel pays se trouve votre service d'assainissement?
           info: Veuillez indiquer le pays où le service est mis en place.
+          placeholder: Sélectionner un pays
         population:
           question: Combien d'habitants de la zone bénéficient de ce service d'assainissement?
           info: Le nombre de personnes bénéficiant du service d'assainissement est important pour le calcul des coûts de la zone desservie. Dans l'outil simple, vous pouvez choisir parmi plusieurs options, de 100 à 1 000 000 personnes.

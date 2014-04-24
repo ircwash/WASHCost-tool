@@ -3,7 +3,8 @@ WashCostApp::Application.routes.draw do
   match '/infographic/mobile' => 'mobile#infographic'
 
   namespace :api do
-    resources :example
+    devise_for :users
+    resources :example, :only=>[:index, :show]
   end
 
   scope "(:locale)", :locale => /en|fr/ do

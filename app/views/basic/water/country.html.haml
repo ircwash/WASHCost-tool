@@ -2,7 +2,7 @@
   Start - Basic Water Calculator
 
 .question
-  %h1.question--title= t 'basic.shared.questionnaire.country.question'
+  %h1.question--title= t('basic.water.questionnaire.country.question')
 
   .question--answer
 
@@ -11,7 +11,7 @@
     = form_for @questionnaire, :url => basic_water_update_url( I18n.locale, 'technology' ), :html => { 'data-dynamic_form' => basic_water_dynamic_update_url( I18n.locale ) } do |f|
 
       .choices-select
-        = f.select :country, options_for_select( options_for_countries, @questionnaire.country ), { :include_blank => t( 'basic.shared.questionnaire.country.placeholder' ) }, { :tabindex => '1', :class=>"chzn-select" }
+        = f.select :country, options_for_select( options_for_countries, @questionnaire.country ), { :include_blank => t( 'basic.water.questionnaire.country.placeholder' ) }, { :tabindex => '1', :class=>"chzn-select" }
 
       .question--buttons
         = submit_tag t( 'buttons.next' ), :class => 'button', :tabindex => '2'
@@ -20,4 +20,4 @@
   .info_tab--icon
   .info_tab--container
     .info_tab--content
-      %p.info_tab--content--text= raw format_info_text 'basic.shared.questionnaire.country.info'
+      %p.info_tab--content--text= raw format_info_text 'basic.water.questionnaire.country.info'

@@ -1,9 +1,5 @@
-class Api::PeopleController < ApplicationController
-
-  respond_to :json
-
+class Api::ExampleController < Api::BaseController
   def index
-    #@questionnaire = AdvancedWaterQuestionnaire.new( session )
-    #render json: @questionnaire
+    render :json=> {:success=>true}
   end
 end
