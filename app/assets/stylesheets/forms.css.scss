@@ -217,14 +217,29 @@
 
 .dual_column_form--column-50 {
   width:50%;
+
+  @media screen and ( max-width: $mobile_breakpoint ) {
+    width:100%;
+    margin-bottom:20px;
+  }
 }
 
 .dual_column_form--column-33 {
   width:33.333%;
+
+  @media screen and ( max-width: $mobile_breakpoint ) {
+    width:100%;
+    margin-bottom:20px;
+  }
 }
 
 .dual_column_form--column-25 {
   width:25%;
+
+  @media screen and ( max-width: $mobile_breakpoint ) {
+    width:100%;
+    margin-bottom:20px;
+  }
 }
 
 .dual_column--field--label {

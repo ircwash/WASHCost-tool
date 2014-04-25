@@ -3,9 +3,9 @@ $( document ).ready( function()
   'use strict';
 
 
-  function init()
-  {
-    $('.chzn-select').chosen( { allow_single_deselect:true } );
+  function init() {
+
+    $('.chzn-select').chosen( { allow_single_deselect:true, width: "100%" } );
 
     $('select[name="advanced_water_questionnaire[currency]"],select[name="advanced_sanitation_questionnaire[currency]"]').on('change', function (event) {
       var currency = $(this).val().toUpperCase();
