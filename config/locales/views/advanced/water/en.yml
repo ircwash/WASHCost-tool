@@ -32,59 +32,75 @@ en:
         supply_system_technologies:
           label: What supply system(s) are used to deliver water services?
           placeholder: Choose a technology
+          tooltip: Tip here
         systems_number:
           label: How many systems are there?
           placeholder: 5
+          tooltip: Tip here
         system_population_design:
           label: How many people is the system(s) designed to serve?
           placeholder: 20
+          tooltip: Tip here
         system_population_actual:
           label: How many people does the system(s) actually serve?
           placeholder: 30
+          tooltip: Tip here
         water_source:
           label: What is the water source?
           placeholder: Select a water source
+          tooltip: Tip here
         surface_water_primary_source:
           label: If surface water, define the primary source
           placeholder: Select a primary source
+          tooltip: Tip here
         water_treatment:
           label: How is water typically treated?
-        water_treatment:
-          label: How is water typically treated?
+          tooltip: Tip here
         power_supply:
           label: Type of power supply
+          tooltip: Tip here
         distribution_line_length:
           label: Length of distribution linke (km)
           placeholder: 200
+          tooltip: Tip here
         capital_costs:
           capital_costs: Capital Costs
           recurring_costs: Recurring Costs
-        aggregate_actual_hardware_expenditure:
-          label: What has been/will be the actual expenditure on capital expenditure (hardware) and how long is/was the system expected to last at the time of construction (the useful lifespan) or detail disaggregated below?
+        #aggregate_actual_hardware_expenditure:
+        #  label: What has been/will be the actual expenditure on capital expenditure (hardware) and how long is/was the system expected to last at the time of construction (the useful lifespan) or detail disaggregated below?
+        #  tooltip: Tip here
         actual_hardware_expenditure:
           label: Cost
           placeholder: 5000
+          tooltip: Tip here
         system_lifespan_expectancy:
           label: Useful lifespan (years)
           placeholder: 30
+          tooltip: Tip here
         actual_software_expenditure:
           label: What has been/will be the actual expenditure on capital expenditure (software) ?
           placeholder: 3000
+          tooltip: Tip here
         unpaid_labour:
           label: Has there been any volunteer or unpaid labour been by the household or community?
           placeholder: Select an option
+          tooltip: Tip here
         minor_operation_expenditure:
           label: What has been/will be the minor operation expenditure?
           placeholder: 1000
+          tooltip: Tip here
         capital_maintenance_expenditure:
           label: What has been/will be spent on capital maintenance expenditure?
           placeholder: 400
+          tooltip: Tip here
         loan_cost:
           label: What is the cost servicing any loans taken to fund the service ?
           placeholder: 6000
+          tooltip: Tip here
         loan_payback_period:
           label: What is the payback period on this loan?
           placeholder: 20
+          tooltip: Tip here
         direct_support_cost:
           label: What has been/will be expenditure on direct support per person per year?
           placeholder: 10
