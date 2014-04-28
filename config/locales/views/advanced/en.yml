@@ -5,16 +5,21 @@ en:
       country:
         label: Country
         placeholder: Select a country
+        tooltip: The tip
       currency:
         label: Currency
         placeholder: Select a currency
+        tooltip: The tip
       year_of_expenditure:
         label: Year of expenditure
         placeholder: Select a year
+        tooltip: The tip
       region:
         label: Region
         placeholder: Calabria
+        tooltip: The tip
       town:
         label: City/Town
         placeholder: Catanzaro
+        tooltip: The tip
       technology_choice_required: A choice of at least one technology is required

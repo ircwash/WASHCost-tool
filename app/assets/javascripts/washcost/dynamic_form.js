@@ -26,8 +26,7 @@ $( document ).ready( function()
   }
 
 
-  function init()
-  {
+  function init() {
     // Handles the signin process, basic validation
     $('form#new_user').on('submit', function () {
       
@@ -65,8 +64,7 @@ $( document ).ready( function()
       return errors;
     });
 
-    $( '[data-dynamic_form]' ).find( 'input[name],select[name]' ).on( 'change', function()
-    {
+    $( '[data-dynamic_form]' ).find( 'input[name],select[name]' ).on( 'change', function() {
       var form = $( this ).parents( '[data-dynamic_form]' ),
           url  = form.data( 'dynamic_form' ),
           page = window.location.href.split('/')[window.location.href.split('/').length-1];

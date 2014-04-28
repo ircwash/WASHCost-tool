@@ -11,31 +11,31 @@
 
       .dual_column_form--column.dual_column_form--column-50
         .dual_column_form--field.dual_column_form--field-dropdown
-          = f.label :status, t( 'advanced.sanitation.questionnaire.sanitation_service_exists.label' ), :class => 'dual_column--field--label'
-          = f.select :status, options_for_select( options_for_sanitation_service_exists, @questionnaire.status ), { :include_blank=> '' }, { :tabindex => '1', :class => 'dual_column_form--field--dropdown chzn-select', 'data-placeholder' => t( 'advanced.water.questionnaire.water_system_exists.placeholder' ) }
+          = f.label :status, t( 'advanced.sanitation.questionnaire.sanitation_service_exists.label' ), :class => 'dual_column--field--label', :"data-tooltip" => t('advanced.sanitation.questionnaire.sanitation_service_exists.tooltip')
+          = f.select :status, options_for_select( options_for_sanitation_service_exists, @questionnaire.status ), { :include_blank=> '' }, { :tabindex => '1', :class => 'dual_column_form--field--dropdown chzn-select', 'data-placeholder' => t( 'advanced.sanitation.questionnaire.sanitation_service_exists.placeholder' ) }
 
       .dual_column_form--column.dual_column_form--column-50
         .dual_column_form--field.dual_column_form--field-dropdown
-          = f.label :country, t( 'advanced.shared.country.label' ), :class => 'dual_column--field--label'
+          = f.label :country, t( 'advanced.shared.country.label' ), :class => 'dual_column--field--label', :"data-tooltip" => t('advanced.shared.country.tooltip')
           = f.select :country, options_for_select( options_for_countries, @questionnaire.country ), { :include_blank=> ''  }, { :tabindex => '2', :class => 'dual_column_form--field--dropdown chzn-select', 'data-placeholder' => t( 'advanced.shared.country.placeholder' ) }
 
     .dual_column_form--row
 
       .dual_column_form--column.dual_column_form--column-50
         .dual_column_form--field.dual_column_form--field-dropdown
-          = f.label :currency, t( 'advanced.shared.currency.label' ), :class => 'dual_column--field--label'
+          = f.label :currency, t( 'advanced.shared.currency.label' ), :class => 'dual_column--field--label', :"data-tooltip" => t('advanced.shared.currency.tooltip')
           = f.select :currency, options_for_select( options_for_major_currencies, @questionnaire.currency ), { :include_blank=> ''  }, { :tabindex => '3', :class => 'dual_column_form--field--dropdown chzn-select', 'data-placeholder' => t( 'advanced.shared.currency.placeholder' ) }
 
       .dual_column_form--column.dual_column_form--column-50
         .dual_column_form--field.dual_column_form--field-dropdown
-          = f.label :year_of_expenditure, t( 'advanced.shared.year_of_expenditure.label' ), :class => 'dual_column--field--label'
+          = f.label :year_of_expenditure, t( 'advanced.shared.year_of_expenditure.label' ), :class => 'dual_column--field--label', :"data-tooltip" => t('advanced.shared.year_of_expenditure.tooltip')
           = f.select :year_of_expenditure, options_for_select( options_for_years, @questionnaire.year_of_expenditure ), { :include_blank=> ''  }, { :tabindex => '4', :class => 'dual_column_form--field--dropdown chzn-select', 'data-placeholder' => t( 'advanced.shared.year_of_expenditure.placeholder' ) }
 
     .dual_column_form--row
 
       .dual_column_form--column.dual_column_form--column-50
         .dual_column_form--field.dual_column_form--field-text_input
-          = f.label :region, t( 'advanced.shared.region.label' ), :class => 'dual_column--field--label'
+          = f.label :region, t( 'advanced.shared.region.label' ), :class => 'dual_column--field--label', :"data-tooltip" => t('advanced.shared.region.tooltip')
           = text_field_tag 'advanced_sanitation_questionnaire[region]', @questionnaire.region != t( 'advanced.shared.dont_know' ) ? @questionnaire.region : '', :tabindex => '5', :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.shared.region.placeholder' ), 'data-checkbox_toggle-field' => 'region'
 
         .dual_column_form--field.dual_column_form--field-box
@@ -47,7 +47,7 @@
 
       .dual_column_form--column.dual_column_form--column-50
         .dual_column_form--field.dual_column_form--field-text_input
-          = f.label :town, t( 'advanced.shared.town.label' ), :class => 'dual_column--field--label'
+          = f.label :town, t( 'advanced.shared.town.label' ), :class => 'dual_column--field--label', :"data-tooltip" => t('advanced.shared.town.tooltip')
           = text_field_tag 'advanced_sanitation_questionnaire[town]', @questionnaire.town != t( 'advanced.shared.dont_know' ) ? @questionnaire.town : '', :tabindex => '7', :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.shared.town.placeholder' ), 'data-checkbox_toggle-field' => 'town'
 
         .dual_column_form--field.dual_column_form--field-box
@@ -60,8 +60,8 @@
 
       .dual_column_form--column.dual_column_form--column-50
         .dual_column_form--field.dual_column_form--field-dropdown
-          = f.label :area_type, t( 'advanced.water.questionnaire.area_type.label' ), :class => 'dual_column--field--label'
-          = f.select :area_type, options_for_select( options_for_area_type, @questionnaire.area_type ), { :include_blank=> '' }, { :tabindex => '9', :class => 'dual_column_form--field--dropdown chzn-select', 'data-placeholder' => t( 'advanced.water.questionnaire.area_type.placeholder' ) }
+          = f.label :area_type, t( 'advanced.sanitation.questionnaire.area_type.label' ), :class => 'dual_column--field--label', :"data-tooltip" => t('advanced.sanitation.questionnaire.area_type.tooltip')
+          = f.select :area_type, options_for_select( options_for_area_type, @questionnaire.area_type ), { :include_blank=> '' }, { :tabindex => '9', :class => 'dual_column_form--field--dropdown chzn-select', 'data-placeholder' => t( 'advanced.sanitation.questionnaire.area_type.placeholder' ) }
 
       /.dual_column_form--column.dual_column_form--column-50
       /  .dual_column_form--field.dual_column_form--field-text_input
@@ -78,13 +78,13 @@
 
       .dual_column_form--column.dual_column_form--column-50
         .dual_column_form--field.dual_column_form--field-text_input
-          = f.label :direct_support_cost, t( 'advanced.water.questionnaire.direct_support_cost.label' ), :class => 'dual_column--field--label'
-          = f.text_field :direct_support_cost, :"data-numeric" => true, :"data-currency" => 2000, :tabindex => '12', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.direct_support_cost.placeholder' )
+          = f.label :direct_support_cost, t( 'advanced.sanitation.questionnaire.direct_support_cost.label' ), :class => 'dual_column--field--label', :"data-tooltip" => t('advanced.sanitation.questionnaire.direct_support_cost.tooltip')
+          = f.text_field :direct_support_cost, :"data-numeric" => true, :"data-currency" => 2000, :tabindex => '12', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.sanitation.questionnaire.direct_support_cost.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-50
         .dual_column_form--field.dual_column_form--field-text_input
-          = f.label :indirect_support_cost, t( 'advanced.water.questionnaire.indirect_support_cost.label' ), :class => 'dual_column--field--label'
-          = f.text_field :indirect_support_cost, :"data-numeric" => true, :"data-currency" => 2000, :tabindex => '13', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.indirect_support_cost.placeholder' )
+          = f.label :indirect_support_cost, t( 'advanced.sanitation.questionnaire.indirect_support_cost.label' ), :class => 'dual_column--field--label', :"data-tooltip" => t('advanced.sanitation.questionnaire.indirect_support_cost.tooltip')
+          = f.text_field :indirect_support_cost, :"data-numeric" => true, :"data-currency" => 2000, :tabindex => '13', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.sanitation.questionnaire.indirect_support_cost.placeholder' )
 
     -# SYSTEM MANAGEMENT
 
@@ -92,7 +92,7 @@
 
       .dual_column_form--column.dual_column_form--column-50
 
-        .dual_column--field--label= t( 'advanced.sanitation.questionnaire.service_management.label' )
+        .dual_column--field--label{ :"data-tooltip" => t('advanced.sanitation.questionnaire.service_management.tooltip') }= t( 'advanced.sanitation.questionnaire.service_management.label' )
 
         - options_for_service_management.each_with_index do |option,i|
 
@@ -106,7 +106,7 @@
 
       .dual_column_form--column.dual_column_form--column-50
 
-        .dual_column--field--label= t( 'advanced.sanitation.questionnaire.construction_financier.label' )
+        .dual_column--field--label{ :"data-tooltip" => t('advanced.sanitation.questionnaire.construction_financier.tooltip') }= t( 'advanced.sanitation.questionnaire.construction_financier.label' )
 
         - options_for_construction_financier.each_with_index do |option,i|
 
@@ -122,7 +122,7 @@
 
       .dual_column_form--column.dual_column_form--column-50
 
-        .dual_column--field--label= t( 'advanced.sanitation.questionnaire.infrastructure_operator.label' )
+        .dual_column--field--label{ :"data-tooltip" => t('advanced.sanitation.questionnaire.infrastructure_operator.tooltip') }= t( 'advanced.sanitation.questionnaire.infrastructure_operator.label' )
 
         - options_for_infrastructure_operator.each_with_index do |option,i|
 
@@ -136,7 +136,7 @@
 
       .dual_column_form--column.dual_column_form--column-50
 
-        .dual_column--field--label= t( 'advanced.water.questionnaire.service_responsbility.label' )
+        .dual_column--field--label{ :"data-tooltip" => t('advanced.sanitation.questionnaire.service_responsbility.tooltip') }= t( 'advanced.sanitation.questionnaire.service_responsbility.label' )
 
         - options_for_service_responsbility.each_with_index do |option,i|
 
@@ -152,7 +152,7 @@
 
       .dual_column_form--column.dual_column_form--column-50
 
-        .dual_column--field--label= t( 'advanced.sanitation.questionnaire.standard_enforcer.label' )
+        .dual_column--field--label{ :"data-tooltip" => t('advanced.sanitation.questionnaire.standard_enforcer.tooltip') }= t( 'advanced.sanitation.questionnaire.standard_enforcer.label' )
 
         - options_for_standard_enforcer.each_with_index do |option,i|
 
@@ -166,7 +166,7 @@
 
       .dual_column_form--column.dual_column_form--column-50
 
-        .dual_column--field--label= t( 'advanced.sanitation.questionnaire.rehabilitation_cost_owner.label' )
+        .dual_column--field--label{ :"data-tooltip" => t('advanced.sanitation.questionnaire.rehabilitation_cost_owner.tooltip') }= t( 'advanced.sanitation.questionnaire.rehabilitation_cost_owner.label' )
 
         - options_for_rehabilitation_cost_owner.each_with_index do |option,i|
 
@@ -182,13 +182,13 @@
 
       .dual_column_form--column.dual_column_form--column-50
         .dual_column_form--field.dual_column_form--field-dropdown
-          = f.label :annual_household_income, t( 'advanced.water.questionnaire.annual_household_income.label' ), :class => 'dual_column--field--label'
-          = f.text_field :annual_household_income, :"data-numeric" => true, :"data-currency" => 600, :tabindex => '20', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.annual_household_income.placeholder' ), 'data-checkbox_toggle-field' => 'annual_household_income'
+          = f.label :annual_household_income, t( 'advanced.sanitation.questionnaire.annual_household_income.label' ), :class => 'dual_column--field--label', :"data-tooltip" => t('advanced.sanitation.questionnaire.annual_household_income.tooltip')
+          = f.text_field :annual_household_income, :"data-numeric" => true, :"data-currency" => 600, :tabindex => '20', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.sanitation.questionnaire.annual_household_income.placeholder' ), 'data-checkbox_toggle-field' => 'annual_household_income'
 
       .dual_column_form--column.dual_column_form--column-50
         .dual_column_form--field.dual_column_form--field-dropdown
-          = f.label :household_size, t( 'advanced.water.questionnaire.household_size.label' ), :class => 'dual_column--field--label'
-          = f.text_field :household_size, :"data-numeric" => true, :tabindex => '21', :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.water.questionnaire.household_size.placeholder' ), 'data-checkbox_toggle-field' => 'household_size'
+          = f.label :household_size, t( 'advanced.sanitation.questionnaire.household_size.label' ), :class => 'dual_column--field--label', :"data-tooltip" => t('advanced.sanitation.questionnaire.household_size.tooltip')
+          = f.text_field :household_size, :"data-numeric" => true, :tabindex => '21', :class => 'dual_column_form--field--text_input', :placeholder => t( 'advanced.sanitation.questionnaire.household_size.placeholder' ), 'data-checkbox_toggle-field' => 'household_size'
 
     .question--buttons
       = submit_tag((t 'buttons.next'), class: 'button', tabindex: '22')

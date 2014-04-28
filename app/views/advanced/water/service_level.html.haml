@@ -7,7 +7,7 @@
 
     .dual_column_form--row
 
-      .dual_column--field--label= t( 'advanced.water.questionnaire.service_levels.label' )
+      .dual_column--field--label{ :"data-tooltip" => t('advanced.water.questionnaire.service_levels.tooltip') }= t( 'advanced.water.questionnaire.service_levels.label' )
 
       .dual_column_form--column.dual_column_form--column-25
         .dual_column_form--field.dual_column_form--field-text_input
@@ -29,23 +29,23 @@
 
       .dual_column_form--column.dual_column_form--column-25{ 'data-column_dependency-dependent' => 'service_level-1' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[service_level_share][]', @questionnaire.service_level_share[0], :id => 'advanced_water_questionnaire_service_level_share_1', :tabindex => '2', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.questionnaire.service_level_share.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[service_level_share][]', @questionnaire.service_level_share[0], :id => 'advanced_water_questionnaire_service_level_share_1', :tabindex => '2', :"data-percentage" => true, :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.questionnaire.service_level_share.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-25{ 'data-column_dependency-dependent' => 'service_level-2' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[service_level_share][]', @questionnaire.service_level_share[1], :id => 'advanced_water_questionnaire_service_level_share_2', :tabindex => '8', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.questionnaire.service_level_share.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[service_level_share][]', @questionnaire.service_level_share[1], :id => 'advanced_water_questionnaire_service_level_share_2', :tabindex => '8', :"data-percentage" => true, :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.questionnaire.service_level_share.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-25{ 'data-column_dependency-dependent' => 'service_level-3' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[service_level_share][]', @questionnaire.service_level_share[2], :id => 'advanced_water_questionnaire_service_level_share_3', :tabindex => '14', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.questionnaire.service_level_share.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[service_level_share][]', @questionnaire.service_level_share[2], :id => 'advanced_water_questionnaire_service_level_share_3', :tabindex => '14', :"data-percentage" => true, :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.questionnaire.service_level_share.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-25{ 'data-column_dependency-dependent' => 'service_level-4' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[service_level_share][]', @questionnaire.service_level_share[3], :id => 'advanced_water_questionnaire_service_level_share_4', :tabindex => '20', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.questionnaire.service_level_share.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[service_level_share][]', @questionnaire.service_level_share[3], :id => 'advanced_water_questionnaire_service_level_share_4', :tabindex => '20', :"data-percentage" => true, :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.questionnaire.service_level_share.placeholder' )
 
     .dual_column_form--row
 
-      .dual_column--field--label= t( 'advanced.water.questionnaire.national_accessibility_norms.label' )
+      .dual_column--field--label{ :"data-tooltip" => t('advanced.water.questionnaire.national_accessibility_norms.tooltip') }= t( 'advanced.water.questionnaire.national_accessibility_norms.label' )
 
       .dual_column_form--column.dual_column_form--column-25{ 'data-column_dependency-dependent' => 'service_level-1' }
         .dual_column_form--field.dual_column_form--field-dropdown
@@ -65,7 +65,7 @@
 
     .dual_column_form--row
 
-      .dual_column--field--label= t( 'advanced.water.questionnaire.national_quantity_norms.label' )
+      .dual_column--field--label{ :"data-tooltip" => t('advanced.water.questionnaire.national_quantity_norms.tooltip') }= t( 'advanced.water.questionnaire.national_quantity_norms.label' )
 
       .dual_column_form--column.dual_column_form--column-25{ 'data-column_dependency-dependent' => 'service_level-1' }
         .dual_column_form--field.dual_column_form--field-dropdown
@@ -85,7 +85,7 @@
 
     .dual_column_form--row
 
-      .dual_column--field--label= t( 'advanced.water.questionnaire.national_quality_norms.label' )
+      .dual_column--field--label{ :"data-tooltip" => t('advanced.water.questionnaire.national_quality_norms.tooltip') }= t( 'advanced.water.questionnaire.national_quality_norms.label' )
 
       .dual_column_form--column.dual_column_form--column-25{ 'data-column_dependency-dependent' => 'service_level-1' }
         .dual_column_form--field.dual_column_form--field-dropdown
@@ -105,7 +105,7 @@
 
     .dual_column_form--row
 
-      .dual_column--field--label= t( 'advanced.water.questionnaire.national_reliability_norms.label' )
+      .dual_column--field--label{ :"data-tooltip" => t('advanced.water.questionnaire.national_reliability_norms.tooltip') }= t( 'advanced.water.questionnaire.national_reliability_norms.label' )
 
       .dual_column_form--column.dual_column_form--column-25{ 'data-column_dependency-dependent' => 'service_level-1' }
         .dual_column_form--field.dual_column_form--field-dropdown
