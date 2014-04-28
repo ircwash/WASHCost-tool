@@ -39,16 +39,32 @@
   background-position:50% -815px;
 }
 
+.icon--tool-less_than_ten::before{
+  background-position:50% -6245px;
+}
+
 .icon--tool-less_than_five_litres::before {
   background-position:50% -1295px;
+}
+
+.icon--tool-between_ten_and_thirty::before{
+  background-position:50% -6415px;
 }
 
 .icon--tool-between_five_and_nineteen_litres::before {
   background-position:50% -1455px;
 }
 
+.icon--tool-between_thirty_and_sixty::before{
+  background-position:50% -6585px;
+}
+
 .icon--tool-between_twenty_and_sixty_litres::before {
   background-position:50% -1615px;
+}
+
+.icon--tool-more_thank_sixty::before{
+  background-position:50% -6752px;
 }
 
 .icon--tool-more_than_sixy_litres::before {

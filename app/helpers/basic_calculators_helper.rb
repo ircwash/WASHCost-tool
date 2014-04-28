@@ -21,10 +21,10 @@ module BasicCalculatorsHelper
 
   def options_for_water_access
     [
-      t( 'basic.water.questionnaire.access.options.less_than_ten' ),
-      t( 'basic.water.questionnaire.access.options.between_ten_and_thirty' ),
-      t( 'basic.water.questionnaire.access.options.between_thirty_and_sixty' ),
-      t( 'basic.water.questionnaire.access.options.more_thank_sixty' )
+      [ 'less_than_ten', 0 ],
+      [ 'between_ten_and_thirty', 1 ],
+      [ 'between_thirty_and_sixty', 2 ],
+      [ 'more_thank_sixty', 3 ]
     ]
   end
 
