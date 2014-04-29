@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_locale
 
-
   rescue_from CanCan::AccessDenied do |exception|
     flash[:error] = t('errors.messages.register_if_acces_to_cuesstinaire_view')
     current_ability.can? exception.action.to_sym, exception.subject.new

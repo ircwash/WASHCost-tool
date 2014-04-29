@@ -3,7 +3,7 @@ class Api::V1::AdvancedController < Api::V1::BaseController
 
   respond_to :json
 
-  def show # testing oauth - can remove
-    respond_with @report = User.all
+  def show
+    respond_with current_user.user_reports.where(level: "advanced").to_a
   end
 end
