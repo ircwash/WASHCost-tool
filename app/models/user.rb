@@ -57,6 +57,12 @@ class User
   ## Token authenticatable
   # field :authentication_token, :type => String
 
+  def self.authenticate!(email, password)
+    user = User.where(email: email).first
+    return (user.valid_password?(password) ? user : nil) unless user.nil?
+    nil
+  end
+
   def name
     if first_name || last_name
       "#{first_name} #{last_name}".split.map(&:capitalize).join(' ')

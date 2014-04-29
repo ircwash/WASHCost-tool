@@ -9,6 +9,7 @@ WashCostApp::Application.routes.draw do
   namespace :api, defaults: {format: 'json'} do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
       devise_for :users
+      resources :advanced
       resources :users, only: [:index, :me, :create] do
         get 'me', on: :collection
       end
