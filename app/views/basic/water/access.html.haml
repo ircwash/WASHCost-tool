@@ -12,8 +12,8 @@
 
       .question--radios
         - options_for_water_access.each do |option|
-          = f.label( "quantity_#{option[1]}", class: "question--radios--label" ) do
-            = f.radio_button :quantity, option[1], :class => 'question--radios--radio'
+          = f.label( "access_#{option[1]}", class: "question--radios--label" ) do
+            = f.radio_button :access, option[1], :class => 'question--radios--radio'
             %span.question--checked_icon
             %span{ :class => "question--radios--icon icon--tool-#{option[0]}" }
             %span.question--radios--text= t "basic.water.questionnaire.access.options.#{option[0]}"

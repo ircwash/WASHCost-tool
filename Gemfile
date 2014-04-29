@@ -19,6 +19,7 @@ gem 'countries', '0.9.3'
 gem 'country_select'
 gem 'httparty'
 gem 'ruby-ntlm'
+gem 'doorkeeper', '~> 0.6.7' # api oauth
 
 group :development, :test do
   gem 'ruby-prof'

@@ -36,4 +36,8 @@ class ApplicationController < ActionController::Base
     calculators_path( I18n.locale )
   end
 
+  def doorkeeper_unauthorized_render_options
+    { json: '{"status": "failure", "message":"401 Unauthorized"}' }
+  end
+
 end

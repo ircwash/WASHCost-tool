@@ -1,10 +1,18 @@
+require 'api_constraints'
+
 WashCostApp::Application.routes.draw do
+  use_doorkeeper
+
   match '/infographic' => 'infographic#index'
   match '/infographic/mobile' => 'mobile#infographic'
 
-  namespace :api do
-    devise_for :users
-    resources :example, :only=>[:index, :show]
+  namespace :api, defaults: {format: 'json'} do
+    scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
+      devise_for :users
+      resources :users, only: [:index, :me, :create] do
+        get 'me', on: :collection
+      end
+    end
   end
 
   scope "(:locale)", :locale => /en|fr/ do
