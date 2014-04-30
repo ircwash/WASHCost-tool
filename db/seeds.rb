@@ -4,7 +4,7 @@
 puts 'Seeding...'
 
 puts 'create a test user'
-User.find_or_create_by(first_name: 'allan', last_name: 'britto', email: 'test@test.com', password: '12345678')
+User.find_or_create_by(first_name: 'allan', last_name: 'britto', email: 'test@test.com', password: '12345678', admin: true)
 
 
 # module Advanced

@@ -17,6 +17,7 @@ class User
   field :company,            type: String, default: ""
   field :email,              type: String, default: ""
   field :encrypted_password, type: String, default: ""
+  field :admin, type: Boolean, default: false
 
   validates :email,
     :uniqueness => {:message => :unique_email},

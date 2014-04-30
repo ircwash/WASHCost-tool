@@ -1,14 +1,16 @@
 require 'api_constraints'
 
 WashCostApp::Application.routes.draw do
-  use_doorkeeper
+  use_doorkeeper do
+    #controllers :applications => 'applications'
+  end
 
   match '/infographic' => 'infographic#index'
   match '/infographic/mobile' => 'mobile#infographic'
 
   namespace :api, defaults: {format: 'json'} do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
-      devise_for :users
+      #devise_for :users
 
       get '/me' => 'users#me'
       get '/reports' => 'users#reports'

@@ -19,7 +19,7 @@ class Api::V1::UsersController < Api::V1::BaseController
     if params[:id] 
       respond_with current_user.user_reports.where(level: "advanced", id: params[:id]).first
     else
-      respond_with current_user.user_reports.where(level: "advanced").first
+      respond_with current_user.user_reports.where(level: "advanced").all
     end
   end
 

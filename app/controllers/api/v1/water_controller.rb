@@ -11,7 +11,7 @@ class Api::V1::WaterController < Api::V1::BaseController
       return
     end
 
-    unless params.has_key?(:advanced_water_questionnaire)
+    unless params.has_key?(:questionnaire)
       render :json => { error: "Missing water questionaire input", status: 403 }, :status => :forbidden
       return
     end
@@ -23,7 +23,7 @@ class Api::V1::WaterController < Api::V1::BaseController
       return
     end
 
-    questionnaire.update_attributes(params[:advanced_water_questionnaire])
+    questionnaire.update_attributes(params[:questionnaire])
 
     current_user.user_reports << UserReport.new(
       :title => params[:title],
@@ -59,8 +59,8 @@ class Api::V1::WaterController < Api::V1::BaseController
       user_report.title = params[:title]
     end
 
-    if params.has_key?(:advanced_water_questionnaire)
-      questionnaire.update_attributes(params[:advanced_water_questionnaire])
+    if params.has_key?(:questionnaire)
+      questionnaire.update_attributes(params[:questionnaire])
       user_report.questionnaire = questionnaire.attributes
     end
 
