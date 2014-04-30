@@ -21,7 +21,7 @@ class Advanced::WaterController < CalculatorController
 
   def update
     @questionnaire = AdvancedWaterQuestionnaire.new( session )
-
+    
     # save updated questionnaire
     @questionnaire.update_attributes( params[ :advanced_water_questionnaire ] )
 

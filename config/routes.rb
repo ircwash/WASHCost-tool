@@ -9,15 +9,22 @@ WashCostApp::Application.routes.draw do
   namespace :api, defaults: {format: 'json'} do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
       devise_for :users
-      resources :advanced, only: [:show] do
-        get 'show', on: :collection
+
+      get '/me' => 'users#me'
+      get '/reports' => 'users#reports'
+      get '/report/:id' => 'users#reports'
+
+      scope '/water' do
+        post '/create' => 'water#create'
+        post '/update/:id' => 'water#update'
       end
-      resources :basic, only: [:show] do
-        get 'show', on: :collection
+
+      scope '/sanitation' do
+        post '/create' => 'sanitation#create'
+        post '/update/:id' => 'sanitation#update'
       end
-      resources :users, only: [:index, :me, :create] do
-        get 'me', on: :collection
-      end
+
+      match '*not_found', to: 'base#api_not_found'
     end
   end
 
@@ -45,7 +52,7 @@ WashCostApp::Application.routes.draw do
           get '/report/save' => 'water#save_report', :as => 'water_save_report'
           post '/report/save' => 'water#store_report', :as => 'water_store_report'
           get '/report/share' => 'water#share_report', :as => 'water_share_report'
-          get  '/:section' => 'water#questionnaire', :as => 'water_action'
+          get '/:section' => 'water#questionnaire', :as => 'water_action'
           post '/update/:section' => 'water#update', :as => 'water_update'
           post '/dynamic_update' => 'water#dynamic_update', :as => 'water_dynamic_update'
           root :to => redirect( '/%{locale}/calculators/basic/water/country' ), :as => 'water'
@@ -57,7 +64,7 @@ WashCostApp::Application.routes.draw do
           get '/report/save' => 'sanitation#save_report', :as => 'sanitation_save_report'
           post '/report/save' => 'sanitation#store_report', :as => 'sanitation_store_report'
           get '/report/share' => 'sanitation#share_report', :as => 'sanitation_share_report'
-          get  '/:section' => 'sanitation#questionnaire', :as => 'sanitation_action'
+          get '/:section' => 'sanitation#questionnaire', :as => 'sanitation_action'
           post '/update/:section' => 'sanitation#update', :as => 'sanitation_update'
           post '/dynamic_update' => 'sanitation#dynamic_update', :as => 'sanitation_dynamic_update'
           root :to => redirect( '/%{locale}/calculators/basic/sanitation/country' ), :as => 'sanitation'
@@ -73,7 +80,7 @@ WashCostApp::Application.routes.draw do
           get '/report/save' => 'water#save_report', :as => 'water_save_report'
           post '/report/save' => 'water#store_report', :as => 'water_store_report'
           get '/report/share' => 'water#share_report', :as => 'water_share_report'
-          get  '/:section' => 'water#questionnaire', :as => 'water_action'
+          get '/:section' => 'water#questionnaire', :as => 'water_action'
           post '/update/:section' => 'water#update', :as => 'water_update'
           post '/dynamic_update' => 'water#dynamic_update', :as => 'water_dynamic_update'
           root :to => redirect( '/%{locale}/calculators/advanced/water/service_area' ), :as => 'water'
@@ -85,7 +92,7 @@ WashCostApp::Application.routes.draw do
           get '/report/save' => 'sanitation#save_report', :as => 'sanitation_save_report'
           post '/report/save' => 'sanitation#store_report', :as => 'sanitation_store_report'
           get '/report/share' => 'sanitation#share_report', :as => 'sanitation_share_report'
-          get  '/:section' => 'sanitation#questionnaire', :as => 'sanitation_action'
+          get '/:section' => 'sanitation#questionnaire', :as => 'sanitation_action'
           post '/update/:section' => 'sanitation#update', :as => 'sanitation_update'
           post '/dynamic_update' => 'sanitation#dynamic_update', :as => 'sanitation_dynamic_update'
           root :to => redirect( '/%{locale}/calculators/advanced/sanitation/service_area' ), :as => 'sanitation'

@@ -4,15 +4,23 @@ class Api::V1::UsersController < Api::V1::BaseController
   respond_to :json
 
   def me
-    respond_with current_user
+    render :json => { 
+      company: current_user.company,
+      country: current_user.country,
+      email: current_user.email,
+      first_name: current_user.first_name,
+      last_name: current_user.last_name
+    }
+    #respond_with current_user
   end
 
-  def index
-    respond_with @users = User.all
+  # only lists advanced reports
+  def reports
+    if params[:id] 
+      respond_with current_user.user_reports.where(level: "advanced", id: params[:id]).first
+    else
+      respond_with current_user.user_reports.where(level: "advanced").first
+    end
   end
 
-  def create
-    @user = User.create!(params[:user])
-    respond_with @user, location: nil
-  end
 end
