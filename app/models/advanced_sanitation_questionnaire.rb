@@ -80,7 +80,7 @@ class AdvancedSanitationQuestionnaire < AdvancedQuestionnaire
   # service levels
 
   def percentage_of_population_that_meets_accessibility_norms
-    if service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_accessibility_norms.count == service_level_name.count
+    if service_level_name != nil && service_level_share != nil && national_accessibility_norms != nil && service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_accessibility_norms.count == service_level_name.count
       national_accessibility_norms.each_with_index.map{ |nan,i| nan.to_i == 0 ? service_level_share[i].to_i : 0 }.inject(:+)
     else
       nil
@@ -88,7 +88,7 @@ class AdvancedSanitationQuestionnaire < AdvancedQuestionnaire
   end
 
   def percentage_of_population_that_does_not_meet_accessibility_norms
-    if service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_accessibility_norms.count == service_level_name.count
+    if service_level_name != nil && service_level_share != nil && national_accessibility_norms != nil && service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_accessibility_norms.count == service_level_name.count
       national_accessibility_norms.each_with_index.map{ |nan,i| nan.to_i == 1 ? service_level_share[i].to_i : 0 }.inject(:+)
     else
       nil
@@ -96,7 +96,7 @@ class AdvancedSanitationQuestionnaire < AdvancedQuestionnaire
   end
 
   def percentage_of_population_with_unknown_accessibility_norms
-    if service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_accessibility_norms.count == service_level_name.count
+    if service_level_name != nil && service_level_share != nil && national_accessibility_norms != nil && service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_accessibility_norms.count == service_level_name.count
       national_accessibility_norms.each_with_index.map{ |nan,i| nan.to_i == 2 ? service_level_share[i].to_i : 0 }.inject(:+)
     else
       nil
@@ -104,7 +104,7 @@ class AdvancedSanitationQuestionnaire < AdvancedQuestionnaire
   end
 
   def percentage_of_population_that_meets_use_norms
-    if service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_use_norms.count == service_level_name.count
+    if service_level_name != nil && service_level_share != nil && national_use_norms != nil && service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_use_norms.count == service_level_name.count
       national_use_norms.each_with_index.map{ |nan,i| nan.to_i == 0 ? service_level_share[i].to_i : 0 }.inject(:+)
     else
       nil
@@ -112,7 +112,7 @@ class AdvancedSanitationQuestionnaire < AdvancedQuestionnaire
   end
 
   def percentage_of_population_that_does_not_meet_use_norms
-    if service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_use_norms.count == service_level_name.count
+    if service_level_name != nil && service_level_share != nil && national_use_norms != nil && service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_use_norms.count == service_level_name.count
       national_use_norms.each_with_index.map{ |nan,i| nan.to_i == 1 ? service_level_share[i].to_i : 0 }.inject(:+)
     else
       nil
@@ -120,7 +120,7 @@ class AdvancedSanitationQuestionnaire < AdvancedQuestionnaire
   end
 
   def percentage_of_population_with_unknown_use_norms
-    if service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_use_norms.count == service_level_name.count
+    if service_level_name != nil && service_level_share != nil && national_use_norms != nil && service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_use_norms.count == service_level_name.count
       national_use_norms.each_with_index.map{ |nan,i| nan.to_i == 2 ? service_level_share[i].to_i : 0 }.inject(:+)
     else
       nil
@@ -128,7 +128,7 @@ class AdvancedSanitationQuestionnaire < AdvancedQuestionnaire
   end
 
   def percentage_of_population_that_meets_reliability_norms
-    if service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_reliability_norms.count == service_level_name.count
+    if service_level_name != nil && service_level_share != nil && national_reliability_norms != nil && service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_reliability_norms.count == service_level_name.count
       national_reliability_norms.each_with_index.map{ |nan,i| nan.to_i == 0 ? service_level_share[i].to_i : 0 }.inject(:+)
     else
       nil
@@ -136,7 +136,7 @@ class AdvancedSanitationQuestionnaire < AdvancedQuestionnaire
   end
 
   def percentage_of_population_that_does_not_meet_reliability_norms
-    if service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_reliability_norms.count == service_level_name.count
+    if service_level_name != nil && service_level_share != nil && national_reliability_norms != nil && service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_reliability_norms.count == service_level_name.count
       national_reliability_norms.each_with_index.map{ |nan,i| nan.to_i == 1 ? service_level_share[i].to_i : 0 }.inject(:+)
     else
       nil
@@ -144,7 +144,7 @@ class AdvancedSanitationQuestionnaire < AdvancedQuestionnaire
   end
 
   def percentage_of_population_with_unknown_reliability_norms
-    if service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_reliability_norms.count == service_level_name.count
+    if service_level_name != nil && service_level_share != nil && national_reliability_norms != nil && service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_reliability_norms.count == service_level_name.count
       national_reliability_norms.each_with_index.map{ |nan,i| nan.to_i == 2 ? service_level_share[i].to_i : 0 }.inject(:+)
     else
       nil
@@ -152,7 +152,7 @@ class AdvancedSanitationQuestionnaire < AdvancedQuestionnaire
   end
 
   def percentage_of_population_that_meets_environmental_protection_norms
-    if service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_environmental_protection_norms.count == service_level_name.count
+    if service_level_name != nil && service_level_share != nil && national_environmental_protection_norms != nil && service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_environmental_protection_norms.count == service_level_name.count
       national_environmental_protection_norms.each_with_index.map{ |nan,i| nan.to_i == 0 ? service_level_share[i].to_i : 0 }.inject(:+)
     else
       nil
@@ -160,7 +160,7 @@ class AdvancedSanitationQuestionnaire < AdvancedQuestionnaire
   end
 
   def percentage_of_population_that_does_not_meet_environmental_protection_norms
-    if service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_environmental_protection_norms.count == service_level_name.count
+    if service_level_name != nil && service_level_share != nil && national_environmental_protection_norms != nil && service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_environmental_protection_norms.count == service_level_name.count
       national_environmental_protection_norms.each_with_index.map{ |nan,i| nan.to_i == 1 ? service_level_share[i].to_i : 0 }.inject(:+)
     else
       nil
@@ -168,7 +168,7 @@ class AdvancedSanitationQuestionnaire < AdvancedQuestionnaire
   end
 
   def percentage_of_population_with_unknown_environmental_protection_norms
-    if service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_environmental_protection_norms.count == service_level_name.count
+    if service_level_name != nil && service_level_share != nil && national_environmental_protection_norms != nil && service_level_name.count > 0 && service_level_share.count == service_level_name.count && national_environmental_protection_norms.count == service_level_name.count
       national_environmental_protection_norms.each_with_index.map{ |nan,i| nan.to_i == 2 ? service_level_share[i].to_i : 0 }.inject(:+)
     else
       nil

@@ -6,7 +6,7 @@ class Api::V1::SanitationController < Api::V1::BaseController
   def create
     questionnaire = AdvancedSanitationQuestionnaire.new( session )
 
-    unless params.has_key?(:title)
+    unless params.has_key?(:title) && params[:title].to_s.length > 0
       render :json => { error: "Missing report title", status: 403 }, :status => :forbidden
       return
     end

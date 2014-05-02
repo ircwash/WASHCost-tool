@@ -14,7 +14,9 @@ class Authentication::SessionsController < Devise::SessionsController
   #end
 
   def after_sign_in_path_for(resource)
-    stored_location_for(resource) || request.referer || session[:previous_url] || root_path
+    prev = (request.referrer && !request.referrer.include?("/users")) ? request.referrer : nil
+    #prev || session[:previous_url] || root_path
+    stored_location_for(resource) || prev || session[:previous_url] || root_path
   end
 
 end
