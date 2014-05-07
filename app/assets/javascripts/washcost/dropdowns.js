@@ -3,7 +3,6 @@ $( document ).ready( function()
   'use strict';
 
   function updateWaterSource (idx, el) {
-    console.log(idx)
     var id = el.attr('id').replace('water_source', 'surface_water_primary_source');
     var $item = $('#' + id);
     if (idx != 2) {

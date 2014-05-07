@@ -100,9 +100,15 @@ class AdvancedWaterQuestionnaire < AdvancedQuestionnaire
       if value != nil
         attributes_with_values = attributes_with_values + 1
       end
+
+      if value == nil
+        puts attribute
+      end
     end
 
-    if water_source == nil || !water_source.include?( '1' )
+    total_attributes = total_attributes - 1
+
+    if water_source != nil && !water_source.include?("1")
       total_attributes = total_attributes - 1
     end
 
