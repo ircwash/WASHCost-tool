@@ -10,6 +10,8 @@ $( document ).ready( function()
     $('[data-numeric]').on('keyup', enforce_numeric);
     //$('[data-numeric]').on('change', enforce_numeric); // disabled to allow for currency 
     $('[data-currency]').on('blur', add_currency);
+    $('[data-currency]').on('focus', enforce_numeric);
+    $('[data-percentage]').on('focus', enforce_numeric);
 
     // Handle on load and inputs already populated
     $('[data-dynamic_form]').find('[data-currency]').each(function() {
@@ -27,7 +29,7 @@ $( document ).ready( function()
       $(this).val(value + '%');
     });
   }
-
+  
   function enforce_numeric() {
     var value = $(this).val();
     $(this).val(value.replace(/[^0-9\.]+/g, ''));
