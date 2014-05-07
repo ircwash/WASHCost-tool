@@ -1,5 +1,23 @@
 $(document).ready(function() {
+
   'use strict';
+
+  var warning = true;
+
+  function navigateAway () {
+    if (window.location.pathname.indexOf('/service_level') > -1) {
+
+      $('.footer--link-save').on('click', function () {
+        warning = false;
+      });
+
+      window.onbeforeunload = function () { 
+        var progress = $('[data-progress-label]').text().replace(/[^0-9]+/g, '');
+        if (progress != 100 && warning)
+          return 'You have completed ' + progress + '% – to get a full and accurate report please complete 100% or "save report" and complete later.' 
+      }
+    }
+  }
 
   var _navigation = $('.navigation--subcategory'),
     _list = _navigation.find('ul'),
@@ -37,6 +55,8 @@ $(document).ready(function() {
       sizeNav();
 
     });
+
+    navigateAway();
 
   }
 
