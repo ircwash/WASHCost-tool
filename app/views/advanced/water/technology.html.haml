@@ -202,15 +202,15 @@
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-1' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[actual_hardware_expenditure][]', @questionnaire.actual_hardware_expenditure[0], :id => "advanced_water_questionnaire_actual_hardware_expenditure_1", :"data-numeric" => true, :tabindex => '10', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.actual_hardware_expenditure.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[actual_hardware_expenditure][]', @questionnaire.actual_hardware_expenditure[0], :id => "advanced_water_questionnaire_actual_hardware_expenditure_1", :"data-numeric" => true, :"data-currency" => 5000, :tabindex => '10', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.actual_hardware_expenditure.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-2' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[actual_hardware_expenditure][]', @questionnaire.actual_hardware_expenditure[1], :id => "advanced_water_questionnaire_actual_hardware_expenditure_2", :"data-numeric" => true, :tabindex => '27', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.actual_hardware_expenditure.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[actual_hardware_expenditure][]', @questionnaire.actual_hardware_expenditure[1], :id => "advanced_water_questionnaire_actual_hardware_expenditure_2", :"data-numeric" => true, :tabindex => '27', :"data-currency" => 5000, :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.actual_hardware_expenditure.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-3' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[actual_hardware_expenditure][]', @questionnaire.actual_hardware_expenditure[2], :id => "advanced_water_questionnaire_actual_hardware_expenditure_3", :"data-numeric" => true, :tabindex => '43', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.actual_hardware_expenditure.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[actual_hardware_expenditure][]', @questionnaire.actual_hardware_expenditure[2], :id => "advanced_water_questionnaire_actual_hardware_expenditure_3", :"data-numeric" => true, :tabindex => '43', :"data-currency" => 5000, :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.actual_hardware_expenditure.placeholder' )
 
     .dual_column_form--row
 
@@ -237,15 +237,15 @@
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-1' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[actual_software_expenditure][]', @questionnaire.actual_software_expenditure[0], :tabindex => '12', :class => 'dual_column_form--field--text_input', :"data-numeric" => true, :placeholder => placeholder_currency( 'advanced.water.questionnaire.actual_software_expenditure.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[actual_software_expenditure][]', @questionnaire.actual_software_expenditure[0], :tabindex => '12', :"data-currency" => 3000, :class => 'dual_column_form--field--text_input', :"data-numeric" => true, :placeholder => placeholder_currency( 'advanced.water.questionnaire.actual_software_expenditure.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-2' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[actual_software_expenditure][]', @questionnaire.actual_software_expenditure[1], :tabindex => '29', :class => 'dual_column_form--field--text_input', :"data-numeric" => true, :placeholder => placeholder_currency( 'advanced.water.questionnaire.actual_software_expenditure.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[actual_software_expenditure][]', @questionnaire.actual_software_expenditure[1], :tabindex => '29', :"data-currency" => 3000, :class => 'dual_column_form--field--text_input', :"data-numeric" => true, :placeholder => placeholder_currency( 'advanced.water.questionnaire.actual_software_expenditure.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-3' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[actual_software_expenditure][]', @questionnaire.actual_software_expenditure[2], :tabindex => '45', :class => 'dual_column_form--field--text_input', :"data-numeric" => true, :placeholder => placeholder_currency( 'advanced.water.questionnaire.actual_software_expenditure.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[actual_software_expenditure][]', @questionnaire.actual_software_expenditure[2], :tabindex => '45', :"data-currency" => 3000, :class => 'dual_column_form--field--text_input', :"data-numeric" => true, :placeholder => placeholder_currency( 'advanced.water.questionnaire.actual_software_expenditure.placeholder' )
 
     .dual_column_form--row
 
@@ -287,15 +287,15 @@
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-1' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[capital_maintenance_expenditure][]', @questionnaire.capital_maintenance_expenditure[0], :tabindex => '15', :class => 'dual_column_form--field--text_input', :"data-numeric" => true, :placeholder => placeholder_currency( 'advanced.water.questionnaire.capital_maintenance_expenditure.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[capital_maintenance_expenditure][]', @questionnaire.capital_maintenance_expenditure[0], :tabindex => '15', :class => 'dual_column_form--field--text_input', :"data-numeric" => true, :"data-currency" => 400, :placeholder => placeholder_currency( 'advanced.water.questionnaire.capital_maintenance_expenditure.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-2' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[capital_maintenance_expenditure][]', @questionnaire.capital_maintenance_expenditure[1], :tabindex => '31', :class => 'dual_column_form--field--text_input', :"data-numeric" => true, :placeholder => placeholder_currency( 'advanced.water.questionnaire.capital_maintenance_expenditure.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[capital_maintenance_expenditure][]', @questionnaire.capital_maintenance_expenditure[1], :tabindex => '31', :class => 'dual_column_form--field--text_input', :"data-numeric" => true, :"data-currency" => 400, :placeholder => placeholder_currency( 'advanced.water.questionnaire.capital_maintenance_expenditure.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-3' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[capital_maintenance_expenditure][]', @questionnaire.capital_maintenance_expenditure[2], :tabindex => '48', :class => 'dual_column_form--field--text_input', :"data-numeric" => true, :placeholder => placeholder_currency( 'advanced.water.questionnaire.capital_maintenance_expenditure.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[capital_maintenance_expenditure][]', @questionnaire.capital_maintenance_expenditure[2], :tabindex => '48', :class => 'dual_column_form--field--text_input', :"data-numeric" => true, :"data-currency" => 400, :placeholder => placeholder_currency( 'advanced.water.questionnaire.capital_maintenance_expenditure.placeholder' )
 
     .dual_column_form--row
 
@@ -303,15 +303,15 @@
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-1' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[loan_cost][]', @questionnaire.loan_cost[0], :"data-numeric" => true, :tabindex => '16', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.loan_cost.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[loan_cost][]', @questionnaire.loan_cost[0], :"data-numeric" => true, :tabindex => '16', :"data-currency" => 6000, :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.loan_cost.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-2' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[loan_cost][]', @questionnaire.loan_cost[1], :"data-numeric" => true, :tabindex => '32', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.loan_cost.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[loan_cost][]', @questionnaire.loan_cost[1], :"data-numeric" => true, :tabindex => '32', :"data-currency" => 6000, :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.loan_cost.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-33{ 'data-column_dependency-dependent' => 'technology-3' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[loan_cost][]', @questionnaire.loan_cost[2], :"data-numeric" => true, :tabindex => '49', :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.loan_cost.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[loan_cost][]', @questionnaire.loan_cost[2], :"data-numeric" => true, :tabindex => '49', :"data-currency" => 6000, :class => 'dual_column_form--field--text_input', :placeholder => placeholder_currency( 'advanced.water.questionnaire.loan_cost.placeholder' )
 
     .dual_column_form--row
 

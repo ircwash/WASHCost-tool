@@ -247,10 +247,5 @@ module AdvancedCalculatorsHelper
       [ 'Don\'t know', 2 ]
     ]
   end
-
-  def placeholder_currency(text)
-    @curr = @questionnaire.currency ? @questionnaire.currency.upcase.to_s : 'USD'
-    t(text).to_s + ' (' + @curr  + ')'
-  end
-
+  
 end

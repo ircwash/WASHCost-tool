@@ -51,7 +51,7 @@ class AdvancedWaterQuestionnaire < AdvancedQuestionnaire
 
     if attributes[ :power_supply_0 ] != nil || attributes[ :power_supply_1 ] != nil || attributes[ :power_supply_2 ] != nil
 
-      power_supply = []
+      @power_supply = []
 
       if attributes[ :power_supply_0 ] != nil
         power_supply.push attributes[ :power_supply_0 ]
