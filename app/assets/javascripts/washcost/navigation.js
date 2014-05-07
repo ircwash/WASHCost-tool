@@ -7,7 +7,7 @@ $(document).ready(function() {
   function navigateAway () {
     if (window.location.pathname.indexOf('/service_level') > -1) {
 
-      $('.footer--link-save').on('click', function () {
+      $('.footer--link-save,.navigation--subcategory--link').on('click', function () {
         warning = false;
       });
 
