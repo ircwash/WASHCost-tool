@@ -4,6 +4,7 @@ WashCostApp::Application.routes.draw do
   use_doorkeeper do
     #controllers :applications => 'applications'
   end
+  
 
   match '/infographic' => 'infographic#index'
   match '/infographic/mobile' => 'mobile#infographic'
