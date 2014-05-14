@@ -1,4 +1,4 @@
-development:
+another:
   sessions:
     default:
       database: wash_cost_app_development
@@ -6,6 +6,15 @@ development:
         - localhost:27017
   options:
     raise_not_found_error: false
+
+development:
+  sessions:
+    default:
+      uri: <%= ENV['MONGOHQ_URL'] %>
+      options:
+        consistency: :strong
+        max_retries: 1
+        retry_interval: 0
 
 test:
   sessions:
