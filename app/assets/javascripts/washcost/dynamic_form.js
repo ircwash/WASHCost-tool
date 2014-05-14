@@ -81,12 +81,12 @@ $( document ).ready( function()
       });
 
       // Forces a selection (default = Don't know) for any enabled selects that have not been set on submit
-      if (page === 'service_level') {
+      /*if (page === 'service_level') {
         $('form#new_advanced_water_questionnaire').find( 'select:enabled' ).each( function () { 
           if (this.selectedIndex === 0)
             this.selectedIndex = this.length-1;
         });
-      }
+      }*/
 
       form.ajaxSubmit( { url:url, success:function( result ) {
         // trigger notification
