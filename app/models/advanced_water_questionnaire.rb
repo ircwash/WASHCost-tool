@@ -101,9 +101,9 @@ class AdvancedWaterQuestionnaire < AdvancedQuestionnaire
         attributes_with_values = attributes_with_values + 1
       end
 
-      if value == nil
-        puts attribute
-      end
+     # if value == nil
+     #   puts attribute
+     # end
     end
 
     total_attributes = total_attributes - 1

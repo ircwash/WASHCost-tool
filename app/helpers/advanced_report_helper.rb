@@ -85,8 +85,10 @@ module AdvancedReportHelper
             # check that report is complete
             if questionnaire.complete?
 
-              if value_for_advanced_metric( questionnaire.send( "#{metric.to_s}" ), currency ? questionnaire.currency : nil ) <= value_for_advanced_metric( @questionnaire.send( "#{metric.to_s}" ), currency ? @questionnaire.currency : nil )
-                reports_lower = reports_lower + 1
+              if @questionaire
+                if value_for_advanced_metric( questionnaire.send( "#{metric.to_s}" ), currency ? questionnaire.currency : nil ) <= value_for_advanced_metric( @questionnaire.send( "#{metric.to_s}" ), currency ? @questionnaire.currency : nil )
+                  reports_lower = reports_lower + 1
+                end
               end
 
               # increment total to compute percentile

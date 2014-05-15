@@ -56,9 +56,9 @@ class AdvancedSanitationQuestionnaire < AdvancedQuestionnaire
         attributes_with_values = attributes_with_values + 1
       end
 
-      if value == nil
-        puts attribute
-      end
+      #if value == nil
+      #  puts attribute
+      #end
     end
 
     100 * attributes_with_values / (property_attributes.count - 1)
