@@ -1,18 +1,11 @@
 module AdvancedCalculatorsHelper
 
-  def options_for_water_system_exists
+  def options_for_sanitationwater_exists
     [
-      [ 'Installed', 0 ],
-      [ 'Pre-existing', 1 ],
-      [ 'Don\'t know', 2 ]
-    ]
-  end
-
-  def options_for_sanitation_service_exists
-    [
-      [ 'Existing', 0 ],
-      [ 'Planned', 1 ],
-      [ 'Don\'t know', 2 ]
+      [ 'Neither', 0 ],
+      [ 'Existing', 1 ],
+      [ 'Planned', 2 ],
+      [ 'Don\'t know', 3 ]
     ]
   end
 

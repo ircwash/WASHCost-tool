@@ -12,7 +12,7 @@
       .dual_column_form--column.dual_column_form--column-50
         .dual_column_form--field.dual_column_form--field-dropdown
           = f.label :water_system_exists, t( 'advanced.sanitation.questionnaire.sanitation_service_exists.label' ), :class => 'dual_column--field--label'
-          = f.select :water_system_exists, options_for_select( options_for_sanitation_service_exists, @questionnaire.water_system_exists ), { :include_blank=> '' }, { :class => 'dual_column_form--field--dropdown chzn-select', 'data-placeholder' => t( 'advanced.water.questionnaire.water_system_exists.placeholder' ) }
+          = f.select :water_system_exists, options_for_select( options_for_sanitationwater_exists, @questionnaire.water_system_exists ), { :include_blank=> '' }, { :class => 'dual_column_form--field--dropdown chzn-select', 'data-placeholder' => t( 'advanced.water.questionnaire.water_system_exists.placeholder' ) }
 
       .dual_column_form--column.dual_column_form--column-50
         .dual_column_form--field.dual_column_form--field-dropdown
