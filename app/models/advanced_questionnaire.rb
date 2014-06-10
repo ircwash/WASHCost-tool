@@ -191,7 +191,7 @@ class AdvancedQuestionnaire < Session
 
   def expenditure_of_direct_support_delta_per_person_per_year
     if direct_support_cost != nil && direct_support_cost != nil
-      direct_support_cost.to_f - direct_support_cost.to_f
+      direct_support_cost.to_f - expected_direct_support_cost_per_person_per_year.to_f #direct_support_cost.to_f
     else
       nil
     end
