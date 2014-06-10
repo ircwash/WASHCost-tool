@@ -149,8 +149,9 @@ class AdvancedQuestionnaire < Session
   end
 
   def expected_capital_maintenance_expenditure_per_person_per_year
-    if supply_system_technologies.count > 0 && capital_maintenance_expenditure.count == supply_system_technologies.count && system_lifespan_expectancy.count == supply_system_technologies.count && system_population_actual.count == supply_system_technologies.count
-      ( supply_system_technologies.each_with_index.map{ |s,i| ( 30 / system_lifespan_expectancy[i].to_f ).floor * capital_maintenance_expenditure[i].to_f }.inject(:+) / 30 ) / system_population_actual.map{ |p| p.to_f }.inject(:+)
+    if supply_system_technologies.count > 0 && actual_hardware_expenditure.count == supply_system_technologies.count && system_lifespan_expectancy.count == supply_system_technologies.count && system_population_actual.count == supply_system_technologies.count
+      #( supply_system_technologies.each_with_index.map{ |s,i| ( 30 / system_lifespan_expectancy[i].to_f ).floor * capital_maintenance_expenditure[i].to_f }.inject(:+) / 30 ) / system_population_actual.map{ |p| p.to_f }.inject(:+)
+      ( supply_system_technologies.each_with_index.map{ |s,i| ( 30 / system_lifespan_expectancy[i].to_f ).floor * actual_hardware_expenditure[i].to_f }.inject(:+) / 30 ) / system_population_actual.map{ |p| p.to_f }.inject(:+)
     else
       nil
     end
@@ -342,7 +343,7 @@ class AdvancedQuestionnaire < Session
     if annual_cost_of_capital_for_designed_users != nil && annual_household_income != nil
       100 * annual_cost_of_capital_for_designed_users / annual_household_income.to_f
     else
-      nil
+      666
     end
   end
 
