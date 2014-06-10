@@ -481,6 +481,17 @@
   @include box-sizing(border-box);
 }
 
+/* Centers the total - may need to be reverted */
+.report--outputs--total{
+  text-align: center;
+}
+.report--outputs--total .report--outputs--item {
+  display: inline-block;
+  float:none;
+  clear:both;
+}
+/* End: Centers the total - may need to be reverted */
+
 .report--outputs--item-50 {
   width:50%;
 }
