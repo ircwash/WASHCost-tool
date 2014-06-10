@@ -149,7 +149,7 @@ class AdvancedQuestionnaire < Session
   end
 
   def expected_capital_maintenance_expenditure_per_person_per_year
-    if operation_expenditure_per_person_per_year != nil && capital_maintenance_expenditure_per_person_per_year != nil && supply_system_technologies.count > 0 && capital_maintenance_expenditure.count == supply_system_technologies.count && system_lifespan_expectancy.count == supply_system_technologies.count && system_population_actual.count == supply_system_technologies.count
+    if supply_system_technologies.count > 0 && capital_maintenance_expenditure.count == supply_system_technologies.count && system_lifespan_expectancy.count == supply_system_technologies.count && system_population_actual.count == supply_system_technologies.count
       ( supply_system_technologies.each_with_index.map{ |s,i| ( 30 / system_lifespan_expectancy[i].to_f ).floor * capital_maintenance_expenditure[i].to_f }.inject(:+) / 30 ) / system_population_actual.map{ |p| p.to_f }.inject(:+)
     else
       nil
