@@ -14,26 +14,21 @@ class Report
     if level == 'basic'
       if type == 'water'
         questionnaire_instance = BasicWaterQuestionnaire.new( nil )
-
         questionnaire_instance.update_attributes( questionnaire )
       elsif type == 'sanitation'
         questionnaire_instance = BasicSanitationQuestionnaire.new( nil )
-
         questionnaire_instance.update_attributes( questionnaire )
       end
     end
     if level == 'advanced'
       if type == 'water'
         questionnaire_instance = AdvancedWaterQuestionnaire.new( nil )
-
         questionnaire_instance.update_attributes( questionnaire )
       elsif type == 'sanitation'
         questionnaire_instance = AdvancedSanitationQuestionnaire.new( nil )
-
         questionnaire_instance.update_attributes( questionnaire )
       end
     end
-
     questionnaire_instance
   end
 

@@ -31,7 +31,6 @@
               = t( 'report.expenditure_surplus_shortfall' )
               %span.report--summary--item--mini_title--subtitle= t( 'report.per_person_per_year' )
             .report--summary--item--value= report_delta_currency_value_for( @questionnaire.total_expenditure_delta_per_person_per_year )
-
         - if report_service_level_summary_available
 
           %div{ :class => "report--summary--item report--summary--item-#{summary_columns_for_report( [ report_expenditure_totals_available, report_service_level_summary_available, report_comparison_summary_available ] )}" }

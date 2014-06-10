@@ -73,6 +73,7 @@ module AdvancedReportHelper
   # cumulative expenditure outputs
 
   def advanced_percentile_comparison( metric, report_type, currency = false )
+
     if instance_variable_get( "@global_percentile_#{metric.to_s}" ) == nil && instance_variable_get( "@global_total_reports_#{metric.to_s}" ) == nil
       reports_lower        = 0
       global_percentile    = 0
@@ -84,12 +85,20 @@ module AdvancedReportHelper
           if report.level == 'advanced' && report.type == report_type
 
             # unpack questionnaire model from report
-            questionnaire = report.unpack_questionnaire
+            #questionnaire = report.unpack_questionnaire
+
+            if (report.type == 'water')
+              questionnaire = AdvancedWaterQuestionnaire.new( report  )
+            else
+              questionnaire = AdvancedSanitationQuestionnaire.new( report  )
+            end
+
+            #puts questionnaire
 
             # check that report is complete
             if questionnaire.complete?
 
-              if @questionaire
+              if @questionnaire
                 if value_for_advanced_metric( questionnaire.send( "#{metric.to_s}" ), currency ? questionnaire.currency : nil ) <= value_for_advanced_metric( @questionnaire.send( "#{metric.to_s}" ), currency ? @questionnaire.currency : nil )
                   reports_lower = reports_lower + 1
                 end
@@ -116,6 +125,7 @@ module AdvancedReportHelper
   end
 
   def advanced_percentile_comparison_for_user( metric, report_type, currency = false )
+
     if instance_variable_get( "@user_percentile_#{metric.to_s}" ) == nil && instance_variable_get( "@user_total_reports_#{metric.to_s}" ) == nil
       reports_lower      = 0
       user_percentile    = 0
@@ -126,7 +136,13 @@ module AdvancedReportHelper
         if report.level == 'advanced' && report.type == report_type
 
           # unpack questionnaire model from report
-          questionnaire = report.unpack_questionnaire
+            #questionnaire = report.unpack_questionnaire
+
+            if (report.type == 'water')
+              questionnaire = AdvancedWaterQuestionnaire.new( report  )
+            else
+              questionnaire = AdvancedSanitationQuestionnaire.new( report  )
+            end
 
           # check that report is complete
           if questionnaire.complete?
@@ -155,6 +171,7 @@ module AdvancedReportHelper
   end
 
   def advanced_percentile_comparison_for_technology( metric, report_type, technology, currency = false )
+
     instance_variable_set( "@global_percentile_for_technology_#{metric.to_s}", {} )    unless instance_variable_get( "@global_percentile_for_technology_#{metric.to_s}" ) != nil
     instance_variable_set( "@global_total_reports_for_technology_#{metric.to_s}", {} ) unless instance_variable_get( "@global_total_reports_for_technology_#{metric.to_s}" ) != nil
 
@@ -169,7 +186,13 @@ module AdvancedReportHelper
           if report.level == 'advanced' && report.type == report_type
 
             # unpack questionnaire model from report
-            questionnaire = report.unpack_questionnaire
+            #questionnaire = report.unpack_questionnaire
+
+            if (report.type == 'water')
+              questionnaire = AdvancedWaterQuestionnaire.new( report  )
+            else
+              questionnaire = AdvancedSanitationQuestionnaire.new( report  )
+            end
 
             # check that report is complete
             if questionnaire.complete? && questionnaire.supply_system_technologies.include?( technology )
@@ -199,6 +222,7 @@ module AdvancedReportHelper
   end
 
   def advanced_percentile_comparison_for_user_for_technology( metric, report_type, technology, currency = false )
+
     instance_variable_set( "@user_percentile_for_technology_#{metric.to_s}", {} )    unless instance_variable_get( "@user_percentile_for_technology_#{metric.to_s}" ) != nil
     instance_variable_set( "@user_total_reports_for_technology_#{metric.to_s}", {} ) unless instance_variable_get( "@user_total_reports_for_technology_#{metric.to_s}" ) != nil
 
@@ -212,7 +236,13 @@ module AdvancedReportHelper
         if report.level == 'advanced' && report.type == report_type
 
           # unpack questionnaire model from report
-          questionnaire = report.unpack_questionnaire
+            #questionnaire = report.unpack_questionnaire
+
+            if (report.type == 'water')
+              questionnaire = AdvancedWaterQuestionnaire.new( report  )
+            else
+              questionnaire = AdvancedSanitationQuestionnaire.new( report  )
+            end
 
           # check that report is complete
           if questionnaire.complete? && questionnaire.supply_system_technologies.include?( technology )
