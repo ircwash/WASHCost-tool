@@ -126,7 +126,7 @@ class AdvancedQuestionnaire < Session
 
   def cost_of_capital_per_person_per_year
     if supply_system_technologies != nil && system_population_actual != nil && supply_system_technologies.count > 0 && loan_cost.count == supply_system_technologies.count && system_population_actual.count == supply_system_technologies.count
-      loan_cost.map{ |e| e.to_f }.inject(:+) / system_population_actual.map{ |p| p.to_f }.inject(:+)
+      loan_cost.map{ |e| e.to_f }.inject(:+) / system_population_actual.map{ |p| p.to_f }.inject(:+) / 30
     else
       nil
     end
@@ -493,7 +493,6 @@ class AdvancedQuestionnaire < Session
   def benchmark_direct_support_cost
     supply_system_technologies.map{ |t| 0 }
   end
-
 
   private
 
