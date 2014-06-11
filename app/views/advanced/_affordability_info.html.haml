@@ -2,22 +2,41 @@
 
   .report--affordability_info
 
-    - affordability = 'affordable' unless annual_expenditure_as_percentage_of_household_users >= 3.0
-    - affordability = 'risk' unless annual_expenditure_as_percentage_of_household_users < 3.0 || annual_expenditure_as_percentage_of_household_users > 5.0
-    - affordability = 'unaffordable' unless annual_expenditure_as_percentage_of_household_users < 5.0
+    - if page_type == 'water'
 
-    .report--affordability_info--traffic_light
-      %div{ :class => "report--affordability_info--traffic_light--item #{'report--affordability_info--traffic_light--item-green' unless annual_expenditure_as_percentage_of_household_users >= 3.0}" }
-      %div{ :class => "report--affordability_info--traffic_light--item #{'report--affordability_info--traffic_light--item-amber' unless annual_expenditure_as_percentage_of_household_users < 3.0 || annual_expenditure_as_percentage_of_household_users > 5.0}" }
-      %div{ :class => "report--affordability_info--traffic_light--item #{'report--affordability_info--traffic_light--item-red' unless annual_expenditure_as_percentage_of_household_users < 5.0}" }
+      - affordability = 'unaffordable'
 
-    %div{ :class => "report--affordability_info--verdict report--affordability_info--verdict-#{affordability}" }
-      - if annual_expenditure_as_percentage_of_household_users < 3.0
-        = t( 'report.affordable' )
-      - elsif annual_expenditure_as_percentage_of_household_users >= 3.0 && annual_expenditure_as_percentage_of_household_users < 5.0
-        = t( 'report.risk_to_affordability' )
-      - else
-        = t( 'report.unaffordable' )
+      - if annual_expenditure_as_percentage_of_household_users <= 3.0
+        - affordability = 'affordable'
+
+      - if annual_expenditure_as_percentage_of_household_users  > 3.0 && annual_expenditure_as_percentage_of_household_users < 5.0
+        - affordability = 'risk'
+
+      .report--affordability_info--traffic_light
+        %div{ :class => "report--affordability_info--traffic_light--item #{annual_expenditure_as_percentage_of_household_users <= 3.0 ? 'report--affordability_info--traffic_light--item-green' : ''}" }
+        %div{ :class => "report--affordability_info--traffic_light--item #{ annual_expenditure_as_percentage_of_household_users > 3.0 && annual_expenditure_as_percentage_of_household_users < 5.0} ? 'report--affordability_info--traffic_light--item-amber' : ''" }
+        %div{ :class => "report--affordability_info--traffic_light--item #{annual_expenditure_as_percentage_of_household_users >= 5.0 ? 'report--affordability_info--traffic_light--item-red' : ''}" }
+
+      %div{ :class => "report--affordability_info--verdict report--affordability_info--verdict-#{affordability}" }
+        = t( 'report.' + affordability )
+
+    - else
+
+      - affordability = 'unaffordable'
+
+      - if annual_expenditure_as_percentage_of_household_users <= 1.0
+        - affordability = 'affordable'
+
+      - if annual_expenditure_as_percentage_of_household_users  > 1.0 && annual_expenditure_as_percentage_of_household_users < 2.0
+        - affordability = 'risk'
+
+      .report--affordability_info--traffic_light
+        %div{ :class => "report--affordability_info--traffic_light--item #{annual_expenditure_as_percentage_of_household_users <= 1.0 ? 'report--affordability_info--traffic_light--item-green' : ''}" }
+        %div{ :class => "report--affordability_info--traffic_light--item #{ annual_expenditure_as_percentage_of_household_users > 1.0 && annual_expenditure_as_percentage_of_household_users < 2.0} ? 'report--affordability_info--traffic_light--item-amber' : ''" }
+        %div{ :class => "report--affordability_info--traffic_light--item #{annual_expenditure_as_percentage_of_household_users >= 2.0 ? 'report--affordability_info--traffic_light--item-red' : ''}" }
+
+      %div{ :class => "report--affordability_info--verdict report--affordability_info--verdict-#{affordability}" }
+        = t( 'report.' + affordability )
 
     .report--affordability_info--detail= t( "report.afforability_detail.#{affordability}", :percentage => report_percentage_value_for( annual_expenditure_as_percentage_of_household_users ) )
 

@@ -38,7 +38,7 @@ en:
     full_review: read full review
     unaffordable: Unaffordable
     affordable: Affordable
-    risk_to_affordability: Risk to affordability
+    risk: Risk to affordability
     afforability_detail:
       affordable: "%{percentage} of household expenditure is considered to be affordable."
       risk: "%{percentage} of household expenditure is higher than guideline affordability standards in many countries around the world and may not be affordable to users."
