@@ -243,7 +243,7 @@ class AdvancedQuestionnaire < Session
 
   def annual_operational_expenditure_for_actual_users_as_percentage_of_household_income
     if annual_operational_expenditure_for_actual_users != nil && annual_household_income != nil
-      100 * annual_operational_expenditure_for_actual_users / annual_household_income.to_f
+      100 * annual_operational_expenditure_for_actual_users / (annual_household_income.to_f / household_size.to_f)
     else
       nil
     end
@@ -259,7 +259,7 @@ class AdvancedQuestionnaire < Session
 
   def annual_capital_maintenance_expenditure_for_actual_users_as_percentage_of_household_income
     if annual_capital_maintenance_expenditure_for_actual_users != nil && annual_household_income != nil
-      100 * annual_capital_maintenance_expenditure_for_actual_users / annual_household_income.to_f
+      100 * annual_capital_maintenance_expenditure_for_actual_users / (annual_household_income.to_f / household_size.to_f)
     else
       nil
     end
@@ -275,7 +275,7 @@ class AdvancedQuestionnaire < Session
 
   def annual_cost_of_capital_for_actual_users_as_percentage_of_household_income
     if annual_cost_of_capital_for_actual_users != nil && annual_household_income != nil
-      100 * annual_cost_of_capital_for_actual_users / annual_household_income.to_f
+      100 * annual_cost_of_capital_for_actual_users / (annual_household_income.to_f / household_size.to_f)
     else
       nil
     end
@@ -291,7 +291,7 @@ class AdvancedQuestionnaire < Session
 
   def total_annual_expenditure_for_actual_users_as_percentage_of_household_income
     if total_annual_expenditure_for_actual_users != nil && annual_household_income != nil
-      100 * total_annual_expenditure_for_actual_users / annual_household_income.to_f
+      100 * total_annual_expenditure_for_actual_users / (annual_household_income.to_f / household_size.to_f)
     else
       nil
     end
@@ -309,7 +309,7 @@ class AdvancedQuestionnaire < Session
 
   def annual_operational_expenditure_for_designed_users_as_percentage_of_household_income
     if annual_operational_expenditure_for_designed_users != nil && annual_household_income != nil
-      100 * annual_operational_expenditure_for_designed_users / annual_household_income.to_f
+      100 * annual_operational_expenditure_for_designed_users / (annual_household_income.to_f / household_size.to_f)
     else
       nil
     end
@@ -325,7 +325,7 @@ class AdvancedQuestionnaire < Session
 
   def annual_capital_maintenance_expenditure_for_designed_users_as_percentage_of_household_income
     if annual_capital_maintenance_expenditure_for_designed_users != nil && annual_household_income != nil
-      100 * annual_capital_maintenance_expenditure_for_designed_users / annual_household_income.to_f
+      100 * annual_capital_maintenance_expenditure_for_designed_users / (annual_household_income.to_f / household_size.to_f)
     else
       nil
     end
@@ -341,7 +341,7 @@ class AdvancedQuestionnaire < Session
 
   def annual_cost_of_capital_for_designed_users_as_percentage_of_household_income
     if annual_cost_of_capital_for_designed_users != nil && annual_household_income != nil
-      100 * annual_cost_of_capital_for_designed_users / annual_household_income.to_f
+      100 * annual_cost_of_capital_for_designed_users / (annual_household_income.to_f / household_size.to_f)
     else
       666
     end
@@ -357,7 +357,7 @@ class AdvancedQuestionnaire < Session
 
   def total_annual_expenditure_for_designed_users_as_percentage_of_household_income
     if total_annual_expenditure_for_designed_users != nil && annual_household_income != nil
-      100 * total_annual_expenditure_for_designed_users / annual_household_income.to_f
+      100 * total_annual_expenditure_for_designed_users / (annual_household_income.to_f / household_size.to_f)
     else
       nil
     end
@@ -375,7 +375,7 @@ class AdvancedQuestionnaire < Session
 
   def expected_annual_operational_expenditure_for_actual_users_as_percentage_of_household_income
     if expected_annual_operational_expenditure_for_actual_users != nil && annual_household_income != nil
-      100 * expected_annual_operational_expenditure_for_actual_users / annual_household_income.to_f
+      100 * expected_annual_operational_expenditure_for_actual_users / (annual_household_income.to_f / household_size.to_f)
     else
       nil
     end
@@ -391,7 +391,7 @@ class AdvancedQuestionnaire < Session
 
   def expected_annual_capital_maintenance_expenditure_for_actual_users_as_percentage_of_household_income
     if expected_annual_capital_maintenance_expenditure_for_actual_users != nil && annual_household_income != nil
-      100 * expected_annual_capital_maintenance_expenditure_for_actual_users / annual_household_income.to_f
+      100 * expected_annual_capital_maintenance_expenditure_for_actual_users / (annual_household_income.to_f / household_size.to_f)
     else
       nil
     end
@@ -407,7 +407,7 @@ class AdvancedQuestionnaire < Session
 
   def expected_annual_cost_of_capital_for_actual_users_as_percentage_of_household_income
     if expected_annual_cost_of_capital_for_actual_users != nil && annual_household_income != nil
-      100 * expected_annual_cost_of_capital_for_actual_users / annual_household_income.to_f
+      100 * expected_annual_cost_of_capital_for_actual_users / (annual_household_income.to_f / household_size.to_f)
     else
       nil
     end
@@ -423,7 +423,7 @@ class AdvancedQuestionnaire < Session
 
   def total_expected_annual_expenditure_for_actual_users_as_percentage_of_household_income
     if total_expected_annual_expenditure_for_actual_users != nil && annual_household_income != nil
-      100 * total_expected_annual_expenditure_for_actual_users / annual_household_income.to_f
+      100 * total_expected_annual_expenditure_for_actual_users / (annual_household_income.to_f / household_size.to_f)
     else
       nil
     end

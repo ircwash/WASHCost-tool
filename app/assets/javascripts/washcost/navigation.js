@@ -12,9 +12,17 @@ $(document).ready(function() {
       });
 
       window.onbeforeunload = function () { 
-        var progress = $('[data-progress-label]').text().replace(/[^0-9]+/g, '');
-        if (progress != 100 && warning)
-          return 'You have completed ' + progress + '% – to get a full and accurate report please complete 100% or "save report" and complete later.' 
+        //var progress = $('[data-progress-label]').text().replace(/[^0-9]+/g, '');
+        var progress = true;
+        $('input[name="advanced_water_questionnaire[service_level_share][]"]').each(function (val, i) {
+          if ($(this).val() === '')
+            progress = false;
+        });
+
+        if (!progress && warning)
+          return '';
+          // changed to check 100% of service level rather than 100% page comple ??
+          // return 'You have completed ' + progress + '% – to get a full and accurate report please complete 100% or "save report" and complete later.' 
       }
     }
   }
