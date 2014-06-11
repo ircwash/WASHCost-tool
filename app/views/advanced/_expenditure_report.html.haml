@@ -1,5 +1,5 @@
 - if report_sustainability_chart_available
-  .report--chart{ 'data-chart-type' => 'advanced', 'data-chart-currency' => ( @questionnaire.currency || '' ).upcase, 'data-chart-seeds' => "[#{@questionnaire.operation_expenditure_per_year}]" }
+  .report--chart{ 'data-chart-type' => 'advanced', 'data-chart-currency' => ( @questionnaire.currency || '' ).upcase, 'data-chart-seeds' => "[#{@questionnaire.operation_expenditure_per_year},#{@questionnaire.direct_support_per_year},#{@questionnaire.indirect_support_per_year}]" }
 
   -#,#{@questionnaire.direct_support_cost},#{@questionnaire.capital_maintenance_expenditure_per_person_per_year},#{@questionnaire.total_inputted_recurrent_expenditure_per_person_per_year}
 

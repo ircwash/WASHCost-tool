@@ -149,6 +149,8 @@ class AdvancedQuestionnaire < Session
     end
   end
 
+  # graphing 
+
   def operation_expenditure_per_year
     if supply_system_technologies != nil && system_population_actual != nil && supply_system_technologies.count > 0 && system_population_actual.count == supply_system_technologies.count
       supply_system_technologies.each_with_index.map{ |s,i| self.benchmark_minor_operation_expenditure[ s.to_i ] * system_population_actual[i].to_f }.inject(:+)
@@ -156,6 +158,24 @@ class AdvancedQuestionnaire < Session
       nil
     end
   end
+
+  def direct_support_per_year
+    if supply_system_technologies != nil && system_population_actual != nil && supply_system_technologies.count > 0 && system_population_actual.count == supply_system_technologies.count
+      supply_system_technologies.each_with_index.map{ |s,i| self.benchmark_direct_support_cost[ s.to_i ] * system_population_actual[i].to_f }.inject(:+)
+    else
+      nil
+    end
+  end
+
+  def indirect_support_per_year
+    if supply_system_technologies != nil && system_population_actual != nil && supply_system_technologies.count > 0 && system_population_actual.count == supply_system_technologies.count
+      supply_system_technologies.each_with_index.map{ |s,i| s.to_i * indirect_support_cost.to_f }.inject(:+)
+    else
+      nil
+    end
+  end
+
+  #end graphing
 
   def expected_capital_maintenance_expenditure_per_person_per_year
     if supply_system_technologies.count > 0 && actual_hardware_expenditure.count == supply_system_technologies.count && system_lifespan_expectancy.count == supply_system_technologies.count && system_population_actual.count == supply_system_technologies.count
