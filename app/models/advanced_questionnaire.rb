@@ -386,7 +386,12 @@ class AdvancedQuestionnaire < Session
 
   def expected_annual_capital_maintenance_expenditure_for_actual_users
     if supply_system_technologies != nil && capital_maintenance_expenditure != nil && system_lifespan_expectancy != nil && supply_system_technologies.count > 0 && capital_maintenance_expenditure.count == supply_system_technologies.count && system_lifespan_expectancy.count == supply_system_technologies.count && total_actual_users != nil
-      supply_system_technologies.each_with_index.map{ |s,i| capital_maintenance_expenditure[i].to_f / system_lifespan_expectancy[i].to_f }.inject(:+) / total_actual_users
+      #supply_system_technologies.each_with_index.map{ |s,i| capital_maintenance_expenditure[i].to_f / system_lifespan_expectancy[i].to_f }.inject(:+) / total_actual_users
+      
+      supply_system_technologies.each_with_index.map{ |s,i| actual_hardware_expenditure[i].to_f / system_lifespan_expectancy[i].to_f }.inject(:+) / total_actual_users
+
+
+
     else
       nil
     end
