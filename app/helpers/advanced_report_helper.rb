@@ -85,15 +85,7 @@ module AdvancedReportHelper
           if report.level == 'advanced' && report.type == report_type
 
             # unpack questionnaire model from report
-            #questionnaire = report.unpack_questionnaire
-
-            if (report.type == 'water')
-              questionnaire = AdvancedWaterQuestionnaire.new( report  )
-            else
-              questionnaire = AdvancedSanitationQuestionnaire.new( report  )
-            end
-
-            #puts questionnaire
+            questionnaire = report.unpack_questionnaire
 
             # check that report is complete
             if questionnaire.complete?
@@ -136,13 +128,7 @@ module AdvancedReportHelper
         if report.level == 'advanced' && report.type == report_type
 
           # unpack questionnaire model from report
-            #questionnaire = report.unpack_questionnaire
-
-            if (report.type == 'water')
-              questionnaire = AdvancedWaterQuestionnaire.new( report  )
-            else
-              questionnaire = AdvancedSanitationQuestionnaire.new( report  )
-            end
+          questionnaire = report.unpack_questionnaire
 
           # check that report is complete
           if questionnaire.complete?
@@ -186,13 +172,7 @@ module AdvancedReportHelper
           if report.level == 'advanced' && report.type == report_type
 
             # unpack questionnaire model from report
-            #questionnaire = report.unpack_questionnaire
-
-            if (report.type == 'water')
-              questionnaire = AdvancedWaterQuestionnaire.new( report  )
-            else
-              questionnaire = AdvancedSanitationQuestionnaire.new( report  )
-            end
+            questionnaire = report.unpack_questionnaire
 
             # check that report is complete
             if questionnaire.complete? && questionnaire.supply_system_technologies.include?( technology )
@@ -236,13 +216,7 @@ module AdvancedReportHelper
         if report.level == 'advanced' && report.type == report_type
 
           # unpack questionnaire model from report
-            #questionnaire = report.unpack_questionnaire
-
-            if (report.type == 'water')
-              questionnaire = AdvancedWaterQuestionnaire.new( report  )
-            else
-              questionnaire = AdvancedSanitationQuestionnaire.new( report  )
-            end
+          questionnaire = report.unpack_questionnaire
 
           # check that report is complete
           if questionnaire.complete? && questionnaire.supply_system_technologies.include?( technology )
