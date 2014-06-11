@@ -9,9 +9,15 @@
     %h1.report--header--title= t( 'report.summmary' )
 
     %ul.summary-details
-      %li= t( 'report.summary_country' ) + ': '  + GetCountryFromCode(@questionnaire.country)
-      %li= t( 'report.summary_year' ) + ': '  + @questionnaire.year_of_expenditure
-      %li= t( 'report.summary_currency' ) + ': ' + GetCurrencyFromCode(@questionnaire.currency)
+      %li
+        %span.title= t( 'report.summary_country' ) + ": "
+        %span= GetCountryFromCode(@questionnaire.country)
+      %li
+        %span.title= t( 'report.summary_year' ) + ": "
+        %span= @questionnaire.year_of_expenditure
+      %li
+        %span.title= t( 'report.summary_currency' ) + ": "
+        %span= GetCurrencyFromCode(@questionnaire.currency)
 
     .report--summary
 
@@ -19,30 +25,27 @@
 
         - if report_expenditure_totals_available
 
-          %div{ :class => "report--summary--item report--summary--item-#{summary_columns_for_report( [ report_expenditure_totals_available, report_service_level_summary_available, report_comparison_summary_available ] )}" }
-            .report--summary--item--title= t( 'report.expenditure_summary' )
-
-            .report--summary--item--mini_title
+          %ul.report--summary--item.report--summary--item-100
+            %li.report--summary--item--title= t( 'report.expenditure_summary' )
+            %li.report--summary--item--mini_title
               = t( 'report.total_expenditure_for_thirty_years' )
-            .report--summary--item--value= report_currency_value_for( @questionnaire.total_expenditure_for_years(30), 0 )
-            .report--summary--item--subtitle= t( 'report.number_of_people', :people => @questionnaire.total_population.to_i )
-
-            .report--summary--item--mini_title
+              .report--summary--item--value= report_currency_value_for( @questionnaire.total_expenditure_for_years(30), 0 )
+              .report--summary--item--subtitle= t( 'report.number_of_people', :people => @questionnaire.total_population.to_i )
+            %li.report--summary--item--mini_title
               = t( 'report.current_recurrent_expenditure' )
               %span.report--summary--item--mini_title--subtitle= t( 'report.per_person_per_year' )
-            .report--summary--item--value= report_currency_value_for( @questionnaire.total_inputted_recurrent_expenditure_per_person_per_year )
-
-            .report--summary--item--mini_title
+              .report--summary--item--value= report_currency_value_for( @questionnaire.total_inputted_recurrent_expenditure_per_person_per_year )
+            %li.report--summary--item--mini_title
               = t( 'report.expenditure_surplus_shortfall' )
               %span.report--summary--item--mini_title--subtitle= t( 'report.per_person_per_year' )
-            .report--summary--item--value= report_delta_currency_value_for( @questionnaire.total_expenditure_delta_per_person_per_year )
+              .report--summary--item--value= report_delta_currency_value_for( @questionnaire.total_expenditure_delta_per_person_per_year )
         - if report_service_level_summary_available
 
-          %div{ :class => "report--summary--item report--summary--item-#{summary_columns_for_report( [ report_expenditure_totals_available, report_service_level_summary_available, report_comparison_summary_available ] )}" }
-            .report--summary--item--title= t( 'report.service_level_summary' )
-
-            .report--summary--item--value.report--summary--item--value-title= report_percentage_value_for( @questionnaire.percentage_of_population_that_meets_all_norms )
-            .report--summary--item--subtitle= t( 'report.number_of_people_with_service_meeting_national_standard' )
+          %ul.report--summary--item.report--summary--item-100
+            %li.report--summary--item--title= t( 'report.service_level_summary' )
+            %li.report--summary--item--mini_title
+              .report--summary--item--value.report--summary--item--value-title= report_percentage_value_for( @questionnaire.percentage_of_population_that_meets_all_norms )
+              .report--summary--item--subtitle= t( 'report.number_of_people_with_service_meeting_national_standard' )
 
       - else
         .report--no_data= t( 'report.report_box_no_value' )
