@@ -15,7 +15,7 @@
 .report--subsection--title
   = t('report.affordability_of_inputted_expenditure_for_actual_users');
 
-= render :partial => 'advanced/affordability_info', :locals => { :annual_expenditure_as_percentage_of_household_users => @questionnaire.total_annual_expenditure_for_actual_users_as_percentage_of_household_income / 100, :page_type => page_type }
+= render :partial => 'advanced/affordability_info', :locals => { :annual_expenditure_as_percentage_of_household_users => @questionnaire.total_annual_expenditure_for_actual_users_as_percentage_of_household_income, :page_type => page_type }
 
 .report--outputs
 
@@ -61,7 +61,7 @@
   = t('report.affordability_of_inputted_expenditure_for_designed_users');
 
 
-= render :partial => 'advanced/affordability_info', :locals => { :annual_expenditure_as_percentage_of_household_users => @questionnaire.total_annual_expenditure_for_designed_users_as_percentage_of_household_income / 100, :page_type => page_type }
+= render :partial => 'advanced/affordability_info', :locals => { :annual_expenditure_as_percentage_of_household_users => @questionnaire.total_annual_expenditure_for_designed_users_as_percentage_of_household_income, :page_type => page_type }
 
 .report--outputs
 
@@ -106,7 +106,7 @@
 .report--subsection--title
   = t('report.affordability_of_expected_expenditure_for_actual_users');
 
-= render :partial => 'advanced/affordability_info', :locals => { :annual_expenditure_as_percentage_of_household_users => @questionnaire.total_expected_annual_expenditure_for_actual_users_as_percentage_of_household_income / 100, :page_type => page_type }
+= render :partial => 'advanced/affordability_info', :locals => { :annual_expenditure_as_percentage_of_household_users => @questionnaire.total_expected_annual_expenditure_for_actual_users_as_percentage_of_household_income, :page_type => page_type }
 
 .report--outputs
 
