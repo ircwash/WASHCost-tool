@@ -149,6 +149,14 @@ class AdvancedQuestionnaire < Session
     end
   end
 
+  def operation_expenditure_per_year
+    if supply_system_technologies != nil && system_population_actual != nil && supply_system_technologies.count > 0 && system_population_actual.count == supply_system_technologies.count
+      supply_system_technologies.each_with_index.map{ |s,i| self.benchmark_minor_operation_expenditure[ s.to_i ] * system_population_actual[i].to_f }.inject(:+)
+    else
+      nil
+    end
+  end
+
   def expected_capital_maintenance_expenditure_per_person_per_year
     if supply_system_technologies.count > 0 && actual_hardware_expenditure.count == supply_system_technologies.count && system_lifespan_expectancy.count == supply_system_technologies.count && system_population_actual.count == supply_system_technologies.count
       #( supply_system_technologies.each_with_index.map{ |s,i| ( 30 / system_lifespan_expectancy[i].to_f ).floor * capital_maintenance_expenditure[i].to_f }.inject(:+) / 30 ) / system_population_actual.map{ |p| p.to_f }.inject(:+)
