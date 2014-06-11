@@ -28,15 +28,15 @@
           %ul.report--summary--item.report--summary--item-100
             %li.report--summary--item--title= t( 'report.expenditure_summary' )
             %li.report--summary--item--mini_title
-              = t( 'report.total_expenditure_for_thirty_years' )
+              %span.head-title= t( 'report.total_expenditure_for_thirty_years' )
               .report--summary--item--value= report_currency_value_for( @questionnaire.total_expenditure_for_years(30), 0 )
               .report--summary--item--subtitle= t( 'report.number_of_people', :people => @questionnaire.total_population.to_i )
             %li.report--summary--item--mini_title
-              = t( 'report.current_recurrent_expenditure' )
+              %span.head-title= t( 'report.current_recurrent_expenditure' )
               %span.report--summary--item--mini_title--subtitle= t( 'report.per_person_per_year' )
               .report--summary--item--value= report_currency_value_for( @questionnaire.total_inputted_recurrent_expenditure_per_person_per_year )
             %li.report--summary--item--mini_title
-              = t( 'report.expenditure_surplus_shortfall' )
+              %span.head-title= t( 'report.expenditure_surplus_shortfall' )
               %span.report--summary--item--mini_title--subtitle= t( 'report.per_person_per_year' )
               .report--summary--item--value= report_delta_currency_value_for( @questionnaire.total_expenditure_delta_per_person_per_year )
         - if report_service_level_summary_available

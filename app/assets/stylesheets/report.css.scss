@@ -154,7 +154,7 @@
 }
 
 .report--summary--item--value-title {
-  margin-top:20px;
+  //margin-top:20px;
 }
 
 .report--summary--item--rating {
@@ -784,13 +784,14 @@ ul.summary-details {
   }
 
   li span{
+    font-size:14px;
     color: white;
     text-transform: uppercase;
   }
 
   li span.title{
     color: #333;
-    text-transform: none;
+    //text-transform: none;
   }
 
   li:first-child{
@@ -836,6 +837,7 @@ ul.summary-details {
     li{
       display:block;
       width:100%;
+      height:auto;
     }
   }
 

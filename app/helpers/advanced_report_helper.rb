@@ -57,7 +57,7 @@ module AdvancedReportHelper
     if (value != nil && value == 0.00)
       "#{( @questionnaire.currency || '' ).upcase} #{number_with_precision( value.to_f.abs, :precision => precision )}"
     else
-      value != nil ? "#{( @questionnaire.currency || '' ).upcase} #{number_with_precision( value.to_f.abs, :precision => precision )} #{value.to_f > 0 ? t( 'report.surplus' ) : t( 'report.shortfall' )}" : t( 'report.no_data' )
+      value != nil ? "#{( @questionnaire.currency || '' ).upcase} #{number_with_precision( value.to_f.abs, :precision => precision )} #{value.to_f > 0 ?  t( 'report.surplus' ) : t( 'report.shortfall' )}" : t( 'report.no_data' )
     end
   end
 

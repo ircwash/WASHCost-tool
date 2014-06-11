@@ -32,7 +32,7 @@ en:
     cross_to_water: Cross to water
     summmary: Summary
     total: Total
-    surplus: Surplus
+    surplus: '  Surplus'
     shortfall: Shortfall
     total_cost: total cost
     level_of_service: level of service

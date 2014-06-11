@@ -127,9 +127,7 @@ class AdvancedQuestionnaire < Session
   def cost_of_capital_per_person_per_year
     if supply_system_technologies != nil && system_population_actual != nil && supply_system_technologies.count > 0 && loan_cost.count == supply_system_technologies.count && system_population_actual.count == supply_system_technologies.count
       #loan_cost.map{ |e| e.to_f }.inject(:+) / system_population_actual.map{ |p| p.to_f }.inject(:+) / 30
-
       loan_cost.each_with_index.map{ |s,i| s.to_f * loan_payback_period[i].to_f }.inject(:+) / system_population_actual.map{ |p| p.to_f }.inject(:+) / 30
-
     else
       nil
     end
@@ -387,11 +385,7 @@ class AdvancedQuestionnaire < Session
   def expected_annual_capital_maintenance_expenditure_for_actual_users
     if supply_system_technologies != nil && capital_maintenance_expenditure != nil && system_lifespan_expectancy != nil && supply_system_technologies.count > 0 && capital_maintenance_expenditure.count == supply_system_technologies.count && system_lifespan_expectancy.count == supply_system_technologies.count && total_actual_users != nil
       #supply_system_technologies.each_with_index.map{ |s,i| capital_maintenance_expenditure[i].to_f / system_lifespan_expectancy[i].to_f }.inject(:+) / total_actual_users
-      
       supply_system_technologies.each_with_index.map{ |s,i| actual_hardware_expenditure[i].to_f / system_lifespan_expectancy[i].to_f }.inject(:+) / total_actual_users
-
-
-
     else
       nil
     end
