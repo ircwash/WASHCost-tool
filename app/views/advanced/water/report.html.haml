@@ -8,6 +8,11 @@
     .report--header--pretitle= t( 'advanced.water.report.final_report' )
     %h1.report--header--title= t( 'report.summmary' )
 
+    %ul.summary-details
+      %li= t( 'report.summary_country' ) + ': '  + GetCountryFromCode(@questionnaire.country)
+      %li= t( 'report.summary_year' ) + ': '  + @questionnaire.year_of_expenditure
+      %li= t( 'report.summary_currency' ) + ': ' + GetCurrencyFromCode(@questionnaire.currency)
+
     .report--summary
 
       - if report_totals_available

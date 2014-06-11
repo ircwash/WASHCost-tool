@@ -807,3 +807,28 @@
   }
 
 }
+
+ul.summary-details {
+  @include clearfix;
+  list-style: none;
+  width: 100%;
+  margin-top: -1em;
+  margin-bottom: 2em;
+  display: block;
+  text-align: center;
+
+  li{
+    color: white;
+    text-align: center;
+    display: inline-block;
+    padding:0 20px;
+  }
+
+  li:first-child{
+    border-right: 1px solid white;
+  }
+
+  li:last-child{
+    border-left: 1px solid white;
+  }
+}

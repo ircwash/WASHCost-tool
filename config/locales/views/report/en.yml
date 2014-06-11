@@ -12,6 +12,9 @@ en:
     distance: Distance
     no_answer_provided: No answer provided
     no_data: There's no data for this
+    summary_currency: Currency
+    summary_year: Year of expenditure
+    summary_country: Country
     time:
       minutes: min
     less_than: Less than
