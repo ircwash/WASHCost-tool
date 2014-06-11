@@ -1,8 +1,6 @@
 = content_for :title do
   Advanced Report
 
-- page_type = 'water'
-
 .report
 
   .report--header
@@ -60,7 +58,7 @@
     .report--section--edit
       %a.report--section--edit--link{ :href => advanced_water_action_path( I18n.locale, 'technology' ) }= t( 'edit' )
 
-    = render :partial => 'advanced/affordability_report', :locals => { :page_type => page_type }
+    = render :partial => 'advanced/affordability_report', :locals => { :page_type => 'water' }
 
   %section.report--section
     .report--section--title= t('report.service_level_summary')
