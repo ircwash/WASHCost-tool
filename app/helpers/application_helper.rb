@@ -18,13 +18,21 @@ module ApplicationHelper
   end
 
   def GetCountryFromCode(code)
-    country = Country.find_country_by_alpha2(code)
-    country.name
+    if code.nil?
+      'Uknown'
+    else
+      country = Country.find_country_by_alpha2(code)
+      country.name
+    end
   end
 
   def GetCurrencyFromCode(code)
-    currency = Money.new(1, code.upcase).currency
-    currency.name
+    if code.nil?
+      'Uknown'
+    else
+      currency = Money.new(1, code.upcase).currency
+      currency.name
+    end
   end
 
   def options_for_currencies
