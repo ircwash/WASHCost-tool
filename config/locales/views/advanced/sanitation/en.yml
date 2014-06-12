@@ -2,6 +2,13 @@ en:
   advanced:
     sanitation:
       questionnaire:
+        options_for_area_type:
+          rural: Rural
+          small_town: Small town
+          peri_urban: Peri-urban
+          urban: Urban
+          mixed: Mixed
+          unknown: Dont know
         sanitation_service_exists:
           label: Does the sanitation service already exist or is it planned?
           placeholder: Select an option
@@ -93,6 +100,7 @@ en:
         service_level_share:
           label: Service level share
           placeholder: 25%
+          tooltip: The tip
         national_accessibility_norms:
           label: Does the service accessibility meet the national norms?
           placeholder: Select an option

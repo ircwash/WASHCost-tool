@@ -1,0 +1,25 @@
+en:
+  advanced:
+    shared:
+      dont_know: Je ne sais pas
+      country:
+        label: Pays?
+        placeholder: Sélectionnez un pays
+        tooltip: S'il vous plaît sélectionner le pays dans lequel se trouve le service.
+      currency:
+        label: Devise?
+        placeholder: Sélectionnez un devise
+        tooltip: Veuillez choisir une devise pour le calcul des coûts
+      year_of_expenditure:
+        label: Année de dépenses?
+        placeholder: Sélectionnez un année
+        tooltip: "Lorsque vous saisissez les coûts, les dépenses effectuées d'autres années ou des devises différentes doivent être converties en cette devise et vers l'année de référence actuelle. Voir la formation WASHCost et l'exemple de convertisseur de devises: http://www.washcost.info/page/2521"
+      region:
+        label: Région?
+        placeholder: Calabria
+        tooltip: S'il vous plaît sélectionnez la région dans laquelle se trouve le service.
+      town:
+        label: Nom de la ville/localité?
+        placeholder: Catanzaro
+        tooltip: S'il vous plaît sélectionner la ville / ville où se trouve le service.
+      technology_choice_required: Un choix d'au moins une technologie est requis

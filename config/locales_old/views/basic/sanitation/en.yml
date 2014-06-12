@@ -1,0 +1,152 @@
+﻿en:
+  basic:
+    sanitation:
+      questionnaire:
+        capital_expenditure:
+          question: 'How much has been/will be spent setting up the sanitation service including construction (per person)?'
+          info: "The white line shows the range of costs found during the WASHCost project in areas with a basic level of service. The start up costs include expenditure related to hardware and software as described below:  <br/>Capital Expenditure (hardware): Capital invested in constructing or purchasing fixed assets such as concrete structures, pumps and pipes. <br/>Capital Expenditure (software): The costs of one-off work with stakeholders prior to construction or implementation, extension, enhancement and augmentation (including costs of one-off capacity building activities). <br/>See: http://akvopedia.org/wiki/Capital_Expenditure_(CapEx)"
+        country:
+          question: In which country does your sanitation service take place?
+          placeholder: Select a country
+          info: "Please select the country where the service is taking place to help set the context for your calculation." 
+        population:
+          question: How many people in this area are receiving this sanitation service?
+        #added info box
+          info: The number of people receiving the sanitation service is an important part of service area cost calculations. In the basic tool, you can select between 100 and 1,000,000 people.
+        latrine:
+          question: What type of latrine technology is being used?
+          options:
+            #Check copy with Peter Burr for the sanitation technologies 
+            traditional_pit_latrine: Pit latrine without a concrete slab
+            slab_latrine: Concrete slab latrine
+            vip_latrine: VIP latrine
+            pour_flush_latrine: Pour Flush Latrine
+            twin_pit_pour_flush_latrine: Double Pit Pour Flush Latrine
+            latrine_with_septic_tank: Latrine with septic tank
+          #added info: assuming the same syntax as for water. 
+          info: |+
+            Traditional pit latrine: Pit latrine with an impermeable slab (made often from local materials) but not made out of concrete. See: http://akvopedia.org/wiki/Single_Pit
+            Slab latrine: A pit latrine with a concrete slab. 
+            VIP latrine: A Ventilated Improved Pit Latrine, also known as a VIP latrine, is a pit latrine with a concrete slab and concrete superstructures (with ventilation pipeand screen to reduce odours and flies). "See:" "http://akvopedia.org/wiki/Single_Ventilated_Improved_Pit"
+            Pour flush latrine: Any kind of single pit pour flush latrine with a concrete slab and without a septic system.
+            Twin pit pour flush latrine: Any kind of double pit pour flush latrine with a concrete slab and without a septic system. 
+            Latrine with septic tank: A latrine with septic tank and drainage field
+        recurrent_expenditure:
+        #recurrent_expenditure seems to be double. It is also in views/basic/en.yml
+        #I would prefer to keep this sanitation specific text
+          question: How much is being spent/will be spent to operate, maintain and support the delivery of sanitation services (per person per year)?
+          info: "Please indicate the total recurrent costs to maintain a continuous service. The different costs include: <br/>Operating and minor maintenance expenditure: typically regular expenditure such as cleaning materials and labour. See: http://akvopedia.org/wiki/Operational_and_Minor_Maintenance_Expenditure_(OpEx) <br/>Capital maintenance expenditure: Asset renewal and replacement cost occasional and ‘lumpy’ costs that seek to restore the functionality of a system or facility, such as replacing a latrine slab, emptying the pit, or repairing the roof of a superstrucutre. See: http://akvopedia.org/wiki/Capital_Maintenance_Expenditure_(CapManEx) <br/>Expediture of direct support: Direct support is structured support to decentralised service authorities or local governments, service providers and users or user groups related to the organisation and the management of a WASH service. The costs cover local planning, monitoring, technical advice and administrative, organisational or legal support after construction. The direct support includes capacity building for local governments to adhere to national norms, standards and guidelines. See: http://akvopedia.org/wiki/Expenditure_Direct_Support_(ExpDS) <br/>Expenditure of indirect support: Indirect support costs cover expenditure on the macro-level support, including planning and policy making. See: http://akvopedia.org/wiki/Expenditure_Indirect_Support_(ExpIDS)"
+        household_latrine:
+          question: Does each household have its own latrine?
+          options:
+            #made options more descriptive for the report
+            household_latrine_available: "Household-level latrine"
+            household_latrine_unavailable: "No household-level latrine"
+          #added info
+          info: A latrine at household level means that there is a latrine dedicated to just one household and on location. A shared latrine, is not considered a household-level latrine.
+        impermeability:
+          question: Does the latrine have an impermeable slab?
+          options:
+            #made option more descriptive
+            impermeable_slab: Impermeable slab present
+            no_impermeable_slab: No impermeable slab
+          #added info.
+          info: The slab refers to the floor of the latrine, often covering the pit. The slab is important of the latrine maintenance and to a clean environment. An impermeable slab can be made from local materials or concrete. For example, pour-flush or septic tank latrines often have a concrete or bricked lined pit/tank with sealed impermeable slab.
+        environmental_impact:
+          question: What is the environmental impact of the service?
+          options:
+            non_problematic_safe_disposal_reuse_biproducts: Non problematic + safe disposal + re-use of bi-products
+            non_problematic_safe_disposal: Non problematic + safe disposal
+            significant_pollution: Significant pollution
+          #added info
+          info: Separating the people from feces is the goal of safe sanitation. Environmental protection is required to ensure that the use of a latrine does not cause harm to people elsewhere. 
+        usage:
+          question: Which family members use the latrine?
+          options:
+            latrine_usage_all: All members use the latrine
+            latrine_usage_some: Some members use the latrine
+            latrine_usage_none: None of the family uses the latrine
+          #added info
+          info: It is critical that all household members also use the latrine and do not defecate in the open. The level of a sanitation service is also judged by the use of household members.
+        reliability:
+          question: Is the latrine cleaned and emptied when required?
+          options:
+            #made options more descriptive
+            latrine_reliable: "The latrine is cleaned and emptied"
+            latrine_inconsistent: The latrine is not consistently cleaned and emptied
+            latrine_unreliable: The latrine is not cleaned and emptied
+          #added info
+          info: The reliability of the latrine depends on the maintenance of the facility. To offer a clean and safe sanitation option, it should be cleaned regularly and the pit or septic tank emptied on time. 
+      report:
+        final_report: Basic Sanitation | Final Report
+        sustainability:
+          one_star: No service
+          two_stars: Limited service
+          three_stars: Basic service
+          four_stars: Improved service
+        sections:
+          country: Country
+          latrine_technology: Latrine Technology
+          population: Population
+          capital_expenditure_per_person: Capital expenditure per person
+          recurrent_expenditure_per_person: Recurrent expenditure per person
+          household_latrine: Household-level latrine
+          impermeability: Impermeability
+          environmental_impact: Environmental impact
+          usage: Usage
+          reliatilibty: Reliability
+        summaries:
+          a111: "There is a high incidence of open defecation as latrines are not being used. Additionally, if there are latrines, these are not being cleaned or emptied. Barely any money is being spent on recurrent annual expenditure  and as a result the service has failed and lives may be at risk!"
+          a113: "Although existing latrines are reasonably clean, there is a high incidence of open defecation as latrines are not being used. Barely any money is being spent on recurrent annual expenditure, specifically on maintaining or improving behaviour change for latrine use. Lives may be at risk!"
+          a114: "Although existing latrines are routinely cleaned, there is a high incidence of open defecation as latrines are not being used. Barely any money is being spent on recurrent annual expenditure, specifically on maintaining or improving behaviour change for latrine use. Lives may be at risk!"
+          a131: "The facilities are being used by some household members. However, latrines are not being cleaned or emptied and may pose a health risk.  Barely any money is being spent on recurrent annual expenditure to ensure basic maintenance of the latrine."
+          a133: "Existing latrines are reasonably clean and facilities are being used by some household members. The total recurrent annual expenditure is lower than WASHCost benchmarks there might be context specific reasons for this but consider validating the data inputted. "
+          a134: "Existing latrines are routinely cleaned and emptied. Facilities are being used by some household members. The total recurrent annual expenditure is lower than WASHCost benchmarks there might be context specific reasons for this but consider validating the data inputted. "
+          a141: "The facilities are being used by all household members. However, latrines are not being cleaned or emptied and may pose a health risk. Barely any money is being spent on recurrent annual expenditure  to ensure basic maintenance of the latrine."
+          a143: "Existing latrines are reasonably clean and facilities are being used by all household members. The total recurrent annual expenditure is lower than WASHCost benchmarks there might be context specific reasons for this but consider validating the data inputted. "
+          a144: "Existing latrines are routinely cleaned and emptied. Facilities are being used by all household members. The total recurrent annual expenditure is lower than WASHCost benchmarks there might be context specific reasons for this but consider validating the data inputted. "
+          a211: "There is a high incidence of open defecation as latrines are not being used. Additionally, if there are latrines, these are not being cleaned or emptied. Recurrent annual expenditure is within WASHCost benchmarks so factors other than recurrent costs are influencing the service. Another possibility is that the context requires more recurrent expenditure to promote latrine use and maintenance."
+          a213: "Although existing latrines are reasonably clean, there is a high incidence of open defecation as latrines are not being used. Recurrent annual expenditure is within WASHCost benchmarks so factors other than recurrent costs are influencing the service. Another possibility is that the context requires more recurrent expenditure to promote latrine use."
+          a214: "Although existing latrines are routinely cleaned, there is a high incidence of open defecation as latrines are not being used. Recurrent annual expenditure is within WASHCost benchmarks so factors other than recurrent costs are influencing the service. Another possibility is that the context requires more recurrent expenditure to promote latrine use."
+          a231: "The facilities are being used by some household members. However, latrines are not being cleaned or emptied and may pose a health risk. Recurrent annual expenditure is within WASHCost benchmarks so factors other than recurrent costs are influencing the service. Another possibility is that the context requires more recurrent expenditure to promote latrine maintenance."
+          a233: "Existing latrines are reasonably clean and facilities are being used by some household members. Recurrent annual expenditure is within WASHCost benchmarks."
+          a234: "Existing latrines are routinely cleaned and emptied. Facilities are being used by some household members. Recurrent annual expenditure is within WASHCost benchmarks."
+          a241: "The facilities are being used by all household members. However, latrines are not being cleaned or emptied and may pose a health risk. Recurrent annual expenditure is within WASHCost benchmarks so factors other than recurrent costs are influencing the service. Another possibility is that the context requires more recurrent expenditure to promote latrine maintenance."
+          a243: "Existing latrines are reasonably clean and facilities are being used by all household members. Recurrent annual expenditure is within WASHCost benchmarks."
+          a244: "Existing latrines are routinely cleaned and emptied. Facilities are being used by all household members. Recurrent annual expenditure is within WASHCost benchmarks."
+          a311: "There is a high incidence of open defecation as latrines are not being used. Additionally, if there are latrines, these are not being cleaned or emptied. Recurrent annual expenditure is higher than WASHCost benchmarks so factors other than recurrent costs are influencing the service.  There are two possibilities, the context is exceptional and requires specific measure to address latrine use and maintenance and/or factors other than costs are having a significant impact on service delivery."
+          a313: "Although existing latrines are reasonably clean, there is a high incidence of open defecation as latrines are not being used. Recurrent annual expenditure is higher than WASHCost benchmarks so factors other than recurrent costs are influencing the service. There are two possibilities, the context is exceptional and requires specific measure to address latrine use and/or factors other than costs are having a significant impact on service delivery."
+          a314: "Although existing latrines are routinely cleaned, there is a high incidence of open defecation as latrines are not being used. Recurrent annual expenditure is higher than WASHCost benchmarks so factors other than recurrent costs are influencing the service. There are two possibilities, the context is exceptional and requires specific measure to address latrine use and/or factors other than costs are having a significant impact on service delivery."
+          a331: "The facilities are being used by some household members. However, latrines are not being cleaned or emptied and may pose a health risk. Recurrent annual expenditure is higher than WASHCost benchmarks so factors other than recurrent costs are influencing the service.  There are two possibilities, the context is exceptional and requires specific measure to address latrine maintenance and/or factors other than costs are having a significant impact on service delivery."
+          a333: "Existing latrines are reasonably clean and facilities are being used by some household members. Recurrent annual expenditure is higher than WASHCost benchmarks. The context may require high levels of mobilisation for latrine use and maintenance or the service could be run more efficiently."
+          a334: "Existing latrines are routinely cleaned and emptied. Facilities are being used by some household members. Recurrent annual expenditure is higher than WASHCost benchmarks perhaps resulting in higher levels of service. Alternatively the context may require high levels of mobilisation for latrine use and maintenance or the service could be run more efficiently."
+          a341: "The facilities are being used by all household members. However, latrines are not being cleaned or emptied and may pose a health risk. Recurrent annual expenditure is higher than WASHCost benchmarks so factors other than recurrent costs are influencing the service. There are two possibilities, the context is exceptional and requires specific measure to address latrine maintenance and/or factors other than costs are having a significant impact on service delivery."
+          a343: "Existing latrines are reasonably clean and facilities are being used by all household members. Recurrent annual expenditure is higher than WASHCost benchmarks. The context may require high levels of mobilisation for latrine use and maintenance or the service could be run more efficiently."
+          a344: "Existing latrines are routinely cleaned and emptied. Facilities are being used by all household members. Recurrent annual expenditure is higher than WASHCost benchmarks perhaps resulting in higher levels of service. Alternatively the context may require high levels of mobilisation for latrine use and maintenance or the service could be run more efficiently."
+          b111: "These facilities do not provide adequate separation between users and faeces and it is causing significant environmental pollution, lives may be at risk! This may be due to insufficient capital expenditure, which is well below WASHCost benchmarks or other factors other than costs are influencing service delivery."
+          b113: These facilities do not provide adequate separation between users and faeces. However due to context, there is no problematic environmental impact, and therefore faeces are disposed of safely. This may be due to insufficient capital expenditure, which is well below WASHCost benchmarks or other factors other than costs are influencing service delivery.
+          b114: These facilities do not provide adequate separation between users and faeces. However due to context, there is no problematic environmental impact, and faeces are being re-used safely. This may be due to insufficient capital expenditure, which is well below WASHCost benchmarks or other factors other than costs are influencing service delivery.
+          b131: These facilities have a cement or impermeable slab providing adequate separation between users and faeces, however it is causing significant environmental pollution and lives may be at risk! This may be due to insufficient capital expenditure  which is well below WASHCost benchmarks or other factors other than costs are influencing service delivery.
+          b133: The capital expenditure entered is lower than WASHCost benchmarks yet these facilities have a cement or impermeable slab providing adequate separation between users and faeces and there is no problematic environmental impact. Are there any reasons for this?
+          b134: The capital expenditure entered is lower than WASHCost benchmarks yet these facilities have a cement or impermeable slab providing adequate separation between users and faeces. The by-products from the facilities are also being re-used safely. Are there any reasons for this?
+          b141: These facilities have a cement or impermeable slab providing adequate separation between users and faeces within the compound, however it is causing significant environmental pollution and lives may be at risk! This may be due to insufficient capital expenditure  which is well below WASHCost benchmarks or other factors other than costs are influencing service delivery.
+          b143: The capital expenditure entered is lower than WASHCost benchmarks yet these facilities have a cement or impermeable slab providing adequate separation between users within the compound and faeces and there is no problematic environmental impact. Are there any reasons for this?
+          b144: The capital expenditure entered is lower than WASHCost benchmarks yet these facilities have a cement or impermeable slab providing adequate separation between users and faeces within the compound. The by-products from the facilities are also being re-used safely. Are there any reasons for this?
+          b211: These facilities do not provide adequate separation between users and faeces and it is causing significant environmental pollution, lives may be at risk! Capital expenditure is within WASHCost benchmarks, factors other than costs are influencing service delivery or the context requires more expensive infrastructure.
+          b213: These facilities do not provide adequate separation between users and faeces. However due to context, there is no problematic environmental impact, and therefore faeces are disposed of safely. Capital expenditure is within WASHCost benchmarks, factors other than costs are influencing access to adequate facilities or the context requires more expensive infrastructure.
+          b214: These facilities do not provide adequate separation between users and faeces. However due to context, there is no problematic environmental impact, and faeces are being re-used safely. Capital expenditure is within WASHCost benchmarks, factors other than costs are influencing access to adequate facilities or the context requires more expensive infrastructure.
+          b231: These facilities have a cement or impermeable slab providing adequate separation between users and faeces, however it is causing significant environmental pollution and lives may be at risk! Capital expenditure is within WASHCost benchmarks, factors other than costs are influencing environmental safety or the context requires more expensive infrastructure.
+          b233: The capital expenditure entered is within WASHCost benchmarks and these facilities have a cement or impermeable slab providing adequate separation between users and faeces and there is no problematic environmental impact.
+          b234: The capital expenditure entered is within WASHCost benchmarks and these facilities have a cement or impermeable slab providing adequate separation between users and faeces. The by-products from the facilities are also being re-used safely.
+          b241: These facilities have a cement or impermeable slab providing adequate separation between users and faeces within the compound, however it is causing significant environmental pollution and lives may be at risk! Capital expenditure is within WASHCost benchmarks, factors other than costs are influencing environmental safety or the context requires more expensive infrastructure.
+          b243: The capital expenditure entered is within WASHCost benchmarks and these facilities have a cement or impermeable slab providing adequate separation between users within the compound and faeces and there is no problematic environmental impact.
+          b244: The capital expenditure entered is within WASHCost benchmarks and these facilities have a cement or impermeable slab providing adequate separation between users and faeces within the compound. The by-products from the facilities are also being re-used safely.
+          b311: These facilities do not provide adequate separation between users and faeces and it is causing significant environmental pollution, lives may be at risk! Capital expenditure is higher than WASHCost benchmarks, factors other than costs are influencing service delivery and/or the context is exceptional and requires more expensive infrastructure.
+          b313: These facilities do not provide adequate separation between users and faeces. However due to context, there is no problematic environmental impact, and therefore faeces are disposed of safely. Capital expenditure is higher than WASHCost benchmarks, factors other than costs are influencing access to adequate facilities and/or the context is exceptional and requires more expensive infrastructure.
+          b314: These facilities do not provide adequate separation between users and faeces. However due to context, there is no problematic environmental impact, and faeces are being re-used safely. Capital expenditure is higher than WASHCost benchmarks, factors other than costs are influencing access to adequate facilities and/or the context is exceptional and requires more expensive infrastructure.
+          b331: These facilities have a cement or impermeable slab providing adequate separation between users and faeces, however it is causing significant environmental pollution and lives may be at risk! Capital expenditure is higher than WASHCost benchmarks, factors other than costs are influencing environmental safety or the context is exceptional and requires more expensive infrastructure.
+          b333: The capital expenditure entered is higher than WASHCost benchmarks and these facilities have a cement or impermeable slab providing adequate separation between users and faeces and there is no problematic environmental impact. The context may be exceptional and requires more expensive infrastructure or cost efficiency can be improved.
+          b334: The capital expenditure entered is higher than WASHCost benchmarks and these facilities have a cement or impermeable slab providing adequate separation between users and faeces. The by-products from the facilities are also being re-used safely. A higher level of service is being achieved or the context may be exceptional and requires more expensive infrastructure. Another possibility is that cost efficiency can be improved.
+          b341: These facilities have a cement or impermeable slab providing adequate separation between users and faeces within the compound, however it is causing significant environmental pollution and lives may be at risk! Capital expenditure is higher than WASHCost benchmarks, factors other than costs are influencing environmental safety or the context is exceptional and requires more expensive infrastructure.
+          b343: The capital expenditure entered is higher than WASHCost benchmarks and these facilities have a cement or impermeable slab providing adequate separation between users within the compound and faeces and there is no problematic environmental impact. The context may be exceptional and requires more expensive infrastructure or cost efficiency can be improved.
+          b344: The capital expenditure entered is within WASHCost benchmarks and these facilities have a cement or impermeable slab providing adequate separation between users and faeces within the compound. The by-products from the facilities are also being re-used safely. A very good level of service is being achieved or the context may be exceptional and requires more expensive infrastructure. Another possibility is that cost efficiency can be improved.

@@ -14,12 +14,11 @@ module ApplicationHelper
     translated_countries.sort do |a, b|
       a[0].to_s <=> b[0].to_s
     end
-
   end
 
   def GetCountryFromCode(code)
     if code.nil?
-      'Uknown'
+      t('report.code_not_found')
     else
       country = Country.find_country_by_alpha2(code)
       country.name
@@ -28,7 +27,7 @@ module ApplicationHelper
 
   def GetCurrencyFromCode(code)
     if code.nil?
-      'Uknown'
+      t('report.code_not_found')
     else
       currency = Money.new(1, code.upcase).currency
       currency.name

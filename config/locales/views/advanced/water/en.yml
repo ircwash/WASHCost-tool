@@ -2,6 +2,11 @@ en:
   advanced:
     water:
       questionnaire:
+        options_for_sanitationwater_exists:
+          neither: Neither
+          existing: Existing
+          planned: Planned
+          unknown: Don't know
         water_system_exists:
           label: Does the water system already exist or is it planned?
           placeholder: Select an option
@@ -128,6 +133,7 @@ en:
         service_level_share:
           label: Service level share
           placeholder: 25%
+          tooltip: The tip
         national_accessibility_norms:
           label: Does the service accessibility meet the national norms?
           placeholder: Select an option
