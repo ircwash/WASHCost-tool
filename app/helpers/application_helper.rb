@@ -48,15 +48,27 @@ module ApplicationHelper
   end
 
   def hardware_and_software_expenditure(q)
-    q['supply_system_technologies'].each_with_index.map{ |s,i| q['actual_hardware_expenditure'][i].to_f + q['actual_software_expenditure'][i].to_f }.inject(:+)
+    if q['supply_system_technologies'] != nil && q['actual_hardware_expenditure'] != nil && q['actual_software_expenditure']
+      q['supply_system_technologies'].each_with_index.map{ |s,i| q['actual_hardware_expenditure'][i].to_f + q['actual_software_expenditure'][i].to_f }.inject(:+)
+    else
+      0
+    end
   end
 
   def total_operation_expenditure(q)
-    q['minor_operation_expenditure'].map{ |e| e.to_f }.inject(:+)
+    if q['minor_operation_expenditure'] != nil
+      q['minor_operation_expenditure'].map{ |e| e.to_f }.inject(:+)
+    else
+      0
+    end
   end
 
   def total_capital_maintenance_expenditure(q)
-    q['capital_maintenance_expenditure'].map{ |e| e.to_f }.inject(:+)
+    if q['capital_maintenance_expenditure'] != nil
+      q['capital_maintenance_expenditure'].map{ |e| e.to_f }.inject(:+)
+    else
+      0
+    end
   end
 
   def direct_support_cost(q)
@@ -64,7 +76,11 @@ module ApplicationHelper
   end
 
   def total_population(q)
-    q['system_population_actual'].map{ |p| p.to_f }.inject(:+)
+    if q['supply_system_technologies'] != nil
+      q['system_population_actual'].map{ |p| p.to_f }.inject(:+)
+    else
+      0
+    end
   end
 
   def indirect_support_cost(q)
@@ -72,7 +88,11 @@ module ApplicationHelper
   end
 
   def cost_of_capital_for_years(q, years)
-    q['supply_system_technologies'].each_with_index.map{ |s,i| q['loan_cost'][i].to_f * [ q['loan_payback_period'][i].to_i, years ].min }.inject( :+ )
+    if q['supply_system_technologies'] != nil && q['loan_cost'] != nil && q['loan_payback_period'] != nil
+      q['supply_system_technologies'].each_with_index.map{ |s,i| q['loan_cost'][i].to_f * [ q['loan_payback_period'][i].to_i, years ].min }.inject( :+ )
+    else
+      0
+    end
   end
   #end functions
 
