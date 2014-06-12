@@ -1,6 +1,6 @@
 - if annual_expenditure_as_percentage_of_household_users != nil
 
-  - annual_expenditure_as_percentage_of_household_users = annual_expenditure_as_percentage_of_household_users
+  -#- annual_expenditure_as_percentage_of_household_users = annual_expenditure_as_percentage_of_household_users
 
   .report--affordability_info
 
@@ -14,10 +14,23 @@
       - if annual_expenditure_as_percentage_of_household_users  > 3.0 && annual_expenditure_as_percentage_of_household_users < 5.0
         - affordability = 'risk'
 
-      .report--affordability_info--traffic_light
-        %div{ :class => "report--affordability_info--traffic_light--item #{annual_expenditure_as_percentage_of_household_users <= 3.0 ? 'report--affordability_info--traffic_light--item-green' : ''}" }
-        %div{ :class => "report--affordability_info--traffic_light--item #{ annual_expenditure_as_percentage_of_household_users > 3.0 && annual_expenditure_as_percentage_of_household_users < 5.0} ? 'report--affordability_info--traffic_light--item-amber' : ''" }
-        %div{ :class => "report--affordability_info--traffic_light--item #{annual_expenditure_as_percentage_of_household_users >= 5.0 ? 'report--affordability_info--traffic_light--item-red' : ''}" }
+      - if annual_expenditure_as_percentage_of_household_users <= 3.0
+        .report--affordability_info--traffic_light
+          %div{ :class => "report--affordability_info--traffic_light--item report--affordability_info--traffic_light--item-green" }
+          %div{ :class => "report--affordability_info--traffic_light--item report--affordability_info--traffic_light--item" }
+          %div{ :class => "report--affordability_info--traffic_light--item report--affordability_info--traffic_light--item" }
+
+      - if annual_expenditure_as_percentage_of_household_users  > 3.0 && annual_expenditure_as_percentage_of_household_users < 5.0
+        .report--affordability_info--traffic_light
+          %div{ :class => "report--affordability_info--traffic_light--item report--affordability_info--traffic_light--item" }
+          %div{ :class => "report--affordability_info--traffic_light--item report--affordability_info--traffic_light--item-amber" }
+          %div{ :class => "report--affordability_info--traffic_light--item report--affordability_info--traffic_light--item" }
+
+      - if annual_expenditure_as_percentage_of_household_users >= 5.0
+        .report--affordability_info--traffic_light
+          %div{ :class => "report--affordability_info--traffic_light--item report--affordability_info--traffic_light--item" }
+          %div{ :class => "report--affordability_info--traffic_light--item report--affordability_info--traffic_light--item" }
+          %div{ :class => "report--affordability_info--traffic_light--item report--affordability_info--traffic_light--item-red" }
 
       %div{ :class => "report--affordability_info--verdict report--affordability_info--verdict-#{affordability}" }
         = t( 'report.' + affordability )
@@ -32,10 +45,23 @@
       - if annual_expenditure_as_percentage_of_household_users  > 1.0 && annual_expenditure_as_percentage_of_household_users < 2.0
         - affordability = 'risk'
 
-      .report--affordability_info--traffic_light
-        %div{ :class => "report--affordability_info--traffic_light--item #{annual_expenditure_as_percentage_of_household_users <= 1.0 ? 'report--affordability_info--traffic_light--item-green' : ''}" }
-        %div{ :class => "report--affordability_info--traffic_light--item #{ annual_expenditure_as_percentage_of_household_users > 1.0 && annual_expenditure_as_percentage_of_household_users < 2.0} ? 'report--affordability_info--traffic_light--item-amber' : ''" }
-        %div{ :class => "report--affordability_info--traffic_light--item #{annual_expenditure_as_percentage_of_household_users >= 2.0 ? 'report--affordability_info--traffic_light--item-red' : ''}" }
+      - if annual_expenditure_as_percentage_of_household_users <= 1.0
+        .report--affordability_info--traffic_light
+          %div{ :class => "report--affordability_info--traffic_light--item report--affordability_info--traffic_light--item-green" }
+          %div{ :class => "report--affordability_info--traffic_light--item report--affordability_info--traffic_light--item" }
+          %div{ :class => "report--affordability_info--traffic_light--item report--affordability_info--traffic_light--item" }
+
+      - if annual_expenditure_as_percentage_of_household_users  > 1.0 && annual_expenditure_as_percentage_of_household_users < 2.0
+        .report--affordability_info--traffic_light
+          %div{ :class => "report--affordability_info--traffic_light--item report--affordability_info--traffic_light--item" }
+          %div{ :class => "report--affordability_info--traffic_light--item report--affordability_info--traffic_light--item-amber" }
+          %div{ :class => "report--affordability_info--traffic_light--item report--affordability_info--traffic_light--item" }
+
+      - if annual_expenditure_as_percentage_of_household_users >= 2.0
+        .report--affordability_info--traffic_light
+          %div{ :class => "report--affordability_info--traffic_light--item report--affordability_info--traffic_light--item" }
+          %div{ :class => "report--affordability_info--traffic_light--item report--affordability_info--traffic_light--item" }
+          %div{ :class => "report--affordability_info--traffic_light--item report--affordability_info--traffic_light--item-red" }
 
       %div{ :class => "report--affordability_info--verdict report--affordability_info--verdict-#{affordability}" }
         = t( 'report.' + affordability )
