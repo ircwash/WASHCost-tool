@@ -15,13 +15,9 @@ $( document ).ready( function()
           tech    = container.data( 'chart-tech' ),
           loan_cost    = container.data( 'chart-loancost' ),
           loan_payback    = container.data( 'chart-loanpayback' ),
+          actual_hardware    = container.data( 'chart-actualhardware' ),
+          system_lifespan    = container.data( 'chart-systemlifespan' ),
           chart, i, j;
-
-                    /*multipliers  =
-          [
-            [ 1,1,1,1,1.5,1,1,1,1,1.5,1,1,3,1,1,1.5,1,1,1,1,2.25,1,1,1,2.5,1,1,1,2.5,4 ],
-            [ 1,1,1,1,1.5,1,1,1,1,1.5,1,1,4.5,1,1,2,1,1,1,1,3,1,1,1,4,1,1,1,3.5,6 ],
-          ],*/
 
       if ( type == 'advanced' )
       {
@@ -72,95 +68,31 @@ $( document ).ready( function()
         chartObjects.push({ seriesName: 'indirect_support_per_year', colour: '#1f9ed8', data: indirect_support_per_year });
 
         var cost_capital_tech = [];
+        var colours_cct = [ 'FF6600', 'CC5200', 'FF8533' ];
 
-        for ( i = 0; i < 4; i++ ) {
+        for ( i = 0; i < tech.length; i++ ) {
           cost_capital_tech[i] = [];
           for ( j = 1; j < 31; j++ ) {
             cost_capital_tech[i][j-1] = { year:j , cost: (loan_payback[i] >= j) ? loan_cost[i] : 0 };
           }
-          chartObjects.push({ seriesName: 'cost_of_capital_' + i, colour: '#ff6600', data: cost_capital_tech[i] });
+          chartObjects.push({ seriesName: 'cost_of_capital_' + i, colour: '#' + colours_cct[i], data: cost_capital_tech[i] });
         }
+
+        var capital_maintenance_expenditure = [];
+
+        for ( i = 1; i < 31; i++ ) {
+          var n = 0;
+          for ( j = 0; j < tech.length; j++ ) {
+            n = n + (system_lifespan[j] === i) ? actual_hardware[j] : 0; 
+          }
+          capital_maintenance_expenditure[i-1] = n;
+        }
+
+        chartObjects.push({ seriesName: 'capital_maintenance_expenditure', color: '#333333', data: capital_maintenance_expenditure });
 
         console.log(chartObjects);
 
-        // build data based on multipliers
-        /*for ( i = 0; i < 2; i++ )
-        {
-          datapoints[i] = [];
-
-          for ( j = 0; j < 30; j++ )
-          {
-            datapoints[i][j] = { year:j + 1, cost:seed_points[i] };
-          }
-        }
-        for ( i = 2; i < 4; i++ )
-        {
-          datapoints[i] = [];
-
-          for ( j = 0; j < 30; j++ )
-          {
-            datapoints[i][j] = { year:j + 1, cost:seed_points[i] * multipliers[i-2][j] };
-          }
-        }*/
-
-        chart.render( chartObjects
-        /*[
-          {
-            seriesName: 'operation_expenditure_per_year',
-            colour: '#858687',
-            data: operation_expenditure_per_year
-          },
-          {
-            seriesName: 'direct_support_per_year',
-            colour: '#f8ea03',
-            data: direct_support_per_year
-          },
-          {
-            seriesName: 'indirect_support_per_year',
-            colour: '#1f9ed8',
-            data: indirect_support_per_year
-          },
-          {
-            seriesName: 'cost_of_capital_0',
-            colour: '#1f9ed8',
-            data: cost_capital_tech[0]
-          },
-          {
-            seriesName: 'cost_of_capital_1',
-            colour: '#1f9ed8',
-            data: cost_capital_tech[1]
-          },
-          {
-            seriesName: 'cost_of_capital_2',
-            colour: '#1f9ed8',
-            data: cost_capital_tech[2]
-          },
-          {
-            seriesName: 'cost_of_capital_3',
-            colour: '#1f9ed8',
-            data: cost_capital_tech[3]
-          }*/
-          /*{
-            seriesName:'Total',
-            colour:'#858687',
-            data:datapoints[3]
-          },
-          {
-            seriesName:'Capital maintenance expenditure',
-            colour:'#f8ea03',
-            data:datapoints[2]
-          },
-          {
-            seriesName:'Expenditure on direct support',
-            colour:'#1f9ed8',
-            data:datapoints[1]
-          },
-          {
-            seriesName:'Minor operation and maintenance expenditure',
-            colour:'#e52184',
-            data:datapoints[0]
-          }
-        ]*/ );
+        chart.render( chartObjects );
       }
       else
       {
