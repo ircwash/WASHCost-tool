@@ -12,7 +12,9 @@ module ApplicationHelper
 
     exchange_for_currency = ExchangeRate.find_by(name: report_currency)
 
-    total = (value.to_f / exchange_for_currency.rate.to_f)
+    rate = exchange_for_currency != nil ? exchange_for_currency.rate.to_f : 1
+
+    total = (value.to_f / rate.to_f)
 
     # Testing...
 
