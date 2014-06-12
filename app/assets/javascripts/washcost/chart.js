@@ -75,8 +75,8 @@ $( document ).ready( function()
 
         for ( i = 0; i < 4; i++ ) {
           cost_capital_tech[i] = [];
-          for ( j = 0; j < 31; j++ ) {
-            cost_capital_tech[i][j] = { year:j + 1, cost: (loan_payback[i] <= (j+1)) ? loan_cost[i] : 0 };
+          for ( j = 1; j < 31; j++ ) {
+            cost_capital_tech[i][j-1] = { year:j , cost: (loan_payback[i] >= j) ? loan_cost[i] : 0 };
           }
           chartObjects.push({ seriesName: 'cost_of_capital_' + i, colour: '#ff6600', data: cost_capital_tech[i] });
         }
