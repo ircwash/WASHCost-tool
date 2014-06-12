@@ -1,6 +1,6 @@
 - if annual_expenditure_as_percentage_of_household_users != nil
 
-  - annual_expenditure_as_percentage_of_household_users = annual_expenditure_as_percentage_of_household_users / 100
+  - annual_expenditure_as_percentage_of_household_users = annual_expenditure_as_percentage_of_household_users
 
   .report--affordability_info
 
@@ -40,7 +40,7 @@
       %div{ :class => "report--affordability_info--verdict report--affordability_info--verdict-#{affordability}" }
         = t( 'report.' + affordability )
 
-    .report--affordability_info--detail= t( "report.afforability_detail.#{affordability}", :percentage => report_percentage_value_for( annual_expenditure_as_percentage_of_household_users * 100 ) )
+    .report--affordability_info--detail= t( "report.afforability_detail.#{affordability}", :percentage => report_percentage_value_for( annual_expenditure_as_percentage_of_household_users ) )
 
 - else
 
