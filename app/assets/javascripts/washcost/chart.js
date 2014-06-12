@@ -83,14 +83,13 @@ $( document ).ready( function()
         for ( i = 1; i < 31; i++ ) {
           var n = 0;
           for ( j = 0; j < tech.length; j++ ) {
-            n = n + (system_lifespan[j] === i) ? actual_hardware[j] : 0; 
+            var p = ((i % system_lifespan[j]) === 0) ? actual_hardware[j] : 0;
+            n += p;
           }
           capital_maintenance_expenditure[i-1] = n;
         }
 
         chartObjects.push({ seriesName: 'capital_maintenance_expenditure', color: '#333333', data: capital_maintenance_expenditure });
-
-        console.log(chartObjects);
 
         chart.render( chartObjects );
       }
