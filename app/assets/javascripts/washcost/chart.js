@@ -86,10 +86,12 @@ $( document ).ready( function()
             var p = ((i % system_lifespan[j]) === 0) ? actual_hardware[j] : 0;
             n += p;
           }
-          capital_maintenance_expenditure[i-1] = n;
+          capital_maintenance_expenditure[i-1] = { year:i , cost: n }; 
         }
 
         chartObjects.push({ seriesName: 'capital_maintenance_expenditure', color: '#333333', data: capital_maintenance_expenditure });
+
+        //console.log( chartObjects );
 
         chart.render( chartObjects );
       }
