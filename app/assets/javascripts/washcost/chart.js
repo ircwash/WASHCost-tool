@@ -10,14 +10,18 @@ $( document ).ready( function()
       var container    = $( this ),
           type         = container.data( 'chart-type' ),
           datapoints   = [],
-          multipliers  =
+          seed_points = container.data( 'chart-seeds' ),
+          currency    = container.data( 'chart-currency' ),
+          tech    = container.data( 'chart-tech' ),
+          loan_cost    = container.data( 'chart-loancost' ),
+          loan_payback    = container.data( 'chart-loanpayback' ),
+          chart, i, j;
+
+                    /*multipliers  =
           [
             [ 1,1,1,1,1.5,1,1,1,1,1.5,1,1,3,1,1,1.5,1,1,1,1,2.25,1,1,1,2.5,1,1,1,2.5,4 ],
             [ 1,1,1,1,1.5,1,1,1,1,1.5,1,1,4.5,1,1,2,1,1,1,1,3,1,1,1,4,1,1,1,3.5,6 ],
-          ],
-          seed_points = container.data( 'chart-seeds' ),
-          currency    = container.data( 'chart-currency' ),
-          chart, i, j;
+          ],*/
 
       if ( type == 'advanced' )
       {
@@ -44,8 +48,43 @@ $( document ).ready( function()
           dataAccessors:{ x:function( d ){ return d.year; }, y:function( d ){ return d.cost; } }
         } );
 
+        var chartObjects = [];
+
+        var operation_expenditure_per_year = [];
+
+        for ( i = 0; i < 30; i++ )
+          operation_expenditure_per_year[i] = { year:i + 1, cost:seed_points[0] };
+
+        chartObjects.push({ seriesName: 'operation_expenditure_per_year', colour: '#858687', data: operation_expenditure_per_year });
+
+        var direct_support_per_year = [];
+
+        for ( i = 0; i < 30; i++ )
+          direct_support_per_year[i] = { year:i + 1, cost:seed_points[1] };
+
+        chartObjects.push({ seriesName: 'direct_support_per_year', colour: '#f8ea03', data: direct_support_per_year });
+
+        var indirect_support_per_year = [];
+
+        for ( i = 0; i < 30; i++ )
+          indirect_support_per_year[i] = { year:i + 1, cost:seed_points[2] };
+
+        chartObjects.push({ seriesName: 'indirect_support_per_year', colour: '#1f9ed8', data: indirect_support_per_year });
+
+        var cost_capital_tech = [];
+
+        for ( i = 0; i < 4; i++ ) {
+          cost_capital_tech[i] = [];
+          for ( j = 0; j < 30; j++ ) {
+            cost_capital_tech[i][j] = { year:j + 1, cost: (loan_payback[i] <= j) ? loan_cost[i] : 0 };
+          }
+          chartObjects.push({ seriesName: 'cost_of_capital_' + i, colour: '#ff6600', data: cost_capital_tech[i] });
+        }
+
+        console.log(chartObjects);
+
         // build data based on multipliers
-        for ( i = 0; i < 2; i++ )
+        /*for ( i = 0; i < 2; i++ )
         {
           datapoints[i] = [];
 
@@ -62,11 +101,46 @@ $( document ).ready( function()
           {
             datapoints[i][j] = { year:j + 1, cost:seed_points[i] * multipliers[i-2][j] };
           }
-        }
+        }*/
 
-        chart.render(
-        [
+        chart.render( chartObjects
+        /*[
           {
+            seriesName: 'operation_expenditure_per_year',
+            colour: '#858687',
+            data: operation_expenditure_per_year
+          },
+          {
+            seriesName: 'direct_support_per_year',
+            colour: '#f8ea03',
+            data: direct_support_per_year
+          },
+          {
+            seriesName: 'indirect_support_per_year',
+            colour: '#1f9ed8',
+            data: indirect_support_per_year
+          },
+          {
+            seriesName: 'cost_of_capital_0',
+            colour: '#1f9ed8',
+            data: cost_capital_tech[0]
+          },
+          {
+            seriesName: 'cost_of_capital_1',
+            colour: '#1f9ed8',
+            data: cost_capital_tech[1]
+          },
+          {
+            seriesName: 'cost_of_capital_2',
+            colour: '#1f9ed8',
+            data: cost_capital_tech[2]
+          },
+          {
+            seriesName: 'cost_of_capital_3',
+            colour: '#1f9ed8',
+            data: cost_capital_tech[3]
+          }*/
+          /*{
             seriesName:'Total',
             colour:'#858687',
             data:datapoints[3]
@@ -86,7 +160,7 @@ $( document ).ready( function()
             colour:'#e52184',
             data:datapoints[0]
           }
-        ] );
+        ]*/ );
       }
       else
       {
