@@ -6,14 +6,13 @@ class Report
 
   field :level,         :type => String
   field :type,          :type => String
-  field :status,        :type => String, :default => '0' #neither
+  field :status,        :type => String, :default => '0'
   field :questionnaire, :type => Hash,   :default => {}
-
 
   def unpack_questionnaire
     if level == 'basic'
       if type == 'water'
-        questionnaire_instance = BasicWaterQuestionnaire.new( nil )
+       questionnaire_instance = BasicWaterQuestionnaire.new( nil )
         questionnaire_instance.update_attributes( questionnaire )
       elsif type == 'sanitation'
         questionnaire_instance = BasicSanitationQuestionnaire.new( nil )

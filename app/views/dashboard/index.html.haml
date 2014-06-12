@@ -4,7 +4,7 @@
     .dashboard
 
       .dashboard--profile
-        -#
+
           .dashboard--profile--user
             = image_tag "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(current_user.email.downcase.gsub(/\s/,''))}?s=200&d=#{u(localised_root_url+'/..'+image_path('image-user_placeholder.jpg'))}", :class => 'dashboard--profile--user--image'
 
@@ -30,7 +30,8 @@
           %tr
             %th.dashboard--report_table--heading= t( 'dashboard.name' )
             %td.dashboard--report_table--heading{ :width => 20 }
-            %th.dashboard--report_table--heading{ :width => 180 }= t( 'dashboard.location' )
+            %th.dashboard--report_table--heading{ :width => 100 }= t( 'dashboard.location' )
+            %th.dashboard--report_table--heading= t( 'dashboard.comparison' )
             %th.dashboard--report_table--heading{ :width => 80 }= t( 'dashboard.date' )
             %th.dashboard--report_table--heading{ :width => 180 }= t( 'dashboard.calculator_type' )
             %th.dashboard--report_table--heading{ :width => 100 }= t( 'dashboard.service' )
@@ -44,6 +45,7 @@
                 - if report.questionnaire[ 'country' ].present?
                   %div{ :class => "flag flag-#{report.questionnaire['country'].downcase}" }
               %td.dashboard--report_table--cell= report.questionnaire[ 'country' ].present? ? Country.new( report.questionnaire["country"] ).name.truncate(13) : ''
+              %td.dashboard--report_table--cell= convert_to_usd( report.questionnaire, total_expenditure_for_years(report.questionnaire, 30), 0)
               %td.dashboard--report_table--cell= report.created_at.strftime( '%d.%m.%Y' )
               %td.dashboard--report_table--cell= t('calculators.' + report.level).capitalize + ' ' +  t('calculators.' + report.type).capitalize
               %td.dashboard--report_table--cell
