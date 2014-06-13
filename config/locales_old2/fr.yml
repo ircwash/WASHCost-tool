@@ -62,7 +62,6 @@ fr:
       quality: Qualité
       household_latrine: Latrine familiale
       impermeability: Imperméabilité
-            #Not clear where this is being applied. This may need to change Environmental protection, which is the actual name of the indicator
       environmental_impact: Impact sur l'environnement
       usage: Utilisation
       reliability: Fiabilité
@@ -87,5 +86,5 @@ fr:
     sanitation: Assainissement
     title: Faites le calcul et faites durer votre service
     sub_title: Évaluez la pérennité de votre service et obtenez un rapport personnalisé basé sur votre modèle de fourniture de service.
-    pre_question_note: 'Avant de commencer, veuillez répondre à ces deux questions'
+    pre_question_note: Avant de commencer, veuillez répondre à ces deux questions
     tool_selection_basic: Outil de base

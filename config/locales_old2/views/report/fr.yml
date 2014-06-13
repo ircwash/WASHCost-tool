@@ -1,0 +1,104 @@
+fr:
+  report:
+    status:
+      neither: Aucun
+      installed: Installé
+      planned: Prévu
+      unknown: Inconnu
+    code_not_found: Inconnu
+    share_your_report: Partager le rapport
+    back: Retour
+    substandard: Limité
+    distance: Distance 
+    no_answer_provided: Pas de réponse fournie
+    no_data: Données manquantes
+    time: 
+      minutes: min
+    less_than: Moins de
+    no_specifed: Non spécifié
+    report_box_no_value: Il n'y a pas assez de réponses. Pour obtenir un rapport final, revenez vers le questionnaire et répondez à plus de questions sur votre service.
+    per_person_per_year: (par personne par an)
+    save_your_report: Sauvegarder
+    save_input: nom de rapport
+    save_submit: Enregistrer
+    report_saved: Votre rapport a été sauvegardé avec succès
+    created_successsfully: Votre rapport a été créé avec succès
+    updated_successsfully: Votre rapport a été mis à jour avec succès
+    cost_box_no_value: Il n'y a pas assez de réponses sur les coûts. Pour obtenir un rapport final sur les coûts, revenez vers le questionnaire et répondez à plus de questions sur les coûts de votre service
+    cross_to_sanitation: Aller au calculateur assainissement
+    cross_to_water: Aller au calculateur eau
+    summmary: Résumé
+    total: Total
+    surplus: Excédent
+    shortfall: Déficit
+    total_cost: Coût total
+    level_of_service: Niveau de service
+    caption_total_cost: "pour une population de %{population} habitants" 
+    population_caption: "%{population} habitants"
+    full_review: Lire l'évaluation complète
+    unaffordable: Non accessible
+    financièrement affordable: Financièrement accessible
+    risk_to_affordability: L'accessibilité financière n'est pas assurée
+    afforability_detail:
+      affordable: "%{percentage} des dépenses des ménages est considéré comme étant financièrement accessible."  
+      risk: "%{percentage} des dépenses des ménages constitue un pourcentage plus élevé que celui préconisé par les directives en matière d'accessibilité financière dans de nombreux pays. Les dépenses risquent d'excéder les capacités financières des usagers."  
+      unaffordable: "%{percentage} des dépenses des ménages constitue un pourcentage bien plus élevé que celui préconisé par les directives en matière d'accessibilité financière dans de nombreux pays."  
+    context: Contexte  
+    cost: Coût total  
+    cost_subtitle: "10 year cost for %{population} people"  
+    service: Niveau de service
+    capital_expenditure_title: Dépense d'investissement
+    recurrent_expenditure_title: Dépenses récurrentes
+    complete: Rapport complet
+    benchmark_below: En dessous des coûts de référence.
+    benchmark_within: Le coût se situe dans la fourchette des valeurs de référence WashCost. Voir l'évaluation ci-dessous pour plus de détails.
+    benchmark_above: Au-dessus des coûts de référence.
+    benchmark_outside: Le coût n'est pas dans la fourchette des valeurs de référence établies par WashCost. Voir l'évaluation ci-dessous pour plus de détails.  
+    access: Accès
+    use: Utilisation
+    reliability: Fiabilité
+    environment_protection: Protection de l'environnement
+    quality: Qualité
+    quantity: Quantité
+    expenditure_summary: Tableau récapitulatif des dépenses
+    service_level_summary: Tableau récapitulatif du niveau de service
+    comparison_summary: Comparaison avec d'autres
+    comparison_width_others: Comparaison avec d'autres
+    # notice: Remarque
+    total_expenditure_for_thirty_years: Dépense totale sur 30 ans
+    number_of_people: "%{people} personne"
+    current_recurrent_expenditure: Dépenses récurrentes actuelles
+    operational_expenditure: Coût d'exploitation
+    capital_maintenance_expenditure: Dépenses de renouvellement et de réhabilitation
+    cost_of_capital: Coût du capital
+    expenditure_of_direct_support: Dépenses d'appui direct
+    expenditure_of_indirect_support: Dépenses d'appui indirect
+    cost_of_sustaining_the_service: Coût de maintien du service
+    comparing_costs_and_services: Comparaison des coûts et des services
+    inputted_expenditure: Dépenses saisies
+    expected_expenditure: Dépenses attendues
+    expenditure_surplus_shortfall: Excédent / Déficit de dépenses
+    affordability_check: Vérification de l'accessibilité financière
+    annual_household_income: Revenu annuel des ménages
+    household_size: Taille des ménages
+    annual_household_income_per_person: Revenu annuel du ménage par personne
+    number_of_people_with_service_meeting_national_standard: nombre de personnes bénéficiant d'un service conforme aux normes nationales
+    number_of_other_reports_with_lower_recurrent_expenditure: nombre d'autres rapports générés par le calculateur avec des dépenses récurrentes moins élevées
+    affordability_of_inputted_expenditure_for_actual_users: Accessibilité financière des dépenses saisies pour les usagers effectifs du service
+    affordability_of_inputted_expenditure_for_designed_users: Accessibilité financière des dépenses saisies pour les usagers prévus par le service
+    affordability_of_expected_expenditure_for_actual_users: Accessibilité financière des dépenses attendues pour les usagers effectifs des services
+    service_level_summary: Tableau récapitulatif du niveau de service
+    service_levels:
+      accessibility: Accessibilité
+      quantity: Qualité
+      quality: Qualité
+      reliability: Fiabilité
+    meets_national_norm: Conforme aux normes nationales
+    does_not_meet_national_norm: N'est pas conforme aux normes nationales
+    percentile_rank_service_area_expenditure: Rang centile des dépenses pour la zone de service
+    capital_expenditure: Dépense d'investissement
+    recurrent_expenditure: Dépenses récurrentes
+    percentile_rank_technology_related_expenditure: Rang centile des dépenses liées à la technologie
+    users_data: Données de "%{name}"  
+    all_data: Toutes les données
+    percentile_rank_service_indicators: Rang centile des indicateurs de service

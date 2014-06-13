@@ -1,1 +1,117 @@
 fr:
+  advanced:
+    sanitation:
+      questionnaire:
+        options_for_area_type:
+          rural: Rural
+          small_town: Petite localité
+          peri_urban: Péri-urbain
+          urban: Urbain
+          mixed: Mixte
+          unknown: Ne sais pas
+        sanitation_service_exists:
+          label: "Est-ce que le service d'assaainissement existe déjà, ou est-ce qu'il est en projet?"
+          placeholder: Sélectionnez une option
+          tooltip: 'Si vous fournissez des données de coûts réels pour un système existant, choisissez "Existant".'
+        area_type:
+          label: Description de la zone
+          placeholder: Sélectionnez un type de zone
+          tooltip: Sélectionnez un type de zone
+        service_management:
+          label: Quelle option décrit le mieux le mode de gestion du service?
+        construction_financier:
+          label: Par qui est financée la construction du système d'eau?
+        infrastructure_operator:
+          label: Qui est le propriétaire légal du système d'approvisionnement en eau?
+        rehabilitation_cost_owner:
+          label: Qui assume les coûts de renouvellement lorsqu'une réhabilitation du système est nécessaire?
+        supply_system_technologies:
+          label: Quels sont les types de latrines le plus couramment utilisées par les ménages dans votre zone de service?
+          placeholder: Choisissez une technologie
+          tooltip: Seules les technologies d'assainissement individuel sont incluses pour le moment.
+        systems_number:
+          label: 'Nombre de latrines:'
+          placeholder: 5
+          tooltip: Ces données sont utilisées pour calculer le coût d'une seule latrine.
+        system_population_design:
+          label: Combien de personnes au total les latrines sont-elles censées desservir dans cette zone de service?
+          placeholder: 20
+        system_population_actual:
+          label: Combien de personnes au total est-ce que les latrines desservent effectivement dans cette zone de service?
+          placeholder: 30
+        aggregate_actual_hardware_expenditure:
+          label: Quel est le coût total en investissement matériel pour la construction des latrines dans la zone de service?
+        actual_hardware_expenditure:
+          label: Quel est le coût total en investissement matériel pour la construction des latrines dans la zone de service?
+          placeholder: 5000
+          tooltip: "Le capital investi dans les actifs fixes, tels que le fonçage, le cuvelage, les dalles, les superstructures et les tuyaux. "
+        system_lifespan_expectancy:
+          label: Quelle est la durée de fonctionnement prévue des latrines à partir de la construction (la durée de vie utile)?
+          placeholder: 30
+          tooltip: "Veuillez fournir les dépenses pour toute la zone de service. Si vous ne connaissez que le coût moyen par système, veuillez multiplier celui-ci par le nombre de systèmes."
+        direct_support_cost:
+          label: Qu'est-ce qui a été dépensé /sera dépensé pour l'appui direct?
+          placeholder: 10
+          tooltip: "Veuillez fournir les dépenses par personne/ par an. L'appui direct est un appui structuré pour les fournisseurs de services et les utilisateurs ou groupes d'utilisateurs et se rapporte à l'exploitation et la gestion d'un service WASH. Les coûts d'appui directs couvrent les activités de surveillance, le conseil technique et le soutien administratif, organisationnel ou juridique. Les coûts d'appui avant et pendant la construction du capital d'un projet ne sont pas inclus, car ceux-ci sont considérés comme investissement immatériel. L'appui direct est souvent utilisé comme synonyme de «appui post-construction"
+        indirect_support_cost:
+          label: Qu'est-ce qui a été dépensé /sera dépensé pour l'appui indirect?
+          placeholder: 2
+          tooltip: "Veuillez fournir les dépenses par personne/ par an. Les coûts d'appui indirects couvrent les dépenses d'appui au niveau macro, pour la planification et l'élaboration des politiques sectorielles, et l'appui aux autorités de services décentralisés ou le gouvernement local. L'appui indirect comprend le renforcement des capacités des professionnels et des techniciens et l'appui aux capacités des autorités des services, pour se mettre en conformité avec les normes et directives nationales."
+        annual_household_income:
+          label: What is the average annual household income in the service area?
+          placeholder: 600
+          tooltip: This data is used for the affordability check and it can be changed to see the affordability relative to different levels of wealth in the service area.
+        household_size:
+          label: Quel est le revenu annuel moyen d'un ménage dans la zone de service?
+          placeholder: 6
+          tooltip: Ces données sont utilisées pour évaluer l'accessibilité financière et elles peuvent être modifiées pour analyser l'accessibilité par rapport à différents niveaux de richesse dans la zone de service.
+        actual_software_expenditure:
+          label: Quel est le coût total en investissement immatériel pendant ou avant la construction des ouvrages dans la zone de service?
+          tooltip: "Les dépenses immatérielles concernent des activités avec les  parties prenantes avant la construction ou pendant la mise en œuvre, telles que des formations pour la communauté, la création de la demande et la promotion de l'hygiène. Veuillez fournir les dépenses pour toute la zone de service. Si vous ne connaissez que le coût moyen par système, veuillez multiplier celui-ci par le nombre de systèmes."
+          placeholder: 3000
+        unpaid_labour:
+          label: Est-ce que les ménages ou la communauté ont contribué de la main-d'oeuvre non rémunérée pour mettre en place les systèmes d'assainissement?
+          placeholder: Sélectionnez une option
+          tooltip: Sélectionnez une option
+        minor_operation_expenditure:
+          label: Quel est le coût d'exploitation et de maintenance par an? 
+          placeholder: 1000
+          tooltip: "Les dépenses pour le fonctionnement et l'entretien comprennent les dépenses récurrentes, régulières et continues pour les produits chimiques, les matériaux, et l'achat de produits de nettoyage. Veuillez fournir les dépenses pour toute la zone de service. Si vous ne connaissez que le coût moyen par système, veuillez multiplier celui-ci par le nombre de systèmes."
+        capital_maintenance_expenditure:
+          label: What is the average capital maintenance expenditure per year?
+          placeholder: 400
+          tooltip: "Le coût de renouvellement concerne le renouvellement des actifs (remplacement, réhabilitation, rénovation) pour assurer le fonctionnement continu des services au même niveau de performance que le niveau initial. Il s'agit par exemple de remplacer une dalle, de vidanger une fosse ou de relocaliser une latrine. Comme les dépenses pour le renouvellement sont par définition peu fréquentes, elles ne sont pas forcément engagées tous les ans. Si vous utilisez des données réelles, vous pouvez indiquer la moyenne des dépenses des 5 dernières années. Veuillez indiquer les dépenses pour toute la zone de service. Si vous ne connaissez que le coût moyen par système, veuillez multiplier celui-ci par le nombre de systèmes."
+        loan_cost:
+          label: Quels est le coût du capital d'un éventuel emprunt contracté pour financer le service?
+          placeholder: 6000
+          tooltip: "Veuillez indiquer le coût moyen de l'emprunt, par exemple le montant des intérêts. Veuillez fournir les dépenses pour toute la zone de service. Si vous ne connaissez que le coût moyen par système, veuillez multiplier celui-ci par le nombre de systèmes.."
+        loan_payback_period:
+          label: Quelle est la durée d'amortissement de cet emprunt?
+          placeholder: 20
+          tooltip: Veuillez fournir la durée moyenne pour le remboursement de l'emprunt
+        service_levels:
+          label: S'il vous plaît définir jusqu'à quatre niveaux de service pour les utilisateurs du service de l'assainissement
+          tooltip: S'il vous plaît définir jusqu'à quatre niveaux de service.
+        service_level_name:
+          label: Nommez le niveau de service
+          placeholder: Nom de niveau de service
+        service_level_share:
+          label: Part du niveau de service
+          placeholder: 25%
+          tooltip: Part de niveau de service pour toutes les technologies doit résumer ainsi à 100% pour représenter toute la population dans la zone d'intervention.
+        national_accessibility_norms:
+          label: Est-ce que l'accessibilité du service est conforme aux normes nationales?
+          placeholder: Sélectionnez une option
+          tooltip: Sélectionnez une option
+        national_use_norms:
+          label: Est-ce que le taux d'utilisation du service est conforme aux normes nationales?
+          placeholder: Sélectionnez une option
+        national_environmental_protection_norms:
+          label: Est-ce que la fiabilité du service est conforme aux normes nationales?
+          placeholder: Sélectionnez une option
+        national_reliability_norms:
+          label: Est-ce que l'aspect de protection de l'environnement du service est conforme aux normes nationales?
+          placeholder: Sélectionnez une option
+          tooltip: Sélectionnez une option
+      report:
+        final_report: Assainissement Avancée | Rapport Final

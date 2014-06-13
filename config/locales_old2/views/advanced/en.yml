@@ -150,21 +150,21 @@ en:
       country:
         label: Country
         placeholder: Select a country
-        tooltip: Select a country
+        tooltip: The tip
       currency:
         label: Currency
         placeholder: Select a currency
-        tooltip: Please choose a currency for the cost calculations.
+        tooltip: The tip
       year_of_expenditure:
         label: Year of expenditure
         placeholder: Select a year
-        tooltip: "When inputting costs, expenditure made in other years or currencies should be converted to this currency and base year. See the WASHCost training and the example currency converter here: http://www.washcost.info/page/2521"
+        tooltip: The tip
       region:
         label: Region
         placeholder: Calabria
-        tooltip: Enter a regionEnter a region
+        tooltip: The tip
       town:
         label: City/Town
         placeholder: Catanzaro
-        tooltip: Enter a city/town
+        tooltip: The tip
       technology_choice_required: A choice of at least one technology is required
