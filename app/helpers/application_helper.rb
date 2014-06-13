@@ -5,7 +5,8 @@ module ApplicationHelper
     [ [ 'English', 'en' ], [ 'Français', 'fr' ] ]
   end
 
-  # Created as for some reason main functions have been written against inherited model schema
+  # Created duplicate functions here as the majority of functions have been built directly against the models?
+
   def convert_to_usd( q, value, precision = 2 )
 
     total = 0
@@ -13,16 +14,13 @@ module ApplicationHelper
     if q != nil && q["currency"] != nil
 
       report_currency = q["currency"].to_s.upcase
-
       exchange_for_currency = ExchangeRate.find_by(name: report_currency)
-
       rate = exchange_for_currency != nil ? exchange_for_currency.rate.to_f : 1
-
       total = (value.to_f / rate.to_f)
 
     end
 
-    # Testing...
+    # to be completed
 
     #report_year = q["year_of_expenditure"].to_i
     #report_currency = q["currency"].to_s.upcase
@@ -33,7 +31,6 @@ module ApplicationHelper
 
     #puts country.to_json
 
-
     #deflator = Deflator.find_by(name: country.alpha3, year: report_year)
 
     #puts report_year
@@ -43,9 +40,10 @@ module ApplicationHelper
 
     #exchange = ExchangeRate.find_by(name: "USD")
 
+    #value != nil ? "#{( report_currency || '' ).upcase} #{number_with_precision( total.to_f, :precision => precision )}" : t( 'report.no_data' )
+  
     # end testing
 
-    #value != nil ? "#{( report_currency || '' ).upcase} #{number_with_precision( total.to_f, :precision => precision )}" : t( 'report.no_data' )
     value != nil ? "USD #{number_with_precision( total.to_f, :precision => precision )}" : "---"
   end
 
@@ -104,7 +102,8 @@ module ApplicationHelper
       0
     end
   end
-  #end functions
+
+  #end duplicate functions
 
   def options_for_countries
     translated_countries = []
