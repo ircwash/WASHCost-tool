@@ -8,13 +8,19 @@ module ApplicationHelper
   # Created as for some reason main functions have been written against inherited model schema
   def convert_to_usd( q, value, precision = 2 )
 
-    report_currency = q["currency"].to_s.upcase
+    total = 0
 
-    exchange_for_currency = ExchangeRate.find_by(name: report_currency)
+    if q != nil && q["currency"] != nil
 
-    rate = exchange_for_currency != nil ? exchange_for_currency.rate.to_f : 1
+      report_currency = q["currency"].to_s.upcase
 
-    total = (value.to_f / rate.to_f)
+      exchange_for_currency = ExchangeRate.find_by(name: report_currency)
+
+      rate = exchange_for_currency != nil ? exchange_for_currency.rate.to_f : 1
+
+      total = (value.to_f / rate.to_f)
+
+    end
 
     # Testing...
 
