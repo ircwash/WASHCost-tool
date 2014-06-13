@@ -58,7 +58,7 @@ module ApplicationHelper
   end
 
   def hardware_and_software_expenditure(q)
-    if q['supply_system_technologies'] != nil && q['actual_hardware_expenditure'] != nil && q['actual_software_expenditure']
+    if q['supply_system_technologies'] != nil && q['supply_system_technologies'].count > 0 && q['actual_hardware_expenditure'] != nil && q['actual_hardware_expenditure'].count > 0 && q['actual_software_expenditure'] != nil && q['actual_software_expenditure'].count > 0
       q['supply_system_technologies'].each_with_index.map{ |s,i| q['actual_hardware_expenditure'][i].to_f + q['actual_software_expenditure'][i].to_f }.inject(:+)
     else
       0
@@ -66,7 +66,7 @@ module ApplicationHelper
   end
 
   def total_operation_expenditure(q)
-    if q['minor_operation_expenditure'] != nil
+    if q['minor_operation_expenditure'] != nil && q['minor_operation_expenditure'].count > 0
       q['minor_operation_expenditure'].map{ |e| e.to_f }.inject(:+)
     else
       0
@@ -74,7 +74,7 @@ module ApplicationHelper
   end
 
   def total_capital_maintenance_expenditure(q)
-    if q['capital_maintenance_expenditure'] != nil
+    if q['capital_maintenance_expenditure'] != nil && q['capital_maintenance_expenditure'].count > 0
       q['capital_maintenance_expenditure'].map{ |e| e.to_f }.inject(:+)
     else
       0
@@ -86,7 +86,7 @@ module ApplicationHelper
   end
 
   def total_population(q)
-    if q['supply_system_technologies'] != nil
+    if q['supply_system_technologies'] != nil && q['supply_system_technologies'].count > 0
       q['system_population_actual'].map{ |p| p.to_f }.inject(:+)
     else
       0
@@ -98,7 +98,7 @@ module ApplicationHelper
   end
 
   def cost_of_capital_for_years(q, years)
-    if q['supply_system_technologies'] != nil && q['loan_cost'] != nil && q['loan_payback_period'] != nil
+    if q['supply_system_technologies'] != nil && q['supply_system_technologies'].count > 0 && q['loan_cost'] != nil && q['loan_payback_period'] != nil
       q['supply_system_technologies'].each_with_index.map{ |s,i| q['loan_cost'][i].to_f * [ q['loan_payback_period'][i].to_i, years ].min }.inject( :+ )
     else
       0
