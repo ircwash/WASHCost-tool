@@ -50,7 +50,11 @@ module ApplicationHelper
   end
 
   def total_expenditure_for_years(q, years)
-    total = hardware_and_software_expenditure(q) + total_operation_expenditure(q) * years + total_capital_maintenance_expenditure(q) * years + direct_support_cost(q) * total_population(q) * years + indirect_support_cost(q) * total_population(q) * years + cost_of_capital_for_years( q, years )
+    if q != nil
+      total = hardware_and_software_expenditure(q) + total_operation_expenditure(q) * years + total_capital_maintenance_expenditure(q) * years + direct_support_cost(q) * total_population(q) * years + indirect_support_cost(q) * total_population(q) * years + cost_of_capital_for_years( q, years )
+    else
+      0
+    end
   end
 
   def hardware_and_software_expenditure(q)
