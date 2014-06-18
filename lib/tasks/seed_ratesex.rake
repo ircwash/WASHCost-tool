@@ -8,7 +8,7 @@ namespace :db do
 
     puts "Clearing down exchnages\n"
 
-    ExchangeRate.destroy_all
+    PANUSFCRF.destroy_all
 
     puts "Compiling...\n"
 
@@ -27,7 +27,7 @@ namespace :db do
         year = year+1
         rate = row[n]
 
-        ExchangeRate.create(
+        PANUSFCRF.create(
           :name  => code,
           :year  => year,
           :rate  => rate
