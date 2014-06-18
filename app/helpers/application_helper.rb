@@ -13,7 +13,11 @@ module ApplicationHelper
 
     if q != nil && q["currency"] != nil
 
+      report_year = q["year_of_expenditure"].to_i
       report_currency = q["currency"].to_s.upcase
+
+      deflator = Deflator.find_by(name: report_currency, year: report_year)
+      
       exchange_for_currency = ExchangeRate.find_by(name: report_currency)
       rate = exchange_for_currency != nil ? exchange_for_currency.rate.to_f : 1
       total = (value.to_f / rate.to_f)
@@ -45,6 +49,24 @@ module ApplicationHelper
     # end testing
 
     value != nil ? "#{number_with_precision( number_to_currency(total.to_f, :locale => I18n.locale), :precision => precision )}" : "---"
+  end
+
+  def capital_expenditure_per_person(q)
+    a = hardware_and_software_expenditure(q)
+    b = total_population(q)
+    if q != nil && a != nil && b != nil && a != 0 && b != 0
+      (a / b).to_f
+    else
+      0
+    end
+  end
+
+  def recurrent_expenditure_per_person_per_year(q, years)
+    if q != nil
+      total = total_operation_expenditure(q) * years + total_capital_maintenance_expenditure(q) * years + direct_support_cost(q) * total_population(q) * years + indirect_support_cost(q) * total_population(q) * years + cost_of_capital_for_years( q, years )
+    else
+      0
+    end
   end
 
   def total_expenditure_for_years(q, years)
@@ -100,6 +122,80 @@ module ApplicationHelper
       q['supply_system_technologies'].each_with_index.map{ |s,i| q['loan_cost'][i].to_f * [ q['loan_payback_period'][i].to_i, years ].min }.inject( :+ )
     else
       0
+    end
+  end
+
+  #--#
+
+  def percentage_of_population_that_meets_accessibility_norms(q)
+    if q['service_level_name'] != nil &&  q['service_level_share'] != nil && q['national_accessibility_norms'] != nil && q['service_level_name'].count > 0 && q['service_level_share'].count == q['service_level_name'].count && q['national_accessibility_norms'].count == q['service_level_name'].count
+      q['national_accessibility_norms'].each_with_index.map{ |nan,i| nan.to_i == 0 ? q['service_level_share'][i].to_i : 0 }.inject(:+)
+    else
+      nil
+    end
+  end
+
+  def percentage_of_population_that_does_not_meet_accessibility_norms(q)
+    percentage_of_population_that_meets_accessibility_norms(q)
+  end
+
+  def percentage_of_population_with_unknown_accessibility_norms(q)
+    percentage_of_population_that_meets_accessibility_norms(q)
+  end
+
+  def percentage_of_population_that_meets_quantity_norms(q)
+    if q['service_level_name'] != nil &&  q['service_level_share'] != nil && q['national_quantity_norms'] != nil && q['service_level_name'].count > 0 && q['service_level_share'].count == q['service_level_name'].count && q['national_quantity_norms'].count == q['service_level_name'].count
+      q['national_quantity_norms'].each_with_index.map{ |nan,i| nan.to_i == 0 ? q['service_level_share'][i].to_i : 0 }.inject(:+)
+    else
+      nil
+    end
+  end
+
+  def percentage_of_population_that_does_not_meet_quantity_norms(q)
+    percentage_of_population_that_meets_quantity_norms(q)
+  end
+
+  def percentage_of_population_with_unknown_quantity_norms(q)
+    percentage_of_population_that_meets_quantity_norms(q)
+  end
+
+  def percentage_of_population_that_meets_quality_norms(q)
+    if q['service_level_name'] != nil &&  q['service_level_share'] != nil && q['national_quality_norms'] != nil && q['service_level_name'].count > 0 && q['service_level_share'].count == q['service_level_name'].count && q['national_quality_norms'].count == q['service_level_name'].count
+      q['national_quality_norms'].each_with_index.map{ |nan,i| nan.to_i == 0 ? q['service_level_share'][i].to_i : 0 }.inject(:+)
+    else
+      nil
+    end
+  end
+
+  def percentage_of_population_that_does_not_meet_quality_norms(q)
+    percentage_of_population_that_meets_quality_norms(q)
+  end
+
+  def percentage_of_population_with_unknown_quality_norms(q)
+    percentage_of_population_that_meets_quality_norms(q)
+  end
+
+  def percentage_of_population_that_meets_reliability_norms(q)
+    if q['service_level_name'] != nil &&  q['service_level_share'] != nil && q['national_reliability_norms'] != nil && q['service_level_name'].count > 0 && q['service_level_share'].count == q['service_level_name'].count && q['national_reliability_norms'].count == q['service_level_name'].count
+      q['national_reliability_norms'].each_with_index.map{ |nan,i| nan.to_i == 0 ? q['service_level_share'][i].to_i : 0 }.inject(:+)
+    else
+      nil
+    end
+  end
+
+  def percentage_of_population_that_does_not_meet_reliability_norms(q)
+    percentage_of_population_that_meets_reliability_norms(q)
+  end
+
+  def percentage_of_population_with_unknown_reliability_norms(q)
+    percentage_of_population_that_meets_reliability_norms(q)
+  end
+
+  def percentage_of_population_that_meets_all_norms(q)
+    if q != nil 
+      [percentage_of_population_that_meets_quantity_norms(q), percentage_of_population_that_meets_accessibility_norms(q), percentage_of_population_that_meets_quality_norms(q), percentage_of_population_that_meets_reliability_norms(q)].min
+    else
+      nil
     end
   end
 

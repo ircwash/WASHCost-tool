@@ -12,6 +12,12 @@ fr:
     distance: Distance 
     no_answer_provided: Pas de réponse fournie
     no_data: Données manquantes
+    legend:
+      oepy: Operation expenditure per year
+      dspy: Direct support per year
+      idpy: Indirect support per year
+      coc: Cost of capital
+      cme: Capital maintenance expenditure
     time: 
       minutes: min
     less_than: Moins de

@@ -11,6 +11,12 @@ en:
     summary_currency: Currency
     summary_year: Year of expenditure
     summary_country: Country
+    legend:
+      oepy: Operation expenditure per year
+      dspy: Direct support per year
+      idpy: Indirect support per year
+      coc: Cost of capital
+      cme: Capital maintenance expenditure
     time:
       minutes: min
     less_than: Less than

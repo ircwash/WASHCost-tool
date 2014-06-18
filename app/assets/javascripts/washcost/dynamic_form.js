@@ -27,6 +27,12 @@ $( document ).ready( function()
 
 
   function init() {
+    
+    $('html').bind('keypress', function (e) {
+     if(e.keyCode == 13)
+        return false;
+    });
+
     // Handles the signin process, basic validation
     $('form#new_user').on('submit', function () {
       
@@ -71,15 +77,15 @@ $( document ).ready( function()
           page = window.location.href.split('/')[window.location.href.split('/').length-1];
 
       // Removes on submit
-      $(this).parents('[data-dynamic_form]').find('[data-currency]').each(function() {
+      /*$(this).parents('[data-dynamic_form]').find('[data-currency]').each(function() {
         var re = / \(([^}]+)\)/g
         $(this).val($(this).val().replace(re, ''));
-      });
+      });*/
 
       // Removes on submit
-      $(this).parents('[data-dynamic_form]').find('[data-percentage]').each(function() {
+      /*$(this).parents('[data-dynamic_form]').find('[data-percentage]').each(function() {
         $(this).val($(this).val().replace('%', ''));
-      });
+      });*/
 
       // Forces a selection (default = Don't know) for any enabled selects that have not been set on submit
       /*if (page === 'service_level') {
@@ -93,20 +99,20 @@ $( document ).ready( function()
         // trigger notification
 
         // adds back in after form submit
-        $('[data-dynamic_form]').find('[data-currency]').each(function() {
+        /*$('[data-dynamic_form]').find('[data-currency]').each(function() {
           var re = / \(([^}]+)\)/g
           var value = $(this).val().replace(re, '');
           var currency = re.exec($(this).attr('placeholder'))[0];
           if (value === '' || value === null) return;
           $(this).val(value + currency);
-        });
+        });*/
 
         // adds back in after form submit
-        $('[data-dynamic_form]').find('[data-percentage]').each(function() {
+        /*$('[data-dynamic_form]').find('[data-percentage]').each(function() {
           var value = $(this).val().replace(/%/g, '');
           if (value === '' || value === null) return;
           $(this).val(value + '%');
-        });
+        });*/
 
         form.trigger( 'ajax_submit', result );
       
