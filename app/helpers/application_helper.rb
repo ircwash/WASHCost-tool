@@ -6,7 +6,7 @@ module ApplicationHelper
   end
 
   # Created duplicate functions here as the majority of functions have been built directly against the inherited model(s)
-  # added here to replace the call to functions (from the views) which were model based and updating the attributes
+  # added here to replace the call to functions (from the views) which were model based and updating the attributes so as could access functions
   # Really if the data is not live - should seriously consider moving so as calculated and stored in the DB on insertion / update.
 
   def FX_original_country_input_year_of_expenditure(q)
@@ -15,7 +15,6 @@ module ApplicationHelper
       alpha3 = Country.find_country_by_alpha2(q["country"]).alpha3
       report_year = q["year_of_expenditure"].to_i
       result = PANUSFCRF.find_by(name: alpha3, year: report_year)
-      # puts "FX_original_country_input_year_of_expenditure #{result.to_json}"
       result != nil ? result.rate : nil
     else
       nil
@@ -30,7 +29,6 @@ module ApplicationHelper
       alpha3 = Country.find_country_by_currency(report_currency).alpha3
       report_year = q["year_of_expenditure"].to_i
       result = PANUSFCRF.find_by(name: alpha3, year: report_year)
-      # puts "FX_input_currency_year_of_expenditure #{result.to_json}"
       result != nil ? result.rate : nil
     else
       nil
@@ -40,11 +38,9 @@ module ApplicationHelper
 
   def FX_2011(q)
 
-    if q != nil && q["currency"] != nil
-      report_currency = q["currency"].to_s.upcase
-      alpha3 = Country.find_country_by_currency(report_currency).alpha3
+    if q != nil && q["country"] != nil
+      alpha3 = Country.find_country_by_alpha2(q["country"]).alpha3
       result = PANUSFCRF.find_by(name: alpha3, year: 2011)
-     # puts "FX_2011 #{result.to_json}"
       result != nil ? result.rate : nil
     else
      nil
@@ -52,11 +48,10 @@ module ApplicationHelper
   end
 
   def deflator_multiplier(q)
-    if q != nil && q["currency"] != nil && q["year_of_expenditure"] != nil
+    if q != nil && q["country"] != nil && q["year_of_expenditure"] != nil
       report_year = q["year_of_expenditure"].to_i
-      report_currency = q["currency"].to_s.upcase
-      result = Deflator.find_by(name: report_currency, year: report_year)
-     # puts "deflator_multiplier #{result.to_json}"
+      currency = Country.find_country_by_alpha2(q["country"]).currency
+      result = Deflator.find_by(name: currency.code, year: report_year)
       result != nil ? result.percent : nil
     else
       nil
@@ -64,7 +59,7 @@ module ApplicationHelper
   end
 
   def final_usd_2011(q, value)
-    #puts "--- #{value}"
+
     multiplier = deflator_multiplier(q)
     _FX_2011 =  FX_2011(q)
     _FX_input_currency_year_of_expenditure = FX_input_currency_year_of_expenditure(q)
@@ -72,7 +67,7 @@ module ApplicationHelper
 
     if value != nil && multiplier != nil && _FX_2011 != nil && _FX_input_currency_year_of_expenditure != nil && _FX_original_country_input_year_of_expenditure != nil
       output = value * (_FX_original_country_input_year_of_expenditure / _FX_input_currency_year_of_expenditure) * multiplier / _FX_2011
-      "#{number_with_precision( number_to_currency(output.to_f, :locale => I18n.locale), :precision => 2 )}"
+      "#{number_with_precision( number_to_currency(output.to_f, :locale => "USD"), :precision => 2 )}"
     else
       "N/A"  
     end
