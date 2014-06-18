@@ -5,7 +5,9 @@ module ApplicationHelper
     [ [ 'English', 'en' ], [ 'Français', 'fr' ] ]
   end
 
-  # Created duplicate functions here as the majority of functions have been built directly against the models?
+  # Created duplicate functions here as the majority of functions have been built directly against the model(s)
+  # These functions are not ideal and depending in the how live this data should be - consider moving so as calculated 
+  # and stored in the DB
 
   def convert_to_usd( q, value, precision = 2 )
 
@@ -131,7 +133,7 @@ module ApplicationHelper
     if q['service_level_name'] != nil &&  q['service_level_share'] != nil && q['national_accessibility_norms'] != nil && q['service_level_name'].count > 0 && q['service_level_share'].count == q['service_level_name'].count && q['national_accessibility_norms'].count == q['service_level_name'].count
       q['national_accessibility_norms'].each_with_index.map{ |nan,i| nan.to_i == 0 ? q['service_level_share'][i].to_i : 0 }.inject(:+)
     else
-      nil
+      0
     end
   end
 
@@ -147,7 +149,7 @@ module ApplicationHelper
     if q['service_level_name'] != nil &&  q['service_level_share'] != nil && q['national_quantity_norms'] != nil && q['service_level_name'].count > 0 && q['service_level_share'].count == q['service_level_name'].count && q['national_quantity_norms'].count == q['service_level_name'].count
       q['national_quantity_norms'].each_with_index.map{ |nan,i| nan.to_i == 0 ? q['service_level_share'][i].to_i : 0 }.inject(:+)
     else
-      nil
+      0
     end
   end
 
@@ -163,7 +165,7 @@ module ApplicationHelper
     if q['service_level_name'] != nil &&  q['service_level_share'] != nil && q['national_quality_norms'] != nil && q['service_level_name'].count > 0 && q['service_level_share'].count == q['service_level_name'].count && q['national_quality_norms'].count == q['service_level_name'].count
       q['national_quality_norms'].each_with_index.map{ |nan,i| nan.to_i == 0 ? q['service_level_share'][i].to_i : 0 }.inject(:+)
     else
-      nil
+      0
     end
   end
 
@@ -179,7 +181,7 @@ module ApplicationHelper
     if q['service_level_name'] != nil &&  q['service_level_share'] != nil && q['national_reliability_norms'] != nil && q['service_level_name'].count > 0 && q['service_level_share'].count == q['service_level_name'].count && q['national_reliability_norms'].count == q['service_level_name'].count
       q['national_reliability_norms'].each_with_index.map{ |nan,i| nan.to_i == 0 ? q['service_level_share'][i].to_i : 0 }.inject(:+)
     else
-      nil
+      0
     end
   end
 
@@ -195,7 +197,7 @@ module ApplicationHelper
     if q != nil 
       [percentage_of_population_that_meets_quantity_norms(q), percentage_of_population_that_meets_accessibility_norms(q), percentage_of_population_that_meets_quality_norms(q), percentage_of_population_that_meets_reliability_norms(q)].min
     else
-      nil
+      0
     end
   end
 
