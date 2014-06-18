@@ -46,10 +46,13 @@
                   %div{ :class => "flag flag-#{report.questionnaire['country'].downcase}" }
               %td.dashboard--report_table--cell= report.questionnaire[ 'country' ].present? ? Country.new( report.questionnaire["country"] ).name.truncate(13) : ''
               //%td.dashboard--report_table--cell= convert_to_usd( report.questionnaire, total_expenditure_for_years(report.questionnaire, 30), 0)
-              %td.dashboard--report_table--cell
-                %div= capital_expenditure_per_person(report.questionnaire)
-                %div= recurrent_expenditure_per_person_per_year(report.questionnaire, 30)
-                %div= percentage_of_population_that_meets_all_norms(report.questionnaire)
+              - if report.level == "basic"
+                %td.dashboard--report_table--cell &mdash;
+              -else
+                %td.dashboard--report_table--cell
+                  %div= final_usd_2011(report.questionnaire, capital_expenditure_per_person(report.questionnaire))
+                  %div= final_usd_2011(report.questionnaire, recurrent_expenditure_per_person_per_year(report.questionnaire, 30))
+                  %div= percentage_of_population_that_meets_all_norms(report.questionnaire)
               %td.dashboard--report_table--cell= report.created_at.strftime( '%d.%m.%Y' )
               %td.dashboard--report_table--cell= t('calculators.' + report.level).capitalize + ' ' +  t('calculators.' + report.type).capitalize
               %td.dashboard--report_table--cell

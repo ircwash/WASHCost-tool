@@ -5,53 +5,82 @@ module ApplicationHelper
     [ [ 'English', 'en' ], [ 'Français', 'fr' ] ]
   end
 
-  # Created duplicate functions here as the majority of functions have been built directly against the model(s)
-  # These functions are not ideal and depending in the how live this data should be - consider moving so as calculated 
-  # and stored in the DB
+  # Created duplicate functions here as the majority of functions have been built directly against the inherited model(s)
+  # added here to replace the call to functions (from the views) which were model based and updating the attributes
+  # Really if the data is not live - should seriously consider moving so as calculated and stored in the DB on insertion / update.
 
-  def convert_to_usd( q, value, precision = 2 )
-
-    total = 0
-
+  def exchange_rate_original_year(q, value)
     if q != nil && q["currency"] != nil
+      report_currency = q["currency"].to_s.upcase
+      report_year = value != nil ? value : q["year_of_expenditure"].to_i
+      country = Country.find_country_by_currency(report_currency)
+      exr = ExchangeRate.find_by(name: country.alpha3, year: report_year)
+      if exr != nil
+        exr.rate
+      else
+        nil
+      end
+    else
+      nil
+    end
+  end
 
+  def value_national_currency_original_year(value, rate)
+    value * rate
+  end
+
+  def deflator_multiplier(q)
+    if q != nil && q["currency"] != nil && q["year_of_expenditure"] != nil
       report_year = q["year_of_expenditure"].to_i
       report_currency = q["currency"].to_s.upcase
-
       deflator = Deflator.find_by(name: report_currency, year: report_year)
-      
+      if deflator != nil
+        deflator.percent
+      else
+        nil
+      end
+    else
+      nil
+    end
+  end
+
+  def current_value_national_currency_2011(value, rate, multiplier)
+    value * rate * multiplier
+  end
+
+  def exchange_rate_2011_usd(q)
+    exchange_rate_original_year(q, 2011)
+  end
+
+  def final_usd_2011(q, value)
+
+    eroy = exchange_rate_original_year(q, nil)
+    dm = deflator_multiplier(q)
+    eru = exchange_rate_2011_usd(q)
+
+    if eroy != nil && dm != nil && eru != nil
+      output = value * eroy * dm / eru
+      "#{number_with_precision( number_to_currency(output.to_f, :locale => I18n.locale), :precision => 2 )}"
+    else
+      "N/A"  
+    end
+
+  end
+
+  def convert_to_usd( q, value, precision = 2 )
+    total = 0
+    if q != nil && q["currency"] != nil
+      report_year = q["year_of_expenditure"].to_i
+      report_currency = q["currency"].to_s.upcase
+      deflator = Deflator.find_by(name: report_currency, year: report_year)
       exchange_for_currency = ExchangeRate.find_by(name: report_currency)
       rate = exchange_for_currency != nil ? exchange_for_currency.rate.to_f : 1
       total = (value.to_f / rate.to_f)
-
     end
-
-    # to be completed
-
-    #report_year = q["year_of_expenditure"].to_i
-    #report_currency = q["currency"].to_s.upcase
-
-    #deflator = Deflator.find_by(name: "USD")
-
-    #country = Country.find_country_by_currency(report_currency)
-
-    #puts country.to_json
-
-    #deflator = Deflator.find_by(name: country.alpha3, year: report_year)
-
-    #puts report_year
-    #puts report_currency
-    #puts deflator.to_json
-    #puts value.to_f
-
-    #exchange = ExchangeRate.find_by(name: "USD")
-
-    #value != nil ? "#{( report_currency || '' ).upcase} #{number_with_precision( total.to_f, :precision => precision )}" : t( 'report.no_data' )
-  
-    # end testing
-
-    value != nil ? "#{number_with_precision( number_to_currency(total.to_f, :locale => I18n.locale), :precision => precision )}" : "---"
+    value != nil  ? "#{number_with_precision( number_to_currency(total.to_f, :locale => I18n.locale), :precision => precision )}" : "---"
   end
+
+  #--#
 
   def capital_expenditure_per_person(q)
     a = hardware_and_software_expenditure(q)
