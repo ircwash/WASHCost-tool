@@ -11,19 +11,19 @@
 
       .dual_column_form--column.dual_column_form--column-25
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[service_level_name][]', @questionnaire.service_level_name[0], :id => 'advanced_water_questionnaire_service_level_name_1', :tabindex => '1', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.questionnaire.service_level_name.placeholder' ), 'data-column_dependency' => 'service_level-1'
+          = text_field_tag 'advanced_water_questionnaire[service_level_name][]', @questionnaire.service_level_name != nil && @questionnaire.service_level_name.count >= 1 ? @questionnaire.service_level_name[0] : '', :id => 'advanced_water_questionnaire_service_level_name_1', :tabindex => '1', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.questionnaire.service_level_name.placeholder' ), 'data-column_dependency' => 'service_level-1'
 
       .dual_column_form--column.dual_column_form--column-25
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[service_level_name][]', @questionnaire.service_level_name[1], :id => 'advanced_water_questionnaire_service_level_name_2', :tabindex => '7', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.questionnaire.service_level_name.placeholder' ), 'data-column_dependency' => 'service_level-2'
+          = text_field_tag 'advanced_water_questionnaire[service_level_name][]', @questionnaire.service_level_name != nil && @questionnaire.service_level_name.count >= 2 ? @questionnaire.service_level_name[1] : '', :id => 'advanced_water_questionnaire_service_level_name_2', :tabindex => '7', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.questionnaire.service_level_name.placeholder' ), 'data-column_dependency' => 'service_level-2'
 
       .dual_column_form--column.dual_column_form--column-25
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[service_level_name][]', @questionnaire.service_level_name[2], :id => 'advanced_water_questionnaire_service_level_name_3', :tabindex => '13', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.questionnaire.service_level_name.placeholder' ), 'data-column_dependency' => 'service_level-3'
+          = text_field_tag 'advanced_water_questionnaire[service_level_name][]', @questionnaire.service_level_name != nil && @questionnaire.service_level_name.count >= 3 ? @questionnaire.service_level_name[2] : '', :id => 'advanced_water_questionnaire_service_level_name_3', :tabindex => '13', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.questionnaire.service_level_name.placeholder' ), 'data-column_dependency' => 'service_level-3'
 
       .dual_column_form--column.dual_column_form--column-25
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[service_level_name][]', @questionnaire.service_level_name[3], :id => 'advanced_water_questionnaire_service_level_name_4', :tabindex => '19', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.questionnaire.service_level_name.placeholder' ), 'data-column_dependency' => 'service_level-4'
+          = text_field_tag 'advanced_water_questionnaire[service_level_name][]', @questionnaire.service_level_name != nil && @questionnaire.service_level_name.count >= 4 ? @questionnaire.service_level_name[3] : '', :id => 'advanced_water_questionnaire_service_level_name_4', :tabindex => '19', :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.questionnaire.service_level_name.placeholder' ), 'data-column_dependency' => 'service_level-4'
 
     .dual_column_form--row
 
@@ -31,19 +31,19 @@
 
       .dual_column_form--column.dual_column_form--column-25{ 'data-column_dependency-dependent' => 'service_level-1' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[service_level_share][]', @questionnaire.service_level_share[0], :id => 'advanced_water_questionnaire_service_level_share_1', :tabindex => '2', :"data-percentage" => true, :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.questionnaire.service_level_share.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[service_level_share][]', @questionnaire.service_level_share != nil && @questionnaire.service_level_share.count >= 1 ? @questionnaire.service_level_share[0] : '', :id => 'advanced_water_questionnaire_service_level_share_1', :tabindex => '2', :"data-percentage" => true, :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.questionnaire.service_level_share.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-25{ 'data-column_dependency-dependent' => 'service_level-2' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[service_level_share][]', @questionnaire.service_level_share[1], :id => 'advanced_water_questionnaire_service_level_share_2', :tabindex => '8', :"data-percentage" => true, :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.questionnaire.service_level_share.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[service_level_share][]', @questionnaire.service_level_share != nil && @questionnaire.service_level_share.count >= 2 ? @questionnaire.service_level_share[1] : '', :id => 'advanced_water_questionnaire_service_level_share_2', :tabindex => '8', :"data-percentage" => true, :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.questionnaire.service_level_share.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-25{ 'data-column_dependency-dependent' => 'service_level-3' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[service_level_share][]', @questionnaire.service_level_share[2], :id => 'advanced_water_questionnaire_service_level_share_3', :tabindex => '14', :"data-percentage" => true, :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.questionnaire.service_level_share.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[service_level_share][]', @questionnaire.service_level_share != nil && @questionnaire.service_level_share.count >= 3 ? @questionnaire.service_level_share[2] : '', :id => 'advanced_water_questionnaire_service_level_share_3', :tabindex => '14', :"data-percentage" => true, :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.questionnaire.service_level_share.placeholder' )
 
       .dual_column_form--column.dual_column_form--column-25{ 'data-column_dependency-dependent' => 'service_level-4' }
         .dual_column_form--field.dual_column_form--field-text_input
-          = text_field_tag 'advanced_water_questionnaire[service_level_share][]', @questionnaire.service_level_share[3], :id => 'advanced_water_questionnaire_service_level_share_4', :tabindex => '20', :"data-percentage" => true, :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.questionnaire.service_level_share.placeholder' )
+          = text_field_tag 'advanced_water_questionnaire[service_level_share][]', @questionnaire.service_level_share != nil && @questionnaire.service_level_share.count >= 4 ? @questionnaire.service_level_share[3] : '', :id => 'advanced_water_questionnaire_service_level_share_4', :tabindex => '20', :"data-percentage" => true, :class => 'dual_column_form--field--text_input', 'data-slider-value' => true, :placeholder => t( 'advanced.water.questionnaire.service_level_share.placeholder' )
 
     .dual_column_form--row
 
