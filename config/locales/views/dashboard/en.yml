@@ -17,3 +17,7 @@ en:
       historical_expenditure: Historical expenditure
       mixed_expenditure: Mixed expenditure
       dont_know: Don't know
+    compare:
+      label1: One
+      label2: Two
+      label3: Three

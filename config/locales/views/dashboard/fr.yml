@@ -9,3 +9,15 @@
     date: Date
     calculator_type: Type de calculateur
     service: Service
+    comparison: Comparison (2011)
+    status:
+      not_applicable: Not applicable
+      planned_expenditure: Planned expenditure
+      budgeted_expenditure: Budgeted expenditure
+      historical_expenditure: Historical expenditure
+      mixed_expenditure: Mixed expenditure
+      dont_know: Don't know
+    compare:
+      label1: One
+      label2: Two
+      label3: Three
