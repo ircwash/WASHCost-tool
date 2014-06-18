@@ -1,6 +1,13 @@
 en:
   advanced:
     shared:
+      options_for_exists:
+          not_applicable: Not applicable
+          planned_expenditure: Planned expenditure
+          budgeted_expenditure: Budgeted expenditure
+          historical_expenditure: Historical expenditure
+          mixed_expenditure: Mixed expenditure
+          dont_know: Don't know
       options_for_national_environmental_protection_norms:
         yes: Yes
         no: No
@@ -89,61 +96,61 @@ en:
         protected_well: Protected well
       options_for_rehabilitation_cost_owner:
         external_donor: External donor
-        community_based_management: Community-based management
+        community_based_management: Community-based organisation
         public_sector_local: Public sector (local)
         public_sector_national: Public sector (national)
         private_sector: Private sector
-        utility_management: Utility management
-        household_management: Household management
+        utility_management: Utility
+        household_management: Household
         other: Other
         unknown: Don't know     
       options_for_standard_enforcer:
         external_donor: External donor
-        community_based_management: Community-based management
+        community_based_management: Community-based organisation
         public_sector_local: Public sector (local)
         public_sector_national: Public sector (national)
         private_sector: Private sector
-        utility_management: Utility management
-        household_management: Household management
+        utility_management: Utility
+        household_management: Household
         other: Other
         unknown: Don't know     
       options_for_service_responsbility:
         external_donor: External donor
-        community_based_management: Community-based management
+        community_based_management: Community-based organisation
         public_sector_local: Public sector (local)
         public_sector_national: Public sector (national)
         private_sector: Private sector
-        utility_management: Utility management
-        household_management: Household management
+        utility_management: Utility
+        household_management: Household
         other: Other
         unknown: Don't know
       options_for_infrastructure_operator:
         external_donor: External donor
-        community_based_management: Community-based management
+        community_based_management: Community-based organisation
         public_sector_local: Public sector (local)
         public_sector_national: Public sector (national)
         private_sector: Private sector
-        utility_management: Utility management
-        household_management: Household management
+        utility_management: Utility
+        household_management: Household
         other: Other
         unknown: Don't know
       options_for_construction_financier:
         external_donor: External donor
-        community_based_management: Community-based management
+        community_based_management: Community-based organisation
         public_sector_local: Public sector (local)
         public_sector_national: Public sector (national)
         private_sector: Private sector
-        utility_management: Utility management
-        household_management: Household management
+        utility_management: Utility
+        household_management: Household
         other: Other
         unknown: Don't know
       options_for_service_management:
-        community_based_management: Community-based management
+        community_based_management: Community-based organisation
         public_sector_local: Public sector (local)
         public_sector_national: Public sector (national)
         private_sector: Private sector
-        utility_management: Utility management
-        household_management: Household management
+        utility_management: Utility
+        household_management: Household
         other: Other
         unknown: Don't know
       dont_know: Don't know
@@ -162,7 +169,7 @@ en:
       region:
         label: Region
         placeholder: Calabria
-        tooltip: Enter a regionEnter a region
+        tooltip: Enter a region
       town:
         label: City/Town
         placeholder: Catanzaro

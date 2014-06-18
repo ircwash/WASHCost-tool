@@ -1,6 +1,13 @@
 fr:
   advanced:
     shared:
+      options_for_exists:
+          not_applicable: Not applicable
+          planned_expenditure: Planned expenditure
+          budgeted_expenditure: Budgeted expenditure
+          historical_expenditure: Historical expenditure
+          mixed_expenditure: Mixed expenditure
+          dont_know: Don't know
       options_for_national_environmental_protection_norms:
         yes: Oui
         no: Non

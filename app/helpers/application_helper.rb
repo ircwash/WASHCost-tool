@@ -44,7 +44,7 @@ module ApplicationHelper
   
     # end testing
 
-    value != nil ? "USD #{number_with_precision( total.to_f, :precision => precision )}" : "---"
+    value != nil ? "#{number_with_precision( number_to_currency(total.to_f, :locale => I18n.locale), :precision => precision )}" : "---"
   end
 
   def total_expenditure_for_years(q, years)
@@ -116,7 +116,7 @@ module ApplicationHelper
     end
   end
 
-  def GetCountryFromCode(code)
+  def country_from_code(code)
     if code.nil?
       t('report.code_not_found')
     else
@@ -125,7 +125,7 @@ module ApplicationHelper
     end
   end
 
-  def GetCurrencyFromCode(code)
+  def currency_from_code(code)
     if code.nil?
       t('report.code_not_found')
     else
@@ -155,10 +155,12 @@ module ApplicationHelper
 
   def options_for_report_statuses
     [
-      [ t( 'report.status.neither' ), '0' ],
-      [ t( 'report.status.installed' ), '1' ],
-      [ t( 'report.status.planned' ), '2' ],
-      [ t( 'report.status.unknown' ), '3' ]
+      [ t('dashboard.status.not_applicable'), 0 ],
+      [ t('dashboard.status.planned_expenditure'), 1 ],
+      [ t('dashboard.status.budgeted_expenditure'), 2 ],
+      [ t('dashboard.status.historical_expenditure'), 3 ],
+      [ t('dashboard.status.mixed_expenditure'), 4 ],
+      [ t('dashboard.status.dont_know'), 5 ]
     ]
   end
 

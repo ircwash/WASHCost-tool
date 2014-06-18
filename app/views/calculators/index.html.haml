@@ -30,7 +30,7 @@
           = label_tag( 'advanced_tool', nil, :class => 'calculator_selection--selector--item' ) do
             = radio_button_tag( 'tool_level', 'advanced', false, id: 'advanced_tool', :class => 'calculator_selection--selector--radio' )
             %span.calculator_selection--selector--checked_icon
-            %span.calculator_selection--selector--icon.calculator_selection--selector--text Advanced Tool
+            %span.calculator_selection--selector--icon.calculator_selection--selector--text= t('calculators.tool_selection_advanced')
 
         .calculator_selection--buttons
           = submit_tag t('buttons.start'), :class => 'button'

@@ -1,11 +1,13 @@
 module AdvancedCalculatorsHelper
 
-  def options_for_sanitationwater_exists
+  def options_for_exists
     [
-      [ t('advanced.water.questionnaire.options_for_sanitationwater_exists.neither'), 0 ],
-      [ t('advanced.water.questionnaire.options_for_sanitationwater_exists.existing'), 1 ],
-      [ t('advanced.water.questionnaire.options_for_sanitationwater_exists.planned'), 2 ],
-      [ t('advanced.water.questionnaire.options_for_sanitationwater_exists.unknown'), 3 ]
+      [ t('advanced.shared.options_for_exists.not_applicable'), 0 ],
+      [ t('advanced.shared.options_for_exists.planned_expenditure'), 1 ],
+      [ t('advanced.shared.options_for_exists.budgeted_expenditure'), 2 ],
+      [ t('advanced.shared.options_for_exists.historical_expenditure'), 3 ],
+      [ t('advanced.shared.options_for_exists.mixed_expenditure'), 4 ],
+      [ t('advanced.shared.options_for_exists.dont_know'), 5 ]
     ]
   end
 

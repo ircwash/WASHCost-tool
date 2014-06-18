@@ -5,6 +5,7 @@ class Api::V1::SanitationController < Api::V1::BaseController
 
   def create
     questionnaire = AdvancedSanitationQuestionnaire.new( session )
+    questionnaire.reset
 
     unless params.has_key?(:title) && params[:title].to_s.length > 0
       render :json => { error: "Missing report title", status: 403 }, :status => :forbidden
@@ -38,6 +39,7 @@ class Api::V1::SanitationController < Api::V1::BaseController
 
   def update
     questionnaire = AdvancedSanitationQuestionnaire.new( session )
+    questionnaire.reset
 
     unless params.has_key?(:id)
       render :json => { error: "Missing report id", status: 403 }, :status => :forbidden

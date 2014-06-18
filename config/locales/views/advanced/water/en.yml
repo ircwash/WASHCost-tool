@@ -2,11 +2,6 @@ en:
   advanced:
     water:
       questionnaire:
-        options_for_sanitationwater_exists:
-          neither: Neither
-          existing: Existing
-          planned: Planned
-          unknown: Don't know
         water_system_exists:
           label: Does the water system already exist or is it planned?
           placeholder: Select an option
@@ -101,15 +96,15 @@ en:
           placeholder: Select an option
           tooltip: Select an option
         minor_operation_expenditure:
-          label: What is the minor operation and maintenance expenditure per year?
+          label: What has been/will be the minor operation and maintenance expenditure (per year)?
           placeholder: 1000
           tooltip: "Operating and minor maintenance expenditure: typically comprises regular expenditure such as labour, fuel, chemicals, materials, and purchases of any bulk water. Please provide the expenditure for the entire service area. If you only know an average cost per system then please multiply this by the number of systems."
         capital_maintenance_expenditure:
-          label: What is the average capital maintenance expenditure per year?
+          label: What has been/will be spent on capital maintenance expenditure (per year)?
           placeholder: 400
           tooltip: "Asset renewal and replacement cost: occasional and ‘lumpy’ costs that seek to restore the functionality of a system, such as replacing pump rods or foot valves in handpumps, or a diesel generator in motorised systems. As capital maintenance expenditure is by definition infrequent try, they may not occur annually, if you are using actual data look for the average expenditure over the last 5 years. Please provide the expenditure for the entire service area. If you only know an average cost per system then please multiply this by the number of systems."
         loan_cost:
-          label: What is the cost of servicing any loans taken to fund the service?
+          label: What is the cost servicing any loans taken to fund the service (per year)?
           placeholder: 6000
           tooltip: "Please provide the average expenditure required to pay for loans, e.g. interest payments. Please provide the expenditure for the entire service area. If you only know an average cost per system then please multiply this by the number of systems."
         loan_payback_period:

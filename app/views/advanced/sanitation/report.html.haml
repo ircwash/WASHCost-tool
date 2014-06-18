@@ -11,13 +11,13 @@
     %ul.summary-details
       %li
         %span.title= t( 'report.summary_country' ) + ": "
-        %span= GetCountryFromCode(@questionnaire.country)
+        %span= country_from_code(@questionnaire.country)
       %li
         %span.title= t( 'report.summary_year' ) + ": "
         %span= @questionnaire.year_of_expenditure
       %li
         %span.title= t( 'report.summary_currency' ) + ": "
-        %span= GetCurrencyFromCode(@questionnaire.currency)
+        %span= currency_from_code(@questionnaire.currency)
 
     .report--summary
 

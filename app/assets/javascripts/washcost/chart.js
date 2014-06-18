@@ -45,6 +45,7 @@ $( document ).ready( function()
         } );
 
         var chartObjects = [];
+        var legend = '<ul class="legend">';
 
         var operation_expenditure_per_year = [];
 
@@ -52,6 +53,7 @@ $( document ).ready( function()
           operation_expenditure_per_year[i] = { year:i + 1, cost:seed_points[0] };
 
         chartObjects.push({ seriesName: 'operation_expenditure_per_year', colour: '#858687', data: operation_expenditure_per_year });
+        legend += '<li><span style="background-color:#858687"></span> Operation expenditure per year</li>';
 
         var direct_support_per_year = [];
 
@@ -59,6 +61,7 @@ $( document ).ready( function()
           direct_support_per_year[i] = { year:i + 1, cost:seed_points[1] };
 
         chartObjects.push({ seriesName: 'direct_support_per_year', colour: '#f8ea03', data: direct_support_per_year });
+        legend += '<li><span style="background-color:#f8ea03"></span> Direct support per year</li>';
 
         var indirect_support_per_year = [];
 
@@ -66,6 +69,7 @@ $( document ).ready( function()
           indirect_support_per_year[i] = { year:i + 1, cost:seed_points[2] };
 
         chartObjects.push({ seriesName: 'indirect_support_per_year', colour: '#1f9ed8', data: indirect_support_per_year });
+        legend += '<li><span style="background-color:#1f9ed8"></span> Indirect support per year</li>';
 
         var cost_capital_tech = [];
         var colours_cct = [ 'FF6600', 'CC5200', 'FF8533' ];
@@ -76,6 +80,7 @@ $( document ).ready( function()
             cost_capital_tech[i][j-1] = { year:j , cost: (loan_payback[i] >= j) ? loan_cost[i] : 0 };
           }
           chartObjects.push({ seriesName: 'cost_of_capital_' + i, colour: '#' + colours_cct[i], data: cost_capital_tech[i] });
+           legend += '<li><span style="background-color:#' + colours_cct[i] + '"></span> ' + i+ ': Cost of capital</li>';
         }
 
         var capital_maintenance_expenditure = [];
@@ -90,10 +95,13 @@ $( document ).ready( function()
         }
 
         chartObjects.push({ seriesName: 'capital_maintenance_expenditure', colour: '#222222', data: capital_maintenance_expenditure });
-
-        //console.log( chartObjects );
+        legend += '<li><span style="background-color:#222222"></span> Capital maintenance expenditure</li>';
 
         chart.render( chartObjects );
+
+        legend += '</ul>';
+
+        $(legend).insertBefore('.report--chart')
       }
       else
       {

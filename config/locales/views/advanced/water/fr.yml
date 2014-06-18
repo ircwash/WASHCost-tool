@@ -2,11 +2,6 @@ fr:
   advanced:
     water:
       questionnaire:
-        options_for_sanitationwater_exists:
-          neither: Ni l'un ni l'autre
-          existing: Existant
-          planned: En projet
-          unknown: Ne sais pas
         water_system_exists:
           label: Est-ce que le système d'eau existe déjà ou est-ce qu'il est en projet?
           placeholder: Sélectionnez une option

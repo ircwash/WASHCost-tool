@@ -19,14 +19,22 @@ en:
           tooltip: Select an area type
         service_management:
           label: Which of these options best describes how the sanitation service is managed?
+          tooltip: Add a tooltip here
         construction_financier:
           label: Who finances the construction of the sanitation system?
+          tooltip: Add a tooltip here
+        service_responsbility:
+          label: Add label here
+          tooltip: Add a tooltip here
         infrastructure_operator:
           label: Who legally owns the sanitation infrastructure?
+          tooltip: Add tip information here
         standard_enforcer:
           label: Who has/will have responsibility for checking and enforcing the standard of sanitation services?
+          tooltip: Add tip information here
         rehabilitation_cost_owner:
           label: Who covers the cost of rehabilitation when larger repairs are needed (pit tank emptying)?
+          tooltip: Add tip information here
         supply_system_technologies:
           label: What are the typical household latrine types in your service delivery area?
           placeholder: Choose a technology
@@ -37,10 +45,12 @@ en:
           tooltip: This is used to calculate the cost of a single latrine
         system_population_design:
           label: How many people are these latrine(s) designed to serve?
+          tooltip: Add tip information here
           placeholder: 20
         system_population_actual:
           label: How many people do these latrine(s) actually serve?
           placeholder: 30
+          tooltip: Add tip information here
         aggregate_actual_hardware_expenditure:
           label: What is the total expenditure on capital hardware over the service area to construct the latrines? How long is the latrine expected to last from the time of construction (eg. useful lifespan)?
         actual_hardware_expenditure:
@@ -76,15 +86,15 @@ en:
           placeholder: Select an option
           tooltip: Select an option
         minor_operation_expenditure:
-          label: What is the minor operation and maintenance expenditure per year?  
+          label: What has been/will be the minor operation and maintenance expenditure (per year)?  
           placeholder: 1000
           tooltip: "Operational and minor maintenance expenditure is the recurrent, regular and ongoing expenditure on chemicals, materials and cleaning products. Please provide the expenditure for the entire service area. If you only know an average cost per system then please multiply this by the number of systems."
         capital_maintenance_expenditure:
-          label: What is the average capital maintenance expenditure per year? 
+          label: What has been/will be spent on capital maintenance expenditure (per year)? 
           placeholder: 400
           tooltip: "Capital maintenance expenditures are the costs of renewing (replacing, rehabilitating, refurbishing, restoring) assets to ensure that services continue at the same level of performance that was first delivered. Examples include such as replacing a slab, emptying a septic tank or re-siting the latrine. As capital maintenance expenditure is by definition infrequent try, they may not occur annually, if you are using actual data look for the average expenditure over the last 5 years. Please provide the expenditure for the entire service area. If you only know an average cost per system then please multiply this by the number of systems."
         loan_cost:
-          label: What is the cost servicing any loans taken to fund the service?
+          label: What is the cost servicing any loans taken to fund the service (per year)?
           placeholder: 6000
           tooltip: "Please provide the average expenditure required to pay for loans, e.g. interest payments. Please provide the expenditure for the entire service area. If you only know an average cost per system or household then please multiply this by the number of systems or households respectively."
         loan_payback_period:
@@ -108,9 +118,11 @@ en:
         national_use_norms:
           label: Does the service use meet the national norms?
           placeholder: Select an option
+          tooltip: Add tip here
         national_environmental_protection_norms:
-          label: Does the service environtmental protection meet the national norms?
+          label: Does the service environmental protection meet the national norms?
           placeholder: Select an option
+          tooltip: Add tip here
         national_reliability_norms:
           label: Does the service reliability meet the national norms?
           placeholder: Select an option

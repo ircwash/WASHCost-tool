@@ -51,6 +51,47 @@ class AdvancedQuestionnaire < Session
       self.population_density = attributes[ :population_density_unknown ]
     end
 
+    # sanitize objects
+
+    regEx = /\(...\)/
+
+    if attributes[:annual_household_income] != nil
+      attributes[:annual_household_income] = attributes[:annual_household_income].gsub(regEx, '').strip!
+    end
+
+    if attributes[:direct_support_cost] != nil
+      attributes[:direct_support_cost] = attributes[:direct_support_cost].gsub(regEx, '').strip!
+    end
+
+    if attributes[:indirect_support_cost] != nil
+      attributes[:indirect_support_cost] = attributes[:indirect_support_cost].gsub(regEx, '').strip!
+    end
+
+    if attributes[:actual_hardware_expenditure] != nil && attributes[:actual_hardware_expenditure].count > 0
+      arr = attributes[:actual_hardware_expenditure].map {|item| item != nil ? item.gsub(regEx, '').strip! : item }
+      attributes[:actual_hardware_expenditure] = arr
+    end
+
+    if attributes[:actual_software_expenditure] != nil && attributes[:actual_software_expenditure].count > 0
+      arr = attributes[:actual_software_expenditure].map {|item| item != nil ? item.gsub(regEx, '').strip! : item }
+      attributes[:actual_software_expenditure] = arr
+    end
+
+    if attributes[:minor_operation_expenditure] != nil && attributes[:minor_operation_expenditure].count > 0
+      arr = attributes[:minor_operation_expenditure].map {|item| item != nil ? item.gsub(regEx, '').strip! : item }
+      attributes[:minor_operation_expenditure] = arr
+    end
+
+    if attributes[:capital_maintenance_expenditure] != nil && attributes[:capital_maintenance_expenditure].count > 0
+      arr = attributes[:capital_maintenance_expenditure].map {|item| item != nil ? item.gsub(regEx, '').strip! : item }
+      attributes[:capital_maintenance_expenditure] = arr
+    end
+
+    if attributes[:loan_cost] != nil && attributes[:loan_cost].count > 0
+      arr = attributes[:loan_cost].map {|item| item != nil ? item.gsub(regEx, '').strip! : item }
+      attributes[:loan_cost] = arr
+    end
+
     archive
 
   end
@@ -530,34 +571,33 @@ class AdvancedQuestionnaire < Session
   def set_properties
     super
 
-    self.status                           = nil
-    self.country                          = nil
-    self.currency                         = nil
-    self.year_of_expenditure              = nil
-    self.region                           = nil
-    self.town                             = nil
-    self.area_type                        = nil
-    self.population_density               = nil
-    self.annual_household_income          = nil
-    self.household_size                   = nil
+    self.status = 0
+    self.country = "US"
+    self.currency = "usd"
+    self.year_of_expenditure = Time.now.year
+    self.region = nil
+    self.town = nil
+    self.area_type = nil
+    self.population_density = nil
+    self.annual_household_income = nil
+    self.household_size = nil
 
-    self.direct_support_cost              = nil
-    self.indirect_support_cost            = nil
+    self.direct_support_cost = nil
+    self.indirect_support_cost = nil
 
-    self.supply_system_technologies       = []
-    self.systems_number                   = []
-    self.system_population_design         = []
-    self.system_population_actual         = []
-    self.actual_hardware_expenditure      = []
-    self.actual_software_expenditure      = []
-    self.system_lifespan_expectancy       = []
-    self.minor_operation_expenditure      = []
-    self.capital_maintenance_expenditure  = []
-    self.loan_cost                        = []
-    self.loan_payback_period              = []
+    self.supply_system_technologies = []
+    self.systems_number = []
+    self.system_population_design = []
+    self.system_population_actual = []
+    self.actual_hardware_expenditure = []
+    self.actual_software_expenditure = []
+    self.system_lifespan_expectancy = []
+    self.minor_operation_expenditure = []
+    self.capital_maintenance_expenditure = []
+    self.loan_cost = []
+    self.loan_payback_period = []
 
-    self.service_level_name               = []
-    self.service_level_share              = []
+    self.service_level_name = []
   end
 
 end

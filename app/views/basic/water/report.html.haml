@@ -25,14 +25,14 @@
               .report--rating_icon.icon--star-empty
           .report--summary--item--caption= water_service_level_rating_label
 
-      .report--summary--description
-        .report--summary--description--icon{ :class => @questionnaire.cost_rating_inside_benchmarks? ? "icon--status-good" : "icon--status-bad" }
-        .report--summary--description--caption= cost_rating_inside_benchmarks_label
+      / .report--summary--description
+      /   .report--summary--description--icon{ :class => @questionnaire.cost_rating_inside_benchmarks? ? "icon--status-good" : "icon--status-bad" }
+      /   .report--summary--description--caption= cost_rating_inside_benchmarks_label
 
-      %section.report--review{ "data-togglecontent" => "true" }
-        %a.report--review--link{ :href => '#', "data-togglecontent-link" => "true" }= "#{t('report.full_review')} >>"
-        .report--review--content{ "data-togglecontent-content" => "report--review--content-visible" }
-          .report--review--content--text= raw basic_water_report_level_of_service
+      / %section.report--review{ "data-togglecontent" => "true" }
+      /   %a.report--review--link{ :href => '#', "data-togglecontent-link" => "true" }= "#{t('report.full_review')} >>"
+      /   .report--review--content{ "data-togglecontent-content" => "report--review--content-visible" }
+      /     .report--review--content--text= raw basic_water_report_level_of_service
 
     - else
       .report--no_data= t('report.report_box_no_value')

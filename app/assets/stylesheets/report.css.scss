@@ -886,4 +886,31 @@ ul.summary-details {
 
 }
 
+.legend{
+  display:block;
+  padding: 5px;
+  margin-bottom:10px;
+
+  li.heading{
+    display:block;
+    font-weight:bold;
+    font-size:15px;
+    padding:5px;
+  }
+
+  li{
+    display:inline-block;
+    font-size:13px;
+    line-height:0;
+    margin:5px;
+
+    span{
+      display:inline-block;
+      width:10px;
+      height:10px;
+      margin-right:5px;
+    }
+  }
+}
+
 

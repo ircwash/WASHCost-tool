@@ -1,11 +1,6 @@
 en:
   #is this water and sanitation mixed together? Not clear where the service level indicators are. For example, both water and sanitation have an access indicator but should have separate labels as they may translate differently. 
   report:
-    status:
-      neither: Neither
-      installed: Installed
-      planned: Planned
-      unknown: Unknown
     code_not_found: Unknown
     share_your_report: Share your report
     back: Back
