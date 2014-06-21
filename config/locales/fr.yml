@@ -1,4 +1,4 @@
-en:
+fr:
   # for registration errors
   errors:
     messages:
@@ -74,18 +74,18 @@ en:
   footer:
     calculator_progress: "%{level} %{type} Report"
   buttons:
-    next: Next Question
-    start: Start the tool
-    view_report: View Report
-    save_report: Save Report
-    share_report: Share Report
-    delete_report: Delete Report
+    next: Question suivante
+    start: Commencez à utiliser l'outil
+    save_report: Sauvegarder le rapport
+    share_report: Partager le rapport
+    delete_report: Effacer le rapport
   calculators:
-    basic: Basic
-    advanced: Advanced
-    water: Water
-    sanitation: Sanitation
-    title: Do the math and make it last
-    sub_title: Do a sustainability check and share a personal life-cycle costs report based on your service delivery model.
-    pre_question_note: Before you start, please choose the tool
-    tool_selection_advanced: Advanced tool
+    basic: Outil de base
+    advanced: Outil avancé
+    water: Eau
+    sanitation: Assainissement
+    title: Faites le calcul et faites durer votre service
+    sub_title: Évaluez la pérennité de votre service et obtenez un rapport personnalisé basé sur votre modèle de fourniture de service.
+    pre_question_note: "Avant de commencer, veuillez choisir l'outile"
+    tool_selection_basic: Outil de base
+    tool_selection_advanced: Outil avancé
