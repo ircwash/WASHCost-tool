@@ -1,131 +1,131 @@
-en:
+fr:
   advanced:
     sanitation:
       questionnaire:
         options_for_area_type:
           rural: Rural
-          small_town: Small town
-          peri_urban: Peri-urban
-          urban: Urban
-          mixed: Mixed
-          unknown: Dont know
+          small_town: Petite localité
+          peri_urban: Péri-urbain
+          urban: Urbain
+          mixed: Mixte
+          unknown: Ne sais pas
         sanitation_service_exists:
-          label: Does the sanitation service already exist or is it planned?
-          placeholder: Select an option
-          tooltip: 'If you are providing real cost data on an existing system, please choose "Existing".'
+          label: "Est-ce que le service d'assaainissement existe déjà, ou est-ce qu'il est en projet?"
+          placeholder: "Sélectionnez une option"
+          tooltip: 'Si vous fournissez des données de coûts réels pour un système existant, veuillez choisir "Existant".'
         area_type:
-          label: Description of area type
-          placeholder: Select an area type
-          tooltip: Select an area type
+          label: "Description du type de zone"
+          placeholder: "Sélectionnez un type de zone"
+          tooltip: "Sélectionnez un type de zone"
         service_management:
-          label: Which of these options best describes how the sanitation service is managed?
-          tooltip: Add a tooltip here
+          label: "Quelle option décrit le mieux le mode de gestion du service?"
+          tooltip: "Vous pouvez sélectionner plusieurs options"
         construction_financier:
-          label: Who finances the construction of the sanitation system?
-          tooltip: Add a tooltip here
+          label: "Par qui est financé la construction des ouvrages d'assainissement?"
+          tooltip: "Vous pouvez sélectionner plusieurs options"
         service_responsbility:
-          label: Add label here
-          tooltip: Add a tooltip here
+          label: "Qui effectue les travaux de fonctionnement et d'entretien?"
+          tooltip: "Vous pouvez sélectionner plusieurs options"
         infrastructure_operator:
-          label: Who legally owns the sanitation infrastructure?
-          tooltip: Add tip information here
+          label: "Qui est le propriétaire légal de l'infrastructure d'assainissement"
+          tooltip: "Vous pouvez sélectionner plusieurs options"
         standard_enforcer:
-          label: Who has/will have responsibility for checking and enforcing the standard of sanitation services?
-          tooltip: Add tip information here
+          label: "Qui est responsable de la surveillance et de l'application des normes de service en vigueur?"
+          tooltip: "Vous pouvez sélectionner plusieurs options"
         rehabilitation_cost_owner:
-          label: Who covers the cost of rehabilitation when larger repairs are needed (pit tank emptying)?
-          tooltip: Add tip information here
+          label: "Qui assume les coûts de renouvellement lorsqu'une réhabilitation du système est nécessaire?"
+          tooltip: "Vous pouvez sélectionner plusieurs options"
         supply_system_technologies:
-          label: What are the typical household latrine types in your service delivery area?
-          placeholder: Choose a technology
-          tooltip: Choose a technology
+          label: "Quels sont les types de latrines le plus couramment utilisées par les ménages dans votre zone de service?"
+          placeholder: Technologie
+          tooltip: "Seules les technologies d'assainissement individuel sont incluses pour le moment."
         systems_number:
-          label: How many latrines are there?
+          label: Nombre de latrines?
           placeholder: 5
-          tooltip: This is used to calculate the cost of a single latrine
+          tooltip: "Ces données sont utilisées pour calculer le coût d'une seule latrine."
         system_population_design:
-          label: How many people are these latrine(s) designed to serve?
-          tooltip: Add tip information here
+          label: "Combien de personnes au total les latrines sont-elles censées desservir dans cette zone de service?"
+          tooltip: Veuillez indiquer le nombre maximum de personnes censées utiliser le type de latrines. 
           placeholder: 20
         system_population_actual:
-          label: How many people do these latrine(s) actually serve?
+          label: "Combien de personnes au total est-ce que les latrines desservent effectivement dans cette zone de service?"
           placeholder: 30
-          tooltip: Add tip information here
+          tooltip: "S'il vous plaît utiliser le numéro maximum de personnes qui utilisent en fait le type de latrines."
         aggregate_actual_hardware_expenditure:
-          label: What is the total expenditure on capital hardware over the service area to construct the latrines? How long is the latrine expected to last from the time of construction (eg. useful lifespan)?
+          label: Quel est le coût total en investissement matériel pour la construction des latrines dans la zone de service?
         actual_hardware_expenditure:
-          label: What is the total capital expenditure hardware over the service area to construct the latrines?
+          label: Quel est le coût total en investissement matériel pour la construction des latrines dans la zone de service?
           placeholder: 5000
-          tooltip: "Capital 'hardware' investment in fixed assets, such as excavation, lining, slabs, superstructures and pipes."
+          tooltip: "Le capital investi dans les actifs fixes, tels que le fonçage, le cuvelage, les dalles, les superstructures et les tuyaux. Veuillez fournir les dépenses pour toute la zone de service. Si vous ne connaissez que le coût moyen par système, veuillez multiplier celui-ci par le nombre de systèmes."
         system_lifespan_expectancy:
-          label: How long is the latrine expected to last from the time of construction (the useful lifespan)?
+          label: "Quelle est la durée de fonctionnement prévue des latrines à partir de la construction (la durée de vie utile)?"
           placeholder: 30
-          tooltip: "Please provide the expenditure for the entire service area. If you only know an average cost per system then please multiply this by the number of systems."
+          tooltip: "S'il vous plaît sélectionner l'espérance de vie"
         direct_support_cost:
-          label: What has been spent/will be spent on expenditure on direct support?
+          label: "Qu'est-ce qui a été dépensé /sera dépensé pour l'appui direct?"
           placeholder: 10
-          tooltip: 'Please provide the expenditure per person per year. Direct support is structured support to service providers and users or user groups related to the operation and management of a WASH service; direct support costs are the costs of such support. They cover monitoring, technical advice and administrative, organisational or legal support.  The costs of support before and during the capital construction of a project are not included; they are considered to be capital software. Direct support is often used synonymously with “post-construction support”.'
+          tooltip: "Veuillez fournir les dépenses par personne/ par an. L'appui direct est un appui structuré pour les fournisseurs de services et les utilisateurs ou groupes d'utilisateurs et se rapporte à l'exploitation et la gestion d'un service WASH. Les coûts d'appui directs couvrent les activités de surveillance, le conseil technique et le soutien administratif, organisationnel ou juridique. Les coûts d'appui avant et pendant la construction du capital d'un projet ne sont pas inclus, car ceux-ci sont considérés comme investissement immatériel. L'appui direct est souvent utilisé comme synonyme de appui post-construction"
         indirect_support_cost:
-          label: What has been/will be the expenditure on indirect support?
+          label: "Qu'est-ce qui a été dépensé /sera dépensé pour l'appui indirect?"
           placeholder: 2
-          tooltip: "Please provide the expenditure per person per year. Indirect support costs cover expenditure on this macro-level support, including planning and policy making, and support to decentralised service authorities or local government. Indirect support includes capacity building for professionals and technicians and capacity support to local government as service authorities, for example to adhere to national norms, standards and guidelines."
+          tooltip: "Veuillez fournir les dépenses par personne/ par an. Les coûts d'appui indirects couvrent les dépenses d'appui au niveau macro, pour la planification et l'élaboration des politiques sectorielles, et l'appui aux autorités de services décentralisés ou le gouvernement local. L'appui indirect comprend le renforcement des capacités des professionnels et des techniciens et l'appui aux capacités des autorités des services, pour se mettre en conformité avec les normes  et directives nationales."
         annual_household_income:
-          label: What is the average annual household income in the service area?
+          label: "Quel est le revenu annuel moyen d'un ménage dans la zone de service?"
           placeholder: 600
-          tooltip: This data is used for the affordability check and it can be changed to see the affordability relative to different levels of wealth in the service area.
+          tooltip: "Ces données sont utilisées pour évaluer l'accessibilité financière et elles peuvent être modifiées pour analyser l'accessibilité par rapport à différents niveaux de richesse dans la zone de service."
         household_size:
-          label: What is the average household size in the service area?
+          label: Taille moyenne d'un ménage?
           placeholder: 6
-          tooltip: This is an approximation for household size used to calculate the affordability of the sanitation services.
+          tooltip: "Il s'agit d'une estimation de la taille des ménage, utilisée pour calculer l'accessibilité financière des services d'assainissement."
         actual_software_expenditure:
-          label: What is the total expenditure on capital expenditure software over the service area during or prior to construction?
-          tooltip: "Capital 'software' expenditure refers to work with stakeholders prior to construction or during implementation, such as community training, demand creation and hygiene promotion. Please provide the expenditure for the entire service area. If you only know an average cost per system then please multiply this by the number of systems."
+          label: "Quel est le coût total en investissement immatériel pendant ou avant la construction des ouvrages dans la zone de service?"
+          tooltip: "Les dépenses immatérielles concernent des activités avec les  parties prenantes avant la construction ou pendant la mise en œuvre, telles que des formations pour la communauté, la création de la demande et la promotion de l'hygiène. Veuillez fournir les dépenses pour toute la zone de service. Si vous ne connaissez que le coût moyen par système, veuillez multiplier celui-ci par le nombre de systèmes."
           placeholder: 3000
         unpaid_labour:
-          label: Has unpaid labour been contributed by the household or community to set up the onsite sanitation system?
-          placeholder: Select an option
-          tooltip: Select an option
+          label: Est-ce que les ménages ou la communauté ont contribué de la main-d'oeuvre non rémunérée pour mettre en place les systèmes d'assainissement?
+          placeholder: Sélectionnez une option
+          tooltip: Sélectionnez une option
         minor_operation_expenditure:
           label: What has been/will be the minor operation and maintenance expenditure (per year)?  
           placeholder: 1000
           tooltip: "Operational and minor maintenance expenditure is the recurrent, regular and ongoing expenditure on chemicals, materials and cleaning products. Please provide the expenditure for the entire service area. If you only know an average cost per system then please multiply this by the number of systems."
         capital_maintenance_expenditure:
-          label: What has been/will be spent on capital maintenance expenditure (per year)? 
+          label: "Quel est le coût d'exploitation et de maintenance par an?" 
           placeholder: 400
-          tooltip: "Capital maintenance expenditures are the costs of renewing (replacing, rehabilitating, refurbishing, restoring) assets to ensure that services continue at the same level of performance that was first delivered. Examples include such as replacing a slab, emptying a septic tank or re-siting the latrine. As capital maintenance expenditure is by definition infrequent try, they may not occur annually, if you are using actual data look for the average expenditure over the last 5 years. Please provide the expenditure for the entire service area. If you only know an average cost per system then please multiply this by the number of systems."
+          tooltip: "Les dépenses pour le fonctionnement et l'entretien comprennent les dépenses récurrentes, régulières et continues pour les produits chimiques, les matériaux, et l'achat de produits de nettoyage. Veuillez fournir les dépenses pour toute la zone de service. Si vous ne connaissez que le coût moyen par système, veuillez multiplier celui-ci par le nombre de systèmes."
         loan_cost:
-          label: What is the cost servicing any loans taken to fund the service (per year)?
+          label: "Quels est le coût du capital d'un éventuel emprunt contracté pour financer le service?"
           placeholder: 6000
-          tooltip: "Please provide the average expenditure required to pay for loans, e.g. interest payments. Please provide the expenditure for the entire service area. If you only know an average cost per system or household then please multiply this by the number of systems or households respectively."
+          tooltip: "Veuillez indiquer le coût moyen de l'emprunt, par exemple le montant des intérêts. Veuillez fournir les dépenses pour toute la zone de service. Si vous ne connaissez que le coût moyen par système, veuillez multiplier celui-ci par le nombre de systèmes."
         loan_payback_period:
-          label: What is the payback period on this loan?
+          label: "Quelle est la durée d'amortissement de cet emprunt?"
           placeholder: 20
-          tooltip: Please provide the average length of time spent to payback the loans.
+          tooltip: "Veuillez fournir la durée moyenne pour le remboursement de l'emprunt."
         service_levels:
-          label: Please define up to four service levels for users of the sanitation service
-          tooltip: Please define up to four service levels.
+          label: "S'il vous plaît définir jusqu'à quatre niveaux de service pour les utilisateurs du service de l'assainissement"
+          tooltip: S'il vous plaît définir jusqu'à quatre niveaux de service
         service_level_name:
-          label: Name the service level
-          placeholder: Service level name
+          label: Nommez le niveau de service
+          placeholder: Nom de niveau de service
         service_level_share:
-          label: Service level share
+          label: Part du niveau de service
           placeholder: 25%
-          tooltip: Service level share across all technologies must sum together to 100% to represent all of the population in the intervention area.
+          tooltip: Part de niveau de service pour toutes les technologies doit résumer ainsi à 100% pour représenter toute la population dans la zone d'intervention.
         national_accessibility_norms:
-          label: Does the service accessibility meet the national norms?
-          placeholder: Select an option
-          tooltip: Select an option
+          label: Est-ce que l'accessibilité du service est conforme aux normes nationales?
+          placeholder: Sélectionnez une option
+          tooltip: Sélectionnez une option
         national_use_norms:
-          label: Does the service use meet the national norms?
-          placeholder: Select an option
-          tooltip: Add tip here
+          label: Est-ce que le taux d'utilisation du service est conforme aux normes nationales?
+          placeholder: Sélectionnez une option
+          tooltip: Sélectionnez une option
         national_environmental_protection_norms:
-          label: Does the service environmental protection meet the national norms?
-          placeholder: Select an option
-          tooltip: Add tip here
+          label: Est-ce que l'aspect de protection de l'environnement du service est conforme aux normes nationales?
+          placeholder: Sélectionnez une option
+          tooltip: Sélectionnez une option
         national_reliability_norms:
-          label: Does the service reliability meet the national norms?
-          placeholder: Select an option
-          tooltip: Select an option
+          label: Est-ce que la fiabilité du service est conforme aux normes nationales?
+          placeholder: Sélectionnez une option
+          tooltip: Sélectionnez une option
       report:
-        final_report: Advanced Sanitation | Final Report
+        final_report: Assainissement Avancée | Rapport Final

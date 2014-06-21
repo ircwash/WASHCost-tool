@@ -19,22 +19,22 @@ en:
           tooltip: Select an area type
         service_management:
           label: Which of these options best describes how the sanitation service is managed?
-          tooltip: Add a tooltip here
+          tooltip: More than one option can be selected.
         construction_financier:
           label: Who finances the construction of the sanitation system?
-          tooltip: Add a tooltip here
+          tooltip: More than one option can be selected.
         service_responsbility:
-          label: Add label here
-          tooltip: Add a tooltip here
+          label: Who undertakes the operation and maintenance of the infrastructure?
+          tooltip: More than one option can be selected.
         infrastructure_operator:
           label: Who legally owns the sanitation infrastructure?
-          tooltip: Add tip information here
+          tooltip: More than one option can be selected.
         standard_enforcer:
           label: Who has/will have responsibility for checking and enforcing the standard of sanitation services?
-          tooltip: Add tip information here
+          tooltip: More than one option can be selected.
         rehabilitation_cost_owner:
           label: Who covers the cost of rehabilitation when larger repairs are needed (pit tank emptying)?
-          tooltip: Add tip information here
+          tooltip: More than one option can be selected.
         supply_system_technologies:
           label: What are the typical household latrine types in your service delivery area?
           placeholder: Choose a technology
@@ -45,14 +45,14 @@ en:
           tooltip: This is used to calculate the cost of a single latrine
         system_population_design:
           label: How many people are these latrine(s) designed to serve?
-          tooltip: Add tip information here
+          tooltip: Please use the (maximum) number of people that are expected to use the latrine type.
           placeholder: 20
         system_population_actual:
           label: How many people do these latrine(s) actually serve?
           placeholder: 30
-          tooltip: Add tip information here
+          tooltip: Please use the (maximum) number of people that actually use the latrine type.
         aggregate_actual_hardware_expenditure:
-          label: What is the total expenditure on capital hardware over the service area to construct the latrines? How long is the latrine expected to last from the time of construction (eg. useful lifespan)?
+          label: What is the total expenditure on capital hardware over the service area to construct the latrines?
         actual_hardware_expenditure:
           label: What is the total capital expenditure hardware over the service area to construct the latrines?
           placeholder: 5000
@@ -118,11 +118,11 @@ en:
         national_use_norms:
           label: Does the service use meet the national norms?
           placeholder: Select an option
-          tooltip: Add tip here
+          tooltip: Select an option
         national_environmental_protection_norms:
           label: Does the service environmental protection meet the national norms?
           placeholder: Select an option
-          tooltip: Add tip here
+          tooltip: Select an option
         national_reliability_norms:
           label: Does the service reliability meet the national norms?
           placeholder: Select an option
