@@ -14,6 +14,11 @@ class Advanced::WaterController < CalculatorController
   end
 
   def questionnaire
+    session[:advanced_water][:currency] = nil
+    session[:advanced_water][:country] = nil
+    session[:advanced_water][:status] = nil
+    session[:advanced_water][:year_of_expenditure] = nil
+    
     @questionnaire = AdvancedWaterQuestionnaire.new( session )
 
     render params[ :section ]
@@ -57,7 +62,7 @@ class Advanced::WaterController < CalculatorController
   end
 
   def store_report
-    super( params[ :user_report ][ :title ], 'advanced', 'water', AdvancedWaterQuestionnaire.new( session ).attributes )
+    super( params[ :user_report ][ :title ], 'advanced', session[:advanced_water][:status], 'water', AdvancedWaterQuestionnaire.new( session ).attributes )
   end
 
 end

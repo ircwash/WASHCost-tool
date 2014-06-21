@@ -2,11 +2,12 @@ class CalculatorController < ApplicationController
 
   protected
 
-  def store_report( title, level, type, questionnaire )
+  def store_report( title, level, status, type, questionnaire )
     new_report = UserReport.new(
       :title => title,
       :type  => type,
       :level => level,
+      :status => status,
       :questionnaire => questionnaire
     )
     arr = current_user.user_reports.select {|report| report["title"] == title }
@@ -24,6 +25,7 @@ class CalculatorController < ApplicationController
         :title => title,
         :type  => type,
         :level => level,
+        :status => status,
         :questionnaire => questionnaire
       )
       redirect_to dashboard_index_path(I18n.locale)

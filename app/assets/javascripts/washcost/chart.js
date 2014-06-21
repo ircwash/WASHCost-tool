@@ -10,7 +10,9 @@ $( document ).ready( function()
       var container    = $( this ),
           type         = container.data( 'chart-type' ),
           datapoints   = [],
-          seed_points = container.data( 'chart-seeds' ),
+          seed_oepy = container.data( 'chart-oepy' ),
+          seed_dspy = container.data( 'chart-dspy' ),
+          seed_ispy = container.data( 'chart-ispy' ),
           currency    = container.data( 'chart-currency' ),
           tech    = container.data( 'chart-tech' ),
           loan_cost    = container.data( 'chart-loancost' ),
@@ -27,7 +29,7 @@ $( document ).ready( function()
           parent: $( this )[0],
           id: 'washcostSustainChart',
           dimensions: { width:container.width(), height:container.height() },
-          padding:{ top:10, right:40, bottom:60, left:90 },
+          padding:{ top:10, right:40, bottom:60, left:140 },
           axisTypes:{ x:'linear', y:'linear', z:null },
           tickFormatters:{ y:function( d ) { return currency + ' ' + d; } },
           yAxisTitle:'Recurrent Costs',
@@ -48,57 +50,68 @@ $( document ).ready( function()
         var chartObjects = [];
         var legend = '<ul class="legend">';
 
-        var operation_expenditure_per_year = [];
+        if (seed_oepy != null) {
+          var operation_expenditure_per_year = [];
 
-        for ( i = 0; i < 30; i++ )
-          operation_expenditure_per_year[i] = { year:i + 1, cost:seed_points[0] };
+          for ( i = 0; i < 30; i++ )
+            operation_expenditure_per_year[i] = { year:i + 1, cost:seed_oepy };
 
-        chartObjects.push({ seriesName: 'operation_expenditure_per_year', colour: '#858687', data: operation_expenditure_per_year });
-        legend += '<li><span style="background-color:#858687"></span> ' + legend_txt[0] + '</li>';
+          chartObjects.push({ seriesName: 'operation_expenditure_per_year', colour: '#858687', data: operation_expenditure_per_year });
+          legend += '<li><span style="background-color:#858687"></span> ' + legend_txt[0] + '</li>';
+        }
+        console.log(seed_dspy)
+        if (seed_dspy != null) {
+          var direct_support_per_year = [];
 
-        var direct_support_per_year = [];
+          for ( i = 0; i < 30; i++ )
+            direct_support_per_year[i] = { year:i + 1, cost:seed_dspy };
 
-        for ( i = 0; i < 30; i++ )
-          direct_support_per_year[i] = { year:i + 1, cost:seed_points[1] };
-
-        chartObjects.push({ seriesName: 'direct_support_per_year', colour: '#f8ea03', data: direct_support_per_year });
-        legend += '<li><span style="background-color:#f8ea03"></span>  ' + legend_txt[1] + '</li>';
-
-        var indirect_support_per_year = [];
-
-        for ( i = 0; i < 30; i++ )
-          indirect_support_per_year[i] = { year:i + 1, cost:seed_points[2] };
-
-        chartObjects.push({ seriesName: 'indirect_support_per_year', colour: '#1f9ed8', data: indirect_support_per_year });
-        legend += '<li><span style="background-color:#1f9ed8"></span>  ' + legend_txt[2] + '</li>';
-
-        var cost_capital_tech = [];
-        var colours_cct = [ 'FF6600', 'CC5200', 'FF8533' ];
-
-        for ( i = 0; i < tech.length; i++ ) {
-          cost_capital_tech[i] = [];
-          for ( j = 1; j < 31; j++ ) {
-            cost_capital_tech[i][j-1] = { year:j , cost: (loan_payback[i] >= j) ? loan_cost[i] : 0 };
-          }
-          chartObjects.push({ seriesName: 'cost_of_capital_' + i, colour: '#' + colours_cct[i], data: cost_capital_tech[i] });
-           legend += '<li><span style="background-color:#' + colours_cct[i] + '"></span> ' + i+ ':  ' + legend_txt[3] + '</li>';
+          chartObjects.push({ seriesName: 'direct_support_per_year', colour: '#f8ea03', data: direct_support_per_year });
+          legend += '<li><span style="background-color:#f8ea03"></span>  ' + legend_txt[1] + '</li>';
         }
 
-        var capital_maintenance_expenditure = [];
+        if (seed_ispy != null) {
+          var indirect_support_per_year = [];
 
-        for ( i = 1; i < 31; i++ ) {
-          var n = 0;
-          for ( j = 0; j < tech.length; j++ ) {
-            var p = ((i % system_lifespan[j]) === 0) ? actual_hardware[j] : 0;
-            n += p;
-          }
-          capital_maintenance_expenditure[i-1] = { year:i , cost: n }; 
+          for ( i = 0; i < 30; i++ )
+            indirect_support_per_year[i] = { year:i + 1, cost:seed_ispy };
+
+          chartObjects.push({ seriesName: 'indirect_support_per_year', colour: '#1f9ed8', data: indirect_support_per_year });
+          legend += '<li><span style="background-color:#1f9ed8"></span>  ' + legend_txt[2] + '</li>';
         }
 
-        chartObjects.push({ seriesName: 'capital_maintenance_expenditure', colour: '#222222', data: capital_maintenance_expenditure });
-        legend += '<li><span style="background-color:#222222"></span>  ' + legend_txt[4] + '</li>';
+        if (tech.length >= 1) {
+          var cost_capital_tech = [];
+          var colours_cct = [ 'FF6600', 'CC5200', 'FF8533' ];
 
-        chart.render( chartObjects );
+          for ( i = 0; i < tech.length; i++ ) {
+            cost_capital_tech[i] = [];
+            for ( j = 1; j < 31; j++ ) {
+              cost_capital_tech[i][j-1] = { year:j , cost: (loan_payback[i] >= j) ? loan_cost[i] : 0 };
+            }
+            chartObjects.push({ seriesName: 'cost_of_capital_' + i, colour: '#' + colours_cct[i], data: cost_capital_tech[i] });
+            legend += '<li><span style="background-color:#' + colours_cct[i] + '"></span> ' + i+ ':  ' + legend_txt[3] + '</li>';
+          }
+        }
+
+        if (tech.length >= 1) {
+          var capital_maintenance_expenditure = [];
+
+          for ( i = 1; i < 31; i++ ) {
+            var n = 0;
+            for ( j = 0; j < tech.length; j++ ) {
+              var p = ((i % system_lifespan[j]) === 0) ? actual_hardware[j] : 0;
+              n += p;
+            }
+            capital_maintenance_expenditure[i-1] = { year:i , cost: n }; 
+          }
+
+          chartObjects.push({ seriesName: 'capital_maintenance_expenditure', colour: '#222222', data: capital_maintenance_expenditure });
+          legend += '<li><span style="background-color:#222222"></span>  ' + legend_txt[4] + '</li>';
+        }
+
+        if (chartObjects.length > 1)
+          chart.render( chartObjects );
 
         legend += '</ul>';
 

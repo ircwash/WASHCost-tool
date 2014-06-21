@@ -1,0 +1,149 @@
+fr:
+  advanced:
+    water:
+      questionnaire:
+        water_system_exists:
+          label: Est-ce que le système d'eau existe déjà ou est-ce qu'il est en projet?
+          placeholder: Sélectionnez une option
+          tooltip: 'Si vous fournissez des données de coûts réels pour un système existant, choisissez "Existant".'
+        area_type:
+          label: Description de la zone?
+          placeholder: Sélectionnez un type de zone
+          tooltip: Sélectionnez un type de zone
+        population_density:
+          label: Quelle est la densité de population de la zone de service?
+          placeholder: 2000
+        service_management:
+          label: Quelle option décrit le mieux le mode de gestion du service?
+          tooltip: Vous pouvez sélectionner plusieurs options.
+        construction_financier:
+          label: Par qui est financée la construction du système d'eau?
+          tooltip: Vous pouvez sélectionner plusieurs options.
+        infrastructure_operator:
+          label: Qui est le propriétaire légal du système d'approvisionnement en eau?
+          tooltip: Vous pouvez sélectionner plusieurs options.
+        service_responsbility:
+          label: Qui est responsable d'assurer le fonctionnement et l'entretien du système?
+          tooltip: Vous pouvez sélectionner plusieurs options.
+        standard_enforcer:
+          label: Qui est/sera responsable de la surveillance et de l'application des normes de service en vigueur?
+          tooltip: Vous pouvez sélectionner plusieurs options.
+        rehabilitation_cost_owner:
+          label: Qui assume les coûts de renouvellement lorsqu'une réhabilitation du système est nécessaire?
+          tooltip: Vous pouvez sélectionner plusieurs options.
+        annual_household_income:
+          label: Quel est le revenu annuel moyen d'un ménage dans la zone de service?
+          placeholder: 600
+          tooltip: Ces données sont utilisées pour évaluer l'accessibilité financière et elles peuvent être modifiées pour analyser l'accessibilté par rapport à différents niveaux de richesse dans la zone de service.
+        household_size:
+          label: Taille moyenne d'un ménage
+          placeholder: 6
+          tooltip: Il s'agit d'une approximation de la taille moyenne des ménages utilisée pour calculer l'accessibilité financière des services d'eau.
+        supply_system_technologies:
+          label: Quel est le système utilisé pour fournir le service d'eau? (plusieurs réponses possibles)?
+          placeholder: Choisissez une technologie
+          tooltip: Choisissez une technologie
+        systems_number:
+          label: Nombre de systèmes?
+          placeholder: 5
+          tooltip: Ces données sont utilisées  pour calculer le coût d'un système unique.
+        system_population_design:
+          label: Combien de personnes au total les systèmes d'eau sont-ils censés desservir dans cette zone de service?
+          placeholder: 20
+          tooltip: "Veuillez entrer le nombre de personnes, le système(s) d'eau est conçu pour servir"
+        system_population_actual:
+          label: Combien de personnes au total est-ce que les systèmes d'eau desservent effectivement dans cette zone de service?
+          placeholder: 30
+          tooltip: "Veuillez entrer le nombre de personnes, le système (s) d'eau de sert réels"
+        water_source:
+          label: What is the water source?
+          placeholder: Sélectionnez une source d'eau
+          tooltip: Select a water source
+        surface_water_primary_source:
+          label: "'Si c'est de l'eau de surface, s'il vous plaît définir la source primaire'"
+          placeholder: Sélectionnez une source primaire
+          tooltip: Sélectionnez une source primaire
+        water_treatment:
+          label: Comment l'eau est habituellement traitée?
+          tooltip: Please Sélectionnez une option
+        power_supply:
+          label: Type d'alimentation?
+          tooltip: Please Sélectionnez une option
+        distribution_line_length:
+          label: Longueur de la ligne de distribution (km)
+          placeholder: 200
+          tooltip: Veuillez saisir la durée approximative de la ligne de distribution
+        capital_costs:
+          capital_costs: Coûts d'investissement
+          recurring_costs: Coûts récurrents
+        #aggregate_actual_hardware_expenditure:
+        #  label: What has been/will be the actual expenditure on capital expenditure (hardware) and how long is/was the system expected to last at the time of construction (the useful lifespan) or detail disaggregated below?
+        #  tooltip: Tip here
+        actual_hardware_expenditure:
+          label: Quelle est la capitale de matériel de dépenses totales sur la zone de service pour construire les systèmes?
+          placeholder: 5000
+          tooltip: "Le capital investi dans la construction ou l'achat d'actifs fixes, tels que les structures en béton, pompes et canalisations. Veuillez fournir les dépenses pour toute la zone de service. Si vous ne connaissez que le coût moyen par système, veuillez multiplier celui-ci par le nombre de systèmes."
+        system_lifespan_expectancy:
+          label: Quelle est la durée de fonctionnement prévue des latrines à partir de la construction (la durée de vie utile)?
+          placeholder: 30
+          tooltip: "Please provide the expenditure for the entire service area. If you only know an average cost per system then please multiply this by the number of systems."
+        actual_software_expenditure:
+          label: What is the total capital expenditure software over the service area during the construction of the systems?
+          placeholder: 3000
+          tooltip: "Veuillez fournir les dépenses pour toute la zone de service. Si vous ne connaissez que le coût moyen par système, veuillez multiplier celui-ci par le nombre de systèmes."
+        unpaid_labour:
+          label: Est-ce que les ménages ou la communauté ont contribué de la main-d'oeuvre non rémunérée pour mettre en place les systèmes d'assainissement?
+          placeholder: Sélectionnez une option
+          tooltip: Sélectionnez une option
+        minor_operation_expenditure:
+          label: Quel est le coût d'exploitation et de maintenance par an?
+          placeholder: 1000
+          tooltip: "Dépenses pour le fonctionnement et l'entretien: elles comprennent en général les dépenses récurrentes telles que la main-d’œuvre, le carburant, les produits chimiques, les matériaux, et l'achat d'eau en gros. Veuillez fournir les dépenses pour toute la zone de service. Si vous ne connaissez que le coût moyen par système, veuillez multiplier celui-ci par le nombre de systèmes."
+        capital_maintenance_expenditure:
+          label: Quel est le coût moyen de renouvellement ou de réhabilitation par an?
+          placeholder: 400
+          tooltip: "Renouvellement des actifs et coût de remplacement: les coûts occasionnels et irréguliers qui visent à rétablir la fonctionnalité d'un système, comme le remplacement de la tige de pompe ou du clapet de pied dans les pompes manuelles, ou du générateur diesel dans les systèmes motorisés. Comme les dépenses pour le renouvellement sont par définition peu fréquentes, elles ne sont pas forcément engagées tous les ans. Si vous utilisez des données réelles, vous pouvez indiquer la moyenne des dépenses des 5 dernières années. Veuillez indiquer les dépenses pour toute la zone de service. Si vous ne connaissez que le coût moyen par système, veuillez multiplier celui-ci par le nombre de systèmes."
+        loan_cost:
+          label: Quel est le coût du capital d'un éventuel emprunt contracté pour financer le service?
+          placeholder: 6000
+          tooltip: "Veuillez indiquer le coût moyen de l'emprunt, par exemple le montant des intérêts. Veuillez fournir les dépenses pour toute la zone de service. Si vous ne connaissez que le coût moyen par système, veuillez multiplier celui-ci par le nombre de systèmes."
+        loan_payback_period:
+          label: Quelle est la durée d'amortissement de cet emprunt?
+          placeholder: 20
+          tooltip: Veuillez fournir la durée moyenne pour le remboursement de l'emprunt.
+        direct_support_cost:
+          label: What has been spent/will be spent on expenditure on direct support??
+          placeholder: 10
+          tooltip: "Veuillez fournir les dépenses par personne/ par an. L'appui direct est un appui structuré pour les fournisseurs de services et les utilisateurs ou groupes d'utilisateurs et se rapporte à l'exploitation et la gestion d'un service WASH. Les coûts d'appui directs couvrent les activités de surveillance, le conseil technique et le soutien administratif, organisationnel ou juridique. Les coûts d'appui avant et pendant la construction du capital d'un projet ne sont pas inclus, car ceux-ci sont considérés comme investissement immatériel. L'appui direct est souvent utilisé comme synonyme de «appui post-construction »."
+        indirect_support_cost:
+          label: Qu'est-ce qui a été dépensé /sera dépensé pour l'appui indirect?
+          placeholder: 2
+          tooltip: "Veuillez fournir les dépenses par personne/ par an. Les coûts d'appui indirects couvrent les dépenses d'appui au niveau macro, pour la planification et l'élaboration des politiques sectorielles, et l'appui aux autorités de services décentralisés ou le gouvernement local. L'appui indirect comprend le renforcement des capacités des professionnels et des techniciens et l'appui aux capacités de des autorités locales, pour se mettre en conformité avec les normes et directives nationales."
+        service_levels:
+          label: S'il vous plaît définir jusqu'à quatre niveaux de service pour les utilisateurs du système d'eau
+          tooltip: Définir entre un et quatre sessions 
+        service_level_name:
+          label: Nommez le niveau de service
+          placeholder: Nom de niveau de service
+        service_level_share:
+          label: Part du niveau de service
+          placeholder: 25%
+          tooltip: Part de niveau de service pour toutes les technologies doit résumer ainsi à 100% pour représenter toute la population dans la zone d'intervention.
+        national_accessibility_norms:
+          label: Est-ce que l'accessibilité du service est conforme aux normes nationales?
+          placeholder: Sélectionnez une option
+          tooltip: Sélectionnez une option
+        national_quantity_norms:
+          label: Est-ce que le taux d'utilisation du service est conforme aux normes nationales?
+          placeholder: Sélectionnez une option
+          tooltip: Sélectionnez une option
+        national_quality_norms:
+          label: st-ce que la fiabilité du service est conforme aux normes nationales?
+          placeholder: Sélectionnez une option
+          tooltip: Sélectionnez une option
+        national_reliability_norms:
+          label: Est-ce que l'aspect de protection de l'environnement du service est conforme aux normes nationales?
+          placeholder: Sélectionnez une option
+          tooltip: Sélectionnez une option
+      report:
+        final_report: Eau Avancée | Rapport Final

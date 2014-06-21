@@ -62,13 +62,11 @@ class ReportsController < ApplicationController
       report = current_user.user_reports.find( params[ :user_report ][ :id ] )
       if report != nil && report[ :type ] == 'sanitation'
         questionnaire = AdvancedSanitationQuestionnaire.new( session )
-        #questionnaire.reset
         updated_quest = report.questionnaire
         updated_quest[ :status ] = params[ :user_report ][ :status ]
         questionnaire.update_attributes( updated_quest )
       elsif report != nil
         questionnaire = AdvancedWaterQuestionnaire.new( session )
-        #questionnaire.reset
         updated_quest = report.questionnaire
         updated_quest[ :status ] = params[ :user_report ][ :status ]
         questionnaire.update_attributes( updated_quest )
@@ -77,20 +75,5 @@ class ReportsController < ApplicationController
     end
     render json: {}
   end
-
-  ##def update
-    ##if params[ :user_report ].present? && params[ :user_report ][ :id ].present?
-      ##report = current_user.user_reports.find( params[ :user_report ][ :id ] )
-
-      ##if report != nil
-
-        ##report.update_attributes( params[ :user_report ] )
-        #report.update_attributes( updated_report.questionnaire )
-
-      ##end
-    ##end
-
-    ##render json: updated_report
-  ##end
 
 end

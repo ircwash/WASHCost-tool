@@ -14,6 +14,10 @@ class Advanced::SanitationController < CalculatorController
   end
 
   def questionnaire
+    session[:advanced_sanitation][:currency] = nil
+    session[:advanced_sanitation][:country] = nil
+    session[:advanced_sanitation][:status] = nil
+    session[:advanced_sanitation][:year_of_expenditure] = nil
     @questionnaire = AdvancedSanitationQuestionnaire.new( session )
 
     render params[ :section ]
@@ -57,7 +61,7 @@ class Advanced::SanitationController < CalculatorController
   end
 
   def store_report
-    super( params[ :user_report ][ :title ], 'advanced', 'sanitation', AdvancedSanitationQuestionnaire.new( session ).attributes )
+    super( params[ :user_report ][ :title ], 'advanced', session[:advanced_sanitation][:status], 'sanitation', AdvancedSanitationQuestionnaire.new( session ).attributes )
   end
 
 end

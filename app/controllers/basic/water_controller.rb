@@ -57,7 +57,7 @@ class Basic::WaterController < CalculatorController
   end
 
   def store_report
-    super( params[ :user_report ][ :title ], 'basic', 'water', BasicWaterQuestionnaire.new( session ).attributes )
+    super( params[ :user_report ][ :title ], 'basic', session[:basic_water][:status], 'water', BasicWaterQuestionnaire.new( session ).attributes )
   end
 
 end
