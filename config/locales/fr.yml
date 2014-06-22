@@ -2,14 +2,14 @@ fr:
   # for registration errors
   errors:
     messages:
-      unique_email: "Email address needs to be unique"
-      email_missing: "Email address can't be blank"
-      email_valid: "Email address must be valid"
-      password_missing: "A password is required"
-      password_too_long: "Password too long"
-      password_too_short: "Password too short (min 8 characters)"
-      password_confirm_mismatch: "Passwords do not match"
-      register_if_acces_to_cuesstinaire_view: "You need to be registered first"
+      unique_email: "Adresse e-mail doit être unique"
+      email_missing: "Adresse e-mail ne peut pas être vide"
+      email_valid: "Adresse e-mail doit être valide"
+      password_missing: "Un mot de passe est nécessaire"
+      password_too_long: "Mot de passe trop long"
+      password_too_short: "Mot de passe trop court (8 caractères min)"
+      password_confirm_mismatch: "Les mots de passe ne correspondent pas"
+      register_if_acces_to_cuesstinaire_view: "Vous devez être enregistré premier"
   # for registration errors
   mongoid:
     errors:
@@ -18,14 +18,14 @@ fr:
           attributes:
             email:
               # will match the email_missing error above
-              blank: "Email address can't be blank"
+              blank: "Adresse e-mail ne peut pas être vide"
         # for report saving
         user_report:
           attributes:
             title:
-              report_title_missing: A title is required
-              unique_report: Report names must be unique
-  edit: Edit
+              report_title_missing: Un titre est obligatoire
+              unique_report: Noms des rapports doivent être uniques
+  edit: Modifier
   number:
     format:
       separator: "."
@@ -40,52 +40,52 @@ fr:
         precision: 2
   navigation:
     utility:
-      about: About
-      help: help
-      contact: Contact
-      sign_in: Sign In
-      sign_out: Sign Out
-      language: Language
+      about: Sur
+      help: Aider
+      contact: Contacter
+      sign_in: Identifiez-vous
+      sign_out: Déconnexion
+      language: Langue
     calculators:
-      context: Context
-      country: Country
-      technology: Technology
+      context: Contexte
+      country: Pays
+      technology: Technologie
       population: Population
-      household: Household
+      household: Ménage
       latrine: Latrine
-      cost: Cost
-      capital_expenditure: Capital Expenditure
-      recurrent_expenditure: Recurrent Expenditure
+      cost: Coût
+      capital_expenditure: Les dépenses en immobilisations
+      recurrent_expenditure: Charges récurrentes
       service: Service
-      access: Access
-      quantity: Quantity
-      quality: Quality
-      household_latrine: Household Latrine
-      impermeability: Impermeability
+      access: Accès
+      quantity: Quantité
+      quality: Qualité
+      household_latrine: Latrines des ménages
+      impermeability: Imperméabilité
       #Not clear where this is being applied. This may need to change Environmental protection, which is the actual name of the indicator
-      environmental_impact: Environmental Impact
+      environmental_impact: Impact sur l'environnement
       usage: Usage
-      reliability: Reliability
-      advanced: Advanced
-      service_area: Service Area
-      system_management: System Management
-      system_characteristics: System Characteristics
-      service_level: Service Level
+      reliability: Fiabilité
+      advanced: Avancé
+      service_area: Zone de service
+      system_management: Gestion du système
+      system_characteristics: Caractéristiques du système
+      service_level: Niveau de Service
   footer:
-    calculator_progress: "%{level} %{type} Report"
+    calculator_progress: "%{level} %{type} rapport"
   buttons:
-    next: Next Question
-    start: Start the tool
-    view_report: View Report
-    save_report: Save Report
-    share_report: Share Report
-    delete_report: Delete Report
+    next: Question suivante
+    start: commencez à utiliser le calculateur
+    view_report: Voir le rapport
+    save_report: Sauvegarder le rapport
+    share_report: Partager Signaler
+    delete_report: Supprimer le rapport
   calculators:
-    basic: Basic
-    advanced: Advanced
-    water: Water
-    sanitation: Sanitation
-    title: Do the math and make it last
-    sub_title: Do a sustainability check and share a personal life-cycle costs report based on your service delivery model.
-    pre_question_note: Before you start, please choose the tool
-    tool_selection_advanced: Advanced tool
+    basic: De base
+    advanced: Avancé
+    water: Eau
+    sanitation: Assainissement 
+    title: Faites le calcul et faites durer votre service
+    sub_title: Évaluez la pérennité de votre service et obtenez un rapport personnalisé basé sur votre modèle de fourniture de service.
+    pre_question_note: "Avant de commencer, veuillez répondre à ces deux questions"
+    tool_selection_advanced: Outil de pointe

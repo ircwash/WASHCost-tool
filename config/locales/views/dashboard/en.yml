@@ -9,7 +9,7 @@ en:
     date: Date
     calculator_type: Calculator type
     service: Service
-    comparison: Comparison (2011)
+    comparison: Comparison (2011 rates)
     status:
       not_applicable: Not applicable
       planned_expenditure: Planned expenditure
@@ -18,6 +18,6 @@ en:
       mixed_expenditure: Mixed expenditure
       dont_know: Don't know
     compare:
-      label1: One
-      label2: Two
-      label3: Three
+      label1: Capital expenditure per person
+      label2: Recurrent expenditure per person per year
+      label3: Population meeting all national service norms

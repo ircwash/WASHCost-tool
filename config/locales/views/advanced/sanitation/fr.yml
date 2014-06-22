@@ -86,9 +86,9 @@ fr:
           placeholder: Sélectionnez une option
           tooltip: Sélectionnez une option
         minor_operation_expenditure:
-          label: What has been/will be the minor operation and maintenance expenditure (per year)?  
+          label: Quel est le coût d'exploitation et de maintenance par an?  
           placeholder: 1000
-          tooltip: "Operational and minor maintenance expenditure is the recurrent, regular and ongoing expenditure on chemicals, materials and cleaning products. Please provide the expenditure for the entire service area. If you only know an average cost per system then please multiply this by the number of systems."
+          tooltip: "Dépenses pour le fonctionnement et l'entretien: elles comprennent en général les dépenses récurrentes telles que la main-d’œuvre, le carburant, les produits chimiques, les matériaux, et l'achat d'eau en gros. Veuillez fournir les dépenses pour toute la zone de service. Si vous ne connaissez que le coût moyen par système, veuillez multiplier celui-ci par le nombre de systèmes."
         capital_maintenance_expenditure:
           label: "Quel est le coût d'exploitation et de maintenance par an?" 
           placeholder: 400

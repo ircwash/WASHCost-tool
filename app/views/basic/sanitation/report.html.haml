@@ -25,9 +25,9 @@
               .report--rating_icon.icon--star-empty
           .report--summary--item--caption= sanitation_service_level_rating_label
 
-      / .report--summary--description
-      /   .report--summary--description--icon{ :class => @questionnaire.cost_rating_inside_benchmarks? ? "icon--status-good" : "icon--status-bad" }
-      /   .report--summary--description--caption= cost_rating_inside_benchmarks_label
+      .report--summary--description
+        .report--summary--description--icon{ :class => @questionnaire.cost_rating_inside_benchmarks? ? "icon--status-good" : "icon--status-bad" }
+        .report--summary--description--caption= cost_rating_inside_benchmarks_label
 
       / %section.report--review{ "data-togglecontent" => "true" }
       /   %a.report--review--link{ :href => '#', "data-togglecontent-link" => "true" }= "#{t('report.full_review')} >>"

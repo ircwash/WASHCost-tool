@@ -60,8 +60,25 @@
 }
 
 .dashboard--report_table--cell {
-  padding:7px 10px;
+  padding:10px;
   font-size:14px;
+}
+
+.buttons{
+  text-align:right;
+}
+
+.additional-comparison{
+  font-size:12px;
+  padding:10px 10px 5px 10px;
+
+  div {
+    margin-bottom:5px;
+    font-weight:bold;
+    em{
+      font-weight:normal;
+    }
+  }
 }
 
 @media screen and ( max-width: $mobile_breakpoint ) {

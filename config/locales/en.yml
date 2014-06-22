@@ -41,7 +41,7 @@ en:
   navigation:
     utility:
       about: About
-      help: help
+      help: Help
       contact: Contact
       sign_in: Sign In
       sign_out: Sign Out
@@ -87,5 +87,5 @@ en:
     sanitation: Sanitation
     title: Do the math and make it last
     sub_title: Do a sustainability check and share a personal life-cycle costs report based on your service delivery model.
-    pre_question_note: Before you start, please choose the tool
+    pre_question_note: "Before you start, please choose the tool"
     tool_selection_advanced: Advanced tool

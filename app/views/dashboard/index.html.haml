@@ -31,7 +31,7 @@
             %th.dashboard--report_table--heading= t( 'dashboard.name' )
             %td.dashboard--report_table--heading{ :width => 20 }
             %th.dashboard--report_table--heading{ :width => 100 }= t( 'dashboard.location' )
-            %th.dashboard--report_table--heading= t( 'dashboard.comparison' )
+            -#%th.dashboard--report_table--heading= t( 'dashboard.comparison' )
             %th.dashboard--report_table--heading{ :width => 80 }= t( 'dashboard.date' )
             %th.dashboard--report_table--heading{ :width => 180 }= t( 'dashboard.calculator_type' )
             %th.dashboard--report_table--heading{ :width => 100 }= t( 'dashboard.service' )
@@ -44,20 +44,40 @@
               %td.dashboard--report_table--cell
                 - if report.questionnaire[ 'country' ].present?
                   %div{ :class => "flag flag-#{report.questionnaire['country'].downcase}" }
-              %td.dashboard--report_table--cell= report.questionnaire[ 'country' ].present? ? Country.new( report.questionnaire["country"] ).name.truncate(13) : ''
-              - if report.level == "basic"
-                %td.dashboard--report_table--cell &mdash;
-              -else
-                %td.dashboard--report_table--cell
-                  %div= t('dashboard.compare.label1') + ': ' + final_usd_2011(report.questionnaire, capital_expenditure_per_person(report.questionnaire)).to_s
-                  %div= t('dashboard.compare.label2') + ': ' + final_usd_2011(report.questionnaire, recurrent_expenditure_per_person_per_year(report.questionnaire, 30)).to_s
-                  %div= t('dashboard.compare.label3') + ': ' + percentage_of_population_that_meets_all_norms(report.questionnaire).to_s + '%'
+              %td.dashboard--report_table--cell
+                -if  report.questionnaire[ 'country' ].present?
+                  = Country.new( report.questionnaire["country"] ).name.truncate(13)
+                - else
+                  &mdash;
+              / - if report.level == "basic"
+              /   %td.dashboard--report_table--cell &mdash;
+              / -else
+              /   %td.dashboard--report_table--cell
+              /     %div= t('dashboard.compare.label1') + ': ' + final_usd_2011(report.questionnaire, capital_expenditure_per_person(report.questionnaire)).to_s
+              /     %div= t('dashboard.compare.label2') + ': ' + final_usd_2011(report.questionnaire, recurrent_expenditure_per_person_per_year(report.questionnaire, 30)).to_s
+              /     %div= t('dashboard.compare.label3') + ': ' + percentage_of_population_that_meets_all_norms(report.questionnaire).to_s + '%'
               %td.dashboard--report_table--cell= report.created_at.strftime( '%d.%m.%Y' )
               %td.dashboard--report_table--cell= t('calculators.' + report.level).capitalize + ' ' +  t('calculators.' + report.type).capitalize
               %td.dashboard--report_table--cell
                 = form_for report, :url => report_path( I18n.locale ), :html => { 'data-dynamic_form' => report_path( I18n.locale ) } do |f|
                   = f.hidden_field :id
                   = f.select :status, options_for_select( options_for_report_statuses, report.status )
-              %td.dashboard--report_table--cell
+              %td.dashboard--report_table--cell.buttons
                 = link_to t( 'buttons.view_report' ), reports_load_path( I18n.locale, report.id ), :class => 'button button-small'
                 = link_to t( 'buttons.delete_report' ), reports_destroy_path( I18n.locale, report.id ), :class => 'button button-small report-delete'
+            %tr.dashboard--report_table--row
+              %td.dashboard--report_table--cell.additional-comparison{:colspan => 7}
+                - if report.level == "basic"
+                  %div
+                    %em
+                      &mdash;
+                -else
+                  %div
+                    %em= t('dashboard.compare.label1')
+                    = final_usd_2011(report.questionnaire, capital_expenditure_per_person(report.questionnaire)).to_s
+                  %div
+                    %em= t('dashboard.compare.label2')
+                    = final_usd_2011(report.questionnaire, recurrent_expenditure_per_person_per_year(report.questionnaire, 30)).to_s
+                  %div
+                    %em= t('dashboard.compare.label3')
+                    = percentage_of_population_that_meets_all_norms(report.questionnaire).to_s + '%'
