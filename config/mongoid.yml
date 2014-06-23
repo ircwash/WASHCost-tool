@@ -1,9 +1,12 @@
 development:
   sessions:
     default:
+      #database: wash_cost_app_development
+      #hosts:
+      #  - localhost:27017
       database: wash_cost_app_development
       hosts:
-        - localhost:27017
+        - dev.washcost.native.com:27017
   options:
     raise_not_found_error: false
 
@@ -28,7 +31,9 @@ staging:
 production:
   sessions:
     default:
-      uri: <%= ENV['MONGOHQ_URL'] %>
+      #uri: <%= ENV['MONGOHQ_URL'] %>
+      hosts:
+        - dev.washcost.native.com:27017
   options:
     raise_not_found_error: false
         #consistency: :strong
