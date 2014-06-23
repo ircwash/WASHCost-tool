@@ -32,6 +32,7 @@ production:
   sessions:
     default:
       #uri: <%= ENV['MONGOHQ_URL'] %>
+      database: wash_cost_app_development
       hosts:
         - dev.washcost.native.com:27017
   options:
