@@ -68,8 +68,8 @@
 .navigation--subcategory--link {
   float:left;
   height:40px;
-  width:190px;
-  padding:14px 0;
+  min-width:190px;
+  padding:14px 10px;
   font-weight:bold;
   font-size:13px;
   color:rgba(3,3,3,0.2);

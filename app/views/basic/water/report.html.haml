@@ -48,21 +48,21 @@
           .report--option_grid--item--content
             .report--option_grid--item--title= t( 'basic.water.report.sections.country' )
             %div{ :class => "icon--tool-#{'globe' unless @questionnaire.country == nil}" }
-            .report--option_grid--item--caption= @questionnaire.country != nil ? Country.new( @questionnaire.country ).name : t( 'basic.shared.report.no_answer_provided' )
+            .report--option_grid--item--caption= @questionnaire.country != nil ? Country.new( @questionnaire.country ).name : t( 'report.no_answer_provided' )
             = link_to 'Edit', basic_water_action_path( I18n.locale, 'country' ), :class => 'report--option_grid--item--edit', :title => t('edit')
 
         .report--option_grid--item
           .report--option_grid--item--content
             .report--option_grid--item--title= t( 'basic.water.report.sections.technology' )
             %div{ :class => "icon--tool-#{options_for_water_supply_technologies[@questionnaire.technology.to_i][0] unless @questionnaire.technology == nil}" }
-            .report--option_grid--item--caption= @questionnaire.technology != nil ? t( "basic.water.questionnaire.technology.options.#{options_for_water_supply_technologies[@questionnaire.technology.to_i][0]}" ) : t( 'basic.shared.report.no_answer_provided' )
+            .report--option_grid--item--caption= @questionnaire.technology != nil ? t( "basic.water.questionnaire.technology.options.#{options_for_water_supply_technologies[@questionnaire.technology.to_i][0]}" ) : t( 'report.no_answer_provided' )
             = link_to 'Edit', basic_water_action_path( I18n.locale, 'technology' ), :class => 'report--option_grid--item--edit', :title => t('edit')
 
         .report--option_grid--item
           .report--option_grid--item--content
             .report--option_grid--item--title= t( 'basic.water.report.sections.population' )
             %div{ :class => "icon--tool-#{'population' unless @questionnaire.population == nil}" }
-            .report--option_grid--item--caption= @questionnaire.population != nil ? @questionnaire.population : t( 'basic.shared.report.no_answer_provided' )
+            .report--option_grid--item--caption= @questionnaire.population != nil ? @questionnaire.population : t( 'report.no_answer_provided' )
             = link_to 'Edit', basic_water_action_path( I18n.locale, 'population' ), :class => 'report--option_grid--item--edit', :title => t('edit')
 
 
@@ -118,19 +118,19 @@
           .report--option_grid--item--content
             .report--option_grid--item--title= t( 'basic.water.report.sections.quantity' )
             %div{ :class => "icon--tool-#{options_for_water_quantities[@questionnaire.quantity.to_i][0] unless @questionnaire.quantity == nil}" }
-            .report--option_grid--item--caption= @questionnaire.quantity != nil ? t( "basic.water.questionnaire.quantity.options.#{options_for_water_quantities[@questionnaire.quantity.to_i][0]}" ) : t( 'basic.shared.report.no_answer_provided' )
+            .report--option_grid--item--caption= @questionnaire.quantity != nil ? t( "basic.water.questionnaire.quantity.options.#{options_for_water_quantities[@questionnaire.quantity.to_i][0]}" ) : t( 'report.no_answer_provided' )
             = link_to '', basic_water_action_path( I18n.locale, 'quantity' ), :class => 'report--option_grid--item--edit', :title => t('edit')
 
         .report--option_grid--item
           .report--option_grid--item--content
             .report--option_grid--item--title= t( 'basic.water.report.sections.quality' )
             %div{ :class => "icon--tool-#{options_for_water_qualities[@questionnaire.quality.to_i][0] unless @questionnaire.quality == nil}" }
-            .report--option_grid--item--caption= @questionnaire.quality != nil ? t( "basic.water.questionnaire.quality.options.#{options_for_water_qualities[@questionnaire.quality.to_i][0]}" ) : t( 'basic.shared.report.no_answer_provided' )
+            .report--option_grid--item--caption= @questionnaire.quality != nil ? t( "basic.water.questionnaire.quality.options.#{options_for_water_qualities[@questionnaire.quality.to_i][0]}" ) : t( 'report.no_answer_provided' )
             = link_to '', basic_water_action_path( I18n.locale, 'quality' ), :class => 'report--option_grid--item--edit', :title => t('edit')
 
         .report--option_grid--item
           .report--option_grid--item--content
             .report--option_grid--item--title= t( 'basic.water.report.sections.reliability' )
             %div{ :class => "icon--tool-#{options_for_water_reliability[@questionnaire.reliability.to_i][0] unless @questionnaire.reliability == nil}" }
-            .report--option_grid--item--caption= @questionnaire.reliability != nil ? t( "basic.water.questionnaire.reliability.options.#{options_for_water_reliability[@questionnaire.reliability.to_i][0]}" ) : t( 'basic.shared.report.no_answer_provided' )
+            .report--option_grid--item--caption= @questionnaire.reliability != nil ? t( "basic.water.questionnaire.reliability.options.#{options_for_water_reliability[@questionnaire.reliability.to_i][0]}" ) : t( 'report.no_answer_provided' )
             = link_to '', basic_water_action_path( I18n.locale, 'reliability' ), :class => 'report--option_grid--item--edit', :title => t('edit')

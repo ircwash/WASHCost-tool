@@ -10,15 +10,16 @@ class Advanced::WaterController < CalculatorController
     @questionnaire = AdvancedWaterQuestionnaire.new( session )
     @questionnaire.reset
 
-    redirect_to advanced_water_action_path( I18n.locale, :service_area )
+    redirect_to advanced_water_action_path( I18n.locale, :service_area, :start => true )
   end
 
   def questionnaire
-    session[:advanced_water][:currency] = nil
-    session[:advanced_water][:country] = nil
-    session[:advanced_water][:status] = nil
-    session[:advanced_water][:year_of_expenditure] = nil
-    
+    if params[ :start ] != nil
+      session[:advanced_water][:currency] = nil
+      session[:advanced_water][:country] = nil
+      session[:advanced_water][:status] = nil
+      session[:advanced_water][:year_of_expenditure] = nil
+    end
     @questionnaire = AdvancedWaterQuestionnaire.new( session )
 
     render params[ :section ]

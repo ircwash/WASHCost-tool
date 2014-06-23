@@ -10,14 +10,16 @@ class Advanced::SanitationController < CalculatorController
     @questionnaire = AdvancedSanitationQuestionnaire.new( session )
     @questionnaire.reset
 
-    redirect_to advanced_sanitation_action_path( I18n.locale, :service_area )
+    redirect_to advanced_sanitation_action_path( I18n.locale, :service_area, :start => true )
   end
 
   def questionnaire
-    session[:advanced_sanitation][:currency] = nil
-    session[:advanced_sanitation][:country] = nil
-    session[:advanced_sanitation][:status] = nil
-    session[:advanced_sanitation][:year_of_expenditure] = nil
+    if params[ :start ] != nil
+      session[:advanced_water][:currency] = nil
+      session[:advanced_water][:country] = nil
+      session[:advanced_water][:status] = nil
+      session[:advanced_water][:year_of_expenditure] = nil
+    end
     @questionnaire = AdvancedSanitationQuestionnaire.new( session )
 
     render params[ :section ]

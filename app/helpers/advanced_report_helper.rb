@@ -55,7 +55,7 @@ module AdvancedReportHelper
   end
 
   def report_delta_currency_value_for( value, precision = 2 )
-    currency = Money.new(1, @questionnaire.currency).currency
+    currency = Money.new(1, @questionnaire.currency != nil ? @questionnaire.currency : 'usd').currency
     if (value != nil && value == 0.00)
       "#{number_with_precision( number_to_currency(value.to_f.abs, :locale => I18n.locale, :unit => currency.symbol), :precision => precision )}"
     else
