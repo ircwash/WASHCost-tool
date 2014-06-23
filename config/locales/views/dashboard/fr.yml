@@ -1,23 +1,23 @@
 fr:
-dashboard:
-  company: Organisation
-  country: Pays
-  preferred_language: Langue préférée
-  current_mail: Adresse e-mail actuelle
-  name: Nom
-  location: Localité
-  date: Date
-  calculator_type: Type de calculateur
-  service: Service
-  comparison: Comparaison (2011 rates)
-  status:
-    not_applicable: Non applicable
-    planned_expenditure: Dépense prévisionnelle
-    budgeted_expenditure: Dépenses budgetées
-    historical_expenditure: Dépenses historiques
-    mixed_expenditure: Dépenses diverses
-    dont_know: Ne sais pas
-  compare:
-    label1: Les dépenses en capital par personne
-    label2: Les dépenses courantes par personne et par an
-    label3: Réunion de la population toutes les normes de service nationaless
+  dashboard:
+    company: Organisation
+    country: Pays
+    preferred_language: Langue préférée
+    current_mail: Adresse e-mail actuelle
+    name: Nom
+    location: Localité
+    date: Date
+    calculator_type: Type de calculateur
+    service: Service
+    comparison: Comparaison (2011 rates)
+    status:
+      not_applicable: Non applicable
+      planned_expenditure: Dépense prévisionnelle
+      budgeted_expenditure: Dépenses budgetées
+      historical_expenditure: Dépenses historiques
+      mixed_expenditure: Dépenses diverses
+      dont_know: Ne sais pas
+    compare:
+      label1: Les dépenses en capital par personne
+      label2: Les dépenses courantes par personne et par an
+      label3: Réunion de la population toutes les normes de service nationaless
