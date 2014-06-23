@@ -15,10 +15,10 @@ class Advanced::SanitationController < CalculatorController
 
   def questionnaire
     if params[ :start ] != nil
-      session[:advanced_water][:currency] = nil
-      session[:advanced_water][:country] = nil
-      session[:advanced_water][:status] = nil
-      session[:advanced_water][:year_of_expenditure] = nil
+      session[:advanced_sanitation][:currency] = nil
+      session[:advanced_sanitation][:country] = nil
+      session[:advanced_sanitation][:status] = nil
+      session[:advanced_sanitation][:year_of_expenditure] = nil
     end
     @questionnaire = AdvancedSanitationQuestionnaire.new( session )
 
