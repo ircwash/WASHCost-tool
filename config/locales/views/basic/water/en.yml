@@ -21,12 +21,12 @@ en:
             single_town_scheme: Single-town scheme
             multi_town_scheme: Multi-town scheme
             mixed_pipe_supply: Mixed-pipe supply
-          info:
-            borehole_handpump: "Reticulated supply with pumping, storage and distribution through public stand posts with provision for house connections."
-            mechanised_borehole: "Water is supplied through a small distribution network and connected public stand posts. Water storage is limited, typically to an overhead storage tank  directly connected to the pump. Household connections are rare."
-            single_town_scheme: "Reticulated supply with pumping, storage and distribution to a single town through public stand posts with provision for house connections."
-            multi_town_scheme: "Reticulated supply with pumping, storage and distribution supplied to a number of interconnected towns or villages. Each village with its own storage and distribution network."
-            mixed_pipe_supply: "Water is supplied through a combination of separate, often overlapping, service delivery systems."
+          info: |+
+            Borehole handpump: "Reticulated supply with pumping, storage and distribution through public stand posts with provision for house connections."
+            Mechanised borehole: "Water is supplied through a small distribution network and connected public stand posts. Water storage is limited, typically to an overhead storage tank  directly connected to the pump. Household connections are rare."
+            Single town scheme: "Reticulated supply with pumping, storage and distribution to a single town through public stand posts with provision for house connections."
+            Multi town scheme: "Reticulated supply with pumping, storage and distribution supplied to a number of interconnected towns or villages. Each village with its own storage and distribution network."
+            Mixed pipe supply: "Water is supplied through a combination of separate, often overlapping, service delivery systems."
         population:
           default_question: How many people in this area are receiving this water service?
           #20140221 - Changed the text of the question below
