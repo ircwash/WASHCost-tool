@@ -413,7 +413,7 @@ class AdvancedQuestionnaire < Session
     if annual_cost_of_capital_for_designed_users != nil && annual_household_income != nil
       100 * annual_cost_of_capital_for_designed_users / (annual_household_income.to_f / household_size.to_f)
     else
-      666
+      nil
     end
   end
 

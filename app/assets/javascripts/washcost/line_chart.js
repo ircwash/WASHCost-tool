@@ -2051,7 +2051,7 @@ window.WashCostLineChart = (function() {
 
 		numberFormatterForValues: function() {
 			var func = function(d) {
-				return "YR" + d;
+				return d;
 			};
 
 			return func;

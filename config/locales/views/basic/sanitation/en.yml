@@ -93,7 +93,7 @@
           household_latrine: Household-level latrine
           impermeability: Impermeability
           environmental_impact: Environmental impact
-          usage: Usage
+          usage: Utilisation
           reliatilibty: Reliability
         summaries:
           a111: "There is a high incidence of open defecation as latrines are not being used. Additionally, if there are latrines, these are not being cleaned or emptied. Barely any money is being spent on recurrent annual expenditure  and as a result the service has failed and lives may be at risk!"

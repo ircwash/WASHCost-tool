@@ -227,7 +227,7 @@ class AdvancedWaterQuestionnaire < AdvancedQuestionnaire
   end
 
   def percentage_of_population_that_meets_all_norms
-    if percentage_of_population_that_meets_accessibility_norms != nil || percentage_of_population_that_meets_quantity_norms != nil || percentage_of_population_that_meets_quality_norms != nil || percentage_of_population_that_meets_reliability_norms != nil
+    if percentage_of_population_that_meets_accessibility_norms != nil && percentage_of_population_that_meets_quantity_norms != nil && percentage_of_population_that_meets_quality_norms != nil && percentage_of_population_that_meets_reliability_norms != nil
       #( ( percentage_of_population_that_meets_accessibility_norms || 0 ) + ( percentage_of_population_with_unknown_accessibility_norms || 0 ) + ( percentage_of_population_that_meets_quantity_norms || 0 ) + ( percentage_of_population_with_unknown_quantity_norms || 0 ) + ( percentage_of_population_that_meets_quality_norms || 0 ) + ( percentage_of_population_with_unknown_quality_norms || 0 ) + ( percentage_of_population_that_meets_reliability_norms || 0 ) + ( percentage_of_population_with_unknown_reliability_norms || 0 ) )
       [percentage_of_population_that_meets_quantity_norms, percentage_of_population_that_meets_accessibility_norms, percentage_of_population_that_meets_quality_norms, percentage_of_population_that_meets_reliability_norms].min
     else

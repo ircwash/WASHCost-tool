@@ -7,7 +7,7 @@
           info: "La ligne blanche indique la fourchette de coûts observés dans des projets WASHCost dans des zones avec un niveau de service de base. Les coûts de démarrage comprennent les dépenses d'investissement matériel et immatériel, tels que décrits ci-dessous,  Dépense d'investissement (matériel), capital investi dans la construction ou l'achat d'actifs fixes tels que structures en béton, pompes et tuyaux. Dépense d'investissement (immatériel), dépense dans les activités ponctuelles avec les parties prenantes, préalables à la construction, la mise en œuvre ou l'extension (y compris le développement des capacités). Voir - 'http://akvopedia.org/wiki/Capital_Expenditure_(CapEx)'"
         country:
           question: Dans quel pays se trouve votre service d'assainissement?
-          info: Veuillez indiquer le pays où le service est mis en place.
+          info: Veuillez sélectionner le pays où le service est mis en place pour nous aider à définir le contexte pour votre calcul.
         population:
           question: Combien d'habitants de la zone bénéficient de ce service d'assainissement?
           info: "Le nombre de personnes bénéficiant du service d'assainissement est important pour le calcul des coûts de la zone desservie. Dans l'outil simple, vous pouvez choisir parmi plusieurs options, de 100 à 1 000 000 personnes."
@@ -80,7 +80,7 @@
           household_latrine: Latrine familiale
           impermeability: Imperméabilité
           environmental_impact: Environment
-          usage: Usage
+          usage: Utilisation
           reliability: Fiabilité
         summaries:
           a111: "La défécation à l’air libre est très répandue, étant donné que les latrines ne sont pas utilisées. De plus, s’il y a des latrines, elles ne sont pas nettoyées ou vidangées. Pratiquement aucune ressource n’a été affectée aux dépenses récurrentes annuelles, causant la défaillance du service et mettant la santé des populations en danger !"  

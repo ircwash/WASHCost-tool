@@ -32,8 +32,8 @@ $( document ).ready( function()
           padding:{ top:10, right:40, bottom:60, left:140 },
           axisTypes:{ x:'linear', y:'linear', z:null },
           tickFormatters:{ y:function( d ) { return currency + ' ' + d; } },
-          yAxisTitle:'Recurrent Costs',
-          xAxisTitle:'Year',
+          yAxisTitle: legend_txt[5],
+          xAxisTitle: legend_txt[6],
           lineStrokeDash:[ 5, 5 ],
           hideAxes:false,
           lockAxesToZero:false,
@@ -59,7 +59,7 @@ $( document ).ready( function()
           chartObjects.push({ seriesName: 'operation_expenditure_per_year', colour: '#858687', data: operation_expenditure_per_year });
           legend += '<li><span style="background-color:#858687"></span> ' + legend_txt[0] + '</li>';
         }
-        console.log(seed_dspy)
+
         if (seed_dspy != null) {
           var direct_support_per_year = [];
 
@@ -90,7 +90,7 @@ $( document ).ready( function()
               cost_capital_tech[i][j-1] = { year:j , cost: (loan_payback[i] >= j) ? loan_cost[i] : 0 };
             }
             chartObjects.push({ seriesName: 'cost_of_capital_' + i, colour: '#' + colours_cct[i], data: cost_capital_tech[i] });
-            legend += '<li><span style="background-color:#' + colours_cct[i] + '"></span> ' + i+ ':  ' + legend_txt[3] + '</li>';
+            legend += '<li><span style="background-color:#' + colours_cct[i] + '"></span> Tech ' + (i+1) + ':  ' + legend_txt[3] + '</li>';
           }
         }
 

@@ -3,12 +3,12 @@ fr:
   errors:
     messages:
       unique_email: "Adresse e-mail doit être unique"
-      email_missing: "Adresse e-mail ne peut pas être vide"
+      email_missing: "Le champ e-mail doit être renseigné"
       email_valid: "Adresse e-mail doit être valide"
-      password_missing: "Un mot de passe est nécessaire"
+      password_missing: "Veuillez saisir un mot de passe"
       password_too_long: "Mot de passe trop long"
       password_too_short: "Mot de passe trop court (8 caractères min)"
-      password_confirm_mismatch: "Les mots de passe ne correspondent pas"
+      password_confirm_mismatch: "Les deux mots de passe ne correspondent pas"
       register_if_acces_to_cuesstinaire_view: "Vous devez être enregistré premier"
   # for registration errors
   mongoid:
@@ -18,13 +18,13 @@ fr:
           attributes:
             email:
               # will match the email_missing error above
-              blank: "Adresse e-mail ne peut pas être vide"
+              blank: "Le champ e-mail doit être renseigné"
         # for report saving
         user_report:
           attributes:
             title:
-              report_title_missing: Un titre est obligatoire
-              unique_report: Noms des rapports doivent être uniques
+              report_title_missing: Veuillez saisir un titre
+              unique_report: Les noms de rapport doivent être uniques
   edit: Modifier
   number:
     format:
@@ -40,11 +40,11 @@ fr:
         precision: 2
   navigation:
     utility:
-      about: Sur
+      about: À propos de 
       help: Aider
-      contact: Contacter
-      sign_in: Identifiez-vous
-      sign_out: Déconnexion
+      contact: Contact
+      sign_in: Ouvrir une session
+      sign_out: Fermer la session
       language: Langue
     calculators:
       context: Contexte
@@ -54,39 +54,39 @@ fr:
       household: Ménage
       latrine: Latrine
       cost: Coût
-      capital_expenditure: Les dépenses en immobilisations
-      recurrent_expenditure: Charges récurrentes
-      service: Service
+      capital_expenditure: Coût d'investissement
+      recurrent_expenditure: Dépenses récurrentes
+      service: Type de dépense
       access: Accès
       quantity: Quantité
       quality: Qualité
-      household_latrine: Latrines des ménages
+      household_latrine: Latrine familiale
       impermeability: Imperméabilité
       #Not clear where this is being applied. This may need to change Environmental protection, which is the actual name of the indicator
       environmental_impact: Impact sur l'environnement
-      usage: Usage
+      usage: Utilisation
       reliability: Fiabilité
-      advanced: Avancé
+      advanced: Outil avancé
       service_area: Zone de service
       system_management: Gestion du système
-      system_characteristics: Caractéristiques du système
+      system_characteristics: Caractéristiques techniques du système
       service_level: Niveau de Service
   footer:
-    calculator_progress: "%{level} %{type} rapport"
+    calculator_progress: "Rapport %{level} %{type}"
   buttons:
     next: Question suivante
-    start: commencez à utiliser le calculateur
+    start: Commencez à utiliser l'outil
     view_report: Voir le rapport
     save_report: Sauvegarder le rapport
-    share_report: Partager Signaler
-    delete_report: Supprimer le rapport
+    share_report: Partager le rapport
+    delete_report: Effacer le rapport
   calculators:
-    basic: De base
-    advanced: Avancé
+    basic: Outil de base
+    advanced: Outil avancé
     water: Eau
     sanitation: Assainissement 
     title: Faites le calcul et faites durer votre service
     sub_title: Évaluez la pérennité de votre service et obtenez un rapport personnalisé basé sur votre modèle de fourniture de service.
     pre_question_note: "Avant de commencer, veuillez répondre à ces deux questions"
-    tool_selection_basic: De base pointe
-    tool_selection_advanced: Outil de pointe
+    tool_selection_advanced: Outil avancé
+    tool_selection_basic: Outil de base

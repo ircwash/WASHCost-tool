@@ -10,7 +10,7 @@
         people: Personnes
         country:
           question: Dans quel pays se trouve votre service?
-          placeholder: Sélectionner un pays
+          placeholder: Veuillez sélectionner le pays
           info: Veuillez sélectionner le pays où le service est mis en place pour nous aider à définir le contexte pour votre calcul. 
         capital_expenditure:
           question: "Combien avez-vous dépensé ou allez-vous dépenser pour la mise en place du système d'approvisionnement en eau de type %{type} (y compris la construction des ouvrages)(par personne)?"

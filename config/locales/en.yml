@@ -86,7 +86,7 @@ en:
     water: Water
     sanitation: Sanitation
     title: Do the math and make it last
-    sub_title: Do a sustainability check and share a personal life-cycle costs report based on your service delivery model.
+    sub_title: Do a sustainability check and share a life-cycle costs report based on your service delivery model.
     pre_question_note: "Before you start, please choose the tool"
-    tool_selection_basic: Basic tool
     tool_selection_advanced: Advanced tool
+    tool_selection_basic: Basic tool

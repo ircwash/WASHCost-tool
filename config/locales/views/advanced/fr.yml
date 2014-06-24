@@ -37,30 +37,30 @@ fr:
         no: Non
         unknown: Ne sais pas
       options_for_power_supply:
-        no_power: Pas d'alimentation
-        mains: Secteur de l'électricité
+        no_power: Pas d'énergie
+        mains: Réseau électrique
         windmills: Moulins à vent
-        solar: Systèmes d'énergie solaire
+        solar: Énergie solaire
         generator: Générateur
         not_applicable: Non applicable
       options_for_water_treatment:
         treatment: Aucun traitement
-        boiling: "D'ébullition"
-        household_filer: Filtre des ménages
-        household_cholorination: Cholorination des ménages
-        cholorination: Chloration en réseau de canalisation
-        water_treatment: Travaux de traitement de l'eau
+        boiling: "Ébullition"
+        household_filer: Filtration à domicile
+        household_cholorination: Chloration à domicile
+        cholorination: Chloration dans les canalisations
+        water_treatment: Station de traitement
         not_applicable: Non applicable
       options_for_surface_water_primary_source:
         rainwater: Collecte des eaux pluviales
-        catchment: Barrage de stockage de chalandise
+        catchment: Barrage de stockage
         sub_surface: Récolte sous-surface (puisard)
         river: Rivière
         unknown: Ne sais pas
       options_for_water_source:
-        ground_water: L'eau souterraine
-        surface_water: L'eau de surface
-        rain_water: L'eau de pluie
+        ground_water: Eau souterraine
+        surface_water: Eau de surface
+        rain_water: Eau de surface
         unknown: Ne sais pas
       options_for_sanitation_technologies:
         single_pit_1: 'Latrine à fosse simple avec plate-forme (pas de dalle)'
@@ -156,8 +156,8 @@ fr:
       dont_know: Ne sais pas
       country:
         label: Pays
-        placeholder: Sélectionnez un pays
-        tooltip: Sélectionnez un pays
+        placeholder: Veuillez sélectionner le pays
+        tooltip: Veuillez sélectionner le pays
       currency:
         label: Devise?
         placeholder: Sélectionnez une devise
@@ -169,9 +169,9 @@ fr:
       region:
         label: Région?
         placeholder: Calabria
-        tooltip: Sélectionnez une région
+        tooltip: Veuillez sélectionner la région
       town:
         label: Nom de la ville/localité?
         placeholder: Catanzaro
-        tooltip: Sélectionnez une ville/localité
+        tooltip: Veuillez sélectionner une ville/localité
       technology_choice_required: Un choix d'au moins une technologie est requis

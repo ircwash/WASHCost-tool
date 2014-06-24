@@ -3,7 +3,7 @@ en:
     water:
       questionnaire:
         water_system_exists:
-          label: Does the water system already exist or is it planned?
+          label: What kind of information is this report based on?
           placeholder: Select an option
           tooltip: 'If you are providing real cost data on an existing system, please choose "Existing".'
         area_type:

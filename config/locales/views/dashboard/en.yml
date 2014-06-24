@@ -8,7 +8,7 @@ en:
     location: Location
     date: Date
     calculator_type: Calculator type
-    service: Service
+    service: Type of expenditure
     comparison: Comparison (2011 rates)
     status:
       not_applicable: Not applicable

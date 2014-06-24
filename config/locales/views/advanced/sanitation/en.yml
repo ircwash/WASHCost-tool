@@ -12,7 +12,7 @@ en:
         sanitation_service_exists:
           label: Does the sanitation service already exist or is it planned?
           placeholder: Select an option
-          tooltip: 'If you are providing real cost data on an existing system, please choose "Existing".'
+          tooltip: 'Please indicate the type of expenditure information you are using to create this report.'
         area_type:
           label: Description of area type
           placeholder: Select an area type
