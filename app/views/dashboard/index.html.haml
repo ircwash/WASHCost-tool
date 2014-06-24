@@ -5,9 +5,6 @@
 
       .dashboard--profile
 
-        -#.dashboard--profile--user
-        -#  = image_tag "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(current_user.email.downcase.gsub(/\s/,''))}?s=200&d=#{u(localised_root_url+'/..'+image_path('image-user_placeholder.jpg'))}", :class => 'dashboard--profile--user--image'
-
         .dashboard--profile--details
           .dashboard--profile--details--title= current_user.name
           .dashboard--profile--details--field
@@ -31,7 +28,6 @@
             %th.dashboard--report_table--heading= t( 'dashboard.name' )
             %td.dashboard--report_table--heading{ :width => 20 }
             %th.dashboard--report_table--heading{ :width => 100 }= t( 'dashboard.location' )
-            -#%th.dashboard--report_table--heading= t( 'dashboard.comparison' )
             %th.dashboard--report_table--heading{ :width => 80 }= t( 'dashboard.date' )
             %th.dashboard--report_table--heading{ :width => 180 }= t( 'dashboard.calculator_type' )
             %th.dashboard--report_table--heading{ :width => 100 }= t( 'dashboard.service' )
@@ -49,13 +45,6 @@
                   = Country.new( report.questionnaire["country"] ).name.truncate(13)
                 - else
                   &mdash;
-              / - if report.level == "basic"
-              /   %td.dashboard--report_table--cell &mdash;
-              / -else
-              /   %td.dashboard--report_table--cell
-              /     %div= t('dashboard.compare.label1') + ': ' + final_usd_2011(report.questionnaire, capital_expenditure_per_person(report.questionnaire)).to_s
-              /     %div= t('dashboard.compare.label2') + ': ' + final_usd_2011(report.questionnaire, recurrent_expenditure_per_person_per_year(report.questionnaire, 30)).to_s
-              /     %div= t('dashboard.compare.label3') + ': ' + percentage_of_population_that_meets_all_norms(report.questionnaire).to_s + '%'
               %td.dashboard--report_table--cell= report.created_at.strftime( '%d.%m.%Y' )
               %td.dashboard--report_table--cell= t('calculators.' + report.level).capitalize + ' ' +  t('calculators.' + report.type).capitalize
               %td.dashboard--report_table--cell
@@ -74,11 +63,9 @@
                 -else
                   %div
                     %em= t('dashboard.compare.label1')
-                    /= capital_expenditure_per_person(report.questionnaire).to_s
                     = final_usd_2011(report.questionnaire, capital_expenditure_per_person(report.questionnaire)).to_s
                   %div
                     %em= t('dashboard.compare.label2')
-                    /= recurrent_expenditure_per_person_per_year(report.questionnaire, 30).to_s
                     = final_usd_2011(report.questionnaire, recurrent_expenditure_per_person_per_year(report.questionnaire, 30)).to_s
                   %div
                     %em= t('dashboard.compare.label3')
