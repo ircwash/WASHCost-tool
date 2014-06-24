@@ -14,16 +14,16 @@ $(document).ready(function() {
       window.onbeforeunload = function () { 
         var total = 0;
 
-        $('input[name="advanced_water_questionnaire[service_level_share][]"]').each(function (val, i) {
+        $('input[data-percentage]').each(function (val, i) {
           var value = $(this).val().replace(/[^0-9]+/g, '');
-
+        
           if (value)
             total = total + parseInt(value);
         });
 
         var text = $("div[data-alert]").attr('data-alert');
 
-        if (total < 100 && warning)
+        if (parseInt(total) != 100 && warning)
           return text;
       }
     }
