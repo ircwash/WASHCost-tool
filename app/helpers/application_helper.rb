@@ -37,7 +37,6 @@ module ApplicationHelper
   end
 
   def FX_2011(q)
-
     if q != nil && q["country"] != nil
       alpha3 = Country.find_country_by_alpha2(q["country"]).alpha3
       result = PANUSFCRF.find_by(name: alpha3, year: 2011)
@@ -48,15 +47,14 @@ module ApplicationHelper
   end
 
   def deflator_multiplier(q)
-    # if q != nil && q["country"] != nil && q["year_of_expenditure"] != nil
-    #   report_year = q["year_of_expenditure"].to_i
-    #   currency = Country.find_country_by_alpha2(q["country"]).currency
-    #   result = Deflator.find_by(name: currency.code, year: report_year)
-    #   result != nil ? result.percent : nil
-    # else
-    #   nil
-    # end
-    nil
+    if q != nil && q["country"] != nil && q["year_of_expenditure"] != nil
+      report_year = q["year_of_expenditure"].to_i
+      currency = Country.find_country_by_alpha2(q["country"]).currency
+      result = Deflator.find_by(name: currency.code, year: report_year)
+      result != nil ? result.percent : nil
+    else
+      nil
+    end
   end
 
   def final_usd_2011(q, value)
@@ -275,7 +273,8 @@ module ApplicationHelper
       t('report.code_not_found')
     else
       country = Country.find_country_by_alpha2(code)
-      country.name
+      #Country.new(current_user.country).translations[I18n.locale.to_s].titleize
+      country.translations[I18n.locale.to_s].titleize
     end
   end
 
@@ -284,7 +283,7 @@ module ApplicationHelper
       t('report.code_not_found')
     else
       currency = Money.new(1, code.upcase).currency
-      currency.name
+      currency.iso_code
     end
   end
 

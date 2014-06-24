@@ -53,42 +53,40 @@ class AdvancedQuestionnaire < Session
 
     # sanitize objects
 
-    regEx = /\(...\)/
-
     if attributes[:annual_household_income] != nil
-      attributes[:annual_household_income] = attributes[:annual_household_income].gsub(regEx, '').strip!
+      attributes[:annual_household_income] = attributes[:annual_household_income].gsub(/[^0-9,.]/, "")
     end
 
     if attributes[:direct_support_cost] != nil
-      attributes[:direct_support_cost] = attributes[:direct_support_cost].gsub(regEx, '').strip!
+      attributes[:direct_support_cost] = attributes[:direct_support_cost].gsub(/[^0-9,.]/, "")
     end
 
     if attributes[:indirect_support_cost] != nil
-      attributes[:indirect_support_cost] = attributes[:indirect_support_cost].gsub(regEx, '').strip!
+      attributes[:indirect_support_cost] = attributes[:indirect_support_cost].gsub(/[^0-9,.]/, "")
     end
 
     if attributes[:actual_hardware_expenditure] != nil && attributes[:actual_hardware_expenditure].count > 0
-      arr = attributes[:actual_hardware_expenditure].map {|item| item != nil ? item.gsub(regEx, '').strip! : item }
+      arr = attributes[:actual_hardware_expenditure].map {|item| item != nil ? item.gsub(/[^0-9,.]/, ""): item }
       attributes[:actual_hardware_expenditure] = arr
     end
 
     if attributes[:actual_software_expenditure] != nil && attributes[:actual_software_expenditure].count > 0
-      arr = attributes[:actual_software_expenditure].map {|item| item != nil ? item.gsub(regEx, '').strip! : item }
+      arr = attributes[:actual_software_expenditure].map {|item| item != nil ? item.gsub(/[^0-9,.]/, "").strip! : item }
       attributes[:actual_software_expenditure] = arr
     end
 
     if attributes[:minor_operation_expenditure] != nil && attributes[:minor_operation_expenditure].count > 0
-      arr = attributes[:minor_operation_expenditure].map {|item| item != nil ? item.gsub(regEx, '').strip! : item }
+      arr = attributes[:minor_operation_expenditure].map {|item| item != nil ? item.gsub(/[^0-9,.]/, "") : item }
       attributes[:minor_operation_expenditure] = arr
     end
 
     if attributes[:capital_maintenance_expenditure] != nil && attributes[:capital_maintenance_expenditure].count > 0
-      arr = attributes[:capital_maintenance_expenditure].map {|item| item != nil ? item.gsub(regEx, '').strip! : item }
+      arr = attributes[:capital_maintenance_expenditure].map {|item| item != nil ? item.gsub(/[^0-9,.]/, "") : item }
       attributes[:capital_maintenance_expenditure] = arr
     end
 
     if attributes[:loan_cost] != nil && attributes[:loan_cost].count > 0
-      arr = attributes[:loan_cost].map {|item| item != nil ? item.gsub(regEx, '').strip! : item }
+      arr = attributes[:loan_cost].map {|item| item != nil ? item.gsub(/[^0-9,.]/, "") : item }
       attributes[:loan_cost] = arr
     end
 

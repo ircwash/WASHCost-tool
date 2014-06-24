@@ -65,6 +65,8 @@ class Api::V1::WaterController < Api::V1::BaseController
     end
 
     if params.has_key?(:questionnaire)
+      status = params[:questionnaire][:status] != nil ? params[:questionnaire][:status] : 0
+      user_report.status = status
       questionnaire.update_attributes(params[:questionnaire])
       user_report.questionnaire = questionnaire.attributes
     end
