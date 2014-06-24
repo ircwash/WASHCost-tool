@@ -21,6 +21,7 @@ namespace :db do
     csv.each_with_index do |row, i|
 
       code = row[4]
+      alpha3 = row[2]
       year = 1959
 
       (8..62).each do |n|
@@ -30,10 +31,11 @@ namespace :db do
         Deflator.create(
           :name  => code,
           :year  => year,
-          :percent  => percent
+          :percent  => percent,
+          :alpha3 => alpha3
         )
 
-        puts "#{code} -> #{year} -> #{percent}"
+        puts "#{code} -> #{year} -> #{percent} -> #{alpha3}"
       end
 
     end

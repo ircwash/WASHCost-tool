@@ -9,23 +9,6 @@ module ApplicationHelper
   # added here to replace the call to functions (from the views) which were model based and updating the attributes so as could access functions
   # Really if the data is not live - should seriously consider moving so as calculated and stored in the DB on insertion / update.
 
-  def test()
-    alpha3 = Country.find_country_by_alpha2('IN').alpha3
-    report_year = 2008
-    result = PANUSFCRF.find_by(name: alpha3, year: report_year)
-    result != nil ? result.rate : nil
-    puts result.rate
-
-    puts Country.find_country_by_currency("AUD").to_json
-
-    report_currency ="AUD"
-    alpha3 = Country.find_country_by_currency(report_currency).alpha3
-    report_year = 2008
-    result = PANUSFCRF.find_by(name: alpha3, year: report_year)
-    result != nil ? result.rate : nil
-    puts alpha3
-  end
-
   def FX_original_country_input_year_of_expenditure(q)
     if q != nil && q["country"] != nil && q["year_of_expenditure"] != nil
       alpha3 = Country.find_country_by_alpha2(q["country"]).alpha3
@@ -40,9 +23,10 @@ module ApplicationHelper
   def FX_input_currency_year_of_expenditure(q)
      if q != nil && q["currency"] != nil && q["year_of_expenditure"] != nil
       report_currency = q["currency"].to_s.upcase
-      alpha3 = Country.find_country_by_currency(report_currency).alpha3
       report_year = q["year_of_expenditure"].to_i
-      result = PANUSFCRF.find_by(name: alpha3, year: report_year)
+      #alpha3 = Country.find_country_by_currency(report_currency).alpha3
+      deflator = Deflator.find_by(name: report_currency, year: report_year)
+      result = PANUSFCRF.find_by(name: deflator.alpha3, year: report_year)
       result != nil ? result.rate : nil
     else
       nil
@@ -138,7 +122,7 @@ module ApplicationHelper
       0
     end
   end
-  
+
   def old_recurrent_expenditure_per_person_per_year(q, years)
     if q != nil
       total = total_operation_expenditure(q) * years + total_capital_maintenance_expenditure(q) * years + direct_support_cost(q) * total_population(q) * years + indirect_support_cost(q) * total_population(q) * years + cost_of_capital_for_years( q, years )

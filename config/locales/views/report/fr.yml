@@ -1,7 +1,8 @@
 fr:
   #is this water and sanitation mixed together? Not clear where the service level indicators are. For example, both water and sanitation have an access indicator but should have separate labels as they may translate differently. 
   report:
-    service_level_population_incomplete: Population du niveau de service incomplète
+    service_level_population_incomplete: Vous n'avez pas indiquer le niveau de service pour la population totale. Certaines données sont manquantes.
+    service_level_population_overcomplete: Vous avez indiquer le niveau de service pour plus de personnes que possible. S'il vous plaît vérifier vos données.
     code_not_found: Inconnu
     share_your_report: Partager le rapport
     back: Retour

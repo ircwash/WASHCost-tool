@@ -5,9 +5,6 @@
 
       .dashboard--profile
 
-        / = test() 
-        / %p neil
-
         -#.dashboard--profile--user
         -#  = image_tag "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(current_user.email.downcase.gsub(/\s/,''))}?s=200&d=#{u(localised_root_url+'/..'+image_path('image-user_placeholder.jpg'))}", :class => 'dashboard--profile--user--image'
 
@@ -77,12 +74,12 @@
                 -else
                   %div
                     %em= t('dashboard.compare.label1')
-                    = capital_expenditure_per_person(report.questionnaire).to_s
-                    /= final_usd_2011(report.questionnaire, capital_expenditure_per_person(report.questionnaire)).to_s
+                    /= capital_expenditure_per_person(report.questionnaire).to_s
+                    = final_usd_2011(report.questionnaire, capital_expenditure_per_person(report.questionnaire)).to_s
                   %div
                     %em= t('dashboard.compare.label2')
-                    = recurrent_expenditure_per_person_per_year(report.questionnaire, 30).to_s
-                    /= final_usd_2011(report.questionnaire, recurrent_expenditure_per_person_per_year(report.questionnaire, 30)).to_s
+                    /= recurrent_expenditure_per_person_per_year(report.questionnaire, 30).to_s
+                    = final_usd_2011(report.questionnaire, recurrent_expenditure_per_person_per_year(report.questionnaire, 30)).to_s
                   %div
                     %em= t('dashboard.compare.label3')
                     = percentage_of_population_that_meets_all_norms(report.questionnaire).to_s + '%'
