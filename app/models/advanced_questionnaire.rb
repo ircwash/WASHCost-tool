@@ -71,7 +71,7 @@ class AdvancedQuestionnaire < Session
     end
 
     if attributes[:actual_software_expenditure] != nil && attributes[:actual_software_expenditure].count > 0
-      arr = attributes[:actual_software_expenditure].map {|item| item != nil ? item.gsub(/[^0-9,.]/, "").strip! : item }
+      arr = attributes[:actual_software_expenditure].map {|item| item != nil ? item.gsub(/[^0-9,.]/, "") : item }
       attributes[:actual_software_expenditure] = arr
     end
 
@@ -164,7 +164,7 @@ class AdvancedQuestionnaire < Session
   end
 
   def cost_of_capital_per_person_per_year
-    if supply_system_technologies != nil && system_population_actual != nil && supply_system_technologies.count > 0 && loan_cost.count == supply_system_technologies.count && system_population_actual.count == supply_system_technologies.count
+    if loan_payback_period != nil && loan_payback_period.count > 0 && supply_system_technologies != nil && system_population_actual != nil && supply_system_technologies.count > 0 && loan_cost.count == supply_system_technologies.count && system_population_actual.count == supply_system_technologies.count
       #loan_cost.map{ |e| e.to_f }.inject(:+) / system_population_actual.map{ |p| p.to_f }.inject(:+) / 30
       loan_cost.each_with_index.map{ |s,i| s.to_f * loan_payback_period[i].to_f }.inject(:+) / system_population_actual.map{ |p| p.to_f }.inject(:+) / 30
     else

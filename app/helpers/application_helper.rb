@@ -273,7 +273,6 @@ module ApplicationHelper
       t('report.code_not_found')
     else
       country = Country.find_country_by_alpha2(code)
-      #Country.new(current_user.country).translations[I18n.locale.to_s].titleize
       country.translations[I18n.locale.to_s].titleize
     end
   end
