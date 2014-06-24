@@ -10,7 +10,6 @@ module ApplicationHelper
   # Really if the data is not live - should seriously consider moving so as calculated and stored in the DB on insertion / update.
 
   def FX_original_country_input_year_of_expenditure(q)
-
     if q != nil && q["country"] != nil && q["year_of_expenditure"] != nil
       alpha3 = Country.find_country_by_alpha2(q["country"]).alpha3
       report_year = q["year_of_expenditure"].to_i
@@ -19,11 +18,9 @@ module ApplicationHelper
     else
       nil
     end
-
   end
 
   def FX_input_currency_year_of_expenditure(q)
-
      if q != nil && q["currency"] != nil && q["year_of_expenditure"] != nil
       report_currency = q["currency"].to_s.upcase
       alpha3 = Country.find_country_by_currency(report_currency).alpha3
@@ -33,7 +30,6 @@ module ApplicationHelper
     else
       nil
     end
-
   end
 
   def FX_2011(q)

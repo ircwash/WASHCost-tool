@@ -1,6 +1,7 @@
 fr:
   advanced:
     shared:
+      alert_message: Le total pourcentage doit etre 100%
       options_for_exists:
         not_applicable: Non applicable
         planned_expenditure: Dépense prévisionnelle

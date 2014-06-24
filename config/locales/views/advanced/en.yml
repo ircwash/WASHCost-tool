@@ -1,6 +1,7 @@
 en:
   advanced:
     shared:
+      alert_message: The total percentage must be 100%
       options_for_exists:
         not_applicable: Not applicable
         planned_expenditure: Planned expenditure

@@ -5,7 +5,7 @@
 
   = form_for @questionnaire, :url => advanced_sanitation_update_url( I18n.locale, 'report' ), :html => { :class => 'dual_column_form', 'data-dynamic_form' => advanced_sanitation_dynamic_update_url( I18n.locale ) } do |f|
 
-    .dual_column_form--row
+    .dual_column_form--row{ :"data-alert" => t('advanced.shared.alert_message') }
 
       .dual_column--field--label{ :"data-tooltip" => t('advanced.sanitation.questionnaire.service_levels.tooltip') }= t( 'advanced.sanitation.questionnaire.service_levels.label' )
 
