@@ -48,14 +48,15 @@ module ApplicationHelper
   end
 
   def deflator_multiplier(q)
-    if q != nil && q["country"] != nil && q["year_of_expenditure"] != nil
-      report_year = q["year_of_expenditure"].to_i
-      currency = Country.find_country_by_alpha2(q["country"]).currency
-      result = Deflator.find_by(name: currency.code, year: report_year)
-      result != nil ? result.percent : nil
-    else
-      nil
-    end
+    # if q != nil && q["country"] != nil && q["year_of_expenditure"] != nil
+    #   report_year = q["year_of_expenditure"].to_i
+    #   currency = Country.find_country_by_alpha2(q["country"]).currency
+    #   result = Deflator.find_by(name: currency.code, year: report_year)
+    #   result != nil ? result.percent : nil
+    # else
+    #   nil
+    # end
+    nil
   end
 
   def final_usd_2011(q, value)
