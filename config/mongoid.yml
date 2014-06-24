@@ -4,9 +4,9 @@ development:
       database: wash_cost_app_development
       hosts:
         - localhost:27017
-      #database: wash_cost_app_development
-      #hosts:
-      #  - dev.washcost.native.com:27017
+      # database: wash_cost_app_development
+      # hosts:
+      #   - dev.washcost.native.com:27017
   options:
     raise_not_found_error: false
 

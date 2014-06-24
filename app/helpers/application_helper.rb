@@ -24,7 +24,6 @@ module ApplicationHelper
      if q != nil && q["currency"] != nil && q["year_of_expenditure"] != nil
       report_currency = q["currency"].to_s.upcase
       report_year = q["year_of_expenditure"].to_i
-      #alpha3 = Country.find_country_by_currency(report_currency).alpha3
       deflator = Deflator.find_by(name: report_currency, year: report_year)
       result = PANUSFCRF.find_by(name: deflator.alpha3, year: report_year)
       result != nil ? result.rate : nil
