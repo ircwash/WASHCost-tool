@@ -9,6 +9,23 @@ module ApplicationHelper
   # added here to replace the call to functions (from the views) which were model based and updating the attributes so as could access functions
   # Really if the data is not live - should seriously consider moving so as calculated and stored in the DB on insertion / update.
 
+  def test()
+    alpha3 = Country.find_country_by_alpha2('IN').alpha3
+    report_year = 2008
+    result = PANUSFCRF.find_by(name: alpha3, year: report_year)
+    result != nil ? result.rate : nil
+    puts result.rate
+
+    puts Country.find_country_by_currency("AUD").to_json
+
+    report_currency ="AUD"
+    alpha3 = Country.find_country_by_currency(report_currency).alpha3
+    report_year = 2008
+    result = PANUSFCRF.find_by(name: alpha3, year: report_year)
+    result != nil ? result.rate : nil
+    puts alpha3
+  end
+
   def FX_original_country_input_year_of_expenditure(q)
     if q != nil && q["country"] != nil && q["year_of_expenditure"] != nil
       alpha3 = Country.find_country_by_alpha2(q["country"]).alpha3
@@ -94,25 +111,34 @@ module ApplicationHelper
     end
   end
 
+  # def recurrent_expenditure_per_person_per_year(q, years)
+  #   tp = total_population(q)
+  #   toe = total_operation_expenditure(q)
+  #   tcme = total_capital_maintenance_expenditure(q)
+  #   ds = direct_support_cost(q)
+  #   ids = indirect_support_cost(q)
+  #   cocfy = cost_of_capital_for_years( q, 30 )
+
+  #   div1 = toe != 0 && tp != 0 ? (toe / tp) : 0
+  #   div2 = tcme != 0 && tp != 0 ? (tcme / tp) : 0
+  #   div1 = div1 + div2
+  #   #div1 = tp != 0 ? div1 / tp : div1
+
+  #   if q != nil
+  #     total = div1 + ds + ids + cocfy / 30
+  #   else
+  #     0
+  #   end
+  # end
+
   def recurrent_expenditure_per_person_per_year(q, years)
-    tp = total_population(q)
-    toe = total_operation_expenditure(q)
-    tcme = total_capital_maintenance_expenditure(q)
-    ds = direct_support_cost(q)
-    ids = indirect_support_cost(q)
-    cocfy = cost_of_capital_for_years( q, 30 )
-
-    div1 = toe != 0 && tp != 0 ? (toe / tp) : 0
-    div1 = div1 + tcme
-    div1 = tp != 0 ? div1 / tp : div1
-
     if q != nil
-      total = div1 + ds + ids + cocfy / 30
+      total = total_operation_expenditure(q) + total_capital_maintenance_expenditure(q) + direct_support_cost(q) + indirect_support_cost(q) + cost_of_capital_for_years( q, years )
     else
       0
     end
   end
-
+  
   def old_recurrent_expenditure_per_person_per_year(q, years)
     if q != nil
       total = total_operation_expenditure(q) * years + total_capital_maintenance_expenditure(q) * years + direct_support_cost(q) * total_population(q) * years + indirect_support_cost(q) * total_population(q) * years + cost_of_capital_for_years( q, years )
@@ -138,16 +164,16 @@ module ApplicationHelper
   end
 
   def total_operation_expenditure(q)
-    if q['minor_operation_expenditure'] != nil && q['minor_operation_expenditure'].count > 0
-      q['minor_operation_expenditure'].map{ |e| e.to_f }.inject(:+)
+    if q['minor_operation_expenditure'] != nil && q['minor_operation_expenditure'].count > 0 && q['system_population_actual'] != nil && q['system_population_actual'].count > 0
+      q['minor_operation_expenditure'].map{ |e| e.to_f }.inject(:+) / q['system_population_actual'].map{ |p| p.to_f }.inject(:+)
     else
       0
     end
   end
 
   def total_capital_maintenance_expenditure(q)
-    if q['capital_maintenance_expenditure'] != nil && q['capital_maintenance_expenditure'].count > 0
-      q['capital_maintenance_expenditure'].map{ |e| e.to_f }.inject(:+)
+    if q['capital_maintenance_expenditure'] != nil && q['capital_maintenance_expenditure'].count > 0 && q['system_population_actual'] != nil && q['system_population_actual'].count > 0
+      q['capital_maintenance_expenditure'].map{ |e| e.to_f }.inject(:+) / q['system_population_actual'].map{ |p| p.to_f }.inject(:+)
     else
       0
     end
@@ -158,7 +184,7 @@ module ApplicationHelper
   end
 
   def total_population(q)
-    if q['supply_system_technologies'] != nil && q['supply_system_technologies'].count > 0
+    if q['system_population_actual'] != nil && q['system_population_actual'].count > 0
       q['system_population_actual'].map{ |p| p.to_f }.inject(:+)
     else
       0
@@ -170,8 +196,9 @@ module ApplicationHelper
   end
 
   def cost_of_capital_for_years(q, years)
-    if q['supply_system_technologies'] != nil && q['supply_system_technologies'].count > 0 && q['loan_cost'] != nil && q['loan_payback_period'] != nil
-      q['supply_system_technologies'].each_with_index.map{ |s,i| q['loan_cost'][i].to_f * [ q['loan_payback_period'][i].to_i, years ].min }.inject( :+ )
+    if q['system_population_actual'] != nil && q['system_population_actual'].count > 0 && q['loan_cost'] != nil && q['loan_payback_period'] != nil
+      #q['supply_system_technologies'].each_with_index.map{ |s,i| q['loan_cost'][i].to_f * [ q['loan_payback_period'][i].to_i, years ].min }.inject( :+ )
+      q['loan_cost'].each_with_index.map{ |s,i| s.to_f * q['loan_payback_period'][i].to_f }.inject(:+) / q['system_population_actual'].map{ |p| p.to_f }.inject(:+) / 30
     else
       0
     end
