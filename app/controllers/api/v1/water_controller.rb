@@ -26,10 +26,13 @@ class Api::V1::WaterController < Api::V1::BaseController
 
     questionnaire.update_attributes(params[:questionnaire])
 
+    status = params[:questionnaire][:status] != nil ? params[:questionnaire][:status] : 0
+
     current_user.user_reports << UserReport.new(
       :title => params[:title],
       :type  => 'water',
       :level => 'advanced',
+      :status => status,
       :questionnaire => questionnaire.attributes
     )
 

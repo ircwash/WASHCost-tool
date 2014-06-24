@@ -100,6 +100,25 @@ module ApplicationHelper
   end
 
   def recurrent_expenditure_per_person_per_year(q, years)
+    tp = total_population(q)
+    toe = total_operation_expenditure(q)
+    tcme = total_capital_maintenance_expenditure(q)
+    ds = direct_support_cost(q)
+    ids = indirect_support_cost(q)
+    cocfy = cost_of_capital_for_years( q, 30 )
+
+    div1 = toe != 0 && tp != 0 ? (toe / tp) : 0
+    div1 = div1 + tcme
+    div1 = tp != 0 ? div1 / tp : div1
+
+    if q != nil
+      total = div1 + ds + ids + cocfy / 30
+    else
+      0
+    end
+  end
+
+  def old_recurrent_expenditure_per_person_per_year(q, years)
     if q != nil
       total = total_operation_expenditure(q) * years + total_capital_maintenance_expenditure(q) * years + direct_support_cost(q) * total_population(q) * years + indirect_support_cost(q) * total_population(q) * years + cost_of_capital_for_years( q, years )
     else
