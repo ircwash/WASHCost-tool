@@ -2,12 +2,15 @@ class CalculatorController < ApplicationController
 
   protected
 
-  def store_report( title, level, status, type, questionnaire )
+  def store_report( title, level, status, type, questionnaire, capital_expenditure_per_person, recurrent_expenditure_per_person_per_year, population_meeting_all_national_service_norms)
     new_report = UserReport.new(
       :title => title,
       :type  => type,
       :level => level,
       :status => status,
+      :capital_expenditure_per_person => capital_expenditure_per_person,
+      :recurrent_expenditure_per_person_per_year => recurrent_expenditure_per_person_per_year,
+      :population_meeting_all_national_service_norms => population_meeting_all_national_service_norms,
       :questionnaire => questionnaire
     )
     arr = current_user.user_reports.select {|report| report["title"] == title }
@@ -26,6 +29,9 @@ class CalculatorController < ApplicationController
         :type  => type,
         :level => level,
         :status => status,
+        :capital_expenditure_per_person => capital_expenditure_per_person,
+        :recurrent_expenditure_per_person_per_year => recurrent_expenditure_per_person_per_year,
+        :population_meeting_all_national_service_norms => population_meeting_all_national_service_norms,
         :questionnaire => questionnaire
       )
       redirect_to dashboard_index_path(I18n.locale)

@@ -1,6 +1,9 @@
 class Advanced::SanitationController < CalculatorController
 
+  #include ApplicationHelper
+
   layout 'tool_advanced'
+
 
   authorize_resource :class => Advanced::SanitationController
   load_and_authorize_resource UserReport, :only => [ :save_report, :store_report ]
@@ -63,7 +66,14 @@ class Advanced::SanitationController < CalculatorController
   end
 
   def store_report
-    super( params[ :user_report ][ :title ], 'advanced', session[:advanced_sanitation][:status], 'sanitation', AdvancedSanitationQuestionnaire.new( session ).attributes )
+
+    questionnaire = AdvancedSanitationQuestionnaire.new( session ).attributes
+
+    cepp = final_usd_2011(questionnaire, capital_expenditure_per_person(questionnaire)).to_s
+    repppy = final_usd_2011(questionnaire, recurrent_expenditure_per_person_per_year(questionnaire, 30)).to_s
+    poptman = percentage_of_population_that_meets_all_norms(questionnaire).to_s
+
+    super( params[ :user_report ][ :title ], 'advanced', session[:advanced_sanitation][:status], 'sanitation', questionnaire, cepp, repppy, poptman )
   end
 
 end

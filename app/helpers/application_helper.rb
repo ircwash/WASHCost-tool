@@ -1,6 +1,8 @@
 # encoding: utf-8
 module ApplicationHelper
 
+  include ActionView::Helpers::NumberHelper # should consider handling without this call
+
   def options_for_languages
     [ [ 'English', 'en' ], [ 'Français', 'fr' ] ]
   end
@@ -10,9 +12,9 @@ module ApplicationHelper
   # Really if the data is not live - should seriously consider moving so as calculated and stored in the DB on insertion / update.
 
   def FX_original_country_input_year_of_expenditure(q)
-    if q != nil && q["country"] != nil && q["year_of_expenditure"] != nil
-      alpha3 = Country.find_country_by_alpha2(q["country"]).alpha3
-      report_year = q["year_of_expenditure"].to_i
+    if q != nil && q[:country] != nil && q[:year_of_expenditure] != nil
+      alpha3 = Country.find_country_by_alpha2(q[:country]).alpha3
+      report_year = q[:year_of_expenditure].to_i
       result = PANUSFCRF.find_by(name: alpha3, year: report_year)
       result != nil ? result.rate : nil
     else
@@ -21,9 +23,9 @@ module ApplicationHelper
   end
 
   def FX_input_currency_year_of_expenditure(q)
-     if q != nil && q["currency"] != nil && q["year_of_expenditure"] != nil
-      report_currency = q["currency"].to_s.upcase
-      report_year = q["year_of_expenditure"].to_i
+     if q != nil && q[:currency] != nil && q[:year_of_expenditure] != nil
+      report_currency = q[:currency].to_s.upcase
+      report_year = q[:year_of_expenditure].to_i
       deflator = Deflator.find_by(name: report_currency, year: report_year)
       result = PANUSFCRF.find_by(name: deflator.alpha3, year: report_year)
       result != nil ? result.rate : nil
@@ -33,8 +35,8 @@ module ApplicationHelper
   end
 
   def FX_2011(q)
-    if q != nil && q["country"] != nil
-      alpha3 = Country.find_country_by_alpha2(q["country"]).alpha3
+    if q != nil && q[:country] != nil
+      alpha3 = Country.find_country_by_alpha2(q[:country]).alpha3
       result = PANUSFCRF.find_by(name: alpha3, year: 2011)
       result != nil ? result.rate : nil
     else
@@ -43,9 +45,9 @@ module ApplicationHelper
   end
 
   def deflator_multiplier(q)
-    if q != nil && q["country"] != nil && q["year_of_expenditure"] != nil
-      report_year = q["year_of_expenditure"].to_i
-      currency = Country.find_country_by_alpha2(q["country"]).currency
+    if q != nil && q[:country] != nil && q[:year_of_expenditure] != nil
+      report_year = q[:year_of_expenditure].to_i
+      currency = Country.find_country_by_alpha2(q[:country]).currency
       result = Deflator.find_by(name: currency.code, year: report_year)
       result != nil ? result.percent : nil
     else
@@ -60,6 +62,11 @@ module ApplicationHelper
     _FX_input_currency_year_of_expenditure = FX_input_currency_year_of_expenditure(q)
     _FX_original_country_input_year_of_expenditure = FX_original_country_input_year_of_expenditure(q)
 
+    puts multiplier
+    puts _FX_2011
+    puts _FX_input_currency_year_of_expenditure
+    puts _FX_original_country_input_year_of_expenditure
+
     if value != nil && multiplier != nil && _FX_2011 != nil && _FX_input_currency_year_of_expenditure != nil && _FX_original_country_input_year_of_expenditure != nil
       output = value * (_FX_original_country_input_year_of_expenditure / _FX_input_currency_year_of_expenditure) * multiplier / _FX_2011
       "#{number_with_precision( number_to_currency(output.to_f, :locale => "USD"), :precision => 2 )}"
@@ -71,9 +78,9 @@ module ApplicationHelper
 
   def convert_to_usd( q, value, precision = 2 )
     total = 0
-    if q != nil && q["currency"] != nil
-      report_year = q["year_of_expenditure"].to_i
-      report_currency = q["currency"].to_s.upcase
+    if q != nil && q[:currency] != nil
+      report_year = q[:year_of_expenditure].to_i
+      report_currency = q[:currency].to_s.upcase
       deflator = Deflator.find_by(name: report_currency, year: report_year)
       exchange_for_currency = ExchangeRate.find_by(name: report_currency)
       rate = exchange_for_currency != nil ? exchange_for_currency.rate.to_f : 1
@@ -119,48 +126,48 @@ module ApplicationHelper
   end
 
   def hardware_and_software_expenditure(q)
-    if q['supply_system_technologies'] != nil && q['supply_system_technologies'].count > 0 && q['actual_hardware_expenditure'] != nil && q['actual_hardware_expenditure'].count > 0 && q['actual_software_expenditure'] != nil && q['actual_software_expenditure'].count > 0
-      q['supply_system_technologies'].each_with_index.map{ |s,i| q['actual_hardware_expenditure'][i].to_f + q['actual_software_expenditure'][i].to_f }.inject(:+)
+    if q[:supply_system_technologies] != nil && q[:supply_system_technologies].count > 0 && q[:actual_hardware_expenditure] != nil && q[:actual_hardware_expenditure].count > 0 && q[:actual_software_expenditure] != nil && q[:actual_software_expenditure].count > 0
+      q[:supply_system_technologies].each_with_index.map{ |s,i| q[:actual_hardware_expenditure][i].to_f + q[:actual_software_expenditure][i].to_f }.inject(:+)
     else
       0
     end
   end
 
   def total_operation_expenditure(q)
-    if q['minor_operation_expenditure'] != nil && q['minor_operation_expenditure'].count > 0 && q['system_population_actual'] != nil && q['system_population_actual'].count > 0
-      q['minor_operation_expenditure'].map{ |e| e.to_f }.inject(:+) / q['system_population_actual'].map{ |p| p.to_f }.inject(:+)
+    if q[:minor_operation_expenditure] != nil && q[:minor_operation_expenditure].count > 0 && q[:system_population_actual] != nil && q[:system_population_actual].count > 0
+      q[:minor_operation_expenditure].map{ |e| e.to_f }.inject(:+) / q[:system_population_actual].map{ |p| p.to_f }.inject(:+)
     else
       0
     end
   end
 
   def total_capital_maintenance_expenditure(q)
-    if q['capital_maintenance_expenditure'] != nil && q['capital_maintenance_expenditure'].count > 0 && q['system_population_actual'] != nil && q['system_population_actual'].count > 0
-      q['capital_maintenance_expenditure'].map{ |e| e.to_f }.inject(:+) / q['system_population_actual'].map{ |p| p.to_f }.inject(:+)
+    if q[:capital_maintenance_expenditure] != nil && q[:capital_maintenance_expenditure].count > 0 && q[:system_population_actual] != nil && q[:system_population_actual].count > 0
+      q[:capital_maintenance_expenditure].map{ |e| e.to_f }.inject(:+) / q[:system_population_actual].map{ |p| p.to_f }.inject(:+)
     else
       0
     end
   end
 
   def direct_support_cost(q)
-    q['direct_support_cost'] != nil ? q['direct_support_cost'].to_f : 0
+    q[:direct_support_cost] != nil ? q[:direct_support_cost].to_f : 0
   end
 
   def total_population(q)
-    if q['system_population_actual'] != nil && q['system_population_actual'].count > 0
-      q['system_population_actual'].map{ |p| p.to_f }.inject(:+)
+    if q[:system_population_actual] != nil && q[:system_population_actual].count > 0
+      q[:system_population_actual].map{ |p| p.to_f }.inject(:+)
     else
       0
     end
   end
 
   def indirect_support_cost(q)
-    q['indirect_support_cost'] != nil ? q['indirect_support_cost'].to_f : 0
+    q[:indirect_support_cost] != nil ? q[:indirect_support_cost].to_f : 0
   end
 
   def cost_of_capital_for_years(q, years)
-    if q['system_population_actual'] != nil && q['system_population_actual'].count > 0 && q['loan_cost'] != nil && q['loan_cost'].count > 0 && q['loan_payback_period'] != nil && q['loan_payback_period'].count > 0 && q['system_population_actual'].count == q['loan_cost'].count && q['loan_payback_period'].count == q['system_population_actual'].count
-      q['loan_cost'].each_with_index.map{ |s,i| s.to_f * q['loan_payback_period'][i].to_f }.inject(:+) / q['system_population_actual'].map{ |p| p.to_f }.inject(:+) / 30
+    if q[:system_population_actual] != nil && q[:system_population_actual].count > 0 && q[:loan_cost] != nil && q[:loan_cost].count > 0 && q[:loan_payback_period] != nil && q[:loan_payback_period].count > 0 && q[:system_population_actual].count == q[:loan_cost].count && q[:loan_payback_period].count == q[:system_population_actual].count
+      q[:loan_cost].each_with_index.map{ |s,i| s.to_f * q[:loan_payback_period][i].to_f }.inject(:+) / q[:system_population_actual].map{ |p| p.to_f }.inject(:+) / 30
     else
       0
     end
@@ -169,8 +176,8 @@ module ApplicationHelper
   #--#
 
   def percentage_of_population_that_meets_accessibility_norms(q)
-    if q['service_level_share'] != nil && q['service_level_share'].count > 0 && q['national_accessibility_norms'] != nil && q['national_accessibility_norms'].count > 0 && q['service_level_share'].count == q['national_accessibility_norms'].count
-      q['national_accessibility_norms'].each_with_index.map{ |nan,i| nan.to_i == 0 ? q['service_level_share'][i].to_i : 0 }.inject(:+)
+    if q[:service_level_share] != nil && q[:service_level_share].count > 0 && q[:national_accessibility_norms] != nil && q[:national_accessibility_norms].count > 0 && q[:service_level_share].count == q[:national_accessibility_norms].count
+      q[:national_accessibility_norms].each_with_index.map{ |nan,i| nan.to_i == 0 ? q[:service_level_share][i].to_i : 0 }.inject(:+)
     else
       0
     end
@@ -185,8 +192,8 @@ module ApplicationHelper
   end
 
   def percentage_of_population_that_meets_quantity_norms(q)
-    if q['service_level_share'] != nil && q['service_level_share'].count > 0 && q['national_quantity_norms'] != nil && q['national_quantity_norms'].count > 0 && q['service_level_share'].count == q['national_quantity_norms'].count
-      q['national_quantity_norms'].each_with_index.map{ |nan,i| nan.to_i == 0 ? q['service_level_share'][i].to_i : 0 }.inject(:+)
+    if q[:service_level_share] != nil && q[:service_level_share].count > 0 && q[:national_quantity_norms] != nil && q[:national_quantity_norms].count > 0 && q[:service_level_share].count == q[:national_quantity_norms].count
+      q[:national_quantity_norms].each_with_index.map{ |nan,i| nan.to_i == 0 ? q[:service_level_share][i].to_i : 0 }.inject(:+)
     else
       0
     end
@@ -201,8 +208,8 @@ module ApplicationHelper
   end
 
   def percentage_of_population_that_meets_quality_norms(q)
-    if q['service_level_share'] != nil && q['service_level_share'].count > 0 && q['national_quality_norms'] != nil && q['national_quality_norms'].count > 0 && q['service_level_share'].count == q['national_quantity_norms'].count
-      q['national_quality_norms'].each_with_index.map{ |nan,i| nan.to_i == 0 ? q['service_level_share'][i].to_i : 0 }.inject(:+)
+    if q[:service_level_share] != nil && q[:service_level_share].count > 0 && q[:national_quality_norms] != nil && q[:national_quality_norms].count > 0 && q[:service_level_share].count == q[:national_quantity_norms].count
+      q[:national_quality_norms].each_with_index.map{ |nan,i| nan.to_i == 0 ? q[:service_level_share][i].to_i : 0 }.inject(:+)
     else
       0
     end
@@ -217,8 +224,8 @@ module ApplicationHelper
   end
 
   def percentage_of_population_that_meets_reliability_norms(q)
-    if q['service_level_share'] != nil && q['service_level_share'].count > 0 && q['national_reliability_norms'] != nil && q['national_reliability_norms'].count > 0 && q['service_level_share'].count == q['national_reliability_norms'].count
-      q['national_reliability_norms'].each_with_index.map{ |nan,i| nan.to_i == 0 ? q['service_level_share'][i].to_i : 0 }.inject(:+)
+    if q[:service_level_share] != nil && q[:service_level_share].count > 0 && q[:national_reliability_norms] != nil && q[:national_reliability_norms].count > 0 && q[:service_level_share].count == q[:national_reliability_norms].count
+      q[:national_reliability_norms].each_with_index.map{ |nan,i| nan.to_i == 0 ? q[:service_level_share][i].to_i : 0 }.inject(:+)
     else
       0
     end

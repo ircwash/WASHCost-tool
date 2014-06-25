@@ -1,5 +1,7 @@
 class Advanced::WaterController < CalculatorController
 
+  include ApplicationHelper
+
   layout 'tool_advanced'
 
   authorize_resource :class => Advanced::WaterController
@@ -56,6 +58,7 @@ class Advanced::WaterController < CalculatorController
   end
 
   def share_report
+
     @report = Report.create( :level => 'advanced', :type => 'water', :questionnaire => AdvancedWaterQuestionnaire.new( session ).attributes )
     @back_path = advanced_water_report_path( I18n.locale )
 
@@ -63,7 +66,14 @@ class Advanced::WaterController < CalculatorController
   end
 
   def store_report
-    super( params[ :user_report ][ :title ], 'advanced', session[:advanced_water][:status], 'water', AdvancedWaterQuestionnaire.new( session ).attributes )
+
+    questionnaire = AdvancedWaterQuestionnaire.new( session ).attributes
+
+    cepp = final_usd_2011(questionnaire, capital_expenditure_per_person(questionnaire)).to_s
+    repppy = final_usd_2011(questionnaire, recurrent_expenditure_per_person_per_year(questionnaire, 30)).to_s
+    poptman = percentage_of_population_that_meets_all_norms(questionnaire).to_s
+
+    super( params[ :user_report ][ :title ], 'advanced', session[:advanced_water][:status], 'water', questionnaire, cepp, repppy, poptman )
   end
 
 end

@@ -63,10 +63,13 @@
                 -else
                   %div
                     %em= t('dashboard.compare.label1')
+                    = report["capital_expenditure_per_person"] != nil ? report["capital_expenditure_per_person"] : "N/A"
                     /= final_usd_2011(report.questionnaire, capital_expenditure_per_person(report.questionnaire)).to_s
                   %div
                     %em= t('dashboard.compare.label2')
+                    = report["recurrent_expenditure_per_person_per_year"] != nil ? report["recurrent_expenditure_per_person_per_year"] : "N/A"
                     /= final_usd_2011(report.questionnaire, recurrent_expenditure_per_person_per_year(report.questionnaire, 30)).to_s
                   %div
                     %em= t('dashboard.compare.label3')
+                    = report["population_meeting_all_national_service_norms"] != nil ? report["population_meeting_all_national_service_norms"] .to_s + '%' : '0%'
                     /= percentage_of_population_that_meets_all_norms(report.questionnaire).to_s + '%'
