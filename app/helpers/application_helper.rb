@@ -160,7 +160,6 @@ module ApplicationHelper
 
   def cost_of_capital_for_years(q, years)
     if q['system_population_actual'] != nil && q['system_population_actual'].count > 0 && q['loan_cost'] != nil && q['loan_cost'].count > 0 && q['loan_payback_period'] != nil && q['loan_payback_period'].count > 0 && q['system_population_actual'].count == q['loan_cost'].count && q['loan_payback_period'].count == q['system_population_actual'].count
-      #q['supply_system_technologies'].each_with_index.map{ |s,i| q['loan_cost'][i].to_f * [ q['loan_payback_period'][i].to_i, years ].min }.inject( :+ )
       q['loan_cost'].each_with_index.map{ |s,i| s.to_f * q['loan_payback_period'][i].to_f }.inject(:+) / q['system_population_actual'].map{ |p| p.to_f }.inject(:+) / 30
     else
       0
