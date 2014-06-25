@@ -1,8 +1,6 @@
 calculators
 ===========
 
-Development URL: http://dev.washcost.org
-
 Live URL: http://www.washcost.org
 
 Technologies Used
@@ -39,13 +37,3 @@ will fail building), you'll need to install it. On OS X:
 
     brew install qt
 
-Running the tests
------------------
-
-### run spork
-
-    spork
-
-### run the integration test
-
-    rspec --drb spec/features
