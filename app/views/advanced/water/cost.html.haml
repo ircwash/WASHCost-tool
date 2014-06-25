@@ -12,7 +12,7 @@
       .dual_column_form--row
 
         - @questionnaire.supply_system_technologies.each do |technology|
-          - puts technology.to_i
+          /- puts technology.to_i
           .dual_column_form--column.dual_column_form--column-33
             .dual_column--subheading= options_for_supply_system_technologies[ technology.to_i ][0]
 
