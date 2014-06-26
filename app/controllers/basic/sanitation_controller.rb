@@ -57,7 +57,7 @@ class Basic::SanitationController < CalculatorController
   end
 
   def store_report
-    super( params[ :user_report ][ :title ], 'basic', session[:advanced_sanitation][:status], 'sanitation', BasicSanitationQuestionnaire.new( session ).attributes )
+    super( params[ :user_report ][ :title ], 'basic', session[:advanced_sanitation][:status], 'sanitation', BasicSanitationQuestionnaire.new( session ).attributes, "NA", "N/A", "0%" )
   end
 
 end
