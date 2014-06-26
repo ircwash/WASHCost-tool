@@ -71,7 +71,7 @@ class Advanced::SanitationController < CalculatorController
 
     cepp = final_usd_2011(questionnaire, capital_expenditure_per_person(questionnaire)).to_s
     repppy = final_usd_2011(questionnaire, recurrent_expenditure_per_person_per_year(questionnaire, 30)).to_s
-    poptman = percentage_of_population_that_meets_all_norms(questionnaire).to_s
+    poptman = percentage_of_population_that_meets_all_norms_sanitation(questionnaire).to_s
 
     super( params[ :user_report ][ :title ], 'advanced', session[:advanced_sanitation][:status], 'sanitation', questionnaire, cepp, repppy, poptman )
   end

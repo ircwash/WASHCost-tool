@@ -170,21 +170,21 @@ module ApplicationHelper
 
   #--#
 
-  def percentage_of_population_that_meets_accessibility_norms(q)
-    if q[:service_level_share] != nil && q[:service_level_share].count > 0 && q[:national_accessibility_norms] != nil && q[:national_accessibility_norms].count > 0 && q[:service_level_share].count == q[:national_accessibility_norms].count
-      q[:national_accessibility_norms].each_with_index.map{ |nan,i| nan.to_i == 0 ? q[:service_level_share][i].to_i : 0 }.inject(:+)
-    else
-      0
-    end
-  end
+  # def percentage_of_population_that_meets_accessibility_norms(q)
+  #   if q[:service_level_share] != nil && q[:service_level_share].count > 0 && q[:national_accessibility_norms] != nil && q[:national_accessibility_norms].count > 0 && q[:service_level_share].count == q[:national_accessibility_norms].count
+  #     q[:national_accessibility_norms].each_with_index.map{ |nan,i| nan.to_i == 0 ? q[:service_level_share][i].to_i : 0 }.inject(:+)
+  #   else
+  #     0
+  #   end
+  # end
 
-  def percentage_of_population_that_does_not_meet_accessibility_norms(q)
-    percentage_of_population_that_meets_accessibility_norms(q)
-  end
+  # def percentage_of_population_that_does_not_meet_accessibility_norms(q)
+  #   percentage_of_population_that_meets_accessibility_norms(q)
+  # end
 
-  def percentage_of_population_with_unknown_accessibility_norms(q)
-    percentage_of_population_that_meets_accessibility_norms(q)
-  end
+  # def percentage_of_population_with_unknown_accessibility_norms(q)
+  #   percentage_of_population_that_meets_accessibility_norms(q)
+  # end
 
   def percentage_of_population_that_meets_quantity_norms(q)
     if q[:service_level_share] != nil && q[:service_level_share].count > 0 && q[:national_quantity_norms] != nil && q[:national_quantity_norms].count > 0 && q[:service_level_share].count == q[:national_quantity_norms].count
@@ -194,49 +194,57 @@ module ApplicationHelper
     end
   end
 
-  def percentage_of_population_that_does_not_meet_quantity_norms(q)
-    percentage_of_population_that_meets_quantity_norms(q)
-  end
+  # def percentage_of_population_that_does_not_meet_quantity_norms(q)
+  #   percentage_of_population_that_meets_quantity_norms(q)
+  # end
 
-  def percentage_of_population_with_unknown_quantity_norms(q)
-    percentage_of_population_that_meets_quantity_norms(q)
-  end
+  # def percentage_of_population_with_unknown_quantity_norms(q)
+  #   percentage_of_population_that_meets_quantity_norms(q)
+  # end
 
-  def percentage_of_population_that_meets_quality_norms(q)
-    if q[:service_level_share] != nil && q[:service_level_share].count > 0 && q[:national_quality_norms] != nil && q[:national_quality_norms].count > 0 && q[:service_level_share].count == q[:national_quantity_norms].count
-      q[:national_quality_norms].each_with_index.map{ |nan,i| nan.to_i == 0 ? q[:service_level_share][i].to_i : 0 }.inject(:+)
-    else
-      0
-    end
-  end
+  # def percentage_of_population_that_meets_quality_norms(q)
+  #   if q[:service_level_share] != nil && q[:service_level_share].count > 0 && q[:national_quality_norms] != nil && q[:national_quality_norms].count > 0 && q[:service_level_share].count == q[:national_quantity_norms].count
+  #     q[:national_quality_norms].each_with_index.map{ |nan,i| nan.to_i == 0 ? q[:service_level_share][i].to_i : 0 }.inject(:+)
+  #   else
+  #     0
+  #   end
+  # end
 
-  def percentage_of_population_that_does_not_meet_quality_norms(q)
-    percentage_of_population_that_meets_quality_norms(q)
-  end
+  # def percentage_of_population_that_does_not_meet_quality_norms(q)
+  #   percentage_of_population_that_meets_quality_norms(q)
+  # end
 
-  def percentage_of_population_with_unknown_quality_norms(q)
-    percentage_of_population_that_meets_quality_norms(q)
-  end
+  # def percentage_of_population_with_unknown_quality_norms(q)
+  #   percentage_of_population_that_meets_quality_norms(q)
+  # end
 
-  def percentage_of_population_that_meets_reliability_norms(q)
-    if q[:service_level_share] != nil && q[:service_level_share].count > 0 && q[:national_reliability_norms] != nil && q[:national_reliability_norms].count > 0 && q[:service_level_share].count == q[:national_reliability_norms].count
-      q[:national_reliability_norms].each_with_index.map{ |nan,i| nan.to_i == 0 ? q[:service_level_share][i].to_i : 0 }.inject(:+)
-    else
-      0
-    end
-  end
+  # def percentage_of_population_that_meets_reliability_norms(q)
+  #   if q[:service_level_share] != nil && q[:service_level_share].count > 0 && q[:national_reliability_norms] != nil && q[:national_reliability_norms].count > 0 && q[:service_level_share].count == q[:national_reliability_norms].count
+  #     q[:national_reliability_norms].each_with_index.map{ |nan,i| nan.to_i == 0 ? q[:service_level_share][i].to_i : 0 }.inject(:+)
+  #   else
+  #     0
+  #   end
+  # end
 
-  def percentage_of_population_that_does_not_meet_reliability_norms(q)
-    percentage_of_population_that_meets_reliability_norms(q)
-  end
+  # def percentage_of_population_that_does_not_meet_reliability_norms(q)
+  #   percentage_of_population_that_meets_reliability_norms(q)
+  # end
 
-  def percentage_of_population_with_unknown_reliability_norms(q)
-    percentage_of_population_that_meets_reliability_norms(q)
-  end
+  # def percentage_of_population_with_unknown_reliability_norms(q)
+  #   percentage_of_population_that_meets_reliability_norms(q)
+  # end
 
   def percentage_of_population_that_meets_all_norms(q)
     if q != nil && q[:service_level_name] != nil && q[:service_level_name].count > 0 && q[:national_accessibility_norms] != nil && q[:national_accessibility_norms].count > 0 && q[:national_quality_norms] != nil && q[:national_quality_norms].count > 0 && q[:national_reliability_norms] != nil && q[:national_reliability_norms].count > 0 && q[:national_quantity_norms] != nil && q[:national_quantity_norms].count > 0 && q[:service_level_share] != nil && q[:service_level_share].count > 0
       q[:service_level_name].each_with_index.map{ |nan,i|  (q[:national_accessibility_norms][i].to_i == 0 && q[:national_quality_norms][i].to_i == 0 && q[:national_reliability_norms][i].to_i ==0 && q[:national_quantity_norms][i].to_i == 0) ? q[:service_level_share][i].to_i : 0 }.inject(:+)
+    else
+      0
+    end
+  end
+
+  def percentage_of_population_that_meets_all_norms_sanitation(q)
+    if q != nil && q[:service_level_name] != nil && q[:service_level_name].count > 0 && q[:national_accessibility_norms] != nil && q[:national_accessibility_norms].count > 0 && q[:national_use_norms] != nil && q[:national_use_norms].count > 0 && q[:national_reliability_norms] != nil && q[:national_reliability_norms].count > 0 && q[:national_environmental_protection_norms] != nil && q[:national_environmental_protection_norms].count > 0 && q[:service_level_share] != nil && q[:service_level_share].count > 0
+      q[:service_level_name].each_with_index.map{ |nan,i|  (q[:national_accessibility_norms][i].to_i == 0 && q[:national_use_norms][i].to_i == 0 && q[:national_reliability_norms][i].to_i ==0 && q[:national_environmental_protection_norms][i].to_i == 0) ? q[:service_level_share][i].to_i : 0 }.inject(:+)
     else
       0
     end
