@@ -235,7 +235,7 @@ module ApplicationHelper
   end
 
   def percentage_of_population_that_meets_all_norms(q)
-    if q != nil && q[:service_level_name] != nil && q[:service_level_name].count > 0 && q[:national_accessibility_norms] != nill && q[:national_accessibility_norms].count > 0 && q[:national_quality_norms] != nil && q[:national_quality_norms].count > 0 && q[:national_reliability_norms] != nil && q[:national_reliability_norms].count > 0 && q[:national_quantity_norms] != nil && q[:national_quantity_norms].count > 0 && q[:service_level_share] != nil && q[:service_level_share].count > 0
+    if q != nil && q[:service_level_name] != nil && q[:service_level_name].count > 0 && q[:national_accessibility_norms] != nil && q[:national_accessibility_norms].count > 0 && q[:national_quality_norms] != nil && q[:national_quality_norms].count > 0 && q[:national_reliability_norms] != nil && q[:national_reliability_norms].count > 0 && q[:national_quantity_norms] != nil && q[:national_quantity_norms].count > 0 && q[:service_level_share] != nil && q[:service_level_share].count > 0
       q[:service_level_name].each_with_index.map{ |nan,i|  (q[:national_accessibility_norms][i].to_i == 0 && q[:national_quality_norms][i].to_i == 0 && q[:national_reliability_norms][i].to_i ==0 && q[:national_quantity_norms][i].to_i == 0) ? q[:service_level_share][i].to_i : 0 }.inject(:+)
     else
       0
