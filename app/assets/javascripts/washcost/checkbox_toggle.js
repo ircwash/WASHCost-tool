@@ -11,10 +11,6 @@ $( document ).ready( function()
         var code = e.keyCode || e.which;
         if (code === 13) $(this).parent().prev().trigger('click');
       });
-
-      /*var associated = $( this ).data( 'checkbox_toggle-field' );
-      $( '[data-checkbox_toggle-checkbox="' + associated + '"]' ).removeAttr( 'checked' );*/
-      
     } );
 
     $( '[data-checkbox_toggle-checkbox]' ).on( 'change', function( event )

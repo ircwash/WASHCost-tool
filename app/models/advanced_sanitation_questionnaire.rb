@@ -177,13 +177,11 @@ class AdvancedSanitationQuestionnaire < AdvancedQuestionnaire
 
   def percentage_of_population_that_meets_all_norms
     if percentage_of_population_that_meets_accessibility_norms != nil || percentage_of_population_that_meets_use_norms != nil || percentage_of_population_that_meets_reliability_norms != nil || percentage_of_population_that_meets_environmental_protection_norms != nil
-      #( ( percentage_of_population_that_meets_accessibility_norms || 0 ) + ( percentage_of_population_that_meets_use_norms || 0 ) + ( percentage_of_population_that_meets_reliability_norms || 0 ) + ( percentage_of_population_that_meets_environmental_protection_norms || 0 ) ) / 400
-      [percentage_of_population_that_meets_accessibility_norms, percentage_of_population_that_meets_use_norms, percentage_of_population_that_meets_reliability_norms, percentage_of_population_that_meets_environmental_protection_norms].min
+      service_level_name.each_with_index.map{ |nan,i|  (national_accessibility_norms[i].to_i == 0 && national_quality_norms[i].to_i == 0 && national_reliability_norms[i].to_i ==0 && national_quantity_norms[i].to_i == 0) ? service_level_share[i].to_i : 0 }.inject(:+)
     else
       nil
     end
   end
-
 
   # BENCHMARK VALUES
 

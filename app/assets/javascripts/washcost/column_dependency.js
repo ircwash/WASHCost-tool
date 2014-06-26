@@ -8,7 +8,6 @@ $( document ).ready( function()
     $('[data-percentage]').on('keyup', enforce_numeric);
     $('[data-percentage]').on('blur', add_percentage);
     $('[data-numeric]').on('keyup', enforce_numeric);
-    //$('[data-numeric]').on('change', enforce_numeric); // disabled to allow for currency 
     $('[data-currency]').on('blur', add_currency);
     $('[data-currency]').on('focus', enforce_numeric);
     $('[data-percentage]').on('focus', enforce_numeric);
@@ -65,7 +64,6 @@ $( document ).ready( function()
       if (id.match('surface_water_primary_source')) {
         var $item = $('#' + id);
         $item.attr( { disabled:'disabled' } ).trigger( 'chosen:updated' );
-        //$item.prop('selectedIndex', 0);
       }
     }
   }
