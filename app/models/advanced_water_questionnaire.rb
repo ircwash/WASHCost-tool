@@ -227,7 +227,8 @@ class AdvancedWaterQuestionnaire < AdvancedQuestionnaire
   end
 
   def percentage_of_population_that_meets_all_norms
-    if percentage_of_population_that_meets_accessibility_norms != nil && percentage_of_population_that_meets_quantity_norms != nil && percentage_of_population_that_meets_quality_norms != nil && percentage_of_population_that_meets_reliability_norms != nil
+    #if percentage_of_population_that_meets_accessibility_norms != nil && percentage_of_population_that_meets_quantity_norms != nil && percentage_of_population_that_meets_quality_norms != nil && percentage_of_population_that_meets_reliability_norms != nil
+    if service_level_name != nil && service_level_name.count > 0 && national_accessibility_norms != nil && national_accessibility_norms.count > 0 && national_quality_norms != nil && national_quality_norms.count > 0 && national_reliability_norms != nil && national_reliability_norms.count > 0 && national_quantity_norms != nil && national_quantity_norms.count > 0 && service_level_share != nil && service_level_share.count > 0
       service_level_name.each_with_index.map{ |nan,i|  (national_accessibility_norms[i].to_i == 0 && national_quality_norms[i].to_i == 0 && national_reliability_norms[i].to_i ==0 && national_quantity_norms[i].to_i == 0) ? service_level_share[i].to_i : 0 }.inject(:+)
     else
       nil

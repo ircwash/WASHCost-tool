@@ -1,6 +1,6 @@
 class Advanced::SanitationController < CalculatorController
 
-  #include ApplicationHelper
+  include ApplicationHelper
 
   layout 'tool_advanced'
 
