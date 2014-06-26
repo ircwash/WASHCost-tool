@@ -65,7 +65,7 @@ $( document ).ready( function()
       if (id.match('surface_water_primary_source')) {
         var $item = $('#' + id);
         $item.attr( { disabled:'disabled' } ).trigger( 'chosen:updated' );
-        $item.prop('selectedIndex', 0);
+        //$item.prop('selectedIndex', 0);
       }
     }
   }

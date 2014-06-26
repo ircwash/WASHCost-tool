@@ -28,7 +28,7 @@ $( document ).ready( function()
 
   function init() {
     
-    $('html').bind('keypress', function (e) {
+    $('form[data-dynamic_form]').bind('keypress', function (e) {
      if(e.keyCode == 13)
         return false;
     });
