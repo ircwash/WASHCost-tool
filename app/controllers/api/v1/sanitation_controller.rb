@@ -51,7 +51,7 @@ class Api::V1::SanitationController < Api::V1::BaseController
 
   def update
     questionnaire = AdvancedSanitationQuestionnaire.new( session )
-    questionnaire.reset
+    #questionnaire.reset
 
     unless params.has_key?(:id)
       render :json => { error: "Missing report id", status: 403 }, :status => :forbidden
@@ -69,6 +69,8 @@ class Api::V1::SanitationController < Api::V1::BaseController
 
     user_report = current_user.user_reports.where(level: "advanced", id: params[:id]).first
 
+    #puts user_report.to_json
+
     if params.has_key?(:title)
       user_report.title = params[:title]
     end
@@ -77,6 +79,10 @@ class Api::V1::SanitationController < Api::V1::BaseController
       status = params[:questionnaire][:status] != nil ? params[:questionnaire][:status] : 0
       user_report.status = status
 
+      questionnaire.update_attributes(params[:questionnaire])
+
+      user_report.questionnaire = questionnaire.attributes
+
       cepp = final_usd_2011(questionnaire.attributes, capital_expenditure_per_person(questionnaire.attributes)).to_s
       repppy = final_usd_2011(questionnaire.attributes, recurrent_expenditure_per_person_per_year(questionnaire.attributes, 30)).to_s
       poptman = percentage_of_population_that_meets_all_norms(questionnaire.attributes).to_s
@@ -84,14 +90,12 @@ class Api::V1::SanitationController < Api::V1::BaseController
       user_report.capital_expenditure_per_person = cepp
       user_report.recurrent_expenditure_per_person_per_year = repppy
       user_report.population_meeting_all_national_service_norms = poptman
-
-      questionnaire.update_attributes(params[:questionnaire])
-
-      user_report.questionnaire = questionnaire.attributes
     end
 
     user_report.save!
     
+    #puts user_report.to_json
+
     render json: user_report.questionnaire
     
   end
