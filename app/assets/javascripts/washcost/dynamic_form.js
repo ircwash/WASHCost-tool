@@ -43,25 +43,25 @@ $( document ).ready( function()
 
       $('#email-error,#password-error').remove();
 
-      if ($('input#user_password').length > 0 && !validateInput(password)) {
+      if ($('input[data-req-msg]').length > 0 && $('input#user_password').length > 0 && !validateInput(password)) {
         var msg = $('input#user_password').attr('data-req-msg');
         addError(msg, 'password-error');
         errors = false;
       } 
 
-      if ($('input#user_password_confirmation').length > 0 && errors && !validatePassword(password)) {
+      if ($('input[data-pwd-short]').length > 0 && $('input#user_password_confirmation').length > 0 && errors && !validatePassword(password)) {
         var msg = $('input#user_password').attr('data-pwd-short');
         addError(msg, 'password-error');
         errors = false;
-      } 
+      }
 
-      if ($('input#user_password_confirmation').length > 0 && password != password_confirmation) {
+      if ($('input[data-pwd-match]').length > 0 && $('input#user_password_confirmation').length > 0 && password != password_confirmation) {
         var msg = $('input#user_password_confirmation').attr('data-pwd-match');
         addError(msg, 'password-error');
         errors = false;
       }
 
-      if (!validateEmail(email)) {
+      if ($('input[data-email-valid]').length > 0 &&!validateEmail(email)) {
         var msg = $('input#user_email').attr('data-email-valid');
         addError(msg, 'email-error');
         errors = false;

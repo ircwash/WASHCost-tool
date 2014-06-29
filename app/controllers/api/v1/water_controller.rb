@@ -1,6 +1,8 @@
 class Api::V1::WaterController < Api::V1::BaseController
   doorkeeper_for :all
 
+  include ApplicationHelper
+
   respond_to :json
 
   def create
