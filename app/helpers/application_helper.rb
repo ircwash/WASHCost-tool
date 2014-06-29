@@ -63,7 +63,7 @@ module ApplicationHelper
     _FX_original_country_input_year_of_expenditure = FX_original_country_input_year_of_expenditure(q)
     
     if value != nil && multiplier != nil && _FX_2011 != nil && _FX_input_currency_year_of_expenditure != nil && _FX_original_country_input_year_of_expenditure != nil
-      output = value * (_FX_original_country_input_year_of_expenditure / _FX_input_currency_year_of_expenditure) * multiplier / _FX_2011
+      output = value * (_FX_original_country_input_year_of_expenditure / _FX_input_currency_year_of_expenditure) * (multiplier / _FX_2011)
       "#{number_with_precision( number_to_currency(output.to_f, :locale => "USD"), :precision => 2 )}"
     else
       "N/A"  
@@ -80,8 +80,8 @@ module ApplicationHelper
     _FX_original_country_input_year_of_expenditure = FX_original_country_input_year_of_expenditure(q)
     
     if value != nil && multiplier != nil && _FX_2011 != nil && _FX_input_currency_year_of_expenditure != nil && _FX_original_country_input_year_of_expenditure != nil
-      output = value * (_FX_original_country_input_year_of_expenditure / _FX_input_currency_year_of_expenditure) * multiplier / _FX_2011
-      "#{number_with_precision( output.to_f , :precision => 2 )}"
+      output = value * (_FX_original_country_input_year_of_expenditure / _FX_input_currency_year_of_expenditure) * (multiplier / _FX_2011)
+      "#{number_with_precision( output.to_f , :precision => 16 )}"
     else
       nil
     end

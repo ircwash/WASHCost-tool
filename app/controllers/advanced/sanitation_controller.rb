@@ -49,32 +49,30 @@ class Advanced::SanitationController < CalculatorController
 
     # No choice but to do the following
 
-    benchmark_moe = Hash.new()
+    benchmark = Hash.new()
     benchmark_moe_new = []
     benchmark_dsc_new = []    
     out = final_usd_2011_number(@questionnaire.attributes, 1)
 
     if out != nil
 
-      for i in @questionnaire.benchmark_minor_operation_expenditure
-        val = @questionnaire.benchmark_minor_operation_expenditure[i]
-        if benchmark_moe.has_key?(val) == false
+      @questionnaire.benchmark_minor_operation_expenditure.each do |val|
+        if benchmark.has_key?(val.to_s) == false
           newvalue = "#{number_with_precision( val.to_f / out.to_f, :precision => 5 )}"
-          benchmark_moe[val] = newvalue.to_s
-          benchmark_dsc_new.push(newvalue.to_s)
+          benchmark[val] = newvalue.to_s
+          benchmark_moe_new.push(newvalue.to_s)
         else
-          benchmark_moe_new.push(benchmark_moe[val])
+          benchmark_moe_new.push(benchmark[val])
         end
       end
 
-      for i in @questionnaire.benchmark_direct_support_cost
-        val = @questionnaire.benchmark_direct_support_cost[i]
-        if benchmark_moe.has_key?(val) == false
+      @questionnaire.benchmark_direct_support_cost.each do |val|
+        if benchmark.has_key?(val) == false
           newvalue = "#{number_with_precision( val.to_f / out.to_f, :precision => 5 )}"
-          benchmark_moe[val] = newvalue.to_s
+          benchmark[val] = newvalue.to_s
           benchmark_dsc_new.push(newvalue.to_s)
         else
-          benchmark_dsc_new.push(benchmark_moe[val])
+          benchmark_dsc_new.push(benchmark[val])
         end
       end
 

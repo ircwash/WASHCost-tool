@@ -186,7 +186,7 @@ class AdvancedQuestionnaire < Session
 
   def expected_operation_expenditure_per_person_per_year
     if benchmark_moe != nil && benchmark_moe.count > 0 && supply_system_technologies != nil && system_population_actual != nil && supply_system_technologies.count > 0 && system_population_actual.count == supply_system_technologies.count
-      supply_system_technologies.each_with_index.map{ |s,i| benchmark_moe[ i ].to_f * system_population_actual[i].to_f }.inject(:+) / system_population_actual.map{ |p| p.to_f }.inject(:+)
+      supply_system_technologies.each_with_index.map{ |s,i| benchmark_moe[ s.to_i ].to_f * system_population_actual[i].to_f }.inject(:+) / system_population_actual.map{ |p| p.to_f }.inject(:+)
       #supply_system_technologies.each_with_index.map{ |s,i| self.benchmark_minor_operation_expenditure[ s.to_i ] * system_population_actual[i].to_f }.inject(:+) / system_population_actual.map{ |p| p.to_f }.inject(:+)
     else
       nil
@@ -197,7 +197,7 @@ class AdvancedQuestionnaire < Session
 
   def operation_expenditure_per_year
     if benchmark_moe != nil && benchmark_moe.count > 0 && supply_system_technologies != nil && system_population_actual != nil && supply_system_technologies.count > 0 && system_population_actual.count == supply_system_technologies.count
-      supply_system_technologies.each_with_index.map{ |s,i| benchmark_moe[ i ].to_f * system_population_actual[i].to_f }.inject(:+)
+      supply_system_technologies.each_with_index.map{ |s,i| benchmark_moe[ s.to_i ].to_f * system_population_actual[i].to_f }.inject(:+)
       #supply_system_technologies.each_with_index.map{ |s,i| self.benchmark_minor_operation_expenditure[ s.to_i ] * system_population_actual[i].to_f }.inject(:+)
     else
       nil
@@ -206,7 +206,7 @@ class AdvancedQuestionnaire < Session
 
   def direct_support_per_year
     if benchmark_dsc != nil && benchmark_dsc.count > 0 && supply_system_technologies != nil && system_population_actual != nil && supply_system_technologies.count > 0 && system_population_actual.count == supply_system_technologies.count
-      supply_system_technologies.each_with_index.map{ |s,i| benchmark_dsc[ i ].to_f * system_population_actual[i].to_f }.inject(:+)
+      supply_system_technologies.each_with_index.map{ |s,i| benchmark_dsc[ s.to_i ].to_f * system_population_actual[i].to_f }.inject(:+)
       #supply_system_technologies.each_with_index.map{ |s,i| self.benchmark_direct_support_cost[ s.to_i ] * system_population_actual[i].to_f }.inject(:+)
     else
       nil
@@ -236,7 +236,7 @@ class AdvancedQuestionnaire < Session
   def expected_direct_support_cost_per_person_per_year
     if benchmark_dsc != nil && benchmark_dsc.count > 0 && supply_system_technologies.count > 0 && system_population_actual.count == supply_system_technologies.count
       #supply_system_technologies.each_with_index.map{ |s,i| self.benchmark_direct_support_cost[ s.to_i ].to_f * system_population_actual[i].to_f }.inject(:+) / system_population_actual.map{ |p| p.to_f }.inject(:+)
-      supply_system_technologies.each_with_index.map{ |s,i| benchmark_dsc[ i ].to_f * system_population_actual[i].to_f }.inject(:+) / system_population_actual.map{ |p| p.to_f }.inject(:+)
+      supply_system_technologies.each_with_index.map{ |s,i| benchmark_dsc[ s.to_i ].to_f * system_population_actual[i].to_f }.inject(:+) / system_population_actual.map{ |p| p.to_f }.inject(:+)
     else
       nil
     end
