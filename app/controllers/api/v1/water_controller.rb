@@ -28,11 +28,18 @@ class Api::V1::WaterController < Api::V1::BaseController
 
     status = params[:questionnaire][:status] != nil ? params[:questionnaire][:status] : 0
 
+    cepp = final_usd_2011(questionnaire.attributes, capital_expenditure_per_person(questionnaire.attributes)).to_s
+    repppy = final_usd_2011(questionnaire.attributes, recurrent_expenditure_per_person_per_year(questionnaire.attributes, 30)).to_s
+    poptman = percentage_of_population_that_meets_all_norms(questionnaire.attributes).to_s
+
     current_user.user_reports << UserReport.new(
       :title => params[:title],
       :type  => 'water',
       :level => 'advanced',
       :status => status,
+      :capital_expenditure_per_person => cepp,
+      :recurrent_expenditure_per_person_per_year => repppy,
+      :population_meeting_all_national_service_norms => poptman,
       :questionnaire => questionnaire.attributes
     )
 
@@ -67,7 +74,17 @@ class Api::V1::WaterController < Api::V1::BaseController
     if params.has_key?(:questionnaire)
       status = params[:questionnaire][:status] != nil ? params[:questionnaire][:status] : 0
       user_report.status = status
+
+      cepp = final_usd_2011(questionnaire.attributes, capital_expenditure_per_person(questionnaire.attributes)).to_s
+      repppy = final_usd_2011(questionnaire.attributes, recurrent_expenditure_per_person_per_year(questionnaire.attributes, 30)).to_s
+      poptman = percentage_of_population_that_meets_all_norms(questionnaire.attributes).to_s
+
+      user_report.capital_expenditure_per_person = cepp
+      user_report.recurrent_expenditure_per_person_per_year = repppy
+      user_report.population_meeting_all_national_service_norms = poptman
+
       questionnaire.update_attributes(params[:questionnaire])
+
       user_report.questionnaire = questionnaire.attributes
     end
 

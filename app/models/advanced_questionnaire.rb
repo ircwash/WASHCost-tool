@@ -27,12 +27,15 @@ class AdvancedQuestionnaire < Session
                 :loan_payback_period,
 
                 :service_level_name,
-                :service_level_share
+                :service_level_share,
+               
+                :benchmark_moe,
+                :benchmark_dsc
 
   def initialize( session, identifier )
     super
 
-    property_attributes :status, :country, :currency, :year_of_expenditure, :region, :town, :area_type, :population_density, :annual_household_income, :household_size, :direct_support_cost, :indirect_support_cost, :supply_system_technologies, :systems_number, :system_population_design, :system_population_actual, :actual_hardware_expenditure, :actual_software_expenditure, :system_lifespan_expectancy, :minor_operation_expenditure, :capital_maintenance_expenditure, :loan_cost, :loan_payback_period, :service_level_name, :service_level_share
+    property_attributes :status, :country, :currency, :year_of_expenditure, :region, :town, :area_type, :population_density, :annual_household_income, :household_size, :direct_support_cost, :indirect_support_cost, :supply_system_technologies, :systems_number, :system_population_design, :system_population_actual, :actual_hardware_expenditure, :actual_software_expenditure, :system_lifespan_expectancy, :minor_operation_expenditure, :capital_maintenance_expenditure, :loan_cost, :loan_payback_period, :service_level_name, :service_level_share, :benchmark_moe, :benchmark_dsc
   end
 
 
@@ -165,7 +168,6 @@ class AdvancedQuestionnaire < Session
 
   def cost_of_capital_per_person_per_year
     if loan_payback_period != nil && loan_payback_period.count > 0 && supply_system_technologies != nil && system_population_actual != nil && supply_system_technologies.count > 0 && loan_cost.count == supply_system_technologies.count && system_population_actual.count == supply_system_technologies.count
-      #loan_cost.map{ |e| e.to_f }.inject(:+) / system_population_actual.map{ |p| p.to_f }.inject(:+) / 30
       loan_cost.each_with_index.map{ |s,i| s.to_f * loan_payback_period[i].to_f }.inject(:+) / system_population_actual.map{ |p| p.to_f }.inject(:+) / 30
     else
       nil
@@ -180,9 +182,12 @@ class AdvancedQuestionnaire < Session
     end
   end
 
+  # Benchme
+
   def expected_operation_expenditure_per_person_per_year
-    if supply_system_technologies != nil && system_population_actual != nil && supply_system_technologies.count > 0 && system_population_actual.count == supply_system_technologies.count
-      supply_system_technologies.each_with_index.map{ |s,i| self.benchmark_minor_operation_expenditure[ s.to_i ] * system_population_actual[i].to_f }.inject(:+) / system_population_actual.map{ |p| p.to_f }.inject(:+)
+    if benchmark_moe != nil && benchmark_moe.count > 0 && supply_system_technologies != nil && system_population_actual != nil && supply_system_technologies.count > 0 && system_population_actual.count == supply_system_technologies.count
+      supply_system_technologies.each_with_index.map{ |s,i| benchmark_moe[ i ].to_f * system_population_actual[i].to_f }.inject(:+) / system_population_actual.map{ |p| p.to_f }.inject(:+)
+      #supply_system_technologies.each_with_index.map{ |s,i| self.benchmark_minor_operation_expenditure[ s.to_i ] * system_population_actual[i].to_f }.inject(:+) / system_population_actual.map{ |p| p.to_f }.inject(:+)
     else
       nil
     end
@@ -191,16 +196,18 @@ class AdvancedQuestionnaire < Session
   # graphing 
 
   def operation_expenditure_per_year
-    if supply_system_technologies != nil && system_population_actual != nil && supply_system_technologies.count > 0 && system_population_actual.count == supply_system_technologies.count
-      supply_system_technologies.each_with_index.map{ |s,i| self.benchmark_minor_operation_expenditure[ s.to_i ] * system_population_actual[i].to_f }.inject(:+)
+    if benchmark_moe != nil && benchmark_moe.count > 0 && supply_system_technologies != nil && system_population_actual != nil && supply_system_technologies.count > 0 && system_population_actual.count == supply_system_technologies.count
+      supply_system_technologies.each_with_index.map{ |s,i| benchmark_moe[ i ].to_f * system_population_actual[i].to_f }.inject(:+)
+      #supply_system_technologies.each_with_index.map{ |s,i| self.benchmark_minor_operation_expenditure[ s.to_i ] * system_population_actual[i].to_f }.inject(:+)
     else
       nil
     end
   end
 
   def direct_support_per_year
-    if supply_system_technologies != nil && system_population_actual != nil && supply_system_technologies.count > 0 && system_population_actual.count == supply_system_technologies.count
-      supply_system_technologies.each_with_index.map{ |s,i| self.benchmark_direct_support_cost[ s.to_i ] * system_population_actual[i].to_f }.inject(:+)
+    if benchmark_dsc != nil && benchmark_dsc.count > 0 && supply_system_technologies != nil && system_population_actual != nil && supply_system_technologies.count > 0 && system_population_actual.count == supply_system_technologies.count
+      supply_system_technologies.each_with_index.map{ |s,i| benchmark_dsc[ i ].to_f * system_population_actual[i].to_f }.inject(:+)
+      #supply_system_technologies.each_with_index.map{ |s,i| self.benchmark_direct_support_cost[ s.to_i ] * system_population_actual[i].to_f }.inject(:+)
     else
       nil
     end
@@ -218,16 +225,18 @@ class AdvancedQuestionnaire < Session
 
   def expected_capital_maintenance_expenditure_per_person_per_year
     if supply_system_technologies.count > 0 && actual_hardware_expenditure.count == supply_system_technologies.count && system_lifespan_expectancy.count == supply_system_technologies.count && system_population_actual.count == supply_system_technologies.count
-      #( supply_system_technologies.each_with_index.map{ |s,i| ( 30 / system_lifespan_expectancy[i].to_f ).floor * capital_maintenance_expenditure[i].to_f }.inject(:+) / 30 ) / system_population_actual.map{ |p| p.to_f }.inject(:+)
       ( supply_system_technologies.each_with_index.map{ |s,i| ( 30 / system_lifespan_expectancy[i].to_f ).floor * actual_hardware_expenditure[i].to_f }.inject(:+) / 30 ) / system_population_actual.map{ |p| p.to_f }.inject(:+)
     else
       nil
     end
   end
 
+  # Benchme
+
   def expected_direct_support_cost_per_person_per_year
-    if supply_system_technologies.count > 0 && system_population_actual.count == supply_system_technologies.count
-      supply_system_technologies.each_with_index.map{ |s,i| self.benchmark_direct_support_cost[ s.to_i ].to_f * system_population_actual[i].to_f }.inject(:+) / system_population_actual.map{ |p| p.to_f }.inject(:+)
+    if benchmark_dsc != nil && benchmark_dsc.count > 0 && supply_system_technologies.count > 0 && system_population_actual.count == supply_system_technologies.count
+      #supply_system_technologies.each_with_index.map{ |s,i| self.benchmark_direct_support_cost[ s.to_i ].to_f * system_population_actual[i].to_f }.inject(:+) / system_population_actual.map{ |p| p.to_f }.inject(:+)
+      supply_system_technologies.each_with_index.map{ |s,i| benchmark_dsc[ i ].to_f * system_population_actual[i].to_f }.inject(:+) / system_population_actual.map{ |p| p.to_f }.inject(:+)
     else
       nil
     end
@@ -434,8 +443,9 @@ class AdvancedQuestionnaire < Session
   # affordability expected actual users
 
   def expected_annual_operational_expenditure_for_actual_users
-    if supply_system_technologies != nil && supply_system_technologies.count > 0 && total_actual_users != nil
-      supply_system_technologies.each_with_index.map{ |s,i| self.benchmark_minor_operation_expenditure[ s.to_i ] * system_population_actual[i].to_f }.inject(:+) / total_actual_users
+    if benchmark_moe != nil && benchmark_moe.count > 0 && supply_system_technologies != nil && supply_system_technologies.count > 0 && total_actual_users != nil
+      #supply_system_technologies.each_with_index.map{ |s,i| self.benchmark_minor_operation_expenditure[ s.to_i ] * system_population_actual[i].to_f }.inject(:+) / total_actual_users
+      supply_system_technologies.each_with_index.map{ |s,i| benchmark_moe[ i ].to_f * system_population_actual[i].to_f }.inject(:+) / total_actual_users
     else
       nil
     end
@@ -595,6 +605,9 @@ class AdvancedQuestionnaire < Session
     self.loan_payback_period = []
 
     self.service_level_name = []
+
+    self.benchmark_moe = []
+    self.benchmark_dsc = []
   end
 
 end

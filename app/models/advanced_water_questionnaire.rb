@@ -20,7 +20,6 @@ class AdvancedWaterQuestionnaire < AdvancedQuestionnaire
                 :national_quality_norms,
                 :national_reliability_norms
 
-
   def initialize( session )
     super( session, :advanced_water )
 

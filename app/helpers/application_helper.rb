@@ -71,6 +71,23 @@ module ApplicationHelper
 
   end
 
+
+  def final_usd_2011_number(q, value)
+
+    multiplier = deflator_multiplier(q)
+    _FX_2011 =  FX_2011(q)
+    _FX_input_currency_year_of_expenditure = FX_input_currency_year_of_expenditure(q)
+    _FX_original_country_input_year_of_expenditure = FX_original_country_input_year_of_expenditure(q)
+    
+    if value != nil && multiplier != nil && _FX_2011 != nil && _FX_input_currency_year_of_expenditure != nil && _FX_original_country_input_year_of_expenditure != nil
+      output = value * (_FX_original_country_input_year_of_expenditure / _FX_input_currency_year_of_expenditure) * multiplier / _FX_2011
+      "#{number_with_precision( output.to_f , :precision => 2 )}"
+    else
+      nil
+    end
+
+  end
+
   def convert_to_usd( q, value, precision = 2 )
     total = 0
     if q != nil && q[:currency] != nil
