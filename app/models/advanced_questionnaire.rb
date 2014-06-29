@@ -445,7 +445,7 @@ class AdvancedQuestionnaire < Session
   def expected_annual_operational_expenditure_for_actual_users
     if benchmark_moe != nil && benchmark_moe.count > 0 && supply_system_technologies != nil && supply_system_technologies.count > 0 && total_actual_users != nil
       #supply_system_technologies.each_with_index.map{ |s,i| self.benchmark_minor_operation_expenditure[ s.to_i ] * system_population_actual[i].to_f }.inject(:+) / total_actual_users
-      supply_system_technologies.each_with_index.map{ |s,i| benchmark_moe[ i ].to_f * system_population_actual[i].to_f }.inject(:+) / total_actual_users
+      supply_system_technologies.each_with_index.map{ |s,i| benchmark_moe[ s.to_i ].to_f * system_population_actual[i].to_f }.inject(:+) / total_actual_users
     else
       nil
     end

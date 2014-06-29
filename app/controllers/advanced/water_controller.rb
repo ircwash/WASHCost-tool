@@ -50,7 +50,7 @@ class Advanced::WaterController < CalculatorController
 
     # No choice but to do the following
 
-    benchmark_moe = Hash.new()
+    benchmark = Hash.new()
     benchmark_moe_new = []
     benchmark_dsc_new = []    
     out = final_usd_2011_number(@questionnaire.attributes, 1)

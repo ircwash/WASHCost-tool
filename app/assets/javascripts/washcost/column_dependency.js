@@ -12,6 +12,22 @@ $( document ).ready( function()
     $('[data-currency]').on('focus', enforce_numeric);
     $('[data-percentage]').on('focus', enforce_numeric);
 
+    $('input#advanced_sanitation_questionnaire_region_unknown').on('change', function () {
+      if (this.checked) {
+        $('input#advanced_sanitation_questionnaire_region').val('').attr( { disabled:'disabled' } );
+      }else{
+        $('input#advanced_sanitation_questionnaire_region').removeAttr( 'disabled' );
+      }
+    });
+
+    $('input#advanced_sanitation_questionnaire_town_unknown').on('change', function () {
+      if (this.checked) {
+        $('input#advanced_sanitation_questionnaire_town').val('').attr( { disabled:'disabled' } );
+      }else{
+        $('input#advanced_sanitation_questionnaire_town').removeAttr( 'disabled' );
+      }
+    });
+
     // Handle on load and inputs already populated
     $('[data-dynamic_form]').find('[data-currency]').each(function() {
       var re = / \(([^}]+)\)/g
