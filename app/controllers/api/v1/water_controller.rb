@@ -69,8 +69,6 @@ class Api::V1::WaterController < Api::V1::BaseController
 
     user_report = current_user.user_reports.where(level: "advanced", id: params[:id]).first
 
-    #puts user_report.to_json
-
     if params.has_key?(:title)
       user_report.title = params[:title]
     end
@@ -93,8 +91,6 @@ class Api::V1::WaterController < Api::V1::BaseController
     end
 
     user_report.save!
-
-    #puts user_report.to_json
     
     render json: user_report.questionnaire
     
