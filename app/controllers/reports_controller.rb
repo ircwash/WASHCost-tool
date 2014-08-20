@@ -1,4 +1,6 @@
 class ReportsController < ApplicationController
+  
+  load_and_authorize_resource UserReport, :only => [ :destroy, :load, :update ]
 
   def destroy
     report = Report.find( params[ :id ] )
