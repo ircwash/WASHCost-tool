@@ -21,6 +21,7 @@ gem 'httparty'
 gem 'ruby-ntlm'
 gem 'doorkeeper', '~> 0.6.7' # api oauth
 gem 'oauth2' # api oauth
+gem 'translate-rails3', :path=>'vendor/gems/translate-rails3-0.2.3', :require => 'translate'
 
 group :development, :test do
   gem 'ruby-prof'
