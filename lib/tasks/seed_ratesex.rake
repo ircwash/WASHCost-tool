@@ -23,7 +23,7 @@ namespace :db do
       code = row[0]
       year = 1959
 
-      (1..55).each do |n|
+      (1..107).each do |n|
         year = year+1
         rate = row[n]
 
