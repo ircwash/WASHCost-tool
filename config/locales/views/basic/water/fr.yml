@@ -76,6 +76,8 @@ fr:
           quantity: Quantité
           quality: Qualité
           reliability: Fiabilité
+          capital_expenditure_per_person: Capital expenditure per person
+          recurrent_expenditure_per_person: Recurrent expenditure per person
         summaries:
           a111: "Ce service ne fournit pas la quantité minimale souhaitée, soit en raison des faibles dépenses d’investissement, soit parce que les sources sont à plus de 60 minutes (aller-retour) des habitations. Des facteurs autres que les coûts peuvent aussi influencer la qualité du service."
           a112: "Ce service ne fournit pas la quantité minimale souhaitée, soit en raison des faibles dépenses d’investissement, soit parce que les sources sont entre 30 et 60 minutes (aller-retour) des habitations. Des facteurs autres que les coûts peuvent aussi influencer la qualité du service."
@@ -189,3 +191,6 @@ fr:
           b342: "La qualité de l’eau est bonne, cependant, le service est indisponible ou en panne pendant des périodes prolongées. Les dépenses récurrentes sont supérieures à la fourchette de dépenses observée par WASHCost. Il y a deux possibilités: le contexte est exceptionnel et nécessite des mesures spécifiques pour améliorer la qualité de l’eau et la fiabilité du service, ou bien d'autres facteurs que les coûts ont un impact significatif sur la fourniture de service. "
           b343: "La qualité de l’eau est bonne et le service est assez fiable. Les dépenses récurrentes annuelles totales sont supérieures aux valeurs de référence établies par WASHCost. Peut-être que le contexte requiert des dépenses de maintenance et d’appui plus élevées, ou alors la gestion du service souffre d’un manque d’efficacité." 
           b344: "La qualité de l’eau est bonne et le service est très fiable. Les dépenses récurrentes annuelles totales sont supérieures aux valeurs de référence établies par WASHCost, ce qui participe peut-être au niveau très élevé du service. Mais peut-être que le contexte requiert des dépenses de maintenance et d’appui plus élevées, ou bien la gestion du service souffre d’un manque d’efficacité." 
+          a: A
+          b: B
+        value_not_set: Value not set

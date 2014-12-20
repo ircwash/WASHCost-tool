@@ -82,6 +82,7 @@
           environmental_impact: Environment
           usage: Utilisation
           reliability: Fiabilité
+          reliability: Reliability
         summaries:
           a111: "La défécation à l’air libre est très répandue, étant donné que les latrines ne sont pas utilisées. De plus, s’il y a des latrines, elles ne sont pas nettoyées ou vidangées. Pratiquement aucune ressource n’a été affectée aux dépenses récurrentes annuelles, causant la défaillance du service et mettant la santé des populations en danger !"  
           a113: "Bien que les latrines existantes sont assez propres, la défécation à l’air libre est très répandue, étant donné que les latrines ne sont pas utilisées. Pratiquement aucune ressource n’a été affectée aux dépenses récurrentes annuelles, notamment aux dépenses pour maintenir ou améliorer les comportements hygiéniques et promouvoir l’utilisation des latrines. La santé des populations est en danger !"  
@@ -137,3 +138,6 @@
           b341: "Les équipements sanitaires ont une dalle en béton ou en matériau imperméable et assurent la séparation adéquate entre les usagers et les fèces dans la concession. Cependant, ils entraînent une pollution notable de l’environnement, ce qui constitue un grave danger pour la santé ! La dépense d’investissement est supérieure aux valeurs de référence établies par WASHCost, ce sont donc des facteurs autres que les coûts qui influencent l’impact sur l’environnement, ou bien le contexte exceptionnel nécessite des ouvrages plus coûteux.  "
           b343: "La dépense d’investissement saisie est supérieure aux valeurs de référence établies par WASHCost et les latrines sont dotées d’une dalle en béton ou en matériau imperméable assurant la séparation adéquate entre les usagers dans la concession et les fèces, et il n’y a pas d’impact négatif sur l’environnement. Peut-être que le contexte est exceptionnel et requiert des ouvrages plus coûteux, ou bien la rentabilité doit être améliorée.  "
           b344: "La dépense d’investissement saisie se situe dans la fourchette des valeurs de référence établies par WASHCost et les latrines sont dotées d’une dalle en béton ou en matériau imperméable assurant la séparation adéquate entre les usagers et les fèces dans la concession. De plus, les produits dérivés des boues fécales sont adéquatement valorisés. Le niveau de service atteint est très élevé, ou le contexte est exceptionnel et requiert des ouvrages plus coûteux. Il se peut aussi que le rapport coût-efficacité soit médiocre."
+          a: A
+          b: B
+        value_not_set: Value not set

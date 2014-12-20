@@ -1,4 +1,4 @@
-en:
+bn:
   #is this water and sanitation mixed together? Not clear where the service level indicators are. For example, both water and sanitation have an access indicator but should have separate labels as they may translate differently. 
   report:
     service_level_population_incomplete:  You have not defined the service level for the total population. Some data is missing.

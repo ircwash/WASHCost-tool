@@ -1,4 +1,4 @@
-en:
+bn:
   basic:
     water:
       questionnaire:
@@ -94,6 +94,8 @@ en:
           three_stars: Basic service
           four_stars: High standard of service
         summaries:
+          a: A
+          b: B
           a111: "This service is not delivering a desired minimum quantity perhaps due to low capital expenditure and the sources are not within 60 minutes roundtrip from the household. Or factors other than costs are influencing service delivery"
           a112: "This service is not delivering a desired minimum quantity perhaps due to low capital expenditure and the sources are between 30 and 60 minutes roundtrip from the household. Or factors other than costs are influencing service delivery"
           a113: "This service is not delivering a desired minimum quantity perhaps due to low capital expenditure even though the source is within 30 minutes round trip from the household. Or factors other than costs are influencing service delivery"

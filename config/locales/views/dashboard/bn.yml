@@ -1,0 +1,23 @@
+bn:
+  dashboard:
+    company: Company
+    country: Country
+    preferred_language: Preferred Language
+    current_mail: Current Mail
+    name: Name
+    location: Location
+    date: Date
+    calculator_type: Calculator type
+    service: Type of expenditure
+    comparison: Comparison (2011 rates)
+    status:
+      not_applicable: Not applicable
+      planned_expenditure: Planned expenditure
+      budgeted_expenditure: Budgeted expenditure
+      historical_expenditure: Historical expenditure
+      mixed_expenditure: Mixed expenditure
+      dont_know: Don't know
+    compare:
+      label1: Capital expenditure per person
+      label2: Recurrent expenditure per person per year
+      label3: Population meeting all national service norms
