@@ -4,7 +4,7 @@ module ApplicationHelper
   include ActionView::Helpers::NumberHelper # should consider handling without this call
 
   def options_for_languages
-    [ [ 'English', 'en' ], [ 'Français', 'fr' ] ]
+    [ [ 'English', 'en' ], [ 'Français', 'fr' ], [ 'বাংলা', 'bn' ] ]
   end
 
   # Created duplicate functions here as the majority of functions have been built directly against the inherited model(s)
