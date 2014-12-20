@@ -125,6 +125,13 @@ module AdvancedCalculatorsHelper
       [ t('advanced.shared.options_for_supply_system_technologies.protected_well'), 15 ]
     ]
   end
+  
+  def options_for_system_position
+    [
+      [ t('advanced.sanitation.questionnaire.options_for_system_position.offset'), 0 ],
+      [ t('advanced.sanitation.questionnaire.options_for_system_position.directly_under'), 1 ]
+    ]
+  end
 
   def options_for_sanitation_technologies
     [

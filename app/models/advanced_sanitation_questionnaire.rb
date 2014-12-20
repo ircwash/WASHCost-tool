@@ -12,13 +12,15 @@ class AdvancedSanitationQuestionnaire < AdvancedQuestionnaire
                 :national_accessibility_norms,
                 :national_use_norms,
                 :national_reliability_norms,
-                :national_environmental_protection_norms
+                :national_environmental_protection_norms,
+                
+                :system_position
 
 
   def initialize( session )
     super( session, :advanced_sanitation )
 
-    property_attributes :service_management, :construction_financier, :infrastructure_operator, :service_responsbility, :standard_enforcer, :rehabilitation_cost_owner, :unpaid_labour, :national_accessibility_norms, :national_use_norms, :national_reliability_norms, :national_environmental_protection_norms
+    property_attributes :service_management, :construction_financier, :infrastructure_operator, :service_responsbility, :standard_enforcer, :rehabilitation_cost_owner, :unpaid_labour, :national_accessibility_norms, :national_use_norms, :national_reliability_norms, :national_environmental_protection_norms, :system_position
   end
 
 
@@ -67,7 +69,7 @@ class AdvancedSanitationQuestionnaire < AdvancedQuestionnaire
   end
 
   def technology
-    true unless supply_system_technologies.count == 0 || systems_number.count == 0 || system_population_design.count == 0 || system_population_actual.count == 0 || actual_hardware_expenditure.count == 0 || system_lifespan_expectancy.count == 0 || actual_software_expenditure.count == 0 || unpaid_labour.count == 0 || minor_operation_expenditure.count == 0 || capital_maintenance_expenditure.count == 0 || loan_cost.count == 0 || loan_payback_period.count == 0
+    true unless supply_system_technologies.count == 0 || system_position.count == 0 || systems_number.count == 0 || system_population_design.count == 0 || system_population_actual.count == 0 || actual_hardware_expenditure.count == 0 || system_lifespan_expectancy.count == 0 || actual_software_expenditure.count == 0 || unpaid_labour.count == 0 || minor_operation_expenditure.count == 0 || capital_maintenance_expenditure.count == 0 || loan_cost.count == 0 || loan_payback_period.count == 0
   end
 
   def service_level
@@ -246,6 +248,8 @@ class AdvancedSanitationQuestionnaire < AdvancedQuestionnaire
     self.national_use_norms                       = []
     self.national_reliability_norms               = []
     self.national_environmental_protection_norms  = []
+    
+    self.system_position = []
   end
 
 end
