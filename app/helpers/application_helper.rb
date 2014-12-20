@@ -47,8 +47,8 @@ module ApplicationHelper
   def deflator_multiplier(q)
     if q != nil && q[:country] != nil && q[:year_of_expenditure] != nil
       report_year = q[:year_of_expenditure].to_i
-      currency = Country.find_country_by_alpha2(q[:country]).currency
-      result = Deflator.find_by(name: currency.code, year: report_year)
+      alpha3 = Country.find_country_by_alpha2(q[:country]).alpha3
+      result = Deflator.find_by(alpha3: alpha3, year: report_year)
       result != nil ? result.percent : nil
     else
       nil
