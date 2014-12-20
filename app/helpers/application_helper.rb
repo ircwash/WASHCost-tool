@@ -250,7 +250,7 @@ module ApplicationHelper
   end
 
   def options_for_years
-    Array(1900..Date.today.year).reverse.map{ |y| [ y, y ] }
+    Array(1900..(Date.today.year + 10)).reverse.map{ |y| [ y, y ] }
   end
 
   def options_for_report_statuses
