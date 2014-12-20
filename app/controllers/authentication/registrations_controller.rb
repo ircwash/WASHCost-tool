@@ -45,4 +45,8 @@ class Authentication::RegistrationsController < Devise::RegistrationsController
     dashboard_index_path( I18n.locale )
   end
 
+  def after_sign_in_path_for(resource)
+    session[:previous_url] || calculators_path( I18n.locale )
+  end
+  
 end

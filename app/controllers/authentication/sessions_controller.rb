@@ -4,14 +4,8 @@ class Authentication::SessionsController < Devise::SessionsController
 
   layout "general"
 
-  def store_location
-    prev = (request.referrer && !request.referrer.include?("/users")) ? request.referrer : nil
-    session[:previous_url] = prev || root_path
-  end
-
   def after_sign_in_path_for(resource)
-    prev = (request.referrer && !request.referrer.include?("/users")) ? request.referrer : nil
-    stored_location_for(resource) || prev || session[:previous_url] || root_path
+    session[:previous_url] || calculators_path( I18n.locale )
   end
 
   # def store_location
