@@ -103,6 +103,7 @@ fr:
       quality: Qualité
       reliability: Fiabilité
       environmental_protection: Protection de l'environnement
+      use: Use
     meets_national_norm: Conforme aux normes nationales
     does_not_meet_national_norm: N'est pas conforme aux normes nationales
     percentile_rank_service_area_expenditure: Rang centile des dépenses pour la zone de service
@@ -115,3 +116,4 @@ fr:
     annual_operational_expenditure: Dépenses de fonctionnement annuel
     annual_capital_maintenance_expenditure: Dépenses annuelles de maintien du capital
     percentage_of_household_income: Pourcentage du revenu des ménages
+    more_than: More than

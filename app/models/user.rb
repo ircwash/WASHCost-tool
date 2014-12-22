@@ -18,6 +18,9 @@ class User
   field :email,              type: String, default: ""
   field :encrypted_password, type: String, default: ""
   field :admin, type: Boolean, default: false
+  field :translate_en, type: Boolean, default: false
+  field :translate_fr, type: Boolean, default: false
+  field :translate_bn, type: Boolean, default: false
 
   validates :email,
     :uniqueness => {:message => :unique_email},

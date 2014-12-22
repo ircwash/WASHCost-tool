@@ -1,5 +1,7 @@
 class CalculatorController < ApplicationController
 
+  before_filter :store_location
+  
   protected
 
   def store_report( title, level, status, type, questionnaire, capital_expenditure_per_person, recurrent_expenditure_per_person_per_year, population_meeting_all_national_service_norms)
@@ -36,5 +38,9 @@ class CalculatorController < ApplicationController
       )
       redirect_to dashboard_index_path(I18n.locale)
     end
+  end
+  
+  def store_location
+    session[:previous_url] = request.fullpath
   end
 end

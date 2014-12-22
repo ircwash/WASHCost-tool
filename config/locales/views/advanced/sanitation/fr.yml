@@ -39,6 +39,13 @@ fr:
           label: "Quels sont les types de latrines le plus couramment utilisées par les ménages dans votre zone de service?"
           placeholder: Technologie
           tooltip: "Seules les technologies d'assainissement individuel sont incluses pour le moment."
+        system_position:
+          label: Are the latrine pits or septic system directly under the latrine or offset with separate access?
+          placeholder: Choose a position
+          tooltip: Choose a position
+        options_for_system_position:
+          offset: Offset
+          directly_under: Directly under the latrine
         systems_number:
           label: Nombre de latrines?
           placeholder: 5
@@ -127,5 +134,8 @@ fr:
           label: Est-ce que la fiabilité du service est conforme aux normes nationales?
           placeholder: Veuillez sélectionner une option
           tooltip: Veuillez sélectionner une option
+        cost:
+          capital_costs: Capital costs
+          recurring_costs: Recurring costs
       report:
         final_report: Assainissement Avancée | Rapport Final

@@ -20,5 +20,11 @@ class Ability
     else
       can :manage, :all
     end
+    
+    if user.translate_en == 1 || user.translate_fr == 1 || user.translate_bn == 1
+      can :manage, TranslateController
+    else
+      cannot :manage, TranslateController
+    end
   end
 end

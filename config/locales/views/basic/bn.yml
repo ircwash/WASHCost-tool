@@ -1,0 +1,25 @@
+﻿bn:
+  basic:
+    share:
+      usd_per_person_per_year: US$ per person per year
+    shared:
+      questionnaire:
+        per_person_usd: per person US$
+        usd_per_person_per_year: US$ per person per year
+        #minutes_per_day should minutes per round trip but the variable has the wrong name
+        #changed 12/02/2014
+        minutes_per_day: Minutes per round trip
+        people: People
+        country:
+          question: "In which country does your service take place?"
+          placeholder: Select a country
+          #changed 12/02/2014
+          info: "Please select the country where the service is taking place to help set the context for your calculation." 
+        values:
+          v0: No service
+          v1: Sub-standard service
+          v2: Basic service
+          #changed 12/02/2014
+          v3: High level of service
+          info: "A water service level characterises the benefits that users receive, measured by a combination of four criteria; quantity of water, quality of water, accessibility, and reliability. See: http://www.washcost.info/page/2454"
+        select_an_option: Select an Option

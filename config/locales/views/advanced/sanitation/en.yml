@@ -39,6 +39,13 @@ en:
           label: What are the typical household latrine types in your service delivery area?
           placeholder: Choose a technology
           tooltip: Choose a technology
+        system_position:
+          label: Are the latrine pits or septic system directly under the latrine or offset with separate access?
+          placeholder: Choose a position
+          tooltip: Choose a position
+        options_for_system_position:
+          offset: Offset
+          directly_under: Directly under the latrine
         systems_number:
           label: How many latrines are there?
           placeholder: 5
@@ -127,5 +134,8 @@ en:
           label: Does the service reliability meet the national norms?
           placeholder: Select an option
           tooltip: Select an option
+        cost:
+          capital_costs: Capital costs
+          recurring_costs: Recurring costs
       report:
         final_report: Advanced Sanitation | Final Report

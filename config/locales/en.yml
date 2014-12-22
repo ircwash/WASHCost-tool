@@ -1,92 +1,1765 @@
-en:
-  # for registration errors
-  errors:
-    messages:
-      unique_email: "Email address needs to be unique"
+--- 
+en: 
+  activerecord: 
+    errors: 
+      models: 
+        application: 
+          attributes: 
+            redirect_uri: 
+              fragment_present: "cannot contain a fragment."
+              has_query_parameter: "cannot contain a query parameter."
+              invalid_uri: "must be a valid URI."
+              relative_uri: "must be an absolute URI."
+  advanced: 
+    sanitation: 
+      questionnaire: 
+        actual_hardware_expenditure: 
+          label: "What is the total capital expenditure hardware over the service area to construct the latrines?"
+          placeholder: 5000
+          tooltip: "Capital 'hardware' investment in fixed assets, such as excavation, lining, slabs, superstructures and pipes."
+        actual_software_expenditure: 
+          label: "What is the total expenditure on capital expenditure software over the service area during or prior to construction?"
+          placeholder: 3000
+          tooltip: "Capital 'software' expenditure refers to work with stakeholders prior to construction or during implementation, such as community training, demand creation and hygiene promotion. Please provide the expenditure for the entire service area. If you only know an average cost per system then please multiply this by the number of systems."
+        aggregate_actual_hardware_expenditure: 
+          label: "What is the total expenditure on capital hardware over the service area to construct the latrines?"
+        annual_household_income: 
+          label: "What is the average annual household income in the service area?"
+          placeholder: 600
+          tooltip: "This data is used for the affordability check and it can be changed to see the affordability relative to different levels of wealth in the service area."
+        area_type: 
+          label: "Description of area type"
+          placeholder: "Select an area type"
+          tooltip: "Select an area type"
+        capital_maintenance_expenditure: 
+          label: "What has been/will be spent on capital maintenance expenditure (per year)?"
+          placeholder: 400
+          tooltip: "Capital maintenance expenditures are the costs of renewing (replacing, rehabilitating, refurbishing, restoring) assets to ensure that services continue at the same level of performance that was first delivered. Examples include such as replacing a slab, emptying a septic tank or re-siting the latrine. As capital maintenance expenditure is by definition infrequent try, they may not occur annually, if you are using actual data look for the average expenditure over the last 5 years. Please provide the expenditure for the entire service area. If you only know an average cost per system then please multiply this by the number of systems."
+        construction_financier: 
+          label: "Who finances the construction of the sanitation system?"
+          tooltip: "More than one option can be selected."
+        cost: 
+          capital_costs: "Capital costs"
+          recurring_costs: "Recurring costs"
+        direct_support_cost: 
+          label: "What has been spent/will be spent on expenditure on direct support?"
+          placeholder: 10
+          tooltip: "Please provide the expenditure per person per year. Direct support is structured support to service providers and users or user groups related to the operation and management of a WASH service; direct support costs are the costs of such support. They cover monitoring, technical advice and administrative, organisational or legal support.  The costs of support before and during the capital construction of a project are not included; they are considered to be capital software. Direct support is often used synonymously with “post-construction support”."
+        household_size: 
+          label: "What is the average household size in the service area?"
+          placeholder: 6
+          tooltip: "This is an approximation for household size used to calculate the affordability of the sanitation services."
+        indirect_support_cost: 
+          label: "What has been/will be the expenditure on indirect support?"
+          placeholder: 2
+          tooltip: "Please provide the expenditure per person per year. Indirect support costs cover expenditure on this macro-level support, including planning and policy making, and support to decentralised service authorities or local government. Indirect support includes capacity building for professionals and technicians and capacity support to local government as service authorities, for example to adhere to national norms, standards and guidelines."
+        infrastructure_operator: 
+          label: "Who legally owns the sanitation infrastructure?"
+          tooltip: "More than one option can be selected."
+        loan_cost: 
+          label: "What is the cost servicing any loans taken to fund the service (per year)?"
+          placeholder: 6000
+          tooltip: "Please provide the average expenditure required to pay for loans, e.g. interest payments. Please provide the expenditure for the entire service area. If you only know an average cost per system or household then please multiply this by the number of systems or households respectively."
+        loan_payback_period: 
+          label: "What is the payback period on this loan?"
+          placeholder: 20
+          tooltip: "Please provide the average length of time spent to payback the loans."
+        minor_operation_expenditure: 
+          label: "What has been/will be the minor operation and maintenance expenditure (per year)?"
+          placeholder: 1000
+          tooltip: "Operational and minor maintenance expenditure is the recurrent, regular and ongoing expenditure on chemicals, materials and cleaning products. Please provide the expenditure for the entire service area. If you only know an average cost per system then please multiply this by the number of systems."
+        national_accessibility_norms: 
+          label: "Does the service accessibility meet the national norms?"
+          placeholder: "Select an option"
+          tooltip: "Select an option"
+        national_environmental_protection_norms: 
+          label: "Does the service environmental protection meet the national norms?"
+          placeholder: "Select an option"
+          tooltip: "Select an option"
+        national_reliability_norms: 
+          label: "Does the service reliability meet the national norms?"
+          placeholder: "Select an option"
+          tooltip: "Select an option"
+        national_use_norms: 
+          label: "Does the service use meet the national norms?"
+          placeholder: "Select an option"
+          tooltip: "Select an option"
+        options_for_area_type: 
+          mixed: Mixed
+          peri_urban: Peri-urban
+          rural: Rural
+          small_town: "Small town"
+          unknown: "Dont know"
+          urban: Urban
+        options_for_system_position: 
+          directly_under: "Directly under the latrine"
+          offset: Offset
+        rehabilitation_cost_owner: 
+          label: "Who covers the cost of rehabilitation when larger repairs are needed (pit tank emptying)?"
+          tooltip: "More than one option can be selected."
+        sanitation_service_exists: 
+          label: "Does the sanitation service already exist or is it planned?"
+          placeholder: "Select an option"
+          tooltip: "Please indicate the type of expenditure information you are using to create this report."
+        service_level_name: 
+          label: "Name the service level"
+          placeholder: "Service level name"
+        service_level_share: 
+          label: "Service level share"
+          placeholder: 25%
+          tooltip: "Service level share across all technologies must sum together to 100% to represent all of the population in the intervention area."
+        service_levels: 
+          label: "Please define up to four service levels for users of the sanitation service"
+          tooltip: "Please define up to four service levels."
+        service_management: 
+          label: "Which of these options best describes how the sanitation service is managed?"
+          tooltip: "More than one option can be selected."
+        service_responsbility: 
+          label: "Who undertakes the operation and maintenance of the infrastructure?"
+          tooltip: "More than one option can be selected."
+        standard_enforcer: 
+          label: "Who has/will have responsibility for checking and enforcing the standard of sanitation services?"
+          tooltip: "More than one option can be selected."
+        supply_system_technologies: 
+          label: "What are the typical household latrine types in your service delivery area?"
+          placeholder: "Choose a technology"
+          tooltip: "Choose a technology"
+        system_lifespan_expectancy: 
+          label: "How long is the latrine expected to last from the time of construction (the useful lifespan)?"
+          placeholder: 30
+          tooltip: "Please provide the expenditure for the entire service area. If you only know an average cost per system then please multiply this by the number of systems."
+        system_population_actual: 
+          label: "How many people do these latrine(s) actually serve?"
+          placeholder: 30
+          tooltip: "Please use the (maximum) number of people that actually use the latrine type."
+        system_population_design: 
+          label: "How many people are these latrine(s) designed to serve?"
+          placeholder: 20
+          tooltip: "Please use the (maximum) number of people that are expected to use the latrine type."
+        system_position: 
+          label: "Are the latrine pits or septic system directly under the latrine or offset with separate access?"
+          placeholder: "Choose a position"
+          tooltip: "Choose a position"
+        systems_number: 
+          label: "How many latrines are there?"
+          placeholder: 5
+          tooltip: "This is used to calculate the cost of a single latrine"
+        unpaid_labour: 
+          label: "Has unpaid labour been contributed by the household or community to set up the onsite sanitation system?"
+          placeholder: "Select an option"
+          tooltip: "Select an option"
+      report: 
+        final_report: "Advanced Sanitation | Final Report"
+    shared: 
+      alert_message: "The total percentage must be 100%"
+      country: 
+        label: Country
+        placeholder: "Select a country"
+        tooltip: "Select a country"
+      currency: 
+        label: Currency
+        placeholder: "Select a currency"
+        tooltip: "Please choose a currency for the cost calculations."
+      dont_know: "Don't know"
+      options_for_construction_financier: 
+        community_based_management: "Community-based organisation"
+        external_donor: "External donor"
+        household_management: Household
+        other: Other
+        private_sector: "Private sector"
+        public_sector_local: "Public sector (local)"
+        public_sector_national: "Public sector (national)"
+        unknown: "Don't know"
+        utility_management: Utility
+      options_for_exists: 
+        budgeted_expenditure: "Budgeted expenditure"
+        dont_know: "Don't know"
+        historical_expenditure: "Historical expenditure"
+        mixed_expenditure: "Mixed expenditure"
+        not_applicable: "Not applicable"
+        planned_expenditure: "Planned expenditure"
+      options_for_infrastructure_operator: 
+        community_based_management: "Community-based organisation"
+        external_donor: "External donor"
+        household_management: Household
+        other: Other
+        private_sector: "Private sector"
+        public_sector_local: "Public sector (local)"
+        public_sector_national: "Public sector (national)"
+        unknown: "Don't know"
+        utility_management: Utility
+      options_for_national_accessibility_norms: 
+        ? "false"
+        : false
+        ? "true"
+        : true
+        unknown: "Don't know"
+      options_for_national_environmental_protection_norms: 
+        ? "false"
+        : false
+        ? "true"
+        : true
+        unknown: "Don't know"
+      options_for_national_quality_norms: 
+        ? "false"
+        : false
+        ? "true"
+        : true
+        unknown: "Don't know"
+      options_for_national_quantity_norms: 
+        ? "false"
+        : false
+        ? "true"
+        : true
+        unknown: "Don't know"
+      options_for_national_reliability_norms: 
+        ? "false"
+        : false
+        ? "true"
+        : true
+        unknown: "Don't know"
+      options_for_national_use_norms: 
+        ? "false"
+        : false
+        ? "true"
+        : true
+        unknown: "Don't know"
+      options_for_power_supply: 
+        generator: Generator
+        mains: "Mains electricity"
+        no_power: "No power"
+        not_applicable: "Not applicable"
+        solar: "Solar power systems"
+        windmills: Windmills
+      options_for_rehabilitation_cost_owner: 
+        community_based_management: "Community-based organisation"
+        external_donor: "External donor"
+        household_management: Household
+        other: Other
+        private_sector: "Private sector"
+        public_sector_local: "Public sector (local)"
+        public_sector_national: "Public sector (national)"
+        unknown: "Don't know"
+        utility_management: Utility
+      options_for_sanitation_technologies: 
+        double_pit_1: "Double pit latrine with impermeable slab (non-concrete slab)"
+        double_pit_2: "Double pit latrine with concrete Slab"
+        double_pit_3: "Double pit ventilated improved pit latrine"
+        double_pit_4: "Double pit composting toilet with concrete slab"
+        double_pit_5: "Double pit pour flush latrine with soak away"
+        latrine: "Latrine with septic tank"
+        single_pit_1: "Single Pit latrine with platform/squat plate (no slab)"
+        single_pit_2: "Single Pit latrine with impermeable slab (non-concrete slab)"
+        single_pit_3: "Single pit composting latrine"
+        single_pit_4: "Single pit composting latrine with concrete slab"
+        single_pit_5: "Single Pit latrine with concrete slab"
+        single_pit_6: "Single pit pour flush latrine with soak away"
+        single_ventilated: "Single ventilated improved pit latrine"
+        urine: "Urine diversion dry toilet"
+      options_for_service_management: 
+        community_based_management: "Community-based organisation"
+        household_management: Household
+        other: Other
+        private_sector: "Private sector"
+        public_sector_local: "Public sector (local)"
+        public_sector_national: "Public sector (national)"
+        unknown: "Don't know"
+        utility_management: Utility
+      options_for_service_responsbility: 
+        community_based_management: "Community-based organisation"
+        external_donor: "External donor"
+        household_management: Household
+        other: Other
+        private_sector: "Private sector"
+        public_sector_local: "Public sector (local)"
+        public_sector_national: "Public sector (national)"
+        unknown: "Don't know"
+        utility_management: Utility
+      options_for_standard_enforcer: 
+        community_based_management: "Community-based organisation"
+        external_donor: "External donor"
+        household_management: Household
+        other: Other
+        private_sector: "Private sector"
+        public_sector_local: "Public sector (local)"
+        public_sector_national: "Public sector (national)"
+        unknown: "Don't know"
+        utility_management: Utility
+      options_for_supply_system_technologies: 
+        borehole_and_handpump: "Borehole and handpump"
+        gravity_fed_system_1: "Gravity fed system (< 5,000 people)"
+        gravity_fed_system_2: "Gravity fed system (5,000 - 10,000 people)"
+        gravity_fed_system_3: "Gravity fed system (10,001 - 20,000 people)"
+        gravity_fed_system_4: "Gravity fed system (>20,000 people)"
+        mechanised_borehole: "Mechanised borehole"
+        mechanised_pipe_system_1: "Mechanised piped system (< 5,000 people)"
+        mechanised_pipe_system_2: "Mechanised piped system (5,000 - 10,000 people)"
+        mechanised_pipe_system_3: "Mechanised piped system (10,001 - 20,000 people)"
+        mechanised_pipe_system_4: "Mechanised piped system (> 20,000 people)"
+        multi_town_system_1: "Multi-town system (< 5,000 people)"
+        multi_town_system_2: "Multi-town system (5,000 - 10,000 people)"
+        multi_town_system_3: "Multi-town system (10,001 - 20,000 people)"
+        multi_town_system_4: "Multi-town system (> 2,000 people)"
+        protected_well: "Protected well"
+        small_scale_rain_fed_system: "Small scale rain fed system"
+      options_for_surface_water_primary_source: 
+        catchment: "Catchment storage dam"
+        rainwater: "Rainwater harvesting"
+        river: River
+        sub_surface: "Sub-surface harvesting (sump)"
+        unknown: "Don't know"
+      options_for_unpaid_labour: 
+        ? "false"
+        : false
+        ? "true"
+        : true
+        unknown: "Don't know"
+      options_for_water_source: 
+        ground_water: "Ground water"
+        rain_water: "Rain water"
+        surface_water: "Surface water"
+        unknown: "Don't know"
+      options_for_water_treatment: 
+        boiling: Boiling
+        cholorination: "Chlorination in piped system"
+        household_cholorination: "Household cholorination"
+        household_filer: "Household filter"
+        not_applicable: "Not applicable"
+        treatment: "No treatment"
+        water_treatment: "Water treatment works"
+      region: 
+        label: Region
+        placeholder: Calabria
+        tooltip: "Enter a region"
+      technology_choice_required: "A choice of at least one technology is required"
+      town: 
+        label: City/Town
+        placeholder: Catanzaro
+        tooltip: "Enter a city/town"
+      year_of_expenditure: 
+        label: "Year of expenditure"
+        placeholder: "Select a year"
+        tooltip: "When inputting costs, expenditure made in other years or currencies should be converted to this currency and base year. See the WASHCost training and the example currency converter here: http://www.washcost.info/page/2521"
+    water: 
+      questionnaire: 
+        actual_hardware_expenditure: 
+          label: "What is the total capital expenditure hardware over the service area to construct the systems?"
+          placeholder: 5000
+          tooltip: "Capital invested in constructing or purchasing fixed assets such as concrete structures, pumps and pipes."
+        actual_software_expenditure: 
+          label: "What is the total capital expenditure software over the service area during the construction of the systems?"
+          placeholder: 3000
+          tooltip: "The costs of one-off work with stakeholders prior to construction or implementation, extension, enhancement and augmentation (including costs of one-off capacity building activities). Please provide the expenditure for the entire service area. If you only know an average cost per system then please multiply this by the number of systems."
+        aggregate_actual_hardware_expenditure: 
+          label: "What has been/will be the actual expenditure on capital expenditure (hardware) and how long is/was the system expected to last at the time of construction (the useful lifespan) or detail disaggregated below?"
+        annual_household_income: 
+          label: "What is the average annual household income in the service area?"
+          placeholder: 600
+          tooltip: "This data is used for the affordability check and it can be changed to see the affordability relative to different levels of wealth in the service area."
+        area_type: 
+          label: "Description of area?"
+          placeholder: "Select an area type"
+          tooltip: "Select an area type"
+        capital_costs: 
+          capital_costs: "Capital Costs"
+          recurring_costs: "Recurring Costs"
+        capital_maintenance_expenditure: 
+          label: "What has been/will be spent on capital maintenance expenditure (per year)?"
+          placeholder: 400
+          tooltip: "Asset renewal and replacement cost: occasional and ‘lumpy’ costs that seek to restore the functionality of a system, such as replacing pump rods or foot valves in handpumps, or a diesel generator in motorised systems. As capital maintenance expenditure is by definition infrequent try, they may not occur annually, if you are using actual data look for the average expenditure over the last 5 years. Please provide the expenditure for the entire service area. If you only know an average cost per system then please multiply this by the number of systems."
+        construction_financier: 
+          label: "Who finances the construction of the water system?"
+          tooltip: "More than one option can be selected."
+        cost: 
+          capital_costs: "Capital costs"
+          recurring_costs: "Recurring costs"
+          support_costs: "Support costs"
+        direct_support_cost: 
+          label: "What has been spent/will be spent on expenditure on direct support?"
+          placeholder: 10
+          tooltip: "Please provide the expenditure per person per year. Direct support is structured support to service providers and users or user groups related to the operation and management of a WASH service; direct support costs are the costs of such support. They cover monitoring, technical advice and administrative, organisational or legal support.  The costs of support before and during the capital construction of a project are not included; they are considered to be capital software. Direct support is often used synonymously with “post-construction support”."
+        distribution_line_length: 
+          label: "Length of distribution line (km)"
+          placeholder: 200
+          tooltip: "Please input the approximate length of the distribution line"
+        household_size: 
+          label: "Average household size"
+          placeholder: 6
+          tooltip: "This is an approximation of average household size used to calculate the affordability of the water services."
+        indirect_support_cost: 
+          label: "What has been/will be the expenditure on indirect support?"
+          placeholder: 2
+          tooltip: "Please provide the expenditure per person per year. Indirect support costs cover expenditure on this macro-level support, including planning and policy making, and support to decentralised service authorities or local government. Indirect support includes capacity building for professionals and technicians and capacity support to local government as service authorities, for example to adhere to national norms, standards and guidelines."
+        infrastructure_operator: 
+          label: "Who legally owns the water infrastructure?"
+          tooltip: "More than one option can be selected."
+        loan_cost: 
+          label: "What is the cost servicing any loans taken to fund the service (per year)?"
+          placeholder: 6000
+          tooltip: "Please provide the average expenditure required to pay for loans, e.g. interest payments. Please provide the expenditure for the entire service area. If you only know an average cost per system then please multiply this by the number of systems."
+        loan_payback_period: 
+          label: "What is the payback period on this loan?"
+          placeholder: 20
+          tooltip: "Please provide the average length of time spent to payback the loan."
+        minor_operation_expenditure: 
+          label: "What has been/will be the minor operation and maintenance expenditure (per year)?"
+          placeholder: 1000
+          tooltip: "Operating and minor maintenance expenditure: typically comprises regular expenditure such as labour, fuel, chemicals, materials, and purchases of any bulk water. Please provide the expenditure for the entire service area. If you only know an average cost per system then please multiply this by the number of systems."
+        national_accessibility_norms: 
+          label: "Does the service accessibility meet the national norms?"
+          placeholder: "Select an option"
+          tooltip: "Select an option"
+        national_quality_norms: 
+          label: "Does the service quality meet the national norms?"
+          placeholder: "Select an option"
+          tooltip: "Select an option"
+        national_quantity_norms: 
+          label: "Does the service quantity meet the national norms?"
+          placeholder: "Select an option"
+          tooltip: "Select an option"
+        national_reliability_norms: 
+          label: "Does the service reliability meet the national norms?"
+          placeholder: "Select an option"
+          tooltip: "Select an option"
+        population_density: 
+          label: "What is the population density of the service area?"
+          placeholder: 2000
+        power_supply: 
+          label: "Type of power supply"
+          tooltip: "Please select an option"
+        rehabilitation_cost_owner: 
+          label: "Who covers the cost of rehabilitation when larger repairs are needed?"
+          tooltip: "More than one option can be selected."
+        service_level_name: 
+          label: "Name the service level"
+          placeholder: "Service level name"
+        service_level_share: 
+          label: "Service level share"
+          placeholder: 25%
+          tooltip: "Service level share across all technologies must sum together to 100% to represent all of the population in the intervention area"
+        service_levels: 
+          label: "Please define up to four service levels for users of the water system"
+          tooltip: "Define between 1 and 4 service levels"
+        service_management: 
+          label: "Which of these options best describes how the water service is managed?"
+          tooltip: "More than one option can be selected."
+        service_responsbility: 
+          label: "Who safeguards the operation and maintenance of the infrastructure?"
+          tooltip: "More than one option can be selected."
+        standard_enforcer: 
+          label: "Who has/will have responsibility for checking and enforcing the standard of water services?"
+          tooltip: "More than one option can be selected."
+        supply_system_technologies: 
+          label: "What supply system(s) are used to deliver water services?"
+          placeholder: "Choose a technology"
+          tooltip: "Choose a technology"
+        surface_water_primary_source: 
+          label: "If it is surface water, please define the primary source"
+          placeholder: "Select a primary source"
+          tooltip: "Select a primary source"
+        system_lifespan_expectancy: 
+          label: "How long is a system expected to last from the time of construction (the useful lifespan)?"
+          placeholder: 30
+          tooltip: "Please provide the expenditure for the entire service area. If you only know an average cost per system then please multiply this by the number of systems."
+        system_population_actual: 
+          label: "How many people does the water system(s) actual serve?"
+          placeholder: 30
+          tooltip: "Please input the number of people the water system(s) actual serves"
+        system_population_design: 
+          label: "How many people is the water system(s) designed to serve?"
+          placeholder: 20
+          tooltip: "Please input the number of people the water system(s) is designed to serve"
+        systems_number: 
+          label: "How many systems are there?"
+          placeholder: 5
+          tooltip: "This is used to calculate the cost of a single system."
+        unpaid_labour: 
+          label: "Has unpaid labour been contributed by the household or community to set up the systems?"
+          placeholder: "Select an option"
+          tooltip: "Select an option"
+        water_source: 
+          label: "What is the water source?"
+          placeholder: "Select a water source"
+          tooltip: "Select a water source"
+        water_system_exists: 
+          label: "What kind of information is this report based on?"
+          placeholder: "Select an option"
+          tooltip: "If you are providing real cost data on an existing system, please choose \"Existing\"."
+        water_treatment: 
+          label: "How is water typically treated?"
+          tooltip: "Please select an option"
+      report: 
+        final_report: "Advanced Water | Final Report"
+  basic: 
+    sanitation: 
+      questionnaire: 
+        capital_expenditure: 
+          info: "The white line shows the range of costs found during the WASHCost project in areas with a basic level of service. The start up costs include expenditure related to hardware and software as described below:  <br/>Capital Expenditure (hardware): Capital invested in constructing or purchasing fixed assets such as concrete structures, pumps and pipes. <br/>Capital Expenditure (software): The costs of one-off work with stakeholders prior to construction or implementation, extension, enhancement and augmentation (including costs of one-off capacity building activities). <br/>See: http://akvopedia.org/wiki/Capital_Expenditure_(CapEx)"
+          question: "How much has been/will be spent setting up the sanitation service including construction (per person)?"
+        country: 
+          info: "Please select the country where the service is taking place to help set the context for your calculation."
+          placeholder: "Select a country"
+          question: "In which country does your sanitation service take place?"
+        environmental_impact: 
+          info: "Separating the people from feces is the goal of safe sanitation. Environmental protection is required to ensure that the use of a latrine does not cause harm to people elsewhere."
+          options: 
+            non_problematic_safe_disposal: "Non problematic + safe disposal"
+            non_problematic_safe_disposal_reuse_biproducts: "Non problematic + safe disposal + re-use of bi-products"
+            significant_pollution: "Significant pollution"
+          question: "What is the environmental impact of the service?"
+        household_latrine: 
+          info: "A latrine at household level means that there is a latrine dedicated to just one household and on location. A shared latrine, is not considered a household-level latrine."
+          options: 
+            household_latrine_available: "Household-level latrine"
+            household_latrine_unavailable: "No household-level latrine"
+          question: "Does each household have its own latrine?"
+        impermeability: 
+          info: "The slab refers to the floor of the latrine, often covering the pit. The slab is important of the latrine maintenance and to a clean environment. An impermeable slab can be made from local materials or concrete. For example, pour-flush or septic tank latrines often have a concrete or bricked lined pit/tank with sealed impermeable slab."
+          options: 
+            impermeable_slab: "Impermeable slab present"
+            no_impermeable_slab: "No impermeable slab"
+          question: "Does the latrine have an impermeable slab?"
+        latrine: 
+          info: |
+              Traditional pit latrine: "Pit latrine with an impermeable slab (made often from local materials) but not made out of concrete. See: http://akvopedia.org/wiki/Single_Pit"
+              Slab latrine: "A pit latrine with a concrete slab."
+              Vip latrine: "A Ventilated Improved Pit Latrine, also known as a VIP latrine, is a pit latrine with a concrete slab and concrete superstructures (with ventilation pipeand screen to reduce odours and flies). 'See:' 'http://akvopedia.org/wiki/Single_Ventilated_Improved_Pit'"
+              Pour flush latrine: "Any kind of single pit pour flush latrine with a concrete slab and without a septic system."
+              Twin pit pour flush latrine: "Any kind of double pit pour flush latrine with a concrete slab and without a septic system. "
+              Latrine with septic tank: "A latrine with septic tank and drainage field"
+          options: 
+            latrine_with_septic_tank: "Latrine with septic tank"
+            pour_flush_latrine: "Pour Flush Latrine"
+            slab_latrine: "Concrete slab latrine"
+            traditional_pit_latrine: "Pit latrine without a concrete slab"
+            twin_pit_pour_flush_latrine: "Double Pit Pour Flush Latrine"
+            vip_latrine: "VIP latrine"
+          question: "What type of latrine technology is being used?"
+        population: 
+          info: "The number of people receiving the sanitation service is an important part of service area cost calculations. In the basic tool, you can select between 100 and 1,000,000 people."
+          question: "How many people in this area are receiving this sanitation service?"
+        recurrent_expenditure: 
+          info: "Please indicate the total recurrent costs to maintain a continuous service. The different costs include: <br/>Operating and minor maintenance expenditure: typically regular expenditure such as cleaning materials and labour. See: http://akvopedia.org/wiki/Operational_and_Minor_Maintenance_Expenditure_(OpEx) <br/>Capital maintenance expenditure: Asset renewal and replacement cost occasional and ‘lumpy’ costs that seek to restore the functionality of a system or facility, such as replacing a latrine slab, emptying the pit, or repairing the roof of a superstrucutre. See: http://akvopedia.org/wiki/Capital_Maintenance_Expenditure_(CapManEx) <br/>Expediture of direct support: Direct support is structured support to decentralised service authorities or local governments, service providers and users or user groups related to the organisation and the management of a WASH service. The costs cover local planning, monitoring, technical advice and administrative, organisational or legal support after construction. The direct support includes capacity building for local governments to adhere to national norms, standards and guidelines. See: http://akvopedia.org/wiki/Expenditure_Direct_Support_(ExpDS) <br/>Expenditure of indirect support: Indirect support costs cover expenditure on the macro-level support, including planning and policy making. See: http://akvopedia.org/wiki/Expenditure_Indirect_Support_(ExpIDS)"
+          question: "How much is being spent/will be spent to operate, maintain and support the delivery of sanitation services (per person per year)?"
+        reliability: 
+          info: "The reliability of the latrine depends on the maintenance of the facility. To offer a clean and safe sanitation option, it should be cleaned regularly and the pit or septic tank emptied on time. "
+          options: 
+            latrine_inconsistent: "The latrine is not consistently cleaned and emptied"
+            latrine_reliable: "The latrine is cleaned and emptied"
+            latrine_unreliable: "The latrine is not cleaned and emptied"
+          question: "Is the latrine cleaned and emptied when required?"
+        usage: 
+          info: "It is critical that all household members also use the latrine and do not defecate in the open. The level of a sanitation service is also judged by the use of household members."
+          options: 
+            latrine_usage_all: "All members use the latrine"
+            latrine_usage_none: "None of the family uses the latrine"
+            latrine_usage_some: "Some members use the latrine"
+          question: "Which family members use the latrine?"
+      report: 
+        final_report: "Basic Sanitation | Final Report"
+        sections: 
+          capital_expenditure_per_person: "Capital expenditure per person"
+          country: Country
+          environmental_impact: "Environmental impact"
+          household_latrine: "Household-level latrine"
+          impermeability: Impermeability
+          latrine_technology: "Latrine Technology"
+          population: Population
+          recurrent_expenditure_per_person: "Recurrent expenditure per person"
+          reliability: Reliability
+          reliatilibty: Reliability
+          usage: Utilisation
+        summaries: 
+          a: A
+          a111: ""
+          a113: ""
+          a114: ""
+          a131: ""
+          a133: ""
+          a134: ""
+          a141: ""
+          a143: ""
+          a144: ""
+          a211: ""
+          a213: ""
+          a214: ""
+          a231: ""
+          a233: ""
+          a234: ""
+          a241: ""
+          a243: ""
+          a244: ""
+          a311: ""
+          a313: ""
+          a314: ""
+          a331: ""
+          a333: ""
+          a334: ""
+          a341: ""
+          a343: ""
+          a344: ""
+          b: B
+          b111: ""
+          b113: ""
+          b114: ""
+          b131: ""
+          b133: ""
+          b134: ""
+          b141: ""
+          b143: ""
+          b144: ""
+          b211: ""
+          b213: ""
+          b214: ""
+          b231: ""
+          b233: ""
+          b234: ""
+          b241: ""
+          b243: ""
+          b244: ""
+          b311: ""
+          b313: ""
+          b314: ""
+          b331: ""
+          b333: ""
+          b334: ""
+          b341: ""
+          b343: ""
+          b344: ""
+        sustainability: 
+          four_stars: "Improved service"
+          one_star: "No service"
+          three_stars: "Basic service"
+          two_stars: "Limited service"
+        value_not_set: "Value not set"
+    share: 
+      usd_per_person_per_year: "US$ per person per year"
+    shared: 
+      questionnaire: 
+        country: 
+          info: "Please select the country where the service is taking place to help set the context for your calculation."
+          placeholder: "Select a country"
+          question: "In which country does your service take place?"
+        minutes_per_day: "Minutes per round trip"
+        people: People
+        per_person_usd: "per person US$"
+        select_an_option: "Select an Option"
+        usd_per_person_per_year: "US$ per person per year"
+        values: 
+          info: "A water service level characterises the benefits that users receive, measured by a combination of four criteria; quantity of water, quality of water, accessibility, and reliability. See: http://www.washcost.info/page/2454"
+          v0: "No service"
+          v1: "Sub-standard service"
+          v2: "Basic service"
+          v3: "High level of service"
+    water: 
+      questionnaire: 
+        access: 
+          info: "The time it takes to collect water for a household is an important aspect of water services. A high level of service, such as a tap in the household, reduces the time and effort to taken to access water."
+          options: 
+            between_ten_and_thirty: "Between 10 and 30"
+            between_thirty_and_sixty: "Between 30 and 60"
+            less_than_ten: "Less than 10"
+            more_thank_sixty: "More than 60"
+          question: "How long does it take to collect water from these services?"
+        capital_expenditure: 
+          info: "The white line shows the range of costs found during the WASHCost project in areas with a basic level of service. The start up costs include expenditure related to hardware and software as described below:  <br/>Capital Expenditure (hardware): Capital invested in constructing or purchasing fixed assets such as concrete structures, pumps and pipes. <br/>Capital Expenditure (software): The costs of one-off work with stakeholders prior to construction or implementation, extension, enhancement and augmentation (including costs of one-off capacity building activities). <br/>See: http://akvopedia.org/wiki/Capital_Expenditure_(CapEx)"
+          question: "How much has been/will be spent setting up the water service including construction (per person)?"
+        population: 
+          default_question: "How many people in this area are receiving this water service?"
+          info: "Please indicate the total number of people that are meant to be using the service in the area. A water system will typically have a design population, sometimes defined by local regulations, for how many people it is meant to serve. The total number of people would be the design population of the system times the number of systems in the area. For example, if a handpump is meant to serve 300 people and there are 100 handpumps in the area, the number of people that are meant to be using the service is 30,000 people (300 people x 100 handpumps)."
+          question: "How many people are served by a %{technology} in the entire area?"
+        quality: 
+          info: "A water service should assure a good quality of water that meets national and/or WHO standards over time."
+          options: 
+            no_testing: "No testing"
+            occasional_and_meets_standards: "Occasional testing, which meets standards"
+            one_off_after_construction: "One-off testing after construction"
+            regular_and_meets_standards: "Regular testing, which meets standards"
+          question: "Is water quality testing done?"
+        quantity: 
+          info: "The absolute minimum for drinking, cooking and basic hygiene in emergency situations is 5 litres per capita per day. A minimum of 20 litres per day is generally required for basic needs. A higher standard gives scope for some productive use of water. At 60 litres, it is assumed that users enjoy more options for water use."
+          label: "Litres per person per day"
+          options: 
+            between_five_and_nineteen_litres: "5 - 19 litres per person per day"
+            between_twenty_and_sixty_litres: "20-60 litres per person per day"
+            less_than_five_litres: "Less than 5 litres per person per day"
+            more_than_sixy_litres: "More than 60 litres per person per day"
+          question: "How much water does this service provide?"
+        recurrent: 
+          value_label: "US$ Per person per Year"
+        recurrent_expenditure: 
+          info: "The white line shows the range of costs found during the WASHCost project in areas with a basic level of service. The total recurrent costs to maintain a continuous service include: <br/>Operating and minor maintenance expenditure: typically regular expenditure such as labour, fuel, chemicals, materials, and purchases of any bulk water. See: http://akvopedia.org/wiki/Operational_and_Minor_Maintenance_Expenditure_(OpEx) <br/>Capital maintenance expenditure: Asset renewal and replacement cost occasional and ‘lumpy’ costs that seek to restore the functionality of a system or facility, such as replacing a latrine slab or a diesel generator in motorised systems. See: http://akvopedia.org/wiki/Capital_Maintenance_Expenditure_(CapManEx) <br/>Expediture on direct support: Direct support is structured support to decentralised service authorities or local governments, service providers and users or user groups related to the organisation and the management of a WASH service. The costs cover local planning, monitoring, technical advice and administrative, organisational or legal support after construction. The direct support includes capacity building for local governments to adhere to national norms, standards and guidelines.See: http://akvopedia.org/wiki/Expenditure_Direct_Support_(ExpDS) <br/>Expenditure on indirect support: Indirect support costs cover expenditure on the macro-level support, including planning and policy making. See: http://akvopedia.org/wiki/Expenditure_Indirect_Support_(ExpIDS)"
+          question: "How much is being spent/will be spent to operate, maintain and support the delivery of water services (per person per year)?"
+          value_label: "Per person per year"
+        reliability: 
+          info: "A very reliable service is one where people are secure in the knowledge that they can access water that meets all the other indicators from a given source at a given time. Reliability is also measured by the punctuality of a service. Even a service that punctually provides water every three days could be considered reliable. A service that is based on using different sources during wetter and drier periods of the year can also be considered a reliable overall service. Problematic services are characterised by down time, significant breakdowns, and slow repairs."
+          options: 
+            not_working_all_of_the_time: "Not working all of the time"
+            not_working_less_than_twelve_days_a_year: "Working most days, less than 12 days a year without service"
+            not_working_more_than_twelve_days_a_year: "Not working 12 or more days a year"
+            works_all_the_time: "Works all the time"
+          question: "How reliable is the water service?"
+        technology: 
+          info: |
+              Borehole handpump: "Reticulated supply with pumping, storage and distribution through public stand posts with provision for house connections."
+              Mechanised borehole: "Water is supplied through a small distribution network and connected public stand posts. Water storage is limited, typically to an overhead storage tank  directly connected to the pump. Household connections are rare."
+              Single town scheme: "Reticulated supply with pumping, storage and distribution to a single town through public stand posts with provision for house connections."
+              Multi town scheme: "Reticulated supply with pumping, storage and distribution supplied to a number of interconnected towns or villages. Each village with its own storage and distribution network."
+              Mixed pipe supply: "Water is supplied through a combination of separate, often overlapping, service delivery systems."
+          options: 
+            borehole_handpump: "Borehole & handpump"
+            mechanised_borehole: "Mechanised borehole"
+            mixed_pipe_supply: "Mixed-pipe supply"
+            multi_town_scheme: "Multi-town scheme"
+            single_town_scheme: "Single-town scheme"
+          question: "What is the main water supply technology used?"
+      report: 
+        final_report: "Basic Water | Final Report"
+        sections: 
+          capital_expenditure_per_person: "Capital expenditure per person"
+          country: Country
+          population: Population
+          quality: Quality
+          quantity: Quantity
+          recurrent_expenditure_per_person: "Recurrent expenditure per person"
+          reliability: Reliability
+          technology: Technology
+        summaries: 
+          a: A
+          a111: ""
+          a112: ""
+          a113: ""
+          a114: ""
+          a121: ""
+          a122: ""
+          a123: ""
+          a124: ""
+          a131: ""
+          a132: ""
+          a133: ""
+          a134: ""
+          a141: ""
+          a142: ""
+          a143: ""
+          a144: ""
+          a211: ""
+          a212: ""
+          a213: ""
+          a214: ""
+          a221: ""
+          a222: ""
+          a223: ""
+          a224: ""
+          a231: ""
+          a232: ""
+          a233: ""
+          a234: ""
+          a241: ""
+          a242: ""
+          a243: ""
+          a244: ""
+          a311: ""
+          a312: ""
+          a313: ""
+          a314: ""
+          a321: ""
+          a322: ""
+          a323: ""
+          a324: ""
+          a331: ""
+          a332: ""
+          a333: ""
+          a334: ""
+          a341: ""
+          a342: ""
+          a343: ""
+          a344: ""
+          b: B
+          b011: ""
+          b012: ""
+          b013: ""
+          b014: ""
+          b021: ""
+          b022: ""
+          b023: ""
+          b024: ""
+          b031: ""
+          b032: ""
+          b033: ""
+          b034: ""
+          b041: ""
+          b042: ""
+          b043: ""
+          b044: ""
+          b111: ""
+          b112: ""
+          b113: ""
+          b114: ""
+          b121: ""
+          b122: ""
+          b123: ""
+          b124: ""
+          b131: ""
+          b132: ""
+          b133: ""
+          b134: ""
+          b141: ""
+          b142: ""
+          b143: ""
+          b144: ""
+          b211: ""
+          b212: ""
+          b213: ""
+          b214: ""
+          b221: ""
+          b222: ""
+          b223: ""
+          b224: ""
+          b231: ""
+          b232: ""
+          b233: ""
+          b234: ""
+          b241: ""
+          b242: ""
+          b243: ""
+          b244: ""
+          b311: ""
+          b312: ""
+          b313: ""
+          b314: ""
+          b321: ""
+          b322: ""
+          b323: ""
+          b324: ""
+          b331: ""
+          b332: ""
+          b333: ""
+          b334: ""
+          b341: ""
+          b342: ""
+          b343: ""
+          b344: ""
+        sustainability: 
+          four_stars: "High standard of service"
+          one_star: "No service"
+          three_stars: "Basic service"
+          two_stars: "Sub-standard service"
+        value_not_set: "Value not set"
+  buttons: 
+    delete_report: "Delete Report"
+    next: "Next Question"
+    save_report: "Save Report"
+    share_report: "Share Report"
+    start: "Start the tool"
+    view_report: "View Report"
+  calculators: 
+    advanced: Advanced
+    basic: Basic
+    pre_question_note: "Before you start, please choose the tool"
+    sanitation: Sanitation
+    sub_title: "Do a sustainability check and share a life-cycle costs report based on your service delivery model."
+    title: "Do the math and make it last!"
+    tool_selection_advanced: "Advanced tool"
+    tool_selection_basic: "Basic tool"
+    water: Water
+  dashboard: 
+    calculator_type: "Calculator type"
+    company: Company
+    compare: 
+      label1: "Capital expenditure per person"
+      label2: "Recurrent expenditure per person per year"
+      label3: "Population meeting all national service norms"
+    comparison: "Comparison (2011 rates)"
+    country: Country
+    current_mail: "Current Mail"
+    date: Date
+    location: Location
+    name: Name
+    preferred_language: "Preferred Language"
+    service: "Type of expenditure"
+    status: 
+      budgeted_expenditure: "Budgeted expenditure"
+      dont_know: "Don't know"
+      historical_expenditure: "Historical expenditure"
+      mixed_expenditure: "Mixed expenditure"
+      not_applicable: "Not applicable"
+      planned_expenditure: "Planned expenditure"
+  date: 
+    abbr_day_names: 
+      - Sun
+      - Mon
+      - Tue
+      - Wed
+      - Thu
+      - Fri
+      - Sat
+    abbr_month_names: 
+      - ~
+      - Jan
+      - Feb
+      - Mar
+      - Apr
+      - May
+      - Jun
+      - Jul
+      - Aug
+      - Sep
+      - Oct
+      - Nov
+      - Dec
+    day_names: 
+      - Sunday
+      - Monday
+      - Tuesday
+      - Wednesday
+      - Thursday
+      - Friday
+      - Saturday
+    formats: 
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    month_names: 
+      - ~
+      - January
+      - February
+      - March
+      - April
+      - May
+      - June
+      - July
+      - August
+      - September
+      - October
+      - November
+      - December
+    order: 
+      - !ruby/symbol year
+      - !ruby/symbol month
+      - !ruby/symbol day
+  datetime: 
+    distance_in_words: 
+      about_x_hours: 
+        one: "about 1 hour"
+        other: "about %{count} hours"
+      about_x_months: 
+        one: "about 1 month"
+        other: "about %{count} months"
+      about_x_years: 
+        one: "about 1 year"
+        other: "about %{count} years"
+      almost_x_years: 
+        one: "almost 1 year"
+        other: "almost %{count} years"
+      half_a_minute: "half a minute"
+      less_than_x_minutes: 
+        one: "less than a minute"
+        other: "less than %{count} minutes"
+      less_than_x_seconds: 
+        one: "less than 1 second"
+        other: "less than %{count} seconds"
+      over_x_years: 
+        one: "over 1 year"
+        other: "over %{count} years"
+      x_days: 
+        one: "1 day"
+        other: "%{count} days"
+      x_minutes: 
+        one: "1 minute"
+        other: "%{count} minutes"
+      x_months: 
+        one: "1 month"
+        other: "%{count} months"
+      x_seconds: 
+        one: "1 second"
+        other: "%{count} seconds"
+    prompts: 
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Seconds
+      year: Year
+  devise: 
+    back: Back
+    change_my_password: "Change my password"
+    change_your_password: "Change your password"
+    confirm_password: "Confirm new password"
+    confirmations: 
+      confirmed: "Your account was successfully confirmed. You are now signed in."
+      send_instructions: "You will receive an email with instructions about how to confirm your account in a few minutes."
+      send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions about how to confirm your account in a few minutes."
+    country: Country
+    create_account: "Create account"
+    didnt_receive_confirmation_instructions: "Didn't receive confirmation instructions?"
+    didnt_receive_unlock_instructions: "Didn't receive unlock instructions?"
+    edit_your_account: "Edit your account"
+    email: Email
+    failure: 
+      already_authenticated: "You are already signed in."
+      inactive: "Your account was not activated yet."
+      invalid: "Invalid email or password. Please sign up if you need an account."
+      invalid_token: "Invalid authentication token."
+      locked: "Your account is locked."
+      not_found_in_database: "Invalid email or password. Please sign up if you need an account."
+      timeout: "Your session expired, please sign in again to continue."
+      unauthenticated: "You need to sign in or sign up before continuing."
+      unconfirmed: "You have to confirm your account before continuing."
+    forgot_your_password: "Forgot your password?"
+    log_in: "Log in"
+    log_into_your_account: "Login to your account"
+    mailer: 
+      confirmation_instructions: 
+        subject: "Confirmation instructions"
+      reset_password_instructions: 
+        subject: "Reset password instructions"
+      unlock_instructions: 
+        subject: "Unlock Instructions"
+    new_password: "New password"
+    omniauth_callbacks: 
+      failure: "Could not authenticate you from %{kind} because '%{reason}'."
+      success: "Successfully authenticated from %{kind} account."
+    password: Password
+    passwords: 
+      no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
+      send_instructions: "You will receive an email with instructions about how to reset your password in a few minutes."
+      send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
+      updated: "Your password was changed successfully. You are now signed in."
+      updated_not_active: "Your password was changed successfully."
+    please_visit_washcost_blog_html: "Please visit the <a href='http://blog.washcost.org' class='standalone_form--promo--link'>WASHCost Blog</a> to learn more about the Advanced Calculator"
+    prefered_language: "Preferred language"
+    register: Register
+    registrations: 
+      destroyed: "Bye! Your account was successfully cancelled. We hope to see you again soon."
+      signed_up: "Welcome! You have signed up successfully."
+      signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
+      signed_up_but_locked: "You have signed up successfully. However, we could not sign you in because your account is locked."
+      signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please open the link to activate your account."
+      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address."
+      updated: "You updated your account successfully."
+    remember_me: "Remember me"
+    repeat_password: "Repeat your password"
+    select_a_country: "Select a country"
+    select_a_preferred_language: "Select a preferred language"
+    send_me_reset_password_instructions: "Send me reset password instructions"
+    sessions: 
+      signed_in: "Signed in successfully."
+      signed_out: "Signed out successfully."
+    sign_in: "Sign in"
+    sign_in_with_provider: "Sign in with %{provider}"
+    sign_up: "Sign up"
+    unlocks: 
+      send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes."
+      send_paranoid_instructions: "If your account exists, you will receive an email with instructions about how to unlock it in a few minutes."
+      unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+    update: Update
+    your_company: "Your company"
+    your_email: "Your email"
+    your_first_name: "Your first name"
+    your_last_name: "Your last name"
+  doorkeeper: 
+    errors: 
+      messages: 
+        access_denied: "The resource owner or authorization server denied the request."
+        credential_flow_not_configured: "Resource Owner Password Credentials flow failed due to Doorkeeper.configure.resource_owner_from_credentials being unconfigured."
+        invalid_client: "Client authentication failed due to unknown client, no client authentication included, or unsupported authentication method."
+        invalid_grant: "The provided authorization grant is invalid, expired, revoked, does not match the redirection URI used in the authorization request, or was issued to another client."
+        invalid_redirect_uri: "The redirect uri included is not valid."
+        invalid_request: "The request is missing a required parameter, includes an unsupported parameter value, or is otherwise malformed."
+        invalid_resource_owner: "The provided resource owner credentials are not valid, or resource owner cannot be found"
+        invalid_scope: "The requested scope is invalid, unknown, or malformed."
+        resource_owner_authenticator_not_configured: "Resource Owner find failed due to Doorkeeper.configure.resource_owner_authenticator being unconfiged."
+        server_error: "The authorization server encountered an unexpected condition which prevented it from fulfilling the request."
+        temporarily_unavailable: "The authorization server is currently unable to handle the request due to a temporary overloading or maintenance of the server."
+        unauthorized_client: "The client is not authorized to perform this request using this method."
+        unsupported_grant_type: "The authorization grant type is not supported by the authorization server."
+        unsupported_response_type: "The authorization server does not support this response type."
+    flash: 
+      applications: 
+        create: 
+          notice: "Application created."
+        destroy: 
+          notice: "Application deleted."
+        update: 
+          notice: "Application updated."
+      authorized_applications: 
+        destroy: 
+          notice: "Application revoked."
+  errors: 
+    format: "%{attribute} %{message}"
+    messages: 
+      accepted: "must be accepted"
+      already_confirmed: "was already confirmed, please try signing in"
+      blank: "can't be blank"
+      confirmation: "doesn't match confirmation"
+      confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
       email_missing: "Email address can't be blank"
       email_valid: "Email address must be valid"
+      empty: "can't be empty"
+      equal_to: "must be equal to %{count}"
+      even: "must be even"
+      exclusion: "is reserved"
+      expired: "has expired, please request a new one"
+      greater_than: "must be greater than %{count}"
+      greater_than_or_equal_to: "must be greater than or equal to %{count}"
+      inclusion: "is not included in the list"
+      invalid: "is invalid"
+      less_than: "must be less than %{count}"
+      less_than_or_equal_to: "must be less than or equal to %{count}"
+      not_a_number: "is not a number"
+      not_an_integer: "must be an integer"
+      not_found: "not found"
+      not_locked: "was not locked"
+      not_saved: 
+        one: ""
+        other: ""
+      odd: "must be odd"
+      password_confirm_mismatch: "Passwords do not match"
       password_missing: "A password is required"
       password_too_long: "Password too long"
       password_too_short: "Password too short (min 8 characters)"
-      password_confirm_mismatch: "Passwords do not match"
       register_if_acces_to_cuesstinaire_view: "You need to be registered first"
-  # for registration errors
-  mongoid:
-    errors:
-      models:
-        user:
-          attributes:
-            email:
-              # will match the email_missing error above
+      too_long: "is too long (maximum is %{count} characters)"
+      too_short: "is too short (minimum is %{count} characters)"
+      unique_email: "Email address needs to be unique"
+      wrong_length: "is the wrong length (should be %{count} characters)"
+  footer: 
+    calculator_progress: "%{level} %{type} Report"
+  helpers: 
+    button: 
+      create: "Create %{model}"
+      submit: "Save %{model}"
+      update: "Update %{model}"
+    select: 
+      prompt: "Please select"
+    submit: 
+      create: "Create %{model}"
+      submit: "Save %{model}"
+      update: "Update %{model}"
+  i18n_tasks: 
+    add_missing: 
+      added: "Added %{count} keys"
+    cmd: 
+      args: 
+        default_all: "Default: all"
+        default_text: "Default: %{value}"
+        desc: 
+          confirm: "Confirm automatically"
+          data_format: "Data format: %{valid_text}. %{default_text}."
+          key_pattern: "Filter by key pattern (e.g. 'common.*')"
+          key_pattern_to_rename: "Full key (pattern) to rename. Required"
+          locale: "Locale. Default: base"
+          locale_to_translate_from: "Locale to translate from (default: base)"
+          locales_filter: "Comma-separated list of locale(s) to process. Default: all. Special: base."
+          missing_types: "Filter by types: %{valid}. Default: all"
+          new_key_name: "New name, interpolates original name as %{key}. Required"
+          nostdin: "Do not read from stdin"
+          out_format: "Output format: %{valid_text}. %{default_text}."
+          pattern_router: "Use pattern router: keys moved per config data.write"
+          strict: "Do not infer dynamic key usage such as `t(\"category.\\#{category.name}\")`"
+          value: "Value. Interpolates: %{value}, %{human_key}, %{value_or_human_key}"
+      desc: 
+        add_missing: "add missing keys to locale data"
+        config: "display i18n-tasks configuration"
+        data: "show locale data"
+        data_merge: "merge locale data with trees"
+        data_remove: "remove keys present in tree from data"
+        data_write: "replace locale data with tree"
+        eq_base: "show translations equal to base value"
+        find: "show where keys are used in the code"
+        gem_path: "show path to the gem"
+        health: "is everything OK?"
+        irb: "start REPL session within i18n-tasks context"
+        missing: "show missing translations"
+        normalize: "normalize translation data: sort and move to the right files"
+        remove_unused: "remove unused keys"
+        translate_missing: "translate missing keys with Google Translate"
+        tree_convert: "convert tree between formats"
+        tree_filter: "filter tree by key pattern"
+        tree_merge: "merge trees"
+        tree_rename_key: "rename tree node"
+        tree_set_value: "set values of keys, optionally match a pattern"
+        tree_subtract: "tree A minus the keys in tree B"
+        tree_translate: "Google Translate a tree to root locales"
+        unused: "show unused translations"
+        xlsx_report: "save missing and unused translations to an Excel file"
+      encourage: 
+        - "Good job!"
+        - "Well done!"
+        - Perfect!
+      enum_list_opt: 
+        desc: "Comma-separated list of: %{valid_text}. %{default_text}"
+        invalid: "%{invalid} is not in: %{valid}."
+      enum_opt: 
+        desc: "%{valid_text}. %{default_text}"
+        invalid: "%{invalid} is not one of: %{valid}."
+      errors: 
+        invalid_format: "Unknown format %{invalid}. Valid: %{valid}."
+        invalid_locale: "Invalid locale %{invalid}"
+        invalid_missing_type: 
+          one: "Unknown type %{invalid}. Valid: %{valid}."
+          other: "Unknown types: %{invalid}. Valid: %{valid}."
+        pass_forest: "Pass locale forest"
+    common: 
+      base_value: "Base Value"
+      continue_q: Continue?
+      details: Details
+      key: Key
+      locale: Locale
+      n_more: "%{count} more"
+      type: Type
+      value: Value
+    data_stats: 
+      text: "has %{key_count} keys across %{locale_count} locales. On average, values are %{value_chars_avg} characters long, keys have %{key_segments_avg} segments, a locale has %{per_locale_avg} keys."
+      text_single_locale: "has %{key_count} keys in total. On average, values are %{value_chars_avg} characters long, keys have %{key_segments_avg} segments."
+      title: "Forest (%{locales})"
+    google_translate: 
+      errors: 
+        no_api_key: "Set Google API key via GOOGLE_TRANSLATE_API_KEY environment variable or translation.api_key in config/i18n-tasks.yml. Get the key at https://code.google.com/apis/console."
+        no_results: "Google Translate returned no results. Make sure billing information is set at https://code.google.com/apis/console."
+    health: 
+      no_keys_detected: "No keys detected. Check data.read in config/i18n-tasks.yml."
+    missing: 
+      none: "No translations are missing."
+    remove_unused: 
+      confirm: 
+        one: "One translations will be removed from %{locales}."
+        other: "%{count} translation will be removed from %{locales}."
+      noop: "No unused keys to remove"
+      removed: "Removed %{count} keys"
+    translate_missing: 
+      translated: "Translated %{count} keys"
+    unused: 
+      none: "Every translation is in use."
+    usages: 
+      none: "No key usages found."
+  mongo_mapper: 
+    errors: 
+      models: 
+        application: 
+          attributes: 
+            redirect_uri: 
+              fragment_present: "cannot contain a fragment."
+              has_query_parameter: "cannot contain a query parameter."
+              invalid_uri: "must be a valid URI."
+              relative_uri: "must be an absolute URI."
+  mongoid: 
+    errors: 
+      messages: 
+        ambiguous_relationship: 
+          message: "Ambiguous relations %{candidates} defined on %{klass}."
+          resolution: "On the %{name} relation on %{inverse} you must add an :inverse_of option to specify the exact relationship on %{klass} that is the opposite of %{name}."
+          summary: "When Mongoid attempts to set an inverse document of a relation in memory, it needs to know which relation it belongs to. When setting %{name}, Mongoid looked on the class %{inverse} for a matching relation, but multiples were found that could potentially match: %{candidates}."
+        blank_in_locale: "can't be blank in %{location}"
+        callbacks: 
+          message: "Calling %{method} on %{klass} resulted in a false return from a callback."
+          resolution: "Double check all before callbacks to make sure they are not unintentionally returning false."
+          summary: "If a before callback returns false when using Document.create!, Document#save!, or Documnet#update_attributes! this error will get raised since the document did not actually get saved."
+        calling_document_find_with_nil_is_invalid: 
+          message: "Calling Document.find with nil is invalid."
+          resolution: "Most likely this is caused by passing parameters directly through to the find, and the parameter either is not present or the key from which it is accessed is incorrect."
+          summary: "Document.find expects the parameters to be 1 or more ids, and will return a single document if 1 id is provided, otherwise an array of documents if multiple ids are provided."
+        delete_restriction: 
+          message: "Cannot delete %{document} because of dependent '%{relation}'."
+          resolution: "Don't attempt to delete the parent %{document} when it has children, or change the dependent option on the relation."
+          summary: "When defining '%{relation}' with a :dependent => :restrict, Mongoid will raise an error when attempting to delete the %{document} when the child '%{relation}' still has documents in it."
+        document_not_found: 
+          message: "Document(s) not found for class %{klass} with id(s) %{missing}."
+          resolution: "Search for an id that is in the database or set the Mongoid.raise_not_found_error configuration option to false, which will cause a nil to be returned instead of raising this error when searching for a single id, or only the matched documents when searching for multiples."
+          summary: "When calling %{klass}.find with an id or array of ids, each parameter must match a document in the database or this error will be raised. The search was for the id(s): %{searched} (%{total} total) and the following ids were not found: %{missing}."
+        document_with_attributes_not_found: 
+          message: "Document not found for class %{klass} with attributes %{attributes}."
+          resolution: "Search for attributes that are in the database or set the Mongoid.raise_not_found_error configuration option to false, which will cause a nil to be returned instead of raising this error."
+          summary: "When calling %{klass}.find_by with a hash of attributes, all attributes provided must match a document in the database or this error will be raised."
+        eager_load: 
+          message: "Eager loading :%{name} is not supported since it is a polymorphic belongs_to relation."
+          resolution: "Don't attempt to perform this action and have patience, maybe this will be supported in the future."
+          summary: "Mongoid cannot currently determine the classes it needs to eager load when the relation is polymorphic. The parents reside in different collections so a simple id lookup is not sufficient enough."
+        invalid_collection: 
+          message: "Access to the collection for %{klass} is not allowed."
+          resolution: "For access to the collection that the embedded document is in, use %{klass}#_root.collection, or do not attempt to persist an embedded document without a parent set."
+          summary: "%{klass}.collection was called, and %{klass} is an embedded document - it resides within the collection of the root document of the hierarchy."
+        invalid_config_option: 
+          message: "Invalid configuration option: %{name}."
+          resolution: |-
+              Remove the invalid option or fix the typo. If you were expecting the option to be there, please consult the following page with repect to Mongoid's configuration:
+              
+                 http://mongoid.org/en/mongoid/docs/installation.html
+          summary: "A invalid configuration option was provided in your mongoid.yml, or a typo is potentially present. The valid configuration options are: %{options}."
+        invalid_field: 
+          message: "Defining a field named '%{name}' is not allowed."
+          resolution: "Use Mongoid.destructive_fields to see what names are not allowed, and don't use these names. These include names that also conflict with core Ruby methods on Object, Module, Enumerable, or included gems that inject methods into these or Mongoid internals."
+          summary: |-
+              Defining this field would override the method '%{name}', which would cause issues with expectations around the original method and cause extremely hard to debug issues. The original method was defined in:
+                 Object: %{origin}
+                 File: %{file}
+                 Line: %{line}
+        invalid_field_option: 
+          message: "Invalid option :%{option} provided for field :%{name}."
+          resolution: |+
+              When defining the field :%{name} on '%{klass}', please provide valid options for the field. These are currently: %{valid}. If you meant to define a custom field option, please do so first like so:
+              
+                 Mongoid::Fields.option :%{option} do |model, field, value|
+                   # Your logic here...
+                 end
+                 class %{klass}
+                   include Mongoid::Document
+                   field :%{name}, %{option}: true
+                 end
+              
+          summary: "Mongoid requires that you only provide valid options on each field definition in order to prevent unexpected behaviour later on."
+        invalid_includes: 
+          message: "Invalid includes directive: %{klass}.includes(%{args})"
+          resolution: "Ensure that each parameter passed to %{klass}.includes is a valid name of a relation on the %{klass} model. These are: %{relations}."
+          summary: "Eager loading in Mongoid only supports providing arguments to %{klass}.includes that are the names of relations on the %{klass} model, and only supports one level of eager loading. (ie, eager loading associations not on the %{klass} but one step away via another relation is not allowed."
+        invalid_index: 
+          message: "Invalid index specification on %{klass}: %{spec}, %{options}"
+          resolution: |+
+              Ensure that the index conforms to the correct syntax and has the correct options.
+              
+               Valid options are:
+                 background: true|false
+                 drop_dups: true|false
+                 name: 'index_name'
+                 sparse: true|false
+                 unique: true|false
+                 min: 1
+                 max: 1
+                 bits: 26
+                 bucket_size : 1
+                 weights: { content: 1, title: 2 }
+               Valid types are: 1, -1, '2d', '2dsphere', 'geoHaystack', 'text', 'hashed'
+              
+               Example:
+                 class Band
+                   include Mongoid::Document
+                   index({ name: 1, label: -1 }, { sparse: true })
+                   index({ location: '2d' }, { background: true })
+                 end
+              
+          summary: "Indexes in Mongoid are defined as a hash of field name and direction/2d pairs, with a hash for any additional options."
+        invalid_options: 
+          message: "Invalid option :%{invalid} provided to relation :%{name}."
+          resolution: "Valid options are: %{valid}, make sure these are the ones you are using."
+          summary: "Mongoid checks the options that are passed to the relation macros to ensure that no ill side effects occur by letting something slip by."
+        invalid_path: 
+          message: "Having a root path assigned for %{klass} is invalid."
+          resolution: "Most likely your embedded model, %{klass} is also referenced via a has_many from a root document in another collection. Double check the relation definitions and fix any instances where embedded documents are improperly referenced from other collections."
+          summary: "Mongoid has two different path objects for determining the location of a document in the database, Root and Embedded. This error is raised when an embedded document somehow gets a root path assigned."
+        invalid_scope: 
+          message: "Defining a scope of value %{value} on %{klass} is not allowed."
+          resolution: |+
+              Change the scope to be a criteria or proc wrapped critera.
+              
+               Example:
+                 class Band
+                   include Mongoid::Document
+                   field :active, type: Boolean, default: true
+                   scope :active, where(active: true)
+                   scope :inactive, ->{ where(active: false) }
+                 end
+              
+          summary: "Scopes in Mongoid must be either criteria objects or procs that wrap criteria objects."
+        invalid_set_polymorphic_relation: 
+          message: "The %{name} attribute can't be set to an instance of %{other_klass} as %{other_klass} has multiple relations referencing %{klass} as %{name}."
+          resolution: "Set the values from the parent, or redefine the relation with only a single definition in the parent."
+          summary: "If the parent class of a polymorphic relation has multiple definitions for the same relation, the values must be set from the parent side and not the child side since Mongoid cannot determine from the child side which relation to go in."
+        invalid_storage_options: 
+          message: "Invalid options passed to %{klass}.store_in: %{options}."
+          resolution: |+
+              Change the options passed to store_in to match the documented API, and ensure all keys in the options hash are symbols.
+              
+               Example:
+                 class Band
+                   include Mongoid::Document
+                   store_in collection: 'artists', database: 'secondary'
+                 end
+              
+          summary: "The :store_in macro takes only a hash of parameters with the keys :database, :collection, or :session."
+        invalid_time: 
+          message: "'%{value}' is not a valid Time."
+          resolution: "Make sure to pass parsable values to the field setter for Date, DateTime, and Time objects. When this is a String it needs to be valid for Time.parse. Other objects must be valid to pass to Time.local."
+          summary: "Mongoid tries to serialize the values for Date, DateTime, and Time into proper UTC times to store in the database. The provided value could not be parsed."
+        inverse_not_found: 
+          message: "When adding a(n) %{klass} to %{base}#%{name}, Mongoid could not determine the inverse foreign key to set. The attempted key was '%{inverse}'."
+          resolution: |-
+              If an inverse is not required, like a belongs_to or has_and_belongs_to_many, ensure that :inverse_of => nil is set on the relation. If the inverse is needed, most likely the inverse cannot be figured out from the names of the relations and you will need to explicitly tell Mongoid on the relation what the inverse is.
+              
+               Example:
+                 class Lush
+                   include Mongoid::Document
+                   has_one :whiskey, class_name: "Drink", inverse_of: :alcoholic
+                 end
+              
+                 class Drink
+                   include Mongoid::Document
+                   belongs_to :alcoholic, class_name: "Lush", inverse_of: :whiskey
+                 end
+          summary: "When adding a document to a relation, Mongoid attempts to link the newly added document to the base of the relation in memory, as well as set the foreign key to link them on the database side. In this case Mongoid could not determine what the inverse foreign key was."
+        mixed_relations: 
+          message: "Referencing a(n) %{embedded} document from the %{root} document via a relational association is not allowed since the %{embedded} is embedded."
+          resolution: "Consider not embedding %{embedded}, or do the key storage and access in a custom manner in the application code."
+          summary: "In order to properly access a(n) %{embedded} from %{root} the reference would need to go through the root document of %{embedded}. In a simple case this would require Mongoid to store an extra foreign key for the root, in more complex cases where %{embedded} is multiple levels deep a key would need to be stored for each parent up the hierarchy."
+        mixed_session_configuration: 
+          message: "Both uri and standard configuration options defined for session: '%{name}'."
+          resolution: "Provide either only a uri as configuration or only standard options."
+          summary: "Instead of simply giving uri or standard options a preference order, Mongoid assumes that you have made a mistake in your configuration and requires that you provide one or the other, but not both. The options that were provided were: %{config}."
+        nested_attributes_metadata_not_found: 
+          message: "Could not find metadata for relation '%{name}' on model: %{klass}."
+          resolution: |+
+              Make sure that there is a relation defined named '%{name}' on %{klass} or that the relation definition comes before the accepts_nested_attributes_for macro in the model - order matters so that Mongoid has access to the metadata.
+              
+               Example:
+                 class Band
+                   include Mongoid::Document
+                   has_many :albums
+                   accepts_nested_attributes_for :albums
+                 end
+              
+          summary: "When defining nested attributes for a relation, Mongoid needs to access the metadata for the relation '%{name}' in order if add autosave functionality to it, if applicable. Either no relation named '%{name}' could be found, or the relation had not been defined yet."
+        no_default_session: 
+          message: "No default session configuration is defined."
+          resolution: |+
+              If configuring via a mongoid.yml, ensure that within your :sessions section a :default session is defined.
+              
+               Example:
+                 development:
+                   sessions:
+                     default:
+                       hosts:
+                         - localhost:27017
+              
+          summary: "The configuration provided settings for: %{keys}, but Mongoid requires a :default to be defined at minimum."
+        no_environment: 
+          message: "Could not load the configuration since no environment was defined."
+          resolution: "Make sure some environment is set from the mentioned options. Mongoid cannot load configuration from the yaml without knowing which environment it is in, and we have considered defaulting to development an undesireable side effect of this not being defined."
+          summary: "Mongoid attempted to find the appropriate environment but no Rails.env, Sinatra::Base.environment, RACK_ENV, or MONGOID_ENV could be found."
+        no_map_reduce_output: 
+          message: "No output location was specified for the map/reduce operation."
+          resolution: |+
+              Provide the location that the output of the operation is to go by chaining an #out call to the map/reduce.
+              
+               Example:
+                 Band.map_reduce(map, reduce).out(inline: 1)
+              
+               Valid options for the out function are:
+                 inline:  1
+                 merge:   'collection-name'
+                 replace: 'collection-name'
+                 reduce:  'collection-name'
+              
+          summary: "When executing a map/reduce, you must provide the output location of the results. The attempted command was: %{command}."
+        no_metadata: 
+          message: "Metadata not found for document of type %{klass}."
+          resolution: "Ensure that your relations on the %{klass} model are all properly defined, and that the inverse relations are also properly defined. Embedded relations must have both the parent (embeds_one/embeds_many) and the inverse (embedded_in) present in order to work properly."
+          summary: "Mongoid sets the metadata of a relation on the document when it is either loaded from within the relation, or added to one. The presence of the metadata is required in order to provide various functionality around relations. Most likely you are getting this error because the document is embedded and was attempted to be persisted without being associated with a parent, or the relation was not properly defined."
+        no_parent: 
+          message: "Cannot persist embedded document %{klass} without a parent document."
+          resolution: "Ensure that you've set the parent relation if instantiating the embedded document direcly, or always create new embedded documents via the parent relation."
+          summary: "If the document is embedded, in order to be persisted it must always have a reference to its parent document. This is most likely caused by either calling %{klass}.create or %{klass}.create! without setting the parent document as an attribute."
+        no_session_config: 
+          message: "No configuration could be found for a session named '%{name}'."
+          resolution: "Double check your mongoid.yml to make sure under the sessions key that a configuration exists for '%{name}'. If you have set the configuration programatically, ensure that '%{name}' exists in the configuration hash."
+          summary: "When attempting to create the new session, Mongoid could not find a session configuration for the name: '%{name}'. This is necessary in order to know the host, port, and options needed to connect."
+        no_session_database: 
+          message: "No database provided for session configuration: :%{name}."
+          resolution: |+
+              If configuring via a mongoid.yml, ensure that within your :%{name} section a :database value for the session's default database is defined.
+              
+               Example:
+                 development:
+                   sessions:
+                     %{name}:
+                       database: my_app_db
+                       hosts:
+                         - localhost:27017
+              
+          summary: "Each session configuration must provide a database so Mongoid knows where the default database to persist to. What was provided was: %{config}."
+        no_session_hosts: 
+          message: "No hosts provided for session configuration: :%{name}."
+          resolution: |+
+              If configuring via a mongoid.yml, ensure that within your :%{name} section a :hosts value for the session hosts is defined.
+              
+               Example:
+                 development:
+                   sessions:
+                     %{name}:
+                       database: my_app_db
+                       hosts:
+                         - localhost:27017
+              
+          summary: "Each session configuration must provide hosts so Mongoid knows where the database server is located. What was provided was: %{config}."
+        no_sessions_config: 
+          message: "No sessions configuration provided."
+          resolution: |+
+              Double check your mongoid.yml to make sure that you have a top-level sessions key with at least 1 default session configuration for it. You can regenerate a new mongoid.yml for assistance via `rails g mongoid:config`.
+              
+               Example:
+                 development:
+                   sessions:
+                     default:
+                       database: mongoid_dev
+                       hosts:
+                         - localhost:27017
+              
+          summary: "Mongoid's configuration requires that you provide details about each session that can be connected to, and requires in the sessions config at least 1 default session to exist."
+        readonly_attribute: 
+          message: "Attempted to set the readonly attribute '%{name}' with the value: %{value}."
+          resolution: "Don't define '%{name}' as readonly, or do not attempt to update its value after the document is persisted."
+          summary: "Attributes flagged as readonly via Model.attr_readonly can only have values set when the document is a new record."
+        scope_overwrite: 
+          message: "Cannot create scope :%{scope_name}, because of existing method %{model_name}.%{scope_name}."
+          resolution: "Change the name of the scope so it does not conflict with the already defined method %{model_name}, or set the configuration option Mongoid.scope_overwrite_exception to false, which is its default. In this case a warning will be logged."
+          summary: "When defining a scope that conflicts with a method that already exists on the model, this error will get raised if Mongoid.scope_overwrite_exception is set to true."
+        taken: "is already taken"
+        too_many_nested_attribute_records: 
+          message: "Accepting nested attributes for %{association} is limited to %{limit} records."
+          resolution: "The limit is set as an option to the macro, for example: accepts_nested_attributes_for :%{association}, limit: %{limit}. Consider raising this limit or making sure no more are sent than the set value."
+          summary: "More documents were sent to be processed than the allowed limit."
+        unknown_attribute: 
+          message: "Attempted to set a value for '%{name}' which is not allowed on the model %{klass}."
+          resolution: "You can set Mongoid.allow_dynamic_fields to true if you expect to be writing values for undefined fields often."
+          summary: "When setting Mongoid.allow_dynamic_fields to false and the attribute does not already exist in the attributes hash, attempting to call %{klass}#%{name}= for it is not allowed. This is also triggered by passing the attribute to any method that accepts an attributes hash, and is raised instead of getting a NoMethodError."
+        unsaved_document: 
+          message: "Attempted to save %{document} before the parent %{base}."
+          resolution: "Make sure to only use create or create! when the parent document %{base} is persisted."
+          summary: "You cannot call create or create! through the relation (%{document}) who's parent (%{base}) is not already saved. This would case the database to be out of sync since the child could potentially reference a nonexistant parent."
+        unsupported_javascript: 
+          message: "Executing Javascript $where selector on an embedded criteria is not supported."
+          resolution: "Please provide a standard hash to #where when the criteria is for an embedded relation."
+          summary: "Mongoid only supports providing a hash of arguments to #where criterion on embedded documents. Since %{klass} is embedded, the expression %{javascript} is not allowed."
+        validations: 
+          message: "Validation of %{document} failed."
+          resolution: "Try persisting the document with valid data or remove the validations."
+          summary: "The following errors were found: %{errors}"
+        versioning_not_on_root: 
+          message: "Versioning not allowed on embedded document: %{klass}."
+          resolution: "Remove the versioning from the embedded %{klass} or consider moving it to a root location in the hierarchy if versioning is needed."
+          summary: "Mongoid::Versioning behaviour is only allowed on documents that are the root document in the hierarchy."
+      models: 
+        application: 
+          attributes: 
+            redirect_uri: 
+              fragment_present: "cannot contain a fragment."
+              has_query_parameter: "cannot contain a query parameter."
+              invalid_uri: "must be a valid URI."
+              relative_uri: "must be an absolute URI."
+        user: 
+          attributes: 
+            email: 
               blank: "Email address can't be blank"
-        # for report saving
-        user_report:
-          attributes:
-            title:
-              report_title_missing: A title is required
-              unique_report: Report names must be unique
-  edit: Edit
-  number:
-    format:
-      separator: "."
+        user_report: 
+          attributes: 
+            title: 
+              report_title_missing: "A title is required"
+              unique_report: "Report names must be unique"
+  navigation: 
+    calculators: 
+      access: Access
+      advanced: Advanced
+      capital_expenditure: "Capital Expenditure"
+      context: Context
+      cost: Cost
+      country: Country
+      environmental_impact: "Environmental Impact"
+      household: Household
+      household_latrine: "Household Latrine"
+      impermeability: Impermeability
+      latrine: Latrine
+      population: Population
+      quality: Quality
+      quantity: Quantity
+      recurrent_expenditure: "Recurrent Expenditure"
+      reliability: Reliability
+      service: Service
+      service_area: "Service Area"
+      service_level: "Service Level"
+      system_characteristics: "System Characteristics"
+      system_management: "System Management"
+      technology: Technology
+      usage: Usage
+    utility: 
+      about: About
+      contact: Contact
+      help: Help
+      language: Language
+      sign_in: "Sign In"
+      sign_out: "Sign Out"
+  number: 
+    currency: 
+      format: 
+        delimiter: ","
+        format: "%u%n"
+        negative_format: "-%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: US$
+    format: 
       delimiter: ","
       precision: 2
-    currency:
-      format:
-        format: "%u%n"
-        unit: "US$"
-        separator: "."
-        delimiter: ","
-        precision: 2
-  navigation:
-    utility:
-      about: About
-      help: Help
-      contact: Contact
-      sign_in: Sign In
-      sign_out: Sign Out
-      language: Language
-    calculators:
-      context: Context
-      country: Country
-      technology: Technology
-      population: Population
-      household: Household
-      latrine: Latrine
-      cost: Cost
-      capital_expenditure: Capital Expenditure
-      recurrent_expenditure: Recurrent Expenditure
-      service: Service
-      access: Access
-      quantity: Quantity
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human: 
+      decimal_units: 
+        format: "%n %u"
+        units: 
+          billion: Billion
+          million: Million
+          quadrillion: Quadrillion
+          thousand: Thousand
+          trillion: Trillion
+          unit: ""
+      format: 
+        delimiter: ""
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units: 
+        format: "%n %u"
+        units: 
+          byte: 
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage: 
+      format: 
+        delimiter: ""
+    precision: 
+      format: 
+        delimiter: ""
+  report: 
+    access: Access
+    afforability_detail: 
+      affordable: "%{percentage} of household expenditure is considered to be affordable."
+      risk: "%{percentage} of household expenditure is higher than guideline affordability standards in many countries around the world and may not be affordable to users."
+      unaffordable: "%{percentage} of household expenditure is significantly higher than guideline affordability standards in many countries around the world."
+    affordability_check: "Affordability Check"
+    affordability_of_expected_expenditure_for_actual_users: "Affordability of expected expenditure for actual users"
+    affordability_of_inputted_expenditure_for_actual_users: "Affordability of inputted expenditure for actual users"
+    affordability_of_inputted_expenditure_for_designed_users: "Affordability of inputted expenditure for designed number of users"
+    affordable: Affordable
+    all_data: "All data"
+    annual_capital_maintenance_expenditure: "Annual capital maintenance expenditure"
+    annual_household_income: "Annual household Income"
+    annual_household_income_per_person: "Annual income per person"
+    annual_operational_expenditure: "Annual operational expenditure"
+    back: Back
+    benchmark_above: "above the Benchmarks"
+    benchmark_below: "Below Benchmarks"
+    benchmark_outside: "Expenditure is outside of WASHCost benchmarks."
+    benchmark_within: "Expenditure is within WASHCost benchmarks."
+    capital_expenditure: "Capital Expenditure"
+    capital_expenditure_title: "Capital Expenditure per Person"
+    capital_maintenance_expenditure: "Capital Maintenance Expenditure"
+    caption_total_cost: "for a population of %{population} people"
+    code_not_found: Unknown
+    comparing_costs_and_services: "Comparing costs and services"
+    comparison_summary: "Comparison with Others"
+    comparison_width_others: "Comparison With Other's"
+    complete: "Report Complete"
+    context: context
+    cost: "cost data"
+    cost_box_no_value: "Looks like you need answer more cost questions to get a final cost report. Go back and add more answer about your cost service delivery"
+    cost_of_capital: "Cost of capital"
+    cost_of_sustaining_the_service: "Cost of sustaining the service"
+    cost_subtitle: "10 year cost for %{population} people"
+    created_successsfully: "Your report was created successfully"
+    cross_to_sanitation: "Cross to sanitation"
+    cross_to_water: "Cross to water"
+    current_recurrent_expenditure: "Recurrent expenditure"
+    distance: Distance
+    does_not_meet_national_norm: "Does not meet national norm"
+    environment_protection: "Environmental Protection"
+    expected_expenditure: "Expected Expenditure"
+    expenditure_of_direct_support: "Expenditure of direct support"
+    expenditure_of_indirect_support: "Expenditure of indirect support"
+    expenditure_summary: "Expenditure Summary"
+    expenditure_surplus_shortfall: "Expenditure Surplus/Shortfall"
+    full_review: "read full review"
+    household_size: "Household Size"
+    inputted_expenditure: "Inputted Expenditure"
+    legend: 
+      basic: YR
+      cme: "Capital maintenance expenditure"
+      coc: "Cost of capital"
+      dspy: "Direct support per year"
+      idpy: "Indirect support per year"
+      oepy: "Operation expenditure per year"
+      x: "Recurrent Costs"
+      ? "y"
+      : Year
+    less_than: "Less than"
+    level_of_service: "level of service"
+    meets_national_norm: "Meets national norm"
+    more_than: "More than"
+    no_answer_provided: "No answer provided"
+    no_data: "There's no data for this"
+    no_specifed: "Not specified"
+    notice: Notice
+    number_of_other_reports_with_lower_recurrent_expenditure: "of other reports generated in the calculator with lower recurrent expenditure"
+    number_of_people: "%{people} people"
+    number_of_people_with_service_meeting_national_standard: "of people with a service that meets the national standard on all indicators"
+    operational_expenditure: "Operation expenditure"
+    per_person_per_year: "(Per person per year)"
+    percentage_of_household_income: "Percentage of household income"
+    percentile_rank_service_area_expenditure: "Percentile rank of the service area expenditure"
+    percentile_rank_service_indicators: "Percentile rank of the service indicators"
+    percentile_rank_technology_related_expenditure: "Percentile rank of technology related expenditure"
+    population_caption: "%{population} people"
+    quality: Quality
+    quantity: Quantity
+    recurrent_expenditure: "Recurrent Expenditure"
+    recurrent_expenditure_title: "Recurrent Expenditure per Person"
+    reliability: Reliability
+    report_box_no_value: "Looks like you need to answer more questions to get a final report. Go back and add more answer about your service delivery"
+    report_saved: "Your report was %{action} successfully"
+    risk: "Risk to affordability"
+    save_input: name
+    save_submit: Save
+    save_your_report: "Save Your Report"
+    service: "service level"
+    service_level_population_incomplete: "You have not defined the service level for the total population. Some data is missing."
+    service_level_population_overcomplete: "You have defined the service level for more people than possible. Please check your inputs."
+    service_level_summary: "Service Level Summary"
+    service_levels: 
+      accessibility: Accessibility
+      environmental_protection: "Environmental protection"
       quality: Quality
-      household_latrine: Household Latrine
-      impermeability: Impermeability
-      #Not clear where this is being applied. This may need to change Environmental protection, which is the actual name of the indicator
-      environmental_impact: Environmental Impact
-      usage: Usage
+      quantity: Quantity
       reliability: Reliability
-      advanced: Advanced
-      service_area: Service Area
-      system_management: System Management
-      system_characteristics: System Characteristics
-      service_level: Service Level
-  footer:
-    calculator_progress: "%{level} %{type} Report"
-  buttons:
-    next: Next Question
-    start: Start the tool
-    view_report: View Report
-    save_report: Save Report
-    share_report: Share Report
-    delete_report: Delete Report
-  calculators:
-    basic: Basic
-    advanced: Advanced
-    water: Water
-    sanitation: Sanitation
-    title: Do the math and make it last
-    sub_title: Do a sustainability check and share a life-cycle costs report based on your service delivery model.
-    pre_question_note: "Before you start, please choose the tool"
-    tool_selection_advanced: Advanced tool
-    tool_selection_basic: Basic tool
+      use: Use
+    share_your_report: "Share your report"
+    shortfall: Shortfall
+    substandard: Sub-Standard
+    summary_country: Country
+    summary_currency: Currency
+    summary_year: "Year of expenditure"
+    summmary: Summary
+    surplus: "  Surplus"
+    time: 
+      minutes: min
+    total: Total
+    total_cost: "total cost"
+    total_expenditure_for_thirty_years: "Total expenditure for 30 years - if current expenditure levels are maintained"
+    unaffordable: Unaffordable
+    updated_successsfully: "Your report was updated successfully"
+    use: Use
+    users_data: "%{name}'s data"
+  support: 
+    array: 
+      last_word_connector: ", and "
+      two_words_connector: " and "
+      words_connector: ", "
+  time: 
+    am: am
+    formats: 
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: pm

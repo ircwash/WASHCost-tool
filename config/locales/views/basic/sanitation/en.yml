@@ -95,6 +95,7 @@
           environmental_impact: Environmental impact
           usage: Utilisation
           reliatilibty: Reliability
+          reliability: Reliability
         summaries:
           a111: "There is a high incidence of open defecation as latrines are not being used. Additionally, if there are latrines, these are not being cleaned or emptied. Barely any money is being spent on recurrent annual expenditure  and as a result the service has failed and lives may be at risk!"
           a113: "Although existing latrines are reasonably clean, there is a high incidence of open defecation as latrines are not being used. Barely any money is being spent on recurrent annual expenditure, specifically on maintaining or improving behaviour change for latrine use. Lives may be at risk!"
@@ -150,3 +151,6 @@
           b341: "These facilities have a cement or impermeable slab providing adequate separation between users and faeces within the compound, however it is causing significant environmental pollution and lives may be at risk! Capital expenditure is higher than WASHCost benchmarks, factors other than costs are influencing environmental safety or the context is exceptional and requires more expensive infrastructure."
           b343: "The capital expenditure entered is higher than WASHCost benchmarks and these facilities have a cement or impermeable slab providing adequate separation between users within the compound and faeces and there is no problematic environmental impact. The context may be exceptional and requires more expensive infrastructure or cost efficiency can be improved."
           b344: "The capital expenditure entered is within WASHCost benchmarks and these facilities have a cement or impermeable slab providing adequate separation between users and faeces within the compound. The by-products from the facilities are also being re-used safely. A very good level of service is being achieved or the context may be exceptional and requires more expensive infrastructure. Another possibility is that cost efficiency can be improved."
+          a: A
+          b: B
+        value_not_set: Value not set

@@ -1,5 +1,6 @@
 class ReportsController < ApplicationController
   
+  before_filter :store_location
   load_and_authorize_resource UserReport, :only => [ :destroy, :load, :update ]
 
   def destroy
@@ -76,6 +77,10 @@ class ReportsController < ApplicationController
       report.update_attributes( params[ :user_report ] )
     end
     render json: {}
+  end
+  
+  def store_location
+    session[:previous_url] = request.fullpath
   end
 
 end

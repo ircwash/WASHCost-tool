@@ -145,5 +145,11 @@ en:
           label: Does the service reliability meet the national norms?
           placeholder: Select an option
           tooltip: Select an option
+        aggregate_actual_hardware_expenditure:
+          label: What has been/will be the actual expenditure on capital expenditure (hardware) and how long is/was the system expected to last at the time of construction (the useful lifespan) or detail disaggregated below?
+        cost:
+          capital_costs: Capital costs
+          recurring_costs: Recurring costs
+          support_costs: Support costs
       report:
         final_report: Advanced Water | Final Report

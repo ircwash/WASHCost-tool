@@ -104,6 +104,7 @@ en:
       quality: Quality
       reliability: Reliability
       environmental_protection: Environmental protection
+      use: Use
     meets_national_norm: Meets national norm
     does_not_meet_national_norm: Does not meet national norm
     percentile_rank_service_area_expenditure: Percentile rank of the service area expenditure
@@ -116,3 +117,4 @@ en:
     annual_operational_expenditure: Annual operational expenditure
     annual_capital_maintenance_expenditure:  Annual capital maintenance expenditure
     percentage_of_household_income: Percentage of household income
+    more_than: More than

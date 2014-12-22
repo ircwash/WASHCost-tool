@@ -1,92 +1,1133 @@
-fr:
-  # for registration errors
-  errors:
-    messages:
-      unique_email: "Adresse e-mail doit être unique"
+--- 
+fr: 
+  advanced: 
+    sanitation: 
+      questionnaire: 
+        actual_hardware_expenditure: 
+          label: "Quel est le coût total en investissement matériel pour la construction des latrines dans la zone de service?"
+          placeholder: 5000
+          tooltip: "Le capital investi dans les actifs fixes, tels que le fonçage, le cuvelage, les dalles, les superstructures et les tuyaux. Veuillez fournir les dépenses pour toute la zone de service. Si vous ne connaissez que le coût moyen par système, veuillez multiplier celui-ci par le nombre de systèmes."
+        actual_software_expenditure: 
+          label: "Quel est le coût total en investissement immatériel pendant ou avant la construction des ouvrages dans la zone de service?"
+          placeholder: 3000
+          tooltip: "Les dépenses immatérielles concernent des activités avec les  parties prenantes avant la construction ou pendant la mise en œuvre, telles que des formations pour la communauté, la création de la demande et la promotion de l'hygiène. Veuillez fournir les dépenses pour toute la zone de service. Si vous ne connaissez que le coût moyen par système, veuillez multiplier celui-ci par le nombre de systèmes."
+        aggregate_actual_hardware_expenditure: 
+          label: "Quel est le coût total en investissement matériel pour la construction des latrines dans la zone de service?"
+        annual_household_income: 
+          label: "Quel est le revenu annuel moyen d'un ménage dans la zone de service?"
+          placeholder: 600
+          tooltip: "Ces données sont utilisées pour évaluer l'accessibilité financière et elles peuvent être modifiées pour analyser l'accessibilité par rapport à différents niveaux de richesse dans la zone de service."
+        area_type: 
+          label: "Description du type de zone"
+          placeholder: "Veuillez sélectionner un type de zone"
+          tooltip: "Veuillez sélectionner un type de zone"
+        capital_maintenance_expenditure: 
+          label: "Quel est le coût moyen d'entretien du capital par an?"
+          placeholder: 400
+          tooltip: "Renouvellement des actifs et coût de remplacement: les coûts occasionnels et irréguliers qui visent à rétablir la fonctionnalité d'un système, comme le remplacement de la tige de pompe ou du clapet de pied dans les pompes manuelles, ou du générateur diesel dans les systèmes motorisés. Comme les dépenses pour le renouvellement sont par définition peu fréquentes, elles ne sont pas forcément engagées tous les ans. Si vous utilisez des données réelles, vous pouvez indiquer la moyenne des dépenses des 5 dernières années. Veuillez indiquer les dépenses pour toute la zone de service. Si vous ne connaissez que le coût moyen par système, veuillez multiplier celui-ci par le nombre de systèmes."
+        construction_financier: 
+          label: "Par qui est financé la construction des ouvrages d'assainissement?"
+          tooltip: "Vous pouvez sélectionner plusieurs options"
+        direct_support_cost: 
+          label: "Qu'est-ce qui a été dépensé /sera dépensé pour l'appui direct?"
+          placeholder: 10
+          tooltip: "Veuillez fournir les dépenses par personne/ par an. L'appui direct est un appui structuré pour les fournisseurs de services et les utilisateurs ou groupes d'utilisateurs et se rapporte à l'exploitation et la gestion d'un service WASH. Les coûts d'appui directs couvrent les activités de surveillance, le conseil technique et le soutien administratif, organisationnel ou juridique. Les coûts d'appui avant et pendant la construction du capital d'un projet ne sont pas inclus, car ceux-ci sont considérés comme investissement immatériel. L'appui direct est souvent utilisé comme synonyme de appui post-construction"
+        household_size: 
+          label: "Taille moyenne d'un ménage?"
+          placeholder: 6
+          tooltip: "Il s'agit d'une estimation de la taille des ménage, utilisée pour calculer l'accessibilité financière des services d'assainissement."
+        indirect_support_cost: 
+          label: "Qu'est-ce qui a été dépensé /sera dépensé pour l'appui indirect?"
+          placeholder: 2
+          tooltip: "Veuillez fournir les dépenses par personne/ par an. Les coûts d'appui indirects couvrent les dépenses d'appui au niveau macro, pour la planification et l'élaboration des politiques sectorielles, et l'appui aux autorités de services décentralisés ou le gouvernement local. L'appui indirect comprend le renforcement des capacités des professionnels et des techniciens et l'appui aux capacités des autorités des services, pour se mettre en conformité avec les normes  et directives nationales."
+        infrastructure_operator: 
+          label: "Qui est le propriétaire légal de l'infrastructure d'assainissement"
+          tooltip: "Vous pouvez sélectionner plusieurs options"
+        loan_cost: 
+          label: "Quels est le coût du capital d'un éventuel emprunt contracté pour financer le service?"
+          placeholder: 6000
+          tooltip: "Veuillez indiquer le coût moyen de l'emprunt, par exemple le montant des intérêts. Veuillez fournir les dépenses pour toute la zone de service. Si vous ne connaissez que le coût moyen par système, veuillez multiplier celui-ci par le nombre de systèmes."
+        loan_payback_period: 
+          label: "Quelle est la durée d'amortissement de cet emprunt?"
+          placeholder: 20
+          tooltip: "Veuillez fournir la durée moyenne pour le remboursement de l'emprunt."
+        minor_operation_expenditure: 
+          label: "Quel est le coût moyen de renouvellement ou de réhabilitation par an?"
+          placeholder: 1000
+          tooltip: "Le coût d'entretien du capital concerne le renouvellement des actifs (remplacement, réhabilitation, rénovation, réparation) pour assurer le fonctionnement continu des services au même niveau de performance que le niveau initial. Il s'agit par exemple de remplacer une dalle, de vidanger une fosse ou de relocaliser une latrine. Comme les dépenses pour l'entretien du capital sont par définition peu fréquentes, elles ne sont pas forcément engagées tous les ans. Si vous utilisez des données réelles, vous pouvez indiquer la moyenne des dépenses des 5 dernières années. Veuillez indiquer les dépenses pour toute la zone de service. Si vous ne connaissez que le coût moyen par système, veuillez multiplier celui-ci par le nombre de systèmes."
+        national_accessibility_norms: 
+          label: "Est-ce que l'accessibilité du service est conforme aux normes nationales?"
+          placeholder: "Veuillez sélectionner une option"
+          tooltip: "Veuillez sélectionner une option"
+        national_environmental_protection_norms: 
+          label: "Est-ce que l'aspect de protection de l'environnement du service est conforme aux normes nationales?"
+          placeholder: "Veuillez sélectionner une option"
+          tooltip: "Veuillez sélectionner une option"
+        national_reliability_norms: 
+          label: "Est-ce que la fiabilité du service est conforme aux normes nationales?"
+          placeholder: "Veuillez sélectionner une option"
+          tooltip: "Veuillez sélectionner une option"
+        national_use_norms: 
+          label: "Est-ce que le taux d'utilisation du service est conforme aux normes nationales?"
+          placeholder: "Veuillez sélectionner une option"
+          tooltip: "Veuillez sélectionner une option"
+        options_for_area_type: 
+          mixed: Mixte
+          peri_urban: Péri-urbain
+          rural: Rural
+          small_town: "Petite localité"
+          unknown: "Ne sais pas"
+          urban: Urbain
+        options_for_system_position: 
+          directly_under: "Directly under the latrine"
+          offset: Offset
+        rehabilitation_cost_owner: 
+          label: "Qui assume les coûts de renouvellement lorsqu'une réhabilitation du système est nécessaire?"
+          tooltip: "Vous pouvez sélectionner plusieurs options"
+        sanitation_service_exists: 
+          label: "De quel genre d'informations financières disposez-vous?"
+          placeholder: "Veuillez sélectionner une option"
+          tooltip: "De quel genre d'informations financières disposez-vous?"
+        service_level_name: 
+          label: "Nommez le niveau de service"
+          placeholder: "Nom de niveau de service"
+        service_level_share: 
+          label: "Pourcentage de la population désservie"
+          placeholder: 25%
+          tooltip: "Le total des niveaux est 100% pour représenter toute la population dans la zone d'intervention."
+        service_levels: 
+          label: "Distinguez entre un à quatre niveaux de service pour les utilisateurs du service d'eau"
+          tooltip: "Définissez les niveaux de service dans la région"
+        service_management: 
+          label: "Quelle option décrit le mieux le mode de gestion du service?"
+          tooltip: "Vous pouvez sélectionner plusieurs options"
+        service_responsbility: 
+          label: "Qui effectue les travaux de fonctionnement et d'entretien?"
+          tooltip: "Vous pouvez sélectionner plusieurs options"
+        standard_enforcer: 
+          label: "Qui est responsable de la surveillance et de l'application des normes de service en vigueur?"
+          tooltip: "Vous pouvez sélectionner plusieurs options"
+        supply_system_technologies: 
+          label: "Quels sont les types de latrines le plus couramment utilisées par les ménages dans votre zone de service?"
+          placeholder: Technologie
+          tooltip: "Seules les technologies d'assainissement individuel sont incluses pour le moment."
+        system_lifespan_expectancy: 
+          label: "Quelle est la durée de fonctionnement prévue des latrines à partir de la construction (la durée de vie utile)?"
+          placeholder: 30
+          tooltip: "Quelle est la durée de fonctionnement prévue des systèmes à partir de la construction (la durée de vie utile)?"
+        system_population_actual: 
+          label: "Combien de personnes au total est-ce que les latrines desservent effectivement dans cette zone de service?"
+          placeholder: 30
+          tooltip: "Combien de personnes au total est-ce que les systèmes d'eau desservent effectivement dans cette zone de service?"
+        system_population_design: 
+          label: "Combien de personnes au total les latrines sont-elles censées desservir dans cette zone de service?"
+          placeholder: 20
+          tooltip: "Combien de personnes au total les systèmes d'eau sont-ils censés desservir dans cette zone de service?"
+        system_position: 
+          label: "Are the latrine pits or septic system directly under the latrine or offset with separate access?"
+          placeholder: "Choose a position"
+          tooltip: "Choose a position"
+        systems_number: 
+          label: "Nombre de latrines?"
+          placeholder: 5
+          tooltip: "Ces données sont utilisées pour calculer le coût d'une seule latrine."
+        unpaid_labour: 
+          label: "Est-ce que les ménages ou la communauté ont contribué de la main-d'oeuvre non rémunérée pour mettre en place les systèmes d'assainissement?"
+          placeholder: "Veuillez sélectionner une option"
+          tooltip: "Veuillez sélectionner une option"
+      report: 
+        final_report: "Assainissement Avancée | Rapport Final"
+    shared: 
+      alert_message: "Le total pourcentage doit etre 100%"
+      country: 
+        label: Pays
+        placeholder: "Veuillez sélectionner le pays"
+        tooltip: "Veuillez sélectionner le pays"
+      currency: 
+        label: Devise?
+        placeholder: "Sélectionnez une devise"
+        tooltip: "Veuillez choisir une devise pour le calcul des coûts"
+      dont_know: "Ne sais pas"
+      options_for_construction_financier: 
+        community_based_management: "Gestion communautaire"
+        external_donor: "Bailleurs de fonds externes"
+        household_management: "Gestion par les ménages"
+        other: Autres
+        private_sector: "Secteur privé"
+        public_sector_local: "Secteur public (local)"
+        public_sector_national: "Secteur public (national)"
+        unknown: "Ne sais pas"
+        utility_management: "Agence de l'assainissement"
+      options_for_exists: 
+        budgeted_expenditure: "Dépenses budgetées"
+        dont_know: "Ne sais pas"
+        historical_expenditure: "Dépenses historiques"
+        mixed_expenditure: "Dépenses diverses"
+        not_applicable: "Non applicable"
+        planned_expenditure: "Dépense prévisionnelle"
+      options_for_infrastructure_operator: 
+        community_based_management: "Gestion communautaire"
+        external_donor: "Bailleurs de fonds externes"
+        household_management: "Gestion par les ménages"
+        other: Autres
+        private_sector: "Secteur privé"
+        public_sector_local: "Secteur public (local)"
+        public_sector_national: "Secteur public (national)"
+        unknown: "Ne sais pas"
+        utility_management: "Agence de l'assainissement"
+      options_for_national_accessibility_norms: 
+        ? "false"
+        : Non
+        ? "true"
+        : Oui
+        unknown: "Ne sais pas"
+      options_for_national_environmental_protection_norms: 
+        ? "false"
+        : Non
+        ? "true"
+        : Oui
+        unknown: "Ne sais pas"
+      options_for_national_quality_norms: 
+        ? "false"
+        : Non
+        ? "true"
+        : Oui
+        unknown: "Ne sais pas"
+      options_for_national_quantity_norms: 
+        ? "false"
+        : Non
+        ? "true"
+        : Oui
+        unknown: "Ne sais pas"
+      options_for_national_reliability_norms: 
+        ? "false"
+        : Non
+        ? "true"
+        : Oui
+        unknown: "Ne sais pas"
+      options_for_national_use_norms: 
+        ? "false"
+        : Non
+        ? "true"
+        : Oui
+        unknown: "Ne sais pas"
+      options_for_power_supply: 
+        generator: Générateur
+        mains: "Réseau électrique"
+        no_power: "Pas d'énergie"
+        not_applicable: "Non applicable"
+        solar: "Énergie solaire"
+        windmills: "Moulins à vent"
+      options_for_rehabilitation_cost_owner: 
+        community_based_management: "Gestion communautaire"
+        external_donor: "Bailleurs de fonds externes"
+        household_management: "Gestion par les ménages"
+        other: Autres
+        private_sector: "Secteur privé"
+        public_sector_local: "Secteur public (local)"
+        public_sector_national: "Secteur public (national)"
+        unknown: "Ne sais pas"
+        utility_management: "Agence de l'assainissement"
+      options_for_sanitation_technologies: 
+        double_pit_1: "Latrine à double fosse avec dalle imperméable (en matériau autre que du béton)"
+        double_pit_2: "Latrine à double fosse avec dalle en béton"
+        double_pit_3: "Latrine améliorée à double fosse ventilée"
+        double_pit_4: "Latrine à compost à double fosse avec dalle en béton"
+        double_pit_5: "Latrine à double fosse à chasse d’eau manuelle et puits d’infiltration"
+        latrine: "Latrine avec fosse septique"
+        single_pit_1: "Latrine à fosse simple avec plate-forme (pas de dalle)"
+        single_pit_2: "Latrine à fosse simple avec dalle imperméable (en matériau autre que du béton)"
+        single_pit_3: "Latrine à compost à fosse simple"
+        single_pit_4: "Latrine à compost à fosse simple avec dalle en béton"
+        single_pit_5: "Latrine à fosse simple avec dalle en béton"
+        single_pit_6: "Latrine à fosse simple à chasse d’eau manuelle et puits d’infiltration"
+        single_ventilated: "Latrine améliorée à fosse ventilée"
+        urine: "Toilettes sèches avec séparation d’urine"
+      options_for_service_management: 
+        community_based_management: "Gestion communautaire"
+        household_management: "Gestion par les ménages"
+        other: Autres
+        private_sector: "Secteur privé"
+        public_sector_local: "Secteur public (local)"
+        public_sector_national: "Secteur public (national)"
+        unknown: "Ne sais pas"
+        utility_management: "Agence de l'assainissement"
+      options_for_service_responsbility: 
+        community_based_management: "Gestion communautaire"
+        external_donor: "Bailleurs de fonds externes"
+        household_management: "Gestion par les ménages"
+        other: Autres
+        private_sector: "Secteur privé"
+        public_sector_local: "Secteur public (local)"
+        public_sector_national: "Secteur public (national)"
+        unknown: "Ne sais pas"
+        utility_management: "Agence de l'assainissement"
+      options_for_standard_enforcer: 
+        community_based_management: "Gestion communautaire"
+        external_donor: "Bailleurs de fonds externes"
+        household_management: "Gestion par les ménages"
+        other: Autres
+        private_sector: "Secteur privé"
+        public_sector_local: "Secteur public (local)"
+        public_sector_national: "Secteur public (national)"
+        unknown: "Ne sais pas"
+        utility_management: "Agence de l'assainissement"
+      options_for_supply_system_technologies: 
+        borehole_and_handpump: "Forage équipé d'une pompe manuelle"
+        gravity_fed_system_1: "Réseau avec addiction gravitaire (< 5,000 personnes)"
+        gravity_fed_system_2: "Réseau avec addiction gravitaire (5,000 - 10,000 personnes)"
+        gravity_fed_system_3: "Réseau avec addiction gravitaire (10,001 - 20,000 personnes)"
+        gravity_fed_system_4: "Réseau avec addiction gravitaire (> 20,000 personnes)"
+        mechanised_borehole: "Forage équipé d’une pompe mécanisée"
+        mechanised_pipe_system_1: "Réseau avec station de pompage (< 5,000 personnes)"
+        mechanised_pipe_system_2: "Réseau avec station de pompage (5,000 - 10,000 personnes)"
+        mechanised_pipe_system_3: "Réseau avec station de pompage (10,001 - 20,000 personnes)"
+        mechanised_pipe_system_4: "Réseau avec station de pompage (> 20,000 personnes)"
+        multi_town_system_1: "Réseau desservant plusieurs localités (< 5,000 personnes)"
+        multi_town_system_2: "Réseau desservant plusieurs localités (5,000 - 10,000 personnes)"
+        multi_town_system_3: "Réseau desservant plusieurs localités (10,001 - 20,000 personnes)"
+        multi_town_system_4: "Réseau desservant plusieurs localités (> 20,000 personnes)"
+        protected_well: "Puits traditionnel protégé"
+        small_scale_rain_fed_system: "Système de collecte/captage d'eau de pluie"
+      options_for_surface_water_primary_source: 
+        catchment: "Barrage de stockage"
+        rainwater: "Collecte des eaux pluviales"
+        river: Rivière
+        sub_surface: "Récolte sous-surface (puisard)"
+        unknown: "Ne sais pas"
+      options_for_unpaid_labour: 
+        ? "false"
+        : Non
+        ? "true"
+        : Oui
+        unknown: "Ne sais pas"
+      options_for_water_source: 
+        ground_water: "Eau souterraine"
+        rain_water: "Eau de surface"
+        surface_water: "Eau de surface"
+        unknown: "Ne sais pas"
+      options_for_water_treatment: 
+        boiling: Ébullition
+        cholorination: "Chloration dans les canalisations"
+        household_cholorination: "Chloration à domicile"
+        household_filer: "Filtration à domicile"
+        not_applicable: "Non applicable"
+        treatment: "Aucun traitement"
+        water_treatment: "Station de traitement"
+      region: 
+        label: Région?
+        placeholder: Calabria
+        tooltip: "Veuillez sélectionner la région"
+      technology_choice_required: "Un choix d'au moins une technologie est requis"
+      town: 
+        label: "Nom de la ville/localité?"
+        placeholder: Catanzaro
+        tooltip: "Veuillez sélectionner une ville/localité"
+      year_of_expenditure: 
+        label: "Année de dépenses?"
+        placeholder: "Sélectionnez une année"
+        tooltip: "Lorsque vous saisissez les coûts, les dépenses effectuées d'autres années ou des devises différentes doivent être converties en cette devise et vers l'année de référence actuelle. Voir la formation WASHCost et l'exemple de convertisseur de devises: http://www.washcost.info/page/2521"
+    water: 
+      questionnaire: 
+        actual_hardware_expenditure: 
+          label: "Quel est le coût total en investissement matériel pour la construction des systèmes dans la zone de service?"
+          placeholder: 5000
+          tooltip: "Le capital investi dans la construction ou l'achat d'actifs fixes, tels que les structures en béton, pompes et canalisations. Veuillez fournir les dépenses pour toute la zone de service. Si vous ne connaissez que le coût moyen par système, veuillez multiplier celui-ci par le nombre de systèmes."
+        actual_software_expenditure: 
+          label: "Quel est le coût total en investissement immatériel pendant la construction des systèmes dans la zone de service?"
+          placeholder: 3000
+          tooltip: "Coût des activités ponctuelles avec les  parties prenantes avant la construction ou la mise en œuvre, l'amélioration ou l'extension (y compris le coût des activités ponctuelles de développement des capacités). Veuillez fournir les dépenses pour toute la zone de service. Si vous ne connaissez que le coût moyen par système, veuillez multiplier celui-ci par le nombre de systèmes."
+        annual_household_income: 
+          label: "Quel est le revenu annuel moyen d'un ménage dans la zone de service?"
+          placeholder: 600
+          tooltip: "Ces données sont utilisées pour évaluer l'accessibilité financière et elles peuvent être modifiées pour analyser l'accessibilité par rapport à différents niveaux de richesse dans la zone de service."
+        area_type: 
+          label: "Description de la zone?"
+          placeholder: "Veuillez sélectionner un type de zone"
+          tooltip: "Veuillez sélectionner un type de zone"
+        capital_costs: 
+          capital_costs: "Coûts d'investissement"
+          recurring_costs: "Coûts récurrents"
+        capital_maintenance_expenditure: 
+          label: "Quel est le coût moyen d'entretien du capital par an?"
+          placeholder: 400
+          tooltip: "Renouvellement des actifs et coût de remplacement: les coûts occasionnels et irréguliers qui visent à rétablir la fonctionnalité d'un système, comme le remplacement de la tige de pompe ou du clapet de pied dans les pompes manuelles, ou du générateur diesel dans les systèmes motorisés. Comme les dépenses pour le renouvellement sont par définition peu fréquentes, elles ne sont pas forcément engagées tous les ans. Si vous utilisez des données réelles, vous pouvez indiquer la moyenne des dépenses des 5 dernières années. Veuillez indiquer les dépenses pour toute la zone de service. Si vous ne connaissez que le coût moyen par système, veuillez multiplier celui-ci par le nombre de systèmes."
+        construction_financier: 
+          label: "Par qui est financée la construction du système d'eau?"
+          tooltip: "Vous pouvez sélectionner plusieurs options"
+        direct_support_cost: 
+          label: "Qu'est-ce qui a été dépensé /sera dépensé pour l'appui direct?"
+          placeholder: 10
+          tooltip: "Veuillez fournir les dépenses par personne/ par an. L'appui direct est un appui structuré pour les fournisseurs de services et les utilisateurs ou groupes d'utilisateurs et se rapporte à l'exploitation et la gestion d'un service WASH. Les coûts d'appui directs couvrent les activités de surveillance, le conseil technique et le soutien administratif, organisationnel ou juridique. Les coûts d'appui avant et pendant la construction du capital d'un projet ne sont pas inclus, car ceux-ci sont considérés comme investissement immatériel. L'appui direct est souvent utilisé comme synonyme de appui post-construction"
+        distribution_line_length: 
+          label: "Longueur du réseau d'adduction (km)"
+          placeholder: 200
+          tooltip: "Longueur approximative du réseau d'adduction en kilomètres"
+        household_size: 
+          label: "Taille moyenne d'un ménage"
+          placeholder: 6
+          tooltip: "Il s'agit d'une approximation de la taille moyenne des ménages utilisée pour calculer l'accessibilité financière des services d'eau."
+        indirect_support_cost: 
+          label: "Qu'est-ce qui a été dépensé /sera dépensé pour l'appui indirect?"
+          placeholder: 2
+          tooltip: "Veuillez fournir les dépenses par personne/ par an. Les coûts d'appui indirects couvrent les dépenses d'appui au niveau macro, pour la planification et l'élaboration des politiques sectorielles, et l'appui aux autorités de services décentralisés ou le gouvernement local. L'appui indirect comprend le renforcement des capacités des professionnels et des techniciens et l'appui aux capacités des autorités des services, pour se mettre en conformité avec les normes  et directives nationales."
+        infrastructure_operator: 
+          label: "Qui est le propriétaire légal du système d'approvisionnement en eau?"
+          tooltip: "Vous pouvez sélectionner plusieurs options"
+        loan_cost: 
+          label: "Quels est le coût du capital d'un éventuel emprunt contracté pour financer le service?"
+          placeholder: 6000
+          tooltip: "Veuillez indiquer le coût moyen de l'emprunt, par exemple le montant des intérêts. Veuillez fournir les dépenses pour toute la zone de service. Si vous ne connaissez que le coût moyen par système, veuillez multiplier celui-ci par le nombre de systèmes."
+        loan_payback_period: 
+          label: "Quelle est la durée d'amortissement de cet emprunt?"
+          placeholder: 20
+          tooltip: "Veuillez fournir la durée moyenne pour le remboursement de l'emprunt."
+        minor_operation_expenditure: 
+          label: "Quel est le coût moyen de renouvellement ou de réhabilitation par an?"
+          placeholder: 1000
+          tooltip: "Dépenses pour le fonctionnement et l'entretien: elles comprennent en général les dépenses récurrentes telles que la main-d’œuvre, le carburant, les produits chimiques, les matériaux, et l'achat d'eau en gros. Veuillez fournir les dépenses pour toute la zone de service. Si vous ne connaissez que le coût moyen par système, veuillez multiplier celui-ci par le nombre de systèmes."
+        national_accessibility_norms: 
+          label: "Est-ce que l'accessibilité du service est conforme aux normes nationales?"
+          placeholder: "Veuillez sélectionner une option"
+          tooltip: "Veuillez sélectionner une option"
+        national_quality_norms: 
+          label: "Est-ce que la qualité de l'eau est conforme aux normes nationales?"
+          placeholder: "Veuillez sélectionner une option"
+          tooltip: "Veuillez sélectionner une option"
+        national_quantity_norms: 
+          label: "Est-ce que la quantité fournie par le service est conforme aux normes nationales?"
+          placeholder: "Veuillez sélectionner une option"
+          tooltip: "Veuillez sélectionner une option"
+        national_reliability_norms: 
+          label: "Est-ce que la fiabilité du service est conforme aux normes nationales?"
+          placeholder: "Veuillez sélectionner une option"
+          tooltip: "Veuillez sélectionner une option"
+        population_density: 
+          label: "Quelle est la densité de population de la zone de service?"
+          placeholder: 2000
+        power_supply: 
+          label: "Type d'alimentation en énergie"
+          tooltip: "S'il vous plaît sélectionner une option"
+        rehabilitation_cost_owner: 
+          label: "Qui assume les coûts de renouvellement lorsqu'une réhabilitation du système est nécessaire?"
+          tooltip: "Vous pouvez sélectionner plusieurs options"
+        service_level_name: 
+          label: "Nommez le niveau de service"
+          placeholder: "Nom de niveau de service"
+        service_level_share: 
+          label: "Pourcentage de la population désservie"
+          placeholder: 25%
+          tooltip: "Le total des niveaux est 100% pour représenter toute la population dans la zone d'intervention."
+        service_levels: 
+          label: "Distinguez entre un à quatre niveaux de service pour les utilisateurs du service d'eau"
+          tooltip: "Définissez les niveaux de service dans la région"
+        service_management: 
+          label: "Quelle option décrit le mieux le mode de gestion du service?"
+          tooltip: "Vous pouvez sélectionner plusieurs options"
+        service_responsbility: 
+          label: "Qui est responsable d'assurer le fonctionnement et l'entretien du système?"
+          tooltip: "Vous pouvez sélectionner plusieurs options"
+        standard_enforcer: 
+          label: "Qui est/sera responsable de la surveillance et de l'application des normes de service en vigueur?"
+          tooltip: "Vous pouvez sélectionner plusieurs options"
+        supply_system_technologies: 
+          label: "Quel est le système utilisé pour fournir le service d'eau? (plusieurs réponses possibles)"
+          placeholder: "Veuillez choisir une technologie"
+          tooltip: "Veuillez choisir une technologie"
+        surface_water_primary_source: 
+          label: "Si c'est de l'eau de surface, définissez la source primaire"
+          placeholder: "Veuillez sélectionner une source d'eau primaire"
+          tooltip: "Veuillez sélectionner une source d'eau primaire"
+        system_lifespan_expectancy: 
+          label: "Quelle est la durée de fonctionnement prévue des systèmes à partir de la construction (la durée de vie utile)?"
+          placeholder: 30
+          tooltip: "Quelle est la durée de fonctionnement prévue des systèmes à partir de la construction (la durée de vie utile)?"
+        system_population_actual: 
+          label: "Combien de personnes au total est-ce que les systèmes d'eau desservent effectivement dans cette zone de service?"
+          placeholder: 30
+          tooltip: "Combien de personnes au total est-ce que les systèmes d'eau desservent effectivement dans cette zone de service?"
+        system_population_design: 
+          label: "Combien de personnes au total les systèmes d'eau sont-ils censés desservir dans cette zone de service?"
+          placeholder: 20
+          tooltip: "Combien de personnes au total les systèmes d'eau sont-ils censés desservir dans cette zone de service?"
+        systems_number: 
+          label: "Nombre de systèmes?"
+          placeholder: 5
+          tooltip: "Ces données sont utilisées  pour calculer le coût d'un système unique."
+        unpaid_labour: 
+          label: "Est-ce que les ménages ou la communauté ont contribué de la main-d'oeuvre non rémunérée pour mettre en place les systèmes d'assainissement?"
+          placeholder: "Veuillez sélectionner une option"
+          tooltip: "Veuillez sélectionner une option"
+        water_source: 
+          label: "Quelle est la source d'eau?"
+          placeholder: "Veuillez sélectionner une source d'eau"
+          tooltip: "Veuillez sélectionner une source d'eau"
+        water_system_exists: 
+          label: "De quel genre d'informations financières disposez-vous?"
+          placeholder: "Veuillez sélectionner une option"
+          tooltip: "De quel genre d'informations financières disposez-vous?"
+        water_treatment: 
+          label: "Comment l'eau est-elle traitée?"
+          tooltip: "S'il vous plaît sélectionner une option"
+      report: 
+        final_report: "Eau Avancée | Rapport Final"
+  basic: 
+    sanitation: 
+      questionnaire: 
+        capital_expenditure: 
+          info: "La ligne blanche indique la fourchette de coûts observés dans des projets WASHCost dans des zones avec un niveau de service de base. Les coûts de démarrage comprennent les dépenses d'investissement matériel et immatériel, tels que décrits ci-dessous,  Dépense d'investissement (matériel), capital investi dans la construction ou l'achat d'actifs fixes tels que structures en béton, pompes et tuyaux. Dépense d'investissement (immatériel), dépense dans les activités ponctuelles avec les parties prenantes, préalables à la construction, la mise en œuvre ou l'extension (y compris le développement des capacités). Voir - 'http://akvopedia.org/wiki/Capital_Expenditure_(CapEx)'"
+          question: "Combien avez-vous dépensé ou allez-vous dépenser pour la mise en place du service d'assainissement (y compris la construction des ouvrages)(par personne)?"
+        country: 
+          info: "Veuillez sélectionner le pays où le service est mis en place pour nous aider à définir le contexte pour votre calcul."
+          question: "Dans quel pays se trouve votre service d'assainissement?"
+        environmental_impact: 
+          info: "Le but de l’assainissement est de séparer les personnes des fèces. La protection de l’environnement est nécessaire pour garantir que l’utilisation de latrines n’a pas d’impact négatif sur les populations d’autres régions."
+          options: 
+            non_problematic_safe_disposal: "Pas d’impact négatif + évacuation hygiénique"
+            non_problematic_safe_disposal_reuse_biproducts: "Pas d’impact négatif + évacuation hygiénique + valorisation des produits dérivés assainis"
+            significant_pollution: "Pollution importante"
+          question: "Quel est l'impact du service d'assainissement sur l'environnement?"
+        household_latrine: 
+          info: "Une latrine familiale signifie qu’il y a une latrine dans ou près de l’habitation pour l’usage exclusif d’un seul ménage. Une latrine partagée n’est pas considérée comme latrine familiale."
+          options: 
+            household_latrine_available: "Latrine familiale disponible "
+            household_latrine_unavailable: "Pas de latrine familiale"
+          question: "Est-ce que chaque ménage dispose de sa propre latrine à domicile?"
+        impermeability: 
+          info: "On entend par dalle le plancher (là plate-forme) de la latrine qui recouvre le plus souvent le trou de la fosse. Une dalle est importante pour l’entretien de la latrine et pour la propreté de l’environnement. Une dalle imperméable peut être fabriquée en matériau local ou en béton. Par exemple, les latrines à chasse d’eau manuelle ont souvent une fosse en maçonnerie ou revêtue de béton et une dalle scellée imperméable."
+          options: 
+            impermeable_slab: "Dalle imperméable"
+            no_impermeable_slab: "Pas de dalle imperméable"
+          question: "Est-ce que les latrines ont une dalle imperméable?"
+        latrine: 
+          info: |
+              Traditional pit latrine: "Latrine à fosse munie d’une dalle imperméable, en matériau (local) autre que du béton. Voir: http://akvopedia.org/wiki/Single_Pit"
+              Slab latrine: "Latrine à fosse munie d’une dalle en béton. "
+              Vip latrine: "Latrine améliorée à fosse ventilée (ou latrine VIP) ; latrine à fosse avec une dalle en béton et une superstructure en béton avec un tuyau de ventilation muni d’une grille pour réduire les odeurs et écarter les mouches. 'Voir:' 'http://akvopedia.org/wiki/Single_Ventilated_Improved_Pit'"
+              Pour flush latrine: "Tous types de latrines à fosse simple et chasse d’eau manuelle, munies d’une dalle en béton mais sans fosse septique."
+              Twin pit pour flush latrine: "Tous types de latrines à double fosse et chasse d’eau manuelle, munies d’une dalle en béton mais sans fosse septique. "
+              Latrine with septic tank: "Latrine à fosse septique avec champ d’infiltration"
+          options: 
+            latrine_with_septic_tank: "Latrine avec fosse septique"
+            pour_flush_latrine: "Latrine à fosse simple à chasse d'eau manuelle"
+            slab_latrine: "Latrine à fosse simple avec dalle en béton"
+            traditional_pit_latrine: "Latrine à fosse simple sans dalle en béton"
+            twin_pit_pour_flush_latrine: "Latrine à double fosse à chasse d'eau manuelle"
+            vip_latrine: "Latrine améliorée à fosse ventilée"
+          question: "Quel type de latrine est utilisé?"
+        population: 
+          info: "Le nombre de personnes bénéficiant du service d'assainissement est important pour le calcul des coûts de la zone desservie. Dans l'outil simple, vous pouvez choisir parmi plusieurs options, de 100 à 1 000 000 personnes."
+          question: "Combien d'habitants de la zone bénéficient de ce service d'assainissement?"
+        recurrent_expenditure: 
+          info: "Veuillez indiquer les dépenses récurrentes totales nécessaires pour maintenir un service continu. Ces dépenses 'comprennent:' <br/> les dépenses 'd’exploitation:' dépenses récurrentes, régulières pour les produits de nettoyage, la main d’œuvre, etc. 'Voir:' 'http://akvopedia.org/wiki/Operational_and_Minor_Maintenance_Expenditure_(OpEx)' <br/> Dépense de 'renouvellement:' dépenses pour le renouvellement et le remplacement d’équipements, dépenses importantes mais peu fréquentes permettant de remettre un système ou des équipements en état de fonctionnement, par exemple le remplacement de la dalle de latrine, la vidange de la fosse ou la réparation du toit de la superstructure. 'Voir:' 'http://akvopedia.org/wiki/Capital_Maintenance_Expenditure_(CapManEx)' <br/> Dépense d’appui 'direct:' il s’agit d’un appui structurel aux autorités de services ou gouvernements locaux et aux fournisseurs de service et aux usagers ou groupes d’usagers, dédié à l’organisation et à la gestion d’un service WASH. Cette dépense couvre le renforcement de capacités post-construction, le suivi, le conseil technique et l’appui administratif, organisationnel et juridique, notamment pour la mise en conformité avec les normes et directives nationales. 'Voir:' 'http://akvopedia.org/wiki/Expenditure_Direct_Support_(ExpDS)' <br/> Dépense d’appui 'indirect:' Les dépenses d'appui indirect couvrent les dépenses d'appui au niveau macro, pour la planification et l'élaboration des politiques sectorielles. 'Voir:' 'http://akvopedia.org/wiki/Expenditure_Indirect_Support_(ExpIDS)'"
+          question: "Quelles sont/seront les dépenses d’exploitation, de maintenance et d’appui pour les services d’assainissement fournis (par personne et par an)?"
+        reliability: 
+          info: "La fiabilité des latrines dépend du bon entretien des équipements. Pour assurer un bon service d’assainissement, les latrines doivent être nettoyées régulièrement et la fosse vidangée à temps."
+          options: 
+            latrine_inconsistent: "Pas toujours"
+            latrine_reliable: "Oui "
+            latrine_unreliable: Non
+          question: "Est-ce que les latrines sont nettoyées et vidangées au moment voulu?"
+        usage: 
+          info: "Il est essentiel que tous les membres de la famille utilisent les latrines et ne défèquent pas en plein air. Le niveau du service d’assainissement est également jugé en fonction de l’utilisation des latrines par les membres de la famille."
+          options: 
+            latrine_usage_all: Tous
+            latrine_usage_none: Aucun
+            latrine_usage_some: "Quelques uns"
+          question: "Quels membres de la famille utilisent les latrines?"
+      report: 
+        final_report: "Outil de base Assainissement | Rapport final"
+        sections: 
+          capital_expenditure_per_person: "Coût d’investissement par personne"
+          country: Pays
+          environmental_impact: Environment
+          household_latrine: "Latrine familiale"
+          impermeability: Imperméabilité
+          latrine_technology: "Type de latrine"
+          population: Population
+          recurrent_expenditure_per_person: "Coûts récurrents par personne"
+          reliability: Fiabilité
+          usage: Utilisation
+        summaries: 
+          a111: "La défécation à l’air libre est très répandue, étant donné que les latrines ne sont pas utilisées. De plus, s’il y a des latrines, elles ne sont pas nettoyées ou vidangées. Pratiquement aucune ressource n’a été affectée aux dépenses récurrentes annuelles, causant la défaillance du service et mettant la santé des populations en danger !"
+          a113: "Bien que les latrines existantes sont assez propres, la défécation à l’air libre est très répandue, étant donné que les latrines ne sont pas utilisées. Pratiquement aucune ressource n’a été affectée aux dépenses récurrentes annuelles, notamment aux dépenses pour maintenir ou améliorer les comportements hygiéniques et promouvoir l’utilisation des latrines. La santé des populations est en danger !"
+          a114: " Bien que les latrines existantes sont nettoyées régulièrement, la défécation à l’air libre est très répandue, étant donné que les latrines ne sont pas utilisées. Pratiquement aucune ressource n’a été affectée aux dépenses récurrentes annuelles, notamment aux dépenses pour maintenir ou améliorer les comportements hygiéniques et promouvoir l’utilisation des latrines. La santé des populations est en danger ! "
+          a131: "Les équipements sanitaires sont utilisés par certains membres des ménages. Cependant, les latrines ne sont pas nettoyées ou vidangées et peuvent constituer un danger pour la santé. Pratiquement aucune ressource n’a été affectée aux dépenses récurrentes annuelles pour assurer l’entretien de base des latrines."
+          a133: "Les latrines existantes sont assez propres et elles sont utilisées par certains membres des ménages. Les dépenses récurrentes annuelles totales sont inférieures aux valeurs de référence établies par WASHCost. Peut-être que le contexte peut expliquer cette disparité, mais envisagez de valider les données saisies. "
+          a134: "Les latrines existantes sont nettoyées et vidangées régulièrement et elles sont utilisées par certains membres des ménages. Les dépenses récurrentes annuelles totales sont inférieures aux valeurs de référence établies par WASHCost. Peut-être que le contexte peut expliquer cette disparité, mais envisagez de valider les données saisies. "
+          a141: " Les équipements sanitaires sont utilisés par tous les membres des ménages. Cependant, les latrines ne sont pas nettoyées ou vidangées et peuvent constituer un danger pour la santé. Pratiquement aucune ressource n’a été affectée aux dépenses récurrentes annuelles pour assurer l’entretien de base des latrines."
+          a143: "Les latrines existantes sont assez propres et elles sont utilisées par tous les membres des ménages. Les dépenses récurrentes annuelles totales sont inférieures aux valeurs de référence établies par WASHCost. Peut-être que le contexte peut expliquer cette disparité, mais envisagez de valider les données saisies. "
+          a144: "Les latrines existantes sont régulièrement nettoyées et vidangées. Les équipements sanitaires sont utilisés par tous les membres de la famille. Les dépenses récurrentes annuelles totales sont inférieures aux valeurs de référence établies par WASHCost. Peut-être que le contexte peut expliquer cette disparité, mais vous pouvez envisager de valider les données saisies. "
+          a211: " La défécation à l’air libre est très répandue, étant donné que les latrines ne sont pas utilisées. De plus, s’il y a des latrines, celles-ci ne sont pas nettoyées ou vidangées. Les dépenses récurrentes annuelles se situent dans la fourchette de valeurs établie par WASHCost. Des facteurs autres que les dépenses récurrentes doivent influencer le fonctionnement du service. Il se peut aussi que le contexte requière des dépenses récurrentes supplémentaires pour promouvoir l’utilisation et l’entretien des latrines."
+          a213: " Bien que les latrines existantes sont assez propres, la défécation à l’air libre est très répandue, étant donné que les latrines ne sont pas utilisées. Les dépenses récurrentes annuelles se situent dans la fourchette observée par WASHCost. Des facteurs autres que les dépenses récurrentes doivent influencer le fonctionnement du service. Il se peut aussi que le contexte requière des dépenses récurrentes supplémentaires pour promouvoir l’utilisation des latrines."
+          a214: "Bien que les latrines existantes sont nettoyées régulièrement, la défécation à l’air libre est très répandue, étant donné que les latrines ne sont pas utilisées. Les dépenses récurrentes annuelles se situent dans la fourchette observée par WASHCost. Des facteurs autres que les dépenses récurrentes doivent influencer le fonctionnement du service. Il se peut aussi que le contexte requière des dépenses récurrentes supplémentaires dédiées à la promotion de l’utilisation des latrines."
+          a231: "Les équipements sanitaires sont utilisés par certains membres de la famille. Cependant, les latrines ne sont pas nettoyées ou vidangées et peuvent constituer un danger pour la santé. Les dépenses récurrentes annuelles se situent dans la fourchette de valeurs établie par WASHCost. Des facteurs autres que les dépenses récurrentes doivent influencer le fonctionnement du service. Il se peut aussi que le contexte requière des dépenses récurrentes supplémentaires dédiées à la promotion de l’entretien des latrines."
+          a233: "Les latrines existantes sont assez propres et elles sont utilisées par certains membres des ménages. Les dépenses récurrentes annuelles se situent dans la fourchette de valeurs établie par WASHCost."
+          a234: " Les latrines existantes sont nettoyées et vidangées régulièrement et elles sont utilisées par certains membres des ménages. Les dépenses récurrentes annuelles se situent dans la fourchette de valeurs établie par WASHCost."
+          a241: "Les équipements sanitaires sont utilisés par tous les membres des ménages. Cependant, les latrines ne sont pas nettoyées ou vidangées et peuvent constituer un danger pour la santé. Les dépenses récurrentes annuelles se situent dans la fourchette de valeurs établie par WASHCost. Des facteurs autres que les dépenses récurrentes doivent influencer le service. Il se peut aussi que le contexte requière des dépenses récurrentes supplémentaires dédiées à la promotion de l’entretien des latrines."
+          a243: " Les latrines existantes sont assez propres et elles sont utilisées par tous les membres des ménages. Les dépenses récurrentes annuelles se situent dans la fourchette de valeurs établie par WASHCost."
+          a244: "Les latrines existantes sont nettoyées et vidangées régulièrement et elles sont utilisées par tous les membres des ménages. Les dépenses récurrentes annuelles se situent dans la fourchette de valeurs établie par WASHCost."
+          a311: "La défécation à l’air libre est très répandue, étant donné que les latrines ne sont pas utilisées. De plus, s’il y a des latrines, celles-ci ne sont pas nettoyées ou vidangées. Les dépenses récurrentes annuelles sont supérieures à la fourchette de valeurs établie par WASHCost. Des facteurs autres que les dépenses récurrentes doivent influencer le fonctionnement du service. Il y a deux possibilités: le contexte est exceptionnel et nécessite des mesures spécifiques pour encourager l’utilisation et l’entretien des latrines, ou bien d'autres facteurs que les coûts ont un impact significatif sur la fourniture de service."
+          a313: "Bien que les latrines existantes sont assez propres, la défécation à l’air libre est très répandue, étant donné que les latrines ne sont pas utilisées. Les dépenses récurrentes annuelles sont supérieures à la fourchette de valeurs établie par WASHCost. Des facteurs autres que les dépenses récurrentes doivent influencer le service. Il y a deux possibilités: le contexte est exceptionnel et nécessite des mesures spécifiques pour encourager l’utilisation des latrines, ou bien d'autres facteurs que les coûts ont un impact significatif sur la fourniture de service."
+          a314: "Bien que les latrines existantes sont nettoyées régulièrement, la défécation à l’air libre est très répandue, étant donné que les latrines ne sont pas utilisées. Les dépenses récurrentes annuelles sont supérieures à la fourchette de valeurs établie par WASHCost. Des facteurs autres que les dépenses récurrentes doivent influencer le service. Il y a deux possibilités: le contexte est exceptionnel et nécessite des mesures spécifiques pour encourager l’utilisation des latrines, ou bien d'autres facteurs que les coûts ont un impact significatif sur la fourniture de service."
+          a331: "Les équipements sanitaires sont utilisés par certains membres des ménages. Cependant, les latrines ne sont pas nettoyées ou vidangées et peuvent constituer un danger pour la santé. Les dépenses récurrentes annuelles sont supérieures à la fourchette de valeurs établie par WASHCost. Des facteurs autres que les dépenses récurrentes doivent influencer le service. Il y a deux possibilités: le contexte est exceptionnel et nécessite des mesures spécifiques pour encourager l’entretien des latrines, ou bien d'autres facteurs que les coûts ont un impact significatif sur la fourniture de service."
+          a333: " Les latrines existantes sont assez propres et elles sont utilisées par certains membres des ménages. Les dépenses récurrentes annuelles sont supérieures à la fourchette de valeurs établie par WASHCost. Peut-être que le contexte requière une plus forte mobilisation pour l’utilisation et l’entretien des latrines, ou bien le service pourrait être géré de façon plus efficace."
+          a334: "Les latrines existantes sont nettoyées et vidangées régulièrement et elles sont utilisées par certains membres des ménages. Les dépenses récurrentes annuelles sont supérieures à la fourchette de valeurs établie par WASHCost, ce qui est peut-être la raison du niveau élevé du service. Mais il se peut aussi que le contexte requière une plus forte mobilisation pour l’utilisation et l’entretien des latrines, ou bien le service pourrait être géré de façon plus efficace."
+          a341: "Les équipements sanitaires sont utilisés par tous les membres des ménages. Cependant, les latrines ne sont pas nettoyées ou vidangées et peuvent constituer un danger pour la santé. Les dépenses récurrentes annuelles sont supérieures à la fourchette de valeurs établie par WASHCost. Des facteurs autres que les dépenses récurrentes doivent influencer le service. Il y a deux possibilités: le contexte est exceptionnel et nécessite des mesures spécifiques pour encourager l’entretien des latrines, ou bien d'autres facteurs que les coûts ont un impact significatif sur la fourniture de service."
+          a343: "Les latrines existantes sont assez propres et elles sont utilisées par tous les membres des ménages. Les dépenses récurrentes annuelles sont supérieures à la fourchette de valeurs établie par WASHCost. Peut-être que le contexte requière une plus forte mobilisation pour l’utilisation et l’entretien des latrines, ou bien le service pourrait être géré de façon plus efficace."
+          a344: "Les latrines existantes sont nettoyées et vidangées régulièrement et elles sont utilisées par tous les membres des ménages. Les dépenses récurrentes annuelles sont supérieures à la fourchette de valeurs établie par WASHCost, ce qui est peut-être la raison du niveau élevé du service. Mais il se peut aussi que le contexte requière une plus forte mobilisation pour l’utilisation et l’entretien des latrines, ou bien le service pourrait être géré de façon plus efficace."
+          b111: "Les équipements sanitaires n’assurent pas de séparation adéquate entre les usagers et les fèces et entraînent une pollution notable de l’environnement. Ils constituent un grave danger pour la santé ! La cause peut être une dépense d’investissement insuffisante elle est inférieure aux valeurs de référence établies par WASHCost), ou bien des facteurs autres que les coûts ont un impact sur la fourniture de service."
+          b113: "Les équipements sanitaires n’assurent pas de séparation adéquate entre les usagers et les fèces. Cependant, à cause du contexte, il n’y a pas d’impact négatif sur l’environnement, les fèces étant évacuées de façon hygiénique. La raison peut être un coût d’investissement insuffisant (il est bien inférieur aux valeurs de référence établies par WASHCost), ou bien des facteurs autres que les coûts ont un impact sur la fourniture de service.  "
+          b114: "Les équipements sanitaires n’assurent pas de séparation adéquate entre les usagers et les fèces. Cependant, à cause du contexte, il n’y a pas d’impact négatif sur l’environnement et les fèces sont adéquatement valorisées. La raison peut être une dépense d’investissement insuffisante (elle est bien inférieure aux valeurs de référence établies par WASHCost), ou bien des facteurs autres que les coûts ont un impact sur la fourniture de service.  "
+          b131: "Les équipements sanitaires ont une dalle en béton ou en matériau imperméable et assurent la séparation adéquate entre les usagers et les fèces. Cependant, ils entraînent une pollution notable de l’environnement, ce qui constitue un grave danger pour la santé ! La raison peut être une dépense d’investissement insuffisante (elle est bien inférieure aux valeurs de référence établies par WASHCost), ou bien des facteurs autres que les coûts ont un impact sur la fourniture de service.  "
+          b133: "La dépense d’investissement saisie est inférieure aux valeurs de référence établies par WASHCost, pourtant les latrines sont dotées d’une dalle en béton ou en matériau imperméable assurant la séparation adéquate entre les usagers et les fèces, et il n’y a pas d’impact négatif sur l’environnement. Y a-t-il une raison à cela ?"
+          b134: "La dépense d’investissement saisie est inférieure aux valeurs de référence établies par WASHCost, pourtant les latrines sont dotées d’une dalle en béton ou en matériau imperméable assurant la séparation adéquate entre les usagers et les fèces ; de plus, les produits dérivés assainis sont valorisés adéquatement. Y a-t-il une raison à cela ?"
+          b141: "Les équipements sanitaires ont une dalle en béton ou en matériau imperméable et assurent la séparation adéquate entre les usagers et les fèces dans le périmètre de la concession. Cependant, ils entraînent une pollution notable de l’environnement, ce qui constitue un grave danger pour la santé ! La raison peut être la dépense d’investissement insuffisante (elle est bien inférieure aux valeurs de référence établies par WASHCost), ou bien des facteurs autres que les coûts ont un impact sur la fourniture de service.  "
+          b143: "La dépense d’investissement saisie est inférieure aux valeurs de référence établies par WASHCost, pourtant les latrines sont dotées d’une dalle en béton ou en matériau imperméable assurant la séparation adéquate entre les usagers de la concession et les fèces, et il n’y a pas d’impact négatif sur l’environnement. Y a-t-il une raison à cela ?    "
+          b144: "La dépense d’investissement saisie est inférieure aux valeurs de référence établies par WASHCost, pourtant les latrines sont dotées d’une dalle en béton ou en matériau imperméable assurant la séparation adéquate entre les usagers et les fèces ; de plus, les produits dérivés assainis sont valorisés adéquatement. Y a-t-il une raison à cela ?    "
+          b211: "Les équipements sanitaires n’assurent pas de séparation adéquate entre les usagers et les fèces et entraînent une pollution notable de l’environnement. Ils constituent un grave danger pour la santé ! La dépense d’investissement se situe dans la fourchette des valeurs de référence établies par WASHCost, il y a sans doute des facteurs autres que les coûts qui influencent la fourniture de service, ou bien le contexte nécessite des ouvrages plus coûteux.  "
+          b213: "Les équipements sanitaires n’assurent pas de séparation adéquate entre les usagers et les fèces. Cependant, à cause du contexte, il n’y a pas d’impact négatif sur l’environnement et les fèces sont adéquatement évacuées. La dépense d’investissement se situe dans la fourchette des valeurs de référence établies par WASHCost, ce sont donc des facteurs autres que les coûts qui influencent l’accès à des services adéquats, ou bien le contexte nécessite des ouvrages plus coûteux.  "
+          b214: "Les équipements sanitaires n’assurent pas de séparation adéquate entre les usagers et les fèces. Cependant, à cause du contexte, il n’y a pas d’impact négatif sur l’environnement et les fèces sont adéquatement valorisées. La dépense d’investissement se situe dans la fourchette des valeurs de référence établies par WASHCost, ce sont donc des facteurs autres que les coûts qui influencent l’accès à des services adéquats, ou bien le contexte nécessite des ouvrages plus coûteux.  "
+          b231: "Les équipements sanitaires ont une dalle en béton ou en matériau imperméable et assurent la séparation adéquate entre les usagers et les fèces. Cependant, ils entraînent une pollution notable de l’environnement, ce qui constitue un grave danger pour la santé ! La dépense d’investissement se situe dans la fourchette des valeurs de référence établies par WASHCost, ce sont donc des facteurs autres que les coûts qui influencent l’impact sur l’environnement, ou bien le contexte nécessite des ouvrages plus coûteux.  "
+          b233: "Le coût d’investissement saisi se situe dans la fourchette des valeurs de référence établies par WASHCost et les latrines sont dotées d’une dalle en béton ou en matériau imperméable assurant la séparation adéquate entre les usagers et les fèces, et il n’y a pas d’impact négatif sur l’environnement."
+          b234: "La dépense d’investissement saisie se situe dans la fourchette des valeurs de référence établies par WASHCost et les latrines sont dotées d’une dalle en béton ou en matériau imperméable assurant la séparation adéquate entre les usagers et les fèces. De plus, les produits dérivés des latrines sont valorisés de façon adéquate.  "
+          b241: "Les équipements sanitaires ont une dalle en béton ou en matériau imperméable et assurent la séparation adéquate entre les usagers et les fèces dans le périmètre de la concession. Cependant, ils entraînent une pollution notable de l’environnement, ce qui constitue un grave danger pour la santé ! La dépense d’investissement se situe dans la fourchette des valeurs de référence établies par WASHCost, ce sont donc des facteurs autres que les coûts qui influencent l’impact sur l’environnement, ou bien le contexte nécessite des ouvrages plus coûteux.  "
+          b243: "La dépense d’investissement saisie se situe dans la fourchette des valeurs de référence établies par WASHCost et les latrines sont dotées d’une dalle en béton ou en matériau imperméable assurant la séparation adéquate entre les usagers et les fèces, et il n’y a pas d’impact négatif sur l’environnement.  "
+          b244: "La dépense d’investissement saisie se situe dans la fourchette des valeurs de référence établies par WASHCost et les latrines sont dotées d’une dalle en béton ou en matériau imperméable assurant la séparation adéquate entre les usagers et les fèces dans la concession. De plus, les produits dérivés des latrines sont valorisés de façon adéquate.  "
+          b311: "Les équipements sanitaires n’assurent pas de séparation adéquate entre les usagers et les fèces et entraînent une pollution notable de l’environnement. Ils constituent un grave danger pour la santé ! La dépense d’investissement est supérieure aux valeurs de référence établies par WASHCost, ce sont donc des facteurs autres que les coûts qui influencent la fourniture de service, ou bien le contexte exceptionnel nécessite des ouvrages plus coûteux.  "
+          b313: "Les équipements sanitaires n’assurent pas de séparation adéquate entre les usagers et les fèces. Cependant, à cause du contexte, il n’y a pas d’impact négatif sur l’environnement et les fèces sont adéquatement évacuées. La dépense d’investissement est supérieure aux valeurs de référence établies par WASHCost, ce sont donc des facteurs autres que les coûts qui influencent l’accès à des services adéquats, ou bien le contexte exceptionnel nécessite des ouvrages plus coûteux."
+          b314: "Les équipements sanitaires n’assurent pas de séparation adéquate entre les usagers et les fèces. Cependant, à cause du contexte, il n’y a pas d’impact négatif sur l’environnement et les fèces sont adéquatement valorisées. La dépense d’investissement est supérieure aux valeurs de référence établies par WASHCost, ce sont donc des facteurs autres que les coûts qui influencent l’accès à des services adéquats, ou bien le contexte exceptionnel nécessite des ouvrages plus coûteux."
+          b331: "Les équipements sanitaires ont une dalle en béton ou en matériau imperméable et assurent la séparation adéquate entre les usagers et les fèces. Cependant, ils entraînent une pollution notable de l’environnement, ce qui constitue un grave danger pour la santé ! La dépense d’investissement est supérieure aux valeurs de référence établies par WASHCost, ce sont donc des facteurs autres que les coûts qui influencent l’impact sur l’environnement, ou bien le contexte exceptionnel nécessite des ouvrages plus coûteux.  "
+          b333: "La dépense d’investissement saisie est supérieure aux valeurs de référence établies par WASHCost et les latrines sont dotées d’une dalle en béton ou en matériau imperméable assurant la séparation adéquate entre les usagers et les fèces, et il n’y a pas d’impact négatif sur l’environnement. Peut-être que le contexte est exceptionnel et requiert des ouvrages plus coûteux, ou bien la rentabilité doit être améliorée.  "
+          b334: "La dépense d’investissement saisie est supérieure aux valeurs de référence établies par WASHCost et les latrines sont dotées d’une dalle en béton ou en matériau imperméable assurant la séparation adéquate entre les usagers et les fèces. De plus, les produits dérivés des boues fécales sont adéquatement valorisés. Le niveau de services est peut-être plus élevé, ou le contexte est exceptionnel et requiert des ouvrages plus coûteux. Il se peut aussi que le rapport coût-efficacité soit médiocre.  "
+          b341: "Les équipements sanitaires ont une dalle en béton ou en matériau imperméable et assurent la séparation adéquate entre les usagers et les fèces dans la concession. Cependant, ils entraînent une pollution notable de l’environnement, ce qui constitue un grave danger pour la santé ! La dépense d’investissement est supérieure aux valeurs de référence établies par WASHCost, ce sont donc des facteurs autres que les coûts qui influencent l’impact sur l’environnement, ou bien le contexte exceptionnel nécessite des ouvrages plus coûteux.  "
+          b343: "La dépense d’investissement saisie est supérieure aux valeurs de référence établies par WASHCost et les latrines sont dotées d’une dalle en béton ou en matériau imperméable assurant la séparation adéquate entre les usagers dans la concession et les fèces, et il n’y a pas d’impact négatif sur l’environnement. Peut-être que le contexte est exceptionnel et requiert des ouvrages plus coûteux, ou bien la rentabilité doit être améliorée.  "
+          b344: "La dépense d’investissement saisie se situe dans la fourchette des valeurs de référence établies par WASHCost et les latrines sont dotées d’une dalle en béton ou en matériau imperméable assurant la séparation adéquate entre les usagers et les fèces dans la concession. De plus, les produits dérivés des boues fécales sont adéquatement valorisés. Le niveau de service atteint est très élevé, ou le contexte est exceptionnel et requiert des ouvrages plus coûteux. Il se peut aussi que le rapport coût-efficacité soit médiocre."
+        sustainability: 
+          four_stars: "Service amélioré"
+          one_star: "Service inexistant"
+          three_stars: "Service de base"
+          two_stars: "Service limité"
+    share: 
+      usd_per_person_per_year: "US$ par personne par an"
+    shared: 
+      questionnaire: 
+        capital_expenditure: 
+          info: "La ligne blanche indique la fourchette de coûts observés dans des projets WASHCost dans des zones avec un niveau de service de base. Les coûts de démarrage comprennent les dépenses d'investissement matériel et immatériel, tels que décrits ci-dessous,  Dépense d'investissement (matériel), capital investi dans la construction ou l'achat d'actifs fixes tels que structures en béton, pompes et tuyaux. Dépense d'investissement (immatériel), dépense dans les activités ponctuelles avec les parties prenantes, préalables à la construction, la mise en œuvre ou l'extension (y compris le développement des capacités). Voir - 'http://akvopedia.org/wiki/Capital_Expenditure_(CapEx)'"
+          question: "Combien avez-vous dépensé ou allez-vous dépenser pour la mise en place du système d'approvisionnement en eau de type %{type} (y compris la construction des ouvrages)(par personne)?"
+        country: 
+          info: "Veuillez sélectionner le pays où le service est mis en place pour nous aider à définir le contexte pour votre calcul."
+          placeholder: "Veuillez sélectionner le pays"
+          question: "Dans quel pays se trouve votre service?"
+        minutes_per_day: "Minutes par aller-retour"
+        people: Personnes
+        per_person_usd: "US$ par personne"
+        recurrent_expenditure: 
+          info: "La ligne blanche indique la fourchette de dépenses récurrentes observées dans des projets WASHCost dans des zones avec un niveau de service de base. Le total des dépenses récurrentes nécessaires pour maintenir un service de base continu 'comprennent:'' Dépenses d'exploitation et de 'fonctionnement:' en général il s'agit de dépenses récurrentes pour la main-d'œuvre, le carburant, les produits chimiques, des fournitures et l'achat d'eau en gros. 'Voir:' 'http://akvopedia.org/wiki/Operational_and_Minor_Maintenance_Expenditure_(OpEx)' Dépense de 'renouvellement:' dépense pour le renouvellement et le remplacement des actifs fixes, dépense occasionnelle pour assurer le fonctionnement continu d'un système, tel que le remplacement d'une dalle de latrine ou un moteur diesel dans un système d'exhaure motorisé. 'Voir:' 'http://akvopedia.org/wiki/Capital_Maintenance_Expenditure_(CapManEx)' 'Dépenses d'appui direct:'' il s’agit d’un appui structurel aux autorités de services ou gouvernements locaux et aux fournisseurs de service et aux usagers ou groupes d’usagers, dédié à l’organisation et à la gestion d’un service WASH. Cette dépense couvre le renforcement de capacités post-construction, le suivi, le conseil technique et l’appui administratif, organisationnel et juridique, notamment pour la mise en conformité avec les normes et directives nationales. 'Voir:' 'http://akvopedia.org/wiki/Expenditure_Direct_Support_(ExpDS)' 'Dépenses d'appui indirect:' dépense pour l'appui au niveau macro, pour la planification et l'élaboration des politiques sectorielles. Voir - 'http://akvopedia.org/wiki/Expenditure_Indirect_Support_(ExpIDS)'"
+          question: "Combien avez-vous dépensé ou allez-vous dépenser pour exploiter, entretenir et appuyer la fourniture du service d'eau %{type} (par personne par an)?"
+          value_label: "Par personne par an"
+        select_an_option: "Sélectionner une option"
+        usd_per_person_per_year: "US$ par personne par an"
+        values: 
+          info: "Le niveau d'un service se caractérise par les bénéfices pour les usagers, mesurés par rapport à quatre 'critères:'' quantité de l'eau, qualité de l'eau; accessibilité et fiabilité. 'Voir:' 'http://www.washcost.info/page/2454'"
+          v0: "Pas de service"
+          v1: "Service limité"
+          v2: "Service de base"
+          v3: "Service amélioré"
+    water: 
+      questionnaire: 
+        access: 
+          info: "Le temps nécessaire pour la collecte de l’eau est un aspect important d’un service d’eau. Un niveau de service élevé, fournit par exemple par un robinet à domicile, réduit le temps et l’effort requis par les ménages pour s’approvisionner en eau."
+          options: 
+            between_ten_and_thirty: "Entre 10 et 30"
+            between_thirty_and_sixty: "Entre 30 et 60"
+            less_than_ten: "Moins de 10"
+            more_thank_sixty: "Plus de 60"
+          question: "Combien de temps faut-il en moyenne pour s'approvisionner en eau aux sources améliorées?"
+        capital_expenditure: 
+          info: "La ligne blanche indique la fourchette de coûts observés dans des projets WASHCost dans des zones avec un niveau de service de base. Les coûts de démarrage comprennent les dépenses d'investissement matériel et immatériel, tels que décrits ci-dessous,  Dépense d'investissement (matériel), capital investi dans la construction ou l'achat d'actifs fixes tels que structures en béton, pompes et tuyaux. Dépense d'investissement (immatériel), dépense dans les activités ponctuelles avec les parties prenantes, préalables à la construction, la mise en œuvre ou l'extension (y compris le développement des capacités). Voir - 'http://akvopedia.org/wiki/Capital_Expenditure_(CapEx)'"
+          question: "Combien avez-vous dépensé ou allez-vous dépenser pour la mise en place du système d'approvisionnement en eau (y compris la construction des ouvrages)(par personne)?"
+        population: 
+          default_question: "Combien y a-t-il d'habitants dans la zone d'intervention?"
+          info: "Veuillez indiquer le nombre total de personnes de la zone pour lequel le service est prévu. Un système d’eau est en général prévu pour desservir un nombre donné d’usagers, ce nombre pouvant être fixé par la règlementation locale. Le nombre total de personnes correspond au nombre d’usagers prévus pour le système multiplié par le nombre de systèmes dans la zone. Par exemple, si une pompe est censée desservir 300 personnes, et s’il ya 100 pompes dans la zone, le nombre total de personnes pour lequel le service est prévu s’élève à 30 000 (300 pers. X 100 pompes)."
+          question: "Combien de personnes sont desservies par le système %{technology} dans la zone d'intervention?"
+        quality: 
+          info: "Un service d’eau doit fournir une eau de bonne qualité conforme aux normes nationales ou de l’OMS de façon continue."
+          options: 
+            no_testing: "Pas de test"
+            occasional_and_meets_standards: "Occasionnellement et la qualité satisfait les normes"
+            one_off_after_construction: "Un seul test après la construction des ouvrages"
+            regular_and_meets_standards: "Régulièrement et la qualité satisfait les normes"
+          question: "La qualité de l'eau est-elle testée?"
+        quantity: 
+          info: "Le minimum absolu pour la boisson, la cuisine et l’hygiène de base dans les situations d’urgence est de 5 litres par jour et par personne. Les besoins de base en temps normal sont censés être couverts par 20 litres d’eau. Un niveau plus élevé offre la possibilité d’utiliser l’eau à des fins productives. Avec 60 litres, plusieurs options sont ouvertes aux populations pour l’utilisation de l’eau.      "
+          label: "Litres par personne et par jour"
+          options: 
+            between_five_and_nineteen_litres: "Entre 5 et 19 litres par personne et par jour"
+            between_twenty_and_sixty_litres: "Entre 20 et 60 litres par personne et par jour"
+            less_than_five_litres: "Moins de 5 litres par personne et par jour"
+            more_than_sixy_litres: "Plus de 60 litres par personne et par jour"
+          question: "Quelle est la quantité d'eau prélevée aux sources améliorées?"
+        recurrent: 
+          value_label: "US$ Par personne et par an"
+        recurrent_expenditure: 
+          info: "La ligne blanche indique la fourchette de dépenses récurrentes observées dans des projets WASHCost dans des zones avec un niveau de service de base. Le total des dépenses récurrentes nécessaires pour maintenir un service de base continu 'comprennent:' Dépenses d'exploitation et de 'fonctionnement:' en général il s'agit de dépenses récurrentes pour la main-d'œuvre, le carburant, les produits chimiques, des fournitures et l'achat d'eau en gros. 'Voir:' 'http://akvopedia.org/wiki/Operational_and_Minor_Maintenance_Expenditure_(OpEx)' Dépense de 'renouvellement:' dépense pour le renouvellement et le remplacement des actifs fixes, dépense occasionnelle pour assurer le fonctionnement continu d'un système, tel que le remplacement d'une dalle de latrine ou un moteur diesel dans un système d'exhaure motorisé. 'Voir:' 'http://akvopedia.org/wiki/Capital_Maintenance_Expenditure_(CapManEx)' 'Dépenses d'appui direct:' il s’agit d’un appui structurel aux autorités de services ou gouvernements locaux et aux fournisseurs de service et aux usagers ou groupes d’usagers dédié à l’organisation et à la gestion d’un service WASH. Cette dépense couvre le renforcement de capacités post-construction, le suivi, le conseil technique et l’appui administratif, organisationnel et juridique, notamment pour la mise en conformité avec les normes et directives nationales. 'Voir:' 'http://akvopedia.org/wiki/Expenditure_Direct_Support_(ExpDS)' 'Dépenses d'appui indirect:' dépense pour l'appui au niveau macro pour la planification et l'élaboration des politiques sectorielles. Voir - 'http://akvopedia.org/wiki/Expenditure_Indirect_Support_(ExpIDS)'"
+          question: "Combien avez-vous dépensé ou allez-vous dépenser pour exploiter, entretenir et appuyer la fourniture du service d'eau (par personne par an)?"
+          value_label: "Par personne par an"
+        reliability: 
+          info: "Un service très fiable est un service qui garantit aux usagers qu’ils ont accès à de l’eau conforme à tous les autres critères, à une source donnée, à tout moment. La fiabilité est aussi une question de prévisbilité. Même un service fournissant ponctuellement de l’eau tous les trois jours peut être considéré comme fiable. Un service utilisant différentes sources selon la saison (saison des pluies ou saison sèche) peut aussi être considéré comme globalement fiable. Les services peu fiables sont caractérisés par des périodes hors services, des pannes importantes et des délais de réparation trop longs."
+          options: 
+            not_working_all_of_the_time: "Ne fonctionne jamais"
+            not_working_less_than_twelve_days_a_year: "Fonctionne la plupart du temps ; moins de 12 jours par an hors service"
+            not_working_more_than_twelve_days_a_year: "Hors service plus de 12 jours par an"
+            works_all_the_time: "Fonctionne toujours"
+          question: "Le service est-il fiable? Combien de jours par an le système d'eau est-il en panne ?"
+        technology: 
+          info: |
+              Borehole handpump: "Adduction avec pompage, stockage et distribution à des bornes fontaines publiques et possibilité de branchements privés."
+              Mechanised borehole: "L'eau est distribuée grâce à un petit réseau de bornes fontaines publiques. Le stockage est en général limité à un réservoir surélevé directement raccordé à la pompe. Les branchements privés sont rares."
+              Single town scheme: "Système en réseau avec pompage, stockage et distribution qui s'étend sur plusieurs localités raccordées les unes aux autres. Chaque localité a son propre réservoir de stockage et son propre réseau de distribution. "
+              Multi town scheme: "Système en réseau avec pompage, stockage et distribution qui s'étend sur plusieurs localités raccordées les unes aux autres. Chaque localité a son propre réservoir de stockage et son propre réseau de distribution."
+              Mixed pipe supply: "L’eau est distribuée par plusieurs systèmes distincts de fourniture de service qui se chevauchent fréquemment."
+          options: 
+            borehole_handpump: "Forage avec pompe à motricité humaine"
+            mechanised_borehole: "Forage mécanisé"
+            mixed_pipe_supply: "Système mixte forage et réseau"
+            multi_town_scheme: "Réseau desservant plusieurs localités"
+            single_town_scheme: "Réseau pour une seule localité"
+          question: "Quel est le système utilisé pour fournir le service d'eau?"
+      report: 
+        final_report: "Outil de base Eau | Rapport final"
+        sections: 
+          country: Pays
+          population: Population
+          quality: Qualité
+          quantity: Quantité
+          reliability: Fiabilité
+          technology: Technologie
+        summaries: 
+          a111: "Ce service ne fournit pas la quantité minimale souhaitée, soit en raison des faibles dépenses d’investissement, soit parce que les sources sont à plus de 60 minutes (aller-retour) des habitations. Des facteurs autres que les coûts peuvent aussi influencer la qualité du service."
+          a112: "Ce service ne fournit pas la quantité minimale souhaitée, soit en raison des faibles dépenses d’investissement, soit parce que les sources sont entre 30 et 60 minutes (aller-retour) des habitations. Des facteurs autres que les coûts peuvent aussi influencer la qualité du service."
+          a113: "Ce service ne fournit pas la quantité minimale souhaitée, bien que les sources se trouvent à 30 minutes de distance (aller-retour) des habitations. Cela peut être dû aux faibles dépenses d’investissement. Des facteurs autres que les coûts peuvent aussi influencer la qualité du service."
+          a114: "Ce service ne fournit pas la quantité minimale souhaitée, alors que les sources se trouvent à 10 minutes (aller-retour) seulement des habitations. Cela peut être dû aux faibles dépenses d’investissement. Des facteurs autres que les coûts peuvent aussi influencer la qualité du service."
+          a121: "Ce service ne fournit pas la quantité minimale souhaitée, soit en raison des faibles dépenses d’investissement, soit parce que les sources sont à plus de 60 minutes (aller-retour) des habitations. Des facteurs autres que les coûts peuvent aussi influencer la qualité du service."
+          a122: "Ce service ne fournit pas la quantité minimale souhaitée, soit en raison des faibles dépenses d’investissement, soit parce que les sources sont entre 30 et 60 minutes (aller-retour) des habitations. Des facteurs autres que les coûts peuvent aussi influencer la qualité du service."
+          a123: "Ce service ne fournit pas la quantité minimale souhaitée, même si les sources se trouvent à 30 minutes (aller-retour) des habitations. Cela peut être dû aux faibles dépenses d’investissement. Des facteurs autres que les coûts peuvent aussi influencer la qualité du service."
+          a124: "Ce service ne fournit pas la quantité minimale souhaitée, bien que les sources se trouvent à 10 minutes (aller-retour) seulement des habitations. Cela peut-être dû aux faibles dépenses d’investissement. Des facteurs autres que les coûts peuvent aussi influencer la qualité du service."
+          a131: "Ce service fournit la quantité souhaitée – cependant le manque de sources améliorées oblige les usagers à passer plus de 60 minutes par jour à s'approvisionner en eau. Envisagez d'augmenter les investissements pour améliorer l'accès."
+          a132: "Ce service fournit la quantité souhaitée – cependant un manque de sources améliorées oblige les usagers à passer de 30 à 60 minutes par jour à s'approvisionner en eau. Envisagez d'augmenter les investissements pour améliorer l'accès."
+          a133: "La dépense d'investissement est inférieure aux valeurs de référence calculées par WASHCost. Pourtant ce service fournit une quantité suffisante et les sources améliorées sont à 30 minutes (aller-retour) des habitations. Y a-t-il une raison à cela ?"
+          a134: "La dépense d'investissement saisie est inférieure aux dépenses observées par WASHCost. Pourtant ce service fournit une quantité suffisante et les sources améliorées sont à 10 minutes (aller-retour) des habitations. Y a-t-il une raison à cela ?"
+          a141: "Ce service fournit plus que la quantité souhaitée – bien que le manque de sources améliorées oblige les usagers à passer plus de 60 minutes par jour (aller-retour) à s'approvisionner en eau. Envisagez d'augmenter les investissements pour améliorer l'accès."
+          a142: "Ce service fournit plus que la quantité souhaitée – cependant le manque de sources améliorées oblige les usagers à consacrer de 30 à 60 minutes par jour (aller-retour) pour s'approvisionner en eau. Envisagez d'augmenter les investissements pour améliorer l'accès."
+          a143: "La dépense d'investissement saisie est inférieure aux valeurs de référence établies par WASHCost. Pourtant ce service fournit plus que la quantité souhaitée et les sources améliorées sont à 30 minutes (aller-retour) des habitations. Y a-t-il une raison à cela ?"
+          a144: "La dépense d'investissement saisie est inférieure aux dépenses observées par WASHCost. Pourtant ce service fournit plus que la quantité souhaitée et les sources améliorées sont à 10 minutes (aller-retour) des habitations. Y a-t-il une raison à cela ?"
+          a211: "Ce service ne fournit pas la quantité minimale souhaitée et les sources améliorées sont à plus de 60 minutes (aller-retour) des habitations. La dépense d'investissement saisie se situe dans la fourchette observée par WASHCost. Des facteurs autres que les coûts doivent influencer la qualité du service ou le contexte requiert des équipements plus coûteux."
+          a212: "Ce service ne fournit pas la quantité minimale souhaitée et les sources améliorées sont entre 30 et 60 minutes (aller-retour) des habitations. Les dépenses d’investissement se situent dans la fourchette établie par WASHCost. Des facteurs autres que les coûts doivent influencer la qualité du service ou le contexte requiert des équipements plus coûteux."
+          a213: "Ce service ne fournit pas la quantité minimale souhaitée et les sources sont à 30 minutes (aller-retour) des habitations. Les dépenses d’investissement se situent dans la fourchette observée par WASHCost. Des facteurs autres que les coûts doivent influencer la quantité fournie et/ou le contexte requiert des équipements plus coûteux."
+          a214: "Ce service ne fournit pas la quantité minimale souhaitée et les sources sont à 10 minutes (aller-retour) des habitations. Les dépenses d’investissement se situent dans la fourchette de coût observée par WASHCost. Des facteurs autres que les coûts doivent influencer la quantité fournie et/ou le contexte requiert des équipements plus coûteux."
+          a221: "Ce service ne fournit pas la quantité minimale souhaitée et les sources sont à 60 minutes (aller-retour) des habitations. La dépense d'investissement se situe dans la fourchette des valeurs de référence calculées par WASHCost. Des facteurs autres que les coûts doivent influencer la qualité du service ou le contexte requiert des équipements plus coûteux."
+          a222: "Ce service ne fournit pas la quantité minimale souhaitée et les sources sont de 30 à 60 minutes (aller-retour) des habitations. Les dépenses d’investissement se situent dans la fourchette de coût observée par WASHCost. Des facteurs autres que les coûts doivent influencer la qualité du service ou le contexte requiert des équipements plus coûteux."
+          a223: "Ce service ne fournit pas la quantité minimale souhaitée et les sources sont à 30 minutes (aller-retour) des habitations. Les dépenses d’investissement se situent dans la fourchette de coût observée par WASHCost. Des facteurs autres que les coûts doivent influencer la quantité fournie et/ou le contexte requiert des équipements plus coûteux."
+          a224: "Ce service ne fournit pas la quantité minimale souhaitée et les sources sont à 10 minutes (aller-retour) des habitations. Les dépenses d’investissement se situent dans la fourchette de coût observée par WASHCost. Des facteurs autres que les coûts doivent influencer la qualité du service et/ou le contexte requiert des équipements plus coûteux."
+          a231: "Ce service fournit la quantité souhaitée – cependant le manque de sources améliorées oblige les usagers à passer plus de 60 minutes par jour (aller-retour) pour s'approvisionner en eau. Les dépenses d’investissement se situent dans la fourchette de coût observée par WASHCost. Des facteurs autres que les coûts doivent influencer la qualité du service ou le contexte requiert des équipements plus coûteux."
+          a232: "Ce service fournit la quantité souhaitée – cependant le manque de sources améliorées oblige les usagers à passer de 30 à 60 minutes par jour (aller-retour) pour s'approvisionner en eau. Les dépenses d’investissement se situent dans la fourchette des valeurs de référence calculées par WASHCost. Des facteurs autres que les coûts doivent influencer la qualité du service ou le contexte requiert des équipements plus coûteux."
+          a233: "La dépense d'investissement saisie se situe dans la fourchette de coûts observée par WASHCost et ce service fournit la quantité souhaitée. En outre les sources améliorées sont à 30 minutes (aller-retour) des habitations. Bravo !"
+          a234: "La dépense d'investissement saisie se situe dans la fourchette de coûts observée par WASHCost et ce service fournit la quantité souhaitée et les sources améliorées sont à 10 minutes (aller-retour) des habitations. Bravo !"
+          a241: "Ce service fournit plus que la quantité souhaitée, cependant le manque de sources améliorées oblige les usagers à passer plus de 60 minutes par jour (aller-retour) pour s'approvisionner en eau. Les dépenses d’investissement se situent dans la fourchette des valeurs de référence calculées par WASHCost. Des facteurs autres que les coûts doivent influencer la qualité de service ou le contexte requiert des équipements plus coûteux."
+          a242: "Ce service fournit plus que la quantité souhaitée – cependant le manque de sources améliorées oblige les usagers à passer entre 30 et 60 minutes par jour (aller-retour) pour s'approvisionner en eau. Les dépenses d’investissement se situent dans la fourchette de dépenses observées par WASHCost.  Des facteurs autres que les coûts doivent influencer la qualité de service ou le contexte requiert des équipements plus coûteux."
+          a243: "La dépense d'investissement saisie se situe dans la fourchette des dépenses observées par WASHCost ; ce service fournit plus qu’une quantité de base et les sources améliorées sont à 30 minutes (aller-retour) des habitations. Bravo !"
+          a244: "La dépense d'investissement saisie se situe dans la fourchette de référence observée par WASHCost et ce service fournit plus qu’une quantité de base et les sources améliorées sont à 10 minutes (aller-retour) des habitations. Bravo !"
+          a311: "Ce service ne fournit pas la quantité minimale souhaitée et les sources améliorées sont à plus de 60 minutes (aller-retour) des habitations. Les dépenses d’investissement sont plus élevées que celles observées par WASHCost. Il y a deux possibilités: le contexte est exceptionnel et nécessite des équipements plus coûteux ou d'autres facteurs que les coûts ont un impact significatif sur la qualité du service."
+          a312: "Ce service ne fournit pas la quantité minimale souhaitée et les sources améliorées sont de 30 à 60 minutes (aller-retour) des habitations. Les dépenses d’investissement sont plus élevées que celles observées par WASHCost. Il y a deux possibilités: le contexte est exceptionnel et nécessite des équipements plus coûteux ou d'autres facteurs que les coûts ont un impact significatif sur la qualité du service."
+          a313: "Ce service ne fournit pas la quantité minimale souhaitée et les sources améliorées sont à 30 minutes (aller-retour) des habitations. Les dépenses d’investissement sont plus élevées que celles observées par WASHCost. Des facteurs autres que les coûts influent sur la quantité fournie et/ou le contexte requiert des équipements plus coûteux."
+          a314: "Ce service ne fournit pas la quantité minimale souhaitée et les sources améliorées sont à 10 minutes (aller-retour) des habitations. Les dépenses d’investissement sont plus élevées que celles observées par WASHCost. Ainsi, des facteurs autres que coûts influent sur la quantité fournie et/ou le contexte requiert des équipements plus coûteux."
+          a321: "Ce service ne fournit pas la quantité minimale souhaitée et les sources améliorées sont à plus de 60 minutes (aller-retour) des habitations. Les dépenses d’investissement sont plus élevées que la valeur de référence calculé par WASHCost. Il y a deux possibilités: le contexte est exceptionnel et nécessite des équipements plus chers ou d'autres facteurs que les coûts ont un impact significatif sur la qualité du service."
+          a322: "Ce service ne fournit pas la quantité minimale souhaitée et les sources améliorées sont de 30 à 60 minutes (aller-retour) des habitations. Les dépenses d’investissement sont plus élevées que celles observées par WASHCost. Il y a deux possibilités: le contexte est exceptionnel et nécessite des équipements plus chers ou d'autres facteurs que les coûts ont un impact significatif sur la qualité du service."
+          a323: "Ce service ne fournit pas la quantité minimale souhaitée et les sources améliorées sont à 30 minutes (aller-retour) des habitations. Les dépenses d’investissement sont plus élevées que celles observées par WASHCost. Des facteurs autres que les coûts influent sur la quantité fournie et/ou le contexte requiert des équipements plus coûteux."
+          a324: "Ce service ne fournit pas la quantité minimale souhaitée et les sources sont à 10 minutes (aller-retour) des habitations. Les dépenses d’investissement sont plus élevées que celles observées par WASHCost. Des facteurs autres que les coûts influent sur la quantité fournie et/ou le contexte requiert des équipements plus coûteux."
+          a331: "Ce service fournit la quantité souhaitée – cependant le manque de sources améliorées oblige les usagers à passer plus de 60 minutes par jour (aller-retour) à s'approvisionner en eau. Les dépenses d’investissement sont plus élevées que celles observées par WASHCost. Le contexte peut exiger un investissement plus important pour améliorer l'accès."
+          a332: "Ce service fournit la quantité souhaitée – cependant le manque de sources améliorées oblige les usagers à passer entre 30 et 60 minutes par jour (aller-retour) à s'approvisionner en eau. Les dépenses d’investissement sont plus élevées que celles observées par WASHCost. Le contexte peut exiger un investissement plus important pour améliorer l'accès."
+          a333: "Le coût d'investissement saisi est plus élevé que les coûts observés par WASHCost ; ce service fournit la quantité souhaitée et les sources améliorées sont à 30 minutes (aller-retour) des habitations. Ainsi, le contexte requiert des équipements plus coûteux, ou la rentabilité doit être améliorée."
+          a334: "Le coût d'investissement saisi est plus élevé les coûts observés par WASHCost ; ce service fournit la quantité souhaitée et les sources améliorées sont à 10 minutes (aller-retour) des habitations. Un bon niveau de service est atteint et peut exiger des équipements plus chers. Alternativement, il est possible que la rentabilité puisse être améliorée."
+          a341: "Ce service fournit plus que la quantité souhaitée – cependant le manque de sources améliorées oblige les usagers à passer plus de 60 minutes par jour (aller-retour) pour s'approvisionner en eau. Les dépenses d’investissement sont plus élevées que celles observées par WASHCost. Le contexte peut justifier que des investissements plus importants soient nécessaires pour améliorer l'accès."
+          a342: "Ce service fournit la quantité souhaitée – cependant le manque de sources améliorées oblige les usagers à passer entre 30 et 60 minutes par jour (aller-retour) pour s'approvisionner en eau. Les dépenses d’investissement sont plus élevées que celles observées par WASHCost. Le contexte peut justifier que des investissements plus importants soient nécessaires pour améliorer l'accès."
+          a343: "La dépense d'investissement saisie est sont plus élevée que les dépenses observées par WASHCost ; ce service fournit plus que la quantité souhaitée et les sources améliorées sont à 30 minutes (aller-retour) des habitations. Ainsi, le contexte requiert des équipements plus coûteux, ou la rentabilité peut être améliorée."
+          a344: "La dépense d'investissement saisie est plus élevée que la dépense observée par WASHCost ; ce service fournit plus que la quantité souhaitée et les sources améliorées sont à 10 minutes (aller-retour) des habitations. Un très bon niveau de service est atteint, et en conséquence, le contexte peut exiger des équipements plus chers. Il est possible aussi que la rentabilité puisse être améliorée."
+          b011: "La qualité de l’eau est inacceptable, elle constitue un grave danger pour la santé. De plus, le service est indisponible ou en panne pendant des périodes inacceptables. Pratiquement aucune ressource n’a été affectée aux dépenses récurrentes annuelles, causant la défaillance du service."
+          b012: "La qualité de l’eau est inacceptable, elle constitue un grave danger pour la santé. De plus, le service est indisponible ou en panne pendant des périodes prolongées. Pratiquement aucune ressource n’a été affectée aux dépenses récurrentes annuelles, causant la défaillance du service. "
+          b013: "Même si le service est fiable, la qualité de l’eau est inacceptable et elle constitue un grave danger pour la santé. Pratiquement aucune ressource n’est affectée aux dépenses récurrentes annuelles, notamment les dépenses nécessaires pour assurer la qualité de l’eau. "
+          b014: "Même si le service est très fiable, la qualité de l’eau est inacceptable et elle constitue un grave danger pour la santé. Pratiquement aucune ressource n’est affectée aux dépenses récurrentes annuelles, notamment les dépenses nécessaires pour assurer la qualité de l’eau. "
+          b021: "La qualité de l’eau est insuffisante, elle constitue un danger pour la santé. De plus, le service est indisponible ou en panne pendant des périodes inacceptables. Pratiquement aucune ressource n’a été affectée aux dépenses récurrentes annuelles, causant la défaillance du service. "
+          b022: "La qualité de l’eau est insuffisante, elle constitue un danger pour la santé. De plus, le service est indisponible ou en panne pendant des périodes prolongées. Pratiquement aucune ressource n’a été affectée aux dépenses récurrentes annuelles et il en résulte que le service est en train de défaillir. "
+          b023: "Même si le service est fiable, la qualité de l’eau est insuffisante et elle peut constituer un grave danger pour la santé. Pratiquement aucune ressource n’est affectée aux dépenses récurrentes annuelles, notamment les dépenses nécessaires pour assurer la qualité de l’eau. "
+          b024: "Même si le service est très fiable, la qualité de l’eau est insuffisante et elle peut constituer un grave danger pour la santé. Pratiquement aucune ressource n’est affectée aux dépenses récurrentes annuelles, notamment les dépenses nécessaires pour assurer la qualité de l’eau. "
+          b031: "La qualité de l’eau est acceptable, cependant le service est indisponible ou en panne pendant des périodes inacceptables. Pratiquement aucune ressource n’est affectée aux dépenses récurrentes annuelles nécessaires pour améliorer la fiabilité. "
+          b032: "La qualité de l’eau est acceptable, cependant le service est indisponible ou en panne pendant des périodes prolongées. Pratiquement aucune ressource n’est affectée aux dépenses récurrentes annuelles nécessaires pour améliorer la fiabilité. "
+          b033: "La qualité de l’eau est acceptable et le service est assez fiable. Les dépenses récurrentes annuelles totales sont bien inférieures aux valeurs de référence établies par WASHCost. Peut-être que le contexte peut expliquer cette disparité, mais envisagez de valider les données saisies. "
+          b034: "La qualité de l’eau est acceptable et le service est très fiable. Les dépenses récurrentes annuelles totales sont bien inférieures aux valeurs de références établies par WASHCost. Peut-être que le contexte peut expliquer cette disparité, mais envisagez de valider les données saisies. "
+          b041: "La qualité de l’eau est bonne, cependant le service est indisponible ou en panne pendant des périodes inacceptables. Pratiquement aucune ressource n’est affectée aux dépenses récurrentes annuelles nécessaires pour améliorer la fiabilité. "
+          b042: "La qualité de l’eau est bonne, cependant le service est indisponible ou en panne pendant des périodes prolongées. Pratiquement aucune ressource n’est affectée aux dépenses récurrentes annuelles nécessaires pour améliorer la fiabilité. "
+          b043: "La qualité de l’eau est bonne et le service est assez fiable. Les dépenses récurrentes annuelles totales sont bien inférieures aux valeurs de références établies par WASHCost. Peut-être que le contexte peut expliquer cette disparité, mais envisagez de valider les données saisies. "
+          b044: "La qualité de l’eau est bonne et le service est très fiable. Les dépenses récurrentes annuelles totales sont bien inférieures aux valeurs de références établies par WASHCost. Peut-être que le contexte peut expliquer cette disparité, mais envisagez de valider les données saisies "
+          b111: " La qualité de l’eau est inacceptable, elle constitue un danger pour la santé. De plus, le service est indisponible ou en panne pendant des périodes inacceptables. Les ressources affectées aux dépenses récurrentes annuelles sont insuffisantes, causant la défaillance du service. "
+          b112: "La qualité de l’eau est inacceptable, elle constitue un danger pour la santé. De plus, le service est indisponible ou en panne pendant des périodes prolongées. Les ressources affectées aux dépenses récurrentes annuelles sont insuffisantes, causant la défaillance du service. "
+          b113: "Même si le service est fiable, la qualité de l’eau est inacceptable et elle constitue un grave danger pour la santé. Les ressources affectées aux dépenses récurrentes annuelles, notamment aux dépenses nécessaires pour assurer la qualité de l’eau, sont insuffisantes. "
+          b114: "Même si le service est très fiable, la qualité de l’eau est inacceptable et elle constitue un grave danger pour la santé. Les ressources affectées aux dépenses récurrentes annuelles, notamment aux dépenses nécessaires pour assurer la qualité de l’eau, sont insuffisantes. "
+          b121: "La qualité de l’eau est insuffisante, elle peut constituer un danger pour la santé. De plus, le service est indisponible ou en panne pendant des périodes inacceptables. Les ressources affectées aux dépenses récurrentes annuelles sont insuffisantes, causant la défaillance du service. "
+          b122: "La qualité de l’eau est insuffisante, elle peut constituer un danger pour la santé. De plus, le service est indisponible ou en panne pendant des périodes prolongées. Les ressources affectées aux dépenses récurrentes annuelles sont insuffisantes, et il en résulte que le service est en train de défaillir. "
+          b123: "Même si le service est fiable, la qualité de l’eau est insuffisante et elle peut constituer un grave danger pour la santé. Les ressources affectées aux dépenses récurrentes annuelles, notamment aux dépenses nécessaires pour assurer la qualité de l’eau, sont insuffisantes. "
+          b124: "Même si le service est très fiable, la qualité de l’eau est insuffisante et elle peut constituer un grave danger pour la santé. Les ressources affectées aux dépenses récurrentes annuelles, notamment aux dépenses nécessaires pour assurer la qualité de l’eau, sont insuffisantes. "
+          b131: "La qualité de l’eau est acceptable, cependant le service est indisponible ou en panne pendant des périodes inacceptables. Les ressources affectées aux dépenses récurrentes annuelles nécessaires pour améliorer la fiabilité sont insuffisantes. "
+          b132: "La qualité de l’eau est acceptable, cependant le service est indisponible ou en panne pendant des périodes prolongées. Les ressources affectées aux dépenses récurrentes annuelles nécessaires pour améliorer la fiabilité sont insuffisantes. "
+          b133: "La qualité de l’eau est acceptable et le service est assez fiable. Les dépenses récurrentes annuelles totales sont inférieures aux valeurs de référence établies par WASHCost. Peut-être que le contexte peut expliquer cette disparité, mais envisagez de valider les données saisies. "
+          b134: "La qualité de l’eau est acceptable et le service est très fiable. Les dépenses récurrentes annuelles totales sont inférieures aux valeurs de référence établies par WASHCost. Peut-être que le contexte peut expliquer cette disparité, mais envisagez de valider les données saisies. "
+          b141: "La qualité de l’eau est bonne, cependant le service est indisponible ou en panne pendant des périodes inacceptables. Les ressources affectées aux dépenses récurrentes annuelles nécessaires pour améliorer la fiabilité sont insuffisantes. "
+          b142: "La qualité de l’eau est bonne, cependant le service est indisponible ou en panne pendant des périodes prolongées. Les ressources affectées aux dépenses récurrentes annuelles nécessaires pour améliorer la fiabilité sont insuffisantes. "
+          b143: "La qualité de l’eau est bonne et le service est assez fiable. Les dépenses récurrentes annuelles totales sont inférieures aux valeurs de référence établies par WASHCost. Peut-être que le contexte peut expliquer cette disparité, mais envisagez de valider les données saisies. "
+          b144: "La qualité de l’eau est bonne et le service est très fiable. Les dépenses récurrentes annuelles totales sont inférieures aux valeurs de référence établies par WASHCost. Peut-être que le contexte peut expliquer cette disparité, mais envisagez de valider les données saisies. "
+          b211: " La qualité de l’eau est inacceptable, elle constitue un grave danger pour la santé. De plus, le service est indisponible ou en panne pendant des périodes inacceptables. Les dépenses récurrentes se situent dans la fourchette observée par WASHCost. Des facteurs autres que les dépenses récurrentes doivent influencer le fonctionnement continu du service. Il se peut aussi que le contexte requière des dispositions supplémentaires pour maintenir les ouvrages en état de marche."
+          b212: "La qualité de l’eau est inacceptable, elle constitue un grave danger pour la santé. De plus, le service est indisponible ou en panne pendant des périodes prolongées. Les dépenses récurrentes se situent dans la fourchette observée par WASHCost. Des facteurs autres que les dépenses récurrentes doivent influencer le fonctionnement continu du service. Il se peut aussi que le contexte requière des dispositions supplémentaires pour maintenir les ouvrages en état de marche. "
+          b213: "Bien que le service soit fiable, la qualité de l’eau est inacceptable, elle constitue un grave danger pour la santé. Les dépenses récurrentes se situent dans la fourchette observée par WASHCost. D’autres facteurs sont peut-être à l’origine de la mauvaise qualité de l’eau. Il faudrait y remédier, soit en augmentant les dépenses récurrentes, soit par d’autres mesures. "
+          b214: "Bien que le service soit très fiable, la qualité de l’eau est inacceptable, elle constitue un grave danger pour la santé. Les dépenses récurrentes se situent dans la fourchette observée par WASHCost. D’autres facteurs sont peut-être à l’origine de la mauvaise qualité de l’eau. Il faudrait y remédier, soit en augmentant les dépenses récurrentes, soit par d’autres mesures. "
+          b221: "La qualité de l’eau est insuffisante, elle peut constituer un grave danger pour la santé. De plus, le service est indisponible ou en panne pendant des périodes inacceptables. Les dépenses récurrentes se situent dans la fourchette observée par WASHCost. Des facteurs autres que les dépenses récurrentes doivent influencer le fonctionnement continu du service. Il se peut aussi que le contexte requière des dispositions supplémentaires pour maintenir les ouvrages en état de marche. "
+          b222: "La qualité de l’eau est insuffisante, elle peut constituer un grave danger pour la santé. De plus, le service est indisponible ou en panne pendant des périodes prolongées. Les dépenses récurrentes se situent dans la fourchette observée par WASHCost. Des facteurs autres que les dépenses récurrentes doivent influencer le fonctionnement continu du service. Il se peut aussi que le contexte requière des dispositions supplémentaires pour maintenir les ouvrages en état de marche. "
+          b223: "Bien que le service soit fiable, la qualité de l’eau est insuffisante, elle peut constituer un grave danger pour la santé. Les dépenses récurrentes se situent dans la fourchette observée par WASHCost. D’autres facteurs sont peut-être à l’origine de la mauvaise qualité de l’eau. Il faudrait y remédier, soit en augmentant les dépenses récurrentes, soit par d’autres mesures. "
+          b224: "Bien que le service soit très fiable, la qualité de l’eau est insuffisante, elle peut constituer un grave danger pour la santé. Les dépenses récurrentes se situent dans la fourchette observée par WASHCost. D’autres facteurs sont peut-être à l’origine de la mauvaise qualité de l’eau. Il faudrait y remédier, soit en augmentant les dépenses récurrentes, soit par d’autres mesures. "
+          b231: "La qualité de l’eau est acceptable, cependant le service est indisponible ou en panne pendant des périodes inacceptables. Les dépenses récurrentes se situent dans la fourchette observée par WASHCost. Des facteurs autres que les dépenses récurrentes doivent influencer le fonctionnement continu du service. Il se peut aussi que le contexte requière des dispositions supplémentaires pour maintenir les ouvrages en état de marche. "
+          b232: "La qualité de l’eau est acceptable, cependant le service est indisponible ou en panne pendant des périodes prolongées. Les dépenses récurrentes se situent dans la fourchette observée par WASHCost. Des facteurs autres que les dépenses récurrentes doivent influencer le fonctionnement continu du service. Il se peut aussi que le contexte requière des dispositions supplémentaires pour maintenir les ouvrages en état de marche."
+          b233: "La qualité de l’eau est acceptable et le service est assez fiable. Les dépenses récurrentes annuelles totales correspondent à peu près aux valeurs de référence établies par WASHCost."
+          b234: " La qualité de l’eau est acceptable et le service est très fiable. Les dépenses récurrentes annuelles totales correspondent à peu près aux valeurs de référence établies par WASHCost."
+          b241: "La qualité de l’eau est bonne, cependant le service est indisponible ou en panne pendant des périodes inacceptables. Les dépenses récurrentes se situent dans la fourchette observée par WASHCost. Des facteurs autres que les dépenses récurrentes doivent influencer le fonctionnement continu du service. Il se peut aussi que le contexte requière des dispositions supplémentaires pour maintenir les ouvrages en état de marche. "
+          b242: "La qualité de l’eau est bonne, cependant le service est indisponible ou en panne pendant des périodes prolongées. Les dépenses récurrentes se situent dans la fourchette observée par WASHCost. Des facteurs autres que les dépenses récurrentes doivent influencer le fonctionnement continu du service. Il se peut aussi que le contexte requière des dispositions supplémentaires pour maintenir les ouvrages en état de marche. "
+          b243: " La qualité de l’eau est bonne et le service est assez fiable. Les dépenses récurrentes annuelles totales correspondent à peu près aux valeurs de référence établies par WASHCost."
+          b244: " La qualité de l’eau est bonne et le service est très fiable. Les dépenses récurrentes annuelles totales correspondent à peu près aux valeurs de référence établies par WASHCost."
+          b311: "La qualité de l’eau est inacceptable, elle constitue un grave danger pour la santé. De plus, le service est indisponible ou en panne pendant des périodes inacceptables. Les dépenses récurrentes sont supérieures à la fourchette de dépenses observée par WASHCost. Il y a deux possibilités: le contexte est exceptionnel et nécessite des mesures spécifiques pour améliorer la qualité de l’eau et la fiabilité du service, ou bien d'autres facteurs que les coûts ont un impact significatif sur la fourniture de service. "
+          b312: "La qualité de l’eau est inacceptable, elle constitue un grave danger pour la santé. De plus, le service est indisponible ou en panne pendant des périodes prolongées. Les dépenses récurrentes sont supérieures à la fourchette de dépenses observée par WASHCost. Il y a deux possibilités: le contexte est exceptionnel et nécessite des mesures spécifiques pour améliorer la qualité de l’eau et la fiabilité du service, ou bien d'autres facteurs que les coûts ont un impact significatif sur la fourniture de service. "
+          b313: "Bien que le service soit fiable, la qualité de l’eau est inacceptable, elle constitue un grave danger pour la santé. Les dépenses récurrentes sont supérieures à la fourchette de dépenses observée par WASHCost. Il y a deux possibilités: le contexte est exceptionnel et nécessite des mesures spécifiques pour améliorer la qualité de l’eau, ou bien d'autres facteurs que les coûts ont un impact significatif sur la fourniture de service. "
+          b314: "Bien que le service soit très fiable, la qualité de l’eau est inacceptable, elle constitue un grave danger pour la santé. Les dépenses récurrentes sont supérieures à la fourchette de dépenses observée par WASHCost. Il y a deux possibilités: le contexte est exceptionnel et nécessite des mesures spécifiques pour améliorer la qualité de l’eau, ou bien d'autres facteurs que les coûts ont un impact significatif sur la fourniture de service. "
+          b321: "La qualité de l’eau est insuffisante, elle peut constituer un grave danger pour la santé. De plus, le service est indisponible ou en panne pendant des périodes inacceptables. Les dépenses récurrentes sont supérieures à la fourchette de dépenses observée par WASHCost. Il y a deux possibilités: le contexte est exceptionnel et nécessite des mesures spécifiques pour améliorer la qualité de l’eau et la fiabilité du service, ou bien d'autres facteurs que les coûts ont un impact significatif sur la fourniture de service. "
+          b322: "La qualité de l’eau est insuffisante, elle peut constituer un grave danger pour la santé. De plus, le service est indisponible ou en panne pendant des périodes prolongées. Les dépenses récurrentes sont supérieures à la fourchette de dépenses observée par WASHCost. Il y a deux possibilités: le contexte est exceptionnel et nécessite des mesures spécifiques pour améliorer la qualité de l’eau et la fiabilité du service, ou bien d'autres facteurs que les coûts ont un impact significatif sur la fourniture de service. "
+          b323: "Bien que le service soit fiable, la qualité de l’eau est insuffisante, elle peut constituer un grave danger pour la santé. Les dépenses récurrentes sont supérieures à la fourchette de dépenses observée par WASHCost. Il y a deux possibilités: le contexte est exceptionnel et nécessite des mesures spécifiques pour améliorer la qualité de l’eau, ou bien d'autres facteurs que les coûts ont un impact significatif sur la fourniture de service. "
+          b324: "Bien que le service soit très fiable, la qualité de l’eau est insuffisante, elle peut constituer un grave danger pour la santé. Les dépenses récurrentes sont supérieures à la fourchette de dépenses observée par WASHCost. Il y a deux possibilités: le contexte est exceptionnel et nécessite des mesures spécifiques pour améliorer la qualité de l’eau, ou bien d'autres facteurs que les coûts ont un impact significatif sur la fourniture de service. "
+          b331: "La qualité de l’eau est acceptable, cependant, le service est indisponible ou en panne pendant des périodes inacceptables. Les dépenses récurrentes sont supérieures à la fourchette de dépenses observée par WASHCost. Il y a deux possibilités: le contexte est exceptionnel et nécessite des mesures spécifiques pour améliorer la qualité de l’eau et la fiabilité du service, ou bien d'autres facteurs que les coûts ont un impact significatif sur la fourniture de service. "
+          b332: "La qualité de l’eau est acceptable, cependant, le service est indisponible ou en panne pendant des périodes prolongées. Les dépenses récurrentes sont supérieures à la fourchette de dépenses observée par WASHCost. Il y a deux possibilités: le contexte est exceptionnel et nécessite des mesures spécifiques pour améliorer la qualité de l’eau et la fiabilité du service, ou bien d'autres facteurs que les coûts ont un impact significatif sur la fourniture de service. "
+          b333: "La qualité de l’eau est acceptable et le service est assez fiable. Les dépenses récurrentes annuelles totales sont supérieures aux valeurs de référence établies par WASHCost. Peut-être que le contexte requiert des dépenses de maintenance et d’appui plus élevées, ou alors la gestion du service souffre d’un manque d’efficacité."
+          b334: "La qualité de l’eau est acceptable et le service est très fiable. Les dépenses récurrentes annuelles totales sont supérieures aux valeurs de référence établies par WASHCost, ce qui est peut-être à l’origine du niveau élevé du service. Mais peut-être que le contexte requiert des dépenses de maintenance et d’appui plus élevées, ou bien la gestion du service souffre d’un manque d’efficacité."
+          b341: "La qualité de l’eau est bonne, cependant, le service est indisponible ou en panne pendant des périodes inacceptables. Les dépenses récurrentes sont supérieures à la fourchette de dépenses observée par WASHCost. Il y a deux possibilités: le contexte est exceptionnel et nécessite des mesures spécifiques pour améliorer la qualité de l’eau et la fiabilité du service, ou bien d'autres facteurs que les coûts ont un impact significatif sur la fourniture de service. "
+          b342: "La qualité de l’eau est bonne, cependant, le service est indisponible ou en panne pendant des périodes prolongées. Les dépenses récurrentes sont supérieures à la fourchette de dépenses observée par WASHCost. Il y a deux possibilités: le contexte est exceptionnel et nécessite des mesures spécifiques pour améliorer la qualité de l’eau et la fiabilité du service, ou bien d'autres facteurs que les coûts ont un impact significatif sur la fourniture de service. "
+          b343: "La qualité de l’eau est bonne et le service est assez fiable. Les dépenses récurrentes annuelles totales sont supérieures aux valeurs de référence établies par WASHCost. Peut-être que le contexte requiert des dépenses de maintenance et d’appui plus élevées, ou alors la gestion du service souffre d’un manque d’efficacité."
+          b344: "La qualité de l’eau est bonne et le service est très fiable. Les dépenses récurrentes annuelles totales sont supérieures aux valeurs de référence établies par WASHCost, ce qui participe peut-être au niveau très élevé du service. Mais peut-être que le contexte requiert des dépenses de maintenance et d’appui plus élevées, ou bien la gestion du service souffre d’un manque d’efficacité."
+        sustainability: 
+          four_stars: "Service de bonne qualité"
+          one_star: "Service inexistant"
+          three_stars: "Service de base"
+          two_stars: "Service limité"
+  buttons: 
+    delete_report: "Effacer le rapport"
+    next: "Question suivante"
+    save_report: "Sauvegarder le rapport"
+    share_report: "Partager le rapport"
+    start: "Commencez à utiliser l'outil"
+    view_report: "Voir le rapport"
+  calculators: 
+    advanced: "Outil avancé"
+    basic: "Outil de base"
+    pre_question_note: "Avant de commencer, veuillez répondre à ces deux questions"
+    sanitation: Assainissement
+    sub_title: "Évaluez la pérennité de votre service et obtenez un rapport personnalisé basé sur votre modèle de fourniture de service."
+    title: "Faites le calcul et faites durer votre service"
+    tool_selection_advanced: "Outil avancé"
+    tool_selection_basic: "Outil de base"
+    water: Eau
+  dashboard: 
+    calculator_type: "Type de calculateur"
+    company: Organisation
+    compare: 
+      label1: "Les dépenses en capital par personne"
+      label2: "Les dépenses courantes par personne et par an"
+      label3: "Réunion de la population toutes les normes de service nationaless"
+    comparison: "Comparaison (2011 rates)"
+    country: Pays
+    current_mail: "Adresse e-mail actuelle"
+    date: Date
+    location: Localité
+    name: Nom
+    preferred_language: "Langue préférée"
+    service: Service
+    status: 
+      budgeted_expenditure: "Dépenses budgetées"
+      dont_know: "Ne sais pas"
+      historical_expenditure: "Dépenses historiques"
+      mixed_expenditure: "Dépenses diverses"
+      not_applicable: "Non applicable"
+      planned_expenditure: "Dépense prévisionnelle"
+  devise: 
+    back: Retour
+    change_my_password: "Changer mon mot de passe"
+    change_your_password: "Changer votre mot de passe"
+    confirm_password: "Confirmer le nouveau mot de passe"
+    confirmations: 
+      confirmed: "Votre compte a été validé. Vous êtes maintenant connecté."
+      send_instructions: "Vous allez recevoir un e-mail vous expliquant comment valider votre compte dans quelques minutes."
+      send_paranoid_instructions: "Si votre adresse e-mail se trouve déjà dans notre base de données, vous recevrez un e-mail vous expliquant comment valider votre compte dans quelques minutes."
+    country: Pays
+    create_account: Inscription
+    didnt_receive_confirmation_instructions: "Vous n'avez pas reçu les instructions de confirmation?"
+    didnt_receive_unlock_instructions: "Vous n'avez pas reçu les instructions de déverrouillage?"
+    edit_your_account: "Réviser votre compte"
+    email: "Adresse électronique"
+    failure: 
+      already_authenticated: "Vous êtes déjà connecté."
+      inactive: "Votre compte n'a pas encore été activé."
+      invalid: "Adresse e-mail ou mot de passe non valide. Veuillez vous inscrire si vous souhaitez ouvrir un compte."
+      invalid_token: "Code d'authentification non valide."
+      locked: "Votre compte est verrouillé."
+      not_found_in_database: "Adresse e-mail ou mot de passe non valide. Veuillez vous inscrire si vous souhaitez ouvrir un compte."
+      timeout: "Votre session a expiré, veuillez rouvrir une session pour continuer."
+      unauthenticated: "Vous devez ouvrir une session ou vous inscrire avant de continuer."
+      unconfirmed: "Vous devez valider votre compte avant de continuer."
+    forgot_your_password: "Mot de passe oublié ?"
+    log_in: Connexion
+    log_into_your_account: Connectez-vous
+    mailer: 
+      confirmation_instructions: 
+        subject: "Instruction de validation"
+      reset_password_instructions: 
+        subject: "Instruction pour réinitialiser votre mot de passe"
+      unlock_instructions: 
+        subject: "Instruction pour déverrouiller"
+    new_password: "Nouveau mot de passe"
+    omniauth_callbacks: 
+      failure: "Impossible d'effectuer l'authentification à partir du compte %{kind} en raison de'%{reason}'."
+      success: "Authentification réussie à partir du compte %{kind}account."
+    password: "Mot de passe"
+    passwords: 
+      no_token: "Vous n'avez pas accès à cette page, sauf si vous avez été redirigé per un e-mail de réinitialisation de mot de passe. Si c'est le cas, veuillez vérifier que vous avez entièrement saisi l'URL fournie."
+      send_instructions: "Vous allez recevoir un e-mail vous expliquant comment réinitialiser votre mot de passe dans quelques minutes."
+      send_paranoid_instructions: "Si votre adresse e-mail se trouve dans notre base de données, vous allez recevoir un e-mail avec un lien pour récupérer votre mot de passe dans quelques minutes."
+      updated: "Votre mot de passe a été changé avec succès. Vous êtes maintenant connecté."
+      updated_not_active: "Votre mot de passe a été changé avec succès."
+    please_visit_washcost_blog_html: "Please visit the <a href='http://blog.washcost.org/' class='standalone_form--promo--link'>WASHCost Blog</a> to learn more about the Advanced Calculator"
+    prefered_language: "Langue préférée"
+    register: Register
+    registrations: 
+      destroyed: "À bientôt! Votre compte a été annulé avec succès. Nous espérons vous revoir bientôt."
+      signed_up: "Soyez bienvenu. Vous vous êtes inscrit avec succès."
+      signed_up_but_inactive: "Votre inscription a bien réussi. Mais vous ne pouvez pas encore ouvrir une session car votre compte n'a pas encore été activé."
+      signed_up_but_locked: "Votre inscription a bien réussi. Mais vous ne pouvez pas encore ouvrir une session car votre compte est verrouillé."
+      signed_up_but_unconfirmed: "Un message avec un lien de confirmation a été envoyé à votre adresse e-mail. Veuillez cliquer sur le lien pour activer votre compte."
+      update_needs_confirmation: "Votre compte a été mis à jour avec succès, mais nous devons vérifier votre nouvelle adresse e-mail. Veuillez vérifier votre adresse et cliquer sur le lien de confirmation pour finaliser la confirmation de votre nouvelle adresse e-mail."
+      updated: "Votre compte a été mis à jour avec succès."
+    remember_me: "Garder ma session active"
+    repeat_password: "Confirmez votre mot de passe"
+    select_a_country: "Veuillez choisir votre pays"
+    select_a_preferred_language: "Veuillez choisir votre langue préférée"
+    send_me_reset_password_instructions: "M'envoyer les instructions pour reinitialiser le mot de passe"
+    sessions: 
+      signed_in: "Ouverture de session."
+      signed_out: "Fermeture de session."
+    sign_in: Connexion
+    sign_in_with_provider: "Connectez-vous avec %{provider}"
+    sign_up: Inscription
+    unlocks: 
+      send_instructions: "Vous allez recevoir un e-mail vous expliquant comment déverrouiller votre compte dans quelques minutes."
+      send_paranoid_instructions: "Si votre compte existe, vous allez recevoir un e-mail vous expliquant comment déverrouiller votre compte dans quelques minutes."
+      unlocked: "Votre compte a été déverrouillé avec succès. Veuillez ouvrir une session pour continuer."
+    update: "Mettre à jour"
+    your_company: "Votre entreprise"
+    your_email: "Adresse électronique"
+    your_first_name: Prénom
+    your_last_name: Nom
+  errors: 
+    messages: 
+      already_confirmed: "a déjà été confirmé. Veuillez essayer d'ouvrir une session"
+      confirmation_period_expired: "doit être confirmé sous %{period} minutes/heures/jours. Veuillez recommncer la demande/l'inscription."
       email_missing: "Le champ e-mail doit être renseigné"
       email_valid: "Adresse e-mail doit être valide"
+      expired: "a expiré. Veuillez recommencer"
+      not_found: "n'existe pas"
+      not_locked: "n'était pas verrouillé"
+      not_saved: 
+        one: ""
+        other: ""
+      password_confirm_mismatch: "Les deux mots de passe ne correspondent pas"
       password_missing: "Veuillez saisir un mot de passe"
       password_too_long: "Mot de passe trop long"
       password_too_short: "Mot de passe trop court (8 caractères min)"
-      password_confirm_mismatch: "Les deux mots de passe ne correspondent pas"
       register_if_acces_to_cuesstinaire_view: "Vous devez être enregistré premier"
-  # for registration errors
-  mongoid:
-    errors:
-      models:
-        user:
-          attributes:
-            email:
-              # will match the email_missing error above
+      unique_email: "Adresse e-mail doit être unique"
+  footer: 
+    calculator_progress: "Rapport %{level} %{type}"
+  mongoid: 
+    errors: 
+      models: 
+        user: 
+          attributes: 
+            email: 
               blank: "Le champ e-mail doit être renseigné"
-        # for report saving
-        user_report:
-          attributes:
-            title:
-              report_title_missing: Veuillez saisir un titre
-              unique_report: Les noms de rapport doivent être uniques
-  edit: Modifier
-  number:
-    format:
-      separator: "."
+        user_report: 
+          attributes: 
+            title: 
+              report_title_missing: "Veuillez saisir un titre"
+              unique_report: "Les noms de rapport doivent être uniques"
+  navigation: 
+    calculators: 
+      access: Accès
+      advanced: "Outil avancé"
+      capital_expenditure: "Coût d'investissement"
+      context: Contexte
+      cost: Coût
+      country: Pays
+      environmental_impact: "Impact sur l'environnement"
+      household: Ménage
+      household_latrine: "Latrine familiale"
+      impermeability: Imperméabilité
+      latrine: Latrine
+      population: Population
+      quality: Qualité
+      quantity: Quantité
+      recurrent_expenditure: "Dépenses récurrentes"
+      reliability: Fiabilité
+      service: "Type de dépense"
+      service_area: "Zone de service"
+      service_level: "Niveau de Service"
+      system_characteristics: "Caractéristiques techniques du système"
+      system_management: "Gestion du système"
+      technology: Technologie
+      usage: Utilisation
+    utility: 
+      about: "À propos de"
+      contact: Contact
+      help: Aider
+      language: Langue
+      sign_in: "Ouvrir une session"
+      sign_out: "Fermer la session"
+  number: 
+    currency: 
+      format: 
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        unit: US$
+    format: 
       delimiter: ","
       precision: 2
-    currency:
-      format:
-        format: "%u%n"
-        unit: "US$"
-        separator: "."
-        delimiter: ","
-        precision: 2
-  navigation:
-    utility:
-      about: À propos de 
-      help: Aider
-      contact: Contact
-      sign_in: Ouvrir une session
-      sign_out: Fermer la session
-      language: Langue
-    calculators:
-      context: Contexte
-      country: Pays
-      technology: Technologie
-      population: Population
-      household: Ménage
-      latrine: Latrine
-      cost: Coût
-      capital_expenditure: Coût d'investissement
-      recurrent_expenditure: Dépenses récurrentes
-      service: Type de dépense
-      access: Accès
-      quantity: Quantité
+      separator: "."
+  report: 
+    access: Accès
+    afforability_detail: 
+      affordable: "%{percentage} des dépenses des ménages est considéré comme étant financièrement accessible."
+      risk: "%{percentage} des dépenses des ménages constitue un pourcentage plus élevé que celui préconisé par les directives en matière d'accessibilité financière dans de nombreux pays. Les dépenses risquent d'excéder les capacités financières des usagers."
+      unaffordable: "%{percentage} des dépenses des ménages constitue un pourcentage bien plus élevé que celui préconisé par les directives en matière d'accessibilité financière dans de nombreux pays."
+    affordability_check: "Test d'accessibilité financière"
+    affordability_of_expected_expenditure_for_actual_users: "Accessibilité financière des dépenses attendues pour les usagers effectifs des services"
+    affordability_of_inputted_expenditure_for_actual_users: "Accessibilité financière des dépenses saisies pour les usagers effectifs du service"
+    affordability_of_inputted_expenditure_for_designed_users: "Accessibilité financière des dépenses saisies pour les usagers prévus par le service"
+    affordable: Abordable
+    all_data: "Toutes les données"
+    annual_capital_maintenance_expenditure: "Dépenses annuelles de maintien du capital"
+    annual_household_income: "Revenu annuel des ménages"
+    annual_household_income_per_person: "Revenu annuel par personne"
+    annual_operational_expenditure: "Dépenses de fonctionnement annuel"
+    back: Retour
+    benchmark_above: "Au-dessus des coûts de référence."
+    benchmark_below: "En dessous des coûts de référence."
+    benchmark_outside: "Le coût n'est pas dans la fourchette des valeurs de référence établies par WashCost. Voir l'évaluation ci-dessous pour plus de détails."
+    benchmark_within: "Le coût se situe dans la fourchette des valeurs de référence WashCost. Voir l'évaluation ci-dessous pour plus de détails."
+    capital_expenditure: "Dépense d'investissement"
+    capital_expenditure_title: "Dépense d'investissement"
+    capital_maintenance_expenditure: "Dépenses de renouvellement et de réhabilitation"
+    caption_total_cost: "Dépense totale sur 10 ans pour une population de %{population} habitants"
+    code_not_found: Inconnu
+    comparing_costs_and_services: "Comparaison des coûts et des services"
+    comparison_summary: "Comparaison avec d'autres"
+    comparison_width_others: "Comparaison avec d'autres"
+    complete: "Rapport complet"
+    context: Contexte
+    cost: "Coût total"
+    cost_box_no_value: "Il n'y a pas assez de réponses sur les coûts. Pour obtenir un rapport final sur les coûts, revenez vers le questionnaire et répondez à plus de questions sur les coûts de votre service"
+    cost_of_capital: "Coût du capital"
+    cost_of_sustaining_the_service: "Dépenses prévisionnel pour une durée de 30 ans"
+    cost_subtitle: "Dépense sur 10 ans pour une population de %{population} habitants"
+    created_successsfully: "Votre rapport a été créé avec succès"
+    cross_to_sanitation: "Aller au calculateur assainissement"
+    cross_to_water: "Aller au calculateur eau"
+    current_recurrent_expenditure: "Dépenses récurrents actuels"
+    distance: Distance
+    does_not_meet_national_norm: "N'est pas conforme aux normes nationales"
+    environment_protection: "Protection de l'environnement"
+    expected_expenditure: "Dépenses attendues"
+    expenditure_of_direct_support: "Dépenses d'appui direct"
+    expenditure_of_indirect_support: "Dépenses d'appui indirect"
+    expenditure_summary: "Tableau récapitulatif des dépenses"
+    expenditure_surplus_shortfall: "Excédent/déficit potentiel de dépenses"
+    full_review: "read full review"
+    household_size: "Taille des ménages"
+    inputted_expenditure: "Dépenses saisies"
+    legend: 
+      cme: "Dépenses d'entretien du capital"
+      coc: "Coût du capital"
+      dspy: "Dépenses d'appui indirect"
+      idpy: "Dépenses d'appui direct"
+      oepy: "Dépenses d'exploitation et de maintenance"
+      x: "Coûts Récurrents"
+      ? "y"
+      : Année
+    less_than: "Moins de"
+    level_of_service: "niveau de service"
+    meets_national_norm: "Conforme aux normes nationales"
+    more_than: "More than"
+    no_answer_provided: "Pas de réponse fournie"
+    no_data: "Données manquantes"
+    no_specifed: "Non spécifié"
+    number_of_other_reports_with_lower_recurrent_expenditure: "nombre d'autres rapports générés par le calculateur avec des dépenses récurrentes moins élevées"
+    number_of_people: "%{people} personne"
+    number_of_people_with_service_meeting_national_standard: "Pourcentage de la population ayant accès à un service conforme aux normes nationales"
+    operational_expenditure: "Dépenses d'exploitation et de maintenance"
+    per_person_per_year: "(par personne par an)"
+    percentage_of_household_income: "Pourcentage du revenu des ménages"
+    percentile_rank_service_area_expenditure: "Rang centile des dépenses pour la zone de service"
+    percentile_rank_service_indicators: "Rang centile des indicateurs de service"
+    percentile_rank_technology_related_expenditure: "Rang centile des dépenses liées à la technologie"
+    population_caption: "%{population} habitants"
+    quality: Qualité
+    quantity: Quantité
+    recurrent_expenditure: "Dépenses récurrentes"
+    recurrent_expenditure_title: "Dépenses récurrentes"
+    reliability: Fiabilité
+    report_box_no_value: "Il n'y a pas assez de réponses. Pour obtenir un rapport final, revenez vers le questionnaire et répondez à plus de questions sur votre service."
+    report_saved: "Votre rapport a été sauvegardé avec succès"
+    risk: "Risque pour l'accessibilité"
+    save_input: "Nom de rapport"
+    save_submit: Enregistrer
+    save_your_report: Sauvegarder
+    service: "Niveau de service"
+    service_level_population_incomplete: "Vous n'avez pas indiquer le niveau de service pour la population totale. Certaines données sont manquantes."
+    service_level_population_overcomplete: "Vous avez indiquer le niveau de service pour plus de personnes que possible. S'il vous plaît vérifier vos données."
+    service_level_summary: "Niveau de service"
+    service_levels: 
+      accessibility: Accessibilité
+      environmental_protection: "Protection de l'environnement"
       quality: Qualité
-      household_latrine: Latrine familiale
-      impermeability: Imperméabilité
-      #Not clear where this is being applied. This may need to change Environmental protection, which is the actual name of the indicator
-      environmental_impact: Impact sur l'environnement
-      usage: Utilisation
+      quantity: Qualité
       reliability: Fiabilité
-      advanced: Outil avancé
-      service_area: Zone de service
-      system_management: Gestion du système
-      system_characteristics: Caractéristiques techniques du système
-      service_level: Niveau de Service
-  footer:
-    calculator_progress: "Rapport %{level} %{type}"
-  buttons:
-    next: Question suivante
-    start: Commencez à utiliser l'outil
-    view_report: Voir le rapport
-    save_report: Sauvegarder le rapport
-    share_report: Partager le rapport
-    delete_report: Effacer le rapport
-  calculators:
-    basic: Outil de base
-    advanced: Outil avancé
-    water: Eau
-    sanitation: Assainissement 
-    title: Faites le calcul et faites durer votre service
-    sub_title: Évaluez la pérennité de votre service et obtenez un rapport personnalisé basé sur votre modèle de fourniture de service.
-    pre_question_note: "Avant de commencer, veuillez répondre à ces deux questions"
-    tool_selection_advanced: Outil avancé
-    tool_selection_basic: Outil de base
+      use: Use
+    share_your_report: "Partager le rapport"
+    shortfall: Déficit
+    substandard: Sous-Standard
+    summary_country: Pays
+    summary_currency: Devise
+    summary_year: "Année de dépenses"
+    summmary: Résumé
+    surplus: " Excédent"
+    time: 
+      minutes: min
+    total: Total
+    total_cost: "coût total"
+    total_expenditure_for_thirty_years: "Total des dépenses sur 30 ans - si le niveau actuel des dépenses est maintenu"
+    unaffordable: Inabordable
+    updated_successsfully: "Votre rapport a été mis à jour avec succès"
+    use: Utilisation
+    users_data: "Données de '%{name}'"

@@ -31,7 +31,7 @@ WashCostApp::Application.routes.draw do
     end
   end
 
-  scope "(:locale)", :locale => /en|fr/ do
+  scope "(:locale)", :locale => /en|fr|bn/ do
 
     devise_scope :user do
       get 'users' => 'authentication/registrations#new'

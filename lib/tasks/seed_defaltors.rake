@@ -24,7 +24,7 @@ namespace :db do
       alpha3 = row[2]
       year = 1959
 
-      (8..62).each do |n|
+      (8..113).each do |n|
         year = year+1
         percent = row[n]
 

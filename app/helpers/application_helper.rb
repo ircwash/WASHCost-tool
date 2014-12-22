@@ -4,7 +4,7 @@ module ApplicationHelper
   include ActionView::Helpers::NumberHelper # should consider handling without this call
 
   def options_for_languages
-    [ [ 'English', 'en' ], [ 'Français', 'fr' ] ]
+    [ [ 'English', 'en' ], [ 'Français', 'fr' ], [ 'বাংলা', 'bn' ] ]
   end
 
   # Created duplicate functions here as the majority of functions have been built directly against the inherited model(s)
@@ -47,8 +47,8 @@ module ApplicationHelper
   def deflator_multiplier(q)
     if q != nil && q[:country] != nil && q[:year_of_expenditure] != nil
       report_year = q[:year_of_expenditure].to_i
-      currency = Country.find_country_by_alpha2(q[:country]).currency
-      result = Deflator.find_by(name: currency.code, year: report_year)
+      alpha3 = Country.find_country_by_alpha2(q[:country]).alpha3
+      result = Deflator.find_by(alpha3: alpha3, year: report_year)
       result != nil ? result.percent : nil
     else
       nil
@@ -250,7 +250,7 @@ module ApplicationHelper
   end
 
   def options_for_years
-    Array(1900..Date.today.year).reverse.map{ |y| [ y, y ] }
+    Array(1900..(Date.today.year + 10)).reverse.map{ |y| [ y, y ] }
   end
 
   def options_for_report_statuses
